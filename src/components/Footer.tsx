@@ -23,7 +23,7 @@ export default function Footer() {
                         </p>
                         <div className="mt-4">
                             <Button variant="cta" className="w-full md:w-auto">
-                                Find a Location
+                                Call To Action
                             </Button>
                         </div>
                         <div className="mt-2">
@@ -31,7 +31,7 @@ export default function Footer() {
                                 variant="ghost"
                                 ghostBg="hsl(var(--primary))"
                                 ghostText="white"
-                                className="w-full md:w-auto font-bold"
+                                className="w-full md:w-auto font-bold rounded-3xl"
                             >
                                 Careers
                             </Button>

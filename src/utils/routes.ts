@@ -31,7 +31,7 @@ export const footerResources = [
         label: 'Legal Disclaimer'
     },
     {
-        route: '/nondiscimination',
+        route: '/nondiscrimination',
         label: 'Nondiscrimination & Accessibility'
     }
 ]

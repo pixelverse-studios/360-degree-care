@@ -53,9 +53,7 @@ export function Header() {
                                     </NavigationMenuItem>
                                 )
                             })}
-                            <Button variant="cta" className="rounded-3xl">
-                                Call To Action
-                            </Button>
+                            <Button variant="cta">Call To Action</Button>
                         </NavigationMenuList>
                     </NavigationMenu>
                 </nav>
@@ -96,9 +94,7 @@ export function Header() {
                                     </li>
                                 )
                             })}
-                            <Button variant="cta" className="rounded-3xl">
-                                Call To Action
-                            </Button>
+                            <Button variant="cta">Call To Action</Button>
                         </ul>
                     </nav>
                 </div>
