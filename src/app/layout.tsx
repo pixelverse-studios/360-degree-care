@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 // import localFont from "next/font/local";
 import { Header } from '@/components/nav/Header'
+import Footer from '@/components/Footer'
 import '../styles/globals.css'
 
 export const metadata: Metadata = {
@@ -18,6 +19,7 @@ export default function RootLayout({
             <body className={`antialiased`}>
                 <Header />
                 {children}
+                <Footer />
             </body>
         </html>
     )

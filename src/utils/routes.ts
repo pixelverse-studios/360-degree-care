@@ -20,3 +20,18 @@ export const navLinks = [
         subLinks: []
     }
 ]
+
+export const footerResources = [
+    {
+        route: '/privacy-policy',
+        label: 'Privacy Policy'
+    },
+    {
+        route: '/legal-disclaimer',
+        label: 'Legal Disclaimer'
+    },
+    {
+        route: '/nondiscimination',
+        label: 'Nondiscrimination & Accessibility'
+    }
+]
