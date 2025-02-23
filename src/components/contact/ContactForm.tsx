@@ -1,6 +1,8 @@
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import * as z from 'zod'
+import { FaPhone, FaEnvelope, FaLocationDot } from 'react-icons/fa6'
+
 import { Input } from '@/components/ui/input'
 import { Textarea } from '@/components/ui/textarea'
 import { Button } from '@/components/ui/button'
@@ -13,9 +15,7 @@ import {
     FormLabel,
     FormMessage
 } from '@/components/ui/form'
-import { Mail, MapPin, Phone } from 'lucide-react'
 
-// Validation Schema using Zod
 const formSchema = z.object({
     fullName: z.string().min(2, 'Full Name must be at least 2 characters'),
     email: z.string().email('Invalid email address'),
@@ -49,20 +49,20 @@ export default function ContactForm() {
                         can help you and your loved ones.
                     </p>
                     <div className="flex items-center space-x-2">
-                        <Phone className="w-5 h-5" />
+                        <FaPhone className="w-5 h-5" />
                         <span>(555) 123-4567</span>
                     </div>
                     <div className="flex items-center space-x-2">
-                        <Mail className="w-5 h-5" />
+                        <FaEnvelope className="w-5 h-5" />
                         <span>contact@360degreecare.com</span>
                     </div>
                     <div className="flex items-center space-x-2">
-                        <MapPin className="w-5 h-5" />
+                        <FaLocationDot className="w-5 h-5" />
                         <span>27 Chestnut St, Ridgewood, NJ 07450</span>
                     </div>
                 </div>
 
-                <div className="p-6 bg-white">
+                <div className="p-6 bg-white-bright">
                     <Form {...form}>
                         <form
                             onSubmit={form.handleSubmit(onSubmit)}

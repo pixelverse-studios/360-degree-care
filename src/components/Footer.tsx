@@ -37,21 +37,11 @@ export default function Footer() {
                                 Call To Action
                             </Button>
                         </div>
-                        <div className="mt-2">
-                            <Button
-                                variant="ghost"
-                                ghostBg="hsl(var(--white))"
-                                ghostText="secondary"
-                                className="w-full md:w-auto font-bold rounded-3xl"
-                            >
-                                Careers
-                            </Button>
-                        </div>
                     </div>
 
                     {/* Middle - Links */}
                     <div className="flex flex-col space-y-2 text-sm">
-                        <p className="font-bold text-lg">See More</p>
+                        <p className="font-bold text-lg">Quick Links</p>
                         <Link
                             href={serviceLink.route}
                             className="hover:text-black"
@@ -109,7 +99,7 @@ export default function Footer() {
                 </div>
 
                 {/* Bottom Section */}
-                <div className="mt-10 border-t border-gray-200 pt-4 text-center text-xs text-gray-600">
+                <div className="mt-10 border-t border-gray-200 pt-4 text-center text-xs text-white">
                     <p>
                         360 Degree Care is an Equal Opportunity Employer. Each
                         franchise is independently owned and operated.

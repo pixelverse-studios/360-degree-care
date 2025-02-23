@@ -5,10 +5,11 @@
 @tailwind utilities;
 
 :root {
-    /* #171717 */
     --primary: 18, 100%, 59%; /* #ff6c2f */
     --secondary: 22, 60%, 76%; /* #e7b99e */
-    --white: 0, 0%, 94%; /* #f0f0f0 */
+    --white: 0, 0%, 94.12%; /* #f0f0f0 */
+    --muted-white: 0, 0%, 93.73%; /* #efefef */
+    --bright-white: 0, 0%, 100%; /* #ffffff */
     --black: 0, 0%, 11%; /* #1c1c1c */
     --muted-black: 0, 0%, 20%; /* #333333 */
 
@@ -65,7 +66,7 @@ main {
         @apply border-border outline-ring/50;
     }
     body {
-        @apply bg-background text-foreground;
+        @apply bg-primary-foreground text-black;
     }
 
     .nav-link {

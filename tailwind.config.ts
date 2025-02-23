@@ -17,7 +17,7 @@ const config: Config = {
                 foreground: 'hsl(var(--foreground))',
                 primary: {
                     DEFAULT: 'hsl(var(--primary))',
-                    foreground: 'hsl(var(--primary-foreground))'
+                    foreground: 'hsl(var(--muted-white))'
                 },
                 card: {
                     DEFAULT: 'hsl(var(--card))',
@@ -52,6 +52,15 @@ const config: Config = {
                     '3': 'hsl(var(--chart-3))',
                     '4': 'hsl(var(--chart-4))',
                     '5': 'hsl(var(--chart-5))'
+                },
+                black: {
+                    DEFAULT: 'hsl(var(--black))',
+                    muted: 'hsl(var(--black-muted))'
+                },
+                white: {
+                    DEFAULT: 'hsl(var(--white))',
+                    muted: 'hsl(var(--muted-white))',
+                    bright: 'hsl(var(--bright-white))'
                 }
             },
             borderRadius: {
