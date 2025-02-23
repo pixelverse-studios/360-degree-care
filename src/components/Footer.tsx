@@ -1,36 +1,47 @@
 'use client'
 
 import Link from 'next/link'
-import { FaFacebookF, FaYoutube, FaLinkedinIn } from 'react-icons/fa6'
+import {
+    FaFacebookF,
+    FaYoutube,
+    FaLinkedinIn,
+    FaHeartPulse
+} from 'react-icons/fa6'
 import { Button } from '@/components/ui/button'
 import Logo from '@/components/Logo'
 import { navLinks, footerResources } from '@/utils/routes'
 
 const [serviceLink, aboutLink, faqLink, testimonialLink] = navLinks
 
+const linkHover = 'transition-all duration-200 textwhite hover:text-black'
+
 export default function Footer() {
     const currentYear = new Date().getFullYear()
     return (
-        <footer className="bg-foreground border-t border-gray-300 py-10 text-black">
+        <footer className="bg-primary border-t border-gray-300 py-10 text-black">
             <div className="max-w-[1400px] mx-auto px-6">
                 {/* Top Section */}
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-white">
                     {/* Left - Logo & CTA */}
                     <div>
-                        <Logo />
-                        <p className="mt-2 text-sm text-gray-600">
-                            First in Home Care™
+                        <div className="flex gap-2 items-center">
+                            <FaHeartPulse className="h-6 w-6" />
+                            <Logo invert />
+                        </div>
+                        <p className="mt-2 text-sm">
+                            Providing compassionate in-home care services for
+                            seniors
                         </p>
                         <div className="mt-4">
-                            <Button variant="cta" className="w-full md:w-auto">
+                            <Button className="w-full md:w-auto px-6 py-3 border-2 font-bold transition-all duration-200 bg-background text-primary border-background hover:border-white hover:bg-primary hover:text-white rounded-3xl">
                                 Call To Action
                             </Button>
                         </div>
                         <div className="mt-2">
                             <Button
                                 variant="ghost"
-                                ghostBg="hsl(var(--primary))"
-                                ghostText="white"
+                                ghostBg="hsl(var(--white))"
+                                ghostText="secondary"
                                 className="w-full md:w-auto font-bold rounded-3xl"
                             >
                                 Careers
@@ -43,26 +54,23 @@ export default function Footer() {
                         <p className="font-bold text-lg">See More</p>
                         <Link
                             href={serviceLink.route}
-                            className="hover:text-primary"
+                            className="hover:text-black"
                         >
                             {serviceLink.label}
                         </Link>
                         <Link
                             href={aboutLink.route}
-                            className="hover:text-primary"
+                            className="hover:text-black"
                         >
                             {aboutLink.label}
                         </Link>
                         <p className="font-bold text-lg pt-3">Resources</p>
-                        <Link
-                            href={faqLink.route}
-                            className="hover:text-primary"
-                        >
+                        <Link href={faqLink.route} className="hover:text-black">
                             {faqLink.label}
                         </Link>
                         <Link
                             href={testimonialLink.route}
-                            className="hover:text-primary"
+                            className="hover:text-black"
                         >
                             {testimonialLink.label}
                         </Link>
@@ -87,22 +95,13 @@ export default function Footer() {
 
                         {/* Social Icons */}
                         <div className="flex space-x-4 mt-4">
-                            <a
-                                href="#"
-                                className="text-gray-700 hover:text-primary"
-                            >
+                            <a href="#" className={linkHover}>
                                 <FaFacebookF size={24} />
                             </a>
-                            <a
-                                href="#"
-                                className="text-gray-700 hover:text-primary"
-                            >
+                            <a href="#" className={linkHover}>
                                 <FaLinkedinIn size={24} />
                             </a>
-                            <a
-                                href="#"
-                                className="text-gray-700 hover:text-primary"
-                            >
+                            <a href="#" className={linkHover}>
                                 <FaYoutube size={24} />
                             </a>
                         </div>

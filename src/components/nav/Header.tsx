@@ -21,10 +21,10 @@ export function Header() {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState<boolean>(false)
 
     return (
-        <header className="fixed top-0 left-0 right-0 w-full bg-foreground z-50 border-b border-b-gray-300">
+        <header className="fixed top-0 left-0 right-0 w-full bg-nav z-50 border-b border-b-gray-300">
             <div className="max-w-[var(--max-width)] mx-auto px-6 py-4 flex items-center justify-between">
                 <Link href="/">
-                    <Logo />
+                    <Logo invert={false} />
                 </Link>
 
                 {/* --- DESKTOP --- */}
