@@ -7,7 +7,7 @@ export default function HamburgerMenu({ isOpen, setIsOpen }: HamburgerProps) {
     return (
         <button
             onClick={() => setIsOpen(!isOpen)}
-            className="group relative w-10 h-10 flex flex-col items-center justify-center p-2 rounded-lg bg-background text-white shadow-md border border-primary lg:hidden transition-colors duration-300 hover:bg-primary hover:text-background hover:border-background"
+            className="group relative w-10 h-10 flex flex-col items-center justify-center p-2 rounded-lg bg-primary-foreground text-white shadow-md border border-primary lg:hidden transition-colors duration-300 hover:bg-primary hover:text-background hover:border-background"
         >
             <span
                 className={`absolute block w-6 h-0.5 bg-primary rounded transition-transform duration-300 group-hover:bg-background ${
