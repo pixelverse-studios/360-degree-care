@@ -18,7 +18,7 @@ export default function HomePage() {
                 cards={SERVICE_CARDS}
                 header="Our Concierge Level Services"
             />
-            <section className="py-8">
+            <section className="p-8">
                 <ContactForm />
             </section>
         </main>

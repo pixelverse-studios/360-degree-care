@@ -2,7 +2,7 @@ import { FaCircleCheck } from 'react-icons/fa6'
 
 export default function HomeAboutSection() {
     return (
-        <section className="max-w-custom mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 justify-between items-center  max-h-[60dvh] p-6">
+        <section className="max-w-custom mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 justify-between items-center p-6">
             <img
                 className="rounded-2xl h-fit w-fit"
                 src="https://placehold.co/1200x1200"

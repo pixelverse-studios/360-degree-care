@@ -23,14 +23,14 @@ export default function InfoCards({ cards, header, bgColor }: InfoCardProps) {
                     {header}
                 </h1>
             ) : null}
-            <ul className="max-w-custom mx-auto p-6 flex gap-8">
+            <ul className="max-w-custom mx-auto p-6 grid grid-cols-1 lg:grid-cols-3 gap-8">
                 {cards.map(card => {
                     const Icon = card.icon
 
                     return (
                         <li
                             className={cn(
-                                'p-6 rounded-xl flex-1 flex flex-col gap-4 justify-between shadow-md',
+                                'p-6 rounded-xl flex flex-col gap-4 shadow-md',
                                 card.bgColor
                             )}
                         >

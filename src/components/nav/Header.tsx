@@ -65,14 +65,14 @@ export function Header() {
                 {/* --- MOBILE --- */}
                 <div
                     className={cn(
-                        'fixed inset-x-0 top-[65px] bg-[hsl(var(--nav))] border-b border-b-gray-300 lg:hidden',
+                        'fixed inset-x-0 top-[65px] bg-primary-fore border-b border-b-gray-300 lg:hidden',
                         'transition-[transform,opacity] duration-300 ease-in-out',
                         isMobileMenuOpen
                             ? 'translate-y-0 opacity-100 pointer-events-auto'
                             : '-translate-y-full opacity-0 pointer-events-none'
                     )}
                 >
-                    <nav className="max-w-[var(--max-width)] mx-auto px-6 py-4 bg-foreground">
+                    <nav className="max-w-[var(--max-width)] mx-auto px-6 py-4 bg-primary-foreground shadow-md">
                         <ul className="space-y-4">
                             {navLinks.map(link => {
                                 const isActive = pathname === link.route
