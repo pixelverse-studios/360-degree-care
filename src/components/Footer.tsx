@@ -11,7 +11,7 @@ import { Button } from '@/components/ui/button'
 import Logo from '@/components/Logo'
 import { navLinks, footerResources } from '@/utils/routes'
 
-const [serviceLink, aboutLink, faqLink, testimonialLink] = navLinks
+const [serviceLink, faqLink] = navLinks
 
 const linkHover = 'transition-all duration-200 textwhite hover:text-black'
 
@@ -48,21 +48,9 @@ export default function Footer() {
                         >
                             {serviceLink.label}
                         </Link>
-                        <Link
-                            href={aboutLink.route}
-                            className="hover:text-black"
-                        >
-                            {aboutLink.label}
-                        </Link>
                         <p className="font-bold text-lg pt-3">Resources</p>
                         <Link href={faqLink.route} className="hover:text-black">
                             {faqLink.label}
-                        </Link>
-                        <Link
-                            href={testimonialLink.route}
-                            className="hover:text-black"
-                        >
-                            {testimonialLink.label}
                         </Link>
                     </div>
 

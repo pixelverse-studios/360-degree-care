@@ -61,6 +61,11 @@ main {
     border-color: var(--ghost-bg) !important;
 }
 
+.faqEmbed {
+    color: blue;
+    text-decoration: underline;
+}
+
 @layer base {
     * {
         @apply border-border outline-ring/50;
@@ -120,5 +125,14 @@ main {
 
     .nav-link.active {
         @apply font-bold text-secondary;
+    }
+}
+
+@layer base {
+    * {
+        @apply border-border outline-ring/50;
+    }
+    body {
+        @apply bg-background text-foreground;
     }
 }

@@ -23,7 +23,7 @@ export default function InfoCards({ cards, header, bgColor }: InfoCardProps) {
                     {header}
                 </h1>
             ) : null}
-            <ul className="max-w-custom mx-auto p-6 grid grid-cols-1 lg:grid-cols-3 gap-8">
+            <ul className="max-w-custom mx-auto p-6 grid grid-cols-1 md:grid-cols-3 gap-8">
                 {cards.map(card => {
                     const Icon = card.icon
 

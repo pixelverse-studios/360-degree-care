@@ -29,7 +29,7 @@ export default function HomeHero() {
                         size="lg"
                         onClick={onServicesClick}
                     >
-                        Our Services
+                        More About Us
                     </Button>
                 </div>
             </div>
