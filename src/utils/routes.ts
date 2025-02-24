@@ -1,22 +1,22 @@
 export const navLinks = [
     {
-        route: '/services',
-        label: 'Services',
-        subLinks: [] // ADD SERVICE SUB LINKS IN PHASE 3
+        route: '/services/home-health-care',
+        label: 'Home Health Care',
+        subLinks: []
     },
     {
-        route: '/about',
-        label: 'About Us',
+        route: '/services/personal-care',
+        label: 'Personal Care',
+        subLinks: []
+    },
+    {
+        route: '/services/staffing',
+        label: 'Staffing',
         subLinks: []
     },
     {
         route: '/faq',
         label: 'FAQs',
-        subLinks: []
-    },
-    {
-        route: '/testimonials',
-        label: 'Testimonials',
         subLinks: []
     }
 ]
