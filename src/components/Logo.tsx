@@ -1,4 +1,4 @@
-import { FaRegCircle } from 'react-icons/fa6'
+import { Circle } from 'lucide-react'
 import { cn } from '@/lib/utils'
 
 interface LogoProps {
@@ -15,7 +15,7 @@ const Logo = ({ invert }: LogoProps) => {
         >
             <p className="flex content-center">
                 360
-                <FaRegCircle className="h-2 w-2 my-[5px]" />
+                <Circle className="h-2 w-2 my-[5px]" />
             </p>
             <p>CARE</p>
         </div>

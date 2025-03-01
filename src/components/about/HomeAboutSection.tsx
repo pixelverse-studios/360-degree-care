@@ -1,4 +1,4 @@
-import { FaCircleCheck } from 'react-icons/fa6'
+import { CircleCheck } from 'lucide-react'
 
 export default function HomeAboutSection() {
     return (
@@ -29,19 +29,19 @@ export default function HomeAboutSection() {
                 <div className="flex justify-between gap-4">
                     <ul className="flex flex-col gap-4">
                         <li className="flex items-center gap-2 text-lg">
-                            <FaCircleCheck className="text-primary" />
+                            <CircleCheck className="text-primary" />
                             <span>10+ Years of Trusted Service</span>
                         </li>
                         <li className="flex items-center gap-2 text-lg">
-                            <FaCircleCheck className="text-primary" />
+                            <CircleCheck className="text-primary" />
                             <span>Certified CHAP Organization</span>
                         </li>
                         <li className="flex items-center gap-2 text-lg">
-                            <FaCircleCheck className="text-primary" />
+                            <CircleCheck className="text-primary" />
                             <span>Highest Standards of Quality Assurance</span>
                         </li>
                         <li className="flex items-center gap-2 text-lg">
-                            <FaCircleCheck className="text-primary" />
+                            <CircleCheck className="text-primary" />
                             <span>Licensed by the State Attorney General</span>
                         </li>
                     </ul>

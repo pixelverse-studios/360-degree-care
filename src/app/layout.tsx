@@ -2,6 +2,8 @@ import type { Metadata } from 'next'
 // import localFont from "next/font/local";
 import { Header } from '@/components/nav/Header'
 import Footer from '@/components/Footer'
+import { Toaster } from '@/components/ui/sonner'
+
 import '../styles/globals.css'
 
 export const metadata: Metadata = {
@@ -20,6 +22,7 @@ export default function RootLayout({
                 <Header />
                 {children}
                 <Footer />
+                <Toaster richColors position="bottom-left" />
             </body>
         </html>
     )
