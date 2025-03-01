@@ -29,6 +29,7 @@ export default function InfoCards({ cards, header, bgColor }: InfoCardProps) {
 
                     return (
                         <li
+                            key={card.title}
                             className={cn(
                                 'p-6 rounded-xl flex-1 flex flex-col gap-4 justify-between shadow-md',
                                 card.bgColor

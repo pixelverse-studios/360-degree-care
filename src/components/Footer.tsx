@@ -1,5 +1,6 @@
 'use client'
 
+import { Fragment } from 'react'
 import Link from 'next/link'
 import {
     FaFacebookF,
@@ -18,7 +19,7 @@ const linkHover = 'transition-all duration-200 textwhite hover:text-black'
 export default function Footer() {
     const currentYear = new Date().getFullYear()
     return (
-        <footer className="bg-primary border-t border-gray-300 py-10 text-black">
+        <footer className="bg-primary py-10 text-black">
             <div className="max-w-[1400px] mx-auto px-6">
                 {/* Top Section */}
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-white">
@@ -100,7 +101,7 @@ export default function Footer() {
                     {/* Legal Links */}
                     <div className="mt-2 flex flex-wrap justify-center space-x-3">
                         {footerResources.map((resource, key) => (
-                            <>
+                            <Fragment key={resource.route}>
                                 <Link
                                     key={resource.label}
                                     href={resource.route}
@@ -111,7 +112,7 @@ export default function Footer() {
                                 {key + 1 !== footerResources.length ? (
                                     <span key={key}>|</span>
                                 ) : null}
-                            </>
+                            </Fragment>
                         ))}
                     </div>
                 </div>

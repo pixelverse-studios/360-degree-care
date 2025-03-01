@@ -14,6 +14,7 @@ import { cn } from '@/lib/utils'
 import { navLinks } from '@/utils/routes'
 import HamburgerMenu from './Hamburger'
 import Logo from '../Logo'
+import CallToAction from '../CallToAction'
 
 export function Header() {
     const pathname = usePathname()
@@ -53,7 +54,8 @@ export function Header() {
                                     </NavigationMenuItem>
                                 )
                             })}
-                            <Button variant="cta">Call To Action</Button>
+                            {/* <Button variant="cta">Call To Action</Button> */}
+                            <CallToAction buttonLabel="Get In Touch" />
                         </NavigationMenuList>
                     </NavigationMenu>
                 </nav>
