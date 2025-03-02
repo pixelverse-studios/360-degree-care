@@ -9,7 +9,7 @@ const Logo = ({ invert }: LogoProps) => {
     return (
         <div
             className={cn(
-                'flex content-center gap-2 text-4xl font-bold cursor-pointer',
+                'flex content-center gap-2 text-4xl font-bold cursor-pointer logo',
                 invert ? 'text-background' : 'text-primary'
             )}
         >

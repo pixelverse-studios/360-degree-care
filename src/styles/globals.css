@@ -18,6 +18,10 @@
     --ghost-bg: transparent;
     --ghost-text: black;
 
+    --font-symbola: 'SymbolaRegular';
+
+    --font-logo: var(--font-symbola);
+
     --border-radius: 8px;
     --max-width: 1400px;
 }
@@ -38,14 +42,31 @@ body {
 }
 
 body {
+    /* font-family:
+        var(--font-rubik), var(--font-merriweather), var(--font-symbola),
+        sans-serif; */
     min-height: 100vh;
     color: hsl(var(--black));
+    body {
+        font-family: 'Rubik', sans-serif;
+    }
     /* font-family: Arial, Helvetica, sans-serif; */
 }
 
 main {
     margin-top: 4.5rem;
     flex: 1;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    font-family: 'Merriweather', serif;
+}
+
+.logo {
+    font-family: var(--font-logo);
 }
 
 .button-ghost {

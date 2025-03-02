@@ -1,12 +1,14 @@
 import { CircleCheck } from 'lucide-react'
+import OldMan from '../../../public/media/Oldman.webp'
+import Chap from '../../../public/icons/CHAPLogo.svg'
 
 export default function HomeAboutSection() {
     return (
-        <section className="max-w-custom mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 justify-between items-center p-6">
+        <section className="max-w-custom mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 justify-between items-start p-6">
             <img
                 className="rounded-2xl h-fit w-fit"
-                src="https://placehold.co/1200x1200"
-                alt="placeholder"
+                src={OldMan.src}
+                alt="Content senior man"
             />
             <div className="flex flex-col gap-6">
                 <h1 className="text-primary font-bold text-3xl">
@@ -45,9 +47,12 @@ export default function HomeAboutSection() {
                             <span>Licensed by the State Attorney General</span>
                         </li>
                     </ul>
-                    <div className="rounded-full bg-yellow-600 text-white h-[6rem] w-[6rem] flex items-center justify-center">
-                        CHAP
-                    </div>
+                    <img
+                        src={Chap.src}
+                        alt="CHAP badge"
+                        className="w-[8rem] h-[8rem]"
+                        // className="w-[8rem] h-[8rem] m-auto lg:m-0"
+                    />
                 </div>
             </div>
         </section>

@@ -1,10 +1,18 @@
 import type { Metadata } from 'next'
-// import localFont from "next/font/local";
+import { Rubik, Merriweather } from 'next/font/google'
+
 import { Header } from '@/components/nav/Header'
 import Footer from '@/components/Footer'
 import { Toaster } from '@/components/ui/sonner'
 
 import '../styles/globals.css'
+
+const rubik = Rubik({ subsets: ['latin'], variable: '--font-rubik' })
+const merriweather = Merriweather({
+    subsets: ['latin'],
+    weight: ['300', '400', '700', '900'],
+    variable: '--font-merriweather'
+})
 
 export const metadata: Metadata = {
     title: '360° Care',
@@ -18,7 +26,15 @@ export default function RootLayout({
 }>) {
     return (
         <html lang="en">
-            <body className={`antialiased`}>
+            <link
+                rel="stylesheet"
+                media="screen"
+                href="https://fontlibrary.org//face/symbola"
+                type="text/css"
+            />
+            <body
+                className={`antialiased ${rubik.className} ${merriweather.className}`}
+            >
                 <Header />
                 {children}
                 <Footer />

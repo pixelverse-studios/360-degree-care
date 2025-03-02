@@ -1,5 +1,10 @@
 export const navLinks = [
     {
+        route: '/about',
+        label: 'About Us',
+        subLinks: []
+    },
+    {
         route: '/services/home-health-care',
         label: 'Home Health Care',
         subLinks: []
