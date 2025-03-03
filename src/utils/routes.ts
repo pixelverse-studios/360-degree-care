@@ -5,19 +5,16 @@ export const navLinks = [
         subLinks: []
     },
     {
-        route: '/services/home-health-care',
-        label: 'Home Health Care',
-        subLinks: []
-    },
-    {
-        route: '/services/personal-care',
-        label: 'Personal Care',
-        subLinks: []
-    },
-    {
-        route: '/services/staffing',
-        label: 'Staffing',
-        subLinks: []
+        route: '',
+        label: 'Services',
+        subLinks: [
+            { route: '/services/home-health-care', label: 'Home Health Care' },
+            { route: '/services/personal-care', label: 'Personal Care' },
+            {
+                route: '/services/staffing',
+                label: 'Staffing'
+            }
+        ]
     },
     {
         route: '/faq',

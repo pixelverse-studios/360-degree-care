@@ -26,12 +26,14 @@ export default function RootLayout({
 }>) {
     return (
         <html lang="en">
-            <link
-                rel="stylesheet"
-                media="screen"
-                href="https://fontlibrary.org//face/symbola"
-                type="text/css"
-            />
+            <head>
+                <link
+                    rel="stylesheet"
+                    media="screen"
+                    href="https://fontlibrary.org//face/symbola"
+                    type="text/css"
+                />
+            </head>
             <body
                 className={`antialiased ${rubik.className} ${merriweather.className}`}
             >

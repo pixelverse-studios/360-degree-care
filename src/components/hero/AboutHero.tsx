@@ -1,3 +1,5 @@
+'use client'
+
 export default function AboutHero() {
     return (
         <section className="bg-white-bright">

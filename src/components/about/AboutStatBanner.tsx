@@ -1,3 +1,5 @@
+'use client'
+
 import Chap from '../../../public/icons/CHAPLogo.svg'
 
 export default function AboutStatBanner() {
@@ -14,25 +16,25 @@ export default function AboutStatBanner() {
                 nignt. vur mission is to make our clents lives better.
             </p>
             <ul className="max-w-6xl w-full mx-auto p-4 bg-white-bright rounded-lg grid grid-cols-1 sm:grid-cols-2  lg:grid-cols-4 gap-4 lg:gap-2">
-                <li className="p-[2rem]flex flex-col gap-2 text-center h-[5rem]">
-                    <h3 className="font-bold text-black text-lg">80%</h3>
+                <li className="p-4 flex flex-col gap-2 text-center h-fit">
+                    <h3 className="font-bold text-black text-3xl">80%</h3>
                     <p className="text-black-muted text-md">
                         Caregiver Retention Rate
                         <br />
                         (vs 13% industry avg)
                     </p>
                 </li>
-                <li className="p-[2rem]flex flex-col gap-2 text-center h-[5rem]">
-                    <h3 className="font-bold text-black text-lg">10+</h3>
+                <li className="p-4 flex flex-col gap-2 text-center h-fit">
+                    <h3 className="font-bold text-black text-3xl">10+</h3>
                     <p className="text-black-muted text-md">Years of Service</p>
                 </li>
-                <li className="p-[2rem]flex flex-col gap-2 text-center h-[5rem]">
-                    <h3 className="font-bold text-black text-lg">4.8</h3>
+                <li className="p-4 flex flex-col gap-2 text-center h-fit">
+                    <h3 className="font-bold text-black text-3xl">4.8</h3>
                     <p className="text-black-muted text-md">
                         Google Rating (28 ratings)
                     </p>
                 </li>
-                <li className="m-auto h-[5rem]">
+                <li className="m-auto h-fit">
                     <img
                         className="h-[5rem] w-[5rem]"
                         src={Chap.src}

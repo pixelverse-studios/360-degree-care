@@ -13,6 +13,46 @@ export const HOME_FAQS: FAQ[] = [
     {
         question: 'What’s your employee screening process?',
         answer: '360 Degree Care professionals are carefully interviewed, screened, and background checked according to state laws prior to employment. In addition to providing training and supervision, we ensure a thoughtful match between our professionals and clients.'
+    },
+    {
+        question: 'What if I don’t know what kind of care I need?',
+        answer: 'In addition to conducting our evaluation of your or your loved one’s health and home environment, our care professionals will contact existing physicians, therapists, and other healthcare professionals on your behalf to determine the plan of care needed.'
+    },
+    {
+        question: 'What does an Interim HealthCare evaluation look like?',
+        answer: 'After you reach out to your local Interim HealthCare office, we’ll give you a time and date to expect a visit from one of our care professionals. The first time that one of our care professionals comes to your home, you should expect a visit of more than an hour. We’ll chat with you, complete a physical, learn about your day-to-day challenges and needs and evaluate your home.'
+    },
+    {
+        question: 'How much does home care cost?',
+        answer: 'Every person is different, especially when it comes to health and what type of home care is needed. The exact cost of care needs to be based on listening to you or your loved one, your family and your doctor, and observing your individual situation. We recommend an initial in-home care evaluation for each client. The local Interim HealthCare office does these evaluations at no charge. Based on the in-home assessment, a service plan is then developed to best meet the needs of the individual. It can include minimal assistance up to around-the-clock assistance. Charges are based on quality care and individual needs. Please give our Interim HealthCare local office a call to schedule an in-home evaluation or request more information.  '
+    },
+    {
+        question: 'How do I pay for home care?',
+        answer: (
+            <>
+                Just as everyone’s needs for care are different, we know
+                financial situations are deeply personal. That’s why we accept
+                <a href="/how-to-pay">multiple ways to pay</a> so that you have
+                more choices in financing home healthcare.
+            </>
+        )
+    },
+    {
+        question: 'Do you take health insurance?',
+        answer: 'Yes! We work with various public and private insurances, including Medicare.'
+    },
+    {
+        question: 'What conditions do you care for?',
+        answer: (
+            <>
+                <span className="text-primary font-semibold">
+                    360 Degree Care
+                </span>{' '}
+                has decades of experience caring for individuals with a variety
+                of conditions and needs across home healthcare and hospice. Find
+                our specific care coverages on our service pages.
+            </>
+        )
     }
 ]
 
