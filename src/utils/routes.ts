@@ -2,23 +2,35 @@ export const navLinks = [
     {
         route: '/about',
         label: 'About Us',
-        subLinks: []
+        subLinks: [],
+        canVisit: true
     },
     {
         route: '',
         label: 'Services',
+        canVisit: false,
         subLinks: [
-            { route: '/services/home-health-care', label: 'Home Health Care' },
-            { route: '/services/personal-care', label: 'Personal Care' },
+            {
+                route: '/services/home-health-care',
+                label: 'Home Health Care',
+                canVisit: true
+            },
+            {
+                route: '/services/personal-care',
+                label: 'Personal Care',
+                canVisit: true
+            },
             {
                 route: '/services/staffing',
-                label: 'Staffing'
+                label: 'Staffing',
+                canVisit: true
             }
         ]
     },
     {
         route: '/faq',
         label: 'FAQs',
+        canVisit: true,
         subLinks: []
     }
 ]
@@ -26,14 +38,22 @@ export const navLinks = [
 export const footerResources = [
     {
         route: '/privacy-policy',
-        label: 'Privacy Policy'
+        label: 'Privacy Policy',
+        canVisit: true,
+        subLinks: []
     },
     {
         route: '/legal-disclaimer',
-        label: 'Legal Disclaimer'
+        label: 'Legal Disclaimer',
+        canVisit: true,
+        subLinks: []
     },
     {
         route: '/nondiscrimination',
-        label: 'Nondiscrimination & Accessibility'
+        label: 'Nondiscrimination & Accessibility',
+        canVisit: true,
+        subLinks: []
     }
 ]
+
+export const availablePages = [...navLinks, ...footerResources]

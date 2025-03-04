@@ -5,11 +5,27 @@ import AssessmentImg from '../../../public/media/nurse-patient-homehealthcare.we
 import ChecklistImg from '../../../public/media/nurse-checklist-homehealthcare.webp'
 import HelpImg from '../../../public/media/nurse-patient-help-homehealthcare.webp'
 
+interface ExpectationItem {
+    img: string
+    description: string
+}
+
+const ExpectationItem = ({ img, description }: ExpectationItem) => (
+    <li className="">
+        <img
+            className="h-fit w-auto mb-4 shadow-lg rounded-lg"
+            src={img}
+            alt={`${description} - image`}
+        />
+        <p className="text-sm w-[90%] mx-auto">{description}</p>
+    </li>
+)
+
 export default function HomeHealthCareHero() {
     return (
         <section className="bg-white-bright min-h-fullView">
             <div className="max-w-custom mx-auto grid grid-cols-1 xl:grid-cols-2 gap-6 justify-between px-6 py-12">
-                <div className="flex flex-col gap-6 pt-2 xl:pt-12">
+                <div className="flex flex-col gap-6 pt-2">
                     <h1 className="font-bold text-4xl md:text-3xl sm:text-xl">
                         Home Healthcare
                     </h1>
@@ -35,41 +51,19 @@ export default function HomeHealthCareHero() {
                 <h2 className="text-black-muted font-bold text-xl text-center pb-8">
                     What To Expect
                 </h2>
-                <ul className="flex flex-wrap justify-center align-top gap-6">
-                    <li className="flex-1">
-                        <img
-                            className="w-auto h-[13rem] rounded-lg shadow-lg mx-auto"
-                            src={AssessmentImg.src}
-                            alt="nurse and patient assessment portrayal"
-                        />
-                        <p className="pt-4 text-sm mx-auto w-[65%]">
-                            We will set up an initial, complimentary assessment.
-                            Consider us your local elder care consultant.
-                        </p>
-                    </li>
-                    <li className="flex-1">
-                        <img
-                            className="w-auto h-[13rem] rounded-lg shadow-lg mx-auto"
-                            src={ChecklistImg.src}
-                            alt="Nurse checklist image"
-                        />
-                        <p className="pt-4 text-sm mx-auto w-[65%]">
-                            Our team of specialists will help create a care plan
-                            to determine the services needed.
-                        </p>
-                    </li>
-                    <li className="flex-1">
-                        <img
-                            className="w-auto h-[13rem] rounded-lg shadow-lg mx-auto"
-                            src={HelpImg.src}
-                            alt="Nurse assisting elder patient"
-                        />
-                        <p className="pt-4 text-sm mx-auto w-[65%]">
-                            Our specialized team of caregivers will come to your
-                            home to provide the agreed-upon care. We even offer
-                            respite care, when needed.
-                        </p>
-                    </li>
+                <ul className="grid grid-cols-[repeat(auto-fit,minmax(12rem,1fr))] gap-6 max-w-2xl mx-auto px-6">
+                    <ExpectationItem
+                        img={AssessmentImg.src}
+                        description="We will set up an initial, complimentary assessment. Consider us your local elder care consultant."
+                    />
+                    <ExpectationItem
+                        img={ChecklistImg.src}
+                        description="Our team of specialists will help create a care plan to determine the services needed."
+                    />
+                    <ExpectationItem
+                        img={HelpImg.src}
+                        description=" Our specialized team of caregivers will come to your home to provide the agreed-upon care. We even offer respite care, when needed."
+                    />
                 </ul>
             </div>
         </section>

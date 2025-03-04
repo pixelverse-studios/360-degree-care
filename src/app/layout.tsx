@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { Rubik, Merriweather } from 'next/font/google'
 
 import { Header } from '@/components/nav/Header'
+import Breadcrumbs from '@/components/nav/Breadcrumbs'
 import Footer from '@/components/Footer'
 import { Toaster } from '@/components/ui/sonner'
 
@@ -38,6 +39,7 @@ export default function RootLayout({
                 className={`antialiased ${rubik.className} ${merriweather.className}`}
             >
                 <Header />
+                <Breadcrumbs />
                 {children}
                 <Footer />
                 <Toaster richColors position="bottom-left" />
