@@ -9,7 +9,7 @@ export default function ServicesPage() {
         <main>
             <HomeHealthCareHero />
             <HomeHealthCareServices />
-            <section className="bg-white max-w-xl mx-auto text-center flex flex-col gap-4 py-8 px-6">
+            <section className="bg-white page-wrapper text-center flex flex-col gap-4 py-8">
                 <h3>Looking for a Home Aide?</h3>
                 <p>
                     Contact us today to learn more about our home health aide

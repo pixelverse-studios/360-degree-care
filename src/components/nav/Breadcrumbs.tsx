@@ -40,7 +40,7 @@ export default function Breadcrumbs() {
     })
 
     return (
-        <Breadcrumb className="absolute top-[5rem] left-6">
+        <Breadcrumb className="mt-[4.2rem] max-w-custom w-full mx-auto px-6 py-4 bg-transparent">
             <BreadcrumbList>
                 <BreadcrumbItem>
                     <BreadcrumbLink

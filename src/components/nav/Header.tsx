@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useRef, useEffect } from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { ChevronUp } from 'lucide-react'
@@ -12,7 +12,6 @@ import {
     NavigationMenuTrigger,
     NavigationMenuContent
 } from '@/components/ui/navigation-menu'
-import { Button } from '../ui/button'
 import { cn } from '@/lib/utils'
 import { navLinks } from '@/utils/routes'
 import HamburgerMenu from './Hamburger'
@@ -21,14 +20,34 @@ import CallToAction from '../CallToAction'
 
 export function Header() {
     const pathname = usePathname()
-
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState<boolean>(false)
     const [isServicesOpen, setIsServicesOpen] = useState<boolean>(false)
 
-    console.log(pathname.includes('/services/') && 'text-primary')
+    // Ref for the mobile menu
+    const mobileMenuRef = useRef<HTMLDivElement>(null)
+
+    // Close mobile menu when clicking outside
+    useEffect(() => {
+        function handleClickOutside(event: MouseEvent) {
+            if (
+                mobileMenuRef.current &&
+                !mobileMenuRef.current.contains(event.target as Node)
+            ) {
+                setIsMobileMenuOpen(false)
+            }
+        }
+
+        if (isMobileMenuOpen) {
+            document.addEventListener('mousedown', handleClickOutside)
+        }
+
+        return () => {
+            document.removeEventListener('mousedown', handleClickOutside)
+        }
+    }, [isMobileMenuOpen])
 
     return (
-        <header className="fixed top-0 left-0 right-0 w-full bg-primary-foreground z-50 border-b border-b-gray-300">
+        <header className="fixed top-0 left-0 right-0 w-full bg-white-muted z-50 border-b border-b-gray-300">
             <div className="max-w-[var(--max-width)] mx-auto px-6 py-4 flex items-center justify-between">
                 <Link href="/">
                     <Logo invert={false} />
@@ -44,7 +63,7 @@ export function Header() {
 
                                 if (hasSubs) {
                                     return (
-                                        <NavigationMenuItem>
+                                        <NavigationMenuItem key={link.label}>
                                             <NavigationMenuTrigger
                                                 className={cn(
                                                     'text-md text-black font-bold',
@@ -91,11 +110,7 @@ export function Header() {
 
                                 return (
                                     <NavigationMenuItem key={link.label}>
-                                        <Link
-                                            href={link.route}
-                                            legacyBehavior
-                                            passHref
-                                        >
+                                        <Link href={link.route} passHref>
                                             <NavigationMenuLink
                                                 className={cn(
                                                     'nav-link',
@@ -117,17 +132,19 @@ export function Header() {
                     isOpen={isMobileMenuOpen}
                     setIsOpen={setIsMobileMenuOpen}
                 />
-                {/* --- MOBILE --- */}
+
+                {/* --- MOBILE MENU --- */}
                 <div
+                    ref={mobileMenuRef}
                     className={cn(
-                        'fixed inset-x-0 top-[65px] bg-primary-fore border-b border-b-gray-300 lg:hidden',
+                        'fixed inset-x-0 top-[4rem] bg-primary-fore border-b border-b-gray-300 lg:hidden',
                         'transition-[transform,opacity] duration-300 ease-in-out',
                         isMobileMenuOpen
                             ? 'translate-y-0 opacity-100 pointer-events-auto'
                             : '-translate-y-full opacity-0 pointer-events-none'
                     )}
                 >
-                    <nav className="max-w-[var(--max-width)] mx-auto px-6 py-4 bg-primary-foreground shadow-md">
+                    <nav className="max-w-[var(--max-width)] mx-auto px-6 py-4 bg-white shadow-md">
                         <ul className="space-y-4">
                             {navLinks.map(link => {
                                 const isActive = pathname === link.route
@@ -166,15 +183,26 @@ export function Header() {
                                                         <ul className="pl-4 py-2 space-y-4 mt-2">
                                                             {link.subLinks.map(
                                                                 sub => (
-                                                                    <li>
+                                                                    <li
+                                                                        key={
+                                                                            sub.label
+                                                                        }
+                                                                    >
                                                                         <Link
                                                                             className={cn(
                                                                                 'nav-link',
-                                                                                isActive &&
-                                                                                    'active'
+                                                                                pathname ===
+                                                                                    sub.route
+                                                                                    ? 'text-primary'
+                                                                                    : ''
                                                                             )}
                                                                             href={
                                                                                 sub.route
+                                                                            }
+                                                                            onClick={() =>
+                                                                                setIsMobileMenuOpen(
+                                                                                    false
+                                                                                )
                                                                             }
                                                                         >
                                                                             {

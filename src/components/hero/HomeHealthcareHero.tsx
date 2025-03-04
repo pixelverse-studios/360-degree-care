@@ -24,7 +24,7 @@ const ExpectationItem = ({ img, description }: ExpectationItem) => (
 export default function HomeHealthCareHero() {
     return (
         <section className="bg-white-bright min-h-fullView">
-            <div className="max-w-custom mx-auto grid grid-cols-1 xl:grid-cols-2 gap-6 justify-between px-6 py-12">
+            <div className="page-wrapper grid grid-cols-1 xl:grid-cols-2 gap-6 justify-between">
                 <div className="flex flex-col gap-6 pt-2">
                     <h1 className="font-bold text-4xl md:text-3xl sm:text-xl">
                         Home Healthcare

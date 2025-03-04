@@ -1,12 +1,13 @@
 'use client'
 
+import { CompanyName } from '../Logo'
 import Chap from '../../../public/icons/CHAPLogo.svg'
 
 export default function AboutStatBanner() {
     return (
-        <section className="flex flex-col gap-4 px-6 py-10">
-            <h2 className="text-3xl text-black-muted text-center">
-                The <span className="text-primary">360 Degree</span> Difference
+        <section className="flex flex-col gap-4 px-6 py-10 bg-white-muted">
+            <h2 className="text-black-muted text-center">
+                The <CompanyName styles="text-2xl" /> Difference
             </h2>
             <p className="text-center max-w-4xl mx-auto">
                 We believe homecare must go beyond sending someone to do

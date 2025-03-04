@@ -7,6 +7,10 @@ interface LogoProps {
 
 const styles = 'font-bold text-2xl'
 
+export const CompanyName = ({ styles }: { styles: string }) => (
+    <span className={cn('text-primary', styles)}>360 Degree Care</span>
+)
+
 const Logo = ({ invert }: LogoProps) => {
     return (
         <div
