@@ -16,7 +16,7 @@ export default function HomeHero() {
                     The Finest Nurses and Home Aids in Bergen County
                 </h1>
                 <p className="text-lg">
-                    Providing concierge level home care with compassion that
+                    Providing concierge Level™ home care with compassion that
                     allows seniors to maintain their independence and dignity at
                     home.
                 </p>

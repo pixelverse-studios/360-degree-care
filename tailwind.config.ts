@@ -12,6 +12,9 @@ const config: Config = {
             maxWidth: {
                 custom: 'var(--max-width)'
             },
+            height: {
+                fullView: 'calc(100dvh - 5rem)' // New height variable
+            },
             colors: {
                 background: 'hsl(var(--white))',
                 foreground: 'hsl(var(--foreground))',

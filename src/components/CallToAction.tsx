@@ -8,9 +8,13 @@ import ContactSuccessMessage from './contact/ContactSuccessMessage'
 
 interface CallToActionProps {
     buttonLabel: string
+    buttonClass?: string
 }
 
-export default function CallToAction({ buttonLabel }: CallToActionProps) {
+export default function CallToAction({
+    buttonLabel,
+    buttonClass
+}: CallToActionProps) {
     const [isOpen, setIsOpen] = useState(false)
     const [showForm, setShowForm] = useState(true)
 
@@ -29,11 +33,13 @@ export default function CallToAction({ buttonLabel }: CallToActionProps) {
             }}
         >
             <DialogTrigger asChild>
-                <Button variant="cta">{buttonLabel}</Button>
+                <Button variant="cta" className={buttonClass}>
+                    {buttonLabel}
+                </Button>
             </DialogTrigger>
             <DialogContent
                 aria-describedby="contact-form-modal"
-                className="p-0 border-none max-w-4xl w-full shadow-lg"
+                className="mx-auto p-0 border-none max-w-4xl w-[calc(100%-3rem)] shadow-lg"
             >
                 <AnimatePresence mode="wait">
                     {showForm ? (

@@ -15,7 +15,7 @@ export default function AboutHero() {
                         choice for families seeking compassionate, high-quality
                         home care. With an industry-leading 80% caregiver
                         retention rate and CHAP certification, we go beyond
-                        traditional care-offering Concierge-Level Homecare
+                        traditional care-offering Concierge-Level™ Homecare
                         tailored to every need. From personal care and
                         housekeeping to transportation and even pet care, we
                         handle it all, ensuring comfort, safety, and peace of

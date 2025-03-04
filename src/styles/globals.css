@@ -1,4 +1,4 @@
-@import './reset.css';
+/* @import './reset.css'; */
 
 @tailwind base;
 @tailwind components;
@@ -6,7 +6,9 @@
 
 :root {
     --primary: 18, 100%, 59%; /* #ff6c2f */
-    --secondary: 22, 60%, 76%; /* #e7b99e */
+    --secondary: 102.86, 12.73%, 67.65%; /* #f8e1c6 */
+    --accent: 32.4, 78.13%, 87.45%; /* #a8b7a2 */
+
     --white: 0, 0%, 94.12%; /* #f0f0f0 */
     --muted-white: 0, 0%, 93.73%; /* #efefef */
     --bright-white: 0, 0%, 100%; /* #ffffff */
@@ -47,16 +49,17 @@ body {
     font-family: 'Rubik', sans-serif;
 }
 
-main {
-    margin-top: 5rem;
-    flex: 1;
-}
-
 h1,
 h2,
 h3,
 h4 {
-    font-family: 'Merriweather', serif !important;
+    font-family: 'Merriweather', serif;
+}
+
+main {
+    margin-top: 4rem;
+    flex: 1;
+    font-family: 'Rubik', sans-serif;
 }
 
 .logo {
@@ -83,10 +86,26 @@ h4 {
 
 @layer base {
     * {
-        @apply border-border outline-ring/50;
+        @apply border-border outline-ring/50 text-base;
     }
     body {
         @apply bg-primary-foreground text-black;
+    }
+
+    h1 {
+        @apply text-4xl font-bold text-black-muted;
+    }
+
+    h2 {
+        @apply text-2xl font-bold text-black-muted;
+    }
+
+    h3 {
+        @apply text-xl font-bold text-black-muted;
+    }
+
+    h4 {
+        @apply text-base font-bold text-black-muted;
     }
 
     .nav-link {

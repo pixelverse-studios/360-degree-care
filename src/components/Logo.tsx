@@ -5,19 +5,21 @@ interface LogoProps {
     invert: boolean
 }
 
+const styles = 'font-bold text-2xl'
+
 const Logo = ({ invert }: LogoProps) => {
     return (
         <div
             className={cn(
-                'flex content-center gap-2 text-2xl font-bold cursor-pointer logo',
+                'flex content-center gap-2 cursor-pointer logo',
                 invert ? 'text-background' : 'text-primary'
             )}
         >
-            <p className="flex content-center">
+            <p className={cn('flex content-center', styles)}>
                 360
-                <Circle className="h-2 w-2 my-[5px]" />
+                <Circle className="h-3 w-3 my-[0.4rem] text-blue-500" />
             </p>
-            <p>CARE</p>
+            <p className={styles}>CARE</p>
         </div>
     )
 }
