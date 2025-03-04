@@ -89,6 +89,17 @@ const config: Config = {
             animation: {
                 'accordion-down': 'accordion-down 0.2s ease-out',
                 'accordion-up': 'accordion-up 0.2s ease-out'
+            },
+            fontSize: {
+                sm: '20px', // Tailwind's default "sm" is 14px, overriding it to 20px
+                base: '22px', // Default "base" is 16px, adjusting accordingly
+                lg: '24px',
+                xl: '28px',
+                '2xl': '32px',
+                '3xl': '40px',
+                '4xl': '48px',
+                '5xl': '56px',
+                '6xl': '64px'
             }
         }
     },

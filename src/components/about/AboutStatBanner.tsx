@@ -9,11 +9,11 @@ export default function AboutStatBanner() {
                 The <span className="text-primary">360 Degree</span> Difference
             </h2>
             <p className="text-center max-w-4xl mx-auto">
-                We belleve nomecare must go beyona senaing someone to do
-                sometning and sending a oill. we are ready to take care of
+                We believe homecare must go beyond sending someone to do
+                something and sending a bill. we are ready to take care of
                 everything a client or patient needs from the moment they open
                 their eyes in the morning to the moment they close them at
-                nignt. vur mission is to make our clents lives better.
+                nignt. our mission is to make our clents lives better.
             </p>
             <ul className="max-w-6xl w-full mx-auto p-4 bg-white-bright rounded-lg grid grid-cols-1 sm:grid-cols-2  lg:grid-cols-4 gap-4 lg:gap-2">
                 <li className="p-4 flex flex-col gap-2 text-center h-fit">

@@ -1,3 +1,9 @@
+import HomeHealthCareHero from '@/components/hero/HomeHealthcareHero'
+
 export default function ServicesPage() {
-    return <main>Home HealthCare Services Page</main>
+    return (
+        <main>
+            <HomeHealthCareHero />
+        </main>
+    )
 }

@@ -42,19 +42,13 @@ body {
 }
 
 body {
-    /* font-family:
-        var(--font-rubik), var(--font-merriweather), var(--font-symbola),
-        sans-serif; */
     min-height: 100vh;
     color: hsl(var(--black));
-    body {
-        font-family: 'Rubik', sans-serif;
-    }
-    /* font-family: Arial, Helvetica, sans-serif; */
+    font-family: 'Rubik', sans-serif;
 }
 
 main {
-    margin-top: 4.5rem;
+    margin-top: 5rem;
     flex: 1;
 }
 
@@ -62,7 +56,7 @@ h1,
 h2,
 h3,
 h4 {
-    font-family: 'Merriweather', serif;
+    font-family: 'Merriweather', serif !important;
 }
 
 .logo {
