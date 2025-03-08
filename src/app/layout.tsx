@@ -39,7 +39,6 @@ export default function RootLayout({
                 className={`antialiased ${rubik.className} ${merriweather.className}`}
             >
                 <Header />
-                <Breadcrumbs />
                 {children}
                 <Footer />
                 <Toaster richColors position="bottom-left" />

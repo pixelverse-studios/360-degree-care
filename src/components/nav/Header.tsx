@@ -14,40 +14,96 @@ import {
 } from '@/components/ui/navigation-menu'
 import { cn } from '@/lib/utils'
 import { navLinks } from '@/utils/routes'
-import HamburgerMenu from './Hamburger'
 import Logo from '../Logo'
 import CallToAction from '../CallToAction'
+
+interface HamburgerProps {
+    isOpen: boolean
+    toggleMenu: () => void
+}
+
+const HamburgerMenu = ({ isOpen, toggleMenu }: HamburgerProps) => {
+    return (
+        <button
+            className="group lg:hidden flex flex-col justify-center items-center w-10 h-10 space-y-1.5 focus:outline-none rounded-full transition-all duration-300 ease-in-out hover:bg-gray-100 hover:shadow-md hover:scale-105"
+            onClick={e => {
+                e.stopPropagation()
+                toggleMenu()
+            }}
+            aria-label={isOpen ? 'Close menu' : 'Open menu'}
+            aria-expanded={isOpen}
+        >
+            <span
+                className={cn(
+                    'block w-6 h-0.5 transition-all duration-300',
+                    isOpen
+                        ? 'translate-y-2 rotate-45 bg-[var(--primary)]'
+                        : 'bg-black group-hover:bg-[var(--primary)]'
+                )}
+            />
+            <span
+                className={cn(
+                    'block w-6 h-0.5 transition-all duration-300',
+                    isOpen
+                        ? 'opacity-0 bg-[var(--primary)]'
+                        : 'bg-black group-hover:bg-[var(--primary)]'
+                )}
+            />
+            <span
+                className={cn(
+                    'block w-6 h-0.5 transition-all duration-300',
+                    isOpen
+                        ? '-translate-y-2 -rotate-45 bg-[var(--primary)]'
+                        : 'bg-black group-hover:bg-[var(--primary)]'
+                )}
+            />
+        </button>
+    )
+}
 
 export function Header() {
     const pathname = usePathname()
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState<boolean>(false)
     const [isServicesOpen, setIsServicesOpen] = useState<boolean>(false)
 
-    // Ref for the mobile menu
-    const mobileMenuRef = useRef<HTMLDivElement>(null)
+    // Refs for the navigation elements
+    const headerRef = useRef<HTMLElement>(null)
+    const navRef = useRef<HTMLDivElement>(null)
 
-    // Close mobile menu when clicking outside
+    // Toggle mobile menu - fixed to be a parameterless function
+    const toggleMobileMenu = () => {
+        setIsMobileMenuOpen(prevState => !prevState)
+    }
+
+    // Handle clicks outside of the entire navigation
     useEffect(() => {
         function handleClickOutside(event: MouseEvent) {
+            // Only process if menu is open
+            if (!isMobileMenuOpen) return
+
+            // Check if click is outside the entire header
             if (
-                mobileMenuRef.current &&
-                !mobileMenuRef.current.contains(event.target as Node)
+                headerRef.current &&
+                !headerRef.current.contains(event.target as Node)
             ) {
                 setIsMobileMenuOpen(false)
             }
         }
 
-        if (isMobileMenuOpen) {
-            document.addEventListener('mousedown', handleClickOutside)
-        }
+        // Add event listener
+        document.addEventListener('mousedown', handleClickOutside)
 
+        // Cleanup
         return () => {
             document.removeEventListener('mousedown', handleClickOutside)
         }
     }, [isMobileMenuOpen])
 
     return (
-        <header className="fixed top-0 left-0 right-0 w-full bg-white-muted z-50 border-b border-b-gray-300">
+        <header
+            ref={headerRef}
+            className="fixed top-0 left-0 right-0 w-full bg-white-muted z-50 border-b border-b-gray-300"
+        >
             <div className="max-w-[var(--max-width)] mx-auto px-6 py-4 flex items-center justify-between">
                 <Link href="/">
                     <Logo invert={false} />
@@ -59,7 +115,8 @@ export function Header() {
                         <NavigationMenuList className="space-x-6">
                             {navLinks.map(link => {
                                 const isActive = pathname === link.route
-                                const hasSubs = link.subLinks.length > 0
+                                const hasSubs =
+                                    link.subLinks && link.subLinks.length > 0
 
                                 if (hasSubs) {
                                     return (
@@ -110,16 +167,17 @@ export function Header() {
 
                                 return (
                                     <NavigationMenuItem key={link.label}>
-                                        <Link href={link.route} passHref>
-                                            <NavigationMenuLink
+                                        <NavigationMenuLink asChild>
+                                            <Link
+                                                href={link.route}
                                                 className={cn(
                                                     'nav-link',
                                                     isActive && 'active'
                                                 )}
                                             >
                                                 {link.label}
-                                            </NavigationMenuLink>
-                                        </Link>
+                                            </Link>
+                                        </NavigationMenuLink>
                                     </NavigationMenuItem>
                                 )
                             })}
@@ -128,14 +186,15 @@ export function Header() {
                     </NavigationMenu>
                 </nav>
 
+                {/* Hamburger Menu Button */}
                 <HamburgerMenu
                     isOpen={isMobileMenuOpen}
-                    setIsOpen={setIsMobileMenuOpen}
+                    toggleMenu={toggleMobileMenu}
                 />
 
                 {/* --- MOBILE MENU --- */}
                 <div
-                    ref={mobileMenuRef}
+                    ref={navRef}
                     className={cn(
                         'fixed inset-x-0 top-[4rem] bg-primary-fore border-b border-b-gray-300 lg:hidden',
                         'transition-[transform,opacity] duration-300 ease-in-out',
@@ -148,7 +207,8 @@ export function Header() {
                         <ul className="space-y-4">
                             {navLinks.map(link => {
                                 const isActive = pathname === link.route
-                                const hasSubs = link.subLinks.length > 0
+                                const hasSubs =
+                                    link.subLinks && link.subLinks.length > 0
 
                                 return (
                                     <li key={link.label}>
@@ -156,11 +216,13 @@ export function Header() {
                                             <div>
                                                 <button
                                                     className="flex items-center justify-between w-fit text-md rounded-md font-bold"
-                                                    onClick={() =>
+                                                    onClick={e => {
+                                                        // Prevent any bubbling that might close the menu
+                                                        e.stopPropagation()
                                                         setIsServicesOpen(
                                                             !isServicesOpen
                                                         )
-                                                    }
+                                                    }}
                                                 >
                                                     {link.label}
                                                     <ChevronUp
@@ -199,11 +261,9 @@ export function Header() {
                                                                             href={
                                                                                 sub.route
                                                                             }
-                                                                            onClick={() =>
-                                                                                setIsMobileMenuOpen(
-                                                                                    false
-                                                                                )
-                                                                            }
+                                                                            onClick={e => {
+                                                                                e.stopPropagation()
+                                                                            }}
                                                                         >
                                                                             {
                                                                                 sub.label
@@ -223,9 +283,10 @@ export function Header() {
                                                     'nav-link',
                                                     isActive && 'active'
                                                 )}
-                                                onClick={() =>
-                                                    setIsMobileMenuOpen(false)
-                                                }
+                                                onClick={e => {
+                                                    // Don't close menu on navigation link clicks
+                                                    e.stopPropagation()
+                                                }}
                                             >
                                                 {link.label}
                                             </Link>
@@ -233,7 +294,11 @@ export function Header() {
                                     </li>
                                 )
                             })}
-                            <CallToAction buttonLabel="Get In Touch" />
+                            <li>
+                                <div onClick={e => e.stopPropagation()}>
+                                    <CallToAction buttonLabel="Get In Touch" />
+                                </div>
+                            </li>
                         </ul>
                     </nav>
                 </div>

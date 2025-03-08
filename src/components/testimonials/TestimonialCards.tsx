@@ -14,7 +14,7 @@ export default function TestimonialCards({
     testimonials: TestimonialProps[]
 }) {
     return (
-        <ul className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        <ul className="grid grid-cols-1 xl:grid-cols-3 gap-6">
             {testimonials.map(review => {
                 const reviewDate = formatDistanceToNow(
                     new Date(review.createdAt),
@@ -23,7 +23,7 @@ export default function TestimonialCards({
                 return (
                     <li
                         key={review.name}
-                        className="flex flex-col gap-4 bg-white-muted p-6 rounded-xl"
+                        className="flex flex-col gap-4 justify-center bg-white-muted p-6 rounded-xl"
                     >
                         <div>
                             <h4 className="text-black font-bold text-lg">
@@ -33,7 +33,8 @@ export default function TestimonialCards({
                                 {review.relation}
                             </span>
                         </div>
-                        <div className="flex gap-3 items-center">
+                        <p className="h-full">"{review.description}"</p>
+                        <div className="flex gap-3 items-center flex-wrap">
                             <div className="flex gap-1 text-yellow-400">
                                 <FaStar />
                                 <FaStar />
@@ -45,7 +46,6 @@ export default function TestimonialCards({
                                 {reviewDate}
                             </span>
                         </div>
-                        <p>"{review.description}"</p>
                     </li>
                 )
             })}

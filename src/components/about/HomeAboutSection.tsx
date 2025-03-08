@@ -4,7 +4,7 @@ import Chap from '../../../public/icons/CHAPLogo.svg'
 
 export default function HomeAboutSection() {
     return (
-        <section className="max-w-custom mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 justify-between items-start p-6">
+        <section className="bg-white max-w-custom mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 justify-between items-start p-6">
             <img
                 className="rounded-2xl h-fit w-fit"
                 src={OldMan.src}

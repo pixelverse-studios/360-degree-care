@@ -9,12 +9,12 @@ import { HIGHLIGHT_CARDS, SERVICE_CARDS } from '@/utils/home'
 
 export default function HomePage() {
     return (
-        <main className="flex flex-col gap-4">
+        <main className="">
             <HomeHero />
-            <InfoCards bgColor="bg-accent" cards={HIGHLIGHT_CARDS} />
+            <InfoCards styles="gradient-down" cards={HIGHLIGHT_CARDS} />
             <HomeAboutSection />
             <InfoCards
-                bgColor="bg-white"
+                styles="gradient-up"
                 cards={SERVICE_CARDS}
                 header="Our Concierge Level™ Services"
             />

@@ -1,6 +1,8 @@
 import { useRouter } from 'next/navigation'
 import { Button } from '../ui/button'
 import { navLinks } from '@/utils/routes'
+import CallToAction from '../CallToAction'
+import HomeHeroImg from '../../../public/media/HomeHero.png'
 
 const [serviceLink] = navLinks
 
@@ -21,16 +23,9 @@ export default function HomeHero() {
                     home.
                 </p>
                 <div className="my-5 grid grid-cols-1 lg:grid-cols-2 gap-4">
+                    <CallToAction buttonLabel="Get In Touch" />
                     <Button
-                        size="lg"
-                        variant="cta"
-                        className="w-100% lg:max-w-[18rem] shadow-md"
-                    >
-                        Get In Touch
-                    </Button>
-                    <Button
-                        className="rounded-3xl w-100% lg:max-w-[18rem] border-primary"
-                        size="lg"
+                        className="rounded-3xl w-100% lg:max-w-[18rem] border-secondary border-2 border-solid bg-transparent hover:bg-secondary"
                         onClick={onServicesClick}
                     >
                         More About Us
@@ -39,7 +34,7 @@ export default function HomeHero() {
             </div>
             <img
                 className="rounded-2xl h-fit w-fit"
-                src="https://placehold.co/1200x1200"
+                src={HomeHeroImg.src}
                 alt="placeholder"
             />
         </section>

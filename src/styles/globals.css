@@ -5,17 +5,23 @@
 @tailwind utilities;
 
 :root {
-    --primary: 18, 100%, 59%; /* #ff6c2f */
-    --secondary: 102.86, 12.73%, 67.65%; /* #f8e1c6 */
-    --accent: 32.4, 78.13%, 87.45%; /* #a8b7a2 */
+    --primary: #fe6c2d;
+    --primary-muted: #ffb99a;
+    --primary-bright: #fe5308;
+    --primary-dark: #e34300;
 
-    --white: 0, 0%, 94.12%; /* #f0f0f0 */
-    --muted-white: 0, 0%, 93.73%; /* #efefef */
-    --bright-white: 0, 0%, 100%; /* #ffffff */
-    --black: 0, 0%, 11%; /* #1c1c1c */
-    --muted-black: 0, 0%, 20%; /* #333333 */
+    --secondary: #048a81;
+    --accent: #003256;
+    /* --secondary: #003256;
+    --accent: #048a81; */
 
-    --foreground: 0, 6%, 90%; /*#e6e3e3  */
+    --white: #f0f0f0;
+    --muted-white: #f1f1f1;
+    --bright-white: #ffffff;
+    --black: #1c1c1c;
+    --muted-black: #333333;
+
+    --foreground: #e7e3e3;
 
     --ghost-bg: transparent;
     --ghost-text: black;
@@ -26,15 +32,13 @@
 
     --border-radius: 8px;
     --max-width: 1400px;
-}
 
-/* 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-} */
+    --nav-bg: #f8f1eb;
+    --nav-txt: #5e6472;
+    --hero-bg: #a8b5a2;
+    --headline-txt: #f8f1eb;
+    --sub-h-txt: #d4a373;
+}
 
 html,
 body {
@@ -44,10 +48,10 @@ body {
 }
 
 body {
-    min-height: 100vh;
     color: hsl(var(--black));
     font-family: 'Rubik', sans-serif;
     background-color: hsl(var(--bright-white)) !important;
+    min-height: calc(100dvh - 4.8rem);
 }
 
 h1,
@@ -60,6 +64,7 @@ h4 {
 main {
     flex: 1;
     font-family: 'Rubik', sans-serif;
+    margin-top: 4.8rem;
 }
 
 .logo {
@@ -86,26 +91,34 @@ main {
 
 @layer base {
     * {
-        @apply border-border outline-ring/50 text-base;
+        @apply border-border outline-ring text-base;
     }
     body {
         @apply bg-white text-black;
     }
 
     h1 {
-        @apply text-4xl font-bold text-black-muted;
+        @apply mb-4 text-4xl font-bold text-primary-dark;
     }
 
     h2 {
-        @apply text-2xl font-bold text-black-muted;
+        @apply mb-3 text-2xl font-bold text-primary-dark;
     }
 
     h3 {
-        @apply text-xl font-bold text-black-muted;
+        @apply mb-1 text-xl font-semibold text-primary-dark;
     }
 
     h4 {
-        @apply text-base font-bold text-black-muted;
+        @apply text-base font-bold text-primary-dark;
+    }
+
+    .gradient-down {
+        @apply bg-gradient-to-b from-secondary to-white;
+    }
+
+    .gradient-up {
+        @apply bg-gradient-to-t from-secondary to-white;
     }
 
     .nav-link {
@@ -126,10 +139,10 @@ main {
     }
 
     .selected-nav-link {
-        color: hsl(var(--primary));
+        color: var(--primary);
     }
     .hovered-nav-link {
-        color: hsl(var(--primary));
+        color: var(--primary);
     }
 
     .page-wrapper {
@@ -149,7 +162,7 @@ main {
         bottom: -2px;
         width: 0;
         height: 2px;
-        background-color: hsl(var(--primary));
+        background-color: var(--primary);
         transition:
             width 0.3s ease,
             left 0.3s ease;
@@ -168,7 +181,7 @@ main {
 
 @layer base {
     * {
-        @apply border-border outline-ring/50;
+        @apply border-border outline-ring;
     }
     body {
         @apply bg-background text-foreground;

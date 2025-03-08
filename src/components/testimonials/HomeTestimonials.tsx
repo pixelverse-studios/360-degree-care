@@ -28,8 +28,8 @@ export default function HomeTestimonials() {
     return (
         <section className="py-8 bg-secondary">
             <div className="max-w-custom mx-auto p-6">
-                <div className="text-center text-black-muted mb-6">
-                    <h2 className="font-bold text-2xl mb-3">
+                <div className="text-center text-white-muted mb-6">
+                    <h2 className="font-bold text-2xl mb-3 text-white-muted">
                         What Families Are Saying
                     </h2>
                     <p>

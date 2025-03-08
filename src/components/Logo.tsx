@@ -5,7 +5,7 @@ interface LogoProps {
     invert: boolean
 }
 
-const styles = 'font-bold text-2xl'
+const styles = 'font-bold text-3xl'
 
 export const CompanyName = ({ styles }: { styles: string }) => (
     <span className={cn('text-primary', styles)}>360 Degree Care</span>
@@ -19,10 +19,10 @@ const Logo = ({ invert }: LogoProps) => {
                 invert ? 'text-background' : 'text-primary'
             )}
         >
-            <p className={cn('flex content-center', styles)}>
+            <div className={cn('flex content-center', styles)}>
                 360
-                <Circle className="h-3 w-3 my-[0.4rem] text-blue-500" />
-            </p>
+                <div className="h-4 w-4 rounded-full border-4 border-blue-600 bg-transparent mt-2 ml-2" />
+            </div>
             <p className={styles}>CARE</p>
         </div>
     )

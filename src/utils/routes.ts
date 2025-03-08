@@ -11,13 +11,28 @@ export const navLinks = [
         canVisit: false,
         subLinks: [
             {
-                route: '/services/home-health-care',
+                route: '/services/elder-care',
+                label: 'Elder Care Consulting',
+                canVisit: true
+            },
+            {
+                route: '/services/home-health-aides',
                 label: 'Home Health Care',
                 canVisit: true
             },
             {
                 route: '/services/personal-care',
                 label: 'Personal Care',
+                canVisit: true
+            },
+            {
+                route: '/services/nursing',
+                label: 'Nursing Services',
+                canVisit: true
+            },
+            {
+                route: '/services/companions',
+                label: 'Companions',
                 canVisit: true
             },
             {

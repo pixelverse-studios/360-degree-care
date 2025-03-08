@@ -2,7 +2,7 @@
 
 import { CompanyName } from '@/components/Logo'
 
-export default function ServicesPage() {
+export default function PersonalCarePage() {
     return (
         <main>
             <div className="page-wrapper">

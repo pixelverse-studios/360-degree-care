@@ -1,3 +1,3 @@
-export default function ServicesPage() {
+export default function StaffingSolutionsPage() {
     return <main>Staffing Services Page</main>
 }
