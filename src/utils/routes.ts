@@ -17,7 +17,7 @@ export const navLinks = [
             },
             {
                 route: '/services/home-health-aides',
-                label: 'Home Health Care',
+                label: 'Home Health Aides',
                 canVisit: true
             },
             {

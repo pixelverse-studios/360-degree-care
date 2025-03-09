@@ -10,6 +10,7 @@ import {
     DialogTrigger,
     DialogOverlay
 } from '@/components/ui/dialog'
+import { CompanyName } from '../Logo'
 import { Separator } from '../ui/separator'
 import { teamMembers } from '@/utils/about'
 
@@ -21,8 +22,7 @@ export default function AboutTheTeam() {
     return (
         <section className="bg-white-bright py-10">
             <h1 className="font-bold text-4xl text-center mb-6">
-                Meet Our <span className="text-primary">360 Degree Care</span>{' '}
-                Team
+                Meet Our <CompanyName styles="text-4xl" /> Team
             </h1>
             <p className="text-lg text-center mb-4">
                 We're a passionate group of individuals dedicated to delivering

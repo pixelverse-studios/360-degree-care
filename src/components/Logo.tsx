@@ -21,7 +21,7 @@ const Logo = ({ invert }: LogoProps) => {
         >
             <div className={cn('flex content-center', styles)}>
                 360
-                <div className="h-4 w-4 rounded-full border-4 border-blue-600 bg-transparent mt-2 ml-2" />
+                <div className="h-4 w-4 rounded-full border-4 border-[var(--logo-accent)] bg-transparent mt-2 ml-2" />
             </div>
             <p className={styles}>CARE</p>
         </div>
