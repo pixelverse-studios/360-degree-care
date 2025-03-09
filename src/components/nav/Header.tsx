@@ -123,7 +123,7 @@ export function Header() {
                                         <NavigationMenuItem key={link.label}>
                                             <NavigationMenuTrigger
                                                 className={cn(
-                                                    'text-md text-black font-bold',
+                                                    'text-md text-black font-bold text-xl',
                                                     pathname.includes(
                                                         '/services/'
                                                     ) && 'text-primary'
@@ -143,7 +143,7 @@ export function Header() {
                                                                         sub.route
                                                                     }
                                                                     className={cn(
-                                                                        'block p-3 rounded-md hover:text-primary duration-300 ease-in-out nav-link w-fit',
+                                                                        'block p-3 rounded-md hover:text-primary duration-300 ease-in-out nav-link w-fit text-xl',
                                                                         pathname ===
                                                                             sub.route
                                                                             ? 'text-primary'
@@ -215,7 +215,7 @@ export function Header() {
                                         {hasSubs ? (
                                             <div>
                                                 <button
-                                                    className="flex items-center justify-between w-fit text-md rounded-md font-bold"
+                                                    className="flex items-center justify-between w-fit text-md rounded-md font-bold text-xl"
                                                     onClick={e => {
                                                         // Prevent any bubbling that might close the menu
                                                         e.stopPropagation()

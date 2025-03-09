@@ -32,7 +32,7 @@ export default function FaqSection({ header, faqs }: FaqSectionProps) {
                         key={faq.question}
                         className="border border-gray-200 rounded-lg shadow-sm"
                     >
-                        <AccordionTrigger className="px-4 py-3 text-xl font-semibold text-gray-800 hover:text-black transition-all duration-300 hover:no-underline">
+                        <AccordionTrigger className="px-4 pt-3 pb-1 text-xl font-semibold text-gray-800 hover:text-black transition-all duration-300 hover:no-underline">
                             {faq.question}
                         </AccordionTrigger>
                         <AccordionContent className="px-4 py-3 text-gray-600 text-lg">

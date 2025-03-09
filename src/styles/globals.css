@@ -10,10 +10,10 @@
     --primary-bright: #fe5308;
     --primary-dark: #e34300;
 
-    --secondary: #048a81;
-    --accent: #003256;
-    /* --secondary: #003256;
-    --accent: #048a81; */
+    /* --secondary: #048a81;
+    --accent: #003256; */
+    --secondary: #003256;
+    --accent: #048a81;
 
     /* --logo-accent: #00a6ed; */
     --logo-accent: #57b8ff;
@@ -68,7 +68,7 @@ h4 {
 main {
     flex: 1;
     font-family: 'Rubik', sans-serif;
-    margin-top: 4.8rem;
+    /* margin-top: 4.8rem; */
 }
 
 .logo {
@@ -126,7 +126,7 @@ main {
     }
 
     .nav-link {
-        @apply text-primary font-bold transition-colors;
+        @apply text-primary font-bold transition-colors text-xl;
     }
     .nav-link:hover {
         @apply hovered-nav-link; /* => color: hsl(var(--secondary)); */
