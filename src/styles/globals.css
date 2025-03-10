@@ -74,7 +74,6 @@ main {
 .logo {
     font-family: var(--font-logo);
 }
-
 .button-ghost {
     background-color: transparent !important;
     color: var(--ghost-bg) !important;

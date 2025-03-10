@@ -217,7 +217,6 @@ export function Header() {
                                                 <button
                                                     className="flex items-center justify-between w-fit text-md rounded-md font-bold text-xl"
                                                     onClick={e => {
-                                                        // Prevent any bubbling that might close the menu
                                                         e.stopPropagation()
                                                         setIsServicesOpen(
                                                             !isServicesOpen
@@ -263,6 +262,9 @@ export function Header() {
                                                                             }
                                                                             onClick={e => {
                                                                                 e.stopPropagation()
+                                                                                setIsMobileMenuOpen(
+                                                                                    false
+                                                                                )
                                                                             }}
                                                                         >
                                                                             {
@@ -284,8 +286,8 @@ export function Header() {
                                                     isActive && 'active'
                                                 )}
                                                 onClick={e => {
-                                                    // Don't close menu on navigation link clicks
                                                     e.stopPropagation()
+                                                    setIsMobileMenuOpen(false)
                                                 }}
                                             >
                                                 {link.label}
