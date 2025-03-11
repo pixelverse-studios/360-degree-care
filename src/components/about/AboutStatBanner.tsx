@@ -27,8 +27,8 @@ export default function AboutStatBanner() {
     return (
         <section className="relative py-16 bg-gradient-to-r from-secondary to-accent">
             {/* Decorative dots */}
-            <div className="absolute inset-0 opacity-10">
-                {[...Array(20)].map((_, i) => (
+            <div className="absolute inset-0 opacity-10 z-0">
+                {[...Array(50)].map((_, i) => (
                     <div
                         key={i}
                         className="absolute w-2 h-2 bg-white rounded-full"
@@ -41,7 +41,7 @@ export default function AboutStatBanner() {
             </div>
 
             <div className="max-w-6xl mx-auto px-6">
-                <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-4 gap-8">
+                <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-4 gap-8 relative z-10">
                     {stats.map((stat, index) => (
                         <div
                             key={index}
@@ -69,7 +69,7 @@ export default function AboutStatBanner() {
                             <img
                                 src="/icons/CHAPLogo.svg"
                                 alt="CHAP Badge"
-                                className="h-16 w-16 mx-auto mb-2"
+                                className="h-[8rem] w-[8rem] md:h-[6rem] md:w-[6rem] mx-auto mb-2"
                             />
                             <p className="text-gray-700 text-sm font-medium">
                                 Community Health Accreditation Program

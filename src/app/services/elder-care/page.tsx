@@ -2,6 +2,7 @@
 
 import { Button } from '@/components/ui/button'
 import CallToAction from '@/components/CallToAction'
+import { CompanyName } from '@/components/Logo'
 
 export default function ElderCareServicesPage() {
     return (
@@ -30,12 +31,12 @@ export default function ElderCareServicesPage() {
                 <h2 className="font-semibold text-center mb-12">
                     Making Informed Decisions for Your Loved One's Care
                 </h2>
-                <div className="bg-white rounded-lg shadow-lg p-8 mb-12">
-                    <p className="text-lg text-gray-700 mb-6">
-                        Navigating elder care options can be overwhelming. At
-                        360 Degree Care, we provide expert consultation to help
-                        you make informed decisions about your loved one's care
-                        journey.
+                <div className="bg-secondary rounded-lg shadow-lg p-8 mb-12">
+                    <p className="text-lg text-white mb-6">
+                        Navigating elder care options can be overwhelming. At{' '}
+                        <CompanyName styles="" />, we provide expert
+                        consultation to help you make informed decisions about
+                        your loved one's care journey.
                     </p>
                 </div>
             </div>
@@ -54,9 +55,9 @@ export default function ElderCareServicesPage() {
                     </p>
                     <div className="grid md:grid-cols-2 gap-8 mb-12">
                         <div className="bg-white p-6 rounded-lg shadow-md">
-                            <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mb-4">
+                            <div className="w-12 h-12 bg-primary-muted rounded-full flex items-center justify-center mb-4">
                                 <svg
-                                    className="w-6 h-6 text-blue-600"
+                                    className="w-6 h-6 text-primary-dark"
                                     fill="none"
                                     stroke="currentColor"
                                     viewBox="0 0 24 24"
@@ -81,9 +82,9 @@ export default function ElderCareServicesPage() {
                             </p>
                         </div>
                         <div className="bg-white p-6 rounded-lg shadow-md">
-                            <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mb-4">
+                            <div className="w-12 h-12 bg-primary-muted rounded-full flex items-center justify-center mb-4">
                                 <svg
-                                    className="w-6 h-6 text-blue-600"
+                                    className="w-6 h-6 text-primary-dark"
                                     fill="none"
                                     stroke="currentColor"
                                     viewBox="0 0 24 24"
@@ -108,9 +109,9 @@ export default function ElderCareServicesPage() {
                             </p>
                         </div>
                         <div className="bg-white p-6 rounded-lg shadow-md">
-                            <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mb-4">
+                            <div className="w-12 h-12 bg-primary-muted rounded-full flex items-center justify-center mb-4">
                                 <svg
-                                    className="w-6 h-6 text-blue-600"
+                                    className="w-6 h-6 text-primary-dark"
                                     fill="none"
                                     stroke="currentColor"
                                     viewBox="0 0 24 24"
@@ -135,9 +136,9 @@ export default function ElderCareServicesPage() {
                             </p>
                         </div>
                         <div className="bg-white p-6 rounded-lg shadow-md">
-                            <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mb-4">
+                            <div className="w-12 h-12 bg-primary-muted rounded-full flex items-center justify-center mb-4">
                                 <svg
-                                    className="w-6 h-6 text-blue-600"
+                                    className="w-6 h-6 text-primary-dark"
                                     fill="none"
                                     stroke="currentColor"
                                     viewBox="0 0 24 24"
@@ -166,16 +167,13 @@ export default function ElderCareServicesPage() {
             </div>
 
             {/* Why Choose Us Section */}
-            <div
-                className="container mx-aut
-    o px-4 py-16 max-w-6xl"
-            >
-                <h2 className="font-semibold mb-12 text-center">
+            <div className="bg-secondary p-8">
+                <h2 className="font-semibold mb-8 mx-auto py-8 text-center text-white">
                     Why Choose Our Elder Care Consulting Services
                 </h2>
-                <div className="flex flex-col md:flex-row gap-8 mb-12">
-                    <div className="flex-1 bg-blue-50 p-8 rounded-lg">
-                        <p className="text-lg text-gray-700 mb-6">
+                <div className="flex flex-col md:flex-row gap-8 mb-6">
+                    <div className="flex-1 bg-secondary rounded-lg my-auto">
+                        <p className="text-lg text-white mb-6">
                             With over ten years of experience providing
                             exceptional home care in Bergen County, we
                             understand the complexities of elder care. Our
@@ -183,29 +181,29 @@ export default function ElderCareServicesPage() {
                         </p>
                         <ul className="space-y-4">
                             <li className="flex items-start">
-                                <span className="text-blue-600 mr-2">✓</span>
-                                <span className="text-gray-700">
+                                <span className="mr-2 text-white">✓</span>
+                                <span className="text-white">
                                     Deep knowledge of local care resources and
                                     facilities
                                 </span>
                             </li>
                             <li className="flex items-start">
-                                <span className="text-blue-600 mr-2">✓</span>
-                                <span className="text-gray-700">
+                                <span className="mr-2 text-white">✓</span>
+                                <span className="text-white">
                                     Expertise in assessing care needs and
                                     matching them with appropriate services
                                 </span>
                             </li>
                             <li className="flex items-start">
-                                <span className="text-blue-600 mr-2">✓</span>
-                                <span className="text-gray-700">
+                                <span className="mr-2 text-white">✓</span>
+                                <span className="text-white">
                                     A compassionate approach that prioritizes
                                     dignity and quality of life
                                 </span>
                             </li>
                             <li className="flex items-start">
-                                <span className="text-blue-600 mr-2">✓</span>
-                                <span className="text-gray-700">
+                                <span className="mr-2 text-white">✓</span>
+                                <span className="text-white">
                                     A commitment to finding solutions that work
                                     for the entire family
                                 </span>
@@ -214,20 +212,18 @@ export default function ElderCareServicesPage() {
                     </div>
                     <div className="flex-1">
                         <img
-                            src="/api/placeholder/600/400"
+                            src="/media/family-consulting.jpg"
                             alt="Caring consultant meeting with family"
                             className="rounded-lg shadow-lg w-full h-full object-cover"
                         />
                     </div>
                 </div>
             </div>
+            {/* </div> */}
 
             {/* What to Expect Section */}
             <div className="bg-gray-50 py-16">
-                <div
-                    className="container mx-aut
-    o px-4 max-w-6xl"
-                >
+                <div className="container mx-auto px-4 max-w-6xl">
                     <h2 className="font-semibold mb-8 text-center">
                         What to Expect
                     </h2>
@@ -238,8 +234,8 @@ export default function ElderCareServicesPage() {
                     </p>
                     <div className="flex flex-col space-y-6 mb-12">
                         <div className="flex items-center bg-white p-6 rounded-lg shadow-md">
-                            <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mr-6 flex-shrink-0">
-                                <span className="text-blue-600 font-bold">
+                            <div className="w-12 h-12 bg-primary-muted rounded-full flex items-center justify-center mr-6 flex-shrink-0">
+                                <span className="font-bold text-primary-dark">
                                     1
                                 </span>
                             </div>
@@ -249,8 +245,8 @@ export default function ElderCareServicesPage() {
                             </p>
                         </div>
                         <div className="flex items-center bg-white p-6 rounded-lg shadow-md">
-                            <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mr-6 flex-shrink-0">
-                                <span className="text-blue-600 font-bold">
+                            <div className="w-12 h-12 bg-primary-muted rounded-full flex items-center justify-center mr-6 flex-shrink-0">
+                                <span className="font-bold text-primary-dark">
                                     2
                                 </span>
                             </div>
@@ -260,8 +256,8 @@ export default function ElderCareServicesPage() {
                             </p>
                         </div>
                         <div className="flex items-center bg-white p-6 rounded-lg shadow-md">
-                            <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mr-6 flex-shrink-0">
-                                <span className="text-blue-600 font-bold">
+                            <div className="w-12 h-12 bg-primary-muted rounded-full flex items-center justify-center mr-6 flex-shrink-0">
+                                <span className="font-bold text-primary-dark">
                                     3
                                 </span>
                             </div>
@@ -271,8 +267,8 @@ export default function ElderCareServicesPage() {
                             </p>
                         </div>
                         <div className="flex items-center bg-white p-6 rounded-lg shadow-md">
-                            <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mr-6 flex-shrink-0">
-                                <span className="text-blue-600 font-bold">
+                            <div className="w-12 h-12 bg-primary-muted rounded-full flex items-center justify-center mr-6 flex-shrink-0">
+                                <span className="font-bold text-primary-dark">
                                     4
                                 </span>
                             </div>
@@ -282,8 +278,8 @@ export default function ElderCareServicesPage() {
                             </p>
                         </div>
                         <div className="flex items-center bg-white p-6 rounded-lg shadow-md">
-                            <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mr-6 flex-shrink-0">
-                                <span className="text-blue-600 font-bold">
+                            <div className="w-12 h-12 bg-primary-muted rounded-full flex items-center justify-center mr-6 flex-shrink-0">
+                                <span className="font-bold text-primary-dark">
                                     5
                                 </span>
                             </div>
@@ -309,7 +305,6 @@ export default function ElderCareServicesPage() {
                         well-being and supporting your family through important
                         care decisions.
                     </p>
-
                     <CallToAction buttonLabel="Contact Us Today" />
                 </div>
             </div>
