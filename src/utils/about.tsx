@@ -7,9 +7,9 @@ export const teamMembers = [
     {
         img: JeffImg.src,
         summary:
-            'Jeff, an expert in aging in place, founded 360 Degree Care in 2014. Pioneering Concierge Level Homecare with compassionate, presonalized support for aging individuals and families.',
+            'Jeff, an expert in aging in place, founded 360 Degree Care in 2014. Pioneering Concierge Level™ Homecare with compassionate, presonalized support for aging individuals and families.',
         expanded:
-            'Jeff is an acknowledged expert in the growing field of aging in place. He has owned and operated 360 Degree Care since its founding in 2014. In that time we have written articles and conducted events that focus on the question of the sandwich generation, the physical changes of aging and developing original music programs for Alzheimer’s and dementia patients. Jeff created the concept of Concierge Level Homecare, bringing his vast experience servicing high-end, complex client situations in the advertising industry where he served in senior management positions at Chiat/Day, Cates Worldwide, J. Walter Thompson and Omnicom handling clients such as Goldman Sachs, Honeywell, Unilever, Drexel and more. ',
+            'Jeff is an acknowledged expert in the growing field of aging in place. He has owned and operated 360 Degree Care since its founding in 2014. In that time we have written articles and conducted events that focus on the question of the sandwich generation, the physical changes of aging and developing original music programs for Alzheimer’s and dementia patients. Jeff created the concept of Concierge Level™ Homecare, bringing his vast experience servicing high-end, complex client situations in the advertising industry where he served in senior management positions at Chiat/Day, Cates Worldwide, J. Walter Thompson and Omnicom handling clients such as Goldman Sachs, Honeywell, Unilever, Drexel and more. ',
         name: 'Jeff DeJoseph',
         position: 'Chairman & CEO',
         email: 'jeff@360degreecare.net'

@@ -25,13 +25,13 @@ export default function AboutStatBanner() {
     ]
 
     return (
-        <section className="relative py-16 bg-gradient-to-r from-secondary to-accent">
+        <section className="relative py-16 bg-gradient-to-r from-gray-900 to-primary">
             {/* Decorative dots */}
             <div className="absolute inset-0 opacity-10 z-0">
                 {[...Array(50)].map((_, i) => (
                     <div
                         key={i}
-                        className="absolute w-2 h-2 bg-white rounded-full"
+                        className="absolute w-2 h-2 bg-gray-600 rounded-full"
                         style={{
                             top: `${Math.random() * 100}%`,
                             left: `${Math.random() * 100}%`

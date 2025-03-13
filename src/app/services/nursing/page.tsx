@@ -567,11 +567,11 @@ export default function NursingServicesPage() {
                         Ready to Get Started?
                     </h2>
                     <p className="text-lg mb-8 max-w-3xl mx-auto">
-                        Our concierge-level nursing services are designed to
-                        provide you with exceptional care in the comfort of your
-                        home. Contact us today to schedule a consultation and
-                        learn more about how our nursing team can support your
-                        healthcare needs.
+                        Our <span className="prio">Concierge Level™</span>{' '}
+                        nursing services are designed to provide you with
+                        exceptional care in the comfort of your home. Contact us
+                        today to schedule a consultation and learn more about
+                        how our nursing team can support your healthcare needs.
                     </p>
                     <CallToAction buttonLabel="Contact us today" />
                 </div>

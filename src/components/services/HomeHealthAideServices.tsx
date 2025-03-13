@@ -116,36 +116,38 @@ const additionalServices = [
 
 export default function HomeHealthAideServices() {
     return (
-        <section className="bg-accent pt-6">
-            <div className={wrapperClass}>
-                <h3>Home Health Aides</h3>
-                <h2>Compassionate In-Home Care</h2>
-                <h4>
+        <section className="bg-secondary pt-6">
+            <div className={cn(wrapperClass)}>
+                <h3 className="text-white">Home Health Aides</h3>
+                <h2 className="text-white">Compassionate In-Home Care</h2>
+                <h4 className="text-white">
                     Our dedicated home health aides help maintain independence,
                     comfort, and quality of life.
                 </h4>
             </div>
-            <div className={cn(wrapperClass, 'px-6')}>
-                <div className="bg-white-muted p-6 rounded-3xl mx-auto">
+            <div className={cn(wrapperClass, 'px-6, pb-6')}>
+                <div className="bg-white p-6 rounded-3xl mx-auto">
                     <h3 className="mb-4">
                         Concierge Level™ Home Health Aides
                     </h3>
                     <p>
                         Our Home Health Aides deliver exceptional care that
-                        feels like family. With our Concierge Level™ approach,
-                        we go beyond basic assistance to create a personalized
-                        care experience that enhances your loved one's quality
-                        of life, comfort, and safety, all in the familiar
-                        environment of home.
+                        feels like family. With our{' '}
+                        <span className="prio">Concierge Level™</span>{' '}
+                        approach, we go beyond basic assistance to create a
+                        personalized care experience that enhances your loved
+                        one's quality of life, comfort, and safety, all in the
+                        familiar environment of home.
                     </p>
                 </div>
             </div>
 
             <div className="bg-white">
-                <div className={wrapperClass}>
-                    <div className="max-w-4xl mx-auto">
-                        <h4>Comprehensive Home Care</h4>
-                        <h3>Essential Home Health Aide Services</h3>
+                <div className={cn(wrapperClass, 'py-8')}>
+                    {/* <div className="max-w-4xl mx-auto"> */}
+                    <div>
+                        <h3>Comprehensive Home Care</h3>
+                        <h2>Essential Home Health Aide Services</h2>
                         <p className="mb-6">
                             Our skilled home health aides provide personalized
                             assistance with daily activities and specialized
@@ -182,16 +184,16 @@ export default function HomeHealthAideServices() {
                 </div>
             </div>
 
-            <div className={wrapperClass}>
-                <div className="rounded-3xl mx-auto text-black mt-6">
-                    <h3 className="text-black pb-4">
+            <div className={cn(wrapperClass, 'py-8')}>
+                <div className="rounded-3xl mx-auto text-black my-6">
+                    <h2 className="text-white pb-4">
                         Why Choose Our Home Health Aides?
-                    </h3>
+                    </h2>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <div className="bg-white-muted p-5 rounded-xl">
-                            <h4 className="text-primary mb-2">
+                            <h3 className="text-primary mb-2">
                                 Experienced & Trained
-                            </h4>
+                            </h3>
                             <p>
                                 Our aides undergo extensive training and have
                                 years of experience providing compassionate,
@@ -199,27 +201,27 @@ export default function HomeHealthAideServices() {
                             </p>
                         </div>
                         <div className="bg-white-muted p-5 rounded-xl">
-                            <h4 className="text-primary mb-2">
+                            <h3 className="text-primary mb-2">
                                 Nurse-Directed Care
-                            </h4>
+                            </h3>
                             <p>
                                 All care is supervised by our skilled nursing
                                 team, ensuring the highest quality standards.
                             </p>
                         </div>
                         <div className="bg-white-muted p-5 rounded-xl">
-                            <h4 className="text-primary mb-2">
+                            <h3 className="text-primary mb-2">
                                 Personalized Approach
-                            </h4>
+                            </h3>
                             <p>
                                 We create customized care plans that address
                                 your loved one's unique needs and preferences.
                             </p>
                         </div>
                         <div className="bg-white-muted p-5 rounded-xl">
-                            <h4 className="text-primary mb-2">
+                            <h3 className="text-primary mb-2">
                                 Flexible Scheduling
-                            </h4>
+                            </h3>
                             <p>
                                 From a few hours of care to 24/7 support, we
                                 accommodate your schedule and care requirements.

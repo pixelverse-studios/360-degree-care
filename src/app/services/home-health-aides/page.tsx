@@ -9,17 +9,21 @@ export default function HomeHealthAidesPage() {
         <main>
             <HomeHealthCareHero />
             <HomeHealthAideServices />
-            <section className="bg-white page-wrapper text-center flex flex-col gap-4 py-8">
-                <h3>Need a Home Health Aide?</h3>
-                <p>
-                    Our dedicated team provides compassionate, professional care
-                    that helps your loved one maintain independence and dignity
-                    at home. Contact us today to learn how we can help.
-                </p>
-                <CallToAction
-                    buttonLabel="Get In Touch"
-                    buttonClass="w-full md:w-fit md:mx-auto"
-                />
+            <section className="bg-white py-12">
+                <div className="page-wrapper text-center flex flex-col gap-4 py-8">
+                    <h2>Need a Home Health Aide?</h2>
+                    <p className="max-w-2xl mx-auto mb-6">
+                        Our dedicated team provides compassionate, professional
+                        care that helps your loved one maintain independence and
+                        dignity at home. Contact us today to learn how we can
+                        help.
+                    </p>
+                    <CallToAction
+                        buttonLabel="Get In Touch"
+                        buttonClass="w-full md:w-fit md:mx-auto"
+                        round
+                    />
+                </div>
             </section>
         </main>
     )

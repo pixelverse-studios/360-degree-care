@@ -8,7 +8,7 @@ export default function ElderCareServicesPage() {
     return (
         <main className="bg-white">
             {/* Hero Section */}
-            <div className="bg-white-bright py-16">
+            <div className="bg-white-bright py-8">
                 <div className="container mx-auto px-4 max-w-6xl">
                     <h1>Elder Care Consulting</h1>
                     <p className="text-lg md:text-xl text-gray-700 max-w-3xl">
@@ -24,29 +24,23 @@ export default function ElderCareServicesPage() {
             </div>
 
             {/* Making Informed Decisions Section */}
-            <div
-                className="container mx-aut
-    o px-4 py-12 max-w-6xl"
-            >
+            <div className="container mx-auto px-4 py-12 max-w-6xl">
                 <h2 className="font-semibold text-center mb-12">
                     Making Informed Decisions for Your Loved One's Care
                 </h2>
                 <div className="bg-secondary rounded-lg shadow-lg p-8 mb-12">
                     <p className="text-lg text-white mb-6">
                         Navigating elder care options can be overwhelming. At{' '}
-                        <CompanyName styles="" />, we provide expert
-                        consultation to help you make informed decisions about
-                        your loved one's care journey.
+                        <CompanyName styles="text-lg text-primary-muted" />, we
+                        provide expert consultation to help you make informed
+                        decisions about your loved one's care journey.
                     </p>
                 </div>
             </div>
 
             {/* Services Section */}
             <div className="bg-gray-50 py-16">
-                <div
-                    className="container mx-aut
-    o px-4 max-w-6xl"
-                >
+                <div className="container mx-auto px-4 max-w-6xl">
                     <h2 className="font-semibold mb-12 text-center">
                         Our Elder Care Consulting Services
                     </h2>
@@ -168,47 +162,49 @@ export default function ElderCareServicesPage() {
 
             {/* Why Choose Us Section */}
             <div className="bg-secondary p-8">
-                <h2 className="font-semibold mb-8 mx-auto py-8 text-center text-white">
-                    Why Choose Our Elder Care Consulting Services
-                </h2>
                 <div className="flex flex-col md:flex-row gap-8 mb-6">
-                    <div className="flex-1 bg-secondary rounded-lg my-auto">
-                        <p className="text-lg text-white mb-6">
-                            With over ten years of experience providing
-                            exceptional home care in Bergen County, we
-                            understand the complexities of elder care. Our
-                            consultants bring:
-                        </p>
-                        <ul className="space-y-4">
-                            <li className="flex items-start">
-                                <span className="mr-2 text-white">✓</span>
-                                <span className="text-white">
-                                    Deep knowledge of local care resources and
-                                    facilities
-                                </span>
-                            </li>
-                            <li className="flex items-start">
-                                <span className="mr-2 text-white">✓</span>
-                                <span className="text-white">
-                                    Expertise in assessing care needs and
-                                    matching them with appropriate services
-                                </span>
-                            </li>
-                            <li className="flex items-start">
-                                <span className="mr-2 text-white">✓</span>
-                                <span className="text-white">
-                                    A compassionate approach that prioritizes
-                                    dignity and quality of life
-                                </span>
-                            </li>
-                            <li className="flex items-start">
-                                <span className="mr-2 text-white">✓</span>
-                                <span className="text-white">
-                                    A commitment to finding solutions that work
-                                    for the entire family
-                                </span>
-                            </li>
-                        </ul>
+                    <div className="flex-1 my-auto">
+                        <h2 className="font-semibold mb-8 py-8 text-white">
+                            Why Choose Our Elder Care Consulting Services
+                        </h2>
+                        <div className="bg-secondary rounded-lg my-auto">
+                            <p className="text-lg text-white mb-6">
+                                With over ten years of experience providing
+                                exceptional home care in Bergen County, we
+                                understand the complexities of elder care. Our
+                                consultants bring:
+                            </p>
+                            <ul className="space-y-4">
+                                <li className="flex items-start">
+                                    <span className="mr-2 text-white">✓</span>
+                                    <span className="text-white">
+                                        Deep knowledge of local care resources
+                                        and facilities
+                                    </span>
+                                </li>
+                                <li className="flex items-start">
+                                    <span className="mr-2 text-white">✓</span>
+                                    <span className="text-white">
+                                        Expertise in assessing care needs and
+                                        matching them with appropriate services
+                                    </span>
+                                </li>
+                                <li className="flex items-start">
+                                    <span className="mr-2 text-white">✓</span>
+                                    <span className="text-white">
+                                        A compassionate approach that
+                                        prioritizes dignity and quality of life
+                                    </span>
+                                </li>
+                                <li className="flex items-start">
+                                    <span className="mr-2 text-white">✓</span>
+                                    <span className="text-white">
+                                        A commitment to finding solutions that
+                                        work for the entire family
+                                    </span>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
                     <div className="flex-1">
                         <img
@@ -296,14 +292,14 @@ export default function ElderCareServicesPage() {
             <div className="container mx-auto px-4 py-16 max-w-6xl">
                 <div className="bg-secondary text-white rounded-lg p-8 text-center">
                     <h2 className="font-semibold mb-6 text-white">
-                        Concierge-Level Care at Every Step
+                        Concierge-Level™ Care at Every Step
                     </h2>
                     <p className="text-lg mb-8 max-w-3xl mx-auto">
                         As with all our services, our Elder Care Consulting
-                        reflects our concierge approach to care. We're committed
-                        to addressing every aspect of your loved one's
-                        well-being and supporting your family through important
-                        care decisions.
+                        reflects our <span className="prio">concierge</span>{' '}
+                        approach to care. We're committed to addressing every
+                        aspect of your loved one's well-being and supporting
+                        your family through important care decisions.
                     </p>
                     <CallToAction buttonLabel="Contact Us Today" />
                 </div>

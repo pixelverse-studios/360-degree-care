@@ -31,7 +31,9 @@ export default function HomeHealthCareHero() {
                     </h1>
                     <p className="text-lg">
                         <span className="font-bold text-primary">
-                            Our Home Aids Always Deliver Concierge Level™ Care.
+                            Our Home Aids Always Deliver{' '}
+                            <span className="prio">Concierge Level™ Care</span>
+                            .
                         </span>
                         <br />
                         Personalized home care tailored to support daily living,
@@ -48,10 +50,8 @@ export default function HomeHealthCareHero() {
                 />
             </div>
             <div className="max-w-custom mx-auto py-8">
-                <h2 className="text-black-muted font-bold text-xl text-center pb-8">
-                    What To Expect
-                </h2>
-                <ul className="grid grid-cols-[repeat(auto-fit,minmax(12rem,1fr))] gap-6 max-w-2xl mx-auto px-6">
+                <h2 className="text-3xl text-center pb-8">What To Expect</h2>
+                <ul className="grid grid-cols-[repeat(auto-fit,minmax(12rem,1fr))] gap-8 max-w-4xl mx-auto px-6">
                     <ExpectationItem
                         img={AssessmentImg.src}
                         description="We will set up an initial, complimentary assessment. Consider us your local elder care consultant."

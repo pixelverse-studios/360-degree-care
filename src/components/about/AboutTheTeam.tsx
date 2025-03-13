@@ -22,7 +22,7 @@ export default function AboutTheTeam() {
     return (
         <section className="bg-white-bright py-10">
             <h1 className="font-bold text-4xl text-center mb-6">
-                Meet Our <CompanyName styles="text-3xl text-primary-dark" />{' '}
+                Meet Our <CompanyName styles="text-4xl text-primary-dark" />{' '}
                 Team
             </h1>
             <p className="text-lg text-center mb-4">

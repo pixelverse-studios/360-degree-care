@@ -7,9 +7,6 @@ export default function AboutDetails() {
     return (
         <section>
             <div className="flex flex-col gap-4 px-6 py-10 max-w-custom mx-auto">
-                <h2 className="text-2xl md:text-3xl font-bold text-center mb-4">
-                    The <CompanyName styles="text-4xl" /> Difference
-                </h2>
                 <div className="grid grid-cols-1 md:grid-cols-[1fr_2fr] gap-6">
                     <img
                         src="/media/about-details.jpg"
@@ -17,10 +14,16 @@ export default function AboutDetails() {
                         className="w-fit h-full rounded-3xl object-contain"
                     />
                     <article className="my-auto">
-                        <p className="text-lg max-w-2xl mx-auto mb-6">
+                        <h2 className="text-2xl md:text-3xl font-bold mb-4">
+                            The{' '}
+                            <CompanyName styles="text-3xl text-primary-dark" />{' '}
+                            Difference
+                        </h2>
+                        <p className="text-lg max-w-2xl mb-6">
                             We believe homecare must go beyond sending someone
-                            to do something and sending a bill. We have created
-                            Concierge Level™ Homecare.
+                            to do something and sending a bill. We have created{' '}
+                            <span className="prio">Concierge Level™</span>{' '}
+                            Homecare.
                         </p>
                         <p>
                             We are ready to take care of everything a client or
@@ -35,9 +38,31 @@ export default function AboutDetails() {
                 </div>
             </div>
             <div className="bg-white">
+                <div className="max-w-custom mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 p-10">
+                    <div className="my-auto">
+                        <h2 className="text-2xl md:text-3xl font-bold mb-4 text-primary-bright">
+                            Same Dedicated Care, Now Independent
+                        </h2>
+                        <p className="my-auto text-black">
+                            We formerly worked under the Interim Healthcare
+                            banner but realized that the added bureaucracy and
+                            overhead of a franchise system did not provide
+                            enough added value to warrant its continuing. All of
+                            our personnel and all of our services remain exactly
+                            as before.
+                        </p>
+                    </div>
+                    <img
+                        src="/media/freedom.jpg"
+                        alt="freedome img"
+                        className="rounded-xl shadow-xl"
+                    />
+                </div>
+            </div>
+            <div className="bg-white-bright">
                 <div className="grid grid-cols-1 md:grid-cols-[2fr_1fr] gap-6 max-w-custom mx-auto">
-                    <div className="bg-white p-8">
-                        <h3 className="text-xl font-semibold mb-6 text-primary-dark">
+                    <div className="p-8">
+                        <h3 className="text-3xl font-semibold mb-6 text-primary-dark">
                             The Tiny Details that Really Matter
                         </h3>
                         <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
@@ -95,30 +120,20 @@ export default function AboutDetails() {
                         alt="freedome img"
                         className="rounded-xl shadow-xl"
                     />
-                    <p className="my-auto text-white">
-                        We also provide competent and reliable CNAs and Aides to
-                        facilities that have staffing shortages. Our experience
-                        caring for families that have the highest expectations
-                        means the staffing we provide to a rehab or subacute or
-                        in an assisted living facility can be expected to be of
-                        the highest quality.
-                    </p>
-                </div>
-            </div>
-            <div className="bg-white">
-                <div className="max-w-custom mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 p-10">
-                    <p className="my-auto text-black">
-                        We formerly worked under the Interim Healthcare banner
-                        but realized that the added bureaucracy and overhead of
-                        a franchise system did not provide enough added value to
-                        warrant its continuing. All of our personnel and all of
-                        our services remain exactly as before.
-                    </p>
-                    <img
-                        src="/media/freedom.jpg"
-                        alt="freedome img"
-                        className="rounded-xl shadow-xl"
-                    />
+                    <div className="my-auto">
+                        <h2 className="text-2xl md:text-3xl font-bold mb-4 text-white">
+                            Elite Staffing for Healthcare Facilities
+                        </h2>
+                        <p className="my-auto text-white">
+                            We also provide competent and reliable CNAs and
+                            Aides to facilities that have staffing shortages.
+                            Our experience caring for families that have the
+                            highest expectations means the staffing we provide
+                            to a rehab or subacute or in an assisted living
+                            facility can be expected to be of the highest
+                            quality.
+                        </p>
+                    </div>
                 </div>
             </div>
         </section>

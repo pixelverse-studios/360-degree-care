@@ -41,7 +41,7 @@ export default function Breadcrumbs() {
     if (pathname === '/') return <div className="mt-[4.8rem]" />
 
     return (
-        <Breadcrumb className="mt-[4.8rem] max-w-custom w-full mx-auto px-6 py-4 bg-transparent">
+        <Breadcrumb className="mt-[5rem] max-w-custom w-full mx-auto px-6 py-4 bg-transparent">
             <BreadcrumbList>
                 <BreadcrumbItem>
                     <BreadcrumbLink

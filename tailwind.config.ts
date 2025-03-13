@@ -110,6 +110,11 @@ const config: Config = {
                 '4xl': '48px',
                 '5xl': '56px',
                 '6xl': '64px'
+            },
+            fontFamily: {
+                body: ['var(--font-rubik)'],
+                headers: ['var(--font-merriweather)'],
+                logo: ['var(--font-bodoni)']
             }
         }
     },

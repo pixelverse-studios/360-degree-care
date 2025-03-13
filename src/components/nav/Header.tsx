@@ -3,7 +3,7 @@
 import { useState, useRef, useEffect } from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import { ChevronUp } from 'lucide-react'
+import { ChevronUp, ChevronDown } from 'lucide-react'
 import {
     NavigationMenu,
     NavigationMenuItem,
@@ -106,7 +106,7 @@ export function Header() {
         >
             <div className="max-w-[var(--max-width)] mx-auto px-6 py-4 flex items-center justify-between">
                 <Link href="/">
-                    <Logo invert={false} />
+                    <Logo invert={false} size="lg" />
                 </Link>
 
                 {/* --- DESKTOP --- */}
@@ -224,7 +224,7 @@ export function Header() {
                                                     }}
                                                 >
                                                     {link.label}
-                                                    <ChevronUp
+                                                    <ChevronDown
                                                         className={cn(
                                                             'h-4 w-4 transition-transform duration-200',
                                                             isServicesOpen &&

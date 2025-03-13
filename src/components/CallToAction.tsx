@@ -1,19 +1,22 @@
 import { useState, useEffect } from 'react'
-
 import { motion, AnimatePresence } from 'framer-motion'
+
 import { Button } from './ui/button'
 import { Dialog, DialogContent, DialogTrigger } from '@/components/ui/dialog'
+import { cn } from '@/lib/utils'
 import ContactForm from './contact/ContactForm'
 import ContactSuccessMessage from './contact/ContactSuccessMessage'
 
 interface CallToActionProps {
     buttonLabel: string
     buttonClass?: string
+    round?: boolean
 }
 
 export default function CallToAction({
     buttonLabel,
-    buttonClass
+    buttonClass,
+    round
 }: CallToActionProps) {
     const [isOpen, setIsOpen] = useState(false)
     const [showForm, setShowForm] = useState(true)
@@ -33,7 +36,13 @@ export default function CallToAction({
             }}
         >
             <DialogTrigger asChild>
-                <Button variant="cta" className={buttonClass}>
+                <Button
+                    variant="cta"
+                    className={cn(
+                        buttonClass,
+                        round ? 'roundButton shadow-xl' : ''
+                    )}
+                >
                     {buttonLabel}
                 </Button>
             </DialogTrigger>

@@ -7,7 +7,7 @@ export default function HomeAboutSection() {
         <section className="bg-white">
             <section className="max-w-custom mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 justify-between items-start p-6">
                 <img
-                    className="rounded-2xl h-full w-fit"
+                    className="rounded-2xl h-full w-fit object-cover"
                     src={HomeAboutImg.src}
                     alt="Content senior man"
                 />
