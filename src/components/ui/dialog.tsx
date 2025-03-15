@@ -6,45 +6,7 @@ import { X } from 'lucide-react'
 
 import { cn } from '@/lib/utils'
 
-// Define the DialogProps type to properly type the children and other props
-type DialogProps = React.ComponentPropsWithoutRef<
-    typeof DialogPrimitive.Root
-> & {
-    children: React.ReactNode
-}
-
-const Dialog = ({ children, ...props }: DialogProps) => {
-    // Create a ref to store the scroll position
-    const scrollPositionRef = React.useRef(0)
-
-    // Handle dialog open - save current scroll position
-    const handleOpenChange = (open: boolean) => {
-        if (open) {
-            // Store the current scroll position when opening
-            scrollPositionRef.current = window.scrollY
-        } else {
-            // When closing, ensure we restore the scroll position after a small delay
-            // This allows the dialog animations to complete
-            setTimeout(() => {
-                window.scrollTo({
-                    top: scrollPositionRef.current,
-                    behavior: 'instant' // Use 'instant' for no animation
-                })
-            }, 0)
-        }
-
-        // Call the original onOpenChange if provided
-        if (props.onOpenChange) {
-            props.onOpenChange(open)
-        }
-    }
-
-    return (
-        <DialogPrimitive.Root {...props} onOpenChange={handleOpenChange}>
-            {children}
-        </DialogPrimitive.Root>
-    )
-}
+const Dialog = DialogPrimitive.Root
 
 const DialogTrigger = DialogPrimitive.Trigger
 
@@ -79,6 +41,10 @@ const DialogContent = React.forwardRef<
                 'fixed left-[50%] top-[50%] z-50 grid w-full max-w-lg translate-x-[-50%] translate-y-[-50%] gap-4 border bg-background p-6 shadow-lg duration-200 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[state=closed]:slide-out-to-left-1/2 data-[state=closed]:slide-out-to-top-[48%] data-[state=open]:slide-in-from-left-1/2 data-[state=open]:slide-in-from-top-[48%] sm:rounded-lg',
                 className
             )}
+            // Add the onCloseAutoFocus prop to prevent the auto-focus behavior that causes scroll jumping
+            onCloseAutoFocus={event => {
+                event.preventDefault()
+            }}
             {...props}
         >
             {children}

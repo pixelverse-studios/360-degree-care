@@ -11,18 +11,23 @@ export const navLinks = [
         canVisit: false,
         subLinks: [
             {
+                route: '/services/personal-care',
+                label: 'Personal Care',
+                canVisit: true
+            },
+            {
                 route: '/services/elder-care',
                 label: 'Elder Care Consulting',
                 canVisit: true
             },
             {
-                route: '/services/home-health-aides',
-                label: 'Home Health Aides',
+                route: '/services/staffing',
+                label: 'Staffing',
                 canVisit: true
             },
             {
-                route: '/services/personal-care',
-                label: 'Personal Care',
+                route: '/services/home-health-aides',
+                label: 'Home Health Aides',
                 canVisit: true
             },
             {
@@ -33,11 +38,6 @@ export const navLinks = [
             {
                 route: '/services/companions',
                 label: 'Companions',
-                canVisit: true
-            },
-            {
-                route: '/services/staffing',
-                label: 'Staffing',
                 canVisit: true
             }
         ]

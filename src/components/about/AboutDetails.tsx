@@ -11,7 +11,7 @@ export default function AboutDetails() {
                     <img
                         src="/media/about-details.jpg"
                         alt="small details to help"
-                        className="w-fit h-full rounded-3xl object-contain"
+                        className="w-fit h-full rounded-3xl object-cover"
                     />
                     <article className="my-auto">
                         <h2 className="text-2xl md:text-3xl font-bold mb-4">
@@ -55,7 +55,7 @@ export default function AboutDetails() {
                     <img
                         src="/media/freedom.jpg"
                         alt="freedome img"
-                        className="rounded-xl shadow-xl"
+                        className="rounded-xl shadow-xl object-cover"
                     />
                 </div>
             </div>
@@ -118,7 +118,7 @@ export default function AboutDetails() {
                     <img
                         src="/media/experienced-team.jpg"
                         alt="freedome img"
-                        className="rounded-xl shadow-xl"
+                        className="rounded-xl shadow-xl object-cover"
                     />
                     <div className="my-auto">
                         <h2 className="text-2xl md:text-3xl font-bold mb-4 text-white">

@@ -1,12 +1,10 @@
-import { CornerRightUp } from 'lucide-react'
 import { CompanyName } from '../Logo'
 import CallToAction from '../CallToAction'
+import AboutServiceOverview from '../about/AboutServiceOverview'
 
 export default function AboutHero() {
     return (
         <section className="relative bg-gradient-to-b from-white-bright to-white overflow-hidden">
-            {/* <div className="floating"> */}
-            {/* </div> */}
             <div className="max-w-custom mx-auto px-6 pb-12 md:pb-18">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
                     <div className="flex flex-col gap-6">
@@ -37,29 +35,14 @@ export default function AboutHero() {
                         </li>
                     </ul>
                 </div>
-                <div className="flex gap-6 mt-12 items-end">
-                    <img
-                        src="/media/AboutGraph.png"
-                        alt=""
-                        className="h-full w-[70%] object-contain"
-                    />
-                    {/* <CornerRightUp /> */}
-                    {/* <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width={225}
-                        height={225}
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        strokeWidth={2}
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        className={`lucide lucide-rotate-cw text-secondary`}
-                    >
-                        <path d="M21 12a9 9 0 1 1-9-9c2.52 0 4.93 1 6.74 2.74L21 8" />
-                        <path d="M21 3v5h-5" />
-                    </svg> */}
-                    <CallToAction buttonLabel="Schedule a Consultation" round />
+                <div className="flex flex-col lg:flex-row gap-6 mt-12 items-end">
+                    <AboutServiceOverview />
+                    <div className="mx-auto">
+                        <CallToAction
+                            buttonLabel="Schedule a Consultation"
+                            round
+                        />
+                    </div>
                 </div>
             </div>
         </section>

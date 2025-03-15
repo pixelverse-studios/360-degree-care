@@ -15,7 +15,7 @@ export default function HomeHero() {
         <section className="max-w-custom mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 justify-between items-center p-6">
             <div className="flex flex-col gap-6">
                 <div>
-                    <h1 className="text-primary-dark">
+                    <h1 className="text-primary">
                         Concierge Level Home Health Care
                     </h1>
                     <h2 className="text-primary">
@@ -27,11 +27,12 @@ export default function HomeHero() {
                     home care with compassion that allows seniors to maintain
                     their independence and dignity at home.
                 </p>
-                <div className="my-5 grid grid-cols-1 lg:grid-cols-2 gap-4">
-                    <CallToAction buttonLabel="Get In Touch" />
+                <div className="my-5 grid grid-cols-2 md:grid-cols-1 lg:grid-cols-2 gap-4 sm:mx-auto">
+                    <CallToAction buttonLabel="Get In Touch" round />
                     <Button
-                        className="rounded-3xl w-100% lg:max-w-[18rem] border-secondary border-2 border-solid bg-transparent hover:bg-secondary"
+                        className="roundAltButton border-secondary border-2 border-solid"
                         onClick={onServicesClick}
+                        variant="default"
                     >
                         More About Us
                     </Button>

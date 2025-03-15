@@ -1,6 +1,5 @@
 'use client'
 
-import { Button } from '@/components/ui/button'
 import CallToAction from '@/components/CallToAction'
 import { CompanyName } from '@/components/Logo'
 
@@ -28,12 +27,12 @@ export default function ElderCareServicesPage() {
                 <h2 className="font-semibold text-center mb-12">
                     Making Informed Decisions for Your Loved One's Care
                 </h2>
-                <div className="bg-secondary rounded-lg shadow-lg p-8 mb-12">
-                    <p className="text-lg text-white mb-6">
+                <div className="bg-secondary rounded-lg shadow-lg p-8 mb-8">
+                    <p className="text-lg text-white">
                         Navigating elder care options can be overwhelming. At{' '}
-                        <CompanyName styles="text-lg text-primary-muted" />, we
-                        provide expert consultation to help you make informed
-                        decisions about your loved one's care journey.
+                        <CompanyName styles="text-lg text-primary p-2 bg-white rounded-lg" />
+                        , we provide expert consultation to help you make
+                        informed decisions about your loved one's care journey.
                     </p>
                 </div>
             </div>
@@ -51,7 +50,7 @@ export default function ElderCareServicesPage() {
                         <div className="bg-white p-6 rounded-lg shadow-md">
                             <div className="w-12 h-12 bg-primary-muted rounded-full flex items-center justify-center mb-4">
                                 <svg
-                                    className="w-6 h-6 text-primary-dark"
+                                    className="w-6 h-6 text-primary"
                                     fill="none"
                                     stroke="currentColor"
                                     viewBox="0 0 24 24"
@@ -231,7 +230,7 @@ export default function ElderCareServicesPage() {
                     <div className="flex flex-col space-y-6 mb-12">
                         <div className="flex items-center bg-white p-6 rounded-lg shadow-md">
                             <div className="w-12 h-12 bg-primary-muted rounded-full flex items-center justify-center mr-6 flex-shrink-0">
-                                <span className="font-bold text-primary-dark">
+                                <span className="font-bold text-primary">
                                     1
                                 </span>
                             </div>
@@ -242,7 +241,7 @@ export default function ElderCareServicesPage() {
                         </div>
                         <div className="flex items-center bg-white p-6 rounded-lg shadow-md">
                             <div className="w-12 h-12 bg-primary-muted rounded-full flex items-center justify-center mr-6 flex-shrink-0">
-                                <span className="font-bold text-primary-dark">
+                                <span className="font-bold text-primary">
                                     2
                                 </span>
                             </div>
@@ -253,7 +252,7 @@ export default function ElderCareServicesPage() {
                         </div>
                         <div className="flex items-center bg-white p-6 rounded-lg shadow-md">
                             <div className="w-12 h-12 bg-primary-muted rounded-full flex items-center justify-center mr-6 flex-shrink-0">
-                                <span className="font-bold text-primary-dark">
+                                <span className="font-bold text-primary">
                                     3
                                 </span>
                             </div>
@@ -264,7 +263,7 @@ export default function ElderCareServicesPage() {
                         </div>
                         <div className="flex items-center bg-white p-6 rounded-lg shadow-md">
                             <div className="w-12 h-12 bg-primary-muted rounded-full flex items-center justify-center mr-6 flex-shrink-0">
-                                <span className="font-bold text-primary-dark">
+                                <span className="font-bold text-primary">
                                     4
                                 </span>
                             </div>
@@ -275,7 +274,7 @@ export default function ElderCareServicesPage() {
                         </div>
                         <div className="flex items-center bg-white p-6 rounded-lg shadow-md">
                             <div className="w-12 h-12 bg-primary-muted rounded-full flex items-center justify-center mr-6 flex-shrink-0">
-                                <span className="font-bold text-primary-dark">
+                                <span className="font-bold text-primary">
                                     5
                                 </span>
                             </div>
@@ -301,7 +300,7 @@ export default function ElderCareServicesPage() {
                         aspect of your loved one's well-being and supporting
                         your family through important care decisions.
                     </p>
-                    <CallToAction buttonLabel="Contact Us Today" />
+                    <CallToAction buttonLabel="Contact Us Today" round />
                 </div>
             </div>
         </main>

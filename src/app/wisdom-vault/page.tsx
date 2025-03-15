@@ -1,7 +1,6 @@
 'use client'
 import { useState } from 'react'
 import { CirclePlay } from 'lucide-react'
-import ReactPlayer from 'react-player'
 
 import {
     Dialog,
@@ -34,7 +33,7 @@ export default function VaultOfWisdom() {
                                 key={vid.id}
                                 onClick={() => setCurrentVideoIndex(key)}
                             >
-                                <li className="rounded-xl shadow-xl h-full w-full flex-1">
+                                <li className="rounded-xl shadow-xl h-full w-full flex-1 text-left">
                                     <div className="bg-gray-700 rounded-tr-xl rounded-tl-xl p-4 h-[7rem] w-full flex items-center justify-center">
                                         <CirclePlay
                                             className="text-primary h-[3rem] w-[3rem]"
@@ -50,17 +49,16 @@ export default function VaultOfWisdom() {
                         ))}
                     </ul>
                     <DialogContent className="px-8 py-12 border-none max-w-4xl w-4/5 lg:w-full h-fit shadow-lg">
-                        <DialogTitle>Test</DialogTitle>
+                        <DialogTitle>{currentVideo?.title ?? ''}</DialogTitle>
                         {currentVideo?.src ? (
-                            <div className="h-[25rem] w-fit">
-                                <ReactPlayer
-                                    url={currentVideo.src}
-                                    controls
-                                    width="100%"
-                                    height="100%"
-                                    playing={true}
-                                    onEnded={() => setCurrentVideoIndex(-1)}
+                            <div className="h-[75dvh]">
+                                <iframe
+                                    src={currentVideo.src}
+                                    className="h-[90%] w-full rounded-lg"
                                 />
+                                <p className="pt-4">
+                                    {currentVideo.description}
+                                </p>
                             </div>
                         ) : null}
                     </DialogContent>

@@ -25,7 +25,7 @@ interface HamburgerProps {
 const HamburgerMenu = ({ isOpen, toggleMenu }: HamburgerProps) => {
     return (
         <button
-            className="group lg:hidden flex flex-col justify-center items-center w-10 h-10 space-y-1.5 focus:outline-none rounded-full transition-all duration-300 ease-in-out hover:bg-gray-100 hover:shadow-md hover:scale-105"
+            className="group xl:hidden flex flex-col justify-center items-center w-10 h-10 space-y-1.5 focus:outline-none rounded-full transition-all duration-300 ease-in-out hover:bg-gray-100 hover:shadow-md hover:scale-105"
             onClick={e => {
                 e.stopPropagation()
                 toggleMenu()
@@ -110,7 +110,7 @@ export function Header() {
                 </Link>
 
                 {/* --- DESKTOP --- */}
-                <nav className="hidden lg:block">
+                <nav className="hidden xl:block">
                     <NavigationMenu>
                         <NavigationMenuList className="space-x-6">
                             {navLinks.map(link => {
@@ -196,7 +196,7 @@ export function Header() {
                 <div
                     ref={navRef}
                     className={cn(
-                        'fixed inset-x-0 top-[4rem] bg-primary-fore border-b border-b-gray-300 lg:hidden',
+                        'fixed inset-x-0 top-[4rem] bg-primary-fore border-b border-b-gray-300 xl:hidden',
                         'transition-[transform,opacity] duration-300 ease-in-out',
                         isMobileMenuOpen
                             ? 'translate-y-0 opacity-100 pointer-events-auto'
