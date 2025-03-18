@@ -1,4 +1,5 @@
-import React, { ReactNode } from 'react'
+import { ReactNode } from 'react'
+import { CompanyName } from '@/components/Logo'
 
 export interface FAQ {
     question: string
@@ -45,45 +46,62 @@ export const HOME_FAQS: FAQ[] = [
         question: 'What conditions do you care for?',
         answer: (
             <>
-                <span className="text-primary font-semibold">
-                    360 Degree Care
-                </span>{' '}
-                has decades of experience caring for individuals with a variety
-                of conditions and needs across home healthcare and hospice. Find
-                our specific care coverages on our service pages.
+                <CompanyName /> has decades of experience caring for individuals
+                with a variety of conditions and needs across home healthcare
+                and hospice. Find our specific care coverages on our service
+                pages.
             </>
         )
     }
 ]
 
-export const HOSPICE_FAQS: FAQ[] = [
+export const PERSONAL_CARE_FAQS: FAQ[] = [
     {
-        question: 'What is hospice care?',
+        question: 'Who can benefit from personal care services?',
+        answer: 'Individuals of all ages who need support with daily activities.'
+    },
+    {
+        question: 'How much do personal care services cost?',
         answer: (
             <>
-                Hospice is a type and philosophy of care that focuses on the{' '}
-                <a href="/palliative-care" className="faqEmbed">
-                    palliative care
-                </a>{' '}
-                of a chronically ill, terminally ill, or seriously ill patient's
-                pain and symptoms while attending to their emotional and
-                spiritual needs. It is an integrated program of medical and
-                psychosocial care, ensuring that the final stages of life are
-                lived with the greatest degree of comfort and dignity.
+                Costs vary based on needs. <CompanyName /> offers free
+                consultations.
             </>
         )
     },
     {
-        question: 'Who pays for hospice care?',
+        question: 'How do I find personal care services near me?',
         answer: (
             <>
-                Both public and private insurance most often pay for part or all
-                of hospice care, though plans vary. Read{' '}
-                <a href="/how-to-pay" className="faqEmbed">
-                    our How to Pay guide
-                </a>{' '}
-                for more information about coverage and payment options.
+                Contact <CompanyName /> for local service connections.
             </>
         )
+    },
+    {
+        question: "Do I need a doctor's referral?",
+        answer: 'Typically not required, but consulting your doctor can help determine suitability.'
+    },
+    {
+        question: 'What are the qualifications of personal care providers?',
+        answer: 'Our caregivers undergo screening, background CircleChecks, and training.'
+    }
+]
+
+export const STAFFING_FAQS: FAQ[] = [
+    {
+        question: "What's your employee screening process?",
+        answer: 'We conduct thorough background checks, license verifications, and skill assessments for every candidate.'
+    },
+    {
+        question: 'Can I hire your staff for a single day?',
+        answer: "Absolutely. We tailor our service to your specific needs, whether it's one day, one week, or ongoing placements."
+    },
+    {
+        question: 'What kinds of roles can you provide staff for?',
+        answer: 'We can fill positions ranging from nurses and therapists to medical administrative staff, billing, and more.'
+    },
+    {
+        question: 'What kinds of organizations do you work with?',
+        answer: 'We work with a wide variety of facilities, including clinics, hospitals, schools, and rehabilitation centers.'
     }
 ]

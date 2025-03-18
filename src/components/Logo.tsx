@@ -42,7 +42,7 @@ export const CompanyName = ({
     return (
         <span
             className={cn(
-                'inline-flex items-center align-middle font-bold',
+                'inline-flex items-center align-middle font-bold mb-[5px]',
                 colorClass,
                 sizeClasses[size],
                 className
@@ -50,7 +50,7 @@ export const CompanyName = ({
         >
             360
             <RotateCw
-                className="inline-block align-middle h-[16px] w-[16px] mt-[-0.5rem] text-accent mr-0.5"
+                className="inline-block align-middle h-[16px] w-[16px] mt-[-0.5rem] text-secondary mr-0.5"
                 {...iconSizes[size]}
                 strokeWidth={4}
             />
@@ -91,14 +91,16 @@ const Logo = ({ invert = false, size = 'md' }: LogoProps) => {
             >
                 <p className={cn('font-logo', sizeClasses[size])}>360</p>
                 <RotateCw
-                    className="text-secondary h-4 w-4 mt-[-1.75rem] mr-2"
+                    className="text-secondary h-4 w-4 mt-[-1.75rem] mr-2 transition-all duration-300 ease-in-out transform hover:rotate-180 hover:scale-110"
                     strokeWidth={4}
                 />
                 <p className={cn('font-logo', sizeClasses[size])}>CARE</p>
             </div>
-            <p className="text-secondary font-semibold font-logo text-xl italic">
-                We <span className="font-bold text-xl italic">CARE</span>
-            </p>
+            {invert ? null : (
+                <p className="text-secondary font-semibold font-logo text-xl italic text-right caring">
+                    We <span className="font-bold text-xl italic">CARE</span>
+                </p>
+            )}
         </div>
     )
 }

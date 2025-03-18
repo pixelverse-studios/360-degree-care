@@ -1,8 +1,13 @@
+'use client'
+
+import CallToAction from '@/components/CallToAction'
+import { CompanyName } from '@/components/Logo'
+
 export default function CompanionsServicesPage() {
     return (
         <main>
-            <div className="bg-gray-50 text-gray-800">
-                <section className="relative bg-blue-600 text-white px-4 py-16">
+            <div className="bg-white">
+                <section className="relative bg-white-bright text-black px-4 py-16">
                     <div className="max-w-5xl mx-auto text-center">
                         <h1 className="text-4xl font-extrabold mb-4">
                             Elder Companion Services
@@ -11,9 +16,7 @@ export default function CompanionsServicesPage() {
                             Warm, personal care that keeps seniors socially
                             engaged, safe, and comfortable at home.
                         </p>
-                        <button className="px-6 py-3 bg-white text-blue-600 rounded-full font-semibold hover:bg-gray-100 transition">
-                            Contact Us
-                        </button>
+                        <CallToAction buttonLabel="Contact Us" round />
                     </div>
                 </section>
 
@@ -37,7 +40,7 @@ export default function CompanionsServicesPage() {
                                 life.
                             </p>
                             <p className="text-gray-700 leading-relaxed">
-                                At 360 Degree Care, our companions create a
+                                At <CompanyName />, our companions create a
                                 warm, respectful environment that fosters both
                                 emotional and physical well-being. From gently
                                 reminding seniors about medication to planning
@@ -47,20 +50,16 @@ export default function CompanionsServicesPage() {
                         </div>
 
                         {/* Image / Graphic Column */}
-                        <div className="flex items-center justify-center">
-                            {/* This could be an <img> tag if you have an asset to show */}
-                            <div className="bg-blue-100 w-full h-64 rounded-lg flex items-center justify-center">
-                                <span className="text-blue-600 font-bold text-xl">
-                                    {/* Replace this with an <img src="..." alt="..."/> */}
-                                    [Elder Companion Image Placeholder]
-                                </span>
-                            </div>
-                        </div>
+                        <img
+                            src="/assets/roller coaster.jpg"
+                            alt=""
+                            className="rounded-xl shadow-xl"
+                        />
                     </div>
                 </section>
 
                 {/* BENEFITS SECTION */}
-                <section className="bg-white py-12">
+                <section className="bg-white-bright py-12">
                     <div className="max-w-5xl mx-auto px-4">
                         <h2 className="text-3xl font-bold mb-8 text-center">
                             How Elder Companions Help
@@ -68,7 +67,7 @@ export default function CompanionsServicesPage() {
 
                         <div className="grid md:grid-cols-3 gap-6">
                             {/* Benefit 1 */}
-                            <div className="p-6 border border-gray-100 shadow-sm rounded-lg">
+                            <div className="p-6 rounded-lg shadow-xl">
                                 <h3 className="text-xl font-semibold mb-2">
                                     Social Connection
                                 </h3>
@@ -80,7 +79,7 @@ export default function CompanionsServicesPage() {
                                 </p>
                             </div>
                             {/* Benefit 2 */}
-                            <div className="p-6 border border-gray-100 shadow-sm rounded-lg">
+                            <div className="p-6 rounded-lg shadow-xl">
                                 <h3 className="text-xl font-semibold mb-2">
                                     Daily Assistance
                                 </h3>
@@ -92,7 +91,7 @@ export default function CompanionsServicesPage() {
                                 </p>
                             </div>
                             {/* Benefit 3 */}
-                            <div className="p-6 border border-gray-100 shadow-sm rounded-lg">
+                            <div className="p-6 rounded-lg shadow-xl">
                                 <h3 className="text-xl font-semibold mb-2">
                                     Peace of Mind
                                 </h3>
@@ -113,15 +112,13 @@ export default function CompanionsServicesPage() {
                             Ready to Get Started?
                         </h2>
                         <p className="text-gray-700 mb-6">
-                            Contact 360 Degree Care to learn more about our
+                            Contact <CompanyName /> to learn more about our
                             Elder Companion Services. We’ll work with you to
                             design a care plan that fits your loved one’s unique
                             needs, ensuring they remain safe, engaged, and happy
                             at home.
                         </p>
-                        <button className="px-6 py-3 bg-blue-600 text-white rounded-full font-semibold hover:bg-blue-700 transition">
-                            Schedule a Consultation
-                        </button>
+                        <CallToAction buttonLabel="Contact Us" round />
                     </div>
                 </section>
             </div>

@@ -2,7 +2,6 @@ import { useRouter } from 'next/navigation'
 import { Button } from '../ui/button'
 import { navLinks } from '@/utils/routes'
 import CallToAction from '../CallToAction'
-import HomeHeroImg from '../../../public/media/HomeHero.png'
 
 const [serviceLink] = navLinks
 
@@ -12,7 +11,7 @@ export default function HomeHero() {
     const onServicesClick = () => router.push(serviceLink.route)
 
     return (
-        <section className="max-w-custom mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 justify-between items-center p-6">
+        <section className="mt-2 max-w-custom mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 justify-between items-center p-6">
             <div className="flex flex-col gap-6">
                 <div>
                     <h1 className="text-primary">
@@ -40,8 +39,8 @@ export default function HomeHero() {
             </div>
             <img
                 className="rounded-2xl h-fit w-fit object-cover"
-                src={HomeHeroImg.src}
-                alt="placeholder"
+                src="/assets/happy couple1.jpg"
+                alt=""
             />
         </section>
     )

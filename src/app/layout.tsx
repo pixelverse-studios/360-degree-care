@@ -1,5 +1,10 @@
 import type { Metadata } from 'next'
-import { Rubik, Merriweather, Bodoni_Moda } from 'next/font/google'
+import {
+    Bodoni_Moda,
+    Merriweather,
+    Permanent_Marker,
+    Rubik
+} from 'next/font/google'
 
 import { Header } from '@/components/nav/Header'
 import Breadcrumbs from '@/components/nav/Breadcrumbs'
@@ -8,23 +13,23 @@ import { Toaster } from '@/components/ui/sonner'
 
 import '../styles/globals.css'
 
-// const rubik = Rubik({ subsets: ['latin'], variable: '--font-rubik' })
-// const merriweather = Merriweather({
-//     subsets: ['latin'],
-//     weight: ['300', '400', '700', '900'],
-//     variable: '--font-merriweather'
-// })
-// const bodoni = Bodoni_Moda({
-//     subsets: ['latin'],
-//     display: 'swap',
-//     // Optionally specify weights
-//     weight: ['400', '500', '700']
-// })
+export const metadata = {
+    icons: {
+        icon: [
+            { url: '/16x16.png', type: 'image/png', sizes: '16x16' },
+            { url: '/32x32.png', type: 'image/png', sizes: '32x32' },
+            { url: '/64x64.png', type: 'image/png', sizes: '64x64' }
+        ],
+        apple: [{ url: '/apple-icon.png', sizes: '180x180' }]
+    }
+}
+export const permanentMarker = Permanent_Marker({
+    weight: ['400'], // Permanent Marker only comes in 400 weight
+    subsets: ['latin'],
+    display: 'swap',
+    variable: '--font-permanent-marker' // Optional: for CSS variable usage
+})
 
-// export const metadata: Metadata = {
-//     title: '360° Care',
-//     description: 'Created and maintained by PixelVerse Studios'
-// }
 const rubik = Rubik({
     subsets: ['latin'],
     variable: '--font-rubik',
@@ -44,6 +49,8 @@ const bodoni = Bodoni_Moda({
     variable: '--font-bodoni',
     weight: ['400', '500', '700']
 })
+
+console.log('permanentMarker:', permanentMarker)
 export default function RootLayout({
     children
 }: Readonly<{
@@ -60,7 +67,7 @@ export default function RootLayout({
                 />
             </head>
             <body
-                className={`antialiased ${rubik.variable} ${merriweather.variable} ${bodoni.variable}`}
+                className={`antialiased ${rubik.variable} ${merriweather.variable} ${bodoni.variable} ${permanentMarker.variable}`}
             >
                 <Header />
                 <Breadcrumbs />

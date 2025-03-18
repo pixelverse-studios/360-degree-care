@@ -2,12 +2,7 @@
 
 import { Fragment } from 'react'
 import Link from 'next/link'
-import {
-    FaFacebookF,
-    FaInstagram,
-    FaLinkedinIn,
-    FaHeartPulse
-} from 'react-icons/fa6'
+import { FaFacebookF, FaInstagram, FaLinkedinIn } from 'react-icons/fa6'
 import { Button } from '@/components/ui/button'
 import { cn } from '@/lib/utils'
 import Logo from '@/components/Logo'
@@ -28,18 +23,12 @@ export default function Footer() {
                     {/* Left - Logo & CTA */}
                     <div>
                         <div className="flex gap-2 items-center">
-                            <FaHeartPulse className="h-6 w-6" />
                             <Logo invert />
                         </div>
                         <p className="mt-2 text-sm">
                             Providing compassionate in-home care services for
                             seniors
                         </p>
-                        <div className="mt-4">
-                            <Button className="w-full md:w-auto px-6 py-3 border-2 font-bold transition-all duration-200 bg-background text-primary border-background hover:border-white hover:bg-primary hover:text-white rounded-3xl">
-                                Call To Action
-                            </Button>
-                        </div>
                     </div>
 
                     {/* Middle - Links */}

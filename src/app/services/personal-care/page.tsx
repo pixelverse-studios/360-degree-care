@@ -1,6 +1,8 @@
 'use client'
-
+import { RotateCw, CircleCheck } from 'lucide-react'
 import { CompanyName } from '@/components/Logo'
+import FaqSection from '@/components/faqs/FaqSection'
+import { PERSONAL_CARE_FAQS } from '@/utils/faqs'
 
 export default function PersonalCarePage() {
     return (
@@ -25,102 +27,120 @@ export default function PersonalCarePage() {
                     including elderly personal care.
                 </p>
 
-                <h2 className="mt-6 mb-2">
+                <h2 className="mt-6 mb-4">
                     Benefits of Personal Care Services
                 </h2>
-                <ul className="list-disc list-inside text-gray-700 mb-4">
-                    <li>
-                        <strong>Enhanced Independence:</strong> A personal care
-                        aide empowers individuals to remain independent in their
-                        homes for longer.
+                <ul className="mb-4 flex flex-col gap-2">
+                    <li className="flex gap-2 items-start">
+                        <CircleCheck className="text-primary" />
+                        <p>
+                            <strong>Enhanced Independence:</strong>
+                            <br />A personal care aide empowers individuals to
+                            remain independent in their homes for longer.
+                        </p>
                     </li>
-                    <li>
-                        <strong>Improved Quality of Life:</strong> Assistance
-                        with daily tasks allows individuals to focus on
-                        activities they enjoy.
+                    <li className="flex gap-2 items-start">
+                        <CircleCheck className="text-primary" />
+                        <p>
+                            <strong>Improved Quality of Life:</strong>
+                            <br />
+                            Assistance with daily tasks allows individuals to
+                            focus on activities they enjoy.
+                        </p>
                     </li>
-                    <li>
-                        <strong>Reduced Caregiver Burden:</strong> Offers
-                        valuable respite for families caring for loved ones.
+                    <li className="flex gap-2 items-start">
+                        <CircleCheck className="text-primary" />
+                        <p>
+                            <strong>Reduced Caregiver Burden:</strong>
+                            <br />
+                            Offers valuable respite for families caring for
+                            loved ones.
+                        </p>
                     </li>
-                    <li>
-                        <strong>Safety and Security:</strong> Knowing a
-                        caregiver is present provides peace of mind.
+                    <li className="flex gap-2 items-start">
+                        <CircleCheck className="text-primary" />
+                        <p>
+                            <strong>Safety and Security:</strong>
+                            <br />
+                            Knowing a caregiver is present provides peace of
+                            mind.
+                        </p>
                     </li>
-                    <li>
-                        <strong>Personalized Support:</strong> Care plans are
-                        tailored to individual needs and preferences.
+                    <li className="flex gap-2 items-start">
+                        <CircleCheck className="text-primary" />
+                        <p>
+                            <strong>Personalized Support:</strong>
+                            <br />
+                            Care plans are tailored to individual needs and
+                            preferences.
+                        </p>
                     </li>
                 </ul>
 
                 <h2 className="mt-6 mb-2">
                     Common Services Offered in Personal Care
                 </h2>
-                <ul className="list-disc list-inside text-gray-700 mb-4">
-                    <li>
-                        Assistance with Daily Living Activities (ADLs): Bathing,
-                        dressing, grooming, and more.
+                <ul className="mb-4 flex flex-col gap-2">
+                    <li className="flex gap-2 items-start">
+                        <CircleCheck className="text-primary" />
+                        <p>
+                            <strong>
+                                Assistance with Daily Living Activities (ADLs):
+                            </strong>
+                            <br />
+                            Bathing, dressing, grooming, and more.
+                        </p>
                     </li>
-                    <li>
-                        Meal Preparation: Planning, shopping, and preparing
-                        nutritious meals.
+                    <li className="flex gap-2 items-start">
+                        <CircleCheck className="text-primary" />
+                        <p>
+                            <strong>Meal Preparation:</strong>
+                            <br />
+                            Planning, shopping, and preparing nutritious meals.
+                        </p>
                     </li>
-                    <li>
-                        Light Housekeeping: Cleaning, laundry, and maintaining a
-                        safe environment.
+                    <li className="flex gap-2 items-start">
+                        <CircleCheck className="text-primary" />
+                        <p>
+                            <strong>Light Housekeeping:</strong>
+                            <br />
+                            Cleaning, laundry, and maintaining a safe
+                            environment.
+                        </p>
                     </li>
-                    <li>
-                        Medication Reminders: Ensuring proper medication use.
+                    <li className="flex gap-2 items-start">
+                        <CircleCheck className="text-primary" />
+                        <p>
+                            <strong>Medication Reminders:</strong>
+                            <br />
+                            Ensuring proper medication use.
+                        </p>
                     </li>
-                    <li>
-                        Companionship and Social Interaction: Providing
-                        engagement to combat loneliness.
+                    <li className="flex gap-2 items-start">
+                        <CircleCheck className="text-primary" />
+                        <p>
+                            <strong>
+                                Companionship and Social Interaction:
+                            </strong>
+                            <br />
+                            Providing engagement to combat loneliness.
+                        </p>
                     </li>
-                    <li>
-                        Transportation and Errands: Helping with appointments
-                        and community activities.
+                    <li className="flex gap-2 items-start">
+                        <CircleCheck className="text-primary" />
+                        <p>
+                            <strong>Transportation and Errands:</strong>
+                            <br />
+                            Helping with appointments and community activities.
+                        </p>
                     </li>
                 </ul>
 
-                <h2 className="mt-6 mb-2">
-                    Questions About Personal Care Services
-                </h2>
-                <div className="space-y-4 text-gray-700">
-                    <p>
-                        <strong>
-                            Who can benefit from personal care services?
-                        </strong>{' '}
-                        Individuals of all ages who need support with daily
-                        activities.
-                    </p>
-                    <p>
-                        <strong>
-                            How much do personal care services cost?
-                        </strong>{' '}
-                        Costs vary based on needs. <CompanyName className="" />{' '}
-                        offers free consultations.
-                    </p>
-                    <p>
-                        <strong>
-                            How do I find personal care services near me?
-                        </strong>{' '}
-                        Contact <CompanyName className="" /> for local service
-                        connections.
-                    </p>
-                    <p>
-                        <strong>Do I need a doctor's referral?</strong>{' '}
-                        Typically not required, but consulting your doctor can
-                        help determine suitability.
-                    </p>
-                    <p>
-                        <strong>
-                            What are the qualifications of personal care
-                            providers?
-                        </strong>{' '}
-                        Our caregivers undergo screening, background checks, and
-                        training.
-                    </p>
-                </div>
+                <FaqSection
+                    faqs={PERSONAL_CARE_FAQS}
+                    header="Questions About Personal Care"
+                    headerClass="text-left"
+                />
 
                 <h2 className="mt-6 mb-2">
                     Finding the Right Personal Care Solution
@@ -130,16 +150,6 @@ export default function PersonalCarePage() {
                     individual's needs are unique. We offer a comprehensive
                     range of personal care services to create a customized care
                     plan that promotes independence, dignity, and well-being.
-                </p>
-
-                <p className="text-gray-700 mb-4 font-semibold">
-                    Find a local franchise today for a free consultation!
-                </p>
-                <p className="text-gray-700">
-                    <CompanyName className="" /> is dedicated to providing
-                    exceptional personal home care solutions that prioritize
-                    well-being and independence. Let us partner with you to
-                    create a personalized care plan.
                 </p>
             </div>
         </main>

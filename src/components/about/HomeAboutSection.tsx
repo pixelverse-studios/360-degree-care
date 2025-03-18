@@ -1,6 +1,4 @@
 import { CircleCheck } from 'lucide-react'
-import HomeAboutImg from '../../../public/media/home-about-img.webp'
-import Chap from '../../../public/icons/CHAPLogo.svg'
 
 export default function HomeAboutSection() {
     return (
@@ -8,7 +6,7 @@ export default function HomeAboutSection() {
             <section className="max-w-custom mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 justify-between items-start p-6">
                 <img
                     className="rounded-2xl h-full w-fit object-cover"
-                    src={HomeAboutImg.src}
+                    src="/assets/swimmer.jpg"
                     alt="Content senior man"
                 />
 
@@ -54,10 +52,9 @@ export default function HomeAboutSection() {
                             </li>
                         </ul>
                         <img
-                            src={Chap.src}
+                            src="/icons/CHAPLogo.svg"
                             alt="CHAP badge"
                             className="w-[8rem] h-[8rem]"
-                            // className="w-[8rem] h-[8rem] m-auto lg:m-0"
                         />
                     </div>
                 </div>

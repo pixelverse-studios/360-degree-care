@@ -30,9 +30,9 @@ export default function ElderCareServicesPage() {
                 <div className="bg-secondary rounded-lg shadow-lg p-8 mb-8">
                     <p className="text-lg text-white">
                         Navigating elder care options can be overwhelming. At{' '}
-                        <CompanyName styles="text-lg text-primary p-2 bg-white rounded-lg" />
-                        , we provide expert consultation to help you make
-                        informed decisions about your loved one's care journey.
+                        <CompanyName className="text-lg text-primary p-2 bg-white rounded-lg" />{' '}
+                        we provide expert consultation to help you make informed
+                        decisions about your loved one's care journey.
                     </p>
                 </div>
             </div>

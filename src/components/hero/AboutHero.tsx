@@ -8,15 +8,15 @@ export default function AboutHero() {
             <div className="max-w-custom mx-auto px-6 pb-12 md:pb-18">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
                     <div className="flex flex-col gap-6">
-                        <h1 className="text-4xl md:text-5xl font-bold text-black-muted leading-tight">
-                            About <CompanyName styles="text-5xl" />
+                        <h1 className="text-4xl md:text-5xl font-bold text-black-muted leading-tight mb-0">
+                            About <CompanyName className="text-5xl mb-[10px]" />
                         </h1>
 
                         <p className="text-lg text-gray-700 leading-relaxed">
-                            <CompanyName styles="" /> is the leading home care
-                            company in Bergen County. We have been providing
-                            highly skilled and compassionate caregivers to
-                            facilities and private clients for over ten years.
+                            <CompanyName /> is the leading home care company in
+                            Bergen County. We have been providing highly skilled
+                            and compassionate caregivers to facilities and
+                            private clients for over ten years.
                         </p>
                     </div>
 

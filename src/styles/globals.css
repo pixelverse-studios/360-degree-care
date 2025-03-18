@@ -40,6 +40,7 @@
     --font-rubik: ${rubik.style.fontFamily};
     --font-merriweather: ${merriweather.style.fontFamily};
     --font-bodoni: ${bodoni.style.fontFamily};
+    --font-permanentMarker: ${permanentMarker.style.fontFamily};
 }
 
 html,
@@ -186,6 +187,10 @@ main {
 
     .prio {
         @apply text-primary font-semibold;
+    }
+
+    .caring {
+        font-family: var(--font-rubik), sans-serif !important;
     }
 }
 

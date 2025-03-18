@@ -9,14 +9,14 @@ export default function AboutDetails() {
             <div className="flex flex-col gap-4 px-6 py-10 max-w-custom mx-auto">
                 <div className="grid grid-cols-1 md:grid-cols-[1fr_2fr] gap-6">
                     <img
-                        src="/media/about-details.jpg"
+                        src="/assets/runners.jpg"
                         alt="small details to help"
                         className="w-fit h-full rounded-3xl object-cover"
                     />
                     <article className="my-auto">
                         <h2 className="text-2xl md:text-3xl font-bold mb-4">
                             The{' '}
-                            <CompanyName styles="text-3xl text-primary-dark" />{' '}
+                            <CompanyName className="text-3xl text-primary mb-[10px]" />{' '}
                             Difference
                         </h2>
                         <p className="text-lg max-w-2xl mb-6">
@@ -53,7 +53,7 @@ export default function AboutDetails() {
                         </p>
                     </div>
                     <img
-                        src="/media/freedom.jpg"
+                        src="/assets/leaves in the wind.jpg"
                         alt="freedome img"
                         className="rounded-xl shadow-xl object-cover"
                     />

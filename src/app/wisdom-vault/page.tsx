@@ -40,7 +40,7 @@ export default function VaultOfWisdom() {
                                             strokeWidth={1}
                                         />
                                     </div>
-                                    <h4 className="p-4">{vid.title}</h4>
+                                    <h3 className="p-4">{vid.title}</h3>
                                     <p className="px-4 pb-4">
                                         {vid.description}
                                     </p>
