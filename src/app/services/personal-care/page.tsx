@@ -15,7 +15,7 @@ export default function PersonalCarePage() {
                     services designed to assist individuals with Daily Living
                     Activities (ADLs) and promote overall well-being. Whether
                     you're seeking solutions for yourself or a loved one,{' '}
-                    <CompanyName styles="" /> is here to guide you.
+                    <CompanyName className="" /> is here to guide you.
                 </p>
                 <h2 className="mt-6 mb-2">What is Personal Care?</h2>
                 <p className="text-gray-700 mb-4">
@@ -97,14 +97,14 @@ export default function PersonalCarePage() {
                         <strong>
                             How much do personal care services cost?
                         </strong>{' '}
-                        Costs vary based on needs. <CompanyName styles="" />{' '}
+                        Costs vary based on needs. <CompanyName className="" />{' '}
                         offers free consultations.
                     </p>
                     <p>
                         <strong>
                             How do I find personal care services near me?
                         </strong>{' '}
-                        Contact <CompanyName styles="" /> for local service
+                        Contact <CompanyName className="" /> for local service
                         connections.
                     </p>
                     <p>
@@ -126,7 +126,7 @@ export default function PersonalCarePage() {
                     Finding the Right Personal Care Solution
                 </h2>
                 <p className="text-gray-700 mb-4">
-                    <CompanyName styles="" /> understands that every
+                    <CompanyName className="" /> understands that every
                     individual's needs are unique. We offer a comprehensive
                     range of personal care services to create a customized care
                     plan that promotes independence, dignity, and well-being.
@@ -136,7 +136,7 @@ export default function PersonalCarePage() {
                     Find a local franchise today for a free consultation!
                 </p>
                 <p className="text-gray-700">
-                    <CompanyName styles="" /> is dedicated to providing
+                    <CompanyName className="" /> is dedicated to providing
                     exceptional personal home care solutions that prioritize
                     well-being and independence. Let us partner with you to
                     create a personalized care plan.
