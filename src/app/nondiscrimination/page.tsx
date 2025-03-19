@@ -1,7 +1,9 @@
+import { CompanyName } from '@/components/Logo'
+
 export default function NondiscriminationPage() {
     return (
         <main>
-            <div className="max-w-custom mx-auto px-6 py-12 bg-white shadow-md rounded-lg">
+            <div className="max-w-custom mx-auto px-6 py-12 bg-white shadow-lg rounded-lg mb-6">
                 <h1 className="font-bold text-center mb-6">
                     Nondiscrimination and Accessibility Notice
                 </h1>
@@ -10,20 +12,17 @@ export default function NondiscriminationPage() {
                     Discrimination is Against the Law
                 </h2>
                 <p className="text-gray-700 mb-4">
-                    <span className="text-primary">360 Degree Care</span>{' '}
-                    complies with applicable Federal civil rights laws and does
-                    not discriminate on the basis of race, color, national
-                    origin, age, disability, or sex (consistent with the scope
-                    of sex discrimination described at 45 CFR § 92.101(a)(2)).
+                    <CompanyName /> complies with applicable Federal civil
+                    rights laws and does not discriminate on the basis of race,
+                    color, national origin, age, disability, or sex (consistent
+                    with the scope of sex discrimination described at 45 CFR §
+                    92.101(a)(2)).
                 </p>
 
                 <h2 className="font-semibold mt-6 mb-2">
-                    <span className="text-2xl text-primary">
-                        360 Degree Care
-                    </span>{' '}
-                    Provides:
+                    <CompanyName className="text-2xl" /> Provides:
                 </h2>
-                <ul className="list-disc list-inside text-gray-700 mb-4">
+                <ul className="list-disc list-inside mb-4">
                     <li>
                         Reasonable modifications and free appropriate auxiliary
                         aids and services to people with disabilities,
@@ -49,23 +48,21 @@ export default function NondiscriminationPage() {
                 <p className="text-gray-700 mb-4">
                     If you need reasonable modification, appropriate auxiliary
                     aids and services, or language assistance services, contact
-                    the Administrator of your local{' '}
-                    <span className="text-primary">360 Degree Care</span> home
-                    care agency (e.g., Home Health, Hospice, Personal Care).
+                    the Administrator of your local <CompanyName /> home care
+                    agency (e.g., Home Health, Hospice, Personal Care).
                 </p>
 
                 <h2 className="font-semibold mt-6 mb-2">Filing a Grievance</h2>
                 <p className="text-gray-700 mb-4">
-                    If you believe that your local{' '}
-                    <span className="text-primary">360 Degree Care</span> agency
-                    has failed to provide these services or discriminated in
-                    another way on the basis of race, color, national origin,
-                    age, disability, or sex (including sex characteristics,
-                    intersex traits, pregnancy-related conditions, sexual
-                    orientation, gender identity, and sex stereotypes), you can
-                    file a grievance with the Administrator of your local
-                    Interim HealthCare home care agency, in person, by mail,
-                    fax, or email. The Administrator is available to help you.
+                    If you believe that your local <CompanyName /> agency has
+                    failed to provide these services or discriminated in another
+                    way on the basis of race, color, national origin, age,
+                    disability, or sex (including sex characteristics, intersex
+                    traits, pregnancy-related conditions, sexual orientation,
+                    gender identity, and sex stereotypes), you can file a
+                    grievance with the Administrator of your local Interim
+                    HealthCare home care agency, in person, by mail, fax, or
+                    email. The Administrator is available to help you.
                 </p>
 
                 <p className="text-gray-700 mb-4">

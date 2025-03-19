@@ -128,7 +128,6 @@ export default function StaffingSolutionsPage() {
                     </div>
                 </section>
 
-                {/* BENEFITS OF WORKING WITH 360 Degree Care */}
                 <section className="bg-white py-12">
                     <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
                         <h2 className="text-2xl font-bold mb-6 text-center">

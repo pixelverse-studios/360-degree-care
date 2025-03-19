@@ -1,13 +1,15 @@
+import { CompanyName } from '@/components/Logo'
+
 export default function PrivacyPolicyPage() {
     return (
         <main>
-            <div className="max-w-custom mx-auto p-6 bg-white shadow-md rounded-lg">
+            <div className="max-w-custom mx-auto p-6 bg-white shadow-lg rounded-lg mb-6">
                 <h1 className="font-bold text-center mb-6">Privacy Policy</h1>
                 <p className="text-gray-700 mb-4">
-                    Interim HealthCare Inc. recognizes the importance of
-                    personal privacy and has created this policy to explain why
-                    we collect particular information and how we will protect
-                    your personal information within our website and any other
+                    <CompanyName /> recognizes the importance of personal
+                    privacy and has created this policy to explain why we
+                    collect particular information and how we will protect your
+                    personal information within our website and any other
                     website provided by us. After reviewing this Privacy
                     Statement, if you have questions or concerns please feel
                     free to contact us.
@@ -22,7 +24,7 @@ export default function PrivacyPolicyPage() {
                     Information Collection and Use
                 </h2>
                 <p className="text-gray-700">
-                    Interim HealthCare Inc. is the sole owner of the information
+                    <CompanyName /> is the sole owner of the information
                     collected on this site. We will not sell, share, or rent
                     this information to others in ways different from what is
                     disclosed in this statement.

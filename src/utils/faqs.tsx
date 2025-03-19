@@ -13,7 +13,15 @@ export const HOME_FAQS: FAQ[] = [
     },
     {
         question: 'What’s your employee screening process?',
-        answer: '360 Degree Care professionals are carefully interviewed, screened, and background checked according to state laws prior to employment. In addition to providing training and supervision, we ensure a thoughtful match between our professionals and clients.'
+        answer: (
+            <>
+                <CompanyName /> professionals are carefully interviewed,
+                screened, and background checked according to state laws prior
+                to employment. In addition to providing training and
+                supervision, we ensure a thoughtful match between our
+                professionals and clients.
+            </>
+        )
     },
     {
         question: 'What if I don’t know what kind of care I need?',

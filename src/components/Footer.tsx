@@ -3,7 +3,7 @@
 import { Fragment } from 'react'
 import Link from 'next/link'
 import { FaFacebookF, FaInstagram, FaLinkedinIn } from 'react-icons/fa6'
-import { Button } from '@/components/ui/button'
+import { CompanyName } from '@/components/Logo'
 import { cn } from '@/lib/utils'
 import Logo from '@/components/Logo'
 import { navLinks, footerResources } from '@/utils/routes'
@@ -92,8 +92,8 @@ export default function Footer() {
                 {/* Bottom Section */}
                 <div className="mt-10 border-t border-gray-200 pt-4 text-center text-white">
                     <p className="text-sm">
-                        360 Degree Care is an Equal Opportunity Employer. Each
-                        franchise is independently owned and operated.
+                        <CompanyName invert /> is an Equal Opportunity Employer.
+                        Each franchise is independently owned and operated.
                     </p>
                     <p className="mt-1 text-sm">
                         &copy; {currentYear} 360 Degree Care Inc. All rights

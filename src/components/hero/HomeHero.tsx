@@ -39,7 +39,7 @@ export default function HomeHero() {
             </div>
             <img
                 className="rounded-2xl h-fit w-fit object-cover"
-                src="/assets/happy couple1.jpg"
+                src="/assets/happy couple 1.jpg"
                 alt=""
             />
         </section>

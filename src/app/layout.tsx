@@ -50,7 +50,6 @@ const bodoni = Bodoni_Moda({
     weight: ['400', '500', '700']
 })
 
-console.log('permanentMarker:', permanentMarker)
 export default function RootLayout({
     children
 }: Readonly<{

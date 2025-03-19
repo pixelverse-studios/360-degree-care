@@ -26,6 +26,7 @@ export default function Breadcrumbs() {
                 nav.subLinks.some(sub => sub.route === routePath)
         )
 
+        console.log(matchedNav)
         const label =
             matchedNav?.subLinks.find(sub => sub.route === routePath)?.label ||
             matchedNav?.label ||
@@ -34,7 +35,8 @@ export default function Breadcrumbs() {
         return {
             route: routePath,
             label: label.charAt(0).toUpperCase() + label.slice(1),
-            canVisit: matchedNav?.canVisit
+            canVisit: matchedNav?.canVisit,
+            isValid: matchedNav != undefined
         }
     })
 
@@ -67,7 +69,7 @@ export default function Breadcrumbs() {
                                                 : 'text-black-muted'
                                         )}
                                     >
-                                        {crumb.label}
+                                        {crumb.isValid ? crumb.label : 404}
                                     </span>
                                 ) : (
                                     <BreadcrumbLink
@@ -79,7 +81,7 @@ export default function Breadcrumbs() {
                                         }
                                     >
                                         <Link href={crumb.route}>
-                                            {crumb.label}
+                                            {crumb.isValid ? crumb.label : 404}
                                         </Link>
                                     </BreadcrumbLink>
                                 )}
