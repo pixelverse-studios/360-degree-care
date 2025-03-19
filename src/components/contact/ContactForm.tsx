@@ -75,9 +75,9 @@ export default function ContactForm({
     }
 
     return (
-        <div className="grid grid-cols-1 md:grid-cols-2">
+        <div className="grid grid-cols-1 md:grid-cols-2 shadow-xl">
             <div className="bg-primary text-white p-6 flex flex-col space-y-4 rounded-tl-lg rounded-bl-lg">
-                <DialogTitle className="text-2xl font-bold">
+                <DialogTitle className="text-2xl font-bold text-white">
                     Get in Touch
                 </DialogTitle>
                 <p>

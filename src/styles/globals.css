@@ -1,34 +1,47 @@
-@import './reset.css';
+/* @import './reset.css'; */
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
-    --primary: 18, 100%, 59%; /* #ff6c2f */
-    --secondary: 22, 60%, 76%; /* #e7b99e */
-    --white: 0, 0%, 94.12%; /* #f0f0f0 */
-    --muted-white: 0, 0%, 93.73%; /* #efefef */
-    --bright-white: 0, 0%, 100%; /* #ffffff */
-    --black: 0, 0%, 11%; /* #1c1c1c */
-    --muted-black: 0, 0%, 20%; /* #333333 */
+    --primary: #fe6c2d;
+    --primary-muted: #ffb99a;
+    --primary-bright: #fe5308;
+    --primary-dark: #e34300;
 
-    --foreground: 0, 6%, 90%; /*#e6e3e3  */
+    --secondary: #29a0d8;
+    --accent: #048a81;
+
+    /* --logo-accent: #00a6ed; */
+    --logo-accent: #57b8ff;
+    /* --logo-accent: #2176ae; */
+
+    --white: #f0f0f0;
+    --muted-white: #f1f1f1;
+    --bright-white: #ffffff;
+    --black: #1c1c1c;
+    --muted-black: #333333;
+
+    --foreground: #e7e3e3;
 
     --ghost-bg: transparent;
     --ghost-text: black;
 
     --border-radius: 8px;
-    --max-width: 1400px;
-}
+    --max-width: 1600px;
 
-/* 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-} */
+    --nav-bg: #f8f1eb;
+    --nav-txt: #5e6472;
+    --hero-bg: #a8b5a2;
+    --headline-txt: #f8f1eb;
+    --sub-h-txt: #d4a373;
+
+    --font-rubik: ${rubik.style.fontFamily};
+    --font-merriweather: ${merriweather.style.fontFamily};
+    --font-bodoni: ${bodoni.style.fontFamily};
+    --font-permanentMarker: ${permanentMarker.style.fontFamily};
+}
 
 html,
 body {
@@ -38,16 +51,71 @@ body {
 }
 
 body {
-    min-height: 100vh;
     color: hsl(var(--black));
-    /* font-family: Arial, Helvetica, sans-serif; */
+    font-family: 'Rubik', sans-serif;
+    background-color: var(--bright-white);
+    min-height: calc(100dvh - 4.8rem);
+    line-height: 1.1;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    font-family: 'Merriweather', serif;
 }
 
 main {
-    margin-top: 4.5rem;
     flex: 1;
+    font-family: 'Rubik', sans-serif;
 }
 
+.roundButton {
+    height: 8rem;
+    width: 8rem !important;
+    border-radius: 150px;
+    background: var(--primary);
+    border: 7px solid var(--primary);
+    box-shadow:
+        0px 3px 8px var(--primary-muted),
+        inset 0px 4px 15px var(--primary-muted);
+    transition: 0.35s ease-in-out;
+}
+
+.roundAltButton {
+    height: 8rem;
+    width: 8rem !important;
+    border-radius: 150px;
+    background: var(--secondary);
+    border: 7px solid var(--secondary);
+    box-shadow:
+        0px 3px 8px var(--secondary),
+        inset 0px 4px 15px lightblue;
+    color: var(--white);
+    transition: 0.35s ease-in-out;
+    &:hover {
+        color: var(--secondary) !important;
+        background-color: var(--white) !important;
+    }
+}
+
+.floating {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    z-index: 25;
+
+    > button {
+        transform: scale(0.75);
+    }
+    & > :hover {
+        transform: scale(1);
+    }
+}
+
+.logo {
+    font-family: var(--font-logo);
+}
 .button-ghost {
     background-color: transparent !important;
     color: var(--ghost-bg) !important;
@@ -68,14 +136,46 @@ main {
 
 @layer base {
     * {
-        @apply border-border outline-ring/50;
+        @apply border-border outline-ring text-base;
     }
     body {
-        @apply bg-primary-foreground text-black;
+        font-family: var(--font-rubik), sans-serif;
+        @apply bg-white text-black;
+    }
+
+    h1 {
+        @apply mb-4 text-3xl font-bold text-primary;
+    }
+
+    h2 {
+        @apply mb-3 text-2xl font-bold text-primary;
+    }
+
+    h3 {
+        @apply mb-1 text-xl font-semibold text-primary;
+    }
+
+    h4 {
+        @apply text-base font-bold text-primary;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4 {
+        font-family: var(--font-merriweather), serif;
+    }
+
+    .gradient-down {
+        @apply bg-gradient-to-b from-secondary to-white;
+    }
+
+    .gradient-up {
+        @apply bg-gradient-to-t from-secondary to-white;
     }
 
     .nav-link {
-        @apply text-[16px] text-primary font-bold transition-colors;
+        @apply text-primary font-bold font-body transition-colors text-xl;
     }
     .nav-link:hover {
         @apply hovered-nav-link; /* => color: hsl(var(--secondary)); */
@@ -83,6 +183,14 @@ main {
     .nav-link.active {
         /* text color and border using your secondary color */
         @apply selected-nav-link border-b-2 border-secondary;
+    }
+
+    .prio {
+        @apply text-primary font-semibold;
+    }
+
+    .caring {
+        font-family: var(--font-rubik), sans-serif !important;
     }
 }
 
@@ -92,16 +200,32 @@ main {
     }
 
     .selected-nav-link {
-        color: hsl(var(--primary));
+        color: var(--primary);
     }
     .hovered-nav-link {
-        color: hsl(var(--primary));
+        color: var(--primary);
+    }
+
+    .page-wrapper {
+        @apply max-w-custom mx-auto px-6 pt-2 pb-4;
+    }
+
+    .font-body {
+        font-family: var(--font-rubik), sans-serif;
+    }
+
+    .font-headers {
+        font-family: var(--font-merriweather), serif;
+    }
+
+    .font-logo {
+        font-family: var(--font-bodoni), serif;
     }
 }
 
 @layer components {
     .nav-link {
-        @apply relative text-[16px] text-muted transition-colors;
+        @apply relative text-muted transition-colors;
     }
 
     .nav-link::after {
@@ -111,7 +235,7 @@ main {
         bottom: -2px;
         width: 0;
         height: 2px;
-        background-color: hsl(var(--secondary));
+        background-color: var(--primary);
         transition:
             width 0.3s ease,
             left 0.3s ease;
@@ -124,13 +248,13 @@ main {
     }
 
     .nav-link.active {
-        @apply font-bold text-secondary;
+        @apply font-bold text-primary;
     }
 }
 
 @layer base {
     * {
-        @apply border-border outline-ring/50;
+        @apply border-border outline-ring;
     }
     body {
         @apply bg-background text-foreground;

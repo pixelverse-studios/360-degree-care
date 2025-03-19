@@ -1,7 +1,5 @@
 import { IconType } from 'react-icons'
 
-import { cn } from '@/lib/utils'
-
 interface CardProps {
     icon: IconType
     title: string
@@ -12,35 +10,30 @@ interface CardProps {
 interface InfoCardProps {
     header?: string
     cards: CardProps[]
-    bgColor: string
+    styles: string
 }
 
-export default function InfoCards({ cards, header, bgColor }: InfoCardProps) {
+export default function InfoCards({ cards, header, styles }: InfoCardProps) {
     return (
-        <section className={`${bgColor} py-8`}>
+        <section className={`${styles} py-8`}>
             {header != null ? (
                 <h1 className="max-w-custom mx-auto p-6 flex gap-8 text-black text-3xl font-bold">
                     {header}
                 </h1>
             ) : null}
-            <ul className="max-w-custom mx-auto p-6 grid grid-cols-1 md:grid-cols-3 gap-8">
+            <ul className="max-w-custom mx-auto p-6 grid grid-cols-1 xl:grid-cols-3 gap-8">
                 {cards.map(card => {
                     const Icon = card.icon
 
                     return (
                         <li
                             key={card.title}
-                            className={cn(
-                                'p-6 rounded-xl flex-1 flex flex-col gap-4 justify-between shadow-md',
-                                card.bgColor
-                            )}
+                            className="bg-white rounded-xl shadow-2xl transition-shadow duration-300 transform p-6 border border-gray-200"
                         >
-                            <div className="rounded-full bg-primary h-[3rem] w-[3rem] flex items-center justify-center">
-                                {<Icon className="text-2xl text-white" />}
+                            <div className="w-16 h-16 rounded-full bg-primary-muted flex items-center justify-center text-white text-3xl mb-6 mx-0 mx-0 xl:mx-auto">
+                                <Icon className="text-2xl text-primary" />
                             </div>
-                            <h2 className="font-bold text-black-muted text-xl">
-                                {card.title}
-                            </h2>
+                            <h2 className="">{card.title}</h2>
                             <p>{card.description}</p>
                         </li>
                     )

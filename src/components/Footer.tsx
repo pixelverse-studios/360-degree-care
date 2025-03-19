@@ -2,19 +2,16 @@
 
 import { Fragment } from 'react'
 import Link from 'next/link'
-import {
-    FaFacebookF,
-    FaYoutube,
-    FaLinkedinIn,
-    FaHeartPulse
-} from 'react-icons/fa6'
-import { Button } from '@/components/ui/button'
+import { FaFacebookF, FaInstagram, FaLinkedinIn } from 'react-icons/fa6'
+import { CompanyName } from '@/components/Logo'
+import { cn } from '@/lib/utils'
 import Logo from '@/components/Logo'
 import { navLinks, footerResources } from '@/utils/routes'
 
-const [serviceLink, faqLink] = navLinks
+const [aboutLink, serviceLink, faqLink] = navLinks
 
-const linkHover = 'transition-all duration-200 textwhite hover:text-black'
+const quickLinkStyles = 'text-sm'
+const linkHover = 'transition-all duration-200 hover:text-black'
 
 export default function Footer() {
     const currentYear = new Date().getFullYear()
@@ -26,31 +23,36 @@ export default function Footer() {
                     {/* Left - Logo & CTA */}
                     <div>
                         <div className="flex gap-2 items-center">
-                            <FaHeartPulse className="h-6 w-6" />
                             <Logo invert />
                         </div>
                         <p className="mt-2 text-sm">
                             Providing compassionate in-home care services for
                             seniors
                         </p>
-                        <div className="mt-4">
-                            <Button className="w-full md:w-auto px-6 py-3 border-2 font-bold transition-all duration-200 bg-background text-primary border-background hover:border-white hover:bg-primary hover:text-white rounded-3xl">
-                                Call To Action
-                            </Button>
-                        </div>
                     </div>
 
                     {/* Middle - Links */}
                     <div className="flex flex-col space-y-2 text-sm">
                         <p className="font-bold text-lg">Quick Links</p>
                         <Link
-                            href={serviceLink.route}
-                            className="hover:text-black"
+                            href={aboutLink.route}
+                            className={cn(quickLinkStyles, linkHover)}
                         >
-                            {serviceLink.label}
+                            {aboutLink.label}
                         </Link>
-                        <p className="font-bold text-lg pt-3">Resources</p>
-                        <Link href={faqLink.route} className="hover:text-black">
+                        {serviceLink.subLinks.map(item => (
+                            <Link
+                                key={`${item.label}-footer`}
+                                href={item.route}
+                                className={cn(quickLinkStyles, linkHover)}
+                            >
+                                {item.label} Services
+                            </Link>
+                        ))}
+                        <Link
+                            href={faqLink.route}
+                            className={cn(quickLinkStyles, linkHover)}
+                        >
                             {faqLink.label}
                         </Link>
                     </div>
@@ -81,19 +83,19 @@ export default function Footer() {
                                 <FaLinkedinIn size={24} />
                             </a>
                             <a href="#" className={linkHover}>
-                                <FaYoutube size={24} />
+                                <FaInstagram size={24} />
                             </a>
                         </div>
                     </div>
                 </div>
 
                 {/* Bottom Section */}
-                <div className="mt-10 border-t border-gray-200 pt-4 text-center text-xs text-white">
-                    <p>
-                        360 Degree Care is an Equal Opportunity Employer. Each
-                        franchise is independently owned and operated.
+                <div className="mt-10 border-t border-gray-200 pt-4 text-center text-white">
+                    <p className="text-sm">
+                        <CompanyName invert /> is an Equal Opportunity Employer.
+                        Each franchise is independently owned and operated.
                     </p>
-                    <p className="mt-1">
+                    <p className="mt-1 text-sm">
                         &copy; {currentYear} 360 Degree Care Inc. All rights
                         reserved.
                     </p>
@@ -105,12 +107,14 @@ export default function Footer() {
                                 <Link
                                     key={resource.label}
                                     href={resource.route}
-                                    className="hover:underline"
+                                    className="hover:underline text-[14px]"
                                 >
                                     {resource.label}
                                 </Link>
                                 {key + 1 !== footerResources.length ? (
-                                    <span key={key}>|</span>
+                                    <span className="text-[14px]" key={key}>
+                                        |
+                                    </span>
                                 ) : null}
                             </Fragment>
                         ))}
