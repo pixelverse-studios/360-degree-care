@@ -29,9 +29,11 @@ const formSchema = z.object({
 })
 
 export default function ContactForm({
-    setShowForm
+    setShowForm,
+    topic
 }: {
     setShowForm: Function
+    topic: string
 }) {
     const [loading, setLoading] = useState(false)
 
@@ -42,7 +44,7 @@ export default function ContactForm({
             fullname: '',
             email: '',
             phone: '',
-            description: ''
+            description: topic ?? ''
         }
     })
 
@@ -53,7 +55,10 @@ export default function ContactForm({
                 fullname: values.fullname,
                 email: values.email,
                 phone: values.phone,
-                data: { description: values.description }
+                data: {
+                    description: values.description,
+                    topic: topic.replace(/[^a-zA-Z\s]/g, '') ?? ''
+                }
             }
             await fetch(
                 `${process.env.NEXT_PUBLIC_API_HOST}/v1/contact-forms/${process.env.NEXT_PUBLIC_SLUG}`,

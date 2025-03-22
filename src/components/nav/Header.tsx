@@ -102,7 +102,7 @@ export function Header() {
     return (
         <header
             ref={headerRef}
-            className="fixed top-0 left-0 right-0 w-full bg-white-muted z-50 border-b border-b-gray-300"
+            className="fixed top-0 left-0 right-0 w-full bg-white-muted z-50 border-b border-b-gray-300 shadow-xl"
         >
             <div className="max-w-[var(--max-width)] mx-auto px-6 py-4 flex items-center justify-between">
                 <Link href="/">
@@ -181,7 +181,7 @@ export function Header() {
                                     </NavigationMenuItem>
                                 )
                             })}
-                            <CallToAction buttonLabel="Get In Touch" />
+                            <CallToAction buttonLabel="Get In Touch" topic="" />
                         </NavigationMenuList>
                     </NavigationMenu>
                 </nav>
@@ -298,7 +298,10 @@ export function Header() {
                             })}
                             <li>
                                 <div onClick={e => e.stopPropagation()}>
-                                    <CallToAction buttonLabel="Get In Touch" />
+                                    <CallToAction
+                                        buttonLabel="Get In Touch"
+                                        topic=""
+                                    />
                                 </div>
                             </li>
                         </ul>

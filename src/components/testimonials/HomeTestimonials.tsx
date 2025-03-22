@@ -1,5 +1,7 @@
 import TestimonialCards from './TestimonialCards'
 
+import AnimatedSection from '../animated-section'
+
 const REVIEWS = [
     {
         name: 'Lubna Salehe',
@@ -27,7 +29,10 @@ const REVIEWS = [
 export default function HomeTestimonials() {
     return (
         <section className="py-8 bg-secondary">
-            <div className="max-w-custom mx-auto p-6">
+            <AnimatedSection
+                animation="zoom"
+                className="max-w-custom mx-auto p-6"
+            >
                 <div className="text-center text-white-muted mb-6">
                     <h2 className="font-bold text-2xl mb-3 text-white-muted">
                         What Families Are Saying
@@ -38,7 +43,7 @@ export default function HomeTestimonials() {
                     </p>
                 </div>
                 <TestimonialCards testimonials={REVIEWS} />
-            </div>
+            </AnimatedSection>
         </section>
     )
 }

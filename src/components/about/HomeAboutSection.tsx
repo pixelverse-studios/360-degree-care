@@ -1,9 +1,13 @@
 import { CircleCheck } from 'lucide-react'
+import AnimatedSection from '../animated-section'
 
 export default function HomeAboutSection() {
     return (
         <section className="bg-white">
-            <section className="max-w-custom mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 justify-between items-start p-6">
+            <AnimatedSection
+                animation="zoom"
+                className="max-w-custom mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 justify-between items-start p-6"
+            >
                 <img
                     className="rounded-2xl h-full w-fit object-cover"
                     src="/assets/swimmer.jpg"
@@ -51,14 +55,16 @@ export default function HomeAboutSection() {
                                 </span>
                             </li>
                         </ul>
-                        <img
-                            src="/icons/CHAPLogo.svg"
-                            alt="CHAP badge"
-                            className="w-[8rem] h-[8rem]"
-                        />
+                        <a href="https://chapinc.org/about/" target="_blank">
+                            <img
+                                src="/icons/CHAPLogo.svg"
+                                alt="CHAP badge"
+                                className="w-[8rem] h-[8rem]"
+                            />
+                        </a>
                     </div>
                 </div>
-            </section>
+            </AnimatedSection>
         </section>
     )
 }

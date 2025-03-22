@@ -66,11 +66,16 @@ export default function AboutStatBanner() {
 
                     <div className="bg-white rounded-xl p-6 flex items-center justify-center shadow-lg">
                         <div className="text-center">
-                            <img
-                                src="/icons/CHAPLogo.svg"
-                                alt="CHAP Badge"
-                                className="h-[8rem] w-[8rem] md:h-[6rem] md:w-[6rem] mx-auto mb-2"
-                            />
+                            <a
+                                href="https://chapinc.org/about/"
+                                target="_blank"
+                            >
+                                <img
+                                    src="/icons/CHAPLogo.svg"
+                                    alt="CHAP Badge"
+                                    className="h-[8rem] w-[8rem] md:h-[6rem] md:w-[6rem] mx-auto mb-2"
+                                />
+                            </a>
                             <p className="text-gray-700 text-sm font-medium">
                                 Community Health Accreditation Program
                             </p>

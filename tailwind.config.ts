@@ -98,7 +98,9 @@ const config: Config = {
             },
             animation: {
                 'accordion-down': 'accordion-down 0.2s ease-out',
-                'accordion-up': 'accordion-up 0.2s ease-out'
+                'accordion-up': 'accordion-up 0.2s ease-out',
+                'fade-in': 'animate__animated animate__fadeIn',
+                'back-in-left': 'animate__animated animate__backInLeft'
             },
             fontSize: {
                 sm: '20px', // Tailwind's default "sm" is 14px, overriding it to 20px

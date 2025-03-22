@@ -1,0 +1,20 @@
+/* globals.css or your main CSS file */
+@import 'animate.css';
+
+.animate-fade-in {
+    animation-name: fadeIn;
+    animation-duration: 1s;
+    animation-fill-mode: both;
+}
+
+.animate-back-in-left {
+    animation-name: backInLeft;
+    animation-duration: 1s;
+    animation-fill-mode: both;
+}
+
+.animate-enter {
+    animation-name: fadeIn;
+    animation-duration: 1s;
+    animation-fill-mode: both;
+}

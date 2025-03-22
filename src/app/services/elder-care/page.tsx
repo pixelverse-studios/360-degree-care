@@ -207,7 +207,7 @@ export default function ElderCareServicesPage() {
                     </div>
                     <div className="flex-1">
                         <img
-                            src="/media/family-consulting.jpg"
+                            src="/assets/model-waving.jpg"
                             alt="Caring consultant meeting with family"
                             className="rounded-lg shadow-lg w-full h-full object-cover"
                         />
@@ -300,7 +300,11 @@ export default function ElderCareServicesPage() {
                         aspect of your loved one's well-being and supporting
                         your family through important care decisions.
                     </p>
-                    <CallToAction buttonLabel="Contact Us Today" round />
+                    <CallToAction
+                        buttonLabel="Contact Us Today"
+                        round
+                        topic="Elder Care: "
+                    />
                 </div>
             </div>
         </main>

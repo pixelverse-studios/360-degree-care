@@ -41,6 +41,7 @@ export default function AboutHero() {
                         <CallToAction
                             buttonLabel="Schedule a Consultation"
                             round
+                            topic=""
                         />
                     </div>
                 </div>

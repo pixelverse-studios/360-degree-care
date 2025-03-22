@@ -67,7 +67,7 @@ const Logo = ({ invert = false, size = 'md' }: LogoProps) => {
     }
 
     return (
-        <div>
+        <div className="animate-fade-in">
             {/* <div className={cn('flex font-logo', sizeClasses[size])}>
                 360
                 <div
@@ -84,9 +84,8 @@ const Logo = ({ invert = false, size = 'md' }: LogoProps) => {
             </div> */}
             <div
                 className={cn(
-                    'flex items-center cursor-pointer transition-transform hover:scale-105',
-                    invert ? 'text-white' : 'text-primary',
-                    'font-bold'
+                    'flex items-center cursor-pointer transition-transform hover:scale-105 font-bold',
+                    invert ? 'text-white' : 'text-primary'
                 )}
             >
                 <p className={cn('font-logo', sizeClasses[size])}>360</p>

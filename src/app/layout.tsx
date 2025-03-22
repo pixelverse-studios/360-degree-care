@@ -11,6 +11,7 @@ import Breadcrumbs from '@/components/nav/Breadcrumbs'
 import Footer from '@/components/Footer'
 import { Toaster } from '@/components/ui/sonner'
 
+// import 'animate.css'
 import '../styles/globals.css'
 
 export const metadata = {

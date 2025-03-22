@@ -2,6 +2,7 @@ import { useRouter } from 'next/navigation'
 import { Button } from '../ui/button'
 import { navLinks } from '@/utils/routes'
 import CallToAction from '../CallToAction'
+import AnimatedSection from '../animated-section'
 
 const [serviceLink] = navLinks
 
@@ -11,7 +12,10 @@ export default function HomeHero() {
     const onServicesClick = () => router.push(serviceLink.route)
 
     return (
-        <section className="mt-2 max-w-custom mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 justify-between items-center p-6">
+        <AnimatedSection
+            animation="fadeIn"
+            className="mt-2 max-w-custom mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 justify-between items-center p-6"
+        >
             <div className="flex flex-col gap-6">
                 <div>
                     <h1 className="text-primary">
@@ -27,7 +31,7 @@ export default function HomeHero() {
                     their independence and dignity at home.
                 </p>
                 <div className="my-5 grid grid-cols-2 md:grid-cols-1 lg:grid-cols-2 gap-4 sm:mx-auto">
-                    <CallToAction buttonLabel="Get In Touch" round />
+                    <CallToAction buttonLabel="Get In Touch" round topic="" />
                     <Button
                         className="roundAltButton border-secondary border-2 border-solid"
                         onClick={onServicesClick}
@@ -42,6 +46,6 @@ export default function HomeHero() {
                 src="/assets/happy couple 1.jpg"
                 alt=""
             />
-        </section>
+        </AnimatedSection>
     )
 }

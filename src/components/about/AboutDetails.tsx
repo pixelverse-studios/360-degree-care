@@ -53,7 +53,7 @@ export default function AboutDetails() {
                         </p>
                     </div>
                     <img
-                        src="/assets/leaves in the wind.jpg"
+                        src="/assets/freedom.jpg"
                         alt="freedome img"
                         className="rounded-xl shadow-xl object-cover"
                     />
@@ -116,7 +116,7 @@ export default function AboutDetails() {
             <div className="bg-secondary">
                 <div className="max-w-custom mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 p-10">
                     <img
-                        src="/media/experienced-team.jpg"
+                        src="/assets/staff.jpg"
                         alt="freedome img"
                         className="rounded-xl shadow-xl object-cover"
                     />

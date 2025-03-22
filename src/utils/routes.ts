@@ -36,8 +36,8 @@ export const navLinks = [
                 canVisit: true
             },
             {
-                route: '/services/companions',
-                label: 'Companions',
+                route: '/services/companion-care',
+                label: 'Companion Care',
                 canVisit: true
             }
         ]

@@ -1,5 +1,7 @@
 import { IconType } from 'react-icons'
 
+import AnimatedSection from './animated-section'
+
 interface CardProps {
     icon: IconType
     title: string
@@ -26,16 +28,17 @@ export default function InfoCards({ cards, header, styles }: InfoCardProps) {
                     const Icon = card.icon
 
                     return (
-                        <li
+                        <AnimatedSection
+                            animation="slideLeft"
                             key={card.title}
                             className="bg-white rounded-xl shadow-2xl transition-shadow duration-300 transform p-6 border border-gray-200"
                         >
-                            <div className="w-16 h-16 rounded-full bg-primary-muted flex items-center justify-center text-white text-3xl mb-6 mx-0 mx-0 xl:mx-auto">
+                            <div className="w-16 h-16 rounded-full bg-primary-muted flex items-center justify-center text-white text-3xl mb-6 mx-0">
                                 <Icon className="text-2xl text-primary" />
                             </div>
                             <h2 className="">{card.title}</h2>
                             <p>{card.description}</p>
-                        </li>
+                        </AnimatedSection>
                     )
                 })}
             </ul>

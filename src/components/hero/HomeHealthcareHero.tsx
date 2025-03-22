@@ -1,9 +1,6 @@
 'use client'
 
 import HomeAidHero from '../../../public/media/HomeAidHero.jpg'
-import AssessmentImg from '../../../public/media/nurse-patient-homehealthcare.webp'
-import ChecklistImg from '../../../public/media/nurse-checklist-homehealthcare.webp'
-import HelpImg from '../../../public/media/nurse-patient-help-homehealthcare.webp'
 
 interface ExpectationItem {
     img: string
@@ -13,7 +10,7 @@ interface ExpectationItem {
 const ExpectationItem = ({ img, description }: ExpectationItem) => (
     <li className="">
         <img
-            className="h-fit w-auto mb-4 shadow-lg rounded-lg"
+            className="h-[12rem] w-auto mb-4 shadow-lg rounded-lg"
             src={img}
             alt={`${description} - image`}
         />
@@ -44,8 +41,8 @@ export default function HomeHealthCareHero() {
                     </p>
                 </div>
                 <img
-                    className="h-fit w-fit mx-auto xl:mx-0"
-                    src={HomeAidHero.src}
+                    className="h-fit w-fit mx-auto xl:mx-0 rounded-xl shadow-xl"
+                    src="/assets/mother-daughter.jpg"
                     alt="Home Healthcare Aid graphic"
                 />
             </div>
@@ -53,15 +50,15 @@ export default function HomeHealthCareHero() {
                 <h2 className="text-3xl text-center pb-8">What To Expect</h2>
                 <ul className="grid grid-cols-[repeat(auto-fit,minmax(12rem,1fr))] gap-8 max-w-4xl mx-auto px-6">
                     <ExpectationItem
-                        img={AssessmentImg.src}
+                        img="/assets/nurse plan.jpg"
                         description="We will set up an initial, complimentary assessment. Consider us your local elder care consultant."
                     />
                     <ExpectationItem
-                        img={ChecklistImg.src}
+                        img="/assets/nurse assessment.jpg"
                         description="Our team of specialists will help create a care plan to determine the services needed."
                     />
                     <ExpectationItem
-                        img={HelpImg.src}
+                        img="/assets/nurse care.jpg"
                         description=" Our specialized team of caregivers will come to your home to provide the agreed-upon care. We even offer respite care, when needed."
                     />
                 </ul>

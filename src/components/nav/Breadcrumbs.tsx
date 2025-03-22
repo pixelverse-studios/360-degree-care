@@ -3,7 +3,6 @@
 import { Fragment } from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import { ChevronRight } from 'lucide-react'
 import { cn } from '@/lib/utils'
 import { availablePages } from '@/utils/routes'
 import {
@@ -18,25 +17,63 @@ export default function Breadcrumbs() {
     const pathname = usePathname()
     const pathSegments = pathname.split('/').filter(Boolean)
 
+    // First check if the entire path is invalid (genuine 404 page)
+    const fullPathIsValid =
+        pathSegments.length > 0 &&
+        (availablePages.some(
+            nav =>
+                nav.route === pathname ||
+                nav.subLinks.some(sub => sub.route === pathname)
+        ) ||
+            // Special case for services pages
+            (pathname.startsWith('/services/') &&
+                availablePages.some(
+                    nav =>
+                        nav.subLinks &&
+                        nav.subLinks.some(sub => sub.route === pathname)
+                )))
+
+    // Generate full breadcrumbs array regardless, but set a flag for showing just 404
+    const showSingle404 = !fullPathIsValid && !pathname.startsWith('/services/')
+
     const breadcrumbs = pathSegments.map((segment, index) => {
         const routePath = '/' + pathSegments.slice(0, index + 1).join('/')
+
+        // Check if this is a parent segment with valid children
+        // For example, if routePath is "/services" and it has subLinks
+        const isParentWithValidChildren = availablePages.some(
+            nav =>
+                nav.subLinks &&
+                nav.subLinks.length > 0 &&
+                nav.subLinks.some(sub => sub.route.startsWith(routePath + '/'))
+        )
+
         const matchedNav = availablePages.find(
             nav =>
                 nav.route === routePath ||
                 nav.subLinks.some(sub => sub.route === routePath)
         )
 
-        console.log(matchedNav)
+        // Find if any parent has this as a sublink
+        const parentNav = availablePages.find(
+            nav =>
+                nav.subLinks &&
+                nav.subLinks.some(sub => sub.route === routePath)
+        )
+
         const label =
             matchedNav?.subLinks.find(sub => sub.route === routePath)?.label ||
             matchedNav?.label ||
-            segment
+            (routePath === '/services' ? 'Services' : segment) // Special case for services
 
         return {
             route: routePath,
             label: label.charAt(0).toUpperCase() + label.slice(1),
-            canVisit: matchedNav?.canVisit,
-            isValid: matchedNav != undefined
+            canVisit: matchedNav?.canVisit || isParentWithValidChildren,
+            isValid:
+                matchedNav !== undefined ||
+                isParentWithValidChildren ||
+                !!parentNav
         }
     })
 
@@ -53,42 +90,55 @@ export default function Breadcrumbs() {
                         <Link href="/">Home</Link>
                     </BreadcrumbLink>
                 </BreadcrumbItem>
-                {breadcrumbs.map((crumb, index) => {
-                    const isLast = index === breadcrumbs.length - 1
-                    return (
-                        <Fragment key={index}>
-                            <BreadcrumbSeparator />
-                            <BreadcrumbItem key={crumb.route}>
-                                {index === breadcrumbs.length - 1 ||
-                                !crumb.canVisit ? (
-                                    <span
-                                        className={cn(
-                                            'text-primary font-semibold',
-                                            isLast
-                                                ? 'text-primary'
-                                                : 'text-black-muted'
-                                        )}
-                                    >
-                                        {crumb.isValid ? crumb.label : 404}
-                                    </span>
-                                ) : (
-                                    <BreadcrumbLink
-                                        asChild
-                                        className={
-                                            isLast
-                                                ? 'text-primary'
-                                                : 'text-black-muted'
-                                        }
-                                    >
-                                        <Link href={crumb.route}>
+
+                {showSingle404 ? (
+                    <>
+                        <BreadcrumbSeparator />
+                        <BreadcrumbItem>
+                            <span className="text-black font-bold">404</span>
+                        </BreadcrumbItem>
+                    </>
+                ) : (
+                    breadcrumbs.map((crumb, index) => {
+                        const isLast = index === breadcrumbs.length - 1
+                        return (
+                            <Fragment key={index}>
+                                <BreadcrumbSeparator />
+                                <BreadcrumbItem>
+                                    {isLast ||
+                                    !crumb.canVisit ||
+                                    crumb.route === '/services' ? (
+                                        <span
+                                            className={cn(
+                                                'text-primary font-semibold',
+                                                isLast
+                                                    ? 'text-primary'
+                                                    : 'text-black-muted'
+                                            )}
+                                        >
                                             {crumb.isValid ? crumb.label : 404}
-                                        </Link>
-                                    </BreadcrumbLink>
-                                )}
-                            </BreadcrumbItem>
-                        </Fragment>
-                    )
-                })}
+                                        </span>
+                                    ) : (
+                                        <BreadcrumbLink
+                                            asChild
+                                            className={
+                                                isLast
+                                                    ? 'text-primary'
+                                                    : 'text-black-muted'
+                                            }
+                                        >
+                                            <Link href={crumb.route}>
+                                                {crumb.isValid
+                                                    ? crumb.label
+                                                    : 404}
+                                            </Link>
+                                        </BreadcrumbLink>
+                                    )}
+                                </BreadcrumbItem>
+                            </Fragment>
+                        )
+                    })
+                )}
             </BreadcrumbList>
         </Breadcrumb>
     )
