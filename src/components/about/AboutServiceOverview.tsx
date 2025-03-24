@@ -4,7 +4,7 @@ import { MoveDown } from 'lucide-react'
 import { navLinks } from '@/utils/routes'
 
 const serviceCardStyles =
-    'bg-white rounded-lg shadow-md p-8 text-center hover:shadow-lg transition-shadow h-full border-t-secondary border-t-[4px]'
+    'bg-white-bright rounded-lg shadow-md p-8 text-center hover:shadow-lg transition-shadow h-full border-t-secondary border-t-[4px]'
 
 const ServiceOverview = () => {
     return (

@@ -1,7 +1,19 @@
 import { CompanyName } from '@/components/Logo'
+import {
+    Carousel,
+    CarouselContent,
+    CarouselItem,
+    CarouselNext,
+    CarouselPrevious
+} from '../ui/carousel'
 
-const bentoClass =
-    'max-w-4xl mx-auto rounded-lg shadow-lg bg-white-bright p-4 flex-1'
+const carouselItems = [
+    'ad-15.jpg',
+    'interim-billboard-hi-res.jpg',
+    'interim-bmv-2page-spread-boombox-hi-res.jpg',
+    'jeff-ads-version-C3-hi-res.jpg',
+    'man-with-bat-v01.jpg'
+]
 
 export default function AboutDetails() {
     return (
@@ -38,7 +50,7 @@ export default function AboutDetails() {
                 </div>
             </div>
             <div className="bg-white">
-                <div className="max-w-custom mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 p-10">
+                <div className="max-w-custom mx-auto p-10">
                     <div className="my-auto">
                         <h2 className="text-2xl md:text-3xl font-bold mb-4 text-primary-bright">
                             Same Dedicated Care, Now Independent
@@ -52,11 +64,33 @@ export default function AboutDetails() {
                             as before.
                         </p>
                     </div>
-                    <img
+                    <div className="w-[80%] mx-auto h-[50vh] mt-8">
+                        <Carousel>
+                            <CarouselContent>
+                                {carouselItems.map(pic => (
+                                    <CarouselItem
+                                        className="bg-transparent h-[50vh]"
+                                        key={pic}
+                                    >
+                                        <div className="h-[50vh] w-[100%] object-contain rounded-xl">
+                                            <img
+                                                className="h-full w-auto m-auto object-contain"
+                                                src={`/carousel/${pic}`}
+                                                alt=""
+                                            />
+                                        </div>
+                                    </CarouselItem>
+                                ))}
+                            </CarouselContent>
+                            <CarouselPrevious />
+                            <CarouselNext />
+                        </Carousel>
+                    </div>
+                    {/* <img
                         src="/assets/freedom.jpg"
                         alt="freedome img"
                         className="rounded-xl shadow-xl object-cover"
-                    />
+                    /> */}
                 </div>
             </div>
             <div className="bg-white-bright">
