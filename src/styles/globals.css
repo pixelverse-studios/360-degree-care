@@ -70,7 +70,10 @@ main {
     flex: 1;
     font-family: 'Rubik', sans-serif;
     position: relative;
-    margin-top: 5.8rem;
+
+    @media screen and (max-width: 600px) {
+        margin-top: 5.8rem;
+    }
 }
 
 .roundButton {
