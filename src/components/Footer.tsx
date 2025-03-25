@@ -22,7 +22,7 @@ export default function Footer() {
         <footer className="bg-primary py-10 text-black">
             <div className="max-w-[1400px] mx-auto px-6">
                 {/* Top Section */}
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-white">
+                <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 text-white">
                     {/* Left - Logo & CTA */}
                     <div>
                         <div>
