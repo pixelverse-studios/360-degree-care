@@ -16,7 +16,7 @@ export default function CompanionsServicesPage() {
                         <h1 className="text-4xl font-extrabold mb-4">
                             Companion Care Services
                         </h1>
-                        <p className="text-lg font-light max-w-2xl mx-auto mb-6">
+                        <p className="text-lg font-light max-w-xl mx-auto mb-6">
                             Warm, personal care that keeps individuals socially
                             engaged, safe, and comfortable at home.
                         </p>

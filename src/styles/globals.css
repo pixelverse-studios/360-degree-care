@@ -74,8 +74,8 @@ main {
 }
 
 .roundButton {
-    height: 6rem;
-    width: 6rem !important;
+    height: 8rem;
+    width: 8rem !important;
     border-radius: 150px;
     background: var(--primary);
     border: 7px solid var(--primary);
@@ -83,11 +83,16 @@ main {
         0px 3px 8px var(--primary-muted),
         inset 0px 4px 15px var(--primary-muted);
     transition: 0.35s ease-in-out;
+
+    @media only screen and (max-width: 600px) {
+        height: 6rem;
+        width: 6rem !important;
+    }
 }
 
 .roundAltButton {
-    height: 6rem;
-    width: 6rem !important;
+    height: 8rem;
+    width: 8rem !important;
     border-radius: 150px;
     background: var(--secondary);
     border: 7px solid var(--secondary);
@@ -99,6 +104,11 @@ main {
     &:hover {
         color: var(--secondary) !important;
         background-color: var(--white) !important;
+    }
+
+    @media only screen and (max-width: 600px) {
+        height: 6rem;
+        width: 6rem !important;
     }
 }
 
