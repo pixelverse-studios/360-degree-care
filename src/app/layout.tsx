@@ -17,11 +17,11 @@ import '../styles/globals.css'
 export const metadata = {
     icons: {
         icon: [
-            { url: '/16x16.png', type: 'image/png', sizes: '16x16' },
-            { url: '/32x32.png', type: 'image/png', sizes: '32x32' },
-            { url: '/64x64.png', type: 'image/png', sizes: '64x64' }
+            { url: '/Favicon_16x16.png', type: 'image/png', sizes: '16x16' },
+            { url: '/Favicon_32x32.png', type: 'image/png', sizes: '32x32' },
+            { url: '/Favicon_64x64.png', type: 'image/png', sizes: '64x64' }
         ],
-        apple: [{ url: '/apple-icon.png', sizes: '180x180' }]
+        apple: [{ url: '/Favicon_16x16.png', sizes: '180x180' }]
     }
 }
 export const permanentMarker = Permanent_Marker({

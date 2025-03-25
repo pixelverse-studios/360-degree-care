@@ -9,7 +9,8 @@ import {
     DialogOverlay,
     DialogTitle
 } from '@/components/ui/dialog'
-import { videoMetadata, extractThumbnail } from '@/utils/videos'
+import { videoMetadata } from '@/utils/videos'
+import AnimatedSection from '@/components/animated-section'
 
 export default function VaultOfWisdom() {
     const [currentVideoIndex, setCurrentVideoIndex] = useState(-1)
@@ -18,7 +19,7 @@ export default function VaultOfWisdom() {
 
     return (
         <main>
-            <section className="page-wrapper mb-12">
+            <AnimatedSection animation="zoom" className="page-wrapper mb-12">
                 <h1 className="text-3xl text-center mx-auto">
                     Wisdom of the Ages, Timeless Stories, and Relatable Journeys
                 </h1>
@@ -63,7 +64,7 @@ export default function VaultOfWisdom() {
                         ) : null}
                     </DialogContent>
                 </Dialog>
-            </section>
+            </AnimatedSection>
         </main>
     )
 }

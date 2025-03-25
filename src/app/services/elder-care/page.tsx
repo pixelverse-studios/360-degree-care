@@ -2,13 +2,17 @@
 
 import CallToAction from '@/components/CallToAction'
 import { CompanyName } from '@/components/Logo'
+import AnimatedSection from '@/components/animated-section'
 
 export default function ElderCareServicesPage() {
     return (
         <main className="bg-white">
             {/* Hero Section */}
             <div className="bg-white-bright py-8">
-                <div className="container mx-auto px-4 max-w-6xl">
+                <AnimatedSection
+                    animation="zoom"
+                    className="container mx-auto px-4 max-w-6xl"
+                >
                     <h1>Elder Care Consulting</h1>
                     <p className="text-lg md:text-xl text-gray-700 max-w-3xl">
                         Leverage our experience and expertise to evaluate your
@@ -19,11 +23,14 @@ export default function ElderCareServicesPage() {
                         and refer you to competent elder care attorneys and
                         accountants.
                     </p>
-                </div>
+                </AnimatedSection>
             </div>
 
             {/* Making Informed Decisions Section */}
-            <div className="container mx-auto px-4 py-12 max-w-6xl">
+            <AnimatedSection
+                animation="zoom"
+                className="container mx-auto px-4 py-12 max-w-6xl"
+            >
                 <h2 className="font-semibold text-center mb-12">
                     Making Informed Decisions for Your Loved One's Care
                 </h2>
@@ -35,11 +42,14 @@ export default function ElderCareServicesPage() {
                         decisions about your loved one's care journey.
                     </p>
                 </div>
-            </div>
+            </AnimatedSection>
 
             {/* Services Section */}
             <div className="bg-gray-50 py-16">
-                <div className="container mx-auto px-4 max-w-6xl">
+                <AnimatedSection
+                    animation="zoom"
+                    className="container mx-auto px-4 max-w-6xl"
+                >
                     <h2 className="font-semibold mb-12 text-center">
                         Our Elder Care Consulting Services
                     </h2>
@@ -156,12 +166,15 @@ export default function ElderCareServicesPage() {
                             </p>
                         </div>
                     </div>
-                </div>
+                </AnimatedSection>
             </div>
 
             {/* Why Choose Us Section */}
             <div className="bg-secondary p-8">
-                <div className="flex flex-col md:flex-row gap-8 mb-6">
+                <AnimatedSection
+                    animation="zoom"
+                    className="flex flex-col md:flex-row gap-8 mb-6"
+                >
                     <div className="flex-1 my-auto">
                         <h2 className="font-semibold mb-8 py-8 text-white">
                             Why Choose Our Elder Care Consulting Services
@@ -212,13 +225,16 @@ export default function ElderCareServicesPage() {
                             className="rounded-lg shadow-lg w-full h-full object-cover"
                         />
                     </div>
-                </div>
+                </AnimatedSection>
             </div>
             {/* </div> */}
 
             {/* What to Expect Section */}
             <div className="bg-gray-50 py-16">
-                <div className="container mx-auto px-4 max-w-6xl">
+                <AnimatedSection
+                    animation="zoom"
+                    className="container mx-auto px-4 max-w-6xl"
+                >
                     <h2 className="font-semibold mb-8 text-center">
                         What to Expect
                     </h2>
@@ -284,12 +300,15 @@ export default function ElderCareServicesPage() {
                             </p>
                         </div>
                     </div>
-                </div>
+                </AnimatedSection>
             </div>
 
             {/* Concierge Section */}
-            <div className="container mx-auto px-4 py-16 max-w-6xl">
-                <div className="bg-secondary text-white rounded-lg p-8 text-center">
+            <div className="container bg-secondary mx-auto px-4 py-16 max-w-6xl">
+                <AnimatedSection
+                    animation="zoom"
+                    className="text-white rounded-lg p-8 text-center"
+                >
                     <h2 className="font-semibold mb-6 text-white">
                         Concierge-Level™ Care at Every Step
                     </h2>
@@ -305,7 +324,7 @@ export default function ElderCareServicesPage() {
                         round
                         topic="Elder Care: "
                     />
-                </div>
+                </AnimatedSection>
             </div>
         </main>
     )

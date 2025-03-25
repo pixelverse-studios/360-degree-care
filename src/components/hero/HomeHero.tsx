@@ -13,7 +13,7 @@ export default function HomeHero() {
 
     return (
         <AnimatedSection
-            animation="fadeIn"
+            animation="zoom"
             className="mt-2 max-w-custom mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 justify-between items-center p-6"
         >
             <div className="flex flex-col gap-6">

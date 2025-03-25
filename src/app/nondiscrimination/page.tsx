@@ -1,9 +1,13 @@
 import { CompanyName } from '@/components/Logo'
+import AnimatedSection from '@/components/animated-section'
 
 export default function NondiscriminationPage() {
     return (
         <main>
-            <div className="max-w-custom mx-auto px-6 py-12 bg-white shadow-lg rounded-lg mb-6">
+            <AnimatedSection
+                animation="zoom"
+                className="max-w-custom mx-auto px-6 py-12 bg-white shadow-lg rounded-lg mb-6"
+            >
                 <h1 className="font-bold text-center mb-6">
                     Nondiscrimination and Accessibility Notice
                 </h1>
@@ -60,9 +64,9 @@ export default function NondiscriminationPage() {
                     disability, or sex (including sex characteristics, intersex
                     traits, pregnancy-related conditions, sexual orientation,
                     gender identity, and sex stereotypes), you can file a
-                    grievance with the Administrator of your local Interim
-                    HealthCare home care agency, in person, by mail, fax, or
-                    email. The Administrator is available to help you.
+                    grievance with the Administrator of your local{' '}
+                    <CompanyName /> home care agency, in person, by mail, fax,
+                    or email. The Administrator is available to help you.
                 </p>
 
                 <p className="text-gray-700 mb-4">
@@ -87,7 +91,7 @@ export default function NondiscriminationPage() {
                     <br />
                     800–537–7697 (TDD)
                 </p>
-            </div>
+            </AnimatedSection>
         </main>
     )
 }

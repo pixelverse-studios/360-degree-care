@@ -1,5 +1,6 @@
 // import { motion } from 'framer-motion' // Note: You would need to install framer-motion
 import { Star, Users, Calendar } from 'lucide-react'
+import AnimatedSection from '../animated-section'
 
 const iconClass = 'text-primary h-6 w-6'
 
@@ -40,7 +41,10 @@ export default function AboutStatBanner() {
                 ))}
             </div>
 
-            <div className="max-w-6xl mx-auto px-6">
+            <AnimatedSection
+                animation="zoom"
+                className="max-w-6xl mx-auto px-6"
+            >
                 <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-8 relative z-10">
                     {stats.map((stat, index) => (
                         <div
@@ -82,7 +86,7 @@ export default function AboutStatBanner() {
                         </div>
                     </div>
                 </div>
-            </div>
+            </AnimatedSection>
         </section>
     )
 }

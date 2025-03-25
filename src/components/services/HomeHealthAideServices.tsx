@@ -9,6 +9,7 @@ import {
     Calendar
 } from 'lucide-react'
 import { cn } from '@/lib/utils'
+import AnimatedSection from '../animated-section'
 
 // Keep your existing imports
 import BathIcon from '../../../public/icons/bathing.svg'
@@ -117,15 +118,18 @@ const additionalServices = [
 export default function HomeHealthAideServices() {
     return (
         <section className="bg-secondary pt-6">
-            <div className={cn(wrapperClass)}>
+            <AnimatedSection animation="zoom" className={cn(wrapperClass)}>
                 <h3 className="text-white">Home Health Aides</h3>
                 <h2 className="text-white">Compassionate In-Home Care</h2>
                 <h4 className="text-white">
                     Our dedicated home health aides help maintain independence,
                     comfort, and quality of life.
                 </h4>
-            </div>
-            <div className={cn(wrapperClass, 'px-6, pb-6')}>
+            </AnimatedSection>
+            <AnimatedSection
+                animation="zoom"
+                className={cn(wrapperClass, 'px-6, pb-6')}
+            >
                 <div className="bg-white p-6 rounded-3xl mx-auto">
                     <h3 className="mb-4">
                         Concierge Level™ Home Health Aides
@@ -140,10 +144,13 @@ export default function HomeHealthAideServices() {
                         familiar environment of home.
                     </p>
                 </div>
-            </div>
+            </AnimatedSection>
 
             <div className="bg-white">
-                <div className={cn(wrapperClass, 'py-8')}>
+                <AnimatedSection
+                    animation="zoom"
+                    className={cn(wrapperClass, 'py-8')}
+                >
                     {/* <div className="max-w-4xl mx-auto"> */}
                     <div>
                         <h3>Comprehensive Home Care</h3>
@@ -181,10 +188,13 @@ export default function HomeHealthAideServices() {
                             ))}
                         </ul>
                     </div>
-                </div>
+                </AnimatedSection>
             </div>
 
-            <div className={cn(wrapperClass, 'py-8')}>
+            <AnimatedSection
+                animation="zoom"
+                className={cn(wrapperClass, 'py-8')}
+            >
                 <div className="rounded-3xl mx-auto text-black my-6">
                     <h2 className="text-white pb-4">
                         Why Choose Our Home Health Aides?
@@ -229,7 +239,7 @@ export default function HomeHealthAideServices() {
                         </div>
                     </div>
                 </div>
-            </div>
+            </AnimatedSection>
         </section>
     )
 }

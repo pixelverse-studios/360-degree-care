@@ -4,13 +4,17 @@ import CallToAction from '@/components/CallToAction'
 import FaqSection from '@/components/faqs/FaqSection'
 import { CompanyName } from '@/components/Logo'
 import { STAFFING_FAQS } from '@/utils/faqs'
+import AnimatedSection from '@/components/animated-section'
 
 export default function StaffingSolutionsPage() {
     return (
         <main>
             <div className="bg-white">
                 {/* HERO SECTION */}
-                <div className="bg-white-bright py-8">
+                <AnimatedSection
+                    animation="zoom"
+                    className="bg-white-bright py-8"
+                >
                     <div className="container mx-auto px-4 max-w-6xl">
                         <h1>Medical Staffing</h1>
                         <p className="text-lg md:text-xl text-gray-700 max-w-3xl">
@@ -19,11 +23,14 @@ export default function StaffingSolutionsPage() {
                             exceptional patient care.
                         </p>
                     </div>
-                </div>
+                </AnimatedSection>
 
                 {/* INTRO & OVERVIEW SECTION */}
                 <section className="bg-white ontainer mx-auto px-4 py-12 max-w-6xl">
-                    <div className="grid md:grid-cols-2 gap-8 items-center">
+                    <AnimatedSection
+                        animation="zoom"
+                        className="grid md:grid-cols-2 gap-8 items-center"
+                    >
                         <div>
                             <h2 className="text-2xl font-bold mb-3">
                                 Overview
@@ -51,12 +58,15 @@ export default function StaffingSolutionsPage() {
                                 className="rounded-lg shadow-lg"
                             />
                         </div>
-                    </div>
+                    </AnimatedSection>
                 </section>
 
                 {/* STAFFING SOLUTIONS & SERVICES SECTION */}
                 <section className="bg-white-bright py-12">
-                    <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <AnimatedSection
+                        animation="zoom"
+                        className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8"
+                    >
                         <h2 className="text-2xl font-bold text-center mb-8">
                             Staffing Solutions &amp; Services
                         </h2>
@@ -89,12 +99,15 @@ export default function StaffingSolutionsPage() {
                                 </p>
                             </div>
                         </div>
-                    </div>
+                    </AnimatedSection>
                 </section>
 
                 {/* INDUSTRIES & FACILITIES SERVED */}
                 <section className="py-12 bg-gray-100">
-                    <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <AnimatedSection
+                        animation="zoom"
+                        className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8"
+                    >
                         <h2 className="text-2xl font-bold mb-6 text-center">
                             Industries &amp; Facilities Served
                         </h2>
@@ -125,11 +138,14 @@ export default function StaffingSolutionsPage() {
                             </div>
                             {/* You can add or remove as needed */}
                         </div>
-                    </div>
+                    </AnimatedSection>
                 </section>
 
                 <section className="bg-white py-12">
-                    <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <AnimatedSection
+                        animation="zoom"
+                        className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8"
+                    >
                         <h2 className="text-2xl font-bold mb-6 text-center">
                             Benefits of Working with{' '}
                             <CompanyName className="text-2xl" />
@@ -168,20 +184,25 @@ export default function StaffingSolutionsPage() {
                                 </p>
                             </div>
                         </div>
-                    </div>
+                    </AnimatedSection>
                 </section>
 
                 {/* FAQ SECTION */}
                 <section className="bg-white-bright py-10">
-                    <FaqSection
-                        faqs={STAFFING_FAQS}
-                        header="Medical Staffing FAQs"
-                    />
+                    <AnimatedSection animation="zoom">
+                        <FaqSection
+                            faqs={STAFFING_FAQS}
+                            header="Medical Staffing FAQs"
+                        />
+                    </AnimatedSection>
                 </section>
 
                 {/* COMPANY BACKGROUND & CONTACT */}
                 <section className="py-12 bg-white">
-                    <div className="max-w-4xl mx-auto px-4 text-center">
+                    <AnimatedSection
+                        animation="zoom"
+                        className="max-w-4xl mx-auto px-4 text-center"
+                    >
                         <h2 className="text-2xl font-bold mb-4">
                             <CompanyName className="text-2xl" />: Your Trusted
                             Medical Staffing Partner
@@ -197,7 +218,7 @@ export default function StaffingSolutionsPage() {
                             round
                             topic="Staffing: "
                         />
-                    </div>
+                    </AnimatedSection>
                 </section>
             </div>
         </main>

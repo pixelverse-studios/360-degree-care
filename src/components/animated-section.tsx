@@ -16,7 +16,7 @@ export default function AnimatedSection({
 }: AnimatedSectionProps) {
     const ref = useRef<HTMLDivElement>(null)
     // Change 'once: true' to 'once: false' to make the animation repeat
-    const isInView = useInView(ref, { once: true, amount: 0.3 })
+    const isInView = useInView(ref, { once: true, amount: 0.2 })
 
     // Animation variants
     const animations = {
@@ -46,7 +46,7 @@ export default function AnimatedSection({
             initial="hidden"
             animate={isInView ? 'visible' : 'hidden'}
             variants={selectedAnimation}
-            transition={{ duration: 0.5, ease: 'easeOut' }}
+            transition={{ duration: 0.4, ease: 'easeInOut' }}
             className={className}
         >
             {children}

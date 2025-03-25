@@ -1,13 +1,14 @@
 'use client'
-import { RotateCw, CircleCheck } from 'lucide-react'
+import { CircleCheck } from 'lucide-react'
 import { CompanyName } from '@/components/Logo'
 import FaqSection from '@/components/faqs/FaqSection'
 import { PERSONAL_CARE_FAQS } from '@/utils/faqs'
+import AnimatedSection from '@/components/animated-section'
 
 export default function PersonalCarePage() {
     return (
         <main>
-            <div className="page-wrapper">
+            <AnimatedSection animation="zoom" className="page-wrapper">
                 <h1 className="mb-6">
                     Empowering Well-being: A Guide to Personal Care Services
                 </h1>
@@ -136,12 +137,14 @@ export default function PersonalCarePage() {
                     </li>
                 </ul>
 
-                <FaqSection
-                    faqs={PERSONAL_CARE_FAQS}
-                    header="Questions About Personal Care"
-                    headerClass="text-left"
-                />
-
+                <AnimatedSection animation="zoom">
+                    <FaqSection
+                        faqs={PERSONAL_CARE_FAQS}
+                        header="Questions About Personal Care"
+                        headerClass="text-left"
+                        bodyClass="mx-0"
+                    />
+                </AnimatedSection>
                 <h2 className="mt-6 mb-2">
                     Finding the Right Personal Care Solution
                 </h2>
@@ -151,7 +154,7 @@ export default function PersonalCarePage() {
                     range of personal care services to create a customized care
                     plan that promotes independence, dignity, and well-being.
                 </p>
-            </div>
+            </AnimatedSection>
         </main>
     )
 }

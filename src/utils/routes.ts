@@ -77,4 +77,17 @@ export const footerResources = [
     }
 ]
 
-export const availablePages = [...navLinks, ...footerResources]
+export const additionalPages = [
+    {
+        route: '/how-to-pay',
+        label: 'How To Pay',
+        canVisit: true,
+        subLinks: []
+    }
+]
+
+export const availablePages = [
+    ...navLinks,
+    ...footerResources,
+    ...additionalPages
+]

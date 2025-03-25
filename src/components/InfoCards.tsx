@@ -29,7 +29,7 @@ export default function InfoCards({ cards, header, styles }: InfoCardProps) {
 
                     return (
                         <AnimatedSection
-                            animation="slideLeft"
+                            animation="zoom"
                             key={card.title}
                             className="bg-white rounded-xl shadow-2xl transition-shadow duration-300 transform p-6 border border-gray-200"
                         >

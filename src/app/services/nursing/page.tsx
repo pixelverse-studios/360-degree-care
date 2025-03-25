@@ -3,13 +3,17 @@
 import { CircleCheck } from 'lucide-react'
 import CallToAction from '@/components/CallToAction'
 import { CompanyName } from '@/components/Logo'
+import AnimatedSection from '@/components/animated-section'
 
 export default function NursingServicesPage() {
     return (
         <main className="bg-white">
             {/* Hero Section */}
             <div className="bg-white-bright">
-                <div className="container mx-auto px-4 max-w-6xl py-10">
+                <AnimatedSection
+                    animation="zoom"
+                    className="container mx-auto px-4 max-w-6xl py-10"
+                >
                     <h1 className="text-4xl md:text-5xl font-bold mb-6">
                         Nursing Services
                     </h1>
@@ -21,12 +25,15 @@ export default function NursingServicesPage() {
                         highest standard of healthcare in the comfort of your
                         home.
                     </p>
-                </div>
+                </AnimatedSection>
             </div>
 
             {/* Professional Care Section */}
             <section className="bg-white-bright">
-                <div className="container mx-auto px-4 py-8 max-w-custom">
+                <AnimatedSection
+                    animation="zoom"
+                    className="container mx-auto px-4 py-8 max-w-custom"
+                >
                     <h2 className="text-3xl font-semibold mb-8">
                         Professional Nursing Care in Your Home
                     </h2>
@@ -42,18 +49,20 @@ export default function NursingServicesPage() {
                             years.
                         </p>
                     </div>
-                </div>
+                </AnimatedSection>
             </section>
 
             {/* Services Section */}
             <section className="bg-white">
                 <div className="container mx-auto px-4 py-12 max-w-6xl">
-                    <h2 className="text-3xl font-semibold mb-12 text-center">
-                        Our Comprehensive Nursing Services
-                    </h2>
+                    <AnimatedSection animation="zoom">
+                        <h2 className="text-3xl font-semibold mb-12 text-center">
+                            Our Comprehensive Nursing Services
+                        </h2>
+                    </AnimatedSection>
 
                     {/* Physical Assessments */}
-                    <div className="mb-16">
+                    <AnimatedSection animation="zoom" className="mb-16">
                         <div className="bg-white-bright rounded-lg shadow-lg overflow-hidden">
                             <div className="md:flex">
                                 <div className="md:w-1/3 bg-primary">
@@ -124,10 +133,10 @@ export default function NursingServicesPage() {
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </AnimatedSection>
 
                     {/* Wound Care */}
-                    <div className="mb-16">
+                    <AnimatedSection animation="zoom" className="mb-16">
                         <div className="bg-white-bright rounded-lg shadow-lg overflow-hidden">
                             <div className="md:flex flex-row-reverse">
                                 <div
@@ -200,10 +209,10 @@ export default function NursingServicesPage() {
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </AnimatedSection>
 
                     {/* Medication Management */}
-                    <div>
+                    <AnimatedSection animation="zoom">
                         <div className="bg-white rounded-lg shadow-lg overflow-hidden">
                             <div className="md:flex">
                                 <div className="md:w-1/3 bg-primary">
@@ -272,13 +281,16 @@ export default function NursingServicesPage() {
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </AnimatedSection>
                 </div>
             </section>
 
             {/* Why Choose Us Section */}
             <section className="bg-white-bright">
-                <div className="container mx-auto px-4 py-10 max-w-custom">
+                <AnimatedSection
+                    animation="zoom"
+                    className="container mx-auto px-4 py-10 max-w-custom"
+                >
                     <h2 className="text-3xl font-semibold mb-12 text-center text-primary">
                         Why Choose Our Nursing Services
                     </h2>
@@ -374,12 +386,15 @@ export default function NursingServicesPage() {
                             </p>
                         </div>
                     </div>
-                </div>
+                </AnimatedSection>
             </section>
 
             {/* CTA Section */}
             <div className="container mx-auto px-4 py-16 max-w-custom">
-                <div className="text-black rounded-lg p-8 text-center shadow-xl bg-white-bright">
+                <AnimatedSection
+                    animation="zoom"
+                    className="text-black rounded-lg p-8 text-center shadow-xl bg-white-bright"
+                >
                     <h2 className="text-3xl font-semibold mb-6">
                         Ready to Get Started?
                     </h2>
@@ -395,7 +410,7 @@ export default function NursingServicesPage() {
                         round
                         topic="Nurse Services: "
                     />
-                </div>
+                </AnimatedSection>
             </div>
         </main>
     )

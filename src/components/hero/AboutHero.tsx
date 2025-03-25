@@ -1,10 +1,14 @@
 import { CompanyName } from '../Logo'
 import CallToAction from '../CallToAction'
 import AboutServiceOverview from '../about/AboutServiceOverview'
+import AnimatedSection from '../animated-section'
 
 export default function AboutHero() {
     return (
-        <section className="relative bg-gradient-to-b from-white-bright to-white overflow-hidden">
+        <AnimatedSection
+            animation="zoom"
+            className="relative bg-gradient-to-b from-white-bright to-white overflow-hidden"
+        >
             <div className="max-w-custom mx-auto px-6 pb-12 md:pb-18">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
                     <div className="flex flex-col gap-6">
@@ -46,6 +50,6 @@ export default function AboutHero() {
                     </div>
                 </div>
             </div>
-        </section>
+        </AnimatedSection>
     )
 }

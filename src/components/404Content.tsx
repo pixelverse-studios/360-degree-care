@@ -1,11 +1,13 @@
 'use client'
-
-import React, { useState, useEffect } from 'react'
+import AnimatedSection from './animated-section'
 
 const Page404Content = () => {
     return (
-        <div className="px-6 py-8">
-            <div className="max-w-custom w-full bg-white rounded-xl shadow-xl overflow-hidden">
+        <div className="px-6 py-8 bg-white">
+            <AnimatedSection
+                animation="zoom"
+                className="max-w-custom w-full rounded-xl shadow-xl overflow-hidden"
+            >
                 <div className="flex flex-col md:flex-row">
                     <div className="bg-primary text-white p-8 flex items-center justify-center md:w-2/5">
                         <div className="text-center">
@@ -91,7 +93,7 @@ const Page404Content = () => {
                         </div>
                     </div>
                 </div>
-            </div>
+            </AnimatedSection>
         </div>
     )
 }

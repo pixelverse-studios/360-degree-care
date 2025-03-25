@@ -1,9 +1,13 @@
 import { CompanyName } from '@/components/Logo'
+import AnimatedSection from '@/components/animated-section'
 
 export default function LegalDisclaimerPage() {
     return (
         <main>
-            <div className="max-w-custom mx-auto p-6 bg-white shadow-md rounded-lg mb-6">
+            <AnimatedSection
+                animation="zoom"
+                className="max-w-custom mx-auto p-6 bg-white shadow-md rounded-lg mb-6"
+            >
                 <h1 className="font-bold text-center mb-6">Legal Disclaimer</h1>
 
                 <p className="text-gray-700 mb-4">
@@ -37,7 +41,7 @@ export default function LegalDisclaimerPage() {
                 <h2 className="font-semibold mt-6 mb-2">Links</h2>
                 <p className="text-gray-700 mb-4">
                     This website contains links to other websites. Visitors
-                    should be aware that they are leaving the Interim HealthCare
+                    should be aware that they are leaving the <CompanyName />
                     Inc. website through the use of such links. All content
                     contained on any linked website is the sole responsibility
                     of the owner of that website. Policies regarding the sharing
@@ -63,7 +67,7 @@ export default function LegalDisclaimerPage() {
                     </a>
                     .
                 </p>
-            </div>
+            </AnimatedSection>
         </main>
     )
 }

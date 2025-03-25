@@ -1,9 +1,13 @@
 import { CompanyName } from '@/components/Logo'
+import AnimatedSection from '@/components/animated-section'
 
 export default function PrivacyPolicyPage() {
     return (
-        <main>
-            <div className="max-w-custom mx-auto p-6 bg-white shadow-lg rounded-lg mb-6">
+        <main className="bg-white ">
+            <AnimatedSection
+                animation="zoom"
+                className="max-w-custom mx-auto p-6shadow-lg rounded-lg mb-6"
+            >
                 <h1 className="font-bold text-center mb-6">Privacy Policy</h1>
                 <p className="text-gray-700 mb-4">
                     <CompanyName /> recognizes the importance of personal
@@ -77,7 +81,7 @@ export default function PrivacyPolicyPage() {
                     those changes on our Homepage so users are always aware of
                     what information we collect and how we use it.
                 </p>
-            </div>
+            </AnimatedSection>
         </main>
     )
 }

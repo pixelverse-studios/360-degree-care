@@ -28,27 +28,52 @@ export const HOME_FAQS: FAQ[] = [
         answer: 'In addition to conducting our evaluation of your or your loved one’s health and home environment, our care professionals will contact existing physicians, therapists, and other healthcare professionals on your behalf to determine the plan of care needed.'
     },
     {
-        question: 'What does an Interim HealthCare evaluation look like?',
-        answer: 'After you reach out to your local Interim HealthCare office, we’ll give you a time and date to expect a visit from one of our care professionals. The first time that one of our care professionals comes to your home, you should expect a visit of more than an hour. We’ll chat with you, complete a physical, learn about your day-to-day challenges and needs and evaluate your home.'
+        question: 'What does an evaluation look like?',
+        answer: (
+            <>
+                After you reach out to <CompanyName />, we’ll give you a time
+                and date to expect a visit from one of our care professionals.
+                The first time that one of our care professionals comes to your
+                home, you should expect a visit of more than an hour. We’ll chat
+                with you, complete a physical, learn about your day-to-day
+                challenges and needs and evaluate your home.
+            </>
+        )
     },
     {
         question: 'How much does home care cost?',
-        answer: 'Every person is different, especially when it comes to health and what type of home care is needed. The exact cost of care needs to be based on listening to you or your loved one, your family and your doctor, and observing your individual situation. We recommend an initial in-home care evaluation for each client. The local Interim HealthCare office does these evaluations at no charge. Based on the in-home assessment, a service plan is then developed to best meet the needs of the individual. It can include minimal assistance up to around-the-clock assistance. Charges are based on quality care and individual needs. Please give our Interim HealthCare local office a call to schedule an in-home evaluation or request more information.  '
+        answer: (
+            <>
+                Every person is different, especially when it comes to health
+                and what type of home care is needed. The exact cost of care
+                needs to be based on listening to you or your loved one, your
+                family and your doctor, and observing your individual situation.
+                We recommend an initial in-home care evaluation for each client.
+                The local <CompanyName /> office does these evaluations at no
+                charge. Based on the in-home assessment, a service plan is then
+                developed to best meet the needs of the individual. It can
+                include minimal assistance up to around-the-clock assistance.
+                Charges are based on quality care and individual needs. Please
+                give our <CompanyName /> local office a call to schedule an
+                in-home evaluation or request more information.
+            </>
+        )
     },
     {
         question: 'How do I pay for home care?',
         answer: (
             <>
                 Just as everyone’s needs for care are different, we know
-                financial situations are deeply personal. That’s why we accept
-                <a href="/how-to-pay">multiple ways to pay</a> so that you have
-                more choices in financing home healthcare.
+                financial situations are deeply personal. That’s why we accept{' '}
+                <a
+                    href="/how-to-pay"
+                    className="text-primary font-semibold hover:underline"
+                >
+                    multiple ways to pay
+                </a>{' '}
+                so that you have more choices in financing home healthcare.
             </>
         )
-    },
-    {
-        question: 'Do you take health insurance?',
-        answer: 'Yes! We work with various public and private insurances, including Medicare.'
     },
     {
         question: 'What conditions do you care for?',
@@ -98,7 +123,7 @@ export const PERSONAL_CARE_FAQS: FAQ[] = [
 export const STAFFING_FAQS: FAQ[] = [
     {
         question: "What's your employee screening process?",
-        answer: 'We conduct thorough background checks, license verifications, and skill assessments for every candidate.'
+        answer: 'We conduct thorough background checks, license verifications, regular drug screening, and skill assessments for every candidate.'
     },
     {
         question: 'Can I hire your staff for a single day?',
@@ -111,5 +136,37 @@ export const STAFFING_FAQS: FAQ[] = [
     {
         question: 'What kinds of organizations do you work with?',
         answer: 'We work with a wide variety of facilities, including clinics, hospitals, schools, and rehabilitation centers.'
+    }
+]
+
+export const PAYMENT_FAQS: FAQ[] = [
+    {
+        question: 'What payment options are available for home care services?',
+        answer: 'There are three main payment options: Medicare & Other Public Third-Party Payers, Managed Care & Private Insurance, and Self-Pay.'
+    },
+    {
+        question: 'When does Medicare cover home health services?',
+        answer: "Medicare covers home health services when specific conditions are met, including the individual being an eligible Medicare beneficiary, a physician certifying the need and establishing a care plan, the beneficiary meeting Medicare's definition of 'homebound', care being provided in the patient's residence, the individual needing skilled nursing or therapy services, and the services being provided by a Medicare-certified home health agency."
+    },
+    {
+        question:
+            'What additional services can physicians order when Medicare conditions are met?',
+        answer: 'When the Medicare conditions are met, physicians may also order home health aide services or medical social worker services.'
+    },
+    {
+        question: 'Is there funding available for veterans?',
+        answer: "Yes, if you or your loved one served in the military, you may qualify for home care funding as part of Veteran's Services."
+    },
+    {
+        question: 'What is the Self-Pay option?',
+        answer: 'Self-Pay involves paying for home care out of pocket from your savings or that of your loved one, depending on the services provided, insurance, and financial capabilities.'
+    },
+    {
+        question: 'How can someone determine if Self-Pay is right for them?',
+        answer: 'To discuss if a self-pay option works for you, you should contact your local franchise.'
+    },
+    {
+        question: 'What types of private payment options are accepted?',
+        answer: 'A number of private insurance plans and managed care plans are accepted across all franchises to help cover the cost of in-home care.'
     }
 ]

@@ -95,7 +95,7 @@ export default function ContactForm({
                 </div>
                 <div className="flex items-center space-x-2">
                     <Mail className="w-5 h-5" />
-                    <span>contact@360degreecare.com</span>
+                    <span>info@360degreecare.com</span>
                 </div>
                 <div className="flex items-center space-x-2">
                     <MapPin className="w-5 h-5" />

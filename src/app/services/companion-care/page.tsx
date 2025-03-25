@@ -2,12 +2,16 @@
 
 import CallToAction from '@/components/CallToAction'
 import { CompanyName } from '@/components/Logo'
+import AnimatedSection from '@/components/animated-section'
 
 export default function CompanionsServicesPage() {
     return (
         <main>
             <div className="bg-white">
-                <section className="relative bg-white-bright text-black px-4 py-16">
+                <AnimatedSection
+                    animation="zoom"
+                    className="relative bg-white-bright text-black px-4 py-16"
+                >
                     <div className="max-w-5xl mx-auto text-center">
                         <h1 className="text-4xl font-extrabold mb-4">
                             Companion Care Services
@@ -22,10 +26,13 @@ export default function CompanionsServicesPage() {
                             topic="Companion Care: "
                         />
                     </div>
-                </section>
+                </AnimatedSection>
 
                 {/* WHAT IS A COMPANION CAREGIVER? */}
-                <section className="max-w-5xl mx-auto px-4 py-12">
+                <AnimatedSection
+                    animation="zoom"
+                    className="max-w-5xl mx-auto px-4 py-12"
+                >
                     <div className="grid md:grid-cols-2 gap-8">
                         {/* Text Column */}
                         <div>
@@ -60,11 +67,14 @@ export default function CompanionsServicesPage() {
                             className="rounded-xl shadow-xl"
                         />
                     </div>
-                </section>
+                </AnimatedSection>
 
                 {/* BENEFITS SECTION */}
                 <section className="bg-white-bright py-12">
-                    <div className="max-w-5xl mx-auto px-4">
+                    <AnimatedSection
+                        animation="zoom"
+                        className="max-w-5xl mx-auto px-4"
+                    >
                         <h2 className="text-3xl font-bold mb-8 text-center">
                             How Companion Care Helps
                         </h2>
@@ -107,11 +117,14 @@ export default function CompanionsServicesPage() {
                                 </p>
                             </div>
                         </div>
-                    </div>
+                    </AnimatedSection>
                 </section>
                 {/* CTA SECTION */}
                 <section className="py-12 bg-blue-50">
-                    <div className="max-w-4xl mx-auto text-center px-4">
+                    <AnimatedSection
+                        animation="zoom"
+                        className="max-w-4xl mx-auto text-center px-4"
+                    >
                         <h2 className="text-2xl font-bold mb-4">
                             Ready to Get Started?
                         </h2>
@@ -127,7 +140,7 @@ export default function CompanionsServicesPage() {
                             round
                             topic="Companion Care: "
                         />
-                    </div>
+                    </AnimatedSection>
                 </section>
             </div>
         </main>

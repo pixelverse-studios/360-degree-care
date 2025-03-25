@@ -16,12 +16,14 @@ interface FaqSectionProps {
     header: string
     faqs: FaqItemProps[]
     headerClass?: string
+    bodyClass?: string
 }
 
 export default function FaqSection({
     header,
     faqs,
-    headerClass
+    headerClass,
+    bodyClass
 }: FaqSectionProps) {
     return (
         <section className="py-4">
@@ -35,7 +37,7 @@ export default function FaqSection({
             </h2>
             <Accordion
                 type="multiple"
-                className="w-full max-w-4xl mx-auto space-y-2"
+                className={cn('w-full max-w-4xl mx-auto space-y-2', bodyClass)}
             >
                 {faqs.map(faq => (
                     <AccordionItem
