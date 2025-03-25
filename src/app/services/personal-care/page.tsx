@@ -140,7 +140,7 @@ export default function PersonalCarePage() {
                     </li>
                 </ul>
 
-                <AnimatedSection animation="zoom">
+                <AnimatedSection animation="zoom" className="mx-auto">
                     <FaqSection
                         faqs={PERSONAL_CARE_FAQS}
                         header="Questions About Personal Care"

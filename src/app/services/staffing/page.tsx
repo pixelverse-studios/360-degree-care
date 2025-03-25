@@ -151,7 +151,7 @@ export default function StaffingSolutionsPage() {
                             <CompanyName className="text-2xl" />
                         </h2>
                         <div className="grid md:grid-cols-3 gap-8">
-                            <div className="flex flex-col items-start">
+                            <div className="flex flex-col items-start bg-white-bright p-4 rounded-xl shadow-xl">
                                 <h3 className="text-xl font-semibold mb-2">
                                     Flexible Staffing Model
                                 </h3>
@@ -162,7 +162,7 @@ export default function StaffingSolutionsPage() {
                                     requirements.
                                 </p>
                             </div>
-                            <div className="flex flex-col items-start">
+                            <div className="flex flex-col items-start bg-white-bright p-4 rounded-xl shadow-xl">
                                 <h3 className="text-xl font-semibold mb-2">
                                     Quality Professionals
                                 </h3>
@@ -172,7 +172,7 @@ export default function StaffingSolutionsPage() {
                                     minimize overtime.
                                 </p>
                             </div>
-                            <div className="flex flex-col items-start">
+                            <div className="flex flex-col items-start bg-white-bright p-4 rounded-xl shadow-xl">
                                 <h3 className="text-xl font-semibold mb-2">
                                     Cost Savings
                                 </h3>

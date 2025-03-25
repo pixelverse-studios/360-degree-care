@@ -15,10 +15,9 @@ export default function AboutHero() {
                         <h1 className="text-4xl md:text-5xl font-bold text-black-muted leading-tight mb-0">
                             About <CompanyName className="text-5xl mb-[10px]" />
                         </h1>
-
                         <p className="text-lg text-gray-700 leading-relaxed">
                             <CompanyName /> is the leading home care company in
-                            Bergen County. We have been providing highly skilled
+                            New Jersey. We have been providing highly skilled
                             and compassionate caregivers to facilities and
                             private clients for over ten years.
                         </p>

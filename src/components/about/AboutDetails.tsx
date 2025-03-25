@@ -62,17 +62,31 @@ export default function AboutDetails() {
                     className="max-w-custom mx-auto p-10"
                 >
                     <div className="my-auto">
-                        <h2 className="text-2xl md:text-3xl font-bold mb-4 text-primary-bright">
+                        <h2 className="text-2xl md:text-3xl font-bold mb-4 text-primary text-center">
                             Same Dedicated Care, Now Independent
                         </h2>
-                        <p className="my-auto text-black">
-                            We formerly worked under the Interim Healthcare
-                            banner but realized that the added bureaucracy and
-                            overhead of a franchise system did not provide
-                            enough added value to warrant its continuing. All of
-                            our personnel and all of our services remain exactly
-                            as before.
-                        </p>
+                        <div className="flex flex-col gap-4 max-w-3xl mx-auto">
+                            <p className="text-black basis-1/2">
+                                We formerly worked under the Interim Healthcare
+                                banner but realized that the added bureaucracy
+                                and overhead of a franchise system did not
+                                provide enough added value to warrant its
+                                continuing. All of our personnel and all of our
+                                services remain exactly as before.
+                            </p>
+                            <p className="text-black basis-1/2">
+                                Over the years we have always had a unique
+                                perspective and position in this industry. It is
+                                best reflected in some of these ads we did under
+                                the old banner. We DO NOT see our clients as
+                                being 'the frail lady in the wheelchair' as the
+                                competition focuses on. Rather, we see our
+                                clients as having lived full lives which they
+                                still can and want to enjoy fully. We celebrate
+                                our clients and our caregivers do everything
+                                possible to get the most out of life.
+                            </p>
+                        </div>
                     </div>
                     <div className="w-[80%] mx-auto h-[50vh] mt-8">
                         <Carousel

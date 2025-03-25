@@ -116,7 +116,7 @@ export const PERSONAL_CARE_FAQS: FAQ[] = [
     },
     {
         question: 'What are the qualifications of personal care providers?',
-        answer: 'Our caregivers undergo screening, background CircleChecks, and training.'
+        answer: 'Our caregivers undergo screening, background checks, drug screenings, and training.'
     }
 ]
 
@@ -141,12 +141,25 @@ export const STAFFING_FAQS: FAQ[] = [
 
 export const PAYMENT_FAQS: FAQ[] = [
     {
-        question: 'What payment options are available for home care services?',
-        answer: 'There are three main payment options: Medicare & Other Public Third-Party Payers, Managed Care & Private Insurance, and Self-Pay.'
+        question:
+            'How is Private Client Service billed and what payment methods are accepted?',
+        answer: 'Private Client Service is billed at the end of each week of service and payment is accepted by either an ACH transfer or a credit card charge. For clients with Long Term care insurance coverage we will submit all necessary documents to your carrier and you will be reimbursed directly.'
     },
     {
-        question: 'When does Medicare cover home health services?',
-        answer: "Medicare covers home health services when specific conditions are met, including the individual being an eligible Medicare beneficiary, a physician certifying the need and establishing a care plan, the beneficiary meeting Medicare's definition of 'homebound', care being provided in the patient's residence, the individual needing skilled nursing or therapy services, and the services being provided by a Medicare-certified home health agency."
+        question: 'Does Medicare cover Private Client Homecare?',
+        answer: 'Private Client Homecare is not typically covered by Medicare, although many people are covered for a very limited amount of time upon discharge from a hospital. Your hospital social worker should coordinate that as they make your discharge plan.'
+    },
+    {
+        question: 'Can Medicaid be used for Private Client Homecare?',
+        answer: 'For clients on Medicaid we can work with you to get a "Single Patient Exception" which approves us as your provider.'
+    },
+    {
+        question: 'How does payment work for clients with Veterans Benefits?',
+        answer: 'For clients who have approved coverage through their Veterans Benefits we will submit all the appropriate paperwork to the VA.'
+    },
+    {
+        question: 'What payment options are available for home care services?',
+        answer: 'There are three main payment options: Medicare & Other Public Third-Party Payers, Managed Care & Private Insurance, and Self-Pay.'
     },
     {
         question:

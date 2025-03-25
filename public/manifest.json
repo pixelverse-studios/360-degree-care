@@ -1,0 +1,14 @@
+{
+    "name": "360 Degree Care",
+    "short_name": "360Care",
+    "theme_color": "#fe6c2d",
+    "background_color": "#29a0d8",
+    "display": "standalone",
+    "scope": "/",
+    "start_url": "/",
+    "icons": [
+        { "src": "/Favicon_16x16.png", "type": "image/png", "sizes": "16x16" },
+        { "src": "/Favicon_32x32.png", "type": "image/png", "sizes": "32x32" },
+        { "src": "/Favicon_64x64.png", "type": "image/png", "sizes": "64x64" }
+    ]
+}

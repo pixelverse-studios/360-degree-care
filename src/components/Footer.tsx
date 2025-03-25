@@ -2,11 +2,14 @@
 
 import { Fragment } from 'react'
 import Link from 'next/link'
+import { Info } from 'lucide-react'
 import { FaFacebookF, FaInstagram, FaLinkedinIn } from 'react-icons/fa6'
 import { CompanyName } from '@/components/Logo'
 import { cn } from '@/lib/utils'
 import Logo from '@/components/Logo'
 import { navLinks, footerResources } from '@/utils/routes'
+import { ADDRESS, PHONE } from '@/utils/constants'
+import { HoverPopover } from './ui/popover'
 
 const [aboutLink, serviceLink, faqLink] = navLinks
 
@@ -22,13 +25,44 @@ export default function Footer() {
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-white">
                     {/* Left - Logo & CTA */}
                     <div>
-                        <div className="flex gap-2 items-center">
-                            <Logo invert />
+                        <div>
+                            <div className="flex gap-2 items-center">
+                                <Logo invert />
+                            </div>
+                            <p className="mt-2 text-sm">
+                                Providing compassionate in-home care services
+                                for seniors
+                            </p>
                         </div>
-                        <p className="mt-2 text-sm">
-                            Providing compassionate in-home care services for
-                            seniors
-                        </p>
+                        <div className="text-sm mt-6">
+                            <p className="font-bold text-lg">Contact</p>
+                            <p className="mt-2">
+                                {ADDRESS.STREET}
+                                <br />
+                                {ADDRESS.DETAILS}
+                            </p>
+                            <p className="mt-1">
+                                <a
+                                    href={`tel:${PHONE}`}
+                                    className="text-white hover:underline"
+                                >
+                                    {PHONE}
+                                </a>
+                            </p>
+
+                            {/* Social Icons */}
+                            <div className="flex space-x-4 mt-4">
+                                <a href="#" className={linkHover}>
+                                    <FaFacebookF size={24} />
+                                </a>
+                                <a href="#" className={linkHover}>
+                                    <FaLinkedinIn size={24} />
+                                </a>
+                                <a href="#" className={linkHover}>
+                                    <FaInstagram size={24} />
+                                </a>
+                            </div>
+                        </div>
                     </div>
 
                     {/* Middle - Links */}
@@ -56,36 +90,43 @@ export default function Footer() {
                             {faqLink.label}
                         </Link>
                     </div>
-
-                    {/* Right - Contact & Socials */}
-                    <div className="text-sm">
-                        <p className="font-bold text-lg">Contact</p>
-                        <p className="mt-2">
-                            27 Chestnut Street <br />
-                            Floor 1 <br />
-                            Ridgewood, NJ 07450
-                        </p>
-                        <p className="mt-1">
-                            <a
-                                href="tel:8003387786"
-                                className="text-primary hover:underline"
+                    <div className="flex flex-col space-y-2 text-sm">
+                        <div className="font-bold text-lg flex gap-1">
+                            Locations{' '}
+                            <HoverPopover
+                                content={
+                                    <p>
+                                        Bergen County, located in the
+                                        northeastern part of New Jersey, is the
+                                        area we cover fully. However, for
+                                        special situation and for cases
+                                        requiring Live-In Care we cover
+                                        virtually the whole state with a special
+                                        emphasis on the Jersey Shore and Sussex
+                                        County:
+                                    </p>
+                                }
                             >
-                                (800) 338-7786
-                            </a>
-                        </p>
-
-                        {/* Social Icons */}
-                        <div className="flex space-x-4 mt-4">
-                            <a href="#" className={linkHover}>
-                                <FaFacebookF size={24} />
-                            </a>
-                            <a href="#" className={linkHover}>
-                                <FaLinkedinIn size={24} />
-                            </a>
-                            <a href="#" className={linkHover}>
-                                <FaInstagram size={24} />
-                            </a>
+                                <Info />
+                            </HoverPopover>
                         </div>
+                        <ul className="grid grid-cols-2 gap-1">
+                            <li>Allendale</li>
+                            <li>Alpine</li>
+                            <li>Cresskill</li>
+                            <li>East Rutherford</li>
+                            <li>Fair Lawn</li>
+                            <li>Fort Lee</li>
+                            <li>Glen Rock</li>
+                            <li>Hackensack</li>
+                            <li>Haworth</li>
+                            <li>Ho-Ho-Kus</li>
+                            <li>Northvale</li>
+                            <li>Old Tappan</li>
+                            <li>Oradell</li>
+                            <li>River Edge</li>
+                            <li>Ridgewood</li>
+                        </ul>
                     </div>
                 </div>
 

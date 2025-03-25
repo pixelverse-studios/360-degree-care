@@ -24,8 +24,8 @@ export default function AboutTheTeam() {
         <section className="bg-white-bright py-10">
             <AnimatedSection animation="zoom">
                 <h1 className="font-bold text-4xl text-center mb-6">
-                    Meet Our{' '}
-                    <CompanyName className="text-4xl text-primary-dark" /> Team
+                    Meet Our <CompanyName className="text-4xl text-primary" />{' '}
+                    Team
                 </h1>
                 <p className="text-lg text-center mb-4">
                     We're a passionate group of individuals dedicated to

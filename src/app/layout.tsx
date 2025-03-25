@@ -22,6 +22,21 @@ export const metadata = {
             { url: '/Favicon_64x64.png', type: 'image/png', sizes: '64x64' }
         ],
         apple: [{ url: '/Favicon_16x16.png', sizes: '180x180' }]
+    },
+    title: '360 Degree Care',
+    description: 'Your description here',
+    openGraph: {
+        images: [
+            {
+                url: '/path-to-your-new-image.png' // Create a new image with your preferred background color
+            }
+        ],
+        title: '360 Degree Care',
+        description: "New Jersey's finest Home HealthCare provider",
+        url: 'https://www.360degreecare.net',
+        siteName: '360 Degree Care',
+        type: 'website',
+        manifest: '/manifest.json'
     }
 }
 export const permanentMarker = Permanent_Marker({

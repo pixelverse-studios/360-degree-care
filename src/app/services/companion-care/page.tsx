@@ -120,7 +120,7 @@ export default function CompanionsServicesPage() {
                     </AnimatedSection>
                 </section>
                 {/* CTA SECTION */}
-                <section className="py-12 bg-blue-50">
+                <section className="py-12 bg-white">
                     <AnimatedSection
                         animation="zoom"
                         className="max-w-4xl mx-auto text-center px-4"

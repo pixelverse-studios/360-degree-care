@@ -1,6 +1,6 @@
 'use client'
 
-import { CircleCheck } from 'lucide-react'
+import { CircleCheck, ListChecks, PillBottle, Bandage } from 'lucide-react'
 import CallToAction from '@/components/CallToAction'
 import { CompanyName } from '@/components/Logo'
 import AnimatedSection from '@/components/animated-section'
@@ -45,8 +45,7 @@ export default function NursingServicesPage() {
                             health maintenance. Our team of licensed nurses
                             provides expert care with the same compassion and
                             attention to detail that has made us the leading
-                            home care company in Bergen County for over ten
-                            years.
+                            home care company in New Jersey for over ten years.
                         </p>
                     </div>
                 </AnimatedSection>
@@ -65,23 +64,8 @@ export default function NursingServicesPage() {
                     <AnimatedSection animation="zoom" className="mb-16">
                         <div className="bg-white-bright rounded-lg shadow-lg overflow-hidden">
                             <div className="md:flex">
-                                <div className="md:w-1/3 bg-primary">
-                                    <div className="h-full flex items-center justify-center p-8">
-                                        <svg
-                                            className="w-24 h-24 text-white"
-                                            fill="none"
-                                            stroke="currentColor"
-                                            viewBox="0 0 24 24"
-                                            xmlns="http://www.w3.org/2000/svg"
-                                        >
-                                            <path
-                                                strokeLinecap="round"
-                                                strokeLinejoin="round"
-                                                strokeWidth="1.5"
-                                                d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"
-                                            ></path>
-                                        </svg>
-                                    </div>
+                                <div className="md:w-1/3 bg-primary flex">
+                                    <ListChecks className="w-24 h-24 text-white m-auto" />
                                 </div>
                                 <div className="md:w-2/3 p-8">
                                     <h3 className="text-2xl font-semibold mb-4">
@@ -139,28 +123,8 @@ export default function NursingServicesPage() {
                     <AnimatedSection animation="zoom" className="mb-16">
                         <div className="bg-white-bright rounded-lg shadow-lg overflow-hidden">
                             <div className="md:flex flex-row-reverse">
-                                <div
-                                    className="md:w-1/3"
-                                    style={{
-                                        backgroundColor: '#FE4E29'
-                                    }}
-                                >
-                                    <div className="h-full flex items-center justify-center p-8">
-                                        <svg
-                                            className="w-24 h-24 text-white"
-                                            fill="none"
-                                            stroke="currentColor"
-                                            viewBox="0 0 24 24"
-                                            xmlns="http://www.w3.org/2000/svg"
-                                        >
-                                            <path
-                                                strokeLinecap="round"
-                                                strokeLinejoin="round"
-                                                strokeWidth="1.5"
-                                                d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"
-                                            ></path>
-                                        </svg>
-                                    </div>
+                                <div className="md:w-1/3 bg-primary flex">
+                                    <Bandage className="w-24 h-24 text-white m-auto" />
                                 </div>
                                 <div className="md:w-2/3 p-8">
                                     <h3 className="text-2xl font-semibold mb-4">
@@ -213,25 +177,10 @@ export default function NursingServicesPage() {
 
                     {/* Medication Management */}
                     <AnimatedSection animation="zoom">
-                        <div className="bg-white rounded-lg shadow-lg overflow-hidden">
+                        <div className="bg-white-bright rounded-lg shadow-lg overflow-hidden">
                             <div className="md:flex">
-                                <div className="md:w-1/3 bg-primary">
-                                    <div className="h-full flex items-center justify-center p-8">
-                                        <svg
-                                            className="w-24 h-24 text-white"
-                                            fill="none"
-                                            stroke="currentColor"
-                                            viewBox="0 0 24 24"
-                                            xmlns="http://www.w3.org/2000/svg"
-                                        >
-                                            <path
-                                                strokeLinecap="round"
-                                                strokeLinejoin="round"
-                                                strokeWidth="1.5"
-                                                d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"
-                                            ></path>
-                                        </svg>
-                                    </div>
+                                <div className="md:w-1/3 bg-primary flex">
+                                    <PillBottle className="w-24 h-24 text-white m-auto" />
                                 </div>
                                 <div className="md:w-2/3 p-8">
                                     <h3 className="text-2xl font-semibold mb-4">

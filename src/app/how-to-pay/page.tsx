@@ -9,21 +9,23 @@ export default function HowToPay() {
         <main>
             <AnimatedSection
                 animation="zoom"
-                className="max-w-custom px-6 py-8 text-center"
+                className="max-w-custom px-6 py-8"
             >
-                <h1>How to Pay For Home Healthcare</h1>
-                <p className="max-w-4xl mx-auto mb-4">
-                    Just as everyone’s needs for care are different, we know
-                    financial situations are deeply personal. That’s why we
-                    accept multiple ways to pay for home health care costs, so
-                    you have more choices in financing your care.
-                </p>
-                <p className="max-w-3xl mx-auto mb-10">
-                    There are always unique situations and case varies, but we
-                    provide concierge Private Client service and have experience
-                    with Long Term Care insurance as well as Workers
-                    Compensation situations
-                </p>
+                <div className="mb-12 text-center max-w-2xl mx-auto">
+                    <h1>How to Pay For Home Healthcare</h1>
+                    <p className="mx-auto mb-4">
+                        Just as everyone’s needs for care are different, we know
+                        financial situations are deeply personal. That’s why we
+                        accept multiple ways to pay for home health care costs,
+                        so you have more choices in financing your care.
+                    </p>
+                    <p className="mx-auto mb-10">
+                        There are always unique situations and case varies, but
+                        we provide concierge Private Client service and have
+                        experience with Long Term Care insurance as well as
+                        Workers Compensation situations
+                    </p>
+                </div>
                 <FaqSection
                     header="In Home Care Payment Options"
                     faqs={PAYMENT_FAQS}

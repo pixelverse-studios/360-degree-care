@@ -182,7 +182,7 @@ export default function ElderCareServicesPage() {
                         <div className="bg-secondary rounded-lg my-auto">
                             <p className="text-lg text-white mb-6">
                                 With over ten years of experience providing
-                                exceptional home care in Bergen County, we
+                                exceptional home care in New Jersey, we
                                 understand the complexities of elder care. Our
                                 consultants bring:
                             </p>
@@ -304,17 +304,18 @@ export default function ElderCareServicesPage() {
             </div>
 
             {/* Concierge Section */}
-            <div className="container bg-secondary mx-auto px-4 py-16 max-w-6xl">
+            <div className="container px-4 py-16 max-w-6xl">
                 <AnimatedSection
                     animation="zoom"
-                    className="text-white rounded-lg p-8 text-center"
+                    className="text-white rounded-lg p-8 text-center bg-secondary mx-auto"
                 >
                     <h2 className="font-semibold mb-6 text-white">
                         Concierge-Level™ Care at Every Step
                     </h2>
                     <p className="text-lg mb-8 max-w-3xl mx-auto">
                         As with all our services, our Elder Care Consulting
-                        reflects our <span className="prio">concierge</span>{' '}
+                        reflects our{' '}
+                        <span className="prio text-white">concierge</span>{' '}
                         approach to care. We're committed to addressing every
                         aspect of your loved one's well-being and supporting
                         your family through important care decisions.
