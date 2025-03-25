@@ -55,7 +55,7 @@ body {
     color: hsl(var(--black));
     font-family: 'Rubik', sans-serif;
     background-color: var(--bright-white);
-    min-height: calc(100dvh - 4.8rem);
+    min-height: calc(100dvh - 5.8rem);
     line-height: 1.1;
 }
 
@@ -69,11 +69,13 @@ h4 {
 main {
     flex: 1;
     font-family: 'Rubik', sans-serif;
+    position: relative;
+    margin-top: 5.8rem;
 }
 
 .roundButton {
-    height: 8rem;
-    width: 8rem !important;
+    height: 6rem;
+    width: 6rem !important;
     border-radius: 150px;
     background: var(--primary);
     border: 7px solid var(--primary);
@@ -84,8 +86,8 @@ main {
 }
 
 .roundAltButton {
-    height: 8rem;
-    width: 8rem !important;
+    height: 6rem;
+    width: 6rem !important;
     border-radius: 150px;
     background: var(--secondary);
     border: 7px solid var(--secondary);

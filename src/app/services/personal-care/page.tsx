@@ -8,7 +8,10 @@ import AnimatedSection from '@/components/animated-section'
 export default function PersonalCarePage() {
     return (
         <main>
-            <AnimatedSection animation="zoom" className="page-wrapper">
+            <AnimatedSection
+                animation="zoom"
+                className="container mx-auto px-4 max-w-custom py-10"
+            >
                 <h1 className="mb-6">
                     Empowering Well-being: A Guide to Personal Care Services
                 </h1>

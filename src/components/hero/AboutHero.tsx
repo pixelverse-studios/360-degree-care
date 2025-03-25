@@ -5,12 +5,12 @@ import AnimatedSection from '../animated-section'
 
 export default function AboutHero() {
     return (
-        <AnimatedSection
-            animation="zoom"
-            className="relative bg-gradient-to-b from-white-bright to-white overflow-hidden"
-        >
+        <section className="relative bg-gradient-to-b from-white-bright to-white overflow-hidden">
             <div className="max-w-custom mx-auto px-6 pb-12 md:pb-18">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <AnimatedSection
+                    animation="zoom"
+                    className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center scroll-pt-0"
+                >
                     <div className="flex flex-col gap-6">
                         <h1 className="text-4xl md:text-5xl font-bold text-black-muted leading-tight mb-0">
                             About <CompanyName className="text-5xl mb-[10px]" />
@@ -38,8 +38,11 @@ export default function AboutHero() {
                             State licensed and CHAP certified
                         </li>
                     </ul>
-                </div>
-                <div className="flex flex-col lg:flex-row gap-6 mt-12 items-end">
+                </AnimatedSection>
+                <AnimatedSection
+                    animation="zoom"
+                    className="flex flex-col lg:flex-row gap-6 mt-12 items-end"
+                >
                     <AboutServiceOverview />
                     <div className="mx-auto">
                         <CallToAction
@@ -48,8 +51,8 @@ export default function AboutHero() {
                             topic=""
                         />
                     </div>
-                </div>
+                </AnimatedSection>
             </div>
-        </AnimatedSection>
+        </section>
     )
 }

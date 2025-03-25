@@ -1,3 +1,4 @@
+'use client'
 import { CompanyName } from '@/components/Logo'
 import AnimatedSection from '@/components/animated-section'
 
@@ -6,7 +7,7 @@ export default function LegalDisclaimerPage() {
         <main>
             <AnimatedSection
                 animation="zoom"
-                className="max-w-custom mx-auto p-6 bg-white shadow-md rounded-lg mb-6"
+                className="max-w-custom mx-auto p-6 bg-white-bright mb-6"
             >
                 <h1 className="font-bold text-center mb-6">Legal Disclaimer</h1>
 

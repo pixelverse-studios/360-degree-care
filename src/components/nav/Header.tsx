@@ -104,7 +104,7 @@ export function Header() {
             ref={headerRef}
             className="fixed top-0 left-0 right-0 w-full bg-white-muted z-50 border-b border-b-gray-300 shadow-xl"
         >
-            <div className="max-w-[var(--max-width)] mx-auto px-6 py-4 flex items-center justify-between">
+            <div className="max-w-custom mx-auto px-6 py-4 flex items-center justify-between">
                 <Link href="/">
                     <Logo invert={false} size="lg" />
                 </Link>
@@ -196,14 +196,14 @@ export function Header() {
                 <div
                     ref={navRef}
                     className={cn(
-                        'fixed inset-x-0 top-[4rem] bg-primary-fore border-b border-b-gray-300 xl:hidden',
+                        'fixed inset-x-0 top-[5.8rem] bg-transparent border-b border-b-gray-300 xl:hidden',
                         'transition-[transform,opacity] duration-300 ease-in-out',
                         isMobileMenuOpen
                             ? 'translate-y-0 opacity-100 pointer-events-auto'
                             : '-translate-y-full opacity-0 pointer-events-none'
                     )}
                 >
-                    <nav className="max-w-[var(--max-width)] mx-auto px-6 py-4 bg-white shadow-md">
+                    <nav className="max-w-custom mx-auto px-6 py-4 bg-white shadow-xl">
                         <ul className="space-y-4">
                             {navLinks.map(link => {
                                 const isActive = pathname === link.route

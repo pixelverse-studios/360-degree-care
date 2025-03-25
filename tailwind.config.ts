@@ -100,7 +100,10 @@ const config: Config = {
                 'accordion-down': 'accordion-down 0.2s ease-out',
                 'accordion-up': 'accordion-up 0.2s ease-out',
                 'fade-in': 'animate__animated animate__fadeIn',
-                'back-in-left': 'animate__animated animate__backInLeft'
+                'back-in-left': 'animate__animated animate__backInLeft',
+                'spin-slow': 'spin 3s linear infinite',
+                'spin-fast': 'spin 500ms linear infinite',
+                'spin-very-slow': 'spin 5s linear infinite'
             },
             fontSize: {
                 sm: '20px', // Tailwind's default "sm" is 14px, overriding it to 20px

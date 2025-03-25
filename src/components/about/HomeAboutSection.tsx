@@ -32,7 +32,7 @@ export default function HomeAboutSection() {
                         loved ones deserve the best, and we're here to deliver
                         with dignity, trust, and exceptional service.
                     </p>
-                    <div className="flex justify-between gap-4">
+                    <div className="flex flex-col md:flex-row justify-between md:items-center gap-4">
                         <ul className="flex flex-col gap-4">
                             <li className="flex items-center gap-2 text-lg">
                                 <CircleCheck className="text-primary" />

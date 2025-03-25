@@ -1,3 +1,4 @@
+'use client'
 import { CompanyName } from '@/components/Logo'
 import AnimatedSection from '@/components/animated-section'
 
@@ -6,7 +7,7 @@ export default function NondiscriminationPage() {
         <main>
             <AnimatedSection
                 animation="zoom"
-                className="max-w-custom mx-auto px-6 py-12 bg-white shadow-lg rounded-lg mb-6"
+                className="max-w-custom mx-auto px-6 py-12 bg-white-bright mb-6"
             >
                 <h1 className="font-bold text-center mb-6">
                     Nondiscrimination and Accessibility Notice

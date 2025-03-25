@@ -90,7 +90,7 @@ const Logo = ({ invert = false, size = 'md' }: LogoProps) => {
             >
                 <p className={cn('font-logo', sizeClasses[size])}>360</p>
                 <RotateCw
-                    className="text-secondary h-4 w-4 mt-[-1.75rem] mr-2 transition-all duration-300 ease-in-out transform hover:rotate-180 hover:scale-110"
+                    className="text-secondary h-4 w-4 mt-[-1.75rem] mr-2 transition-all animate-spin-very-slow"
                     strokeWidth={4}
                 />
                 <p className={cn('font-logo', sizeClasses[size])}>CARE</p>
