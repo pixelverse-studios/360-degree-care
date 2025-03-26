@@ -1,4 +1,5 @@
 /* @import './reset.css'; */
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker');
 @import './animations.css';
 
 @tailwind base;
@@ -41,7 +42,6 @@
     --font-rubik: ${rubik.style.fontFamily};
     --font-merriweather: ${merriweather.style.fontFamily};
     --font-bodoni: ${bodoni.style.fontFamily};
-    --font-permanentMarker: ${permanentMarker.style.fontFamily};
 }
 
 html,
@@ -207,7 +207,8 @@ main {
     }
 
     .caring {
-        font-family: var(--font-rubik), sans-serif !important;
+        font-family: var(--font-permanent-marker), cursive !important;
+        font-size: 32px;
     }
 }
 

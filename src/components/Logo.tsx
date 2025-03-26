@@ -97,7 +97,7 @@ const Logo = ({ invert = false, size = 'md' }: LogoProps) => {
             </div>
             {invert ? null : (
                 <p className="text-secondary font-semibold font-logo text-xl italic text-right caring">
-                    We <span className="font-bold text-xl italic">CARE</span>
+                    We <span className="font-bold text-xl italic">CARE</span>!
                 </p>
             )}
         </div>
