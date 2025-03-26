@@ -80,8 +80,8 @@ export default function Breadcrumbs() {
     if (pathname === '/') return <div className="" />
 
     return (
-        <Breadcrumb className="absolute z-10 top-[6rem] max-w-custom w-full mx-auto px-6 py-4 bg-transparent hidden lg:block">
-            <BreadcrumbList>
+        <Breadcrumb className="absolute w-full z-10 top-[6rem] hidden lg:block">
+            <BreadcrumbList className="max-w-custom w-full mx-auto px-6 py-4 bg-transparent ">
                 <BreadcrumbItem>
                     <BreadcrumbLink
                         asChild
