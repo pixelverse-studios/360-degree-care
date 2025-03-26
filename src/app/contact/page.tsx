@@ -34,7 +34,7 @@ export default function ContactPage() {
                 </AnimatedSection>
                 <AnimatedSection
                     animation="zoom"
-                    className="mb-8 grid grid-cols-1 md:grid-cols-3 gap-8"
+                    className="mb-8 grid grid-cols-1 xl:grid-cols-3 gap-8"
                 >
                     <div className="bg-white-bright rounded-xl p-6 flex flex-col gap-4 hover:shadow-xl transition-all duration-200 ease-in-out">
                         <img
