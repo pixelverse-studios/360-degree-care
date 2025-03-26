@@ -4,7 +4,7 @@ import AnimatedSection from '@/components/animated-section'
 
 export default function LegalDisclaimerPage() {
     return (
-        <main>
+        <main className="breadcrumbSpacing">
             <AnimatedSection
                 animation="zoom"
                 className="max-w-custom mx-auto p-6 bg-white-bright mb-6"

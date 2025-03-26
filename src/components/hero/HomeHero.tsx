@@ -29,7 +29,12 @@ export default function HomeHero() {
                     their independence and dignity at home.
                 </p>
                 <div className="my-5 grid grid-cols-2 md:grid-cols-1 lg:grid-cols-2 gap-4 mx-auto">
-                    <CallToAction buttonLabel="Get In Touch" round topic="" />
+                    <CallToAction
+                        buttonLabel="Get In Touch"
+                        round
+                        type="general"
+                        value=""
+                    />
                     <Button
                         className="roundAltButton border-secondary border-2 border-solid"
                         onClick={onServicesClick}

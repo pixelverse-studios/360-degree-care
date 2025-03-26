@@ -6,7 +6,7 @@ import AnimatedSection from '@/components/animated-section'
 
 export default function CompanionsServicesPage() {
     return (
-        <main>
+        <main className="breadcrumbSpacing">
             <div className="bg-white">
                 <AnimatedSection
                     animation="zoom"
@@ -23,7 +23,8 @@ export default function CompanionsServicesPage() {
                         <CallToAction
                             buttonLabel="Contact Us"
                             round
-                            topic="Companion Care: "
+                            type="services"
+                            value="Companion Care"
                         />
                     </div>
                 </AnimatedSection>
@@ -138,7 +139,8 @@ export default function CompanionsServicesPage() {
                         <CallToAction
                             buttonLabel="Contact Us"
                             round
-                            topic="Companion Care: "
+                            type="services"
+                            value="Companion Care"
                         />
                     </AnimatedSection>
                 </section>

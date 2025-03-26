@@ -10,6 +10,7 @@ import { Header } from '@/components/nav/Header'
 import Breadcrumbs from '@/components/nav/Breadcrumbs'
 import Footer from '@/components/Footer'
 import { Toaster } from '@/components/ui/sonner'
+import { RouteStateProvider } from '@/lib/providers'
 
 // import 'animate.css'
 import '../styles/globals.css'
@@ -84,11 +85,13 @@ export default function RootLayout({
             <body
                 className={`antialiased ${rubik.variable} ${merriweather.variable} ${bodoni.variable} ${permanentMarker.variable}`}
             >
-                <Header />
-                <Breadcrumbs />
-                {children}
-                <Footer />
-                <Toaster richColors position="bottom-left" />
+                <RouteStateProvider>
+                    <Header />
+                    <Breadcrumbs />
+                    {children}
+                    <Footer />
+                    <Toaster richColors position="bottom-left" />
+                </RouteStateProvider>
             </body>
         </html>
     )

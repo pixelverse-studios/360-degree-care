@@ -181,7 +181,11 @@ export function Header() {
                                     </NavigationMenuItem>
                                 )
                             })}
-                            <CallToAction buttonLabel="Get In Touch" topic="" />
+                            <CallToAction
+                                buttonLabel="Get In Touch"
+                                type="general"
+                                value=""
+                            />
                         </NavigationMenuList>
                     </NavigationMenu>
                 </nav>
@@ -297,10 +301,16 @@ export function Header() {
                                 )
                             })}
                             <li>
-                                <div onClick={e => e.stopPropagation()}>
+                                <div
+                                    onClick={e => {
+                                        e.stopPropagation()
+                                        setIsMobileMenuOpen(false)
+                                    }}
+                                >
                                     <CallToAction
                                         buttonLabel="Get In Touch"
-                                        topic=""
+                                        type="general"
+                                        value=""
                                     />
                                 </div>
                             </li>

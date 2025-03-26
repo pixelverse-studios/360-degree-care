@@ -9,7 +9,7 @@ import { HIGHLIGHT_CARDS, SERVICE_CARDS } from '@/utils/home'
 
 export default function HomePage() {
     return (
-        <main className="mt-[5.8rem]">
+        <main className="">
             <HomeHero />
             <InfoCards styles="gradient-down" cards={HIGHLIGHT_CARDS} />
             <HomeAboutSection />

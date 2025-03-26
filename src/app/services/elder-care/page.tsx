@@ -6,7 +6,7 @@ import AnimatedSection from '@/components/animated-section'
 
 export default function ElderCareServicesPage() {
     return (
-        <main className="bg-white">
+        <main className="bg-white breadcrumbSpacing">
             {/* Hero Section */}
             <div className="bg-white-bright py-8">
                 <AnimatedSection
@@ -323,7 +323,8 @@ export default function ElderCareServicesPage() {
                     <CallToAction
                         buttonLabel="Contact Us Today"
                         round
-                        topic="Elder Care: "
+                        type="services"
+                        value="Elder Care"
                     />
                 </AnimatedSection>
             </div>

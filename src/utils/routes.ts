@@ -83,6 +83,30 @@ export const additionalPages = [
         label: 'How To Pay',
         canVisit: true,
         subLinks: []
+    },
+    {
+        route: '/contact',
+        label: 'Contact',
+        canVisit: true,
+        subLinks: []
+    },
+    {
+        route: '/contact/services',
+        label: 'Services',
+        canVisit: true,
+        subLinks: []
+    },
+    {
+        route: '/contact/employment',
+        label: 'Employment',
+        canVisit: true,
+        subLinks: []
+    },
+    {
+        route: '/contact/general',
+        label: 'General',
+        canVisit: true,
+        subLinks: []
     }
 ]
 

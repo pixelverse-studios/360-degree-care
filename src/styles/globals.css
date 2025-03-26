@@ -70,10 +70,7 @@ main {
     flex: 1;
     font-family: 'Rubik', sans-serif;
     position: relative;
-
-    @media screen and (max-width: 1000px) {
-        margin-top: 5.8rem;
-    }
+    margin-top: 5.8rem;
 }
 
 .roundButton {
@@ -148,6 +145,10 @@ main {
 .faqEmbed {
     color: blue;
     text-decoration: underline;
+}
+
+.breadcrumbSpacing {
+    padding-top: 3rem;
 }
 
 @layer base {

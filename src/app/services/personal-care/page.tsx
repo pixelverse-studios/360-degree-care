@@ -7,7 +7,7 @@ import AnimatedSection from '@/components/animated-section'
 
 export default function PersonalCarePage() {
     return (
-        <main>
+        <main className="breadcrumbSpacing">
             <AnimatedSection
                 animation="zoom"
                 className="container mx-auto px-4 max-w-custom py-10"

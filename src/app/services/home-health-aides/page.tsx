@@ -7,7 +7,7 @@ import AnimatedSection from '@/components/animated-section'
 
 export default function HomeHealthAidesPage() {
     return (
-        <main>
+        <main className="breadcrumbSpacing">
             <HomeHealthCareHero />
             <HomeHealthAideServices />
             <section className="bg-white py-12">
@@ -26,7 +26,8 @@ export default function HomeHealthAidesPage() {
                         buttonLabel="Get In Touch"
                         buttonClass="w-full md:w-fit md:mx-auto"
                         round
-                        topic="Home Health Aide: "
+                        type="services"
+                        value="Home Health Aides"
                     />
                 </AnimatedSection>
             </section>

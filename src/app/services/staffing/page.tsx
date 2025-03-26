@@ -8,7 +8,7 @@ import AnimatedSection from '@/components/animated-section'
 
 export default function StaffingSolutionsPage() {
     return (
-        <main>
+        <main className="breadcrumbSpacing">
             <div className="bg-white">
                 {/* HERO SECTION */}
                 <AnimatedSection
@@ -216,7 +216,8 @@ export default function StaffingSolutionsPage() {
                         <CallToAction
                             buttonLabel="Join the Team"
                             round
-                            topic="Staffing: "
+                            type="employment"
+                            value=""
                         />
                     </AnimatedSection>
                 </section>

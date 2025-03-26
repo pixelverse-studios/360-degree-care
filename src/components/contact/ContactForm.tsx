@@ -1,9 +1,8 @@
-import { useCallback, useState } from 'react'
+import { useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import * as z from 'zod'
 import { Phone, Mail, MapPin } from 'lucide-react'
-import { DialogTitle } from '@/components/ui/dialog'
 import { toast } from 'sonner'
 
 import { Input } from '@/components/ui/input'
@@ -17,38 +16,35 @@ import {
     FormLabel,
     FormMessage
 } from '@/components/ui/form'
+import { ContactMap } from '@/utils/contact'
+import { useRouteState } from '@/lib/providers'
+import {
+    Select,
+    SelectTrigger,
+    SelectValue,
+    SelectContent,
+    SelectItem
+} from '../ui/select'
+import ContactSuccessMessage from './ContactSuccessMessage'
 
-const formSchema = z.object({
-    fullname: z.string().min(2, 'Full Name must be at least 2 characters'),
-    email: z.string().email('Invalid email address'),
-    phone: z
-        .string()
-        .length(10, 'Phone number must be exactly 10 digits')
-        .regex(/^\d+$/, 'Phone number must contain only numeric values'),
-    description: z.string().min(5, 'Description must be at least 5 characters')
-})
+function canSubmit(form: any) {
+    return Object.values(form).every(val => val)
+}
 
-export default function ContactForm({
-    setShowForm,
-    topic
-}: {
-    setShowForm: Function
-    topic: string
-}) {
+export default function ContactForm() {
+    const { routeState } = useRouteState()
+
+    const config = ContactMap.get(routeState.type)
     const [loading, setLoading] = useState(false)
+    const [submitted, setSubmitted] = useState(false)
 
     const form = useForm({
-        resolver: zodResolver(formSchema),
+        resolver: zodResolver(config?.schema),
         mode: 'onChange',
-        defaultValues: {
-            fullname: '',
-            email: '',
-            phone: '',
-            description: topic ?? ''
-        }
+        defaultValues: config?.initialValues ?? {}
     })
 
-    const onSubmit = async (values: z.infer<typeof formSchema>) => {
+    const onSubmit = async (values: z.infer<typeof config.schema>) => {
         setLoading(true)
         try {
             const payload = {
@@ -56,10 +52,17 @@ export default function ContactForm({
                 email: values.email,
                 phone: values.phone,
                 data: {
-                    description: values.description,
-                    topic: topic.replace(/[^a-zA-Z\s]/g, '') ?? ''
+                    description: values.description
                 }
             }
+
+            if (config.type !== 'general') {
+                payload.data = {
+                    ...payload.data,
+                    [config.type]: values[config.type]
+                }
+            }
+
             await fetch(
                 `${process.env.NEXT_PUBLIC_API_HOST}/v1/contact-forms/${process.env.NEXT_PUBLIC_SLUG}`,
                 {
@@ -71,24 +74,23 @@ export default function ContactForm({
                 }
             )
             setLoading(false)
-            setShowForm(false)
+            setSubmitted(true)
             return toast.success('Request submitted successfully')
         } catch (error) {
             setLoading(false)
-            return toast.error('Request could not be submit at this time')
+            return toast.error('Request could not be submitted at this time')
         }
+    }
+
+    if (submitted) {
+        return <ContactSuccessMessage />
     }
 
     return (
         <div className="grid grid-cols-1 md:grid-cols-2 shadow-xl">
-            <div className="bg-primary text-white p-6 flex flex-col space-y-4 rounded-tl-lg rounded-bl-lg">
-                <DialogTitle className="text-2xl font-bold text-white">
-                    Get in Touch
-                </DialogTitle>
-                <p>
-                    We're here to answer your questions and discuss how we can
-                    help you and your loved ones.
-                </p>
+            <div className="bg-primary text-white p-6 flex flex-col rounded-tl-lg rounded-bl-lg space-y-4">
+                <h2 className="font-bold text-white">Get In Touch</h2>
+                {config?.description && <p>{config.description}</p>}
                 <div className="flex items-center space-x-2">
                     <Phone className="w-5 h-5" />
                     <span>(555) 123-4567</span>
@@ -124,40 +126,97 @@ export default function ContactForm({
                                 </FormItem>
                             )}
                         />
-                        <FormField
-                            control={form.control}
-                            name="email"
-                            render={({ field }) => (
-                                <FormItem>
-                                    <FormLabel>Email</FormLabel>
-                                    <FormControl>
-                                        <Input
-                                            type="email"
-                                            placeholder="Enter your email"
-                                            {...field}
-                                        />
-                                    </FormControl>
-                                    <FormMessage className="text-red-500 text-sm mt-1" />
-                                </FormItem>
-                            )}
-                        />
-                        <FormField
-                            control={form.control}
-                            name="phone"
-                            render={({ field }) => (
-                                <FormItem>
-                                    <FormLabel>Phone Number</FormLabel>
-                                    <FormControl>
-                                        <Input
-                                            type="tel"
-                                            placeholder="Enter your phone number"
-                                            {...field}
-                                        />
-                                    </FormControl>
-                                    <FormMessage className="text-red-500 text-sm mt-1" />
-                                </FormItem>
-                            )}
-                        />
+                        <div className="flex flex-wrap gap-4 w-full">
+                            <FormField
+                                control={form.control}
+                                name="email"
+                                render={({ field }) => (
+                                    <FormItem className="flex-1 basis-0">
+                                        <FormLabel>Email</FormLabel>
+                                        <FormControl>
+                                            <Input
+                                                type="email"
+                                                placeholder="Enter your email"
+                                                {...field}
+                                            />
+                                        </FormControl>
+                                        <FormMessage className="text-red-500 text-sm mt-1" />
+                                    </FormItem>
+                                )}
+                            />
+                            <FormField
+                                control={form.control}
+                                name="phone"
+                                render={({ field }) => (
+                                    <FormItem className="flex-1 basis-0">
+                                        <FormLabel>Phone Number</FormLabel>
+                                        <FormControl>
+                                            <Input
+                                                type="tel"
+                                                placeholder="Enter your phone number"
+                                                {...field}
+                                            />
+                                        </FormControl>
+                                        <FormMessage className="text-red-500 text-sm mt-1" />
+                                    </FormItem>
+                                )}
+                            />
+                        </div>
+                        {(config?.type === 'services' ||
+                            config?.type === 'employment') && (
+                            <FormField
+                                control={form.control}
+                                name={config.type ?? ''}
+                                render={({ field }) => (
+                                    <FormItem>
+                                        <FormLabel>
+                                            {config.fieldLabel || ''}
+                                        </FormLabel>
+                                        <FormControl>
+                                            <Select
+                                                onValueChange={field.onChange}
+                                                defaultValue={field.value}
+                                            >
+                                                <SelectTrigger>
+                                                    <SelectValue
+                                                        placeholder={
+                                                            config.placeholder ??
+                                                            ''
+                                                        }
+                                                    />
+                                                </SelectTrigger>
+                                                <SelectContent>
+                                                    {config.selectOptions.map(
+                                                        (item: string) => (
+                                                            <SelectItem
+                                                                key={
+                                                                    typeof item ===
+                                                                    'string'
+                                                                        ? item
+                                                                        : ''
+                                                                }
+                                                                value={
+                                                                    typeof item ===
+                                                                    'string'
+                                                                        ? item
+                                                                        : ''
+                                                                }
+                                                            >
+                                                                {typeof item ===
+                                                                'string'
+                                                                    ? item
+                                                                    : ''}
+                                                            </SelectItem>
+                                                        )
+                                                    )}
+                                                </SelectContent>
+                                            </Select>
+                                        </FormControl>
+                                        <FormMessage className="text-red-500 text-sm mt-1" />
+                                    </FormItem>
+                                )}
+                            />
+                        )}
                         <FormField
                             control={form.control}
                             name="description"
@@ -180,7 +239,7 @@ export default function ContactForm({
                             type="submit"
                             variant="cta"
                             className={`w-full rounded-md ${loading ? 'opacity-50 cursor-not-allowed' : ''}`}
-                            disabled={loading}
+                            disabled={loading || !canSubmit(form.getValues())}
                         >
                             {loading ? (
                                 <div className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin"></div>

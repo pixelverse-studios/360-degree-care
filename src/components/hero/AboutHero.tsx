@@ -47,7 +47,8 @@ export default function AboutHero() {
                         <CallToAction
                             buttonLabel="Schedule a Consultation"
                             round
-                            topic=""
+                            type="general"
+                            value=""
                         />
                     </div>
                 </AnimatedSection>
