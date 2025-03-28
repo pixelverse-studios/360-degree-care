@@ -8,7 +8,7 @@ import { CompanyName } from '@/components/Logo'
 import { cn } from '@/lib/utils'
 import Logo from '@/components/Logo'
 import { navLinks, footerResources } from '@/utils/routes'
-import { ADDRESS, PHONE } from '@/utils/constants'
+import { ADDRESS, FACEBOOK, INSTA, PHONE } from '@/utils/constants'
 import { HoverPopover } from './ui/popover'
 
 const [aboutLink, serviceLink, faqLink] = navLinks
@@ -52,13 +52,18 @@ export default function Footer() {
 
                             {/* Social Icons */}
                             <div className="flex space-x-4 mt-4">
-                                <a href="#" className={linkHover}>
+                                <a
+                                    href={FACEBOOK}
+                                    target="_blank"
+                                    className={linkHover}
+                                >
                                     <FaFacebookF size={24} />
                                 </a>
-                                <a href="#" className={linkHover}>
-                                    <FaLinkedinIn size={24} />
-                                </a>
-                                <a href="#" className={linkHover}>
+                                <a
+                                    href={INSTA}
+                                    target="_blank"
+                                    className={linkHover}
+                                >
                                     <FaInstagram size={24} />
                                 </a>
                             </div>
@@ -80,7 +85,7 @@ export default function Footer() {
                                 href={item.route}
                                 className={cn(quickLinkStyles, linkHover)}
                             >
-                                {item.label} Services
+                                {item.label}
                             </Link>
                         ))}
                         <Link

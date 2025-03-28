@@ -44,7 +44,7 @@ export const SERVICE_CARDS: CardProps[] = [
         icon: FaHandHoldingHeart,
         title: 'Home Health Care',
         description:
-            '360 Degree Care provides professional home health care services including skilled nursing, therapy, and personal care. Tailored to support your recovery, enhance overall well-being, and maintain indepenence, all while receiving comfort and care you deserve in your own home.',
+            '360 Degree Care provides professional home health care services including skilled nursing, therapy, and personal care. Tailored to support your recovery, enhance overall well-being, and maintain independence, all while receiving comfort and care you deserve in your own home.',
         bgColor: 'bg-[#fff]'
     },
     {

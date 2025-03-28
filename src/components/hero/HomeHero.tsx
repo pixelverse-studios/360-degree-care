@@ -20,7 +20,7 @@ export default function HomeHero() {
                         Concierge Level Home Health Care
                     </h1>
                     <h2 className="text-primary">
-                        The Finest Nurses and Home Aids in New Jersey
+                        The Finest Nurses and Home Aides in New Jersey
                     </h2>
                 </div>
                 <p className="text-lg">

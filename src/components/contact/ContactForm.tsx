@@ -26,6 +26,7 @@ import {
     SelectItem
 } from '../ui/select'
 import ContactSuccessMessage from './ContactSuccessMessage'
+import { EMAIL, PHONE, ADDRESS } from '@/utils/constants'
 
 function canSubmit(form: any) {
     return Object.values(form).every(val => val)
@@ -93,15 +94,17 @@ export default function ContactForm() {
                 {config?.description && <p>{config.description}</p>}
                 <div className="flex items-center space-x-2">
                     <Phone className="w-5 h-5" />
-                    <span>(555) 123-4567</span>
+                    <span>{PHONE}</span>
                 </div>
                 <div className="flex items-center space-x-2">
                     <Mail className="w-5 h-5" />
-                    <span>info@360degreecare.com</span>
+                    <span>{EMAIL}</span>
                 </div>
                 <div className="flex items-center space-x-2">
                     <MapPin className="w-5 h-5" />
-                    <span>27 Chestnut St, Ridgewood, NJ 07450</span>
+                    <span>
+                        {ADDRESS.STREET}, {ADDRESS.DETAILS}
+                    </span>
                 </div>
             </div>
             <div className="p-6 bg-white-bright rounded-tr-lg rounded-br-lg">
