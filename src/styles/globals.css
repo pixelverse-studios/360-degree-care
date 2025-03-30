@@ -210,6 +210,10 @@ main {
         font-family: var(--font-permanent-marker), cursive !important;
         font-size: 32px;
     }
+
+    .bullet-item {
+        @apply grid grid-cols-[1.5rem_1fr] gap-2 items-start;
+    }
 }
 
 @layer utilities {

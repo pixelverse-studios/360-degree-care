@@ -1,5 +1,6 @@
 import { ReactNode } from 'react'
 import { CompanyName } from '@/components/Logo'
+import { Illnesses } from '@/components/IllnessCoverage'
 
 export interface FAQ {
     question: string
@@ -83,6 +84,8 @@ export const HOME_FAQS: FAQ[] = [
                 with a variety of conditions and needs across home healthcare
                 and hospice. Find our specific care coverages on our service
                 pages.
+                <br />
+                <Illnesses />
             </>
         )
     }

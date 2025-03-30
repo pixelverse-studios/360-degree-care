@@ -71,7 +71,7 @@ export default function AboutTheTeam() {
                         ))}
                     </ul>
                     <DialogOverlay className="fixed inset-0 bg-gray-900/80 transition-opacity duration-300" />
-                    <DialogContent className="px-8 py-12 border-none max-w-4xl w-4/5 lg:w-full h-fit shadow-lg">
+                    <DialogContent className="px-8 py-12 border-none max-w-4xl w-4/5 lg:w-full h-[90%] md:h-fit rounded-xl shadow-xl">
                         {selected !== null ? (
                             <div className="grid grid-cols-1  lg:grid-cols-[1fr_2fr] gap-6">
                                 <div className="flex flex-col items-center">
@@ -93,7 +93,9 @@ export default function AboutTheTeam() {
                                         {selected.email}
                                     </a>
                                 </div>
-                                <p className="">{selected.expanded}</p>
+                                <p className="overflow-auto h-[20vh] sm:h-fit">
+                                    {selected.expanded}
+                                </p>
                             </div>
                         ) : null}
                     </DialogContent>

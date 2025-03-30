@@ -33,22 +33,22 @@ export default function HomeAboutSection() {
                         with dignity, trust, and exceptional service.
                     </p>
                     <div className="flex flex-col md:flex-row justify-between md:items-center gap-4">
-                        <ul className="flex flex-col gap-4">
-                            <li className="flex items-center gap-2 text-lg">
+                        <ul className="flex flex-col gap-4 mb-6 md:mb-0">
+                            <li className="bullet-item text-lg">
                                 <CircleCheck className="text-primary" />
                                 <span>10+ Years of Trusted Service</span>
                             </li>
-                            <li className="flex items-center gap-2 text-lg">
+                            <li className="bullet-item text-lg">
                                 <CircleCheck className="text-primary" />
                                 <span>Certified CHAP Organization</span>
                             </li>
-                            <li className="flex items-center gap-2 text-lg">
+                            <li className="bullet-item text-lg">
                                 <CircleCheck className="text-primary" />
                                 <span>
                                     Highest Standards of Quality Assurance
                                 </span>
                             </li>
-                            <li className="flex items-center gap-2 text-lg">
+                            <li className="bullet-item text-lg">
                                 <CircleCheck className="text-primary" />
                                 <span>
                                     Licensed by the State Attorney General
@@ -59,7 +59,7 @@ export default function HomeAboutSection() {
                             <img
                                 src="/icons/CHAPLogo.svg"
                                 alt="CHAP badge"
-                                className="w-[8rem] h-[8rem]"
+                                className="w-[8rem] h-[8rem] mx-auto md:mx-0"
                             />
                         </a>
                     </div>

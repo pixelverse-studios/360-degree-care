@@ -44,7 +44,7 @@ export default function HomeHealthCareHero() {
                     </p>
                 </div>
                 <img
-                    className="h-fit w-fit mx-auto xl:mx-0 rounded-xl shadow-xl"
+                    className="h-fit w-fit mx-auto xl:mx-0 rounded-xl shadow-xl object-cover"
                     src="/assets/mother-daughter.jpg"
                     alt="Home Healthcare Aid graphic"
                 />

@@ -45,7 +45,7 @@ export default function HomeHero() {
                 </div>
             </div>
             <img
-                className="rounded-2xl h-fit w-fit object-cover"
+                className="rounded-2xl max-h-[20rem] h-fit w-fit object-cover"
                 src="/assets/happy couple 1.jpg"
                 alt=""
             />

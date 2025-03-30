@@ -24,7 +24,7 @@ export default function HomeHealthAidesPage() {
                     </p>
                     <CallToAction
                         buttonLabel="Get In Touch"
-                        buttonClass="w-full md:w-fit md:mx-auto"
+                        buttonClass="w-full md:w-fit mx-auto"
                         round
                         type="services"
                         value="Home Health Aides"

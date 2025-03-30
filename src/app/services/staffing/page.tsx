@@ -216,7 +216,7 @@ export default function StaffingSolutionsPage() {
                         <CallToAction
                             buttonLabel="Join the Team"
                             round
-                            type="employment"
+                            type="general"
                             value=""
                         />
                     </AnimatedSection>

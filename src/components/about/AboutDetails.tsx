@@ -88,7 +88,7 @@ export default function AboutDetails() {
                             </p>
                         </div>
                     </div>
-                    <div className="w-[80%] mx-auto h-[50vh] mt-8">
+                    <div className="relative w-[90%] max-w-6xl mx-auto mt-8 overflow-hidden">
                         <Carousel
                             opts={{
                                 align: 'start',
@@ -103,40 +103,37 @@ export default function AboutDetails() {
                             className="w-full"
                         >
                             <CarouselContent className="-ml-4 md:-ml-6">
-                                {/* Add flex and alignment properties to vertically center content */}
                                 {carouselItems
                                     .slice(0, 3)
                                     .map((item, index) => (
                                         <CarouselItem
                                             key={index}
-                                            className="pl-4 md:pl-6 basis-full md:basis-1/2 xl:basis-1/3 flex items-center"
+                                            className="pl-4 md:pl-6 basis-full md:basis-1/2 xl:basis-1/3 flex items-center justify-center"
                                         >
                                             <img
                                                 src={item}
-                                                className="h-fit max-h-[20rem] w-auto m-auto object-contain rounded-xl"
-                                                alt={`360 degree care advertisement-${index + 1}`}
+                                                className="max-h-[50vh] w-auto object-contain rounded-xl"
+                                                alt={`carousel-item-${index}`}
                                             />
                                         </CarouselItem>
                                     ))}
-                                <CarouselItem className="pl-4 md:pl-6 basis-full md:basis-1/2 xl:basis-1/3 flex items-center">
-                                    <div className="flex flex-col gap-4 w-full">
-                                        <img
-                                            src={carouselItems[3]}
-                                            className="h-fit max-h-[20rem] w-auto m-auto object-contain rounded-xl"
-                                            alt="360 degree care advertisement-4"
-                                        />
-                                        <img
-                                            src={carouselItems[4]}
-                                            className="h-fit max-h-[20rem] w-auto m-auto object-contain rounded-xl"
-                                            alt="360 degree care advertisement-5"
-                                        />
-                                    </div>
+                                <CarouselItem className="pl-4 md:pl-6 basis-full md:basis-1/2 xl:basis-1/3 flex flex-col gap-4 items-center justify-center">
+                                    <img
+                                        src={carouselItems[3]}
+                                        className="max-h-[50vh] w-auto object-contain rounded-xl"
+                                        alt="carousel-item-4"
+                                    />
+                                    <img
+                                        src={carouselItems[4]}
+                                        className="max-h-[50vh] w-auto object-contain rounded-xl"
+                                        alt="carousel-item-5"
+                                    />
                                 </CarouselItem>
-                                <CarouselItem className="pl-4 md:pl-6 basis-full md:basis-1/2 xl:basis-1/3 flex items-center">
+                                <CarouselItem className="pl-4 md:pl-6 basis-full md:basis-1/2 xl:basis-1/3 flex items-center justify-center">
                                     <img
                                         src={carouselItems[5]}
-                                        className="h-fit max-h-[20rem] w-auto m-auto object-contain rounded-xl"
-                                        alt="360 degree care advertisement-6"
+                                        className="max-h-[50vh] w-auto object-contain rounded-xl"
+                                        alt="carousel-item-6"
                                     />
                                 </CarouselItem>
                             </CarouselContent>
@@ -144,11 +141,6 @@ export default function AboutDetails() {
                             <CarouselNext />
                         </Carousel>
                     </div>
-                    {/* <img
-                        src="/assets/freedom.jpg"
-                        alt="freedome img"
-                        className="rounded-xl shadow-xl object-cover"
-                    /> */}
                 </AnimatedSection>
             </div>
             <div className="bg-white-bright">

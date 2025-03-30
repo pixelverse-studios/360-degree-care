@@ -80,6 +80,11 @@ export default function RootLayout({
                     href="https://fontlibrary.org//face/symbola"
                     type="text/css"
                 />
+                <script
+                    defer
+                    src="https://cloud.umami.is/script.js"
+                    data-website-id="435eb3ba-28ea-403c-b99a-cf2902745af6"
+                ></script>
             </head>
             <body
                 className={`antialiased ${rubik.variable} ${merriweather.variable} ${bodoni.variable} ${permanentMarker.variable}`}

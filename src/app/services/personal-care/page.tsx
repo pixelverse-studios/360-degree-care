@@ -35,7 +35,7 @@ export default function PersonalCarePage() {
                     Benefits of Personal Care Services
                 </h2>
                 <ul className="mb-4 flex flex-col gap-2">
-                    <li className="flex gap-2 items-start">
+                    <li className="bullet-item">
                         <CircleCheck className="text-primary" />
                         <p>
                             <strong>Enhanced Independence:</strong>
@@ -43,7 +43,7 @@ export default function PersonalCarePage() {
                             remain independent in their homes for longer.
                         </p>
                     </li>
-                    <li className="flex gap-2 items-start">
+                    <li className="bullet-item">
                         <CircleCheck className="text-primary" />
                         <p>
                             <strong>Improved Quality of Life:</strong>
@@ -52,7 +52,7 @@ export default function PersonalCarePage() {
                             focus on activities they enjoy.
                         </p>
                     </li>
-                    <li className="flex gap-2 items-start">
+                    <li className="bullet-item">
                         <CircleCheck className="text-primary" />
                         <p>
                             <strong>Reduced Caregiver Burden:</strong>
@@ -61,7 +61,7 @@ export default function PersonalCarePage() {
                             loved ones.
                         </p>
                     </li>
-                    <li className="flex gap-2 items-start">
+                    <li className="bullet-item">
                         <CircleCheck className="text-primary" />
                         <p>
                             <strong>Safety and Security:</strong>
@@ -70,7 +70,7 @@ export default function PersonalCarePage() {
                             mind.
                         </p>
                     </li>
-                    <li className="flex gap-2 items-start">
+                    <li className="bullet-item">
                         <CircleCheck className="text-primary" />
                         <p>
                             <strong>Personalized Support:</strong>
@@ -85,7 +85,7 @@ export default function PersonalCarePage() {
                     Common Services Offered in Personal Care
                 </h2>
                 <ul className="mb-4 flex flex-col gap-2">
-                    <li className="flex gap-2 items-start">
+                    <li className="bullet-item">
                         <CircleCheck className="text-primary" />
                         <p>
                             <strong>
@@ -95,7 +95,7 @@ export default function PersonalCarePage() {
                             Bathing, dressing, grooming, and more.
                         </p>
                     </li>
-                    <li className="flex gap-2 items-start">
+                    <li className="bullet-item">
                         <CircleCheck className="text-primary" />
                         <p>
                             <strong>Meal Preparation:</strong>
@@ -103,7 +103,7 @@ export default function PersonalCarePage() {
                             Planning, shopping, and preparing nutritious meals.
                         </p>
                     </li>
-                    <li className="flex gap-2 items-start">
+                    <li className="bullet-item">
                         <CircleCheck className="text-primary" />
                         <p>
                             <strong>Light Housekeeping:</strong>
@@ -112,7 +112,7 @@ export default function PersonalCarePage() {
                             environment.
                         </p>
                     </li>
-                    <li className="flex gap-2 items-start">
+                    <li className="bullet-item">
                         <CircleCheck className="text-primary" />
                         <p>
                             <strong>Medication Reminders:</strong>
@@ -120,7 +120,7 @@ export default function PersonalCarePage() {
                             Ensuring proper medication use.
                         </p>
                     </li>
-                    <li className="flex gap-2 items-start">
+                    <li className="bullet-item">
                         <CircleCheck className="text-primary" />
                         <p>
                             <strong>
@@ -130,7 +130,7 @@ export default function PersonalCarePage() {
                             Providing engagement to combat loneliness.
                         </p>
                     </li>
-                    <li className="flex gap-2 items-start">
+                    <li className="bullet-item">
                         <CircleCheck className="text-primary" />
                         <p>
                             <strong>Transportation and Errands:</strong>

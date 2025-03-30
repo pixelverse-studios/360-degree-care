@@ -80,7 +80,7 @@ export default function NursingServicesPage() {
                                         your specific needs.
                                     </p>
                                     <ul className="space-y-2">
-                                        <li className="grid grid-cols-[1rem_1fr] gap-6">
+                                        <li className="bullet-item items-center">
                                             <CircleCheck className="text-primary h-6 w-6" />
                                             <span className="text-gray-700">
                                                 Complete health assessments
@@ -89,7 +89,7 @@ export default function NursingServicesPage() {
                                                 history reviews
                                             </span>
                                         </li>
-                                        <li className="grid grid-cols-[1rem_1fr] gap-6">
+                                        <li className="bullet-item items-center">
                                             <CircleCheck className="text-primary h-6 w-6" />
                                             <span className="text-gray-700">
                                                 Customized care plans developed
@@ -97,7 +97,7 @@ export default function NursingServicesPage() {
                                                 healthcare providers
                                             </span>
                                         </li>
-                                        <li className="grid grid-cols-[1rem_1fr] gap-6">
+                                        <li className="bullet-item items-center">
                                             <CircleCheck className="text-primary h-6 w-6" />
                                             <span className="text-gray-700">
                                                 Documentation for both private
@@ -105,7 +105,7 @@ export default function NursingServicesPage() {
                                                 policies
                                             </span>
                                         </li>
-                                        <li className="grid grid-cols-[1rem_1fr] gap-6">
+                                        <li className="bullet-item items-center">
                                             <CircleCheck className="text-primary h-6 w-6" />
                                             <span className="text-gray-700">
                                                 Regular reassessments to ensure
@@ -140,28 +140,28 @@ export default function NursingServicesPage() {
                                         injuries, diabetic ulcers, and more.
                                     </p>
                                     <ul className="space-y-2">
-                                        <li className="grid grid-cols-[1rem_1fr] gap-6">
+                                        <li className="bullet-item items-center">
                                             <CircleCheck className="text-primary h-6 w-6" />
                                             <span className="text-gray-700">
                                                 Expert wound assessment,
                                                 cleaning, and dressing changes
                                             </span>
                                         </li>
-                                        <li className="grid grid-cols-[1rem_1fr] gap-6">
+                                        <li className="bullet-item items-center">
                                             <CircleCheck className="text-primary h-6 w-6" />
                                             <span className="text-gray-700">
                                                 Implementation of evidence-based
                                                 wound care protocols
                                             </span>
                                         </li>
-                                        <li className="grid grid-cols-[1rem_1fr] gap-6">
+                                        <li className="bullet-item items-center">
                                             <CircleCheck className="text-primary h-6 w-6" />
                                             <span className="text-gray-700">
                                                 Monitoring for signs of
                                                 infection or complications
                                             </span>
                                         </li>
-                                        <li className="grid grid-cols-[1rem_1fr] gap-6">
+                                        <li className="bullet-item items-center">
                                             <CircleCheck className="text-primary h-6 w-6" />
                                             <span className="text-gray-700">
                                                 Education for patients and
@@ -196,7 +196,7 @@ export default function NursingServicesPage() {
                                         adverse reactions.
                                     </p>
                                     <ul className="space-y-2">
-                                        <li className="grid grid-cols-[1rem_1fr] gap-6">
+                                        <li className="bullet-item items-center">
                                             <CircleCheck className="text-primary h-6 w-6" />
                                             <span className="text-gray-700">
                                                 Medication review and
@@ -204,21 +204,21 @@ export default function NursingServicesPage() {
                                                 harmful interactions
                                             </span>
                                         </li>
-                                        <li className="grid grid-cols-[1rem_1fr] gap-6">
+                                        <li className="bullet-item items-center">
                                             <CircleCheck className="text-primary h-6 w-6" />
                                             <span className="text-gray-700">
                                                 Setup of medication organizers
                                                 and administration schedules
                                             </span>
                                         </li>
-                                        <li className="grid grid-cols-[1rem_1fr] gap-6">
+                                        <li className="bullet-item items-center">
                                             <CircleCheck className="text-primary h-6 w-6" />
                                             <span className="text-gray-700">
                                                 Monitoring for medication
                                                 effectiveness and side effects
                                             </span>
                                         </li>
-                                        <li className="grid grid-cols-[1rem_1fr] gap-6">
+                                        <li className="bullet-item items-center">
                                             <CircleCheck className="text-primary h-6 w-6" />
                                             <span className="text-gray-700">
                                                 Coordination with doctors and
