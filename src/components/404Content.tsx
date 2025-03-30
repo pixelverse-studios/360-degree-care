@@ -3,7 +3,7 @@ import AnimatedSection from './animated-section'
 
 const Page404Content = () => {
     return (
-        <div className="px-6 py-8 bg-white">
+        <main className="px-6 py-12 bg-white">
             <AnimatedSection
                 animation="zoom"
                 className="max-w-custom w-full rounded-xl shadow-xl overflow-hidden"
@@ -94,7 +94,7 @@ const Page404Content = () => {
                     </div>
                 </div>
             </AnimatedSection>
-        </div>
+        </main>
     )
 }
 
