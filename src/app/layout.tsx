@@ -1,3 +1,4 @@
+import Script from 'next/script'
 import {
     Bodoni_Moda,
     Merriweather,
@@ -85,6 +86,23 @@ export default function RootLayout({
                     src="https://cloud.umami.is/script.js"
                     data-website-id="435eb3ba-28ea-403c-b99a-cf2902745af6"
                 ></script>
+                <Script
+                    id="sitebehaviour-init"
+                    strategy="afterInteractive"
+                    dangerouslySetInnerHTML={{
+                        __html: `
+              (function() {
+                var sbSiteSecret = 'dd171ee6-2143-4a6d-b96a-1023e3c53f39';
+                window.sitebehaviourTrackingSecret = sbSiteSecret;
+                var scriptElement = document.createElement('script');
+                scriptElement.async = true;
+                scriptElement.id = 'site-behaviour-script-v2';
+                scriptElement.src = 'https://sitebehaviour-cdn.fra1.cdn.digitaloceanspaces.com/index.min.js?sitebehaviour-secret=' + sbSiteSecret;
+                document.head.appendChild(scriptElement); 
+              })();
+            `
+                    }}
+                />
             </head>
             <body
                 className={`antialiased ${rubik.variable} ${merriweather.variable} ${bodoni.variable} ${permanentMarker.variable}`}
