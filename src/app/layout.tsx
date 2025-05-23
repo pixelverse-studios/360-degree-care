@@ -81,11 +81,22 @@ export default function RootLayout({
                     href="https://fontlibrary.org//face/symbola"
                     type="text/css"
                 />
-                <script
-                    defer
-                    src="https://cloud.umami.is/script.js"
-                    data-website-id="435eb3ba-28ea-403c-b99a-cf2902745af6"
-                ></script>
+                <Script
+                    id="google-tag-manager"
+                    strategy="afterInteractive"
+                    dangerouslySetInnerHTML={{
+                        __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'AW-1709047122');
+            `
+                    }}
+                />
+                <Script
+                    src="https://www.googletagmanager.com/gtag/js?id=AW-1709047122"
+                    strategy="afterInteractive"
+                />
                 <Script
                     id="sitebehaviour-init"
                     strategy="afterInteractive"
