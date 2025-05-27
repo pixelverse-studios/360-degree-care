@@ -1,3 +1,5 @@
+import { counties } from '@/lib/counties'
+
 export const navLinks = [
     {
         route: '/about',
@@ -110,8 +112,16 @@ export const additionalPages = [
     }
 ]
 
+const countyHubPages = counties.map(county => ({
+    route: `/${county.slug}`,
+    label: county.name,
+    canVisit: true,
+    subLinks: []
+}))
+
 export const availablePages = [
     ...navLinks,
     ...footerResources,
-    ...additionalPages
+    ...additionalPages,
+    ...countyHubPages
 ]
