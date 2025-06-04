@@ -32,7 +32,6 @@ export default function CountyHubPage({
             />
             <CountyCityGrid
                 cities={countyData.cities}
-                countySlug={countyData.slug}
                 countyName={countyData.name}
             />
             <CountyCta
