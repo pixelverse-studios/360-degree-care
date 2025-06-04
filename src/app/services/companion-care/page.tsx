@@ -4,8 +4,10 @@ import CallToAction from '@/components/CallToAction'
 import { CompanyName } from '@/components/Logo'
 import AnimatedSection from '@/components/animated-section'
 import CompanionCareSeoHead from '@/lib/seo/companionCare'
+import { debugLocationData } from '@/lib/locationSeo'
 
 export default function CompanionsServicesPage() {
+    debugLocationData()
     return (
         <>
             <CompanionCareSeoHead />
