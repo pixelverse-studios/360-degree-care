@@ -86,11 +86,11 @@ export default function RootLayout({
                     strategy="afterInteractive"
                     dangerouslySetInnerHTML={{
                         __html: `
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
-              gtag('config', 'AW-1709047122');
-            `
+                            window.dataLayer = window.dataLayer || [];
+                            function gtag(){dataLayer.push(arguments);}
+                            gtag('js', new Date());
+                            gtag('config', 'AW-1709047122');
+                        `
                     }}
                 />
                 <Script
@@ -102,16 +102,33 @@ export default function RootLayout({
                     strategy="afterInteractive"
                     dangerouslySetInnerHTML={{
                         __html: `
-              (function() {
-                var sbSiteSecret = 'dd171ee6-2143-4a6d-b96a-1023e3c53f39';
-                window.sitebehaviourTrackingSecret = sbSiteSecret;
-                var scriptElement = document.createElement('script');
-                scriptElement.async = true;
-                scriptElement.id = 'site-behaviour-script-v2';
-                scriptElement.src = 'https://sitebehaviour-cdn.fra1.cdn.digitaloceanspaces.com/index.min.js?sitebehaviour-secret=' + sbSiteSecret;
-                document.head.appendChild(scriptElement); 
-              })();
-            `
+                                (function() {
+                                    var sbSiteSecret = 'dd171ee6-2143-4a6d-b96a-1023e3c53f39';
+                                    window.sitebehaviourTrackingSecret = sbSiteSecret;
+                                    var scriptElement = document.createElement('script');
+                                    scriptElement.async = true;
+                                    scriptElement.id = 'site-behaviour-script-v2';
+                                    scriptElement.src = 'https://sitebehaviour-cdn.fra1.cdn.digitaloceanspaces.com/index.min.js?sitebehaviour-secret=' + sbSiteSecret;
+                                    document.head.appendChild(scriptElement); 
+                                })();
+                            `
+                    }}
+                />
+                {/* Google Tag Manager */}
+                <Script
+                    strategy="afterInteractive"
+                    src="https://www.googletagmanager.com/gtag/js?id=AW-17090471122"
+                />
+                <Script
+                    id="google-analytics"
+                    strategy="afterInteractive"
+                    dangerouslySetInnerHTML={{
+                        __html: `
+                            window.dataLayer = window.dataLayer || [];
+                            function gtag(){dataLayer.push(arguments);}
+                            gtag('js', new Date());
+                            gtag('config', 'AW-17090471122');
+                        `
                     }}
                 />
             </head>
