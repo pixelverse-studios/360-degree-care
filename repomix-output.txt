@@ -16,7 +16,8 @@ The content is organized as follows:
 1. This summary section
 2. Repository information
 3. Directory structure
-4. Multiple file entries, each consisting of:
+4. Repository files (if enabled)
+5. Multiple file entries, each consisting of:
   a. A separator line (================)
   b. The file path (File: path/to/file)
   c. Another separator line
@@ -36,208 +37,1255 @@ Notes:
 ------
 - Some files may have been excluded based on .gitignore rules and Repomix's configuration
 - Binary files are not included in this packed representation. Please refer to the Repository Structure section for a complete list of file paths, including binary files
-- Only files matching these patterns are included: src/components/nav/Breadcrumbs.tsx, src/utils/routes.ts
+- Only files matching these patterns are included: src/lib/locationSeo.ts, src/app/services/companion-care/[city]/page.tsx, src/app/services/companion-care/page.tsx
 - Files matching patterns in .gitignore are excluded
 - Files matching default ignore patterns are excluded
 - Files are sorted by Git change count (files with more changes are at the bottom)
 
-Additional Info:
-----------------
 
 ================================================================
 Directory Structure
 ================================================================
 src/
-  components/
-    nav/
-      Breadcrumbs.tsx
-  utils/
-    routes.ts
+  app/
+    services/
+      companion-care/
+        [city]/
+          page.tsx
+        page.tsx
+  lib/
+    locationSeo.ts
 
 ================================================================
 Files
 ================================================================
 
 ================
-File: src/components/nav/Breadcrumbs.tsx
+File: src/app/services/companion-care/[city]/page.tsx
 ================
-'use client'
-
-import { Fragment } from 'react'
+// src/app/services/[service]/[city]/page.tsx
 import Link from 'next/link'
-import { usePathname } from 'next/navigation'
-import { cn } from '@/lib/utils'
-import { availablePages } from '@/utils/routes'
+import { Metadata } from 'next'
+import { notFound } from 'next/navigation'
 import {
-    Breadcrumb,
-    BreadcrumbItem,
-    BreadcrumbLink,
-    BreadcrumbList,
-    BreadcrumbSeparator
-} from '@/components/ui/breadcrumb'
+    generateLocationSEO,
+    getAllServiceCityPaths,
+    cities,
+    services
+} from '@/lib/locationSeo'
 
-export default function Breadcrumbs() {
-    const pathname = usePathname()
-    const pathSegments = pathname.split('/').filter(Boolean)
+interface Props {
+    params: {
+        service: string
+        city: string
+    }
+}
 
-    const breadcrumbs = pathSegments.map((segment, index) => {
-        const routePath = '/' + pathSegments.slice(0, index + 1).join('/')
-        const matchedNav = availablePages.find(
-            nav =>
-                nav.route === routePath ||
-                nav.subLinks.some(sub => sub.route === routePath)
-        )
+// Generate metadata for SEO
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+    const { service, city } = params
 
-        const label =
-            matchedNav?.subLinks.find(sub => sub.route === routePath)?.label ||
-            matchedNav?.label ||
-            segment
+    const seoData = generateLocationSEO(service, city)
 
+    if (!seoData) {
         return {
-            route: routePath,
-            label: label.charAt(0).toUpperCase() + label.slice(1),
-            canVisit: matchedNav?.canVisit,
-            isValid: matchedNav === undefined
+            title: 'Service Not Found',
+            description: 'The requested service page could not be found.'
         }
-    })
+    }
 
-    if (pathname === '/') return <div className="mt-[4.8rem]" />
+    const { title, metaDescription, location, serviceSpecificData } = seoData
+
+    return {
+        title,
+        description: metaDescription,
+        keywords: seoData.keywords,
+        openGraph: {
+            title,
+            description: metaDescription,
+            type: 'website',
+            locale: 'en_US',
+            siteName: 'Your Healthcare Services'
+        },
+        other: {
+            'geo.region': 'US-NJ',
+            'geo.placename': `${location.name}, New Jersey`,
+            'geo.postal-code': location.zipCodes.join(', ')
+        },
+        alternates: {
+            canonical: `/services/${service}/${city}`
+        }
+    }
+}
+
+// Generate static params for all service/city combinations
+export async function generateStaticParams() {
+    const paths = getAllServiceCityPaths()
+
+    return paths.map(({ params }) => ({
+        service: params.service,
+        city: params.city
+    }))
+}
+
+export default function ServiceCityPage({ params }: Props) {
+    const { service, city } = params
+
+    const seoData = generateLocationSEO(service, city)
+
+    if (!seoData) {
+        notFound()
+    }
+
+    const {
+        h1,
+        description,
+        location,
+        service: serviceData,
+        serviceSpecificData
+    } = seoData
+
+    // Structured data for local business
+    const structuredData = {
+        '@context': 'https://schema.org',
+        '@type': 'LocalBusiness',
+        name: `${serviceData.name} Services`,
+        description: description,
+        address: {
+            '@type': 'PostalAddress',
+            addressLocality: location.name,
+            addressRegion: 'NJ',
+            addressCountry: 'US',
+            postalCode: location.zipCodes[0] || ''
+        },
+        areaServed: {
+            '@type': 'City',
+            name: location.name
+        },
+        telephone: '(555) 123-4567',
+        serviceArea: location.nearbyAreas.concat([location.name])
+    }
 
     return (
-        <Breadcrumb className="mt-[5.5rem] max-w-custom w-full mx-auto px-6 py-4 bg-transparent">
-            <BreadcrumbList>
-                <BreadcrumbItem>
-                    <BreadcrumbLink
-                        asChild
-                        className="text-black-muted font-bold hover:text-primary"
-                    >
-                        <Link href="/">Home</Link>
-                    </BreadcrumbLink>
-                </BreadcrumbItem>
-                {breadcrumbs.map((crumb, index) => {
-                    const isLast = index === breadcrumbs.length - 1
-                    return (
-                        <Fragment key={index}>
-                            <BreadcrumbSeparator />
-                            <BreadcrumbItem key={crumb.route}>
-                                {index === breadcrumbs.length - 1 ||
-                                !crumb.canVisit ? (
-                                    <span
-                                        className={cn(
-                                            'text-primary font-semibold',
-                                            isLast
-                                                ? 'text-primary'
-                                                : 'text-black-muted'
-                                        )}
-                                    >
-                                        {crumb.isValid ? crumb.label : 404}
-                                    </span>
-                                ) : (
-                                    <BreadcrumbLink
-                                        asChild
-                                        className={
-                                            isLast
-                                                ? 'text-primary'
-                                                : 'text-black-muted'
-                                        }
-                                    >
-                                        <Link href={crumb.route}>
-                                            {crumb.isValid ? crumb.label : 404}
-                                        </Link>
-                                    </BreadcrumbLink>
+        <>
+            {/* Structured Data */}
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{
+                    __html: JSON.stringify(structuredData)
+                }}
+            />
+
+            <div className="min-h-screen bg-white">
+                {/* Header with SEO-Optimized H1 */}
+                <header className="bg-blue-600 text-white py-12">
+                    <div className="max-w-4xl mx-auto px-4">
+                        <nav className="mb-6 text-sm">
+                            <Link
+                                href="/"
+                                className="text-blue-200 hover:text-white"
+                            >
+                                Home
+                            </Link>
+                            <span className="mx-2">›</span>
+                            <Link
+                                href="/services"
+                                className="text-blue-200 hover:text-white"
+                            >
+                                Services
+                            </Link>
+                            <span className="mx-2">›</span>
+                            <Link
+                                href={`/services/${service}`}
+                                className="text-blue-200 hover:text-white"
+                            >
+                                {serviceData.name}
+                            </Link>
+                            <span className="mx-2">›</span>
+                            <span>{location.name}</span>
+                        </nav>
+
+                        {/* Dynamic H1 from SEO data */}
+                        <h1 className="text-4xl font-bold mb-4">{h1}</h1>
+
+                        {/* Location-Specific Description */}
+                        <p className="text-xl text-blue-100">{description}</p>
+
+                        {/* Local Keywords Integration */}
+                        <div className="mt-4 text-blue-200 text-sm">
+                            Serving{' '}
+                            {location.localKeywords.slice(0, 3).join(' • ')}
+                            {location.population &&
+                                ` • Population: ${location.population}`}
+                        </div>
+                    </div>
+                </header>
+
+                {/* Main Content */}
+                <main className="max-w-4xl mx-auto px-4 py-12">
+                    <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                        {/* Content with Service-Specific Blocks */}
+                        <div className="lg:col-span-2">
+                            <div className="prose prose-lg max-w-none">
+                                {/* Community-Focused Introduction */}
+                                <h2>
+                                    Trusted {serviceData.name} Provider in{' '}
+                                    {location.name}
+                                </h2>
+                                <p>
+                                    {location.seoContent.communityFocus} Our{' '}
+                                    {serviceData.name.toLowerCase()} services
+                                    are specifically designed to meet the unique
+                                    needs of {location.name} residents and their
+                                    families.
+                                </p>
+
+                                {/* Custom Why Choose Us Section */}
+                                {serviceSpecificData?.contentBlocks
+                                    ?.whyChooseUs && (
+                                    <>
+                                        <h3>
+                                            Why {location.name} Families Choose
+                                            Our {serviceData.name} Services
+                                        </h3>
+                                        <p>
+                                            {
+                                                serviceSpecificData
+                                                    .contentBlocks.whyChooseUs
+                                            }
+                                        </p>
+                                    </>
                                 )}
-                            </BreadcrumbItem>
-                        </Fragment>
-                    )
-                })}
-            </BreadcrumbList>
-        </Breadcrumb>
+
+                                {/* Service Highlights */}
+                                {serviceSpecificData?.contentBlocks
+                                    ?.serviceHighlights && (
+                                    <>
+                                        <h3>
+                                            Our {serviceData.name} Services in{' '}
+                                            {location.name}
+                                        </h3>
+                                        <ul>
+                                            {serviceSpecificData.contentBlocks.serviceHighlights.map(
+                                                (highlight, index) => (
+                                                    <li key={index}>
+                                                        <strong>
+                                                            {highlight}
+                                                        </strong>
+                                                    </li>
+                                                )
+                                            )}
+                                        </ul>
+                                    </>
+                                )}
+
+                                {/* Default service features if no custom highlights */}
+                                {!serviceSpecificData?.contentBlocks
+                                    ?.serviceHighlights && (
+                                    <>
+                                        <h3>
+                                            Why Choose Our {serviceData.name}{' '}
+                                            Services in {location.name}
+                                        </h3>
+                                        <ul>
+                                            <li>
+                                                <strong>
+                                                    Local Knowledge:
+                                                </strong>{' '}
+                                                Deep understanding of{' '}
+                                                {location.name} and{' '}
+                                                {location.county}
+                                            </li>
+                                            <li>
+                                                <strong>
+                                                    Community Connections:
+                                                </strong>{' '}
+                                                Established relationships with
+                                                local healthcare providers
+                                            </li>
+                                            <li>
+                                                <strong>
+                                                    Cultural Sensitivity:
+                                                </strong>{' '}
+                                                Respectful of{' '}
+                                                {location.demographics}{' '}
+                                                community values
+                                            </li>
+                                            <li>
+                                                <strong>
+                                                    Licensed Professionals:
+                                                </strong>{' '}
+                                                All caregivers licensed in New
+                                                Jersey
+                                            </li>
+                                            <li>
+                                                <strong>
+                                                    Emergency Response:
+                                                </strong>{' '}
+                                                Quick response times throughout{' '}
+                                                {location.name}
+                                            </li>
+                                        </ul>
+                                    </>
+                                )}
+
+                                {/* Local Expertise */}
+                                {serviceSpecificData?.contentBlocks
+                                    ?.localExpertise && (
+                                    <>
+                                        <h3>
+                                            Local Expertise in {location.name}
+                                        </h3>
+                                        <p>
+                                            {
+                                                serviceSpecificData
+                                                    .contentBlocks
+                                                    .localExpertise
+                                            }
+                                        </p>
+                                    </>
+                                )}
+
+                                {/* Local Landmarks & Recognition */}
+                                {location.localLandmarks.length > 0 && (
+                                    <>
+                                        <h3>
+                                            Familiar with {location.name} Area
+                                        </h3>
+                                        <p>
+                                            Our team knows {location.name} well,
+                                            including key locations like{' '}
+                                            {location.localLandmarks
+                                                .slice(0, 3)
+                                                .join(', ')}
+                                            , and more. This local knowledge
+                                            helps us provide better, more
+                                            personalized care.
+                                        </p>
+                                    </>
+                                )}
+
+                                {/* Emergency Information */}
+                                {serviceSpecificData?.contentBlocks
+                                    ?.emergencyInfo && (
+                                    <>
+                                        <h3>
+                                            Emergency Support in {location.name}
+                                        </h3>
+                                        <p>
+                                            {
+                                                serviceSpecificData
+                                                    .contentBlocks.emergencyInfo
+                                            }
+                                        </p>
+                                    </>
+                                )}
+
+                                {/* Local Healthcare Partnerships */}
+                                <h3>Healthcare Network in {location.name}</h3>
+                                <p>
+                                    {location.seoContent.localPartners} This
+                                    ensures seamless coordination of care and
+                                    the best possible outcomes for our{' '}
+                                    {location.name} clients.
+                                </p>
+
+                                {/* Nearby Areas Served */}
+                                {location.nearbyAreas.length > 0 && (
+                                    <>
+                                        <h3>
+                                            Also Serving Areas Near{' '}
+                                            {location.name}
+                                        </h3>
+                                        <p>
+                                            In addition to {location.name}, we
+                                            provide{' '}
+                                            {serviceData.name.toLowerCase()}{' '}
+                                            services to:
+                                        </p>
+                                        <div className="grid grid-cols-2 md:grid-cols-3 gap-2 my-4">
+                                            {location.nearbyAreas.map(area => (
+                                                <div
+                                                    key={area}
+                                                    className="bg-gray-50 p-2 rounded text-center text-sm"
+                                                >
+                                                    {area}
+                                                </div>
+                                            ))}
+                                        </div>
+                                    </>
+                                )}
+
+                                {/* Call to Action */}
+                                <div className="bg-blue-50 border border-blue-200 rounded-lg p-6 my-8">
+                                    <h4 className="text-lg font-semibold text-blue-900 mb-3">
+                                        Ready to Start {serviceData.name} in{' '}
+                                        {location.name}?
+                                    </h4>
+                                    <p className="text-blue-800 mb-4">
+                                        Contact our {location.name} care team
+                                        today for a free consultation. We're
+                                        here to help you and your family access
+                                        the best{' '}
+                                        {serviceData.name.toLowerCase()}
+                                        services in {location.county}.
+                                    </p>
+                                    <div className="flex flex-col sm:flex-row gap-3">
+                                        <button className="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors font-medium">
+                                            Free {location.name} Consultation
+                                        </button>
+                                        <button className="border border-blue-300 text-blue-700 px-6 py-3 rounded-lg hover:bg-blue-50 transition-colors font-medium">
+                                            Call (555) 123-4567
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        {/* Sidebar with Local Information */}
+                        <div className="lg:col-span-1">
+                            <div className="bg-gray-50 rounded-lg p-6 sticky top-6">
+                                <h3 className="text-lg font-semibold mb-4">
+                                    {location.name} Contact Info
+                                </h3>
+
+                                <div className="space-y-4">
+                                    <div>
+                                        <h4 className="font-medium text-gray-900">
+                                            Local Phone
+                                        </h4>
+                                        <p className="text-gray-600">
+                                            (555) 123-4567
+                                        </p>
+                                    </div>
+
+                                    <div>
+                                        <h4 className="font-medium text-gray-900">
+                                            Service Area
+                                        </h4>
+                                        <p className="text-gray-600">
+                                            {location.name}, {location.county},
+                                            NJ
+                                        </p>
+                                        {location.zipCodes.length > 0 && (
+                                            <p className="text-gray-500 text-sm">
+                                                ZIP:{' '}
+                                                {location.zipCodes.join(', ')}
+                                            </p>
+                                        )}
+                                    </div>
+
+                                    <div>
+                                        <h4 className="font-medium text-gray-900">
+                                            Hours in {location.name}
+                                        </h4>
+                                        <div className="text-gray-600 text-sm space-y-1">
+                                            <div>Mon-Fri: 8AM - 8PM</div>
+                                            <div>Saturday: 9AM - 5PM</div>
+                                            <div>Sunday: Emergency on-call</div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                {/* Competition Level Indicator (for internal use) */}
+                                {location.rankingFactors && (
+                                    <div className="mt-6 pt-6 border-t border-gray-200">
+                                        <h4 className="font-medium text-gray-900 mb-3">
+                                            Service Focus
+                                        </h4>
+                                        <div className="flex flex-wrap gap-1">
+                                            {location.rankingFactors.focusAreas
+                                                .slice(0, 3)
+                                                .map(area => (
+                                                    <span
+                                                        key={area}
+                                                        className="text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded"
+                                                    >
+                                                        {area}
+                                                    </span>
+                                                ))}
+                                        </div>
+                                    </div>
+                                )}
+
+                                {/* Other Local Services */}
+                                <div className="mt-6 pt-6 border-t border-gray-200">
+                                    <h4 className="font-medium text-gray-900 mb-3">
+                                        Other Services in {location.name}
+                                    </h4>
+                                    <div className="space-y-2">
+                                        {Object.entries(services)
+                                            .filter(
+                                                ([slug]) => slug !== service
+                                            )
+                                            .slice(0, 3)
+                                            .map(([slug, serviceInfo]) => (
+                                                <Link
+                                                    key={slug}
+                                                    href={`/services/${slug}/${city}`}
+                                                    className="block text-blue-600 hover:text-blue-800 text-sm"
+                                                >
+                                                    {serviceInfo.name} in{' '}
+                                                    {location.name}
+                                                </Link>
+                                            ))}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </main>
+            </div>
+        </>
     )
 }
 
 ================
-File: src/utils/routes.ts
+File: src/lib/locationSeo.ts
 ================
-export const navLinks = [
-    {
-        route: '/about',
-        label: 'About Us',
-        subLinks: [],
-        canVisit: true
+// lib/locationSEO.ts
+// lib/locationSEO.ts
+
+// lib/locationSEO.ts
+
+// Types
+export interface Service {
+    name: string
+    baseDescription: string
+}
+
+export interface LocationSEOContent {
+    communityFocus: string
+    serviceAreas: string
+    localPartners: string
+}
+
+export interface ServiceSEOData {
+    customDescription?: string
+    customH1?: string
+    customTitle?: string
+    customMetaDescription?: string
+    localKeywords?: string[]
+    contentBlocks?: {
+        whyChooseUs?: string
+        serviceHighlights?: string[]
+        localExpertise?: string
+        emergencyInfo?: string
+    }
+}
+
+export interface LocationData {
+    name: string
+    county: string
+    zipCodes: string[]
+    population: string
+    demographics: string
+    localKeywords: string[]
+    nearbyAreas: string[]
+    localLandmarks: string[]
+    customDescriptions: Record<string, string> // Legacy support
+    serviceSpecificSEO: Record<string, ServiceSEOData> // New granular control
+    seoContent: LocationSEOContent
+    rankingFactors?: {
+        primaryKeywords: string[]
+        secondaryKeywords: string[]
+        competitionLevel: 'low' | 'medium' | 'high'
+        focusAreas: string[]
+    }
+}
+
+export interface GeneratedSEO {
+    title: string
+    metaDescription: string
+    h1: string
+    description: string
+    keywords: string
+    location: LocationData
+    service: Service
+    serviceSpecificData?: ServiceSEOData
+}
+
+export const services: Record<string, Service> = {
+    'personal-care': {
+        name: 'Personal Care',
+        baseDescription:
+            'Professional personal care services to help you maintain independence and dignity'
     },
-    {
-        route: '',
-        label: 'Services',
-        canVisit: false,
-        subLinks: [
-            {
-                route: '/services/personal-care',
-                label: 'Personal Care',
-                canVisit: true
+    'companion-care': {
+        name: 'Companion Care',
+        baseDescription:
+            'Compassionate companion care services providing emotional support and social interaction'
+    },
+    'elder-care': {
+        name: 'Elder Care',
+        baseDescription:
+            'Comprehensive elder care services designed to help seniors live safely and comfortably'
+    },
+    'home-health-aides': {
+        name: 'Home Health Aides',
+        baseDescription:
+            'Certified home health aides providing skilled medical support and personal care assistance'
+    },
+    nursing: {
+        name: 'Nursing',
+        baseDescription:
+            'Professional nursing services delivered by licensed nurses'
+    },
+    staffing: {
+        name: 'Staffing',
+        baseDescription:
+            'Reliable healthcare staffing solutions providing qualified caregivers and medical professionals'
+    }
+}
+
+// Location-specific SEO data for better local rankings
+export const locationData: Record<string, LocationData> = {
+    ridgewood: {
+        name: 'Ridgewood',
+        county: 'Bergen County',
+        zipCodes: ['07450', '07451'],
+        population: '25,000',
+        demographics: 'affluent suburban community',
+        localKeywords: [
+            'Ridgewood NJ',
+            'Bergen County',
+            'downtown Ridgewood',
+            'Ridgewood Village'
+        ],
+        nearbyAreas: ['Glen Rock', 'Wyckoff', 'Ho-Ho-Kus', 'Midland Park'],
+        localLandmarks: [
+            'Ridgewood Train Station',
+            'Village Green',
+            'Graydon Pool',
+            'Ridgewood High School'
+        ],
+        customDescriptions: {
+            'personal-care':
+                "Trusted personal care services for Ridgewood families, supporting the community's commitment to quality senior care and independent living.",
+            'companion-care':
+                "Companion care services that understand Ridgewood's close-knit community values and family-oriented lifestyle.",
+            'elder-care':
+                "Elder care services designed for Ridgewood's discerning families who value excellence and personalized attention."
+        },
+        serviceSpecificSEO: {
+            'personal-care': {
+                customH1: 'Premium Personal Care Services in Ridgewood, NJ',
+                customTitle:
+                    'Personal Care Ridgewood NJ | Trusted Home Care Services',
+                customMetaDescription:
+                    'Premium personal care services in Ridgewood, NJ. Serving affluent families with personalized home care. Licensed, insured, 24/7 support.',
+                localKeywords: [
+                    'personal care Ridgewood NJ',
+                    'home care Ridgewood',
+                    'Ridgewood caregivers',
+                    'Bergen County personal care'
+                ],
+                contentBlocks: {
+                    whyChooseUs:
+                        "Ridgewood families choose us because we understand the community's high standards for quality care and personalized service.",
+                    serviceHighlights: [
+                        'Licensed caregivers familiar with Ridgewood neighborhoods',
+                        'Flexible scheduling around Ridgewood Train Station commutes',
+                        'Coordination with Valley Hospital and local physicians',
+                        "Understanding of Ridgewood's active senior community"
+                    ],
+                    localExpertise:
+                        "Our team knows Ridgewood's tree-lined streets, from the Village area to Linwood neighborhoods, ensuring safe and familiar care.",
+                    emergencyInfo:
+                        'Quick response times throughout Ridgewood with 24/7 coordination with Valley Hospital emergency services.'
+                }
             },
-            {
-                route: '/services/elder-care',
-                label: 'Elder Care Consulting',
-                canVisit: true
-            },
-            {
-                route: '/services/staffing',
-                label: 'Staffing',
-                canVisit: true
-            },
-            {
-                route: '/services/home-health-aides',
-                label: 'Home Health Aides',
-                canVisit: true
-            },
-            {
-                route: '/services/nursing',
-                label: 'Nursing Services',
-                canVisit: true
-            },
-            {
-                route: '/services/companions',
-                label: 'Companions',
-                canVisit: true
+            'companion-care': {
+                customH1: 'Companion Care Services in Ridgewood Village',
+                customTitle:
+                    'Companion Care Ridgewood NJ | Social Support & Friendship',
+                customMetaDescription:
+                    'Companion care in Ridgewood, NJ. Social support for seniors in this close-knit community. Transportation, activities, friendship.',
+                localKeywords: [
+                    'companion care Ridgewood',
+                    'senior companionship Ridgewood NJ',
+                    'Ridgewood elderly care'
+                ],
+                contentBlocks: {
+                    whyChooseUs:
+                        "We provide companionship that honors Ridgewood's strong community spirit and family values.",
+                    localExpertise:
+                        'Familiar with Ridgewood activities like Graydon Pool events, Village shopping, and community gatherings.'
+                }
             }
-        ]
+        },
+        rankingFactors: {
+            primaryKeywords: [
+                'personal care Ridgewood NJ',
+                'home care Ridgewood',
+                'Ridgewood caregivers'
+            ],
+            secondaryKeywords: [
+                'Bergen County care',
+                'Ridgewood Village care',
+                'senior care 07450'
+            ],
+            competitionLevel: 'high',
+            focusAreas: [
+                'affluent demographics',
+                'train station proximity',
+                'Valley Hospital coordination'
+            ]
+        },
+        seoContent: {
+            communityFocus:
+                'Ridgewood is known for its excellent schools, tree-lined streets, and strong community spirit. Our services reflect these values.',
+            serviceAreas:
+                'We serve all neighborhoods in Ridgewood including the Village area, Linwood, and surrounding residential communities.',
+            localPartners:
+                'We work closely with Valley Hospital, Ridgewood medical practices, and local senior centers.'
+        }
     },
-    {
-        route: '/wisdom-vault',
-        label: 'Wisdom Vault',
-        canVisit: true,
-        subLinks: []
+    'cliffside-park': {
+        name: 'Cliffside Park',
+        county: 'Bergen County',
+        zipCodes: ['07010'],
+        population: '25,400',
+        demographics: 'diverse, family-friendly borough',
+        localKeywords: [
+            'Cliffside Park NJ',
+            'Bergen County',
+            'Palisades',
+            'Fort Lee area'
+        ],
+        nearbyAreas: ['Fort Lee', 'Edgewater', 'Fairview', 'North Bergen'],
+        localLandmarks: [
+            'Palisades Interstate Park',
+            'Cliffside Park School District',
+            'Anderson Avenue'
+        ],
+        customDescriptions: {
+            'personal-care':
+                'Personal care services for Cliffside Park residents, bringing professional support to this vibrant Palisades community.',
+            'companion-care':
+                "Companion care that celebrates Cliffside Park's multicultural community and diverse family structures.",
+            'elder-care':
+                'Elder care services that honor the rich cultural heritage and strong family values of Cliffside Park.'
+        },
+        serviceSpecificSEO: {
+            'personal-care': {
+                customH1:
+                    'Personal Care Services in Cliffside Park, Bergen County',
+                customTitle:
+                    'Personal Care Cliffside Park NJ | Palisades Home Care',
+                customMetaDescription:
+                    'Personal care services in Cliffside Park, NJ. Multicultural care team serving diverse families along the Palisades. Call today.',
+                localKeywords: [
+                    'personal care Cliffside Park',
+                    'home care Palisades NJ',
+                    'Cliffside Park caregivers',
+                    'Bergen County care 07010'
+                ],
+                contentBlocks: {
+                    whyChooseUs:
+                        "Our multicultural team understands Cliffside Park's diverse community and provides culturally sensitive care.",
+                    serviceHighlights: [
+                        'Multilingual caregivers for diverse families',
+                        'Familiar with Palisades medical facilities',
+                        'Understanding of local transportation needs',
+                        'Coordination with nearby Fort Lee services'
+                    ],
+                    localExpertise:
+                        'We know Cliffside Park from Anderson Avenue to the Palisades waterfront, providing care throughout the borough.',
+                    emergencyInfo:
+                        'Quick response throughout Cliffside Park with connections to Palisades Medical Center.'
+                }
+            }
+        },
+        rankingFactors: {
+            primaryKeywords: [
+                'personal care Cliffside Park',
+                'home care Palisades',
+                'Cliffside Park elder care'
+            ],
+            secondaryKeywords: [
+                'Bergen County care',
+                'Fort Lee area care',
+                'Palisades home care'
+            ],
+            competitionLevel: 'medium',
+            focusAreas: [
+                'multicultural community',
+                'Palisades location',
+                'diverse demographics'
+            ]
+        },
+        seoContent: {
+            communityFocus:
+                'Cliffside Park offers stunning views of Manhattan and a strong sense of community along the Palisades.',
+            serviceAreas:
+                'Serving all areas of Cliffside Park from Anderson Avenue to the Palisades waterfront communities.',
+            localPartners:
+                'Connected with Palisades Medical Center, local community centers, and Cliffside Park senior services.'
+        }
     },
-    {
-        route: '/faq',
-        label: 'FAQs',
-        canVisit: true,
-        subLinks: []
+    hackensack: {
+        name: 'Hackensack',
+        county: 'Bergen County',
+        zipCodes: ['07601', '07602'],
+        population: '46,000',
+        demographics: 'diverse urban center and county seat',
+        localKeywords: [
+            'Hackensack NJ',
+            'Bergen County seat',
+            'Hackensack University Medical Center',
+            'downtown Hackensack'
+        ],
+        nearbyAreas: ['Teaneck', 'Bogota', 'River Edge', 'Maywood'],
+        localLandmarks: [
+            'Hackensack University Medical Center',
+            'Bergen County Courthouse',
+            'Main Street',
+            'Johnson Park'
+        ],
+        customDescriptions: {
+            'personal-care':
+                'Professional personal care services in Hackensack, the heart of Bergen County, providing trusted support for urban families.',
+            'companion-care':
+                'Companion care services that understand the fast-paced lifestyle and diverse needs of Hackensack residents.',
+            'elder-care':
+                'Comprehensive elder care in Hackensack, leveraging proximity to world-class medical facilities and urban conveniences.'
+        },
+        serviceSpecificSEO: {
+            'personal-care': {
+                customH1: 'Expert Personal Care Services in Hackensack, NJ',
+                customTitle:
+                    'Personal Care Hackensack NJ | Medical Center Area Home Care',
+                customMetaDescription:
+                    'Personal care services in Hackensack, NJ near University Medical Center. Urban home care with medical coordination. 24/7 availability.',
+                localKeywords: [
+                    'personal care Hackensack NJ',
+                    'home care near HUMC',
+                    'Hackensack caregivers',
+                    'Bergen County seat care'
+                ],
+                contentBlocks: {
+                    whyChooseUs:
+                        "Located in Bergen County's seat, we provide urban-focused care with unmatched access to medical facilities.",
+                    serviceHighlights: [
+                        'Direct coordination with Hackensack University Medical Center',
+                        'Urban care expertise for city living',
+                        'Multilingual staff for diverse Hackensack community',
+                        'Convenient downtown location access'
+                    ],
+                    localExpertise:
+                        'We understand urban caregiving in Hackensack, from high-rise living to medical appointments at HUMC.',
+                    emergencyInfo:
+                        'Immediate access to Hackensack University Medical Center and Bergen County emergency services.'
+                }
+            }
+        },
+        rankingFactors: {
+            primaryKeywords: [
+                'personal care Hackensack',
+                'home care HUMC area',
+                'Hackensack elder care'
+            ],
+            secondaryKeywords: [
+                'Bergen County care',
+                'medical center home care',
+                'urban senior care'
+            ],
+            competitionLevel: 'high',
+            focusAreas: [
+                'medical center proximity',
+                'urban demographics',
+                'county seat authority'
+            ]
+        },
+        seoContent: {
+            communityFocus:
+                "As Bergen County's seat, Hackensack combines urban amenities with suburban comfort and excellent healthcare access.",
+            serviceAreas:
+                'Covering all Hackensack neighborhoods from downtown to residential areas near the Hackensack River.',
+            localPartners:
+                'Close partnerships with Hackensack University Medical Center, local physicians, and Bergen County social services.'
+        }
     }
+}
+
+// Fallback data for cities not specifically configured
+export const getLocationData = (citySlug: string): LocationData => {
+    if (locationData[citySlug]) {
+        return locationData[citySlug]
+    }
+
+    // Generate fallback data
+    const cityName = citySlugToName(citySlug)
+    return {
+        name: cityName,
+        county: 'Bergen County',
+        zipCodes: [],
+        population: '',
+        demographics: 'community',
+        localKeywords: [`${cityName} NJ`, 'Bergen County'],
+        nearbyAreas: [],
+        localLandmarks: [],
+        customDescriptions: {},
+        serviceSpecificSEO: {},
+        seoContent: {
+            communityFocus: `${cityName} is a wonderful community in Bergen County with strong family values.`,
+            serviceAreas: `We proudly serve all areas of ${cityName} and surrounding neighborhoods.`,
+            localPartners: `We work with local healthcare providers and community organizations in ${cityName}.`
+        }
+    }
+}
+
+export function citySlugToName(slug: string): string {
+    return slug
+        .split('-')
+        .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+        .join(' ')
+}
+
+// Generate SEO-optimized content for a specific service/location
+export function generateLocationSEO(
+    serviceSlug: string,
+    citySlug: string
+): GeneratedSEO | null {
+    const service = services[serviceSlug]
+    const location = getLocationData(citySlug)
+
+    if (!service) return null
+
+    // Get service-specific SEO data if available
+    const serviceSpecificData = location.serviceSpecificSEO[serviceSlug]
+
+    // Custom H1 with priority: service-specific > custom > default
+    const h1 =
+        serviceSpecificData?.customH1 ||
+        `Professional ${service.name} Services in ${location.name}`
+
+    // Custom title with priority: service-specific > default
+    const title =
+        serviceSpecificData?.customTitle ||
+        `${service.name} in ${location.name}, NJ | Bergen County Care Services`
+
+    // Custom description with priority: service-specific > legacy custom > default
+    const description =
+        serviceSpecificData?.customDescription ||
+        location.customDescriptions[serviceSlug] ||
+        `${service.baseDescription} in ${location.name}, ${location.county}.`
+
+    // Custom meta description with priority: service-specific > generated
+    const baseMetaDescription = `${description} Serving ${location.localKeywords.slice(0, 3).join(', ')}. Call for free consultation.`
+    const metaDescription =
+        serviceSpecificData?.customMetaDescription || baseMetaDescription
+
+    // Enhanced keywords combining service-specific and location keywords
+    const serviceKeywords = serviceSpecificData?.localKeywords || []
+    const allKeywords = [
+        `${service.name.toLowerCase()} ${location.name}`,
+        `${service.name.toLowerCase()} ${location.county}`,
+        ...location.localKeywords.map(
+            keyword => `${service.name.toLowerCase()} ${keyword}`
+        ),
+        ...serviceKeywords,
+        `${location.name} healthcare services`,
+        `Bergen County ${service.name.toLowerCase()}`
+    ]
+
+    // Include ranking factors if available
+    if (location.rankingFactors) {
+        allKeywords.push(...location.rankingFactors.primaryKeywords)
+        allKeywords.push(...location.rankingFactors.secondaryKeywords)
+    }
+
+    return {
+        title,
+        metaDescription,
+        h1,
+        description,
+        keywords: Array.from(new Set(allKeywords)).join(', '), // Convert Set to Array first
+        location,
+        service,
+        serviceSpecificData
+    }
+}
+
+// All cities from your data
+export const cities: string[] = [
+    'allendale',
+    'alpine',
+    'bergenfield',
+    'bogota',
+    'carlstadt',
+    'cliffside-park',
+    'closter',
+    'cresskill',
+    'demarest',
+    'dumont',
+    'east-rutherford',
+    'edgewater',
+    'emerson',
+    'englewood',
+    'englewood-cliffs',
+    'fair-lawn',
+    'fairview',
+    'fort-lee',
+    'franklin-lakes',
+    'garfield',
+    'glen-rock',
+    'hackensack',
+    'harrington-park',
+    'hasbrouck-heights',
+    'haworth',
+    'hillsdale',
+    'ho-ho-kus',
+    'leonia',
+    'little-ferry',
+    'lodi',
+    'lyndhurst',
+    'mahwah',
+    'maywood',
+    'midland-park',
+    'montvale',
+    'moonachie',
+    'new-milford',
+    'north-arlington',
+    'northvale',
+    'norwood',
+    'oakland',
+    'old-tappan',
+    'oradell',
+    'palisades-park',
+    'paramus',
+    'park-ridge',
+    'ramsey',
+    'ridgefield',
+    'ridgefield-park',
+    'ridgewood',
+    'river-edge',
+    'river-vale',
+    'rochelle-park',
+    'rockleigh',
+    'rutherford',
+    'saddle-brook',
+    'saddle-river',
+    'south-hackensack',
+    'teaneck',
+    'tenafly',
+    'teterboro',
+    'upper-saddle-river',
+    'waldwick',
+    'wallington',
+    'washington-township',
+    'westwood',
+    'wood-ridge',
+    'wyckoff'
 ]
 
-export const footerResources = [
-    {
-        route: '/privacy-policy',
-        label: 'Privacy Policy',
-        canVisit: true,
-        subLinks: []
-    },
-    {
-        route: '/legal-disclaimer',
-        label: 'Legal Disclaimer',
-        canVisit: true,
-        subLinks: []
-    },
-    {
-        route: '/nondiscrimination',
-        label: 'Nondiscrimination & Accessibility',
-        canVisit: true,
-        subLinks: []
-    }
-]
+// Add this debug code to your locationSeo.ts file temporarily
 
-export const availablePages = [...navLinks, ...footerResources]
+export function getAllServiceCityPaths(): Array<{
+    params: { service: string; city: string }
+}> {
+    const paths: Array<{ params: { service: string; city: string } }> = []
+
+    // Debug the data
+    console.log('=== DEBUG INFO ===')
+    console.log('Services object:', services)
+    console.log('Services keys:', Object.keys(services))
+    console.log('Cities array:', cities)
+    console.log('Cities length:', cities.length)
+
+    Object.keys(services).forEach(serviceSlug => {
+        console.log(`Processing service: ${serviceSlug}`)
+        cities.forEach(citySlug => {
+            console.log(`  - Adding city: ${citySlug}`)
+            paths.push({
+                params: {
+                    service: serviceSlug,
+                    city: citySlug
+                }
+            })
+        })
+    })
+
+    console.log('Final paths count:', paths.length)
+    console.log('Sample paths:', paths.slice(0, 5))
+
+    return paths
+}
+
+// Also add this debug function to test your data
+export function debugLocationData() {
+    console.log('=== LOCATION DATA DEBUG ===')
+    console.log('Services:', services)
+    console.log('Cities:', cities)
+    console.log('LocationData keys:', Object.keys(locationData))
+
+    // Test generateLocationSEO
+    const testSEO = generateLocationSEO('companion-care', 'cliffside-park')
+    console.log('Test SEO for companion-care + cliffside-park:', testSEO)
+}
+
+================
+File: src/app/services/companion-care/page.tsx
+================
+'use client'
+
+import CallToAction from '@/components/CallToAction'
+import { CompanyName } from '@/components/Logo'
+import AnimatedSection from '@/components/animated-section'
+import CompanionCareSeoHead from '@/lib/seo/companionCare'
+import { debugLocationData } from '@/lib/locationSeo'
+
+export default function CompanionsServicesPage() {
+    debugLocationData()
+    return (
+        <>
+            <CompanionCareSeoHead />
+            <main className="breadcrumbSpacing">
+                <div className="bg-white">
+                    <AnimatedSection
+                        animation="zoom"
+                        className="relative bg-white-bright text-black px-4 py-16"
+                    >
+                        <div className="max-w-5xl mx-auto text-center">
+                            <h1 className="text-4xl font-extrabold mb-4">
+                                Companion Care Services
+                            </h1>
+                            <p className="text-lg font-light max-w-xl mx-auto mb-6">
+                                Warm, personal care that keeps individuals
+                                socially engaged, safe, and comfortable at home.
+                            </p>
+                            <CallToAction
+                                buttonLabel="Contact Us"
+                                round
+                                type="services"
+                                value="Companion Care"
+                            />
+                        </div>
+                    </AnimatedSection>
+
+                    {/* WHAT IS A COMPANION CAREGIVER? */}
+                    <AnimatedSection
+                        animation="zoom"
+                        className="max-w-5xl mx-auto px-4 py-12"
+                    >
+                        <div className="grid md:grid-cols-2 gap-8">
+                            {/* Text Column */}
+                            <div>
+                                <h2 className="text-3xl font-bold mb-4">
+                                    What is a Companion Caregiver?
+                                </h2>
+                                <p className="mb-6 text-gray-700 leading-relaxed">
+                                    A companion caregiver is a compassionate,
+                                    reliable professional who spends dedicated
+                                    time with individuals, supporting them with
+                                    daily tasks and—most importantly—meaningful
+                                    social engagement. Whether it's sharing
+                                    stories over a cup of tea, playing a board
+                                    game, or simply being present to listen, a
+                                    trusted companion can help reduce loneliness
+                                    and improve quality of life.
+                                </p>
+                                <p className="text-gray-700 leading-relaxed">
+                                    At <CompanyName />, our companions create a
+                                    warm, respectful environment that fosters
+                                    both emotional and physical well-being. From
+                                    gently reminding clients about medication to
+                                    planning fun activities, a companion
+                                    caregiver truly becomes a friend you can
+                                    count on.
+                                </p>
+                            </div>
+
+                            {/* Image / Graphic Column */}
+                            <img
+                                src="/assets/roller coaster.jpg"
+                                alt=""
+                                className="rounded-xl shadow-xl"
+                            />
+                        </div>
+                    </AnimatedSection>
+
+                    {/* BENEFITS SECTION */}
+                    <section className="bg-white-bright py-12">
+                        <AnimatedSection
+                            animation="zoom"
+                            className="max-w-5xl mx-auto px-4"
+                        >
+                            <h2 className="text-3xl font-bold mb-8 text-center">
+                                How Companion Care Helps
+                            </h2>
+
+                            <div className="grid md:grid-cols-3 gap-6">
+                                {/* Benefit 1 */}
+                                <div className="p-6 rounded-lg shadow-xl">
+                                    <h3 className="text-xl font-semibold mb-2">
+                                        Social Connection
+                                    </h3>
+                                    <p className="text-gray-700 leading-relaxed">
+                                        Companions engage in conversation, share
+                                        activities, and accompany clients on
+                                        walks or local outings—fostering
+                                        companionship and preventing isolation.
+                                    </p>
+                                </div>
+                                {/* Benefit 2 */}
+                                <div className="p-6 rounded-lg shadow-xl">
+                                    <h3 className="text-xl font-semibold mb-2">
+                                        Daily Assistance
+                                    </h3>
+                                    <p className="text-gray-700 leading-relaxed">
+                                        From meal prep to light housekeeping,
+                                        companions help with everyday tasks so
+                                        individuals can maintain a comfortable,
+                                        low-stress routine at home.
+                                    </p>
+                                </div>
+                                {/* Benefit 3 */}
+                                <div className="p-6 rounded-lg shadow-xl">
+                                    <h3 className="text-xl font-semibold mb-2">
+                                        Peace of Mind
+                                    </h3>
+                                    <p className="text-gray-700 leading-relaxed">
+                                        Family members can rest assured knowing
+                                        their loved one has a trusted presence
+                                        to monitor safety, assist with
+                                        reminders, and offer caring support.
+                                    </p>
+                                </div>
+                            </div>
+                        </AnimatedSection>
+                    </section>
+                    {/* CTA SECTION */}
+                    <section className="py-12 bg-white">
+                        <AnimatedSection
+                            animation="zoom"
+                            className="max-w-4xl mx-auto text-center px-4"
+                        >
+                            <h2 className="text-2xl font-bold mb-4">
+                                Ready to Get Started?
+                            </h2>
+                            <p className="text-gray-700 mb-6">
+                                Contact <CompanyName /> to learn more about our
+                                Companion Care Services. We'll work with you to
+                                design a care plan that fits your loved one's
+                                unique needs, ensuring they remain safe,
+                                engaged, and happy at home.
+                            </p>
+                            <CallToAction
+                                buttonLabel="Contact Us"
+                                round
+                                type="services"
+                                value="Companion Care"
+                            />
+                        </AnimatedSection>
+                    </section>
+                </div>
+            </main>
+        </>
+    )
+}
+
 
 
 

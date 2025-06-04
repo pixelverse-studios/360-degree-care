@@ -25,7 +25,6 @@ export default function Breadcrumbs() {
                 nav.route === pathname ||
                 nav.subLinks.some(sub => sub.route === pathname)
         ) ||
-            // Special case for services pages
             (pathname.startsWith('/services/') &&
                 availablePages.some(
                     nav =>
@@ -36,46 +35,56 @@ export default function Breadcrumbs() {
     // Generate full breadcrumbs array regardless, but set a flag for showing just 404
     const showSingle404 = !fullPathIsValid && !pathname.startsWith('/services/')
 
-    const breadcrumbs = pathSegments.map((segment, index) => {
-        const routePath = '/' + pathSegments.slice(0, index + 1).join('/')
+    const breadcrumbs = pathSegments
+        .filter((segment, index) => {
+            if (pathname.startsWith('/services/') && pathSegments.length >= 3) {
+                return index < 2
+            }
+            return true
+        })
+        .map((segment, index) => {
+            const routePath = '/' + pathSegments.slice(0, index + 1).join('/')
 
-        // Check if this is a parent segment with valid children
-        // For example, if routePath is "/services" and it has subLinks
-        const isParentWithValidChildren = availablePages.some(
-            nav =>
-                nav.subLinks &&
-                nav.subLinks.length > 0 &&
-                nav.subLinks.some(sub => sub.route.startsWith(routePath + '/'))
-        )
+            // Check if this is a parent segment with valid children
+            // For example, if routePath is "/services" and it has subLinks
+            const isParentWithValidChildren = availablePages.some(
+                nav =>
+                    nav.subLinks &&
+                    nav.subLinks.length > 0 &&
+                    nav.subLinks.some(sub =>
+                        sub.route.startsWith(routePath + '/')
+                    )
+            )
 
-        const matchedNav = availablePages.find(
-            nav =>
-                nav.route === routePath ||
-                nav.subLinks.some(sub => sub.route === routePath)
-        )
+            const matchedNav = availablePages.find(
+                nav =>
+                    nav.route === routePath ||
+                    nav.subLinks.some(sub => sub.route === routePath)
+            )
 
-        // Find if any parent has this as a sublink
-        const parentNav = availablePages.find(
-            nav =>
-                nav.subLinks &&
-                nav.subLinks.some(sub => sub.route === routePath)
-        )
+            // Find if any parent has this as a sublink
+            const parentNav = availablePages.find(
+                nav =>
+                    nav.subLinks &&
+                    nav.subLinks.some(sub => sub.route === routePath)
+            )
 
-        const label =
-            matchedNav?.subLinks.find(sub => sub.route === routePath)?.label ||
-            matchedNav?.label ||
-            (routePath === '/services' ? 'Services' : segment) // Special case for services
+            const label =
+                matchedNav?.subLinks.find(sub => sub.route === routePath)
+                    ?.label ||
+                matchedNav?.label ||
+                (routePath === '/services' ? 'Services' : segment) // Special case for services
 
-        return {
-            route: routePath,
-            label: label.charAt(0).toUpperCase() + label.slice(1),
-            canVisit: matchedNav?.canVisit || isParentWithValidChildren,
-            isValid:
-                matchedNav !== undefined ||
-                isParentWithValidChildren ||
-                !!parentNav
-        }
-    })
+            return {
+                route: routePath,
+                label: label.charAt(0).toUpperCase() + label.slice(1),
+                canVisit: matchedNav?.canVisit || isParentWithValidChildren,
+                isValid:
+                    matchedNav !== undefined ||
+                    isParentWithValidChildren ||
+                    !!parentNav
+            }
+        })
 
     if (pathname === '/') return <div className="" />
 

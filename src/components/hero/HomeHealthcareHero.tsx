@@ -18,7 +18,7 @@ const ExpectationItem = ({ img, description }: ExpectationItem) => (
     </li>
 )
 
-export default function HomeHealthCareHero() {
+export default function HomeHealthCareHero({ header }: { header: string }) {
     return (
         <section className="bg-white-bright min-h-fullView">
             <AnimatedSection
@@ -27,7 +27,7 @@ export default function HomeHealthCareHero() {
             >
                 <div className="flex flex-col gap-6 pt-2">
                     <h1 className="font-bold text-4xl md:text-3xl sm:text-xl">
-                        Home Healthcare
+                        {header ? header : `Home Healthcare`}
                     </h1>
                     <p className="text-lg">
                         <span className="font-bold text-primary">
