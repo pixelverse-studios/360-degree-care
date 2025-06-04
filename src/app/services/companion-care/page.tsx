@@ -1,8 +1,5 @@
 'use client'
 
-import CallToAction from '@/components/CallToAction'
-import { CompanyName } from '@/components/Logo'
-import AnimatedSection from '@/components/animated-section'
 import CompanionCareSeoHead from '@/lib/seo/companionCare'
 import CompanionCareView from '@/components/services/companionCare'
 

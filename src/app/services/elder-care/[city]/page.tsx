@@ -1,7 +1,7 @@
 import { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import { generateLocationSEO, cities } from '@/lib/locationSeo'
-import CompanionCareView from '@/components/services/companionCare'
+import ElderCareView from '@/components/services/elderCare'
 
 interface Props {
     params: {
@@ -11,7 +11,7 @@ interface Props {
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
     const { city } = params
-    const seoData = generateLocationSEO('companion-care', city)
+    const seoData = generateLocationSEO('elder-care', city)
 
     if (!seoData) {
         return {
@@ -39,7 +39,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
             'geo.postal-code': location.zipCodes.join(', ')
         },
         alternates: {
-            canonical: `/services/companion-care/${city}`
+            canonical: `/services/elder-care/${city}`
         }
     }
 }
@@ -50,10 +50,10 @@ export async function generateStaticParams() {
     }))
 }
 
-export default function CompanionCareCityPage({ params }: Props) {
+export default function ElderCareCityPage({ params }: Props) {
     const { city } = params
 
-    const seoData = generateLocationSEO('companion-care', city)
+    const seoData = generateLocationSEO('elder-care', city)
 
     if (!seoData) {
         notFound()
@@ -89,7 +89,7 @@ export default function CompanionCareCityPage({ params }: Props) {
                 }}
             />
 
-            <CompanionCareView header={h1} />
+            <ElderCareView header={h1} />
         </>
     )
 }
