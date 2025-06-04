@@ -2,13 +2,11 @@ import { FaLocationDot } from 'react-icons/fa6'
 
 interface CountyCityGridProps {
     cities: string[]
-    countySlug: string
     countyName: string
 }
 
 export default function CountyCityGrid({
     cities,
-    countySlug,
     countyName
 }: CountyCityGridProps) {
     return (

@@ -44,22 +44,3 @@ export const videoMetadata = [
         src: 'https://www.youtube.com/embed/nQJ8cBh-8VU?rel=0&controls=1&modestbranding=1&showinfo=0'
     }
 ]
-
-// Example iframe HTML with all parameters for clean embedding
-const iframeExample = `<iframe 
-  width="560" 
-  height="315" 
-  src="https://www.youtube.com/embed/j8iyKjv_efA?rel=0&controls=1&modestbranding=1&showinfo=0" 
-  title="Reflection" 
-  frameborder="0"
-  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-  allowfullscreen>
-</iframe>`
-
-export function extractThumbnail(videoElement: HTMLVideoElement) {
-    const canvas = document.createElement('canvas')
-    canvas.width = videoElement.videoWidth
-    canvas.height = videoElement.videoHeight
-    canvas.getContext('2d')?.drawImage(videoElement, 0, 0)
-    return canvas.toDataURL('image/jpeg')
-}

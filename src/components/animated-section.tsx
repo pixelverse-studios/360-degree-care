@@ -51,7 +51,6 @@ export default function AnimatedSection({
                 let headerHeight = 0
 
                 if (header) {
-                    const headerStyles = window.getComputedStyle(header)
                     headerHeight = header.getBoundingClientRect().height
                 }
 

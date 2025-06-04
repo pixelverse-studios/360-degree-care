@@ -15,11 +15,11 @@ const ServiceOverview = () => {
 
             {/* Custom CSS for left/right positioning */}
             <style jsx global>{`
-                .left-1\/6 {
-                    left: 16.666667%;
+                .left-1/6 {
+                    left: 16.66667%;
                 }
-                .right-1\/6 {
-                    right: 16.666667%;
+                .right-1/6 {
+                    right: 16.66667%;
                 }
             `}</style>
 

@@ -2,7 +2,6 @@ import { useRouter } from 'next/navigation'
 import { Button } from '../ui/button'
 import { navLinks } from '@/utils/routes'
 import CallToAction from '../CallToAction'
-import AnimatedSection from '../animated-section'
 
 const [serviceLink] = navLinks
 

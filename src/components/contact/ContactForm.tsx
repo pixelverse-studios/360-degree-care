@@ -77,7 +77,7 @@ export default function ContactForm() {
             setLoading(false)
             setSubmitted(true)
             return toast.success('Request submitted successfully')
-        } catch (error) {
+        } catch {
             setLoading(false)
             return toast.error('Request could not be submitted at this time')
         }
