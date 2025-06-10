@@ -45,16 +45,29 @@ export const navLinks = [
         ]
     },
     {
-        route: '/wisdom-vault',
+        route: '',
         label: 'Wisdom Vault',
-        canVisit: true,
-        subLinks: []
-    },
-    {
-        route: '/faq',
-        label: 'FAQs',
-        canVisit: true,
-        subLinks: []
+        canVisit: false,
+        subLinks: [
+            {
+                route: '/wisdom-vault',
+                label: 'Videos',
+                canVisit: true,
+                subLinks: []
+            },
+            {
+                route: '/blog',
+                label: 'Blog',
+                canVisit: true,
+                subLinks: []
+            },
+            {
+                route: '/faq',
+                label: 'FAQs',
+                canVisit: true,
+                subLinks: []
+            }
+        ]
     }
 ]
 

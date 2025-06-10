@@ -4,14 +4,6 @@ import { useState, useRef, useEffect } from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { ChevronDown } from 'lucide-react'
-import {
-    NavigationMenu,
-    NavigationMenuItem,
-    NavigationMenuLink,
-    NavigationMenuList,
-    NavigationMenuTrigger,
-    NavigationMenuContent
-} from '@/components/ui/navigation-menu'
 import { cn } from '@/lib/utils'
 import { navLinks } from '@/utils/routes'
 import Logo from '../Logo'
@@ -61,6 +53,84 @@ const HamburgerMenu = ({ isOpen, toggleMenu }: HamburgerProps) => {
     )
 }
 
+// Custom Dropdown Component
+interface DropdownProps {
+    trigger: React.ReactNode
+    children: React.ReactNode
+    className?: string
+}
+
+const Dropdown = ({ trigger, children, className }: DropdownProps) => {
+    const [isOpen, setIsOpen] = useState(false)
+    const dropdownRef = useRef<HTMLDivElement>(null)
+    const timeoutRef = useRef<NodeJS.Timeout | null>(null)
+
+    const handleMouseEnter = () => {
+        if (timeoutRef.current) {
+            clearTimeout(timeoutRef.current)
+            timeoutRef.current = null
+        }
+        setIsOpen(true)
+    }
+
+    const handleMouseLeave = () => {
+        // Add a small delay before closing to allow moving to dropdown content
+        timeoutRef.current = setTimeout(() => {
+            setIsOpen(false)
+        }, 150)
+    }
+
+    useEffect(() => {
+        const handleClickOutside = (event: MouseEvent) => {
+            if (
+                dropdownRef.current &&
+                !dropdownRef.current.contains(event.target as Node)
+            ) {
+                setIsOpen(false)
+            }
+        }
+
+        document.addEventListener('mousedown', handleClickOutside)
+        return () => {
+            document.removeEventListener('mousedown', handleClickOutside)
+            if (timeoutRef.current) {
+                clearTimeout(timeoutRef.current)
+            }
+        }
+    }, [])
+
+    return (
+        <div
+            ref={dropdownRef}
+            className="relative"
+            onMouseEnter={handleMouseEnter}
+            onMouseLeave={handleMouseLeave}
+        >
+            <div className="cursor-pointer">{trigger}</div>
+            {/* Invisible bridge to prevent dropdown from closing when moving to content */}
+            <div
+                className={cn(
+                    'absolute top-full left-0 w-full h-2 bg-transparent',
+                    isOpen ? 'block' : 'hidden'
+                )}
+            />
+            <div
+                className={cn(
+                    'absolute top-full left-0 mt-2 bg-white border border-gray-300 rounded-md shadow-lg transition-all duration-200 ease-in-out z-50',
+                    isOpen
+                        ? 'opacity-100 visible translate-y-0'
+                        : 'opacity-0 invisible -translate-y-2 pointer-events-none',
+                    className
+                )}
+                onMouseEnter={handleMouseEnter}
+                onMouseLeave={handleMouseLeave}
+            >
+                {children}
+            </div>
+        </div>
+    )
+}
+
 export function Header() {
     const pathname = usePathname()
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState<boolean>(false)
@@ -70,7 +140,7 @@ export function Header() {
     const headerRef = useRef<HTMLElement>(null)
     const navRef = useRef<HTMLDivElement>(null)
 
-    // Toggle mobile menu - fixed to be a parameterless function
+    // Toggle mobile menu
     const toggleMobileMenu = () => {
         setIsMobileMenuOpen(prevState => !prevState)
     }
@@ -78,10 +148,8 @@ export function Header() {
     // Handle clicks outside of the entire navigation
     useEffect(() => {
         function handleClickOutside(event: MouseEvent) {
-            // Only process if menu is open
             if (!isMobileMenuOpen) return
 
-            // Check if click is outside the entire header
             if (
                 headerRef.current &&
                 !headerRef.current.contains(event.target as Node)
@@ -90,10 +158,7 @@ export function Header() {
             }
         }
 
-        // Add event listener
         document.addEventListener('mousedown', handleClickOutside)
-
-        // Cleanup
         return () => {
             document.removeEventListener('mousedown', handleClickOutside)
         }
@@ -111,83 +176,80 @@ export function Header() {
 
                 {/* --- DESKTOP --- */}
                 <nav className="hidden xl:block">
-                    <NavigationMenu>
-                        <NavigationMenuList className="space-x-6">
-                            {navLinks.map(link => {
-                                const isActive = pathname === link.route
-                                const hasSubs =
-                                    link.subLinks && link.subLinks.length > 0
+                    <ul className="flex items-center space-x-6">
+                        {navLinks.map(link => {
+                            const isActive = pathname === link.route
+                            const hasSubs =
+                                link.subLinks && link.subLinks.length > 0
 
-                                if (hasSubs) {
-                                    return (
-                                        <NavigationMenuItem key={link.label}>
-                                            <NavigationMenuTrigger
-                                                className={cn(
-                                                    'text-md text-black font-bold text-xl',
-                                                    pathname.includes(
-                                                        '/services/'
-                                                    ) && 'text-primary'
-                                                )}
-                                            >
-                                                {link.label}
-                                            </NavigationMenuTrigger>
-                                            <NavigationMenuContent>
-                                                <ul className="grid w-[400px] gap-3 p-4">
+                            if (hasSubs) {
+                                return (
+                                    <li key={link.label}>
+                                        <Dropdown
+                                            trigger={
+                                                <div
+                                                    className={cn(
+                                                        'flex items-center text-md text-black font-bold text-xl hover:text-primary transition-colors duration-300',
+                                                        pathname.includes(
+                                                            '/services/'
+                                                        ) && 'text-primary'
+                                                    )}
+                                                >
+                                                    {link.label}
+                                                    <ChevronDown className="ml-1 h-4 w-4" />
+                                                </div>
+                                            }
+                                            className="w-[400px]"
+                                        >
+                                            <div className="p-4">
+                                                <ul className="space-y-3">
                                                     {link.subLinks.map(sub => (
                                                         <li key={sub.label}>
-                                                            <NavigationMenuLink
-                                                                asChild
-                                                            >
-                                                                <Link
-                                                                    href={
+                                                            <Link
+                                                                href={sub.route}
+                                                                className={cn(
+                                                                    'block p-3 rounded-md hover:text-primary duration-300 ease-in-out text-xl',
+                                                                    pathname ===
                                                                         sub.route
-                                                                    }
-                                                                    className={cn(
-                                                                        'block p-3 rounded-md hover:text-primary duration-300 ease-in-out nav-link w-fit text-xl',
-                                                                        pathname ===
-                                                                            sub.route
-                                                                            ? 'text-primary'
-                                                                            : ''
-                                                                    )}
-                                                                >
-                                                                    <div className="text-md font-medium mb-1">
-                                                                        {
-                                                                            sub.label
-                                                                        }
-                                                                    </div>
-                                                                </Link>
-                                                            </NavigationMenuLink>
+                                                                        ? 'text-primary'
+                                                                        : 'text-black'
+                                                                )}
+                                                            >
+                                                                <div className="text-md font-medium">
+                                                                    {sub.label}
+                                                                </div>
+                                                            </Link>
                                                         </li>
                                                     ))}
                                                 </ul>
-                                            </NavigationMenuContent>
-                                        </NavigationMenuItem>
-                                    )
-                                }
-
-                                return (
-                                    <NavigationMenuItem key={link.label}>
-                                        <NavigationMenuLink asChild>
-                                            <Link
-                                                href={link.route}
-                                                className={cn(
-                                                    'nav-link',
-                                                    isActive && 'active'
-                                                )}
-                                            >
-                                                {link.label}
-                                            </Link>
-                                        </NavigationMenuLink>
-                                    </NavigationMenuItem>
+                                            </div>
+                                        </Dropdown>
+                                    </li>
                                 )
-                            })}
+                            }
+
+                            return (
+                                <li key={link.label}>
+                                    <Link
+                                        href={link.route}
+                                        className={cn(
+                                            'nav-link text-md text-black font-bold text-xl hover:text-primary transition-colors duration-300',
+                                            isActive && 'text-primary'
+                                        )}
+                                    >
+                                        {link.label}
+                                    </Link>
+                                </li>
+                            )
+                        })}
+                        <li>
                             <CallToAction
                                 buttonLabel="Get In Touch"
                                 type="general"
                                 value=""
                             />
-                        </NavigationMenuList>
-                    </NavigationMenu>
+                        </li>
+                    </ul>
                 </nav>
 
                 {/* Hamburger Menu Button */}
