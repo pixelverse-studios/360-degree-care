@@ -1,6 +1,6 @@
 'use client'
 
-import { Fragment } from 'react'
+import { Fragment, useEffect, useState } from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { cn } from '@/lib/utils'
@@ -14,8 +14,13 @@ import {
 } from '@/components/ui/breadcrumb'
 
 export default function Breadcrumbs() {
+    const [isMounted, setIsMounted] = useState(false)
     const pathname = usePathname()
     const pathSegments = pathname.split('/').filter(Boolean)
+
+    useEffect(() => {
+        setIsMounted(true)
+    }, [])
 
     // First check if the entire path is invalid (genuine 404 page)
     const fullPathIsValid =
@@ -86,7 +91,7 @@ export default function Breadcrumbs() {
             }
         })
 
-    if (pathname === '/') return <div className="" />
+    if (pathname === '/' || !isMounted) return <div className="" />
 
     return (
         <Breadcrumb className="absolute w-full z-10 top-[6rem] hidden lg:block">

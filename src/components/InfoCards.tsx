@@ -1,9 +1,11 @@
 import { IconType } from 'react-icons'
 
 import AnimatedSection from './animated-section'
+import { cn } from '@/lib/utils'
 
 interface CardProps {
     icon: IconType
+    iconPath?: string
     title: string
     description: string
     bgColor: string
@@ -19,22 +21,36 @@ export default function InfoCards({ cards, header, styles }: InfoCardProps) {
     return (
         <section className={`${styles} py-8`}>
             {header != null ? (
-                <h1 className="max-w-custom mx-auto p-6 flex gap-8 text-black text-3xl font-bold">
+                <h1 className="text-center max-w-custom py-2 px-6 text-black text-3xl font-bold">
                     {header}
                 </h1>
             ) : null}
-            <ul className="max-w-custom mx-auto p-6 grid grid-cols-1 xl:grid-cols-3 gap-8">
+            <ul
+                className={cn(
+                    'max-w-custom mx-auto p-6 grid gap-8',
+                    cards.length <= 3
+                        ? 'grid-cols-1 xl:grid-cols-3'
+                        : 'grid-cols-1 lg:grid-cols-2 xl:grid-cols-2 3xl:grid-cols-4'
+                )}
+            >
                 {cards.map(card => {
                     const Icon = card.icon
-
                     return (
                         <AnimatedSection
                             animation="zoom"
                             key={card.title}
-                            className="bg-white rounded-xl shadow-2xl transition-shadow duration-300 transform p-6 border border-gray-200"
+                            className="bg-white-bright rounded-xl shadow-xl transition-shadow duration-300 transform p-6 border border-gray-200"
                         >
-                            <div className="w-16 h-16 rounded-full bg-primary-muted flex items-center justify-center text-white text-3xl mb-6 mx-0">
-                                <Icon className="text-2xl text-primary" />
+                            <div className="">
+                                {card.iconPath == undefined ? (
+                                    <Icon className="text-4xl mb-4 text-primary" />
+                                ) : (
+                                    <img
+                                        src={card.iconPath}
+                                        className="mb-4"
+                                        alt=""
+                                    />
+                                )}
                             </div>
                             <h2 className="">{card.title}</h2>
                             <p>{card.description}</p>

@@ -12,6 +12,16 @@
     --primary-bright: #fe5308;
     --primary-dark: #e34300;
 
+    --green: #10b981;
+    --green-muted: #7dd3af;
+    --green-bright: #34d399;
+    --green-dark: #059669;
+
+    --blue: #2b3a8d;
+    --blue-muted: #8c93c9;
+    --blue-bright: #4b5eea;
+    --blue-dark: #1e2a6c;
+
     --secondary: #29a0d8;
     --accent: #048a81;
 
@@ -189,6 +199,14 @@ main {
 
     .gradient-up {
         @apply bg-gradient-to-t from-secondary to-white;
+    }
+
+    .gradient-left {
+        @apply bg-gradient-to-l from-green to-blue;
+    }
+
+    .gradient-right {
+        @apply bg-gradient-to-r from-green to-blue;
     }
 
     .nav-link {

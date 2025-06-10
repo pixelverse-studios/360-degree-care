@@ -35,7 +35,7 @@ export default function TestimonialCards({
                         </div>
                         <p className="h-full">"{review.description}"</p>
                         <div className="flex gap-3 items-center flex-wrap">
-                            <div className="flex gap-1 text-yellow-400">
+                            <div className="flex gap-1 text-primary">
                                 <FaStar />
                                 <FaStar />
                                 <FaStar />

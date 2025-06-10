@@ -10,6 +10,20 @@ interface CallToActionProps {
     buttonClass?: string
     round?: boolean
     type: 'general' | 'services' | 'employment'
+    variant?:
+        | 'default'
+        | 'destructive'
+        | 'outline'
+        | 'secondary'
+        | 'ghost'
+        | 'link'
+        | 'cta'
+        | 'glossy'
+        | 'pillPrimary'
+        | 'pillBlue'
+        | 'pillGreen'
+        | null
+        | undefined
     value: string
 }
 
@@ -18,7 +32,8 @@ export default function CallToAction({
     buttonClass,
     round,
     type,
-    value
+    value,
+    variant
 }: CallToActionProps) {
     const router = useRouter()
     const { setRouteState } = useRouteState()
@@ -30,13 +45,13 @@ export default function CallToAction({
 
         const config = ContactMap.get(type)
         config.initialValues = { ...config.initialValues, [type]: value }
-        setRouteState({ type, value: config.initalValues })
+        setRouteState({ type, value: config.initialValues })
         return router.push(`/contact/${type}`)
     }
 
     return (
         <Button
-            variant="cta"
+            variant={variant ?? 'cta'}
             className={cn(buttonClass, round ? 'roundButton shadow-xl' : '')}
             onClick={onButtonClick}
         >

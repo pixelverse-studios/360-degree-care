@@ -1,4 +1,5 @@
 import type { Config } from 'tailwindcss'
+import tailwindcssAnimate from 'tailwindcss-animate'
 
 const config: Config = {
     darkMode: ['class'],
@@ -45,9 +46,25 @@ const config: Config = {
                     DEFAULT: 'var(--muted-black)',
                     foreground: 'var(--muted-foreground)'
                 },
+                blue: {
+                    DEFAULT: 'var(--blue)',
+                    muted: 'var(--blue-muted)',
+                    bright: 'var(--blue-bright)',
+                    dark: 'var(--blue-dark)'
+                },
+                green: {
+                    DEFAULT: 'var(--green)',
+                    muted: 'var(--green-muted)',
+                    bright: 'var(--green-bright)',
+                    dark: 'var(--green-dark)'
+                },
                 accent: {
                     DEFAULT: 'var(--accent)',
-                    foreground: 'var(--accent-foreground)'
+                    blue: 'var(--blue)',
+                    green: 'var(--green)',
+                    greenMuted: 'var(--green-muted)',
+                    greenBright: 'var(--green-bright)',
+                    greenDark: 'var(--green-dark)'
                 },
                 destructive: {
                     DEFAULT: 'var(--destructive)',
@@ -123,6 +140,6 @@ const config: Config = {
             }
         }
     },
-    plugins: [require('tailwindcss-animate')]
+    plugins: [tailwindcssAnimate]
 }
 export default config

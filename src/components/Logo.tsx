@@ -90,13 +90,13 @@ const Logo = ({ invert = false, size = 'md' }: LogoProps) => {
             >
                 <p className={cn('font-logo', sizeClasses[size])}>360</p>
                 <RotateCw
-                    className="text-secondary h-4 w-4 mt-[-1.75rem] mr-2 transition-all animate-spin-very-slow"
+                    className="text-blue h-4 w-4 mt-[-1.75rem] mr-2 transition-all animate-spin-very-slow"
                     strokeWidth={4}
                 />
                 <p className={cn('font-logo', sizeClasses[size])}>CARE</p>
             </div>
             {invert ? null : (
-                <p className="text-secondary font-semibold font-logo text-xl italic text-right caring">
+                <p className="text-blue font-semibold font-logo text-xl italic text-right caring">
                     We <span className="font-bold text-xl italic">CARE</span>!
                 </p>
             )}

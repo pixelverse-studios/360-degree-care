@@ -15,40 +15,42 @@ export default function HomeHero() {
             {/* <AnimatedSection animation="zoom" className="relative"> */}
             <div className="flex flex-col gap-6">
                 <div>
-                    <h1 className="text-primary">
-                        Concierge Level Home Health Care
+                    <h1 className="text-black">
+                        Concierge-Level Home Care in New Jersey
                     </h1>
-                    <h2 className="text-primary">
-                        The Finest Nurses and Home Aides in New Jersey
+                    <h2 className="text-black">
+                        Personalized In-Home Care That Preserves Independence
+                        and Dignity
                     </h2>
                 </div>
                 <p className="text-lg">
-                    Providing <span className="prio">Concierge Level™</span>{' '}
-                    home care with compassion that allows seniors to maintain
-                    their independence and dignity at home.
+                    Experience exceptional,{' '}
+                    <span className="prio">Concierge Level™</span> home health
+                    care that helps seniors stay safe, supported, and
+                    independent in the comfort of their own homes. Our care is
+                    delivered by{' '}
+                    <span className="font-semibold">
+                        The Finest Nurses and Home Aides in New Jersey
+                    </span>
+                    .
                 </p>
-                <div className="my-5 grid grid-cols-2 md:grid-cols-1 lg:grid-cols-2 gap-4 mx-auto">
+                <div className="my-5 grid grid-cols-1 md:grid-cols-2 gap-4">
                     <CallToAction
                         buttonLabel="Get In Touch"
-                        round
                         type="general"
                         value=""
+                        variant="pillPrimary"
                     />
-                    <Button
-                        className="roundAltButton border-secondary border-2 border-solid"
-                        onClick={onServicesClick}
-                        variant="default"
-                    >
+                    <Button onClick={onServicesClick} variant="pillBlue">
                         More About Us
                     </Button>
                 </div>
             </div>
             <img
-                className="rounded-2xl max-h-[20rem] h-fit w-fit object-cover"
+                className="rounded-2xl max-h-[20rem] h-fit w-full object-cover"
                 src="/assets/happy couple 1.jpg"
                 alt=""
             />
-            {/* </AnimatedSection> */}
         </section>
     )
 }

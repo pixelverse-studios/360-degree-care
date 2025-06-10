@@ -10,6 +10,7 @@ import { IconType } from 'react-icons'
 
 interface CardProps {
     icon: IconType
+    iconPath?: string
     title: string
     description: string
     bgColor: string
@@ -51,14 +52,22 @@ export const SERVICE_CARDS: CardProps[] = [
         icon: FaHouseChimneyUser,
         title: 'Live-In Care',
         description:
-            '360 Degree Care provides exceptional live-in home care. Offering personalized, round-the-clock support to ensure your loved ones receive the comfort, safety, and companionship they deserve, all in the comfort of their own home.',
+            '360 Degree Care provides exceptional live-in home care. Offering personalized, round- the-clock support to ensure your loved ones receive the comfort, safety, and companionship they deserve, all in the comfort of their own home.',
         bgColor: 'bg-[#fff]'
     },
     {
         icon: FaKitMedical,
         title: 'Medical Staffing',
         description:
-            "Looking for dependable and skilled medical professionals to meet your staffing needs? 360 Degree Care specializes in connecting healthcare facilities with experienced, qualified staff, ensuring exceptional patient care and reliable support. Our commitment to excellence means you'll always have the right professionals in place when you need them most.",
+            'Looking for dependable and skilled medical professionals to meet your staffing needs? 360 Degree Care specializes in connecting healthcare facilities with experienced talent, ensuring exceptional patient care and reliable support.',
+        bgColor: 'bg-[#fff]'
+    },
+    {
+        icon: FaKitMedical,
+        iconPath: '/icons/contact/heart.svg',
+        title: 'Interim Health Care',
+        description:
+            '360 Degree Care offers interim health care services that bridge the gap between hospital discharge and full recovery. Our expert team provides temporary support and skilled care to ensure optimal outcomes for short- term needs.',
         bgColor: 'bg-[#fff]'
     }
 ]

@@ -12,7 +12,7 @@ export const silverTsunamiAgingWorkforceCrisis = {
     },
     publishDate: '2024-02-20',
     readTime: '6 min read',
-    featuredImage: '/images/blog/silver-tsunami.jpg',
+    featuredImage: '/blog/silver-tsunami.jpeg',
     tags: [
         'aging in place',
         'workforce crisis',

@@ -1,8 +1,7 @@
 import { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import allBlogs from '@/lib/blogs' // Default import
-import BlogTemplate from '@/components/blog/BlogTemplate'
-
+import BlogPageClient from '@/components/blog/BlogClientPage'
 // Types
 interface BlogPost {
     id: string
@@ -85,5 +84,5 @@ export default function BlogPage({ params }: BlogPageProps) {
         notFound()
     }
 
-    return <BlogTemplate blogPost={post} />
+    return <BlogPageClient blogPost={post} />
 }

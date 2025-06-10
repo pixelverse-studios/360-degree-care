@@ -14,25 +14,27 @@ export default function HomeAboutSection() {
                     alt="Content senior man"
                 />
 
-                <div className="flex flex-col gap-6">
+                <div className="flex flex-col gap-4">
                     <h1 className="text-primary font-bold text-3xl">
                         About 360° Care
                     </h1>
                     <p>
-                        For over 10 years, we've been proudly based in
-                        Ridgewood, NJ, offering compassionate and reliable care
-                        solutions to families across New Jersey. From home care
-                        for the elderly, to a variety of other tailored
-                        services, we are committed to meeting the unique needs
-                        of every individual. Our focus on quality assurance
-                        ensures that those we serve receive personalized,
-                        attentive support. As a certified CHAP organization and
-                        licensed by the State Attorney General, we adhere to the
-                        strictest standards of care and professionalism. Your
-                        loved ones deserve the best, and we're here to deliver
-                        with dignity, trust, and exceptional service.
+                        For over 10 years, 360 Degree Care has proudly served
+                        families across New Jersey with compassionate,
+                        dependable home care services — all from our base in
+                        Ridgewood, NJ. Whether it’s senior home care, companion
+                        care, or other personalized solutions, we’re dedicated
+                        to meeting each client’s unique needs.
                     </p>
-                    <div className="flex flex-col md:flex-row justify-between md:items-center gap-4">
+                    <p>
+                        As a certified CHAP organization and licensed by the
+                        State Attorney General, we uphold the highest standards
+                        of safety, professionalism, and dignity. Our focus on
+                        quality assurance ensures your loved ones receive
+                        attentive, individualized care they can trust —
+                        delivered with compassion and excellence.
+                    </p>
+                    <div className="flex flex-col md:flex-row justify-between md:items-center gap-4 mt-4">
                         <ul className="flex flex-col gap-4 mb-6 md:mb-0">
                             <li className="bullet-item text-lg">
                                 <CircleCheck className="text-primary" />

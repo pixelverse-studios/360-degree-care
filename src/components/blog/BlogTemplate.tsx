@@ -1,3 +1,5 @@
+'use client'
+
 import React from 'react'
 import {
     Calendar,
@@ -91,7 +93,7 @@ export default function BlogTemplate({ blogPost }: BlogTemplateProps) {
     }
 
     return (
-        <article className="min-h-screen bg-white">
+        <main className="breadcrumbSpacing">
             {/* Hero Section */}
             <div className="relative">
                 <img
@@ -264,6 +266,6 @@ export default function BlogTemplate({ blogPost }: BlogTemplateProps) {
                     </div>
                 </div>
             </div>
-        </article>
+        </main>
     )
 }

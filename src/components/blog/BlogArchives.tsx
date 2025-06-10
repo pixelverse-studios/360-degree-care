@@ -1,15 +1,7 @@
 'use client'
 
-import React, { useState, useMemo } from 'react'
-import {
-    Search,
-    Calendar,
-    Clock,
-    ArrowRight,
-    Tag,
-    Filter,
-    X
-} from 'lucide-react'
+import { useState, useMemo } from 'react'
+import { Calendar, Clock, ArrowRight, Tag } from 'lucide-react'
 import Link from 'next/link'
 
 // Types
@@ -41,23 +33,23 @@ interface BlogArchivesProps {
 }
 
 // Extract unique categories from posts
-const getCategories = (posts: BlogPost[]) => {
-    const categories = new Set(['All'])
-    posts.forEach(post => {
-        if (post.category) {
-            categories.add(post.category)
-        }
-    })
-    return Array.from(categories)
-}
+// const getCategories = (posts: BlogPost[]) => {
+//     const categories = new Set(['All'])
+//     posts.forEach(post => {
+//         if (post.category) {
+//             categories.add(post.category)
+//         }
+//     })
+//     return Array.from(categories)
+// }
 
 export default function BlogArchives({ posts }: BlogArchivesProps) {
     const [searchTerm, setSearchTerm] = useState('')
     const [selectedCategory, setSelectedCategory] = useState('All')
-    const [showFilters, setShowFilters] = useState(false)
+    // const [showFilters, setShowFilters] = useState(false)
 
     // Get categories dynamically from posts
-    const categories = getCategories(posts)
+    // const categories = getCategories(posts)
 
     const filteredPosts = useMemo(() => {
         return posts.filter(post => {
@@ -102,15 +94,13 @@ export default function BlogArchives({ posts }: BlogArchivesProps) {
     }
 
     return (
-        <div className="min-h-screen bg-gray-50">
+        <main className="breadcrumbSpacing">
             {/* Header Section */}
-            <div className="bg-gradient-to-r from-orange-500 to-orange-600 text-white">
-                <div className="max-w-7xl mx-auto px-6 py-16">
+            <div className="gradient-left text-white max-w-custom">
+                <div className="px-6 py-10">
                     <div className="text-center">
-                        <h1 className="text-5xl font-bold mb-4">
-                            Blog Archives
-                        </h1>
-                        <p className="text-xl text-orange-100 max-w-3xl mx-auto">
+                        <h1 className="text-white">Blog Archives</h1>
+                        <p className="text-xl text-white max-w-3xl mx-auto">
                             The latest news, tips, and insights on home
                             healthcare. Stay informed with expert advice and
                             practical guidance for better health and wellness.
@@ -119,11 +109,10 @@ export default function BlogArchives({ posts }: BlogArchivesProps) {
                 </div>
             </div>
 
-            <div className="max-w-7xl mx-auto px-6 py-12">
+            <div className="mx-auto px-6 py-10">
                 {/* Search and Filter Section */}
-                <div className="mb-12">
+                {/* <div className="mb-12">
                     <div className="flex flex-col lg:flex-row gap-4 items-center justify-between mb-6">
-                        {/* Search Bar */}
                         <div className="relative flex-1 max-w-md">
                             <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-5 w-5" />
                             <input
@@ -135,7 +124,6 @@ export default function BlogArchives({ posts }: BlogArchivesProps) {
                             />
                         </div>
 
-                        {/* Filter Toggle for Mobile */}
                         <button
                             onClick={() => setShowFilters(!showFilters)}
                             className="lg:hidden flex items-center gap-2 px-4 py-3 bg-white border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors"
@@ -143,10 +131,10 @@ export default function BlogArchives({ posts }: BlogArchivesProps) {
                             <Filter className="h-5 w-5" />
                             Filters
                         </button>
-                    </div>
+                    </div> */}
 
-                    {/* Category Filters */}
-                    <div
+                {/* Category Filters */}
+                {/* <div
                         className={`${showFilters ? 'block' : 'hidden'} lg:block`}
                     >
                         <div className="flex flex-wrap gap-3 items-center">
@@ -178,8 +166,8 @@ export default function BlogArchives({ posts }: BlogArchivesProps) {
                                 </button>
                             )}
                         </div>
-                    </div>
-                </div>
+                    </div> */}
+                {/* </div> */}
 
                 {/* Featured Post */}
                 {featuredPost && selectedCategory === 'All' && !searchTerm && (
@@ -187,7 +175,7 @@ export default function BlogArchives({ posts }: BlogArchivesProps) {
                         <h2 className="text-2xl font-bold text-gray-900 mb-6">
                             Featured Article
                         </h2>
-                        <div className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
+                        <div className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 h-fit">
                             <div className="lg:flex">
                                 <div className="lg:w-1/2">
                                     <img
@@ -198,12 +186,9 @@ export default function BlogArchives({ posts }: BlogArchivesProps) {
                                 </div>
                                 <div className="lg:w-1/2 p-8 lg:p-12">
                                     <div className="flex items-center gap-4 mb-4">
-                                        <span className="inline-flex items-center gap-1 px-3 py-1 bg-orange-100 text-orange-800 text-sm font-medium rounded-full">
+                                        <span className="inline-flex items-center gap-1 px-3 py-1 bg-green text-white text-sm font-medium rounded-full">
                                             <Tag className="h-3 w-3" />
                                             {featuredPost.category}
-                                        </span>
-                                        <span className="text-orange-600 text-sm font-medium">
-                                            Featured
                                         </span>
                                     </div>
                                     <h3 className="text-3xl font-bold text-gray-900 mb-4">
@@ -215,22 +200,22 @@ export default function BlogArchives({ posts }: BlogArchivesProps) {
                                             200
                                         )}
                                     </p>
-                                    <div className="flex items-center justify-between">
-                                        <div className="flex items-center gap-4 text-sm text-gray-500">
-                                            <span className="flex items-center gap-1">
+                                    <div className="flex flex-col gap-4">
+                                        <div className="flex flex-col gap-4 text-sm text-gray-500">
+                                            <span className="flex items-center gap-1 text-sm">
                                                 <Calendar className="h-4 w-4" />
                                                 {formatDate(
                                                     featuredPost.publishDate
                                                 )}
                                             </span>
-                                            <span className="flex items-center gap-1">
+                                            <span className="flex items-center gap-1 text-sm">
                                                 <Clock className="h-4 w-4" />
                                                 {featuredPost.readTime}
                                             </span>
                                         </div>
                                         <Link
                                             href={`/blog/${featuredPost.slug}`}
-                                            className="flex items-center gap-2 text-orange-600 font-semibold hover:text-orange-700 transition-colors"
+                                            className="flex text-sm items-center gap-2 text-primary font-semibold hover:text-primary-dark transition-colors"
                                         >
                                             Read More
                                             <ArrowRight className="h-4 w-4" />
@@ -242,19 +227,19 @@ export default function BlogArchives({ posts }: BlogArchivesProps) {
                     </div>
                 )}
 
-                {/* Results Count */}
-                <div className="flex items-center justify-between mb-8">
-                    <p className="text-gray-600">
-                        {filteredPosts.length === 0
-                            ? 'No articles found'
-                            : `Showing ${filteredPosts.length} ${filteredPosts.length === 1 ? 'article' : 'articles'}`}
-                        {searchTerm && ` for "${searchTerm}"`}
-                        {selectedCategory !== 'All' &&
-                            ` in ${selectedCategory}`}
-                    </p>
-                </div>
+                {regularPosts.length > 0 ? (
+                    <div className="flex items-center justify-between mb-8">
+                        <p className="text-gray-600">
+                            {filteredPosts.length === 0
+                                ? 'No articles found'
+                                : `Showing ${filteredPosts.length} ${filteredPosts.length === 1 ? 'article' : 'articles'}`}
+                            {searchTerm && ` for "${searchTerm}"`}
+                            {selectedCategory !== 'All' &&
+                                ` in ${selectedCategory}`}
+                        </p>
+                    </div>
+                ) : null}
 
-                {/* Blog Posts Grid */}
                 {regularPosts.length > 0 ? (
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                         {regularPosts.map(post => (
@@ -307,15 +292,14 @@ export default function BlogArchives({ posts }: BlogArchivesProps) {
                         ))}
                     </div>
                 ) : (
-                    <div className="text-center py-16">
-                        <div className="text-6xl text-gray-300 mb-4">📄</div>
+                    <div className="text-center py-10">
                         <h3 className="text-xl font-semibold text-gray-900 mb-2">
-                            No articles found
+                            No other articles
                         </h3>
                         <p className="text-gray-600 mb-6">
                             {searchTerm || selectedCategory !== 'All'
                                 ? "Try adjusting your search terms or filters to find what you're looking for."
-                                : 'No blog posts are available at the moment.'}
+                                : 'No other blog posts are available at the moment.'}
                         </p>
                         {(searchTerm || selectedCategory !== 'All') && (
                             <button
@@ -336,26 +320,7 @@ export default function BlogArchives({ posts }: BlogArchivesProps) {
                         </button>
                     </div>
                 )}
-
-                {/* Newsletter Signup CTA */}
-                <div className="mt-16 bg-gradient-to-r from-orange-500 to-orange-600 text-white rounded-2xl p-8 lg:p-12 text-center">
-                    <h3 className="text-3xl font-bold mb-4">Stay Updated</h3>
-                    <p className="text-xl text-orange-100 mb-8 max-w-2xl mx-auto">
-                        Subscribe to our newsletter to get the latest healthcare
-                        tips and insights delivered to your inbox.
-                    </p>
-                    <div className="flex flex-col sm:flex-row gap-4 justify-center items-center max-w-md mx-auto">
-                        <input
-                            type="email"
-                            placeholder="Enter your email"
-                            className="flex-1 px-4 py-3 rounded-lg text-gray-900 focus:outline-none focus:ring-2 focus:ring-orange-300"
-                        />
-                        <button className="px-6 py-3 bg-orange-700 text-white rounded-lg hover:bg-orange-800 transition-colors font-semibold whitespace-nowrap">
-                            Subscribe
-                        </button>
-                    </div>
-                </div>
             </div>
-        </div>
+        </main>
     )
 }

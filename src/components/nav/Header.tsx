@@ -247,6 +247,7 @@ export function Header() {
                                 buttonLabel="Get In Touch"
                                 type="general"
                                 value=""
+                                variant="pillPrimary"
                             />
                         </li>
                     </ul>

@@ -28,7 +28,7 @@ const REVIEWS = [
 
 export default function HomeTestimonials() {
     return (
-        <section className="py-8 bg-secondary">
+        <section className="py-8 gradient-left">
             <AnimatedSection
                 animation="zoom"
                 className="max-w-custom mx-auto p-6"
