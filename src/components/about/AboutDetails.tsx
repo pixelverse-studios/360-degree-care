@@ -38,20 +38,20 @@ export default function AboutDetails() {
                             <CompanyName className="text-3xl text-primary mb-[10px]" />{' '}
                             Difference
                         </h2>
-                        <p className="text-lg max-w-2xl mb-6">
-                            We believe homecare must go beyond sending someone
-                            to do something and sending a bill. We have created{' '}
-                            <span className="prio">Concierge Level™</span>{' '}
-                            Homecare.
+                        <p>
+                            At 360 Degree Care, we believe home care should go
+                            far beyond task checklists and invoices. That’s why
+                            we’ve created our signature{' '}
+                            <span className="prio">Concierge-Level™</span>
+                            Homecare — a service model built around total
+                            support, trust, and everyday ease.
                         </p>
                         <p>
-                            We are ready to take care of everything a client or
-                            patient needs from the moment they open their eyes
-                            in the morning to the memento they close them at
-                            night…and often for many times they need extra help
-                            in between. We cover all of the details, and many
-                            more needs that pop up. We believe that we are here
-                            to make our clients lives better.
+                            From the moment our clients wake up to the moment
+                            they go to sleep — and all the moments in between —
+                            we’re here to provide comfort, safety, and
+                            solutions. We anticipate needs before they arise and
+                            handle the details that others overlook.
                         </p>
                     </article>
                 </AnimatedSection>

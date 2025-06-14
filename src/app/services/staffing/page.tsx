@@ -19,11 +19,18 @@ export default function StaffingSolutionsPage() {
                         className="bg-white-bright pb-8"
                     >
                         <div className="container mx-auto px-4 max-w-6xl">
-                            <h1>Medical Staffing</h1>
+                            <h1>
+                                Medical Staffing Solutions for Healthcare
+                                Facilities in New Jersey
+                            </h1>
                             <p className="text-lg md:text-xl text-gray-700 max-w-3xl">
-                                Providing reliable, qualified medical
-                                professionals to healthcare facilities so you
-                                can deliver exceptional patient care.
+                                We provide experienced, credentialed healthcare
+                                professionals — including CNAs, home health
+                                aides, and nurses — to hospitals, rehab centers,
+                                and assisted living facilities across New
+                                Jersey. Our reliable staffing ensures you can
+                                continue delivering high-quality patient care
+                                without disruption.
                             </p>
                         </div>
                     </AnimatedSection>

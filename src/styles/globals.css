@@ -164,7 +164,7 @@ h4 {
     }
 
     h1 {
-        @apply mb-4 text-3xl font-bold text-primary;
+        @apply mb-4 text-3xl font-bold text-black;
     }
 
     h2 {

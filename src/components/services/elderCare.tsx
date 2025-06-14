@@ -21,13 +21,20 @@ export default function ElderCareView({ header }: headerProps) {
                         {header ? header : `Elder Care Consulting`}
                     </h1>
                     <p className="text-lg md:text-xl text-gray-700 max-w-3xl">
-                        Leverage our experience and expertise to evaluate your
-                        parent or loved one's situation. We can help you explore
-                        all options available to your family—from aging in place
-                        to placement in an assisted living facility or a nursing
-                        home. We can also help you steward the available options
-                        and refer you to competent elder care attorneys and
-                        accountants.
+                        Navigating care decisions for an aging parent or loved
+                        one can feel overwhelming — but you don’t have to do it
+                        alone.
+                        <CompanyName /> offers trusted elder care consulting
+                        services to help you evaluate every option with
+                        confidence.
+                    </p>
+                    <p>
+                        Whether your family is considering aging in place,
+                        assisted living, or skilled nursing care, we provide
+                        expert guidance tailored to your unique situation. We
+                        also connect you with reputable elder law attorneys and
+                        financial professionals to help you plan wisely for the
+                        road ahead.
                     </p>
                 </AnimatedSection>
             </div>
@@ -187,38 +194,52 @@ export default function ElderCareView({ header }: headerProps) {
                         </h2>
                         <div className="bg-blue rounded-lg my-auto">
                             <p className="text-lg text-white mb-6">
-                                With over ten years of experience providing
-                                exceptional home care in New Jersey, we
-                                understand the complexities of elder care. Our
-                                consultants bring:
+                                With over a decade of experience providing
+                                high-quality home care throughout New Jersey,
+                                <CompanyName /> understands the emotional and
+                                logistical challenges that come with planning
+                                elder care. Our consulting services are guided
+                                by experience, empathy, and a deep knowledge of
+                                local resources.
                             </p>
                             <ul className="space-y-4">
-                                <li className="flex items-start">
-                                    <span className="mr-2 text-white">✓</span>
-                                    <span className="text-white">
-                                        Deep knowledge of local care resources
-                                        and facilities
+                                <li className="flex items-start text-white">
+                                    <span>
+                                        <strong>Local Expertise:</strong>
+                                        <br />
+                                        We know the best elder care resources,
+                                        facilities, and professionals across New
+                                        Jersey
                                     </span>
                                 </li>
-                                <li className="flex items-start">
-                                    <span className="mr-2 text-white">✓</span>
-                                    <span className="text-white">
-                                        Expertise in assessing care needs and
-                                        matching them with appropriate services
+                                <li className="flex items-start text-white">
+                                    <span>
+                                        <strong>Care Matching:</strong>
+                                        <br />
+                                        We assess your loved one’s needs and
+                                        connect you with the right level of care
+                                        — from in-home support to long-term
+                                        placements
                                     </span>
                                 </li>
-                                <li className="flex items-start">
-                                    <span className="mr-2 text-white">✓</span>
-                                    <span className="text-white">
-                                        A compassionate approach that
-                                        prioritizes dignity and quality of life
+                                <li className="flex items-start text-white">
+                                    <span>
+                                        <strong>Compassionate Guidance:</strong>
+                                        <br />
+                                        Every recommendation is made with
+                                        empathy, dignity, and your family's
+                                        well-being in mind
                                     </span>
                                 </li>
-                                <li className="flex items-start">
-                                    <span className="mr-2 text-white">✓</span>
-                                    <span className="text-white">
-                                        A commitment to finding solutions that
-                                        work for the entire family
+                                <li className="flex items-start text-white">
+                                    <span>
+                                        <strong>
+                                            Family-Centered Planning:
+                                        </strong>
+                                        <br />
+                                        We consider the big picture and work
+                                        with all involved to create realistic,
+                                        supportive care solutions
                                     </span>
                                 </li>
                             </ul>

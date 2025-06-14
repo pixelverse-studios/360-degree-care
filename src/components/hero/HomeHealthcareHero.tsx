@@ -27,20 +27,30 @@ export default function HomeHealthCareHero({ header }: { header: string }) {
             >
                 <div className="flex flex-col gap-6 pt-2">
                     <h1 className="font-bold text-4xl md:text-3xl sm:text-xl">
-                        {header ? header : `Home Healthcare`}
+                        {header ? (
+                            header
+                        ) : (
+                            <>
+                                <span className="prio text-3xl">
+                                    Concierge-Level™
+                                </span>{' '}
+                                Home Health Aide Services in New Jersey
+                            </>
+                        )}
                     </h1>
                     <p className="text-lg">
-                        <span className="font-bold text-primary">
-                            Our Home Aids Always Deliver{' '}
-                            <span className="prio">Concierge Level™ Care</span>
-                            .
-                        </span>
+                        Our certified home health aides deliver compassionate,
+                        personalized care that supports daily living, promotes
+                        well-being, and provides meaningful companionship — all
+                        within the comfort of your home.
                         <br />
-                        Personalized home care tailored to support daily living,
-                        enhance well-being, and provide compassionate
-                        companionship-ensuring safety, comfort and dignity at
-                        home. Whether needed for a few hours, or
-                        round-the-clock, we will always be there for you.
+                        <br />
+                        Whether you need a few hours of help or 24/7 assistance,
+                        360 Degree Care is here to ensure safety, comfort, and
+                        dignity every step of the way. Every care plan is
+                        tailored to your loved one’s specific needs, ensuring
+                        they receive high-quality, Concierge-Level™ support you
+                        can trust.
                     </p>
                 </div>
                 <img

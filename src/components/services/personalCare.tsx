@@ -20,82 +20,81 @@ export default function PersonalCareView({ header }: { header: string }) {
                 </h1>
 
                 <p className="text-gray-700 mb-4">
-                    Personal care services encompass a range of supportive
-                    services designed to assist individuals with Daily Living
-                    Activities (ADLs) and promote overall well-being. Whether
-                    you're seeking solutions for yourself or a loved one,{' '}
-                    <CompanyName className="" /> is here to guide you.
+                    Personal care services at <CompanyName className="" /> are
+                    designed to help seniors and individuals with daily living
+                    tasks while preserving dignity, independence, and comfort.
+                    Whether you're exploring care for yourself or a loved one,
+                    our team is here to provide non-medical home support that
+                    meets your unique needs.
                 </p>
                 <h2 className="mt-6 mb-2">What is Personal Care?</h2>
                 <p className="text-gray-700 mb-4">
-                    Personal care, also known as personal care services, refers
-                    to non-medical assistance that helps individuals maintain
-                    independence and improve their quality of life at home,
-                    including elderly personal care.
+                    Personal care includes non-medical assistance with essential
+                    daily routines — such as bathing, dressing, and grooming —
+                    so individuals can safely age in place and enjoy a higher
+                    quality of life. It’s ideal for seniors, people with
+                    disabilities, or anyone recovering from illness or surgery.
                 </p>
 
                 <h2 className="mt-6 mb-4">
-                    Benefits of Personal Care Services
+                    Benefits of Our Personal Care Services
                 </h2>
                 <ul className="mb-4 flex flex-col gap-2">
                     <li className="bullet-item">
                         <CircleCheck className="text-primary" />
                         <p>
-                            <strong>Enhanced Independence:</strong>
-                            <br />A personal care aide empowers individuals to
-                            remain independent in their homes for longer.
+                            <strong>Greater Independence:</strong>
+                            <br />
+                            Stay comfortably at home while getting the help you
+                            need.
                         </p>
                     </li>
                     <li className="bullet-item">
                         <CircleCheck className="text-primary" />
                         <p>
-                            <strong>Improved Quality of Life:</strong>
+                            <strong>Peace of Mind for Families:</strong>
                             <br />
-                            Assistance with daily tasks allows individuals to
-                            focus on activities they enjoy.
+                            Relieves pressure on family caregivers with
+                            professional support.
                         </p>
                     </li>
                     <li className="bullet-item">
                         <CircleCheck className="text-primary" />
                         <p>
-                            <strong>Reduced Caregiver Burden:</strong>
+                            <strong>Improved Daily Comfort:</strong>
                             <br />
-                            Offers valuable respite for families caring for
-                            loved ones.
+                            Focus on the things you love while we handle the
+                            essentials.
                         </p>
                     </li>
                     <li className="bullet-item">
                         <CircleCheck className="text-primary" />
                         <p>
-                            <strong>Safety and Security:</strong>
+                            <strong>Customized Care:</strong>
                             <br />
-                            Knowing a caregiver is present provides peace of
-                            mind.
+                            Every plan is built around your personal preferences
+                            and health needs.
                         </p>
                     </li>
                     <li className="bullet-item">
                         <CircleCheck className="text-primary" />
                         <p>
-                            <strong>Personalized Support:</strong>
+                            <strong>Safety & Support:</strong>
                             <br />
-                            Care plans are tailored to individual needs and
-                            preferences.
+                            Trained caregivers who monitor wellness and provide
+                            reassurance.
                         </p>
                     </li>
                 </ul>
 
-                <h2 className="mt-6 mb-2">
-                    Common Services Offered in Personal Care
-                </h2>
+                <h2 className="mt-6 mb-2">What We Assist With</h2>
                 <ul className="mb-4 flex flex-col gap-2">
                     <li className="bullet-item">
                         <CircleCheck className="text-primary" />
                         <p>
-                            <strong>
-                                Assistance with Daily Living Activities (ADLs):
-                            </strong>
+                            <strong>Daily Living Activities (ADLs):</strong>
                             <br />
-                            Bathing, dressing, grooming, and more.
+                            Bathing, dressing, grooming, toileting
                         </p>
                     </li>
                     <li className="bullet-item">
@@ -103,7 +102,7 @@ export default function PersonalCareView({ header }: { header: string }) {
                         <p>
                             <strong>Meal Preparation:</strong>
                             <br />
-                            Planning, shopping, and preparing nutritious meals.
+                            Nutritious meals tailored to dietary needs
                         </p>
                     </li>
                     <li className="bullet-item">
@@ -111,8 +110,7 @@ export default function PersonalCareView({ header }: { header: string }) {
                         <p>
                             <strong>Light Housekeeping:</strong>
                             <br />
-                            Cleaning, laundry, and maintaining a safe
-                            environment.
+                            Laundry, tidying, and cleanliness for safety
                         </p>
                     </li>
                     <li className="bullet-item">
@@ -120,25 +118,23 @@ export default function PersonalCareView({ header }: { header: string }) {
                         <p>
                             <strong>Medication Reminders:</strong>
                             <br />
-                            Ensuring proper medication use.
+                            Ensuring medication schedules are followed
                         </p>
                     </li>
                     <li className="bullet-item">
                         <CircleCheck className="text-primary" />
                         <p>
-                            <strong>
-                                Companionship and Social Interaction:
-                            </strong>
+                            <strong>Companionship:</strong>
                             <br />
-                            Providing engagement to combat loneliness.
+                            Friendly conversation and emotional connection
                         </p>
                     </li>
                     <li className="bullet-item">
                         <CircleCheck className="text-primary" />
                         <p>
-                            <strong>Transportation and Errands:</strong>
+                            <strong>Errands & Appointments:</strong>
                             <br />
-                            Helping with appointments and community activities.
+                            Transportation and assistance out in the community
                         </p>
                     </li>
                 </ul>
