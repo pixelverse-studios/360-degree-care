@@ -98,11 +98,11 @@ const NavBar = ({
     toggleMobileMenu,
     closeMobileMenu
 }: NavBarProps) => (
-    <div className="bg-blue">
+    <div className="bg-white lg:bg-blue">
         <div className="max-w-custom mx-auto px-6 flex items-center justify-between h-16 lg:h-10">
             <div className="lg:hidden">
                 <Link href="/">
-                    <Logo invert={true} size="md" />
+                    <Logo size="md" />
                 </Link>
             </div>
 
@@ -199,7 +199,7 @@ const MobileNav = ({ isOpen, closeMenu }: MobileNavProps) => {
                 isOpen ? 'translate-y-0' : '-translate-y-[150%]'
             )}
         >
-            <ul className="flex flex-col p-4 space-y-4">
+            <ul className="flex flex-col p-6 space-y-4">
                 {navLinks.map(link => (
                     <li key={link.label}>
                         {link.subLinks && link.subLinks.length > 0 ? (
@@ -215,7 +215,7 @@ const MobileNav = ({ isOpen, closeMenu }: MobileNavProps) => {
                                     <span>{link.label}</span>
                                     <ChevronDown
                                         className={cn(
-                                            'h-5 w-5 transition-transform',
+                                            'h-5 w-5 transition-transform text-black',
                                             (link.label === 'Services' &&
                                                 isServicesOpen) ||
                                                 (link.label ===
@@ -288,23 +288,23 @@ const HamburgerMenu = ({
 }) => (
     <button
         onClick={toggleMenu}
-        className="z-50 flex flex-col justify-center items-center w-10 h-10 space-y-1.5"
+        className="z-50 flex flex-col justify-center items-center w-10 h-10 space-y-1.5 transition-all duration-200 hover:bg-gray-200 rounded-xl"
     >
         <span
             className={cn(
-                'block w-6 h-0.5 bg-white transition-transform duration-300',
+                'block w-6 h-0.5 bg-primary transition-transform duration-300',
                 isOpen && 'translate-y-2 rotate-45'
             )}
         />
         <span
             className={cn(
-                'block w-6 h-0.5 bg-white transition-opacity duration-300',
+                'block w-6 h-0.5 bg-primary transition-opacity duration-300',
                 isOpen && 'opacity-0'
             )}
         />
         <span
             className={cn(
-                'block w-6 h-0.5 bg-white transition-transform duration-300',
+                'block w-6 h-0.5 bg-primary transition-transform duration-300',
                 isOpen && '-translate-y-2 -rotate-45'
             )}
         />

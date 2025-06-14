@@ -95,7 +95,7 @@ export default function Breadcrumbs() {
 
     return (
         <Breadcrumb className="absolute w-full z-10 top-[9rem] hidden lg:block">
-            <BreadcrumbList className="max-w-custom w-fit px-6 py-4 bg-transparent">
+            <BreadcrumbList className="max-w-custom w-full mx-auto px-6 py-4 bg-transparent">
                 <BreadcrumbItem>
                     <BreadcrumbLink
                         asChild

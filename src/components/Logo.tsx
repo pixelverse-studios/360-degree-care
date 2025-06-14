@@ -61,7 +61,7 @@ export const CompanyName = ({
     )
 }
 
-const Logo = ({ invert = false, size = 'md' }: LogoProps) => {
+const Logo = ({ invert = false, size = 'md', className }: LogoProps) => {
     const sizeClasses = {
         sm: 'text-xl',
         md: 'text-3xl',
@@ -80,7 +80,8 @@ const Logo = ({ invert = false, size = 'md' }: LogoProps) => {
                 <RotateCw
                     className={cn(
                         'h-4 w-4 mt-[-1.75rem] mr-2 transition-all animate-spin-very-slow',
-                        invert ? '' : 'text-blue'
+                        invert ? '' : 'text-blue',
+                        className ?? ''
                     )}
                     strokeWidth={4}
                 />
