@@ -11,7 +11,7 @@ interface CompanionCareViewProps {
 export default function CompanionCareView({ header }: CompanionCareViewProps) {
     return (
         <main className="breadcrumbSpacing">
-            <div className="bg-white">
+            <div className="">
                 <AnimatedSection
                     animation="zoom"
                     className="relative bg-white-bright text-black px-4 py-16"
@@ -26,7 +26,7 @@ export default function CompanionCareView({ header }: CompanionCareViewProps) {
                         </p>
                         <CallToAction
                             buttonLabel="Contact Us"
-                            round
+                            variant="pillPrimary"
                             type="services"
                             value="Companion Care"
                         />
@@ -142,7 +142,7 @@ export default function CompanionCareView({ header }: CompanionCareViewProps) {
                         </p>
                         <CallToAction
                             buttonLabel="Contact Us"
-                            round
+                            variant="pillPrimary"
                             type="services"
                             value="Companion Care"
                         />

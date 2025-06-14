@@ -12,7 +12,7 @@ export default function NursingView({ header }: { header: string }) {
             <div className="bg-white-bright">
                 <AnimatedSection
                     animation="zoom"
-                    className="container mx-auto px-4 max-w-6xl py-10"
+                    className="container mx-auto px-4 max-w-6xl pb-10"
                 >
                     <h1 className="text-4xl md:text-5xl font-bold mb-6">
                         {header ? header : `Nursing Services`}
@@ -356,7 +356,7 @@ export default function NursingView({ header }: { header: string }) {
                     </p>
                     <CallToAction
                         buttonLabel="Contact us today"
-                        round
+                        variant="pillPrimary"
                         type="services"
                         value="Nursing Services"
                     />

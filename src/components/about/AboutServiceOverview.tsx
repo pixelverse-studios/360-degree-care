@@ -1,110 +1,70 @@
 import Link from 'next/link'
-import { MoveDown } from 'lucide-react'
+import { CornerLeftDown, CornerRightDown, MoveDown } from 'lucide-react'
 
 import { navLinks } from '@/utils/routes'
 
 const serviceCardStyles =
-    'bg-white-bright rounded-lg shadow-md p-8 text-center hover:shadow-lg transition-shadow h-full border-t-secondary border-t-[4px]'
+    'bg-white-bright rounded-lg shadow-md p-8 text-center hover:shadow-lg transition-shadow h-full border-t-green border-t-[4px] flex flex-col justify-center min-h-[180px]'
 
 const ServiceOverview = () => {
     return (
-        <div className="">
-            <p className="text-2xl italic font-bold text-primary text-center">
-                The Finest Nurses and Aides in New Jersey
-            </p>
+        <div className="w-full">
+            <h2 className="text-3xl italic font-bold text-primary text-center leading-tight">
+                The Finest Nurses and Aides
+                <br />
+                in New Jersey
+            </h2>
 
-            {/* Custom CSS for left/right positioning */}
-            <style jsx global>{`
-                .left-1/6 {
-                    left: 16.66667%;
-                }
-                .right-1/6 {
-                    right: 16.66667%;
-                }
-            `}</style>
-
-            {/* Service Categories with Arrows */}
-            <div className="relative mt-8 mb-12">
-                {/* Diagram structure - fully connected */}
-                <div className="relative hidden lg:block h-20">
-                    {/* Main horizontal line */}
-                    <div
-                        className={
-                            'absolute top-0 left-1/6 right-1/6 border-t border-secondary border-[4px]'
-                        }
-                    />
-
-                    {/* Left vertical line */}
-                    <div
-                        className={
-                            'absolute top-0 left-1/6 w-[4px] h-10 bg-secondary'
-                        }
-                    />
-
-                    {/* Middle vertical line */}
-                    <div
-                        className={
-                            'absolute top-0 left-1/2 transform -translate-x-1/2 w-[4px] h-10 bg-secondary'
-                        }
-                    />
-
-                    {/* Right vertical line */}
-                    <div
-                        className={
-                            'absolute top-0 right-1/6 w-[4px] h-10 bg-secondary'
-                        }
-                    />
-
-                    {/* Left arrow */}
-                    <div className="absolute bottom-[1rem] left-1/6 transform -translate-x-1/2">
-                        <MoveDown className="text-secondary w-fit h-[46px] ml-[4px]" />
+            <div>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div className="relative flex flex-col gap-4 items-center w-full">
+                        <CornerLeftDown
+                            size={60}
+                            className="text-green hidden md:block"
+                        />
+                        <Link
+                            href={navLinks[1].subLinks[0].route}
+                            className="no-underline w-full"
+                        >
+                            <div className={serviceCardStyles}>
+                                <h3 className="text-2xl font-bold text-primary">
+                                    Private Clients
+                                </h3>
+                            </div>
+                        </Link>
                     </div>
-
-                    {/* Middle arrow */}
-                    <div className="absolute bottom-[1rem] left-1/2 transform -translate-x-1/2">
-                        <MoveDown className="text-secondary w-fit h-[46px]" />
+                    <div className="relative flex flex-col gap-4 items-center w-full">
+                        <MoveDown
+                            size={60}
+                            className="text-green hidden md:block"
+                        />
+                        <Link
+                            href={navLinks[1].subLinks[1].route}
+                            className="no-underline w-full"
+                        >
+                            <div className={serviceCardStyles}>
+                                <h3 className="text-2xl font-bold text-primary">
+                                    Elder Care <br /> Consulting
+                                </h3>
+                            </div>
+                        </Link>
                     </div>
-
-                    {/* Right arrow */}
-                    <div className="absolute bottom-[1rem] right-1/6 transform translate-x-1/2">
-                        <MoveDown className="text-secondary w-fit h-[46px] mr-[4px]" />
+                    <div className="relative flex flex-col gap-4 items-center w-full">
+                        <CornerRightDown
+                            size={60}
+                            className="text-green hidden md:block"
+                        />
+                        <Link
+                            href={navLinks[1].subLinks[2].route}
+                            className="no-underline w-full"
+                        >
+                            <div className={serviceCardStyles}>
+                                <h3 className="text-2xl font-bold text-primary">
+                                    Staffing <br /> Solutions
+                                </h3>
+                            </div>
+                        </Link>
                     </div>
-                </div>
-
-                {/* Service Boxes */}
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    <Link
-                        href={navLinks[1].subLinks[0].route}
-                        className="no-underline"
-                    >
-                        <div className={serviceCardStyles}>
-                            <p className="font-semibold text-primary">
-                                Private Clients
-                            </p>
-                        </div>
-                    </Link>
-
-                    <Link
-                        href={navLinks[1].subLinks[1].route}
-                        className="no-underline"
-                    >
-                        <div className={serviceCardStyles}>
-                            <p className="font-semibold text-primary">
-                                Elder Care Consulting
-                            </p>
-                        </div>
-                    </Link>
-
-                    <Link
-                        href={navLinks[1].subLinks[2].route}
-                        className="no-underline"
-                    >
-                        <div className={serviceCardStyles}>
-                            <p className="font-semibold text-primary">
-                                Staffing Solutions
-                            </p>
-                        </div>
-                    </Link>
                 </div>
             </div>
         </div>

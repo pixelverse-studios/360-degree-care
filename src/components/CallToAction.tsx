@@ -8,7 +8,6 @@ import { ContactMap } from '@/utils/contact'
 interface CallToActionProps {
     buttonLabel: string
     buttonClass?: string
-    round?: boolean
     type: 'general' | 'services' | 'employment'
     variant?:
         | 'default'
@@ -30,7 +29,6 @@ interface CallToActionProps {
 export default function CallToAction({
     buttonLabel,
     buttonClass,
-    round,
     type,
     value,
     variant
@@ -49,10 +47,11 @@ export default function CallToAction({
         return router.push(`/contact/${type}`)
     }
 
+    console.log('variant: ', variant)
     return (
         <Button
             variant={variant ?? 'cta'}
-            className={cn(buttonClass, round ? 'roundButton shadow-xl' : '')}
+            className={cn(buttonClass)}
             onClick={onButtonClick}
         >
             {buttonLabel}

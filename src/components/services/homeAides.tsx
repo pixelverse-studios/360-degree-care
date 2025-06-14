@@ -29,7 +29,7 @@ export default function HomeAidesView({ header }: headerProps) {
                     <CallToAction
                         buttonLabel="Get In Touch"
                         buttonClass="w-full md:w-fit mx-auto"
-                        round
+                        variant="pillPrimary"
                         type="services"
                         value="Home Health Aides"
                     />

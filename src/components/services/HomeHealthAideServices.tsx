@@ -117,7 +117,7 @@ const additionalServices = [
 
 export default function HomeHealthAideServices() {
     return (
-        <section className="bg-secondary pt-6">
+        <section className="bg-blue py-4">
             <AnimatedSection animation="zoom" className={cn(wrapperClass)}>
                 <h3 className="text-white">Home Health Aides</h3>
                 <h2 className="text-white">Compassionate In-Home Care</h2>

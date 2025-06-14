@@ -40,13 +40,13 @@ export default function ElderCareView({ header }: headerProps) {
                 <h2 className="font-semibold text-center mb-12">
                     Making Informed Decisions for Your Loved One's Care
                 </h2>
-                <div className="bg-secondary rounded-lg shadow-lg p-8 mb-8">
-                    <p className="text-lg text-white">
+                <div className="bg-blue rounded-lg shadow-lg p-8 mb-8">
+                    <article className="text-lg text-white">
                         Navigating elder care options can be overwhelming. At{' '}
                         <CompanyName className="text-lg text-primary p-2 bg-white rounded-lg" />{' '}
                         we provide expert consultation to help you make informed
                         decisions about your loved one's care journey.
-                    </p>
+                    </article>
                 </div>
             </AnimatedSection>
 
@@ -176,7 +176,7 @@ export default function ElderCareView({ header }: headerProps) {
             </div>
 
             {/* Why Choose Us Section */}
-            <div className="bg-secondary p-8">
+            <div className="bg-blue p-8">
                 <AnimatedSection
                     animation="zoom"
                     className="flex flex-col md:flex-row gap-8 mb-6"
@@ -185,7 +185,7 @@ export default function ElderCareView({ header }: headerProps) {
                         <h2 className="font-semibold mb-8 py-8 text-white">
                             Why Choose Our Elder Care Consulting Services
                         </h2>
-                        <div className="bg-secondary rounded-lg my-auto">
+                        <div className="bg-blue rounded-lg my-auto">
                             <p className="text-lg text-white mb-6">
                                 With over ten years of experience providing
                                 exceptional home care in New Jersey, we
@@ -313,7 +313,7 @@ export default function ElderCareView({ header }: headerProps) {
             <div className="container px-4 py-16 max-w-6xl">
                 <AnimatedSection
                     animation="zoom"
-                    className="text-white rounded-lg p-8 text-center bg-secondary mx-auto"
+                    className="text-white rounded-lg p-8 text-center bg-blue mx-auto"
                 >
                     <h2 className="font-semibold mb-6 text-white">
                         Concierge-Level™ Care at Every Step
@@ -328,9 +328,9 @@ export default function ElderCareView({ header }: headerProps) {
                     </p>
                     <CallToAction
                         buttonLabel="Contact Us Today"
-                        round
                         type="services"
                         value="Elder Care"
+                        variant="pillPrimary"
                     />
                 </AnimatedSection>
             </div>

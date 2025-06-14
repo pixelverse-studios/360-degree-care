@@ -74,7 +74,6 @@ const Dropdown = ({ trigger, children, className }: DropdownProps) => {
     }
 
     const handleMouseLeave = () => {
-        // Add a small delay before closing to allow moving to dropdown content
         timeoutRef.current = setTimeout(() => {
             setIsOpen(false)
         }, 150)
@@ -136,16 +135,13 @@ export function Header() {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState<boolean>(false)
     const [isServicesOpen, setIsServicesOpen] = useState<boolean>(false)
 
-    // Refs for the navigation elements
     const headerRef = useRef<HTMLElement>(null)
     const navRef = useRef<HTMLDivElement>(null)
 
-    // Toggle mobile menu
     const toggleMobileMenu = () => {
         setIsMobileMenuOpen(prevState => !prevState)
     }
 
-    // Handle clicks outside of the entire navigation
     useEffect(() => {
         function handleClickOutside(event: MouseEvent) {
             if (!isMobileMenuOpen) return
@@ -183,6 +179,9 @@ export function Header() {
                                 link.subLinks && link.subLinks.length > 0
 
                             if (hasSubs) {
+                                const isActiveParent = link.subLinks.some(
+                                    sub => sub.route === pathname
+                                )
                                 return (
                                     <li key={link.label}>
                                         <Dropdown
@@ -190,9 +189,8 @@ export function Header() {
                                                 <div
                                                     className={cn(
                                                         'flex items-center text-md text-black font-bold text-xl hover:text-primary transition-colors duration-300',
-                                                        pathname.includes(
-                                                            '/services/'
-                                                        ) && 'text-primary'
+                                                        isActiveParent &&
+                                                            'text-primary'
                                                     )}
                                                 >
                                                     {link.label}
@@ -263,7 +261,7 @@ export function Header() {
                 <div
                     ref={navRef}
                     className={cn(
-                        'fixed inset-x-0 top-[5.8rem] bg-transparent border-b border-b-gray-300 xl:hidden',
+                        'fixed inset-x-0 top-[4.5rem] xl:top-[5.8rem] bg-transparent border-b border-b-gray-300 xl:hidden',
                         'transition-[transform,opacity] duration-300 ease-in-out',
                         isMobileMenuOpen
                             ? 'translate-y-0 opacity-100 pointer-events-auto'

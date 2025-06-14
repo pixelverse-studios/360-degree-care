@@ -200,7 +200,7 @@ export default function AboutDetails() {
                     />
                 </AnimatedSection>
             </div>
-            <div className="bg-secondary">
+            <div className="bg-blue">
                 <AnimatedSection
                     animation="zoom"
                     className="max-w-custom mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 p-10"

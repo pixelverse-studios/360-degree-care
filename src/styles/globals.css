@@ -76,13 +76,6 @@ h4 {
     font-family: 'Merriweather', serif;
 }
 
-main {
-    flex: 1;
-    font-family: 'Rubik', sans-serif;
-    position: relative;
-    margin-top: 5.8rem;
-}
-
 .roundButton {
     height: 8rem;
     width: 8rem !important;
@@ -104,15 +97,15 @@ main {
     height: 8rem;
     width: 8rem !important;
     border-radius: 150px;
-    background: var(--secondary);
-    border: 7px solid var(--secondary);
+    background: var(--blue);
+    border: 7px solid var(--blue);
     box-shadow:
-        0px 3px 8px var(--secondary),
+        0px 3px 8px var(--blue),
         inset 0px 4px 15px lightblue;
     color: var(--white);
     transition: 0.35s ease-in-out;
     &:hover {
-        color: var(--secondary) !important;
+        color: var(--blue) !important;
         background-color: var(--white) !important;
     }
 
@@ -157,7 +150,7 @@ main {
     text-decoration: underline;
 }
 
-.breadcrumbSpacing {
+.breadcrumbSpacing > *:nth-of-type(1) {
     padding-top: 3rem;
 }
 
@@ -168,6 +161,10 @@ main {
     body {
         font-family: var(--font-rubik), sans-serif;
         @apply bg-white text-black;
+    }
+
+    main {
+        @apply flex-1 font-body relative mt-[4.5rem] lg:mt-[5.8rem];
     }
 
     h1 {
@@ -194,11 +191,11 @@ main {
     }
 
     .gradient-down {
-        @apply bg-gradient-to-b from-secondary to-white;
+        @apply bg-gradient-to-b from-blue to-white;
     }
 
     .gradient-up {
-        @apply bg-gradient-to-t from-secondary to-white;
+        @apply bg-gradient-to-t from-blue to-white;
     }
 
     .gradient-left {
@@ -217,7 +214,7 @@ main {
     }
     .nav-link.active {
         /* text color and border using your secondary color */
-        @apply selected-nav-link border-b-2 border-secondary;
+        @apply selected-nav-link border-b-2 border-blue;
     }
 
     .prio {

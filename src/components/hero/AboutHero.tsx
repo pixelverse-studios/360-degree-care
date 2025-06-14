@@ -40,15 +40,15 @@ export default function AboutHero() {
                 </AnimatedSection>
                 <AnimatedSection
                     animation="zoom"
-                    className="flex flex-col lg:flex-row gap-6 mt-12 items-end"
+                    className="flex flex-col gap-6 mt-12 items-end"
                 >
                     <AboutServiceOverview />
                     <div className="mx-auto">
                         <CallToAction
                             buttonLabel="Schedule a Consultation"
-                            round
                             type="general"
                             value=""
+                            variant="pillPrimary"
                         />
                     </div>
                 </AnimatedSection>

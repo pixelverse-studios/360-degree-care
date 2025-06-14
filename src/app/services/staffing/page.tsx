@@ -12,11 +12,11 @@ export default function StaffingSolutionsPage() {
         <>
             <MedicalStaffingSeoHead />
             <main className="breadcrumbSpacing">
-                <div className="bg-white">
+                <div className="">
                     {/* HERO SECTION */}
                     <AnimatedSection
                         animation="zoom"
-                        className="bg-white-bright py-8"
+                        className="bg-white-bright pb-8"
                     >
                         <div className="container mx-auto px-4 max-w-6xl">
                             <h1>Medical Staffing</h1>
@@ -219,7 +219,7 @@ export default function StaffingSolutionsPage() {
                             </p>
                             <CallToAction
                                 buttonLabel="Join the Team"
-                                round
+                                variant="pillPrimary"
                                 type="general"
                                 value=""
                             />
