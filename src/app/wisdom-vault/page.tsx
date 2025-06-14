@@ -18,7 +18,7 @@ export default function VaultOfWisdom() {
     const currentVideo = videoMetadata[currentVideoIndex]
 
     return (
-        <main className="breadcrumbSpacing">
+        <main>
             <AnimatedSection animation="zoom" className="page-wrapper mb-12">
                 <h1 className="text-3xl text-center mx-auto">
                     Wisdom of the Ages, Timeless Stories, and Relatable Journeys

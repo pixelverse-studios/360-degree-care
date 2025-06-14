@@ -10,7 +10,7 @@ interface CompanionCareViewProps {
 
 export default function CompanionCareView({ header }: CompanionCareViewProps) {
     return (
-        <main className="breadcrumbSpacing">
+        <main>
             <div className="">
                 <AnimatedSection
                     animation="zoom"

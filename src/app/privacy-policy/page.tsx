@@ -4,7 +4,7 @@ import AnimatedSection from '@/components/animated-section'
 
 export default function PrivacyPolicyPage() {
     return (
-        <main className="bg-white-bright breadcrumbSpacing">
+        <main className="bg-white-bright">
             <AnimatedSection
                 animation="zoom"
                 className="max-w-custom mx-auto p-6shadow-lg rounded-lg mb-6"

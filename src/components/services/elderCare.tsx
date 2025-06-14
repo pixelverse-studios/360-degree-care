@@ -10,7 +10,7 @@ interface headerProps {
 
 export default function ElderCareView({ header }: headerProps) {
     return (
-        <main className="bg-white breadcrumbSpacing">
+        <main className="bg-white">
             {/* Hero Section */}
             <div className="bg-white-bright py-8">
                 <AnimatedSection

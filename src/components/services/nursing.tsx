@@ -7,7 +7,7 @@ import AnimatedSection from '@/components/animated-section'
 
 export default function NursingView({ header }: { header: string }) {
     return (
-        <main className="bg-white breadcrumbSpacing">
+        <main className="bg-white">
             {/* Hero Section */}
             <div className="bg-white-bright">
                 <AnimatedSection

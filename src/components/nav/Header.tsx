@@ -3,149 +3,45 @@
 import { useState, useRef, useEffect } from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import { ChevronDown } from 'lucide-react'
+import { ChevronDown, Phone } from 'lucide-react'
+import { FaFacebookF, FaInstagram } from 'react-icons/fa6'
 import { cn } from '@/lib/utils'
 import { navLinks } from '@/utils/routes'
 import Logo from '../Logo'
+import { Button } from '../ui/button'
+import { FACEBOOK, INSTA, PHONE } from '@/utils/constants'
 import CallToAction from '../CallToAction'
 
-interface HamburgerProps {
-    isOpen: boolean
-    toggleMenu: () => void
-}
-
-const HamburgerMenu = ({ isOpen, toggleMenu }: HamburgerProps) => {
+function ContactLinks() {
     return (
-        <button
-            className="group xl:hidden flex flex-col justify-center items-center w-10 h-10 space-y-1.5 focus:outline-none rounded-full transition-all duration-300 ease-in-out hover:bg-gray-100 hover:shadow-md hover:scale-105"
-            onClick={e => {
-                e.stopPropagation()
-                toggleMenu()
-            }}
-            aria-label={isOpen ? 'Close menu' : 'Open menu'}
-            aria-expanded={isOpen}
-        >
-            <span
-                className={cn(
-                    'block w-6 h-0.5 transition-all duration-300',
-                    isOpen
-                        ? 'translate-y-2 rotate-45 bg-[var(--primary)]'
-                        : 'bg-black group-hover:bg-[var(--primary)]'
-                )}
-            />
-            <span
-                className={cn(
-                    'block w-6 h-0.5 transition-all duration-300',
-                    isOpen
-                        ? 'opacity-0 bg-[var(--primary)]'
-                        : 'bg-black group-hover:bg-[var(--primary)]'
-                )}
-            />
-            <span
-                className={cn(
-                    'block w-6 h-0.5 transition-all duration-300',
-                    isOpen
-                        ? '-translate-y-2 -rotate-45 bg-[var(--primary)]'
-                        : 'bg-black group-hover:bg-[var(--primary)]'
-                )}
-            />
-        </button>
-    )
-}
-
-// Custom Dropdown Component
-interface DropdownProps {
-    trigger: React.ReactNode
-    children: React.ReactNode
-    className?: string
-}
-
-const Dropdown = ({ trigger, children, className }: DropdownProps) => {
-    const [isOpen, setIsOpen] = useState(false)
-    const dropdownRef = useRef<HTMLDivElement>(null)
-    const timeoutRef = useRef<NodeJS.Timeout | null>(null)
-
-    const handleMouseEnter = () => {
-        if (timeoutRef.current) {
-            clearTimeout(timeoutRef.current)
-            timeoutRef.current = null
-        }
-        setIsOpen(true)
-    }
-
-    const handleMouseLeave = () => {
-        timeoutRef.current = setTimeout(() => {
-            setIsOpen(false)
-        }, 150)
-    }
-
-    useEffect(() => {
-        const handleClickOutside = (event: MouseEvent) => {
-            if (
-                dropdownRef.current &&
-                !dropdownRef.current.contains(event.target as Node)
-            ) {
-                setIsOpen(false)
-            }
-        }
-
-        document.addEventListener('mousedown', handleClickOutside)
-        return () => {
-            document.removeEventListener('mousedown', handleClickOutside)
-            if (timeoutRef.current) {
-                clearTimeout(timeoutRef.current)
-            }
-        }
-    }, [])
-
-    return (
-        <div
-            ref={dropdownRef}
-            className="relative"
-            onMouseEnter={handleMouseEnter}
-            onMouseLeave={handleMouseLeave}
-        >
-            <div className="cursor-pointer">{trigger}</div>
-            {/* Invisible bridge to prevent dropdown from closing when moving to content */}
-            <div
-                className={cn(
-                    'absolute top-full left-0 w-full h-2 bg-transparent',
-                    isOpen ? 'block' : 'hidden'
-                )}
-            />
-            <div
-                className={cn(
-                    'absolute top-full left-0 mt-2 bg-white border border-gray-300 rounded-md shadow-lg transition-all duration-200 ease-in-out z-50',
-                    isOpen
-                        ? 'opacity-100 visible translate-y-0'
-                        : 'opacity-0 invisible -translate-y-2 pointer-events-none',
-                    className
-                )}
-                onMouseEnter={handleMouseEnter}
-                onMouseLeave={handleMouseLeave}
+        <div className="flex gap-4">
+            <Button
+                variant="pillPrimary"
+                size="sm"
+                asChild
+                className="rounded-3xl h-10"
             >
-                {children}
-            </div>
+                <a href={`tel:${PHONE}`} className="flex items-center gap-2">
+                    <Phone size={16} />
+                    {PHONE}
+                </a>
+            </Button>
+            <a href={FACEBOOK} target="_blank" className="nav-social-icon">
+                <FaFacebookF size={20} />
+            </a>
+            <a href={INSTA} target="_blank" className="nav-social-icon">
+                <FaInstagram size={24} />
+            </a>
         </div>
     )
 }
 
 export function Header() {
-    const pathname = usePathname()
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState<boolean>(false)
-    const [isServicesOpen, setIsServicesOpen] = useState<boolean>(false)
-
     const headerRef = useRef<HTMLElement>(null)
-    const navRef = useRef<HTMLDivElement>(null)
-
-    const toggleMobileMenu = () => {
-        setIsMobileMenuOpen(prevState => !prevState)
-    }
 
     useEffect(() => {
-        function handleClickOutside(event: MouseEvent) {
-            if (!isMobileMenuOpen) return
-
+        const handleClickOutside = (event: MouseEvent) => {
             if (
                 headerRef.current &&
                 !headerRef.current.contains(event.target as Node)
@@ -153,232 +49,306 @@ export function Header() {
                 setIsMobileMenuOpen(false)
             }
         }
-
         document.addEventListener('mousedown', handleClickOutside)
         return () => {
             document.removeEventListener('mousedown', handleClickOutside)
         }
-    }, [isMobileMenuOpen])
+    }, [])
 
     return (
         <header
             ref={headerRef}
-            className="fixed top-0 left-0 right-0 w-full bg-white-muted z-50 border-b border-b-gray-300 shadow-xl"
+            className="fixed top-0 left-0 right-0 w-full bg-white z-50 shadow-md"
         >
-            <div className="max-w-custom mx-auto px-6 py-4 flex items-center justify-between">
+            <TopBar />
+            <NavBar
+                isMobileMenuOpen={isMobileMenuOpen}
+                toggleMobileMenu={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+                closeMobileMenu={() => setIsMobileMenuOpen(false)}
+            />
+        </header>
+    )
+}
+
+const TopBar = () => (
+    <div className="hidden lg:block bg-white-bright border-b border-gray-200 h-30">
+        <div className="max-w-custom mx-auto px-6 py-2 flex items-center justify-between">
+            <Link href="/">
+                <Logo invert={false} size="lg" />
+            </Link>
+            <div className="flex flex-col-reverse items-end max-w-80 gap-2 text-right">
+                <p className="text-sm text-blue-dark font-medium italic">
+                    Independent & family-owned agency providing exceptional home
+                    care in New Jersey.
+                </p>
+                <ContactLinks />
+            </div>
+        </div>
+    </div>
+)
+
+interface NavBarProps {
+    isMobileMenuOpen: boolean
+    toggleMobileMenu: () => void
+    closeMobileMenu: () => void
+}
+
+const NavBar = ({
+    isMobileMenuOpen,
+    toggleMobileMenu,
+    closeMobileMenu
+}: NavBarProps) => (
+    <div className="bg-blue">
+        <div className="max-w-custom mx-auto px-6 flex items-center justify-between h-16 lg:h-10">
+            <div className="lg:hidden">
                 <Link href="/">
-                    <Logo invert={false} size="lg" />
+                    <Logo invert={true} size="md" />
                 </Link>
+            </div>
 
-                {/* --- DESKTOP --- */}
-                <nav className="hidden xl:block">
-                    <ul className="flex items-center space-x-6">
-                        {navLinks.map(link => {
-                            const isActive = pathname === link.route
-                            const hasSubs =
-                                link.subLinks && link.subLinks.length > 0
+            <nav className="hidden lg:flex items-center justify-between w-full h-10">
+                <DesktopNav />
+                <CallToAction
+                    buttonLabel="Get In Touch"
+                    buttonClass="h-[1.75rem]"
+                    type="general"
+                    value=""
+                    variant="pillPrimary"
+                />
+            </nav>
 
-                            if (hasSubs) {
-                                const isActiveParent = link.subLinks.some(
-                                    sub => sub.route === pathname
-                                )
-                                return (
-                                    <li key={link.label}>
-                                        <Dropdown
-                                            trigger={
-                                                <div
-                                                    className={cn(
-                                                        'flex items-center text-md text-black font-bold text-xl hover:text-primary transition-colors duration-300',
-                                                        isActiveParent &&
-                                                            'text-primary'
-                                                    )}
-                                                >
-                                                    {link.label}
-                                                    <ChevronDown className="ml-1 h-4 w-4" />
-                                                </div>
-                                            }
-                                            className="w-[400px]"
-                                        >
-                                            <div className="p-4">
-                                                <ul className="space-y-3">
-                                                    {link.subLinks.map(sub => (
-                                                        <li key={sub.label}>
-                                                            <Link
-                                                                href={sub.route}
-                                                                className={cn(
-                                                                    'block p-3 rounded-md hover:text-primary duration-300 ease-in-out text-xl',
-                                                                    pathname ===
-                                                                        sub.route
-                                                                        ? 'text-primary'
-                                                                        : 'text-black'
-                                                                )}
-                                                            >
-                                                                <div className="text-md font-medium">
-                                                                    {sub.label}
-                                                                </div>
-                                                            </Link>
-                                                        </li>
-                                                    ))}
-                                                </ul>
-                                            </div>
-                                        </Dropdown>
-                                    </li>
-                                )
-                            }
-
-                            return (
-                                <li key={link.label}>
-                                    <Link
-                                        href={link.route}
-                                        className={cn(
-                                            'nav-link text-md text-black font-bold text-xl hover:text-primary transition-colors duration-300',
-                                            isActive && 'text-primary'
-                                        )}
-                                    >
-                                        {link.label}
-                                    </Link>
-                                </li>
-                            )
-                        })}
-                        <li>
-                            <CallToAction
-                                buttonLabel="Get In Touch"
-                                type="general"
-                                value=""
-                                variant="pillPrimary"
-                            />
-                        </li>
-                    </ul>
-                </nav>
-
-                {/* Hamburger Menu Button */}
+            <div className="lg:hidden">
                 <HamburgerMenu
                     isOpen={isMobileMenuOpen}
                     toggleMenu={toggleMobileMenu}
                 />
-
-                {/* --- MOBILE MENU --- */}
-                <div
-                    ref={navRef}
-                    className={cn(
-                        'fixed inset-x-0 top-[4.5rem] xl:top-[5.8rem] bg-transparent border-b border-b-gray-300 xl:hidden',
-                        'transition-[transform,opacity] duration-300 ease-in-out',
-                        isMobileMenuOpen
-                            ? 'translate-y-0 opacity-100 pointer-events-auto'
-                            : '-translate-y-full opacity-0 pointer-events-none'
-                    )}
-                >
-                    <nav className="max-w-custom mx-auto px-6 py-4 bg-white shadow-xl">
-                        <ul className="space-y-4">
-                            {navLinks.map(link => {
-                                const isActive = pathname === link.route
-                                const hasSubs =
-                                    link.subLinks && link.subLinks.length > 0
-
-                                return (
-                                    <li key={link.label}>
-                                        {hasSubs ? (
-                                            <div>
-                                                <button
-                                                    className="flex items-center justify-between w-fit text-md rounded-md font-bold text-xl"
-                                                    onClick={e => {
-                                                        e.stopPropagation()
-                                                        setIsServicesOpen(
-                                                            !isServicesOpen
-                                                        )
-                                                    }}
-                                                >
-                                                    {link.label}
-                                                    <ChevronDown
-                                                        className={cn(
-                                                            'h-4 w-4 transition-transform duration-200',
-                                                            isServicesOpen &&
-                                                                'rotate-180'
-                                                        )}
-                                                    />
-                                                </button>
-                                                <div
-                                                    className={cn(
-                                                        'grid transition-[grid-template-rows,opacity] duration-200 ease-in-out',
-                                                        isServicesOpen
-                                                            ? 'grid-rows-[1fr] opacity-100'
-                                                            : 'grid-rows-[0fr] opacity-0'
-                                                    )}
-                                                >
-                                                    <div className="overflow-hidden">
-                                                        <ul className="pl-4 py-2 space-y-4 mt-2">
-                                                            {link.subLinks.map(
-                                                                sub => (
-                                                                    <li
-                                                                        key={
-                                                                            sub.label
-                                                                        }
-                                                                    >
-                                                                        <Link
-                                                                            className={cn(
-                                                                                'nav-link',
-                                                                                pathname ===
-                                                                                    sub.route
-                                                                                    ? 'text-primary'
-                                                                                    : ''
-                                                                            )}
-                                                                            href={
-                                                                                sub.route
-                                                                            }
-                                                                            onClick={e => {
-                                                                                e.stopPropagation()
-                                                                                setIsMobileMenuOpen(
-                                                                                    false
-                                                                                )
-                                                                            }}
-                                                                        >
-                                                                            {
-                                                                                sub.label
-                                                                            }
-                                                                        </Link>
-                                                                    </li>
-                                                                )
-                                                            )}
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        ) : (
-                                            <Link
-                                                href={link.route}
-                                                className={cn(
-                                                    'nav-link',
-                                                    isActive && 'active'
-                                                )}
-                                                onClick={e => {
-                                                    e.stopPropagation()
-                                                    setIsMobileMenuOpen(false)
-                                                }}
-                                            >
-                                                {link.label}
-                                            </Link>
-                                        )}
-                                    </li>
-                                )
-                            })}
-                            <li>
-                                <div
-                                    onClick={e => {
-                                        e.stopPropagation()
-                                        setIsMobileMenuOpen(false)
-                                    }}
-                                >
-                                    <CallToAction
-                                        buttonLabel="Get In Touch"
-                                        type="general"
-                                        value=""
-                                    />
-                                </div>
-                            </li>
-                        </ul>
-                    </nav>
-                </div>
             </div>
-        </header>
+        </div>
+        <MobileNav isOpen={isMobileMenuOpen} closeMenu={closeMobileMenu} />
+    </div>
+)
+
+const DesktopNav = () => {
+    const pathname = usePathname()
+    return (
+        <ul className="flex items-center space-x-8">
+            {navLinks.map(link => (
+                <li key={link.label}>
+                    {link.subLinks && link.subLinks.length > 0 ? (
+                        <Dropdown
+                            trigger={
+                                <div
+                                    className={cn(
+                                        'flex items-center text-lg text-white font-medium hover:text-primary-muted transition-colors duration-300 cursor-pointer',
+                                        link.subLinks.some(
+                                            sub => sub.route === pathname
+                                        ) && 'text-primary'
+                                    )}
+                                >
+                                    {link.label}
+                                    <ChevronDown className="ml-1 h-5 w-5" />
+                                </div>
+                            }
+                            className="w-64"
+                        >
+                            <div className="p-2">
+                                <ul className="space-y-1">
+                                    {link.subLinks.map(sub => (
+                                        <li key={sub.label}>
+                                            <Link
+                                                href={sub.route}
+                                                className="block p-3 rounded-md hover:bg-blue-dark hover:text-white transition-colors text-black cursor-pointer"
+                                            >
+                                                {sub.label}
+                                            </Link>
+                                        </li>
+                                    ))}
+                                </ul>
+                            </div>
+                        </Dropdown>
+                    ) : (
+                        <Link
+                            href={link.route}
+                            className={cn(
+                                'text-lg text-white font-medium hover:text-primary transition-colors duration-300',
+                                pathname === link.route && 'text-primary'
+                            )}
+                        >
+                            {link.label}
+                        </Link>
+                    )}
+                </li>
+            ))}
+        </ul>
+    )
+}
+
+interface MobileNavProps {
+    isOpen: boolean
+    closeMenu: () => void
+}
+
+const MobileNav = ({ isOpen, closeMenu }: MobileNavProps) => {
+    const [isServicesOpen, setIsServicesOpen] = useState(false)
+    const [isWisdomOpen, setIsWisdomOpen] = useState(false)
+
+    return (
+        <div
+            className={cn(
+                'absolute left-0 w-full bg-white shadow-lg lg:hidden transition-transform duration-300 ease-in-out',
+                isOpen ? 'translate-y-0' : '-translate-y-[150%]'
+            )}
+        >
+            <ul className="flex flex-col p-4 space-y-4">
+                {navLinks.map(link => (
+                    <li key={link.label}>
+                        {link.subLinks && link.subLinks.length > 0 ? (
+                            <div>
+                                <button
+                                    className="flex items-center justify-between w-full text-lg font-bold"
+                                    onClick={() =>
+                                        link.label === 'Services'
+                                            ? setIsServicesOpen(!isServicesOpen)
+                                            : setIsWisdomOpen(!isWisdomOpen)
+                                    }
+                                >
+                                    <span>{link.label}</span>
+                                    <ChevronDown
+                                        className={cn(
+                                            'h-5 w-5 transition-transform',
+                                            (link.label === 'Services' &&
+                                                isServicesOpen) ||
+                                                (link.label ===
+                                                    'Wisdom Vault' &&
+                                                    isWisdomOpen)
+                                                ? 'rotate-180'
+                                                : ''
+                                        )}
+                                    />
+                                </button>
+                                <div
+                                    className={cn(
+                                        'overflow-hidden transition-all duration-300',
+                                        (link.label === 'Services' &&
+                                            isServicesOpen) ||
+                                            (link.label === 'Wisdom Vault' &&
+                                                isWisdomOpen)
+                                            ? 'max-h-96'
+                                            : 'max-h-0'
+                                    )}
+                                >
+                                    <ul className="pl-4 pt-2 space-y-2">
+                                        {link.subLinks.map(sub => (
+                                            <li key={sub.label}>
+                                                <Link
+                                                    href={sub.route}
+                                                    className="block text-gray-700 hover:text-primary"
+                                                    onClick={closeMenu}
+                                                >
+                                                    {sub.label}
+                                                </Link>
+                                            </li>
+                                        ))}
+                                    </ul>
+                                </div>
+                            </div>
+                        ) : (
+                            <Link
+                                href={link.route}
+                                className="text-lg font-bold"
+                                onClick={closeMenu}
+                            >
+                                {link.label}
+                            </Link>
+                        )}
+                    </li>
+                ))}
+                <li>
+                    <CallToAction
+                        buttonLabel="Get In Touch"
+                        type="general"
+                        value=""
+                        variant="pillPrimary"
+                    />
+                </li>
+                <li className="border-t border-t-green pt-4">
+                    <ContactLinks />
+                </li>
+            </ul>
+        </div>
+    )
+}
+
+const HamburgerMenu = ({
+    isOpen,
+    toggleMenu
+}: {
+    isOpen: boolean
+    toggleMenu: () => void
+}) => (
+    <button
+        onClick={toggleMenu}
+        className="z-50 flex flex-col justify-center items-center w-10 h-10 space-y-1.5"
+    >
+        <span
+            className={cn(
+                'block w-6 h-0.5 bg-white transition-transform duration-300',
+                isOpen && 'translate-y-2 rotate-45'
+            )}
+        />
+        <span
+            className={cn(
+                'block w-6 h-0.5 bg-white transition-opacity duration-300',
+                isOpen && 'opacity-0'
+            )}
+        />
+        <span
+            className={cn(
+                'block w-6 h-0.5 bg-white transition-transform duration-300',
+                isOpen && '-translate-y-2 -rotate-45'
+            )}
+        />
+    </button>
+)
+
+const Dropdown = ({
+    trigger,
+    children,
+    className
+}: {
+    trigger: React.ReactNode
+    children: React.ReactNode
+    className?: string
+}) => {
+    const [isOpen, setIsOpen] = useState(false)
+    const timeoutRef = useRef<NodeJS.Timeout | null>(null)
+
+    const handleMouseEnter = () => {
+        if (timeoutRef.current) clearTimeout(timeoutRef.current)
+        setIsOpen(true)
+    }
+    const handleMouseLeave = () => {
+        timeoutRef.current = setTimeout(() => setIsOpen(false), 200)
+    }
+
+    return (
+        <div
+            className="relative"
+            onMouseEnter={handleMouseEnter}
+            onMouseLeave={handleMouseLeave}
+        >
+            {trigger}
+            <div
+                className={cn(
+                    'absolute top-full left-1/2 -translate-x-1/2 mt-4 bg-white border border-gray-200 rounded-lg shadow-xl transition-all duration-300 ease-in-out z-50',
+                    isOpen
+                        ? 'opacity-100 visible translate-y-0'
+                        : 'opacity-0 invisible -translate-y-2 pointer-events-none',
+                    className
+                )}
+            >
+                {children}
+            </div>
+        </div>
     )
 }

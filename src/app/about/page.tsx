@@ -11,7 +11,7 @@ export default function AboutPage() {
     return (
         <>
             <AboutSeoHead />
-            <main className="breadcrumbSpacing">
+            <main>
                 <AboutHero />
                 <AboutDetails />
                 <AboutStatBanner />

@@ -150,10 +150,6 @@ h4 {
     text-decoration: underline;
 }
 
-.breadcrumbSpacing > *:nth-of-type(1) {
-    padding-top: 3rem;
-}
-
 @layer base {
     * {
         @apply border-border outline-ring text-base;
@@ -164,7 +160,7 @@ h4 {
     }
 
     main {
-        @apply flex-1 font-body relative mt-[4.5rem] lg:mt-[5.8rem];
+        @apply flex-1 font-body relative mt-[5rem] lg:mt-[12rem];
     }
 
     h1 {
@@ -239,6 +235,10 @@ h4 {
 
     .section {
         @apply mx-auto max-w-custom h-full px-6;
+    }
+
+    .nav-social-icon {
+        @apply h-10 w-10 bg-green border-b-8 border-green-dark rounded-full text-white font-bold flex items-center justify-center hover:-translate-y-px active:translate-y-0.5 active:border-b-2 active:shadow-md transition-all duration-200;
     }
 }
 

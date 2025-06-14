@@ -6,7 +6,7 @@ import AnimatedSection from '@/components/animated-section'
 
 export default function HowToPay() {
     return (
-        <main className="breadcrumbSpacing">
+        <main>
             <AnimatedSection
                 animation="zoom"
                 className="max-w-custom px-6 py-8"

@@ -11,7 +11,7 @@ export default function StaffingSolutionsPage() {
     return (
         <>
             <MedicalStaffingSeoHead />
-            <main className="breadcrumbSpacing">
+            <main>
                 <div className="">
                     {/* HERO SECTION */}
                     <AnimatedSection

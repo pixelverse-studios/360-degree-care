@@ -4,7 +4,7 @@ import AnimatedSection from '@/components/animated-section'
 
 export default function NondiscriminationPage() {
     return (
-        <main className="breadcrumbSpacing">
+        <main>
             <AnimatedSection
                 animation="zoom"
                 className="max-w-custom mx-auto px-6 py-12 bg-white-bright mb-6"

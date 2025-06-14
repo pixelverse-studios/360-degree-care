@@ -11,7 +11,7 @@ interface headerProps {
 
 export default function HomeAidesView({ header }: headerProps) {
     return (
-        <main className="breadcrumbSpacing">
+        <main>
             <HomeHealthCareHero header={header} />
             <HomeHealthAideServices />
             <section className="bg-white py-12">

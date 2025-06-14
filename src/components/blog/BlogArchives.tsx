@@ -94,7 +94,7 @@ export default function BlogArchives({ posts }: BlogArchivesProps) {
     }
 
     return (
-        <main className="breadcrumbSpacing">
+        <main>
             {/* Header Section */}
             <div className="gradient-left text-white max-w-custom">
                 <div className="px-6 py-10">

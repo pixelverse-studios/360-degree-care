@@ -23,7 +23,7 @@ export default function ContactPage() {
     }
 
     return (
-        <main className="bg-white-bright text-black breadcrumbSpacing">
+        <main className="bg-white-bright text-black">
             <section className="max-w-custom mx-auto px-6 pb-8">
                 <AnimatedSection animation="zoom" className="mb-8">
                     <h1>Get in Touch with Us</h1>

@@ -93,7 +93,7 @@ export default function BlogTemplate({ blogPost }: BlogTemplateProps) {
     }
 
     return (
-        <main className="breadcrumbSpacing">
+        <main>
             {/* Hero Section */}
             <div className="relative">
                 <img

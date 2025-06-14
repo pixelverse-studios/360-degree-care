@@ -11,7 +11,7 @@ import AnimatedSection from '@/components/animated-section'
 
 export default function FAQPage() {
     return (
-        <main className="breadcrumbSpacing">
+        <main>
             <section className="px-6 py-8 bg-white-bright">
                 <AnimatedSection animation="zoom">
                     <FaqSection
