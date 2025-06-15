@@ -85,6 +85,7 @@ export default function Footer() {
                         <p className="font-bold text-lg">Now Servicing</p>
                         {activeCounties.map(county => (
                             <Link
+                                key={county.slug}
                                 href={county.slug}
                                 className={cn(quickLinkStyles, linkHover)}
                             >
