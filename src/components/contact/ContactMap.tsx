@@ -1,3 +1,5 @@
+'use client'
+
 import Link from 'next/link'
 import { Phone, Mail, MapPin } from 'lucide-react'
 import { PHONE, ADDRESS } from '@/utils/constants'
