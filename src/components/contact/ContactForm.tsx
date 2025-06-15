@@ -27,6 +27,7 @@ import {
 } from '../ui/select'
 import ContactSuccessMessage from './ContactSuccessMessage'
 import { EMAIL, PHONE, ADDRESS } from '@/utils/constants'
+import GoogleReviewLink from '../GoogleReviewLink'
 
 function canSubmit(form: any) {
     return Object.values(form).every(val => val)
@@ -89,23 +90,26 @@ export default function ContactForm() {
 
     return (
         <div className="grid grid-cols-1 md:grid-cols-2 shadow-xl">
-            <div className="bg-primary text-white p-6 flex flex-col rounded-tl-lg rounded-bl-lg space-y-4">
-                <h2 className="font-bold text-white">Get In Touch</h2>
-                {config?.description && <p>{config.description}</p>}
-                <div className="flex items-center space-x-2">
-                    <Phone className="w-5 h-5" />
-                    <span>{PHONE}</span>
-                </div>
-                <div className="flex items-center space-x-2">
-                    <Mail className="w-5 h-5" />
-                    <span>{EMAIL}</span>
-                </div>
-                <div className="flex items-center space-x-2">
-                    <MapPin className="w-5 h-5" />
-                    <span>
-                        {ADDRESS.STREET}, {ADDRESS.DETAILS}
-                    </span>
-                </div>
+            <div className="bg-primary text-white p-6 flex flex-col gap-6 justify-between rounded-tl-lg rounded-bl-lg">
+                <article className="flex flex-col space-y-4">
+                    <h2 className="font-bold text-white">Get In Touch</h2>
+                    {config?.description && <p>{config.description}</p>}
+                    <div className="flex items-center space-x-2">
+                        <Phone className="w-5 h-5" />
+                        <span>{PHONE}</span>
+                    </div>
+                    <div className="flex items-center space-x-2">
+                        <Mail className="w-5 h-5" />
+                        <span>{EMAIL}</span>
+                    </div>
+                    <div className="flex items-center space-x-2">
+                        <MapPin className="w-5 h-5" />
+                        <span>
+                            {ADDRESS.STREET}, {ADDRESS.DETAILS}
+                        </span>
+                    </div>
+                </article>
+                <GoogleReviewLink />
             </div>
             <div className="p-6 bg-white-bright rounded-tr-lg rounded-br-lg">
                 <Form {...form}>

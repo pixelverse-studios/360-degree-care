@@ -9,6 +9,7 @@ import { cn } from '@/lib/utils'
 import { navLinks, footerResources } from '@/utils/routes'
 import { ADDRESS, FACEBOOK, INSTA, PHONE } from '@/utils/constants'
 import { HoverPopover } from './ui/popover'
+import GoogleReviewLink from './GoogleReviewLink'
 
 const [aboutLink, serviceLink, faqLink] = navLinks
 
@@ -67,6 +68,7 @@ export default function Footer() {
                                 </a>
                             </div>
                         </div>
+                        <GoogleReviewLink className="mt-8" />
                     </div>
 
                     {/* Middle - Links */}

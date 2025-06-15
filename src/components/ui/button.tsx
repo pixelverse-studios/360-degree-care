@@ -8,7 +8,6 @@ const basePillStyles =
     'h-[3rem] font-bold border-b-8 shadow-lg hover:-translate-y-px active:translate-y-0.5 active:border-b-2 active:shadow-md rounded-3xl'
 
 const buttonVariants = cva(
-    // ✨ Base styles updated for better transitions and focus states
     'inline-flex items-center justify-center rounded-md text-md font-medium ring-offset-background transition-all duration-200 ease-in-out focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 text-balance',
     {
         variants: {
