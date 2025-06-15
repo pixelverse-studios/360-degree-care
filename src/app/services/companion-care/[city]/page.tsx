@@ -1,6 +1,9 @@
+// src/app/services/companion-care/[city]/page.tsx
+
 import { Metadata } from 'next'
 import { notFound } from 'next/navigation'
-import { generateLocationSEO, cities } from '@/lib/locationSeo'
+// Updated import
+import { generateLocationSEO, getAllCitySlugs } from '@/lib/locationSeo'
 import CompanionCareView from '@/components/services/companionCare'
 
 interface Props {
@@ -9,6 +12,7 @@ interface Props {
     }
 }
 
+// ... generateMetadata function remains the same ...
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
     const { city } = params
     const seoData = generateLocationSEO('companion-care', city)
@@ -44,12 +48,15 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     }
 }
 
+// This function now generates paths for ALL cities in ALL counties
 export async function generateStaticParams() {
-    return cities.map(city => ({
+    const citySlugs = getAllCitySlugs()
+    return citySlugs.map(city => ({
         city
     }))
 }
 
+// ... Default export component remains the same ...
 export default function CompanionCareCityPage({ params }: Props) {
     const { city } = params
 

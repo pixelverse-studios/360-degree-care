@@ -1,0 +1,737 @@
+This file is a merged representation of a subset of the codebase, containing specifically included files, combined into a single document by Repomix.
+
+================================================================
+File Summary
+================================================================
+
+Purpose:
+--------
+This file contains a packed representation of the entire repository's contents.
+It is designed to be easily consumable by AI systems for analysis, code review,
+or other automated processes.
+
+File Format:
+------------
+The content is organized as follows:
+1. This summary section
+2. Repository information
+3. Directory structure
+4. Repository files (if enabled)
+5. Multiple file entries, each consisting of:
+  a. A separator line (================)
+  b. The file path (File: path/to/file)
+  c. Another separator line
+  d. The full contents of the file
+  e. A blank line
+
+Usage Guidelines:
+-----------------
+- This file should be treated as read-only. Any changes should be made to the
+  original repository files, not this packed version.
+- When processing this file, use the file path to distinguish
+  between different files in the repository.
+- Be aware that this file may contain sensitive information. Handle it with
+  the same level of security as you would the original repository.
+
+Notes:
+------
+- Some files may have been excluded based on .gitignore rules and Repomix's configuration
+- Binary files are not included in this packed representation. Please refer to the Repository Structure section for a complete list of file paths, including binary files
+- Only files matching these patterns are included: src/lib/locationSeo.ts, src/app/services/companion-care/[city]/page.tsx, src/app/services/elder-care/[city]/page.tsx, src/app/services/home-health-aides/[city]/page.tsx, src/app/services/nursing/[city]/page.tsx, src/app/services/personal-care/[city]/page.tsx
+- Files matching patterns in .gitignore are excluded
+- Files matching default ignore patterns are excluded
+- Files are sorted by Git change count (files with more changes are at the bottom)
+
+
+================================================================
+Directory Structure
+================================================================
+src/
+  app/
+    services/
+      companion-care/
+        [city]/
+          page.tsx
+      elder-care/
+        [city]/
+          page.tsx
+      home-health-aides/
+        [city]/
+          page.tsx
+      nursing/
+        [city]/
+          page.tsx
+      personal-care/
+        [city]/
+          page.tsx
+  lib/
+    locationSeo.ts
+
+================================================================
+Files
+================================================================
+
+================
+File: src/app/services/elder-care/[city]/page.tsx
+================
+import { Metadata } from 'next'
+import { notFound } from 'next/navigation'
+import { generateLocationSEO, cities } from '@/lib/locationSeo'
+import ElderCareView from '@/components/services/elderCare'
+
+interface Props {
+    params: {
+        city: string
+    }
+}
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+    const { city } = params
+    const seoData = generateLocationSEO('elder-care', city)
+
+    if (!seoData) {
+        return {
+            title: 'Service Not Found',
+            description: 'The requested service page could not be found.'
+        }
+    }
+
+    const { title, metaDescription, location } = seoData
+
+    return {
+        title,
+        description: metaDescription,
+        keywords: seoData.keywords,
+        openGraph: {
+            title,
+            description: metaDescription,
+            type: 'website',
+            locale: 'en_US',
+            siteName: 'Your Healthcare Services'
+        },
+        other: {
+            'geo.region': 'US-NJ',
+            'geo.placename': `${location.name}, New Jersey`,
+            'geo.postal-code': location.zipCodes.join(', ')
+        },
+        alternates: {
+            canonical: `/services/elder-care/${city}`
+        }
+    }
+}
+
+export async function generateStaticParams() {
+    return cities.map(city => ({
+        city
+    }))
+}
+
+export default function ElderCareCityPage({ params }: Props) {
+    const { city } = params
+
+    const seoData = generateLocationSEO('elder-care', city)
+
+    if (!seoData) {
+        notFound()
+    }
+
+    const { h1, description, location, service: serviceData } = seoData
+    const structuredData = {
+        '@context': 'https://schema.org',
+        '@type': 'LocalBusiness',
+        name: `${serviceData.name} Services`,
+        description: description,
+        address: {
+            '@type': 'PostalAddress',
+            addressLocality: location.name,
+            addressRegion: 'NJ',
+            addressCountry: 'US',
+            postalCode: location.zipCodes[0] || ''
+        },
+        areaServed: {
+            '@type': 'City',
+            name: location.name
+        },
+        telephone: '(555) 123-4567',
+        serviceArea: location.nearbyAreas.concat([location.name])
+    }
+
+    return (
+        <>
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{
+                    __html: JSON.stringify(structuredData)
+                }}
+            />
+
+            <ElderCareView header={h1} />
+        </>
+    )
+}
+
+================
+File: src/app/services/home-health-aides/[city]/page.tsx
+================
+import { Metadata } from 'next'
+import { notFound } from 'next/navigation'
+import { generateLocationSEO, cities } from '@/lib/locationSeo'
+import HomeAidesView from '@/components/services/homeAides'
+
+interface Props {
+    params: {
+        city: string
+    }
+}
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+    const { city } = params
+    const seoData = generateLocationSEO('home-health-aides', city)
+
+    if (!seoData) {
+        return {
+            title: 'Service Not Found',
+            description: 'The requested service page could not be found.'
+        }
+    }
+
+    const { title, metaDescription, location } = seoData
+
+    return {
+        title,
+        description: metaDescription,
+        keywords: seoData.keywords,
+        openGraph: {
+            title,
+            description: metaDescription,
+            type: 'website',
+            locale: 'en_US',
+            siteName: 'Your Healthcare Services'
+        },
+        other: {
+            'geo.region': 'US-NJ',
+            'geo.placename': `${location.name}, New Jersey`,
+            'geo.postal-code': location.zipCodes.join(', ')
+        },
+        alternates: {
+            canonical: `/services/home-health-aides/${city}`
+        }
+    }
+}
+
+export async function generateStaticParams() {
+    return cities.map(city => ({
+        city
+    }))
+}
+
+export default function HomeAidesCityPage({ params }: Props) {
+    const { city } = params
+
+    const seoData = generateLocationSEO('home-health-aides', city)
+
+    if (!seoData) {
+        notFound()
+    }
+
+    const { h1, description, location, service: serviceData } = seoData
+    const structuredData = {
+        '@context': 'https://schema.org',
+        '@type': 'LocalBusiness',
+        name: `${serviceData.name} Services`,
+        description: description,
+        address: {
+            '@type': 'PostalAddress',
+            addressLocality: location.name,
+            addressRegion: 'NJ',
+            addressCountry: 'US',
+            postalCode: location.zipCodes[0] || ''
+        },
+        areaServed: {
+            '@type': 'City',
+            name: location.name
+        },
+        telephone: '(555) 123-4567',
+        serviceArea: location.nearbyAreas.concat([location.name])
+    }
+
+    return (
+        <>
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{
+                    __html: JSON.stringify(structuredData)
+                }}
+            />
+
+            <HomeAidesView header={h1} />
+        </>
+    )
+}
+
+================
+File: src/app/services/nursing/[city]/page.tsx
+================
+import { Metadata } from 'next'
+import { notFound } from 'next/navigation'
+import { generateLocationSEO, cities } from '@/lib/locationSeo'
+import NursingView from '@/components/services/nursing'
+
+interface Props {
+    params: {
+        city: string
+    }
+}
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+    const { city } = params
+    const seoData = generateLocationSEO('nursing', city)
+
+    if (!seoData) {
+        return {
+            title: 'Service Not Found',
+            description: 'The requested service page could not be found.'
+        }
+    }
+
+    const { title, metaDescription, location } = seoData
+
+    return {
+        title,
+        description: metaDescription,
+        keywords: seoData.keywords,
+        openGraph: {
+            title,
+            description: metaDescription,
+            type: 'website',
+            locale: 'en_US',
+            siteName: 'Your Healthcare Services'
+        },
+        other: {
+            'geo.region': 'US-NJ',
+            'geo.placename': `${location.name}, New Jersey`,
+            'geo.postal-code': location.zipCodes.join(', ')
+        },
+        alternates: {
+            canonical: `/services/nursing/${city}`
+        }
+    }
+}
+
+export async function generateStaticParams() {
+    return cities.map(city => ({
+        city
+    }))
+}
+
+export default function NursineCityPage({ params }: Props) {
+    const { city } = params
+
+    const seoData = generateLocationSEO('nursing', city)
+
+    if (!seoData) {
+        notFound()
+    }
+
+    const { h1, description, location, service: serviceData } = seoData
+    const structuredData = {
+        '@context': 'https://schema.org',
+        '@type': 'LocalBusiness',
+        name: `${serviceData.name} Services`,
+        description: description,
+        address: {
+            '@type': 'PostalAddress',
+            addressLocality: location.name,
+            addressRegion: 'NJ',
+            addressCountry: 'US',
+            postalCode: location.zipCodes[0] || ''
+        },
+        areaServed: {
+            '@type': 'City',
+            name: location.name
+        },
+        telephone: '(555) 123-4567',
+        serviceArea: location.nearbyAreas.concat([location.name])
+    }
+
+    return (
+        <>
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{
+                    __html: JSON.stringify(structuredData)
+                }}
+            />
+
+            <NursingView header={h1} />
+        </>
+    )
+}
+
+================
+File: src/app/services/personal-care/[city]/page.tsx
+================
+import { Metadata } from 'next'
+import { notFound } from 'next/navigation'
+import { generateLocationSEO, cities } from '@/lib/locationSeo'
+import PersonalCareView from '@/components/services/personalCare'
+
+interface Props {
+    params: {
+        city: string
+    }
+}
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+    const { city } = params
+    const seoData = generateLocationSEO('personal-care', city)
+
+    if (!seoData) {
+        return {
+            title: 'Service Not Found',
+            description: 'The requested service page could not be found.'
+        }
+    }
+
+    const { title, metaDescription, location } = seoData
+
+    return {
+        title,
+        description: metaDescription,
+        keywords: seoData.keywords,
+        openGraph: {
+            title,
+            description: metaDescription,
+            type: 'website',
+            locale: 'en_US',
+            siteName: 'Your Healthcare Services'
+        },
+        other: {
+            'geo.region': 'US-NJ',
+            'geo.placename': `${location.name}, New Jersey`,
+            'geo.postal-code': location.zipCodes.join(', ')
+        },
+        alternates: {
+            canonical: `/services/personal-care/${city}`
+        }
+    }
+}
+
+export async function generateStaticParams() {
+    return cities.map(city => ({
+        city
+    }))
+}
+
+export default function PersonalCareCityPage({ params }: Props) {
+    const { city } = params
+
+    const seoData = generateLocationSEO('personal-care', city)
+
+    if (!seoData) {
+        notFound()
+    }
+
+    const { h1, description, location, service: serviceData } = seoData
+    const structuredData = {
+        '@context': 'https://schema.org',
+        '@type': 'LocalBusiness',
+        name: `${serviceData.name} Services`,
+        description: description,
+        address: {
+            '@type': 'PostalAddress',
+            addressLocality: location.name,
+            addressRegion: 'NJ',
+            addressCountry: 'US',
+            postalCode: location.zipCodes[0] || ''
+        },
+        areaServed: {
+            '@type': 'City',
+            name: location.name
+        },
+        telephone: '(555) 123-4567',
+        serviceArea: location.nearbyAreas.concat([location.name])
+    }
+
+    return (
+        <>
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{
+                    __html: JSON.stringify(structuredData)
+                }}
+            />
+
+            <PersonalCareView header={h1} />
+        </>
+    )
+}
+
+================
+File: src/lib/locationSeo.ts
+================
+// src/lib/locationSeo.ts
+import { counties, CountyData, CityData, ServiceSEOData } from './counties'
+
+// Re-export types for easy access in other files
+export type { CountyData, CityData, ServiceSEOData }
+
+// --- SERVICE DEFINITIONS ---
+// These are not location-specific, so they can stay here.
+export interface Service {
+    name: string
+    baseDescription: string
+}
+
+export const services: Record<string, Service> = {
+    'personal-care': {
+        name: 'Personal Care',
+        baseDescription:
+            'Professional personal care services to help you maintain independence and dignity'
+    },
+    'companion-care': {
+        name: 'Companion Care',
+        baseDescription:
+            'Compassionate companion care services providing emotional support and social interaction'
+    },
+    'elder-care': {
+        name: 'Elder Care',
+        baseDescription:
+            'Comprehensive elder care services designed to help seniors live safely and comfortably'
+    },
+    'home-health-aides': {
+        name: 'Home Health Aides',
+        baseDescription:
+            'Certified home health aides providing skilled medical support and personal care assistance'
+    },
+    nursing: {
+        name: 'Nursing',
+        baseDescription:
+            'Professional nursing services delivered by licensed nurses'
+    },
+    staffing: {
+        name: 'Staffing',
+        baseDescription:
+            'Reliable healthcare staffing solutions providing qualified caregivers and medical professionals'
+    }
+}
+
+// --- HELPER FUNCTIONS ---
+
+// A map for O(1) lookups to find a city's data and its parent county.
+// This is created once when the server starts.
+const cityMap = new Map<string, { city: CityData; county: CountyData }>()
+counties.forEach(county => {
+    county.cities.forEach(city => {
+        cityMap.set(city.slug, { city, county })
+    })
+})
+
+/**
+ * Gets all city slugs from all counties.
+ * Perfect for generateStaticParams.
+ * @returns {string[]} An array of all city slugs (e.g., ['ridgewood', 'hackensack', 'paterson'])
+ */
+export function getAllCitySlugs(): string[] {
+    return Array.from(cityMap.keys())
+}
+
+/**
+ * Retrieves the data for a specific city by its slug.
+ * @param citySlug The slug of the city (e.g., 'ridgewood')
+ * @returns An object containing the city's data and its parent county's data, or null if not found.
+ */
+export function getCityAndCountyData(citySlug: string) {
+    return cityMap.get(citySlug) || null
+}
+
+// --- SEO GENERATION LOGIC ---
+
+export interface GeneratedSEO {
+    title: string
+    metaDescription: string
+    h1: string
+    description: string
+    keywords: string
+    location: CityData
+    county: CountyData
+    service: Service
+    serviceSpecificData?: ServiceSEOData
+}
+
+/**
+ * Generate SEO-optimized content for a specific service/location
+ * @param serviceSlug The slug of the service (e.g., 'companion-care')
+ * @param citySlug The slug of the city (e.g., 'ridgewood')
+ * @returns {GeneratedSEO | null}
+ */
+export function generateLocationSEO(
+    serviceSlug: string,
+    citySlug: string
+): GeneratedSEO | null {
+    const service = services[serviceSlug]
+    const locationInfo = getCityAndCountyData(citySlug)
+
+    if (!service || !locationInfo) {
+        return null
+    }
+
+    const { city: location, county } = locationInfo
+    const serviceSpecificData = location.serviceSpecificSEO?.[serviceSlug]
+
+    // Build H1, Title, and Description with smart fallbacks
+    const h1 =
+        serviceSpecificData?.customH1 ||
+        `Professional ${service.name} Services in ${location.name}`
+
+    const title =
+        serviceSpecificData?.customTitle ||
+        `${service.name} in ${location.name}, NJ | ${county.name} Care Services`
+
+    const description =
+        serviceSpecificData?.customDescription ||
+        location.customDescriptions?.[serviceSlug] ||
+        `${service.baseDescription} in ${location.name}, ${county.name}.`
+
+    const baseMetaDescription = `${description} Serving ${location.name}, ${county.name}. Call for a free consultation.`
+    const metaDescription =
+        serviceSpecificData?.customMetaDescription || baseMetaDescription
+
+    // Combine keywords from multiple sources for better targeting
+    const serviceKeywords = serviceSpecificData?.localKeywords || []
+    const allKeywords = new Set([
+        `${service.name.toLowerCase()} ${location.name}`,
+        `${service.name.toLowerCase()} ${county.name}`,
+        `${location.name} ${service.name.toLowerCase()}`,
+        `${county.name} ${service.name.toLowerCase()}`,
+        ...location.localKeywords,
+        ...serviceKeywords,
+        ...(location.rankingFactors?.primaryKeywords || []),
+        ...(location.rankingFactors?.secondaryKeywords || [])
+    ])
+
+    return {
+        title,
+        metaDescription,
+        h1,
+        description,
+        keywords: Array.from(allKeywords).join(', '),
+        location,
+        county,
+        service,
+        serviceSpecificData
+    }
+}
+
+================
+File: src/app/services/companion-care/[city]/page.tsx
+================
+// src/app/services/companion-care/[city]/page.tsx
+
+import { Metadata } from 'next'
+import { notFound } from 'next/navigation'
+// Updated import
+import { generateLocationSEO, getAllCitySlugs } from '@/lib/locationSeo'
+import CompanionCareView from '@/components/services/companionCare'
+
+interface Props {
+    params: {
+        city: string
+    }
+}
+
+// ... generateMetadata function remains the same ...
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+    const { city } = params
+    const seoData = generateLocationSEO('companion-care', city)
+
+    if (!seoData) {
+        return {
+            title: 'Service Not Found',
+            description: 'The requested service page could not be found.'
+        }
+    }
+
+    const { title, metaDescription, location } = seoData
+
+    return {
+        title,
+        description: metaDescription,
+        keywords: seoData.keywords,
+        openGraph: {
+            title,
+            description: metaDescription,
+            type: 'website',
+            locale: 'en_US',
+            siteName: 'Your Healthcare Services'
+        },
+        other: {
+            'geo.region': 'US-NJ',
+            'geo.placename': `${location.name}, New Jersey`,
+            'geo.postal-code': location.zipCodes.join(', ')
+        },
+        alternates: {
+            canonical: `/services/companion-care/${city}`
+        }
+    }
+}
+
+// This function now generates paths for ALL cities in ALL counties
+export async function generateStaticParams() {
+    const citySlugs = getAllCitySlugs()
+    return citySlugs.map(city => ({
+        city
+    }))
+}
+
+// ... Default export component remains the same ...
+export default function CompanionCareCityPage({ params }: Props) {
+    const { city } = params
+
+    const seoData = generateLocationSEO('companion-care', city)
+
+    if (!seoData) {
+        notFound()
+    }
+
+    const { h1, description, location, service: serviceData } = seoData
+    const structuredData = {
+        '@context': 'https://schema.org',
+        '@type': 'LocalBusiness',
+        name: `${serviceData.name} Services`,
+        description: description,
+        address: {
+            '@type': 'PostalAddress',
+            addressLocality: location.name,
+            addressRegion: 'NJ',
+            addressCountry: 'US',
+            postalCode: location.zipCodes[0] || ''
+        },
+        areaServed: {
+            '@type': 'City',
+            name: location.name
+        },
+        telephone: '(555) 123-4567',
+        serviceArea: location.nearbyAreas.concat([location.name])
+    }
+
+    return (
+        <>
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{
+                    __html: JSON.stringify(structuredData)
+                }}
+            />
+
+            <CompanionCareView header={h1} />
+        </>
+    )
+}
+
+
+
+
+================================================================
+End of Codebase
+================================================================

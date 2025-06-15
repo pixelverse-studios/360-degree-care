@@ -1,6 +1,7 @@
 import { Metadata } from 'next'
 import { notFound } from 'next/navigation'
-import { generateLocationSEO, cities } from '@/lib/locationSeo'
+// Updated import: replaced 'cities' with 'getAllCitySlugs'
+import { generateLocationSEO, getAllCitySlugs } from '@/lib/locationSeo'
 import PersonalCareView from '@/components/services/personalCare'
 
 interface Props {
@@ -44,8 +45,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     }
 }
 
+// Updated to use the new helper function for all cities
 export async function generateStaticParams() {
-    return cities.map(city => ({
+    const citySlugs = getAllCitySlugs()
+    return citySlugs.map(city => ({
         city
     }))
 }

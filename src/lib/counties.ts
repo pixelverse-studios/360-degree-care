@@ -1,71 +1,98 @@
-export const counties = [
+import bergenCountyData from './seo/countyData/bergen-county'
+export interface ServiceSEOData {
+    customDescription?: string
+    customH1?: string
+    customTitle?: string
+    customMetaDescription?: string
+    localKeywords?: string[]
+    contentBlocks?: {
+        whyChooseUs?: string
+        serviceHighlights?: string[]
+        localExpertise?: string
+        emergencyInfo?: string
+    }
+}
+
+export interface LocationSEOContent {
+    communityFocus: string
+    serviceAreas: string
+    localPartners: string
+}
+
+type CompetitionLevel = 'low' | 'medium-low' | 'medium' | 'medium-high' | 'high'
+
+export interface CityData {
+    slug: string
+    name: string
+    zipCodes: string[]
+    population: string
+    demographics: string
+    localKeywords: string[]
+    nearbyAreas: string[]
+    localLandmarks: string[]
+    customDescriptions: { [key: string]: string | undefined }
+    serviceSpecificSEO: { [key: string]: ServiceSEOData | undefined }
+    seoContent: LocationSEOContent
+    rankingFactors?: {
+        primaryKeywords: string[]
+        secondaryKeywords: string[]
+        competitionLevel: CompetitionLevel
+        focusAreas: string[]
+    }
+}
+
+export interface CountyData {
+    slug: string
+    name: string
+    heroTitle: string
+    heroSubtitle: string
+    introText: string
+    services: Array<{
+        slug: string
+        name: string
+        description: string
+    }>
+    cities: CityData[]
+    cta: {
+        heading: string
+        subheading: string
+        buttonText: string
+    }
+    ogImage: {
+        url: string
+        alt: string
+    }
+}
+
+// --- DATA ASSEMBLY ---
+// The data for each county is now self-contained and hard-coded for maximum flexibility.
+
+export const counties: CountyData[] = [
+    bergenCountyData,
+    // Example for Passaic County - you can follow the same pattern here.
     {
-        slug: 'bergen-county',
-        name: 'Bergen County',
-        heroTitle: 'Compassionate In-Home Care in Bergen County, NJ',
+        slug: 'passaic-county',
+        name: 'Passaic County',
+        heroTitle: 'Reliable In-Home Care in Passaic County, NJ',
         heroSubtitle:
-            'Trusted home care services for seniors and families across Bergen County, including Hackensack, Teaneck, Fort Lee, and more.',
+            'Providing trusted home care services to families in Paterson, Clifton, Wayne, and throughout Passaic County.',
         introText:
-            'At 360 Degree Care, we proudly serve families throughout Bergen County with compassionate, personalized in-home care. From help with daily tasks to meaningful companionship, our caregivers make life easier and more comfortable — right at home.',
+            '360 Degree Care is proud to extend its compassionate in-home care services to the vibrant communities of Passaic County...',
         services: [
-            {
-                slug: 'personal-care',
-                name: 'Personal Care',
-                description:
-                    'Support with bathing, grooming, hygiene, and mobility to help clients stay safe and independent at home.'
-            },
-            {
-                slug: 'elder-care-consulting',
-                name: 'Elder Care Consulting',
-                description:
-                    'Expert guidance to help families navigate long-term care decisions and create customized care plans.'
-            },
-            {
-                slug: 'staffing',
-                name: 'Staffing',
-                description:
-                    'Reliable caregiver and healthcare staffing solutions for short-term or long-term support in the home.'
-            },
-            {
-                slug: 'home-health-aides',
-                name: 'Home Health Aides',
-                description:
-                    'Certified aides who provide hands-on assistance with activities of daily living and non-medical care.'
-            },
-            {
-                slug: 'nursing-services',
-                name: 'Nursing Services',
-                description:
-                    'Skilled nursing support from licensed professionals to manage medications, chronic conditions, and recovery.'
-            },
-            {
-                slug: 'companion-care',
-                name: 'Companion Care',
-                description:
-                    'Friendly caregivers who provide conversation, emotional support, and help reduce feelings of isolation.'
-            }
-        ],
-        cities: [
-            'Hackensack',
-            'Teaneck',
-            'Fort Lee',
-            'Fair Lawn',
-            'Paramus',
-            'Englewood',
-            'Ridgewood',
-            'Bergenfield',
-            'Lodi',
-            'Cliffside Park'
+            /* ...services for Passaic... */
         ],
         cta: {
-            heading: 'Need In-Home Care in Bergen County?',
+            heading: 'Looking for Care in Passaic County?',
             subheading:
-                "Whether you're just exploring options or ready to get started, our team is here to help.",
-            buttonText: 'Schedule a Free Consultation'
+                'Our care coordinators are ready to create a personalized plan...',
+            buttonText: 'Get in Touch Today'
         },
         ogImage: {
-            url: 'https://360degreecare.net/og-images/bergen-county.jpg',
-            alt: 'Caregiver helping a senior in Bergen County, NJ'
-        }
+            url: 'https://360degreecare.net/og-images/passaic-county.jpg',
+            alt: 'A caregiver and senior in a Passaic County park.'
+        },
+        cities: [
+            // ... hard-coded city data for Paterson, Clifton, etc. would go here ...
+        ]
     }
 ]

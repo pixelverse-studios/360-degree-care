@@ -24,7 +24,7 @@ const GoogleReviewLink = ({ className }: { className?: string }) => {
             target="_blank"
             rel="noopener noreferrer"
             className={cn(
-                'flex items-center gap-4 p-4 w-fit text-white border border-white transition-all duration-300 ease-in-out border-b-8 rounded-xl hover:border-white-bright hover:shadow-xl',
+                'flex items-center gap-4 p-4 w-fit text-white border border-white transition-all duration-300 ease-in-out border-b-8 rounded-xl hover:border-white-bright hover:shadow-xl hover:-translate-y-px active:translate-y-0.5 active:border-b-2 active:shadow-md',
                 className
             )}
         >

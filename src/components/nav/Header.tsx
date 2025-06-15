@@ -19,9 +19,12 @@ function ContactLinks() {
                 variant="pillPrimary"
                 size="sm"
                 asChild
-                className="rounded-3xl h-10"
+                className="rounded-3xl h-10 text-sm lg:text-initial"
             >
-                <a href={`tel:${PHONE}`} className="flex items-center gap-2">
+                <a
+                    href={`tel:${PHONE}`}
+                    className="flex items-center gap-2 text-sm lg:text-initial"
+                >
                     <Phone size={16} />
                     {PHONE}
                 </a>

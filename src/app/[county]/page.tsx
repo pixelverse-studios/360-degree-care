@@ -1,3 +1,5 @@
+// src/app/[county]/page.tsx
+
 import { counties } from '@/lib/counties'
 import CountyHero from '@/components/county/CountyHero'
 import CountyIntro from '@/components/county/CountyIntro'
@@ -32,7 +34,7 @@ export default function CountyHubPage({
                 countyName={countyData.name}
             />
             <CountyCityGrid
-                cities={countyData.cities}
+                cities={countyData.cities} // This is now CityData[]
                 countyName={countyData.name}
             />
             <CountyCta
