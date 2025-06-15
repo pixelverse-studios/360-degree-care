@@ -49,7 +49,6 @@ export default function CallToAction({
         return router.push(`/contact/${type}`)
     }
 
-    console.log('variant: ', variant)
     return (
         <Button
             variant={variant ?? 'cta'}

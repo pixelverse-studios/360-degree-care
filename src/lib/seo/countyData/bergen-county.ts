@@ -56,11 +56,7 @@ const bergenCountyData: CountyData = {
         url: 'https://360degreecare.net/og-images/bergen-county.jpg',
         alt: 'Caregiver helping a senior in Bergen County, NJ'
     },
-
-    // --- BERGEN COUNTY - CITIES ---
-    // This is the complete, hard-coded list for all 70 municipalities.
     cities: [
-        // --- Fully custom data for high-priority cities ---
         {
             slug: 'hackensack',
             name: 'Hackensack',

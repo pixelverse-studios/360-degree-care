@@ -1,4 +1,5 @@
 import bergenCountyData from './seo/countyData/bergen-county'
+import passaicCountyData from './seo/countyData/passaic-county'
 export interface ServiceSEOData {
     customDescription?: string
     customH1?: string
@@ -67,32 +68,4 @@ export interface CountyData {
 // --- DATA ASSEMBLY ---
 // The data for each county is now self-contained and hard-coded for maximum flexibility.
 
-export const counties: CountyData[] = [
-    bergenCountyData,
-    // Example for Passaic County - you can follow the same pattern here.
-    {
-        slug: 'passaic-county',
-        name: 'Passaic County',
-        heroTitle: 'Reliable In-Home Care in Passaic County, NJ',
-        heroSubtitle:
-            'Providing trusted home care services to families in Paterson, Clifton, Wayne, and throughout Passaic County.',
-        introText:
-            '360 Degree Care is proud to extend its compassionate in-home care services to the vibrant communities of Passaic County...',
-        services: [
-            /* ...services for Passaic... */
-        ],
-        cta: {
-            heading: 'Looking for Care in Passaic County?',
-            subheading:
-                'Our care coordinators are ready to create a personalized plan...',
-            buttonText: 'Get in Touch Today'
-        },
-        ogImage: {
-            url: 'https://360degreecare.net/og-images/passaic-county.jpg',
-            alt: 'A caregiver and senior in a Passaic County park.'
-        },
-        cities: [
-            // ... hard-coded city data for Paterson, Clifton, etc. would go here ...
-        ]
-    }
-]
+export const counties: CountyData[] = [bergenCountyData, passaicCountyData]

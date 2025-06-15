@@ -20,14 +20,14 @@ export default function PersonalCareView({ header }: { header: string }) {
                         : `Empowering Well-being: A Guide to Personal Care Services`}
                 </h1>
 
-                <p className="text-gray-700 mb-4">
+                <div className="text-gray-700 mb-4">
                     Personal care services at <CompanyName className="" /> are
                     designed to help seniors and individuals with daily living
                     tasks while preserving dignity, independence, and comfort.
                     Whether you're exploring care for yourself or a loved one,
                     our team is here to provide non-medical home support that
                     meets your unique needs.
-                </p>
+                </div>
                 <h2 className="mt-6 mb-2">What is Personal Care?</h2>
                 <p className="text-gray-700 mb-4">
                     Personal care includes non-medical assistance with essential
@@ -151,12 +151,12 @@ export default function PersonalCareView({ header }: { header: string }) {
                 <h2 className="mt-6 mb-2">
                     Finding the Right Personal Care Solution
                 </h2>
-                <p className="text-gray-700 mb-4">
+                <div className="text-gray-700 mb-4">
                     <CompanyName className="" /> understands that every
                     individual's needs are unique. We offer a comprehensive
                     range of personal care services to create a customized care
                     plan that promotes independence, dignity, and well-being.
-                </p>
+                </div>
             </AnimatedSection>
             <ContactMap />
         </main>

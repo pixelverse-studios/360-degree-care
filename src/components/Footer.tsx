@@ -2,29 +2,31 @@
 
 import { Fragment } from 'react'
 import Link from 'next/link'
-import { Info } from 'lucide-react'
 import { FaFacebookF, FaInstagram } from 'react-icons/fa6'
 import Logo, { CompanyName } from '@/components/Logo'
 import { cn } from '@/lib/utils'
 import { navLinks, footerResources } from '@/utils/routes'
 import { ADDRESS, FACEBOOK, INSTA, PHONE } from '@/utils/constants'
-import { HoverPopover } from './ui/popover'
 import GoogleReviewLink from './GoogleReviewLink'
+import ContactMap from './contact/ContactMap'
+import { counties } from '@/lib/counties'
 
-const [aboutLink, serviceLink, faqLink] = navLinks
+const activeCounties = counties.map(county => ({
+    name: county.name,
+    slug: county.slug
+}))
+const [aboutLink, serviceLink, vaultLink] = navLinks
 
 const quickLinkStyles = 'text-sm'
-const linkHover = 'transition-all duration-200 hover:text-black'
+const linkHover = 'transition-all duration-200 hover:text-green-muted'
 
 export default function Footer() {
     const currentYear = new Date().getFullYear()
     return (
         <footer className="bg-primary py-10 text-black">
-            <div className="max-w-[1400px] mx-auto px-6">
-                {/* Top Section */}
-                <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 text-white">
-                    {/* Left - Logo & CTA */}
-                    <div>
+            <div className="max-w-custom mx-auto px-6">
+                <div className="flex flex-wrap gap-4 justify-between text-white">
+                    <div className="space-y-6">
                         <div>
                             <div className="flex gap-2 items-center">
                                 <Logo invert />
@@ -34,12 +36,23 @@ export default function Footer() {
                                 for seniors
                             </p>
                         </div>
-                        <div className="text-sm mt-6">
+
+                        <ContactMap />
+                    </div>
+                    <div className="flex flex-col gap-8 text-sm">
+                        <div className="text-sm space-y-4">
                             <p className="font-bold text-lg">Contact</p>
                             <p className="mt-2">
-                                {ADDRESS.STREET}
-                                <br />
-                                {ADDRESS.DETAILS}
+                                <a
+                                    href={`https://www.google.com/maps/search/?api=1&query=${ADDRESS.MAP}`}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="text-white hover:underline hover:text-green-muted transition-colors"
+                                >
+                                    {ADDRESS.STREET}
+                                    <br />
+                                    {ADDRESS.DETAILS}
+                                </a>
                             </p>
                             <p className="mt-1">
                                 <a
@@ -49,8 +62,6 @@ export default function Footer() {
                                     {PHONE}
                                 </a>
                             </p>
-
-                            {/* Social Icons */}
                             <div className="flex space-x-4 mt-4">
                                 <a
                                     href={FACEBOOK}
@@ -68,10 +79,19 @@ export default function Footer() {
                                 </a>
                             </div>
                         </div>
-                        <GoogleReviewLink className="mt-8" />
+                        <GoogleReviewLink className="h-fit" />
                     </div>
-
-                    {/* Middle - Links */}
+                    <div className="flex flex-col space-y-2 text-sm">
+                        <p className="font-bold text-lg">Now Servicing</p>
+                        {activeCounties.map(county => (
+                            <Link
+                                href={county.slug}
+                                className={cn(quickLinkStyles, linkHover)}
+                            >
+                                {county.name}
+                            </Link>
+                        ))}
+                    </div>
                     <div className="flex flex-col space-y-2 text-sm">
                         <p className="font-bold text-lg">Quick Links</p>
                         <Link
@@ -80,59 +100,40 @@ export default function Footer() {
                         >
                             {aboutLink.label}
                         </Link>
-                        {serviceLink.subLinks.map(item => (
-                            <Link
-                                key={`${item.label}-footer`}
-                                href={item.route}
-                                className={cn(quickLinkStyles, linkHover)}
-                            >
-                                {item.label}
-                            </Link>
-                        ))}
-                        <Link
-                            href={faqLink.route}
-                            className={cn(quickLinkStyles, linkHover)}
-                        >
-                            {faqLink.label}
-                        </Link>
-                    </div>
-                    <div className="flex flex-col space-y-2 text-sm">
-                        <div className="font-bold text-lg flex gap-1">
-                            Locations{' '}
-                            <HoverPopover
-                                content={
-                                    <p>
-                                        Bergen County, located in the
-                                        northeastern part of New Jersey, is the
-                                        area we cover fully. However, for
-                                        special situation and for cases
-                                        requiring Live-In Care we cover
-                                        virtually the whole state with a special
-                                        emphasis on the Jersey Shore and Sussex
-                                        County:
-                                    </p>
-                                }
-                            >
-                                <Info />
-                            </HoverPopover>
+                        <div className="flex flex-col gap-2">
+                            <h5 className="font-semibold text-sm">Services</h5>
+                            {serviceLink.subLinks.map(item => (
+                                <Link
+                                    key={`${item.label}-footer`}
+                                    href={item.route}
+                                    className={cn(
+                                        quickLinkStyles,
+                                        linkHover,
+                                        'ml-2'
+                                    )}
+                                >
+                                    {item.label}
+                                </Link>
+                            ))}
                         </div>
-                        <ul className="grid grid-cols-2 gap-1">
-                            <li>Allendale</li>
-                            <li>Alpine</li>
-                            <li>Cresskill</li>
-                            <li>East Rutherford</li>
-                            <li>Fair Lawn</li>
-                            <li>Fort Lee</li>
-                            <li>Glen Rock</li>
-                            <li>Hackensack</li>
-                            <li>Haworth</li>
-                            <li>Ho-Ho-Kus</li>
-                            <li>Northvale</li>
-                            <li>Old Tappan</li>
-                            <li>Oradell</li>
-                            <li>River Edge</li>
-                            <li>Ridgewood</li>
-                        </ul>
+                        <div className="flex flex-col gap-2">
+                            <h5 className="font-semibold text-sm">
+                                Wisdom Vault
+                            </h5>
+                            {vaultLink.subLinks.map(item => (
+                                <Link
+                                    key={`${item.label}-footer`}
+                                    href={item.route}
+                                    className={cn(
+                                        quickLinkStyles,
+                                        linkHover,
+                                        'ml-2'
+                                    )}
+                                >
+                                    {item.label}
+                                </Link>
+                            ))}
+                        </div>
                     </div>
                 </div>
 
