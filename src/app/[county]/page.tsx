@@ -4,6 +4,7 @@ import CountyIntro from '@/components/county/CountyIntro'
 import CountyServiceList from '@/components/county/CountyServiceList'
 import CountyCityGrid from '@/components/county/CountyCityGrid'
 import CountyCta from '@/components/county/CountyCta'
+import ContactMap from '@/components/contact/ContactMap'
 
 export async function generateStaticParams() {
     return counties.map(c => ({ county: c.slug }))
@@ -39,6 +40,7 @@ export default function CountyHubPage({
                 subHeader={countyData.cta.subheading}
                 buttonText={countyData.cta.buttonText}
             />
+            <ContactMap />
         </main>
     )
 }

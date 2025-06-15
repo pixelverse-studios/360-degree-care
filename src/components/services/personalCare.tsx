@@ -5,6 +5,7 @@ import { CompanyName } from '@/components/Logo'
 import FaqSection from '@/components/faqs/FaqSection'
 import { PERSONAL_CARE_FAQS } from '@/utils/faqs'
 import AnimatedSection from '@/components/animated-section'
+import ContactMap from '@/components/contact/ContactMap'
 
 export default function PersonalCareView({ header }: { header: string }) {
     return (
@@ -157,6 +158,7 @@ export default function PersonalCareView({ header }: { header: string }) {
                     plan that promotes independence, dignity, and well-being.
                 </p>
             </AnimatedSection>
+            <ContactMap />
         </main>
     )
 }

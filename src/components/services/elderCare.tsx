@@ -3,6 +3,7 @@
 import CallToAction from '@/components/CallToAction'
 import { CompanyName } from '@/components/Logo'
 import AnimatedSection from '@/components/animated-section'
+import ContactMap from '@/components/contact/ContactMap'
 
 interface headerProps {
     header: string
@@ -355,6 +356,7 @@ export default function ElderCareView({ header }: headerProps) {
                     />
                 </AnimatedSection>
             </div>
+            <ContactMap />
         </main>
     )
 }

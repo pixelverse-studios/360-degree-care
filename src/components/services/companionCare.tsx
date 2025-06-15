@@ -3,6 +3,7 @@
 import CallToAction from '@/components/CallToAction'
 import { CompanyName } from '@/components/Logo'
 import AnimatedSection from '@/components/animated-section'
+import ContactMap from '@/components/contact/ContactMap'
 
 interface CompanionCareViewProps {
     header: string
@@ -149,6 +150,7 @@ export default function CompanionCareView({ header }: CompanionCareViewProps) {
                     </AnimatedSection>
                 </section>
             </div>
+            <ContactMap />
         </main>
     )
 }

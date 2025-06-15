@@ -4,6 +4,7 @@ import { CircleCheck, ListChecks, PillBottle, Bandage } from 'lucide-react'
 import CallToAction from '@/components/CallToAction'
 import { CompanyName } from '@/components/Logo'
 import AnimatedSection from '@/components/animated-section'
+import ContactMap from '@/components/contact/ContactMap'
 
 export default function NursingView({ header }: { header: string }) {
     return (
@@ -362,6 +363,7 @@ export default function NursingView({ header }: { header: string }) {
                     />
                 </AnimatedSection>
             </div>
+            <ContactMap />
         </main>
     )
 }

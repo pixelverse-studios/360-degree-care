@@ -4,6 +4,7 @@ import CallToAction from '@/components/CallToAction'
 import AnimatedSection from '@/components/animated-section'
 import HomeHealthCareHero from '@/components/hero/HomeHealthcareHero'
 import HomeHealthAideServices from '@/components/services/HomeHealthAideServices'
+import ContactMap from '@/components/contact/ContactMap'
 
 interface headerProps {
     header: string
@@ -35,6 +36,7 @@ export default function HomeAidesView({ header }: headerProps) {
                     />
                 </AnimatedSection>
             </section>
+            <ContactMap />
         </main>
     )
 }

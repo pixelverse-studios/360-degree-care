@@ -6,6 +6,7 @@ import { CompanyName } from '@/components/Logo'
 import { STAFFING_FAQS } from '@/utils/faqs'
 import AnimatedSection from '@/components/animated-section'
 import MedicalStaffingSeoHead from '@/lib/seo/medicalStaffing'
+import ContactMap from '@/components/contact/ContactMap'
 
 export default function StaffingSolutionsPage() {
     return (
@@ -233,6 +234,7 @@ export default function StaffingSolutionsPage() {
                         </AnimatedSection>
                     </section>
                 </div>
+                <ContactMap />
             </main>
         </>
     )
