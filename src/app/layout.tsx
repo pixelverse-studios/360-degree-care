@@ -5,7 +5,6 @@ import {
     Permanent_Marker,
     Rubik
 } from 'next/font/google'
-import { GoogleTagManager } from '@next/third-parties/google'
 
 import { Header } from '@/components/nav/Header'
 import Breadcrumbs from '@/components/nav/Breadcrumbs'
