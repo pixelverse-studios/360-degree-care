@@ -111,7 +111,7 @@ export default function ContactForm() {
                 </article>
                 <GoogleReviewLink />
             </div>
-            <div className="p-6 bg-white-bright rounded-tr-lg rounded-br-lg">
+            <div className="p-6 bg-white-bright rounded-tr-lg rounded-br-lg border-t-primary border-r-primary border-b-primary">
                 <Form {...form}>
                     <form
                         onSubmit={form.handleSubmit(onSubmit)}

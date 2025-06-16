@@ -1,11 +1,6 @@
-import JeffImg from '../../public/media/Jeff.jpg'
-import DylanImg from '../../public/media/Dylan.jpg'
-import FranImg from '../../public/media/Fran.jpg'
-import DinaImg from '../../public/media/Dina.jpg'
-
 export const teamMembers = [
     {
-        img: JeffImg.src,
+        img: 'Jeff',
         summary:
             'Jeff, an expert in aging in place, founded 360 Degree Care in 2014. Pioneering Concierge Level™ Homecare with compassionate, presonalized support for aging individuals and families.',
         expanded:
@@ -15,7 +10,7 @@ export const teamMembers = [
         email: 'jeff@360degreecare.net'
     },
     {
-        img: DylanImg.src,
+        img: 'Dylan',
         summary:
             'Dylan manages all client billing, records, recruitment, and retention at 360, achieving an exceptional 80% caregiver retention rate compared to the industry average of 13%, and is also an accomplished guitarist who plays with the band Metalfier in NYC venues.',
         expanded:
@@ -25,7 +20,7 @@ export const teamMembers = [
         email: 'dylan@360degreecare.net'
     },
     {
-        img: FranImg.src,
+        img: 'Fran',
         summary:
             'Fran, a College of New Rochelle nursing graduate with experience at Stamford Hospital and Caring People, joined 360 at its founding in 2014 after raising three children and volunteering in Ridgewood, and is now an integral team member with five grandchildren.',
         expanded:
@@ -35,7 +30,7 @@ export const teamMembers = [
         email: 'fran@360degreecare.net'
     },
     {
-        img: DinaImg.src,
+        img: 'Dina',
         summary:
             'Dina leverages her advertising background to excel at strategically matching caregivers to clients at 360, bringing compassionate yet precise service to those with complex needs, while balancing her personal life in Bronxville with her husband, puppies, and two successful daughters.',
         expanded:

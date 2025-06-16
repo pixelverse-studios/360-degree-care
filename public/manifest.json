@@ -7,8 +7,20 @@
     "scope": "/",
     "start_url": "/",
     "icons": [
-        { "src": "/Favicon_16x16.png", "type": "image/png", "sizes": "16x16" },
-        { "src": "/Favicon_32x32.png", "type": "image/png", "sizes": "32x32" },
-        { "src": "/Favicon_64x64.png", "type": "image/png", "sizes": "64x64" }
+        {
+            "src": "https://res.cloudinary.com/pixelverse-studios/image/upload/v1750022033/clients/360dc/Favicon_16x16_q22nns.png",
+            "type": "image/png",
+            "sizes": "16x16"
+        },
+        {
+            "src": "https://res.cloudinary.com/pixelverse-studios/image/upload/v1750022033/clients/360dc/Favicon_32x32_hqwio1.png",
+            "type": "image/png",
+            "sizes": "32x32"
+        },
+        {
+            "src": "https://res.cloudinary.com/pixelverse-studios/image/upload/v1750022033/clients/360dc/Favicon_64x64_tke6mn.png",
+            "type": "image/png",
+            "sizes": "64x64"
+        }
     ]
 }

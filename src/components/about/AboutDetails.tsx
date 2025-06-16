@@ -9,14 +9,15 @@ import {
     CarouselPrevious
 } from '../ui/carousel'
 import AnimatedSection from '../animated-section'
+import { getImgSrc } from '@/lib/images'
 
 const carouselItems = [
-    '/carousel/ad-15.jpg',
-    '/carousel/interim-billboard-hi-res.jpg',
-    '/carousel/interim-bmv-2page-spread-boombox-hi-res.jpg',
-    '/carousel/interim-bmv-2page-spread-hutton-hi-res.jpg',
-    '/carousel/jeff-ads-version-C3-hi-res.jpg',
-    '/carousel/man-with-bat-v01.jpg'
+    'ad-15',
+    'interim-billboard-hi-res',
+    'interim-bmv-2page-spread-boombox-hi-res',
+    'interim-bmv-2page-spread-hutton-hi-res',
+    'jeff-ads-version-C3-hi-res',
+    'man-with-bat-v01'
 ]
 
 export default function AboutDetails() {
@@ -28,7 +29,7 @@ export default function AboutDetails() {
                     className="grid grid-cols-1 md:grid-cols-[1fr_2fr] gap-6"
                 >
                     <img
-                        src="/assets/runners.jpg"
+                        src={getImgSrc('runners')}
                         alt="small details to help"
                         className="w-fit h-full rounded-3xl object-cover"
                     />
@@ -111,7 +112,7 @@ export default function AboutDetails() {
                                             className="pl-4 md:pl-6 basis-full md:basis-1/2 xl:basis-1/3 flex items-center justify-center"
                                         >
                                             <img
-                                                src={item}
+                                                src={getImgSrc(item)}
                                                 className="max-h-[50vh] w-auto object-contain rounded-xl"
                                                 alt={`carousel-item-${index}`}
                                             />
@@ -119,19 +120,19 @@ export default function AboutDetails() {
                                     ))}
                                 <CarouselItem className="pl-4 md:pl-6 basis-full md:basis-1/2 xl:basis-1/3 flex flex-col gap-4 items-center justify-center">
                                     <img
-                                        src={carouselItems[3]}
+                                        src={getImgSrc(carouselItems[3])}
                                         className="max-h-[50vh] w-auto object-contain rounded-xl"
                                         alt="carousel-item-4"
                                     />
                                     <img
-                                        src={carouselItems[4]}
+                                        src={getImgSrc(carouselItems[4])}
                                         className="max-h-[50vh] w-auto object-contain rounded-xl"
                                         alt="carousel-item-5"
                                     />
                                 </CarouselItem>
                                 <CarouselItem className="pl-4 md:pl-6 basis-full md:basis-1/2 xl:basis-1/3 flex items-center justify-center">
                                     <img
-                                        src={carouselItems[5]}
+                                        src={getImgSrc(carouselItems[5])}
                                         className="max-h-[50vh] w-auto object-contain rounded-xl"
                                         alt="carousel-item-6"
                                     />
@@ -194,7 +195,7 @@ export default function AboutDetails() {
                         </div>
                     </div>
                     <img
-                        src="/media/done-stamp.png"
+                        src={getImgSrc('done-stamp')}
                         alt="DONE stamp"
                         className="w-64 h-64 object-contain m-auto"
                     />
@@ -206,7 +207,7 @@ export default function AboutDetails() {
                     className="max-w-custom mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 p-10"
                 >
                     <img
-                        src="/assets/staff.jpg"
+                        src={getImgSrc('staff')}
                         alt="freedome img"
                         className="rounded-xl shadow-xl object-cover"
                     />

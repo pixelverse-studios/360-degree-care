@@ -1,5 +1,26 @@
 import { counties } from '@/lib/counties'
 
+const wisdomVaultLinks = [
+    {
+        route: '/wisdom-vault',
+        label: 'Videos',
+        canVisit: true,
+        subLinks: []
+    },
+    {
+        route: '/blog',
+        label: 'Blog',
+        canVisit: true,
+        subLinks: []
+    },
+    {
+        route: '/faq',
+        label: 'FAQs',
+        canVisit: true,
+        subLinks: []
+    }
+]
+
 export const navLinks = [
     {
         route: '/about',
@@ -48,26 +69,7 @@ export const navLinks = [
         route: '',
         label: 'Wisdom Vault',
         canVisit: false,
-        subLinks: [
-            {
-                route: '/wisdom-vault',
-                label: 'Videos',
-                canVisit: true,
-                subLinks: []
-            },
-            {
-                route: '/blog',
-                label: 'Blog',
-                canVisit: true,
-                subLinks: []
-            },
-            {
-                route: '/faq',
-                label: 'FAQs',
-                canVisit: true,
-                subLinks: []
-            }
-        ]
+        subLinks: wisdomVaultLinks
     }
 ]
 
@@ -132,9 +134,20 @@ const countyHubPages = counties.map(county => ({
     subLinks: []
 }))
 
+const vaultWithBlogs = [
+    ...wisdomVaultLinks,
+    {
+        route: '/blog/:blog-title',
+        label: '',
+        canVisit: true,
+        subLinks: []
+    }
+]
+
 export const availablePages = [
     ...navLinks,
     ...footerResources,
     ...additionalPages,
-    ...countyHubPages
+    ...countyHubPages,
+    ...vaultWithBlogs
 ]

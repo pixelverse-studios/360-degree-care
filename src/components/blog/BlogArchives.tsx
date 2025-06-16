@@ -3,6 +3,7 @@
 import { useState, useMemo } from 'react'
 import { Calendar, Clock, ArrowRight, Tag } from 'lucide-react'
 import Link from 'next/link'
+import { getImgSrc } from '@/lib/images'
 
 // Types
 interface BlogPost {
@@ -179,7 +180,9 @@ export default function BlogArchives({ posts }: BlogArchivesProps) {
                             <div className="lg:flex">
                                 <div className="lg:w-1/2">
                                     <img
-                                        src={featuredPost.featuredImage}
+                                        src={getImgSrc(
+                                            featuredPost.featuredImage
+                                        )}
                                         alt={featuredPost.title}
                                         className="w-full h-64 lg:h-full object-cover"
                                     />
@@ -249,7 +252,7 @@ export default function BlogArchives({ posts }: BlogArchivesProps) {
                             >
                                 <div className="relative">
                                     <img
-                                        src={post.featuredImage}
+                                        src={getImgSrc(post.featuredImage)}
                                         alt={post.title}
                                         className="w-full h-48 object-cover"
                                     />

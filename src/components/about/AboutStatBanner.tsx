@@ -1,6 +1,7 @@
 // import { motion } from 'framer-motion' // Note: You would need to install framer-motion
 import { Star, Users, Calendar } from 'lucide-react'
 import AnimatedSection from '../animated-section'
+import { getImgSrc } from '@/lib/images'
 
 const iconClass = 'text-primary h-6 w-6'
 
@@ -75,7 +76,7 @@ export default function AboutStatBanner() {
                                 target="_blank"
                             >
                                 <img
-                                    src="/icons/CHAPLogo.svg"
+                                    src={getImgSrc('CHAPLogo')}
                                     alt="CHAP Badge"
                                     className="h-[8rem] w-[8rem] md:h-[6rem] md:w-[6rem] mx-auto mb-2"
                                 />

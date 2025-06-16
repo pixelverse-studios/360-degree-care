@@ -15,12 +15,12 @@ export default function AboutHero() {
                         <h1 className="text-4xl md:text-5xl font-bold text-black-muted leading-tight mb-0">
                             About <CompanyName className="text-5xl mb-[10px]" />
                         </h1>
-                        <p className="text-lg text-gray-700 leading-relaxed">
+                        <article className="text-lg text-gray-700 leading-relaxed">
                             <CompanyName /> is the leading home care company in
                             New Jersey. We have been providing highly skilled
                             and compassionate caregivers to facilities and
                             private clients for over ten years.
-                        </p>
+                        </article>
                     </div>
 
                     <ul className="space-y-2 text-gray-700 h-full flex flex-col justify-end gap-[0.7rem]">

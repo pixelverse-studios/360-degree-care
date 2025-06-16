@@ -1,6 +1,7 @@
 'use client'
 
 import AnimatedSection from '../animated-section'
+import { getImgSrc } from '@/lib/images'
 
 interface ExpectationItem {
     img: string
@@ -11,7 +12,7 @@ const ExpectationItem = ({ img, description }: ExpectationItem) => (
     <li className="">
         <img
             className="h-[12rem] w-auto mb-4 shadow-lg rounded-lg"
-            src={img}
+            src={getImgSrc(img)}
             alt={`${description} - image`}
         />
         <p className="text-sm w-[90%] mx-auto">{description}</p>
@@ -55,7 +56,7 @@ export default function HomeHealthCareHero({ header }: { header: string }) {
                 </div>
                 <img
                     className="h-fit w-fit mx-auto xl:mx-0 rounded-xl shadow-xl object-cover"
-                    src="/assets/mother-daughter.jpg"
+                    src={getImgSrc('mother-daughter')}
                     alt="Home Healthcare Aid graphic"
                 />
             </AnimatedSection>
@@ -66,15 +67,15 @@ export default function HomeHealthCareHero({ header }: { header: string }) {
                 <h2 className="text-3xl text-center pb-8">What To Expect</h2>
                 <ul className="grid grid-cols-[repeat(auto-fit,minmax(12rem,1fr))] gap-8 max-w-4xl mx-auto px-6">
                     <ExpectationItem
-                        img="/assets/nurse plan.jpg"
+                        img="nurse_plan"
                         description="We will set up an initial assessment. Consider us your local elder care consultant."
                     />
                     <ExpectationItem
-                        img="/assets/nurse assessment.jpg"
+                        img="nurse_assessment"
                         description="Our team of specialists will help create a care plan to determine the services needed."
                     />
                     <ExpectationItem
-                        img="/assets/nurse care.jpg"
+                        img="nurse_care"
                         description=" Our specialized team of caregivers will come to your home to provide the agreed-upon care. We even offer respite care, when needed."
                     />
                 </ul>

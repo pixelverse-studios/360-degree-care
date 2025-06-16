@@ -160,7 +160,12 @@ const DesktopNav = () => {
                                         <li key={sub.label}>
                                             <Link
                                                 href={sub.route}
-                                                className="block p-3 rounded-md hover:bg-blue-dark hover:text-white transition-colors text-black cursor-pointer"
+                                                className={cn(
+                                                    'block p-3 rounded-md hover:bg-blue-dark hover:text-white transition-colors text-black cursor-pointer',
+                                                    sub.route === pathname
+                                                        ? 'text-primary font-semibold'
+                                                        : ''
+                                                )}
                                             >
                                                 {sub.label}
                                             </Link>

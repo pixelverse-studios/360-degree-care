@@ -14,6 +14,7 @@ import { CompanyName } from '../Logo'
 import { Separator } from '../ui/separator'
 import { teamMembers } from '@/utils/about'
 import AnimatedSection from '../animated-section'
+import { getImgSrc } from '@/lib/images'
 
 export default function AboutTheTeam() {
     const [selected, setSelected] = useState<any>(null)
@@ -40,7 +41,7 @@ export default function AboutTheTeam() {
                             >
                                 <img
                                     className="h-[6rem] w-[6rem] rounded-full mx-auto mb-3"
-                                    src={member.img}
+                                    src={getImgSrc(member.img)}
                                     alt={`${member.name} headshot`}
                                 />
                                 <p className="text-center w-[85%] mx-auto">
@@ -58,7 +59,7 @@ export default function AboutTheTeam() {
                                 <h4 className="text-base text-black font-bold">
                                     {member.name}
                                 </h4>
-                                <span className="text-sm text-gray-600/90">
+                                <span className="text-sm text-green">
                                     {member.position}
                                 </span>
                                 <a
@@ -77,21 +78,23 @@ export default function AboutTheTeam() {
                                 <div className="flex flex-col items-center">
                                     <img
                                         className="h-[10rem] w-[10rem] rounded-full mb-3"
-                                        src={selected.img}
+                                        src={getImgSrc(selected.img)}
                                         alt={`${selected.name} headshot`}
                                     />
-                                    <h4 className="text-black font-bold text-2xl">
-                                        {selected.name}
-                                    </h4>
-                                    <p className="text-lg text-gray-600/90">
-                                        {selected.position}
-                                    </p>
-                                    <a
-                                        className="cursor-pointer hover:text-primary ease-in-out duration-300"
-                                        href={`mailto:${selected.email}`}
-                                    >
-                                        {selected.email}
-                                    </a>
+                                    <article className="flex flex-col gap-2 items-center text-center">
+                                        <h4 className="text-black font-bold text-2xl">
+                                            {selected.name}
+                                        </h4>
+                                        <p className="text-md text-green text-balance text-center">
+                                            {selected.position}
+                                        </p>
+                                        <a
+                                            className="cursor-pointer text-gray-400 hover:text-primary ease-in-out duration-300"
+                                            href={`mailto:${selected.email}`}
+                                        >
+                                            {selected.email}
+                                        </a>
+                                    </article>
                                 </div>
                                 <p className="overflow-auto h-[20vh] sm:h-fit">
                                     {selected.expanded}

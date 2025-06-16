@@ -10,20 +10,19 @@ import {
 } from 'lucide-react'
 import { cn } from '@/lib/utils'
 import AnimatedSection from '../animated-section'
+import { getImgSrc } from '@/lib/images'
 
-// Keep your existing imports
-import BathIcon from '../../../public/icons/bathing.svg'
-import MealPrepIcon from '../../../public/icons/Meal.svg'
-import TransportIcon from '../../../public/icons/Transportation.svg'
-import LaundyrIcon from '../../../public/icons/laundry.svg'
-import RemindersIcon from '../../../public/icons/Medication.svg'
-import CompanionIcon from '../../../public/icons/companionship.svg'
+const BathIcon = getImgSrc('bathing')
+const MealPrepIcon = getImgSrc('Meal')
+const TransportIcon = getImgSrc('Transportation')
+const LaundyrIcon = getImgSrc('laundry')
+const RemindersIcon = getImgSrc('Medication')
+const CompanionIcon = getImgSrc('companionship')
 
 const wrapperClass = 'max-w-custom mx-auto py-4 px-6'
 const subServiceClass =
     'grid grid-cols-[3rem_1fr] gap-2 justify-start items-center'
 
-// List of services from client copy
 const homeHealthAideServices = [
     {
         icon: <ShieldAlert className="text-primary h-[2rem] w-auto mx-auto" />,
@@ -33,7 +32,7 @@ const homeHealthAideServices = [
         icon: (
             <img
                 className="mx-auto"
-                src={BathIcon.src}
+                src={BathIcon}
                 alt="bath and hygiene care"
             />
         ),
@@ -47,7 +46,7 @@ const homeHealthAideServices = [
         icon: (
             <img
                 className="mx-auto"
-                src={MealPrepIcon.src}
+                src={MealPrepIcon}
                 alt="meal prep and cooking"
             />
         ),
@@ -65,7 +64,7 @@ const homeHealthAideServices = [
         icon: (
             <img
                 className="mx-auto"
-                src={LaundyrIcon.src}
+                src={LaundyrIcon}
                 alt="laundry & light housekeeping"
             />
         ),
@@ -73,11 +72,7 @@ const homeHealthAideServices = [
     },
     {
         icon: (
-            <img
-                className="mx-auto"
-                src={TransportIcon.src}
-                alt="transportation"
-            />
+            <img className="mx-auto" src={TransportIcon} alt="transportation" />
         ),
         label: 'Transportation'
     }
@@ -89,7 +84,7 @@ const additionalServices = [
         icon: (
             <img
                 className="mx-auto"
-                src={RemindersIcon.src}
+                src={RemindersIcon}
                 alt="medication reminders"
             />
         ),
@@ -99,7 +94,7 @@ const additionalServices = [
         icon: (
             <img
                 className="mx-auto"
-                src={CompanionIcon.src}
+                src={CompanionIcon}
                 alt="companionship and comfort"
             />
         ),

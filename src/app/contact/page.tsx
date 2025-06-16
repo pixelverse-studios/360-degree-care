@@ -4,6 +4,7 @@ import { useRouter } from 'next/navigation'
 import AnimatedSection from '@/components/animated-section'
 import { Button } from '@/components/ui/button'
 import { useRouteState } from '@/lib/providers'
+import { getImgSrc } from '@/lib/images'
 
 export default function ContactPage() {
     const router = useRouter()
@@ -37,7 +38,7 @@ export default function ContactPage() {
                         <div className="bg-white rounded-xl p-6 flex flex-col gap-4 hover:shadow-xl transition-all duration-200 ease-in-out">
                             <img
                                 className="mx-auto h-12 w-12"
-                                src="/icons/contact/heart.svg"
+                                src={getImgSrc('heart')}
                                 alt="services contact page icon"
                             />
                             <h2 className="text-center">Services</h2>
@@ -58,7 +59,7 @@ export default function ContactPage() {
                         <div className="bg-white rounded-xl p-6 flex flex-col gap-4 hover:shadow-xl transition-all duration-200 ease-in-out">
                             <img
                                 className="mx-auto h-12 w-12"
-                                src="/icons/contact/handshake.svg"
+                                src={getImgSrc('handshake')}
                                 alt="employment contact page icon"
                             />
                             <h2 className="text-center">Employment</h2>
@@ -76,7 +77,7 @@ export default function ContactPage() {
                         <div className="bg-white rounded-xl p-6 flex flex-col gap-4 hover:shadow-xl transition-all duration-200 ease-in-out">
                             <img
                                 className="mx-auto h-12 w-12"
-                                src="/icons/contact/question.svg"
+                                src={getImgSrc('question')}
                                 alt="general contact page icon"
                             />
                             <h2 className="text-center">General Inquiry</h2>

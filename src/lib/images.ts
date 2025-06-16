@@ -1,0 +1,218 @@
+const cloudinaryImageMap = new Map([
+    [
+        'Favicon_16x16',
+        'https://res.cloudinary.com/pixelverse-studios/image/upload/v1750022033/clients/360dc/Favicon_16x16_q22nns.png'
+    ],
+    [
+        'Favicon_64x64',
+        'https://res.cloudinary.com/pixelverse-studios/image/upload/v1750022033/clients/360dc/Favicon_64x64_tke6mn.png'
+    ],
+    [
+        'Favicon_32x32',
+        'https://res.cloudinary.com/pixelverse-studios/image/upload/v1750022033/clients/360dc/Favicon_32x32_hqwio1.png'
+    ],
+    [
+        'interim-bmv-2page-spread-boombox-hi-res',
+        'https://res.cloudinary.com/pixelverse-studios/image/upload/v1750022033/clients/360dc/carousel/interim-bmv-2page-spread-boombox-hi-res_fisyoh.jpg'
+    ],
+    [
+        'interim-billboard-hi-res',
+        'https://res.cloudinary.com/pixelverse-studios/image/upload/v1750022038/clients/360dc/carousel/interim-billboard-hi-res_pzmjjg.jpg'
+    ],
+    [
+        'Dylan',
+        'https://res.cloudinary.com/pixelverse-studios/image/upload/v1750022038/clients/360dc/media/Dylan_jtwte8.jpg'
+    ],
+    [
+        'Fran',
+        'https://res.cloudinary.com/pixelverse-studios/image/upload/v1750022033/clients/360dc/media/Fran_vph49s.jpg'
+    ],
+    [
+        '360Logo',
+        'https://res.cloudinary.com/pixelverse-studios/image/upload/v1750022033/clients/360dc/media/360Logo_yyo1tt.svg'
+    ],
+    [
+        'runners',
+        'https://res.cloudinary.com/pixelverse-studios/image/upload/v1750022033/clients/360dc/assets/runners_ycjb4w.jpg'
+    ],
+    [
+        'Jeff',
+        'https://res.cloudinary.com/pixelverse-studios/image/upload/v1750022033/clients/360dc/media/Jeff_tlbkyy.jpg'
+    ],
+    [
+        'Dina',
+        'https://res.cloudinary.com/pixelverse-studios/image/upload/v1750022033/clients/360dc/media/Dina_nuluar.jpg'
+    ],
+
+    [
+        'band-aid',
+        'https://res.cloudinary.com/pixelverse-studios/image/upload/v1750022033/clients/360dc/icons/band-aid_t9bxdu.svg'
+    ],
+    [
+        'done-stamp',
+        'https://res.cloudinary.com/pixelverse-studios/image/upload/v1750022033/clients/360dc/media/done-stamp_uyr6pp.png'
+    ],
+    [
+        'laundry',
+        'https://res.cloudinary.com/pixelverse-studios/image/upload/v1750022033/clients/360dc/icons/laundry_hv2abh.svg'
+    ],
+    [
+        'Meal',
+        'https://res.cloudinary.com/pixelverse-studios/image/upload/v1750022033/clients/360dc/icons/Meal_plziti.svg'
+    ],
+    [
+        'bathing',
+        'https://res.cloudinary.com/pixelverse-studios/image/upload/v1750022033/clients/360dc/icons/bathing_m7m9r8.svg'
+    ],
+    [
+        'Medication',
+        'https://res.cloudinary.com/pixelverse-studios/image/upload/v1750022033/clients/360dc/icons/Medication_dzpfw6.svg'
+    ],
+    [
+        'checkup',
+        'https://res.cloudinary.com/pixelverse-studios/image/upload/v1750022033/clients/360dc/icons/checkup_yovxde.svg'
+    ],
+    [
+        'CHAPLogo',
+        'https://res.cloudinary.com/pixelverse-studios/image/upload/v1750022033/clients/360dc/icons/CHAPLogo_s7d9j6.svg'
+    ],
+    [
+        'Transportation',
+        'https://res.com/pixelverse-studios/image/upload/v1750022033/clients/360dc/icons/Transportation_a5ght9.svg'
+    ],
+    [
+        'companionship',
+        'https://res.cloudinary.com/pixelverse-studios/image/upload/v1750022033/clients/360dc/icons/companionship_aqhovp.svg'
+    ],
+    [
+        'heart',
+        'https://res.cloudinary.com/pixelverse-studios/image/upload/v1750022033/clients/360dc/icons/contact/heart_e0kkus.svg'
+    ],
+    [
+        'handshake',
+        'https://res.cloudinary.com/pixelverse-studios/image/upload/v1750022033/clients/360dc/icons/contact/handshake_kvoqrq.svg'
+    ],
+
+    [
+        'question',
+        'https://res.cloudinary.com/pixelverse-studios/image/upload/v1750022033/clients/360dc/icons/contact/question_biytdd.svg'
+    ],
+    [
+        'ad-15',
+        'https://res.cloudinary.com/pixelverse-studios/image/upload/v1750022033/clients/360dc/carousel/ad-15_uda2yv.jpg'
+    ],
+    [
+        'jeff-ads-version-C3-hi-res',
+        'https://res.cloudinary.com/pixelverse-studios/image/upload/v1750022033/clients/360dc/carousel/jeff-ads-version-C3-hi-res_hel8w0.jpg'
+    ],
+    [
+        'interim-bmv-2page-spread-hutton-hi-res',
+        'https://res.cloudinary.com/pixelverse-studios/image/upload/v1750022033/clients/360dc/carousel/interim-bmv-2page-spread-hutton-hi-res_ldwhx7.jpg'
+    ],
+    [
+        'man-with-bat-v01',
+        'https://res.cloudinary.com/pixelverse-studios/image/upload/v1750022033/clients/360dc/carousel/man-with-bat-v01_ejuziz.jpg'
+    ],
+    [
+        'beach_hug',
+        'https://res.cloudinary.com/pixelverse-studios/image/upload/v1750022033/clients/360dc/assets/beach_hug_qjoqjb.jpg'
+    ],
+    [
+        'silver-tsunami',
+        'https://res.cloudinary.com/pixelverse-studios/image/upload/v1750022032/clients/360dc/blog/silver-tsunami_vvoqdh.jpg'
+    ],
+    [
+        'happy_couple_1',
+        'https://res.cloudinary.com/pixelverse-studios/image/upload/v1750022033/clients/360dc/assets/happy_couple_1_xgwhwr.jpg'
+    ],
+    [
+        'staff',
+        'https://res.cloudinary.com/pixelverse-studios/image/upload/v1750022033/clients/360dc/assets/staff_lwd2z3.jpg'
+    ],
+    [
+        'hiking',
+        'https://res.cloudinary.com/pixelverse-studios/image/upload/v1750022033/clients/360dc/assets/hiking_lpyez0.jpg'
+    ],
+    [
+        'happy_couple_2',
+        'https://res.cloudinary.com/pixelverse-studios/image/upload/v1750022033/clients/360dc/assets/happy_couple_2_pilden.jpg'
+    ],
+    [
+        'nurse_assessment',
+        'https://res.cloudinary.com/pixelverse-studios/image/upload/v1750022033/clients/360dc/assets/nurse_assessment_hzv1ft.jpg'
+    ],
+
+    [
+        'model-waving',
+        'https://res.cloudinary.com/pixelverse-studios/image/upload/v1750022033/clients/360dc/assets/model-waving_o7x1da.jpg'
+    ],
+    [
+        'leaves_in_the_wind',
+        'https://res.cloudinary.com/pixelverse-studios/image/upload/v1750022033/clients/360dc/assets/leaves_in_the_wind_gkyjfh.jpg'
+    ],
+    [
+        'reading',
+        'https://res.cloudinary.com/pixelverse-studios/image/upload/v1750022033/clients/360dc/assets/reading_nx0jun.jpg'
+    ],
+    [
+        'story_telling',
+        'https://res.cloudinary.com/pixelverse-studios/image/upload/v1750022033/clients/360dc/assets/story_telling_r3vyml.jpg'
+    ],
+    [
+        'roller_coaster',
+        'https://res.cloudinary.com/pixelverse-studios/image/upload/v1750022033/clients/360dc/assets/roller_coaster_bctmnj.jpg'
+    ],
+    [
+        'swimmer',
+        'https://res.cloudinary.com/pixelverse-studios/image/upload/v1750022033/clients/360dc/assets/swimmer_b0995g.jpg'
+    ],
+    [
+        'worker_2',
+        'https://res.cloudinary.com/pixelverse-studios/image/upload/v1750022033/clients/360dc/assets/worker_2_iwo9mn.jpg'
+    ],
+    [
+        'worker_1',
+        'https://res.cloudinary.com/pixelverse-studios/image/upload/v1750022033/clients/360dc/assets/worker_1_kdnop1.jpg'
+    ],
+    [
+        'nurse_plan',
+        'https://res.cloudinary.com/pixelverse-studios/image/upload/v1750022033/clients/360dc/assets/nurse_plan_nsrr2o.jpg'
+    ],
+    [
+        'nurse_care',
+        'https://res.cloudinary.com/pixelverse-studios/image/upload/v1750022033/clients/360dc/assets/nurse_care_tclckz.jpg'
+    ],
+    [
+        'nurse_heart',
+        'https://res.cloudinary.com/pixelverse-studios/image/upload/v1750022029/clients/360dc/assets/nurse_heart_jeijuc.jpg'
+    ],
+    [
+        'mother-daughter',
+        'https://res.cloudinary.com/pixelverse-studios/image/upload/v1750022033/clients/360dc/assets/mother-daughter_usdpr5.jpg'
+    ],
+    [
+        'freedom',
+        'https://res.cloudinary.com/pixelverse-studios/image/upload/v1750022033/clients/360dc/assets/freedom_eahhno.jpg'
+    ],
+    [
+        'red-corvette',
+        'https://res.cloudinary.com/pixelverse-studios/image/upload/v1750033100/clients/360dc/red-corvette_i1x8cc.png'
+    ]
+])
+
+export function getImgSrc(localPath: string): string | undefined {
+    if (!localPath) {
+        return undefined
+    }
+
+    const parts = localPath.split('/')
+    const filenameWithExtension = parts[parts.length - 1]
+
+    const lastDotIndex = filenameWithExtension.lastIndexOf('.')
+    const imageKey =
+        lastDotIndex === -1
+            ? filenameWithExtension
+            : filenameWithExtension.substring(0, lastDotIndex)
+
+    return cloudinaryImageMap.get(imageKey)
+}

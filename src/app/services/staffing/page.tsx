@@ -6,7 +6,7 @@ import { CompanyName } from '@/components/Logo'
 import { STAFFING_FAQS } from '@/utils/faqs'
 import AnimatedSection from '@/components/animated-section'
 import MedicalStaffingSeoHead from '@/lib/seo/medicalStaffing'
-import ContactMap from '@/components/contact/ContactMap'
+import { getImgSrc } from '@/lib/images'
 
 export default function StaffingSolutionsPage() {
     return (
@@ -62,13 +62,13 @@ export default function StaffingSolutionsPage() {
                                     qualifications, and experience.
                                 </p>
                             </div>
-                            <div className="flex items-center justify-center">
-                                <img
-                                    src="/assets/nurse heart.jpg"
-                                    alt=""
-                                    className="rounded-lg shadow-lg"
-                                />
-                            </div>
+                            {/* <div className="flex items-center justify-center"> */}
+                            <img
+                                src={getImgSrc('nurse_heart')}
+                                alt=""
+                                className="rounded-lg shadow-lg h-full w-auto"
+                            />
+                            {/* </div> */}
                         </AnimatedSection>
                     </section>
 
@@ -234,7 +234,6 @@ export default function StaffingSolutionsPage() {
                         </AnimatedSection>
                     </section>
                 </div>
-                <ContactMap />
             </main>
         </>
     )

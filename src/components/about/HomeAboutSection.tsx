@@ -1,5 +1,6 @@
 import { CircleCheck } from 'lucide-react'
 import AnimatedSection from '../animated-section'
+import { getImgSrc } from '@/lib/images'
 
 export default function HomeAboutSection() {
     return (
@@ -10,7 +11,7 @@ export default function HomeAboutSection() {
             >
                 <img
                     className="rounded-2xl h-full w-fit object-cover"
-                    src="/assets/swimmer.jpg"
+                    src={getImgSrc('swimmer')}
                     alt="Content senior man"
                 />
 
@@ -59,7 +60,7 @@ export default function HomeAboutSection() {
                         </ul>
                         <a href="https://chapinc.org/about/" target="_blank">
                             <img
-                                src="/icons/CHAPLogo.svg"
+                                src={getImgSrc('CHAPLogo')}
                                 alt="CHAP badge"
                                 className="w-[8rem] h-[8rem] mx-auto md:mx-0"
                             />

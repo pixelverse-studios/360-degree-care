@@ -3,8 +3,9 @@
 import CallToAction from '@/components/CallToAction'
 import { CompanyName } from '@/components/Logo'
 import AnimatedSection from '@/components/animated-section'
-import ContactMap from '@/components/contact/ContactMap'
+import { getImgSrc } from '@/lib/images'
 
+const wavingModel = getImgSrc('model-waving')
 interface headerProps {
     header: string
 }
@@ -248,7 +249,7 @@ export default function ElderCareView({ header }: headerProps) {
                     </div>
                     <div className="flex-1">
                         <img
-                            src="/assets/model-waving.jpg"
+                            src={wavingModel}
                             alt="Caring consultant meeting with family"
                             className="rounded-lg shadow-lg w-full h-full object-cover"
                         />
@@ -356,7 +357,6 @@ export default function ElderCareView({ header }: headerProps) {
                     />
                 </AnimatedSection>
             </div>
-            <ContactMap />
         </main>
     )
 }

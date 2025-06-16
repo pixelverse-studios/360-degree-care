@@ -2,6 +2,7 @@ import { IconType } from 'react-icons'
 
 import AnimatedSection from './animated-section'
 import { cn } from '@/lib/utils'
+import { getImgSrc } from '@/lib/images'
 
 interface CardProps {
     icon: IconType
@@ -46,7 +47,7 @@ export default function InfoCards({ cards, header, styles }: InfoCardProps) {
                                     <Icon className="text-4xl mb-4 text-primary" />
                                 ) : (
                                     <img
-                                        src={card.iconPath}
+                                        src={getImgSrc(card.iconPath)}
                                         className="mb-4"
                                         alt=""
                                     />

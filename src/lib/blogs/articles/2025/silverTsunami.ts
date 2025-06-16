@@ -1,4 +1,6 @@
-export const silverTsunamiAgingWorkforceCrisis = {
+import { getImgSrc } from '@/lib/images'
+
+const silverTsunamiAgingWorkforceCrisis = {
     id: 'silver-tsunami-aging-workforce-crisis',
     title: "The Silver Tsunami: Preparing for America's Aging Workforce Crisis",
     slug: 'silver-tsunami-aging-workforce-crisis',
@@ -8,7 +10,7 @@ export const silverTsunamiAgingWorkforceCrisis = {
     author: {
         name: 'Jeff DeJoseph',
         title: 'Leader in Aging in Place Services',
-        avatar: '/images/authors/jeff-dejoseph.jpg'
+        avatar: getImgSrc('Jeff')
     },
     publishDate: '2024-02-20',
     readTime: '6 min read',

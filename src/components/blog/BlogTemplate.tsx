@@ -1,6 +1,5 @@
 'use client'
 
-import React from 'react'
 import {
     Calendar,
     Clock,
@@ -14,6 +13,7 @@ import {
     Mail
 } from 'lucide-react'
 import MarkdownRenderer from './MarkdownRenderer'
+import { getImgSrc } from '@/lib/images'
 
 // Types
 interface BlogPost {
@@ -56,7 +56,7 @@ export default function BlogTemplate({ blogPost }: BlogTemplateProps) {
                     </p>
                     <a
                         href="/blog"
-                        className="px-6 py-3 bg-orange-500 text-white rounded-lg hover:bg-orange-600 transition-colors"
+                        className="px-6 py-3 bg-primary text-white rounded-lg hover:bg-primary transition-colors"
                     >
                         Back to Blog
                     </a>
@@ -95,24 +95,28 @@ export default function BlogTemplate({ blogPost }: BlogTemplateProps) {
     return (
         <main>
             {/* Hero Section */}
-            <div className="relative">
+            {/* UPDATED: Added rounded-xl and overflow-hidden to the main container */}
+            <div className="relative rounded-xl overflow-hidden">
                 <img
-                    src={blogPost.featuredImage}
+                    src={getImgSrc(blogPost.featuredImage)}
                     alt={blogPost.title}
                     className="w-full h-96 lg:h-[500px] object-cover"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
-                <div className="absolute bottom-0 left-0 right-0 p-8 text-white">
-                    <div className="max-w-4xl mx-auto">
-                        <span className="inline-block px-4 py-2 bg-orange-500 text-white text-sm font-medium rounded-full mb-6 shadow-lg">
-                            {blogPost.category}
-                        </span>
-                        <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
-                            {blogPost.title}
-                        </h1>
-                        <p className="text-xl text-gray-200 mb-6 max-w-3xl leading-relaxed">
-                            {blogPost.excerpt}
-                        </p>
+
+                <div className="absolute inset-0 p-6 text-white flex items-center">
+                    <div className="w-full">
+                        {/* The "glass" container is now perfectly clipped inside the parent */}
+                        <div className="p-6 flex flex-col gap-4 items-start bg-gray-800/50 rounded-xl">
+                            <span className="inline-block px-4 py-2 bg-primary text-white text-sm font-medium rounded-full shadow-lg">
+                                {blogPost.category}
+                            </span>
+                            <span className="text-3xl text-primary font-bold leading-tight drop-shadow-lg text-outline-shadow-black">
+                                {blogPost.title}
+                            </span>
+                            <p className="text-xl text-gray-200 max-w-3xl leading-relaxed drop-shadow-md">
+                                {blogPost.excerpt}
+                            </p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -129,7 +133,7 @@ export default function BlogTemplate({ blogPost }: BlogTemplateProps) {
                                     '/api/placeholder/64/64'
                                 }
                                 alt={blogPost.author.name}
-                                className="w-14 h-14 rounded-full ring-2 ring-orange-100"
+                                className="w-14 h-14 rounded-full ring-2 ring-primary"
                             />
                             <div>
                                 <p className="font-semibold text-gray-900 text-lg">
@@ -153,7 +157,7 @@ export default function BlogTemplate({ blogPost }: BlogTemplateProps) {
                         </span>
                     </div>
 
-                    <div className="flex items-center gap-4 ml-auto">
+                    {/* <div className="flex items-center gap-4 ml-auto">
                         <button className="flex items-center gap-2 text-gray-600 hover:text-gray-900 transition-colors">
                             <Share2 className="h-5 w-5" />
                             Share
@@ -162,14 +166,14 @@ export default function BlogTemplate({ blogPost }: BlogTemplateProps) {
                             <Bookmark className="h-5 w-5" />
                             Save
                         </button>
-                    </div>
+                    </div> */}
                 </div>
 
                 {/* Markdown Content - This is where the .md file content gets rendered */}
                 <MarkdownRenderer content={blogPost.content} />
 
                 {/* Call to Action Section */}
-                <div className="my-16 bg-gradient-to-r from-orange-500 to-orange-600 text-white rounded-2xl p-8 lg:p-12 text-center">
+                {/* <div className="my-16 bg-gradient-to-r from-orange-500 to-primary text-white rounded-2xl p-8 lg:p-12 text-center">
                     <h3 className="text-3xl font-bold mb-4">
                         Ready to Get Started?
                     </h3>
@@ -178,7 +182,7 @@ export default function BlogTemplate({ blogPost }: BlogTemplateProps) {
                         loved one maintain independence at home.
                     </p>
                     <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                        <button className="flex items-center gap-2 bg-white text-orange-600 px-8 py-4 rounded-lg font-semibold hover:bg-gray-50 transition-colors shadow-lg">
+                        <button className="flex items-center gap-2 bg-white text-primary px-8 py-4 rounded-lg font-semibold hover:bg-gray-50 transition-colors shadow-lg">
                             <Phone className="h-5 w-5" />
                             Call (555) 123-4567
                         </button>
@@ -187,7 +191,7 @@ export default function BlogTemplate({ blogPost }: BlogTemplateProps) {
                             Free Consultation
                         </button>
                     </div>
-                </div>
+                </div> */}
 
                 {/* Tags */}
                 {blogPost.tags && blogPost.tags.length > 0 && (
@@ -199,7 +203,7 @@ export default function BlogTemplate({ blogPost }: BlogTemplateProps) {
                             {blogPost.tags.map(tag => (
                                 <span
                                     key={tag}
-                                    className="px-4 py-2 bg-gray-100 text-gray-700 rounded-full text-sm hover:bg-orange-100 hover:text-orange-700 cursor-pointer transition-colors"
+                                    className="px-4 py-2 bg-gray-100 text-gray-700 rounded-full text-sm hover:bg-primary hover:text-green cursor-pointer transition-colors"
                                 >
                                     #{tag}
                                 </span>
@@ -209,7 +213,7 @@ export default function BlogTemplate({ blogPost }: BlogTemplateProps) {
                 )}
 
                 {/* Share Section */}
-                <div className="mt-12 pt-8 border-t border-gray-200">
+                {/* <div className="mt-12 pt-8 border-t border-gray-200">
                     <h4 className="font-semibold text-gray-900 mb-6 text-lg">
                         Share this article
                     </h4>
@@ -236,13 +240,13 @@ export default function BlogTemplate({ blogPost }: BlogTemplateProps) {
                             LinkedIn
                         </button>
                     </div>
-                </div>
+                </div> */}
 
                 {/* Navigation */}
                 <div className="mt-16 pt-8 border-t border-gray-200">
                     <a
                         href="/blog"
-                        className="flex items-center gap-2 text-orange-600 hover:text-orange-700 font-semibold text-lg transition-colors"
+                        className="flex items-center gap-2 text-primary hover:text-green font-semibold text-lg transition-colors"
                     >
                         <ArrowLeft className="h-5 w-5" />
                         Back to Blog
@@ -255,11 +259,11 @@ export default function BlogTemplate({ blogPost }: BlogTemplateProps) {
                         You might also be interested in:
                     </h4>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                        <div className="flex items-center gap-3 text-orange-600 hover:text-orange-700 cursor-pointer">
+                        <div className="flex items-center gap-3 text-primary hover:text-green cursor-pointer">
                             <span className="text-2xl">📋</span>
                             <span>Tips for Choosing a Home Care Provider</span>
                         </div>
-                        <div className="flex items-center gap-3 text-orange-600 hover:text-orange-700 cursor-pointer">
+                        <div className="flex items-center gap-3 text-primary hover:text-green cursor-pointer">
                             <span className="text-2xl">👥</span>
                             <span>How to Care for Aging Parents</span>
                         </div>

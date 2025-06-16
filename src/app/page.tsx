@@ -6,7 +6,6 @@ import HomeAboutSection from '@/components/about/HomeAboutSection'
 import HomeTestimonials from '@/components/testimonials/HomeTestimonials'
 import HomeSeoHead from '@/lib/seo/home'
 import SimpleCard from '@/components/card/SimpleCard'
-import ContactMap from '@/components/contact/ContactMap'
 import { cn } from '@/lib/utils'
 
 import { HIGHLIGHT_CARDS, SERVICE_CARDS } from '@/utils/home'
@@ -35,7 +34,6 @@ export default function HomePage() {
                     header="Our Concierge Level™ Services"
                 />
                 <HomeTestimonials />
-                <ContactMap />
             </main>
         </>
     )

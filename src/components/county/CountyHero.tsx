@@ -1,3 +1,5 @@
+import { getImgSrc } from '@/lib/images'
+
 interface CountyHeroProps {
     title: string
     subTitle: string
@@ -12,7 +14,7 @@ export default function CountyHero({ title, subTitle }: CountyHeroProps) {
                     <p>{subTitle}</p>
                 </article>
                 <img
-                    src="/assets/happy couple 1.jpg"
+                    src={getImgSrc('happy_couple_1')}
                     alt=""
                     className="rounded-xl"
                 />

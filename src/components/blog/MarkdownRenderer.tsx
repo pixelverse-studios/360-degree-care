@@ -1,4 +1,4 @@
-import React from 'react'
+import { getImgSrc } from '@/lib/images'
 
 interface MarkdownRendererProps {
     content: string
@@ -224,7 +224,7 @@ export default function MarkdownRenderer({ content }: MarkdownRendererProps) {
             .replace(/_(.*?)_/g, '<em>$1</em>')
             .replace(
                 /\[(.*?)\]\((.*?)\)/g,
-                '<a href="$2" class="text-orange-600 hover:text-orange-700 underline font-medium transition-colors">$1</a>'
+                '<a href="$2" class="text-primary hover:text-green underline font-medium transition-colors">$1</a>'
             )
     }
 
@@ -247,7 +247,7 @@ export default function MarkdownRenderer({ content }: MarkdownRendererProps) {
                         return (
                             <h2
                                 key={index}
-                                className="text-3xl font-bold text-orange-700 mb-6 mt-12"
+                                className="text-3xl font-bold text-primary mb-6 mt-12"
                             >
                                 {element.content}
                             </h2>
@@ -275,7 +275,7 @@ export default function MarkdownRenderer({ content }: MarkdownRendererProps) {
                         return (
                             <figure key={index} className="my-12">
                                 <img
-                                    src={element.content.src}
+                                    src={getImgSrc(element.content.src)}
                                     alt={element.content.alt}
                                     className="w-full rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300"
                                     loading="lazy"

@@ -2,6 +2,9 @@ import { useRouter } from 'next/navigation'
 import { Button } from '../ui/button'
 import { navLinks } from '@/utils/routes'
 import CallToAction from '../CallToAction'
+import { getImgSrc } from '@/lib/images'
+
+const couple = getImgSrc('happy_couple_1')
 
 const [serviceLink] = navLinks
 
@@ -48,7 +51,7 @@ export default function HomeHero() {
             </div>
             <img
                 className="rounded-2xl max-h-[20rem] h-fit w-full object-cover"
-                src="/assets/happy couple 1.jpg"
+                src={couple}
                 alt=""
             />
         </section>
