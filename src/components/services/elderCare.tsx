@@ -22,7 +22,7 @@ export default function ElderCareView({ header }: headerProps) {
                     <h1 className="text-4xl font-extrabold mb-4">
                         {header ? header : `Elder Care Consulting`}
                     </h1>
-                    <p className="text-lg md:text-xl text-gray-700 max-w-3xl">
+                    <p className="text-lg md:text-xl text-gray-700 max-w-3xl mb-4">
                         Navigating care decisions for an aging parent or loved
                         one can feel overwhelming — but you don’t have to do it
                         alone.
@@ -30,7 +30,7 @@ export default function ElderCareView({ header }: headerProps) {
                         services to help you evaluate every option with
                         confidence.
                     </p>
-                    <p>
+                    <p className="text-lg md:text-xl text-gray-700 max-w-3xl">
                         Whether your family is considering aging in place,
                         assisted living, or skilled nursing care, we provide
                         expert guidance tailored to your unique situation. We
