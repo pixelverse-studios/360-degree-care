@@ -11,6 +11,7 @@ import Breadcrumbs from '@/components/nav/Breadcrumbs'
 import Footer from '@/components/Footer'
 import { Toaster } from '@/components/ui/sonner'
 import { RouteStateProvider } from '@/lib/providers'
+import GoogleTagManager from '@/components/GTagManager'
 
 // import 'animate.css'
 import '../styles/globals.css'
@@ -81,37 +82,22 @@ export default function RootLayout({
                     href="https://fontlibrary.org//face/symbola"
                     type="text/css"
                 />
-                <Script
-                    src="https://www.googletagmanager.com/gtag/js?id=AW-17090471122"
-                    strategy="afterInteractive"
-                />
-                <Script id="google-analytics" strategy="afterInteractive">
-                    {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'AW-17090471122');
-          `}
-                </Script>
-                <Script
-                    src="https://www.googletagmanager.com/gtag/js?id=AW-1709047122"
-                    strategy="afterInteractive"
-                />
+                <GoogleTagManager />
                 <Script
                     id="sitebehaviour-init"
                     strategy="afterInteractive"
                     dangerouslySetInnerHTML={{
                         __html: `
-              (function() {
-                var sbSiteSecret = 'dd171ee6-2143-4a6d-b96a-1023e3c53f39';
-                window.sitebehaviourTrackingSecret = sbSiteSecret;
-                var scriptElement = document.createElement('script');
-                scriptElement.async = true;
-                scriptElement.id = 'site-behaviour-script-v2';
-                scriptElement.src = 'https://sitebehaviour-cdn.fra1.cdn.digitaloceanspaces.com/index.min.js?sitebehaviour-secret=' + sbSiteSecret;
-                document.head.appendChild(scriptElement); 
-              })();
-            `
+                                    (function() {
+                                        var sbSiteSecret = 'dd171ee6-2143-4a6d-b96a-1023e3c53f39';
+                                        window.sitebehaviourTrackingSecret = sbSiteSecret;
+                                        var scriptElement = document.createElement('script');
+                                        scriptElement.async = true;
+                                        scriptElement.id = 'site-behaviour-script-v2';
+                                        scriptElement.src = 'https://sitebehaviour-cdn.fra1.cdn.digitaloceanspaces.com/index.min.js?sitebehaviour-secret=' + sbSiteSecret;
+                                        document.head.appendChild(scriptElement); 
+                                    })();
+                                `
                     }}
                 />
             </head>
