@@ -5,13 +5,13 @@ import {
     Permanent_Marker,
     Rubik
 } from 'next/font/google'
+import { GoogleTagManager } from '@next/third-parties/google'
 
 import { Header } from '@/components/nav/Header'
 import Breadcrumbs from '@/components/nav/Breadcrumbs'
 import Footer from '@/components/Footer'
 import { Toaster } from '@/components/ui/sonner'
 import { RouteStateProvider } from '@/lib/providers'
-import GoogleTagManager from '@/components/GTagManager'
 
 // import 'animate.css'
 import '../styles/globals.css'
@@ -82,7 +82,19 @@ export default function RootLayout({
                     href="https://fontlibrary.org//face/symbola"
                     type="text/css"
                 />
-                <GoogleTagManager />
+                {/* <GoogleTagManager gtmId="GTM-PGDVF5CR" /> */}
+                <Script
+                    id="gtag-manager-init"
+                    dangerouslySetInnerHTML={{
+                        __html: `
+              (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+              new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+              j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+              'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+              })(window,document,'script','dataLayer','GTM-PGDVF5CR');
+            `
+                    }}
+                />
                 <Script
                     id="sitebehaviour-init"
                     strategy="afterInteractive"
@@ -104,6 +116,14 @@ export default function RootLayout({
             <body
                 className={`antialiased ${rubik.variable} ${merriweather.variable} ${bodoni.variable} ${permanentMarker.variable}`}
             >
+                <noscript>
+                    <iframe
+                        src="https://www.googletagmanager.com/ns.html?id=GTM-PGDVF5CR"
+                        height="0"
+                        width="0"
+                        style={{ display: 'none', visibility: 'hidden' }}
+                    ></iframe>
+                </noscript>
                 <RouteStateProvider>
                     <Header />
                     <Breadcrumbs />
