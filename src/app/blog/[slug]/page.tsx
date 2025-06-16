@@ -3,7 +3,7 @@ import { notFound } from 'next/navigation'
 import allBlogs from '@/lib/blogs' // Default import
 import BlogPageClient from '@/components/blog/BlogClientPage'
 // Types
-interface BlogPost {
+export interface BlogPost {
     id: string
     title: string
     slug: string
@@ -12,7 +12,7 @@ interface BlogPost {
     author: {
         name: string
         title: string
-        avatar: string
+        avatar?: string
     }
     publishDate: string
     readTime: string

@@ -3,41 +3,18 @@
 import {
     Calendar,
     Clock,
-    ArrowLeft,
-    Share2,
-    Bookmark,
-    Facebook,
-    Twitter,
-    Linkedin,
-    Phone,
-    Mail
+    ArrowLeft
+    // Share2,
+    // Bookmark,
+    // Facebook,
+    // Twitter,
+    // Linkedin,
+    // Phone,
+    // Mail
 } from 'lucide-react'
 import MarkdownRenderer from './MarkdownRenderer'
 import { getImgSrc } from '@/lib/images'
-
-// Types
-interface BlogPost {
-    id: string
-    title: string
-    slug: string
-    excerpt: string
-    category: string
-    author: {
-        name: string
-        title: string
-        avatar: string
-    }
-    publishDate: string
-    readTime: string
-    featuredImage: string
-    tags: string[]
-    seo?: {
-        metaDescription: string
-        keywords: string[]
-    }
-    contentType: string
-    content: string
-}
+import { BlogPost } from '@/app/blog/[slug]/page'
 
 interface BlogTemplateProps {
     blogPost: BlogPost
@@ -74,23 +51,23 @@ export default function BlogTemplate({ blogPost }: BlogTemplateProps) {
         })
     }
 
-    const shareUrl = typeof window !== 'undefined' ? window.location.href : ''
-    const shareText = `Check out this article: ${blogPost.title}`
+    // const shareUrl = typeof window !== 'undefined' ? window.location.href : ''
+    // const shareText = `Check out this article: ${blogPost.title}`
 
-    const handleShare = (platform: string) => {
-        const encodedUrl = encodeURIComponent(shareUrl)
-        const encodedText = encodeURIComponent(shareText)
+    // const handleShare = (platform: string) => {
+    //     const encodedUrl = encodeURIComponent(shareUrl)
+    //     const encodedText = encodeURIComponent(shareText)
 
-        const shareUrls: Record<string, string> = {
-            facebook: `https://www.facebook.com/sharer/sharer.php?u=${encodedUrl}`,
-            twitter: `https://twitter.com/intent/tweet?url=${encodedUrl}&text=${encodedText}`,
-            linkedin: `https://www.linkedin.com/sharing/share-offsite/?url=${encodedUrl}`
-        }
+    //     const shareUrls: Record<string, string> = {
+    //         facebook: `https://www.facebook.com/sharer/sharer.php?u=${encodedUrl}`,
+    //         twitter: `https://twitter.com/intent/tweet?url=${encodedUrl}&text=${encodedText}`,
+    //         linkedin: `https://www.linkedin.com/sharing/share-offsite/?url=${encodedUrl}`
+    //     }
 
-        if (shareUrls[platform]) {
-            window.open(shareUrls[platform], '_blank', 'width=600,height=400')
-        }
-    }
+    //     if (shareUrls[platform]) {
+    //         window.open(shareUrls[platform], '_blank', 'width=600,height=400')
+    //     }
+    // }
 
     return (
         <main>
