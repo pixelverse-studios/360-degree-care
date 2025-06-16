@@ -29,7 +29,7 @@ export const metadata = {
     openGraph: {
         images: [
             {
-                url: '/path-to-your-new-image.png' // Create a new image with your preferred background color
+                url: '/path-to-your-new-image.png' // TODO: UPDATE
             }
         ],
         title: '360 Degree Care',
@@ -41,16 +41,16 @@ export const metadata = {
     }
 }
 export const permanentMarker = Permanent_Marker({
-    weight: ['400'], // Permanent Marker only comes in 400 weight
+    weight: ['400'],
     subsets: ['latin'],
     display: 'swap',
-    variable: '--font-permanent-marker' // Optional: for CSS variable usage
+    variable: '--font-permanent-marker'
 })
 
 const rubik = Rubik({
     subsets: ['latin'],
     variable: '--font-rubik',
-    display: 'swap' // Add this to ensure font loads quickly
+    display: 'swap'
 })
 
 const merriweather = Merriweather({
