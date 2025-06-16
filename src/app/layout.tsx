@@ -93,6 +93,27 @@ export default function RootLayout({
             gtag('config', 'AW-17090471122');
           `}
                 </Script>
+                <Script
+                    src="https://www.googletagmanager.com/gtag/js?id=AW-1709047122"
+                    strategy="afterInteractive"
+                />
+                <Script
+                    id="sitebehaviour-init"
+                    strategy="afterInteractive"
+                    dangerouslySetInnerHTML={{
+                        __html: `
+              (function() {
+                var sbSiteSecret = 'dd171ee6-2143-4a6d-b96a-1023e3c53f39';
+                window.sitebehaviourTrackingSecret = sbSiteSecret;
+                var scriptElement = document.createElement('script');
+                scriptElement.async = true;
+                scriptElement.id = 'site-behaviour-script-v2';
+                scriptElement.src = 'https://sitebehaviour-cdn.fra1.cdn.digitaloceanspaces.com/index.min.js?sitebehaviour-secret=' + sbSiteSecret;
+                document.head.appendChild(scriptElement); 
+              })();
+            `
+                    }}
+                />
             </head>
             <body
                 className={`antialiased ${rubik.variable} ${merriweather.variable} ${bodoni.variable} ${permanentMarker.variable}`}
