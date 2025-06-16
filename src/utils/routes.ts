@@ -1,3 +1,5 @@
+// src/utils/routes.ts
+
 import { counties } from '@/lib/counties'
 
 const wisdomVaultLinks = [
@@ -11,6 +13,8 @@ const wisdomVaultLinks = [
         route: '/blog',
         label: 'Blog',
         canVisit: true,
+        // --- FIX 1: Added this flag to tell the breadcrumbs that /blog has dynamic children (e.g., /blog/[slug]) ---
+        hasDynamicChildren: true,
         subLinks: []
     },
     {
@@ -32,6 +36,8 @@ export const navLinks = [
         route: '',
         label: 'Services',
         canVisit: false,
+        // --- FIX 2: Added this flag for consistency, to handle dynamic routes like /services/[county] ---
+        hasDynamicChildren: true,
         subLinks: [
             {
                 route: '/services/personal-care',
@@ -134,20 +140,11 @@ const countyHubPages = counties.map(county => ({
     subLinks: []
 }))
 
-const vaultWithBlogs = [
-    ...wisdomVaultLinks,
-    {
-        route: '/blog/:blog-title',
-        label: '',
-        canVisit: true,
-        subLinks: []
-    }
-]
-
 export const availablePages = [
     ...navLinks,
     ...footerResources,
     ...additionalPages,
-    ...countyHubPages,
-    ...vaultWithBlogs
+    ...countyHubPages
+    // --- FIX 3: Removed the redundant '...wisdomVaultLinks' spread. ---
+    // It's already included inside navLinks, and having it twice can cause unexpected behavior.
 ]

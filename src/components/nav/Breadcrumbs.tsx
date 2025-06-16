@@ -13,85 +13,90 @@ import {
     BreadcrumbSeparator
 } from '@/components/ui/breadcrumb'
 
+type Page = {
+    route: string
+    label: string
+    canVisit: boolean
+    subLinks: Page[]
+    hasDynamicChildren?: boolean
+}
+
+const findPageByRoute = (pages: Page[], route: string): Page | null => {
+    for (const page of pages) {
+        if (page.route === route) return page
+        if (page.subLinks && page.subLinks.length > 0) {
+            const foundInSublinks = findPageByRoute(page.subLinks, route)
+            if (foundInSublinks) return foundInSublinks
+        }
+    }
+    return null
+}
+
+const formatSegmentAsLabel = (segment: string): string => {
+    if (!segment) return ''
+    return segment
+        .split('-')
+        .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+        .join(' ')
+}
+
 export default function Breadcrumbs() {
     const [isMounted, setIsMounted] = useState(false)
     const pathname = usePathname()
-    const pathSegments = pathname.split('/').filter(Boolean)
 
     useEffect(() => {
         setIsMounted(true)
     }, [])
 
-    // First check if the entire path is invalid (genuine 404 page)
-    const fullPathIsValid =
-        pathSegments.length > 0 &&
-        (availablePages.some(
-            nav =>
-                nav.route === pathname ||
-                nav.subLinks.some(sub => sub.route === pathname)
-        ) ||
-            (pathname.startsWith('/services/') &&
-                availablePages.some(
-                    nav =>
-                        nav.subLinks &&
-                        nav.subLinks.some(sub => sub.route === pathname)
-                )))
+    if (pathname === '/' || !isMounted) return <div className="" />
 
-    // Generate full breadcrumbs array regardless, but set a flag for showing just 404
-    const showSingle404 = !fullPathIsValid && !pathname.startsWith('/services/')
+    const pathSegments = pathname.split('/').filter(Boolean)
 
     const breadcrumbs = pathSegments
-        .filter((segment, index) => {
-            if (pathname.startsWith('/services/') && pathSegments.length >= 3) {
+        .map((segment, index) => {
+            const currentPath = `/${pathSegments.slice(0, index + 1).join('/')}`
+            const parentPath = `/${pathSegments.slice(0, index).join('/')}`
+
+            const page = findPageByRoute(availablePages as Page[], currentPath)
+
+            if (page) {
+                return {
+                    route: currentPath,
+                    label: page.label,
+                    canVisit: page.canVisit ?? true,
+                    isValid: true
+                }
+            } else {
+                const parentPage = findPageByRoute(
+                    availablePages as Page[],
+                    parentPath === '/' ? '' : parentPath
+                )
+
+                if (parentPage?.hasDynamicChildren) {
+                    return {
+                        route: currentPath,
+                        label: formatSegmentAsLabel(segment),
+                        canVisit: true,
+                        isValid: true
+                    }
+                } else {
+                    return {
+                        route: currentPath,
+                        label: '404',
+                        isValid: false,
+                        canVisit: false
+                    }
+                }
+            }
+        })
+        .filter((_, index) => {
+            if (pathname.startsWith('/services/') && pathSegments.length > 2) {
                 return index < 2
             }
             return true
         })
-        .map((segment, index) => {
-            const routePath = '/' + pathSegments.slice(0, index + 1).join('/')
 
-            // Check if this is a parent segment with valid children
-            // For example, if routePath is "/services" and it has subLinks
-            const isParentWithValidChildren = availablePages.some(
-                nav =>
-                    nav.subLinks &&
-                    nav.subLinks.length > 0 &&
-                    nav.subLinks.some(sub =>
-                        sub.route.startsWith(routePath + '/')
-                    )
-            )
-
-            const matchedNav = availablePages.find(
-                nav =>
-                    nav.route === routePath ||
-                    nav.subLinks.some(sub => sub.route === routePath)
-            )
-
-            // Find if any parent has this as a sublink
-            const parentNav = availablePages.find(
-                nav =>
-                    nav.subLinks &&
-                    nav.subLinks.some(sub => sub.route === routePath)
-            )
-
-            const label =
-                matchedNav?.subLinks.find(sub => sub.route === routePath)
-                    ?.label ||
-                matchedNav?.label ||
-                (routePath === '/services' ? 'Services' : segment) // Special case for services
-
-            return {
-                route: routePath,
-                label: label.charAt(0).toUpperCase() + label.slice(1),
-                canVisit: matchedNav?.canVisit || isParentWithValidChildren,
-                isValid:
-                    matchedNav !== undefined ||
-                    isParentWithValidChildren ||
-                    !!parentNav
-            }
-        })
-
-    if (pathname === '/' || !isMounted) return <div className="" />
+    const is404Page = breadcrumbs.length > 0 && !breadcrumbs[0].isValid
 
     return (
         <Breadcrumb className="absolute w-full z-10 top-[9rem] hidden lg:block">
@@ -105,7 +110,7 @@ export default function Breadcrumbs() {
                     </BreadcrumbLink>
                 </BreadcrumbItem>
 
-                {showSingle404 ? (
+                {is404Page ? (
                     <>
                         <BreadcrumbSeparator />
                         <BreadcrumbItem>
@@ -115,36 +120,29 @@ export default function Breadcrumbs() {
                 ) : (
                     breadcrumbs.map((crumb, index) => {
                         const isLast = index === breadcrumbs.length - 1
+
                         return (
-                            <Fragment key={index}>
+                            <Fragment key={crumb.route}>
                                 <BreadcrumbSeparator />
                                 <BreadcrumbItem>
-                                    {isLast ||
-                                    !crumb.canVisit ||
-                                    crumb.route === '/services' ? (
+                                    {isLast || !crumb.canVisit ? (
                                         <span
                                             className={cn(
-                                                'text-primary font-semibold',
+                                                'font-semibold',
                                                 isLast
                                                     ? 'text-primary'
                                                     : 'text-black-muted'
                                             )}
                                         >
-                                            {crumb.isValid ? crumb.label : 404}
+                                            {crumb.label}
                                         </span>
                                     ) : (
                                         <BreadcrumbLink
                                             asChild
-                                            className={
-                                                isLast
-                                                    ? 'text-primary'
-                                                    : 'text-black-muted'
-                                            }
+                                            className="text-black-muted font-bold hover:text-primary"
                                         >
                                             <Link href={crumb.route}>
-                                                {crumb.isValid
-                                                    ? crumb.label
-                                                    : 404}
+                                                {crumb.label}
                                             </Link>
                                         </BreadcrumbLink>
                                     )}
