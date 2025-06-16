@@ -11,6 +11,7 @@ import Breadcrumbs from '@/components/nav/Breadcrumbs'
 import Footer from '@/components/Footer'
 import { Toaster } from '@/components/ui/sonner'
 import { RouteStateProvider } from '@/lib/providers'
+import { getImgSrc } from '@/lib/images'
 
 // import 'animate.css'
 import '../styles/globals.css'
@@ -18,11 +19,23 @@ import '../styles/globals.css'
 export const metadata = {
     icons: {
         icon: [
-            { url: '/Favicon_16x16.png', type: 'image/png', sizes: '16x16' },
-            { url: '/Favicon_32x32.png', type: 'image/png', sizes: '32x32' },
-            { url: '/Favicon_64x64.png', type: 'image/png', sizes: '64x64' }
+            {
+                url: getImgSrc('Favicon_16x16'),
+                type: 'image/png',
+                sizes: '16x16'
+            },
+            {
+                url: getImgSrc('Favicon_32x32'),
+                type: 'image/png',
+                sizes: '32x32'
+            },
+            {
+                url: getImgSrc('Favicon_64x64'),
+                type: 'image/png',
+                sizes: '64x64'
+            }
         ],
-        apple: [{ url: '/Favicon_16x16.png', sizes: '180x180' }]
+        apple: [{ url: getImgSrc('Favicon_16x16'), sizes: '180x180' }]
     },
     title: '360 Degree Care',
     description: 'Your description here',
@@ -81,7 +94,6 @@ export default function RootLayout({
                     href="https://fontlibrary.org//face/symbola"
                     type="text/css"
                 />
-                {/* <GoogleTagManager gtmId="GTM-PGDVF5CR" /> */}
                 <Script
                     id="gtag-manager-init"
                     dangerouslySetInnerHTML={{
