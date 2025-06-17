@@ -10,9 +10,10 @@ const HomeSeoHead = () => {
         '@type': 'HomeHealthCareService',
         name: '360 Degree Care',
         url: 'https://www.360degreecare.net/',
-        logo: 'https://www.360degreecare.net/assets/logo.png',
+        // Updated logo URL as per the prompt
+        logo: 'https://res.cloudinary.com/pixelverse-studios/image/upload/v1750117116/clients/360dc/360DC-2C-horz_io6tok.svg',
         description:
-            'Providing Concierge Level™ home care with compassion that allows seniors to maintain their independence and dignity at home.',
+            'A comprehensive home healthcare agency providing skilled nursing, personal care, elder care, companion care, staffing, and home health aide services to ensure every angle of your health is covered right at home.', // Updated description from my initial JSON-LD suggestion
         slogan: 'The Finest Nurses and Home Aides in New Jersey',
         address: {
             '@type': 'PostalAddress',
@@ -41,10 +42,25 @@ const HomeSeoHead = () => {
             opens: '00:00',
             closes: '23:59'
         },
-        areaServed: {
-            '@type': 'State',
-            name: 'New Jersey'
-        },
+        // More specific areaServed as discussed, if you ONLY serve these counties
+        areaServed: [
+            {
+                '@type': 'AdministrativeArea',
+                name: 'Bergen County',
+                address: {
+                    '@type': 'PostalAddress',
+                    addressRegion: 'NJ'
+                }
+            },
+            {
+                '@type': 'AdministrativeArea',
+                name: 'Passaic County',
+                address: {
+                    '@type': 'PostalAddress',
+                    addressRegion: 'NJ'
+                }
+            }
+        ],
         hasOfferCatalog: {
             '@type': 'OfferCatalog',
             name: 'Home Health Care Services',
