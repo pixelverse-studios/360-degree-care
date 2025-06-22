@@ -38,7 +38,7 @@ export const CompanyName = ({
     const colorClass = invert ? 'text-white' : 'text-primary'
 
     return (
-        <p
+        <span
             className={cn(
                 'inline-flex font-bold',
                 colorClass,
@@ -57,7 +57,7 @@ export const CompanyName = ({
                 />
             </span>
             Care
-        </p>
+        </span>
     )
 }
 

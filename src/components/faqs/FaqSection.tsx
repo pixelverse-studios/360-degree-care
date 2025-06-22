@@ -37,7 +37,7 @@ export default function FaqSection({
             </h2>
             <Accordion
                 type="multiple"
-                className={cn('w-full max-w-4xl mx-auto space-y-2', bodyClass)}
+                className={cn('w-full max-w-4xl mx-auto space-y-2')}
             >
                 {faqs.map(faq => (
                     <AccordionItem

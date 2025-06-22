@@ -197,6 +197,10 @@ const cloudinaryImageMap = new Map([
     [
         'red-corvette',
         'https://res.cloudinary.com/pixelverse-studios/image/upload/v1750033100/clients/360dc/red-corvette_i1x8cc.png'
+    ],
+    [
+        'personal-care-hero',
+        'https://res.cloudinary.com/pixelverse-studios/image/upload/v1750423042/clients/360dc/services/Haircut_af5j8e.jpg'
     ]
 ])
 

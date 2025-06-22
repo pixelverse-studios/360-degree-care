@@ -58,6 +58,10 @@ const config: Config = {
                     bright: 'var(--green-bright)',
                     dark: 'var(--green-dark)'
                 },
+                gray: {
+                    light: '#f3f4f6',
+                    dark: '#808080'
+                },
                 accent: {
                     DEFAULT: 'var(--accent)',
                     blue: 'var(--blue)',
@@ -98,29 +102,39 @@ const config: Config = {
             keyframes: {
                 'accordion-down': {
                     from: {
-                        height: '0'
+                        height: '0',
+                        opacity: '0',
+                        transform: 'translateY(-10px)'
                     },
                     to: {
-                        height: 'var(--radix-accordion-content-height)'
+                        height: 'var(--radix-accordion-content-height)',
+                        opacity: '1',
+                        transform: 'translateY(0)'
                     }
                 },
                 'accordion-up': {
                     from: {
-                        height: 'var(--radix-accordion-content-height)'
+                        height: 'var(--radix-accordion-content-height)',
+                        opacity: '1',
+                        transform: 'translateY(0)'
                     },
                     to: {
-                        height: '0'
+                        height: '0',
+                        opacity: '0',
+                        transform: 'translateY(-10px)'
                     }
                 }
             },
             animation: {
-                'accordion-down': 'accordion-down 0.2s ease-out',
-                'accordion-up': 'accordion-up 0.2s ease-out',
                 'fade-in': 'animate__animated animate__fadeIn',
                 'back-in-left': 'animate__animated animate__backInLeft',
                 'spin-slow': 'spin 3s linear infinite',
                 'spin-fast': 'spin 500ms linear infinite',
-                'spin-very-slow': 'spin 5s linear infinite'
+                'spin-very-slow': 'spin 5s linear infinite',
+                'accordion-down':
+                    'accordion-down 0.5s cubic-bezier(0.16, 1, 0.3, 1)',
+                'accordion-up':
+                    'accordion-up 0.5s cubic-bezier(0.16, 1, 0.3, 1)'
             },
             fontSize: {
                 sm: '20px', // Tailwind's default "sm" is 14px, overriding it to 20px

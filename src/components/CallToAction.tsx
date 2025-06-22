@@ -1,5 +1,6 @@
 'use client'
 
+import { ReactNode } from 'react'
 import { useRouter } from 'next/navigation'
 
 import { Button } from './ui/button'
@@ -8,7 +9,7 @@ import { useRouteState } from '@/lib/providers'
 import { ContactMap } from '@/utils/contact'
 
 interface CallToActionProps {
-    buttonLabel: string
+    buttonLabel: string | ReactNode
     buttonClass?: string
     type: 'general' | 'services' | 'employment'
     variant?:
@@ -52,7 +53,7 @@ export default function CallToAction({
     return (
         <Button
             variant={variant ?? 'cta'}
-            className={cn(buttonClass)}
+            className={cn('flex items-center', buttonClass)}
             onClick={onButtonClick}
         >
             {buttonLabel}

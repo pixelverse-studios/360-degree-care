@@ -186,6 +186,10 @@ h4 {
         font-family: var(--font-merriweather), serif;
     }
 
+    .page-section {
+        @apply mx-auto px-4 py-10 max-w-custom;
+    }
+
     .gradient-down {
         @apply bg-gradient-to-b from-blue to-white;
     }
