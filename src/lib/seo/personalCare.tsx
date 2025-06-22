@@ -13,7 +13,6 @@ import {
     FaToilet,
     FaArrowRight,
     FaHouseUser,
-    FaHandsHoldingChild,
     FaFaceSmile,
     FaSliders
 } from 'react-icons/fa6'
