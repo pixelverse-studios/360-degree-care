@@ -166,7 +166,7 @@ const StaticPersonalCareData = {
         ),
         description: (
             <>
-                Pe4rsonal care services at <CompanyName /> are designed to help
+                Personal care services at <CompanyName /> are designed to help
                 seniors and individuals with daily living tasks while preserving
                 dignity, independence, and comfort.
             </>

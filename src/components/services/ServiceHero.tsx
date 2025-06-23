@@ -3,6 +3,7 @@
 import { ReactNode } from 'react'
 import CallToAction from '../CallToAction'
 
+import { SlideInSection } from '../animations'
 import { ImageProps } from '@/lib/types'
 
 interface ServiceHeroProps {
@@ -20,7 +21,7 @@ export default function ServiceHero({
 }: ServiceHeroProps) {
     return (
         <section className="page-section grid grid-cols-1 lg:grid-cols-2 gap-6">
-            <div className="flex flex-col gap-6 items-start">
+            <SlideInSection className="flex flex-col gap-6 items-start">
                 <h1>{header}</h1>
                 <article className="mb-12">{description}</article>
                 <CallToAction
@@ -29,8 +30,14 @@ export default function ServiceHero({
                     variant="pillPrimary"
                     type="services"
                 />
-            </div>
-            <img className="rounded-xl shadow-xl" src={img.src} alt={img.alt} />
+            </SlideInSection>
+            <SlideInSection direction="right">
+                <img
+                    className="rounded-xl shadow-xl"
+                    src={img.src}
+                    alt={img.alt}
+                />
+            </SlideInSection>
         </section>
     )
 }

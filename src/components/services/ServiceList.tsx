@@ -1,11 +1,14 @@
 import { ServiceListProps } from '@/lib/types'
+import { SlideInSection, StaggeredSection } from '../animations'
 
 export default function ServiceList({ header, items }: ServiceListProps) {
     return (
         <section className="gradient-left">
             <section className="page-section text-white">
-                <h2 className="text-white mb-8 text-center">{header}</h2>
-                <ul className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-4xl mx-auto">
+                <SlideInSection direction="down">
+                    <h2 className="text-white mb-8 text-center">{header}</h2>
+                </SlideInSection>
+                <StaggeredSection className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-4xl mx-auto">
                     {items.map(({ title, description, Icon }) => (
                         <li
                             key={title}
@@ -22,7 +25,7 @@ export default function ServiceList({ header, items }: ServiceListProps) {
                             </article>
                         </li>
                     ))}
-                </ul>
+                </StaggeredSection>
             </section>
         </section>
     )
