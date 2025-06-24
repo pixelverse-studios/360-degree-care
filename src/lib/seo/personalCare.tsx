@@ -14,7 +14,7 @@ import {
     FaArrowRight,
     FaHouseUser,
     FaFaceSmile,
-    FaSliders
+    FaNotesMedical
 } from 'react-icons/fa6'
 import { getImgSrc } from '../images'
 
@@ -244,7 +244,7 @@ const StaticPersonalCareData = {
                 title: 'Reduces Caregiver Stress',
                 description:
                     'Offers relief for family members and prevents caregiver burnout',
-                Icon: FaToilet
+                Icon: FaHeart
             },
             {
                 title: 'Improves Emotional Well-being',
@@ -256,7 +256,7 @@ const StaticPersonalCareData = {
                 title: 'Customizable Plans',
                 description:
                     "Every client's needs and preferences are unique and fully accommodated",
-                Icon: FaSliders
+                Icon: FaNotesMedical
             }
         ]
     }

@@ -1,4 +1,5 @@
 import CallToAction from '../CallToAction'
+import { SlideInSection } from '../animations'
 
 interface ServiceCtaProps {
     header: string
@@ -20,7 +21,7 @@ export default function ServiceCta({
     origin
 }: ServiceCtaProps) {
     return (
-        <section className="bg-blue text-white">
+        <SlideInSection className="bg-blue text-white">
             <div className="page-section flex flex-col gap-6 items-center">
                 <h2 className="text-white">{header}</h2>
                 <p className="max-w-2xl mx-auto text-center leading-snug">
@@ -33,6 +34,6 @@ export default function ServiceCta({
                     type="services"
                 />
             </div>
-        </section>
+        </SlideInSection>
     )
 }
