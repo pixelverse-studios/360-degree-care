@@ -8,7 +8,10 @@ export default function ServiceBenefits({ header, items }: ServiceListProps) {
             <SlideInSection direction="up">
                 <h2 className="text-primary mb-8 text-center">{header}</h2>
             </SlideInSection>
-            <StaggeredSection className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 items-center max-w-4xl mx-auto h-full">
+            <StaggeredSection
+                className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 items-center max-w-4xl mx-auto h-full"
+                childClass="h-full"
+            >
                 {items.map(({ title, description, Icon }) => (
                     <div
                         key={title}

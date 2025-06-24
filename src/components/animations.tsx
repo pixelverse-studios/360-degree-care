@@ -26,6 +26,7 @@ interface SlideInProps extends AnimationProps {
 interface StaggeredProps {
     children: ReactNode
     className?: string
+    childClass?: string
 }
 
 // Custom hook for intersection observer with proper typing
@@ -139,7 +140,8 @@ const ScaleFadeSection: React.FC<AnimationProps> = ({
 // Animation Option 4: Staggered Children
 const StaggeredSection: React.FC<StaggeredProps> = ({
     children,
-    className
+    className,
+    childClass
 }) => {
     const [ref, isInView] = useInView(0.2)
 
@@ -148,11 +150,13 @@ const StaggeredSection: React.FC<StaggeredProps> = ({
             {Children.map(children, (child, index) => (
                 <div
                     key={index}
-                    className={`transition-all duration-1000 ease-out ${
+                    className={cn(
+                        `transition-all duration-1000 ease-out`,
                         isInView
                             ? 'opacity-100 translate-y-0'
-                            : 'opacity-0 translate-y-6'
-                    }`}
+                            : 'opacity-0 translate-y-6',
+                        childClass ?? ''
+                    )}
                     style={{ transitionDelay: `${index * 200}ms` }}
                 >
                     {child}
