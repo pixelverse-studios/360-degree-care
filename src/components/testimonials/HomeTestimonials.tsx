@@ -117,8 +117,8 @@ export default function HomeTestimonials() {
                             )
                         })}
                     </CarouselContent>
-                    <CarouselPrevious className="left-0" />
-                    <CarouselNext className="right-0" />
+                    <CarouselPrevious className="left-0 transition-all duration-200 hover:bg-blue hover:text-white" />
+                    <CarouselNext className="right-0 transition-all duration-200 hover:bg-green hover:text-white" />
                 </Carousel>
             </section>
             {/* </AnimatedSection> */}
