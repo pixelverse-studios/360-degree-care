@@ -12,6 +12,70 @@ export interface ServiceSEOData {
         localExpertise?: string
         emergencyInfo?: string
     }
+    SeoHead?: {
+        title?: string
+        metaDescription?: string
+        keywords?: string
+        ogTitle?: string
+        ogDescription?: string
+        ogImage?: string
+        twitterTitle?: string
+        twitterDescription?: string
+        twitterImage?: string
+        canonicalUrl?: string
+        schema?: {
+            name?: string
+            serviceType?: string
+            description?: string
+            areaServed?: {
+                name: string
+                type: string
+            }
+            address?: {
+                streetAddress?: string
+                addressLocality?: string
+                addressRegion?: string
+                postalCode?: string
+                addressCountry?: string
+            }
+            telephone?: string
+        }
+    }
+    hero?: {
+        cta?: string
+        description?: string
+        header?: string
+        img?: {
+            src: string
+            alt: string
+        }
+    }
+    description?: {
+        header?: string
+        description?: string
+    }
+    listItems?: {
+        header?: string
+        items?: Array<{
+            title: string
+            description: string
+            Icon: any
+        }>
+    }
+    benefits?: {
+        header?: string
+        items?: Array<{
+            title: string
+            description: string
+            Icon: any
+        }>
+    }
+    cta?: {
+        header?: string
+        description?: string
+        cta?: string
+        origin?: string
+    }
 }
 
 export interface LocationSEOContent {

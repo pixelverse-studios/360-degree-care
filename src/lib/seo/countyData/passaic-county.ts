@@ -1,4 +1,5 @@
 import { CountyData } from '@/lib/counties'
+import { addPersonalCare } from '../serviceTemplates/applyTemplate'
 
 const passaicCountyData: CountyData = {
     slug: 'passaic-county',
@@ -85,19 +86,7 @@ const passaicCountyData: CountyData = {
                     'Comprehensive elder care solutions in Bloomingdale, ensuring peace of mind and quality of life for seniors and their families.'
             },
             serviceSpecificSEO: {
-                'personal-care': {
-                    customH1:
-                        'Personal Care Services in Bloomingdale, Passaic County',
-                    customTitle:
-                        'Personal Care Bloomingdale NJ | Suburban Home Care',
-                    customMetaDescription:
-                        'Professional personal care in Bloomingdale, NJ. Dedicated caregivers providing compassionate support for daily living. Contact us today.',
-                    localKeywords: [
-                        'personal care Bloomingdale',
-                        'home care 07403',
-                        'Bloomingdale caregivers',
-                        'Passaic County personal care'
-                    ],
+                'personal-care': addPersonalCare('bloomingdale', {
                     contentBlocks: {
                         whyChooseUs:
                             "Our team understands the needs of Bloomingdale families, offering respectful and tailored personal care amidst the borough's natural beauty.",
@@ -111,7 +100,7 @@ const passaicCountyData: CountyData = {
                         emergencyInfo:
                             'Coordinated emergency response with Bloomingdale first responders and nearby medical facilities.'
                     }
-                },
+                }),
                 'companion-care': {
                     customH1: 'Companion Care in Bloomingdale',
                     customTitle:
@@ -225,19 +214,7 @@ const passaicCountyData: CountyData = {
                     'Comprehensive elder care solutions in Clifton, dedicated to enhancing the well-being and independence of seniors in their diverse community.'
             },
             serviceSpecificSEO: {
-                'personal-care': {
-                    customH1:
-                        'Personal Care Services in Clifton, Passaic County',
-                    customTitle:
-                        'Personal Care Clifton NJ | Diverse City Home Care',
-                    customMetaDescription:
-                        'Culturally sensitive personal care in Clifton, NJ. Our diverse team provides compassionate support for daily living. Call today.',
-                    localKeywords: [
-                        'personal care Clifton',
-                        'home care 07011',
-                        'Clifton caregivers',
-                        'diverse care Passaic County'
-                    ],
+                'personal-care': addPersonalCare('clifton', {
                     contentBlocks: {
                         whyChooseUs:
                             "Our multicultural team is adept at serving Clifton's diverse community with respectful and tailored personal care, understanding its urban and suburban blend.",
@@ -251,7 +228,7 @@ const passaicCountyData: CountyData = {
                         emergencyInfo:
                             'Quick response within Clifton with connections to nearby medical facilities and major highways.'
                     }
-                },
+                }),
                 'companion-care': {
                     customH1: 'Companion Care in Clifton',
                     customTitle:
@@ -362,19 +339,7 @@ const passaicCountyData: CountyData = {
                     'Comprehensive elder care in Haledon, dedicated to enhancing the well-being and independence of seniors, honoring their unique heritage.'
             },
             serviceSpecificSEO: {
-                'personal-care': {
-                    customH1:
-                        'Personal Care Services in Haledon, Passaic County',
-                    customTitle:
-                        'Personal Care Haledon NJ | Culturally Sensitive Home Care',
-                    customMetaDescription:
-                        'Culturally sensitive personal care in Haledon, NJ. Our diverse team provides compassionate support for daily living. Call today.',
-                    localKeywords: [
-                        'personal care Haledon',
-                        'home care 07508',
-                        'Haledon caregivers',
-                        'multicultural care Passaic County'
-                    ],
+                'personal-care': addPersonalCare('haledon', {
                     contentBlocks: {
                         whyChooseUs:
                             "Our multicultural team is adept at serving Haledon's diverse community with respectful and tailored personal care, understanding its rich history.",
@@ -388,7 +353,7 @@ const passaicCountyData: CountyData = {
                         emergencyInfo:
                             'Quick response within Haledon with connections to nearby medical facilities in Paterson and Wayne.'
                     }
-                },
+                }),
                 'companion-care': {
                     customH1: 'Companion Care in Haledon',
                     customTitle:
@@ -499,19 +464,7 @@ const passaicCountyData: CountyData = {
                     'Elder care solutions in Hawthorne, focused on maintaining independence and providing peace of mind for seniors and their families.'
             },
             serviceSpecificSEO: {
-                'personal-care': {
-                    customH1:
-                        'Personal Care Services in Hawthorne, Passaic County',
-                    customTitle:
-                        'Personal Care Hawthorne NJ | Suburban Home Care',
-                    customMetaDescription:
-                        'Professional personal care in Hawthorne, NJ. Dedicated caregivers providing compassionate support for daily living. Contact us today.',
-                    localKeywords: [
-                        'personal care Hawthorne',
-                        'home care 07506',
-                        'Hawthorne caregivers',
-                        'Passaic County personal care'
-                    ],
+                'personal-care': addPersonalCare('hawthorne', {
                     contentBlocks: {
                         whyChooseUs:
                             'Our team provides thoughtful and practical personal care, understanding the needs of Hawthorne residents and their suburban lifestyle.',
@@ -525,7 +478,7 @@ const passaicCountyData: CountyData = {
                         emergencyInfo:
                             'Coordinated emergency response with Hawthorne first responders and nearby medical facilities.'
                     }
-                },
+                }),
                 'companion-care': {
                     customH1: 'Companion Care in Hawthorne',
                     customTitle:
@@ -636,19 +589,7 @@ const passaicCountyData: CountyData = {
                     'Comprehensive elder care solutions in Little Falls, ensuring peace of mind and quality of life for seniors and their families.'
             },
             serviceSpecificSEO: {
-                'personal-care': {
-                    customH1:
-                        'Personal Care Services in Little Falls, Passaic County',
-                    customTitle:
-                        'Personal Care Little Falls NJ | Suburban Home Care',
-                    customMetaDescription:
-                        'Professional personal care in Little Falls, NJ. Dedicated caregivers providing compassionate support for daily living. Contact us today.',
-                    localKeywords: [
-                        'personal care Little Falls',
-                        'home care 07424',
-                        'Little Falls caregivers',
-                        'Passaic County personal care'
-                    ],
+                'personal-care': addPersonalCare('little-falls', {
                     contentBlocks: {
                         whyChooseUs:
                             'Our team understands the needs of Little Falls families, offering respectful and tailored personal care in this dynamic community.',
@@ -662,7 +603,7 @@ const passaicCountyData: CountyData = {
                         emergencyInfo:
                             'Coordinated emergency response with Little Falls first responders and nearby medical facilities.'
                     }
-                },
+                }),
                 'companion-care': {
                     customH1: 'Companion Care in Little Falls',
                     customTitle:
@@ -774,19 +715,7 @@ const passaicCountyData: CountyData = {
                     'Elder care solutions in North Haledon, tailored to the needs of seniors seeking comfortable and reliable support in their cherished homes.'
             },
             serviceSpecificSEO: {
-                'personal-care': {
-                    customH1:
-                        'Personal Care Services in North Haledon, Passaic County',
-                    customTitle:
-                        'Personal Care North Haledon NJ | Scenic Home Care',
-                    customMetaDescription:
-                        'Professional personal care in North Haledon, NJ. Compassionate caregivers provide discreet assistance for daily living. Call today.',
-                    localKeywords: [
-                        'personal care North Haledon',
-                        'home care 07508',
-                        'North Haledon caregivers',
-                        'Passaic County luxury care'
-                    ],
+                'personal-care': addPersonalCare('north-haledon', {
                     contentBlocks: {
                         whyChooseUs:
                             'Our team delivers sensitive and professional personal care, respecting the serene and private nature of North Haledon homes.',
@@ -800,7 +729,7 @@ const passaicCountyData: CountyData = {
                         emergencyInfo:
                             'Coordinated emergency response with North Haledon first responders and nearby medical facilities.'
                     }
-                },
+                }),
                 'companion-care': {
                     customH1: 'Companion Care in North Haledon',
                     customTitle:
@@ -913,19 +842,7 @@ const passaicCountyData: CountyData = {
                     'Comprehensive elder care in Passaic, dedicated to enhancing the well-being and independence of seniors, honoring their unique heritage and urban lifestyle.'
             },
             serviceSpecificSEO: {
-                'personal-care': {
-                    customH1:
-                        'Personal Care Services in Passaic, Passaic County',
-                    customTitle:
-                        'Personal Care Passaic NJ | Diverse Urban Home Care',
-                    customMetaDescription:
-                        'Culturally sensitive personal care in Passaic, NJ. Our diverse team provides compassionate support for daily living. Call today.',
-                    localKeywords: [
-                        'personal care Passaic',
-                        'home care 07055',
-                        'Passaic caregivers',
-                        'multicultural care Passaic County'
-                    ],
+                'personal-care': addPersonalCare('passaic', {
                     contentBlocks: {
                         whyChooseUs:
                             "Our multicultural team is adept at serving Passaic's diverse community with respectful and tailored personal care, understanding its vibrant urban character.",
@@ -939,7 +856,7 @@ const passaicCountyData: CountyData = {
                         emergencyInfo:
                             "Quick response within Passaic with direct connections to St. Mary's General Hospital and local emergency services."
                     }
-                },
+                }),
                 'companion-care': {
                     customH1: 'Companion Care in Passaic',
                     customTitle:
@@ -1055,18 +972,7 @@ const passaicCountyData: CountyData = {
                     "Comprehensive elder care in Paterson, leveraging proximity to medical facilities and urban conveniences, honoring the city's rich heritage."
             },
             serviceSpecificSEO: {
-                'personal-care': {
-                    customH1: 'Expert Personal Care Services in Paterson, NJ',
-                    customTitle:
-                        'Personal Care Paterson NJ | Great Falls Area Home Care',
-                    customMetaDescription:
-                        'Personal care services in Paterson, NJ near Great Falls. Urban home care with medical coordination. Culturally sensitive support.',
-                    localKeywords: [
-                        'personal care Paterson NJ',
-                        'home care Great Falls area',
-                        'Paterson caregivers',
-                        'Passaic County seat care'
-                    ],
+                'personal-care': addPersonalCare('paterson', {
                     contentBlocks: {
                         whyChooseUs:
                             "Located in Passaic County's seat, we provide urban-focused care with unmatched access to cultural and medical facilities.",
@@ -1081,7 +987,7 @@ const passaicCountyData: CountyData = {
                         emergencyInfo:
                             "Immediate access to St. Joseph's University Medical Center and Passaic County emergency services."
                     }
-                },
+                }),
                 'companion-care': {
                     customH1: 'Companion Care in Paterson',
                     customTitle:
@@ -1192,19 +1098,7 @@ const passaicCountyData: CountyData = {
                     'Comprehensive elder care solutions in Pompton Lakes, ensuring peace of mind and quality of life for seniors and their families.'
             },
             serviceSpecificSEO: {
-                'personal-care': {
-                    customH1:
-                        'Personal Care Services in Pompton Lakes, Passaic County',
-                    customTitle:
-                        'Personal Care Pompton Lakes NJ | Lake Community Home Care',
-                    customMetaDescription:
-                        'Professional personal care in Pompton Lakes, NJ. Dedicated caregivers providing compassionate support for daily living. Contact us today.',
-                    localKeywords: [
-                        'personal care Pompton Lakes',
-                        'home care 07442',
-                        'Pompton Lakes caregivers',
-                        'Passaic County lake area care'
-                    ],
+                'personal-care': addPersonalCare('pompton-lakes', {
                     contentBlocks: {
                         whyChooseUs:
                             "Our team understands the needs of Pompton Lakes families, offering respectful and tailored personal care amidst the borough's natural beauty and lake lifestyle.",
@@ -1218,7 +1112,7 @@ const passaicCountyData: CountyData = {
                         emergencyInfo:
                             'Coordinated emergency response with Pompton Lakes first responders and nearby medical facilities.'
                     }
-                },
+                }),
                 'companion-care': {
                     customH1: 'Companion Care in Pompton Lakes',
                     customTitle:
@@ -1325,19 +1219,7 @@ const passaicCountyData: CountyData = {
                     "Elder care services for Prospect Park's senior population, honoring their unique backgrounds and ensuring comprehensive support."
             },
             serviceSpecificSEO: {
-                'personal-care': {
-                    customH1:
-                        'Personal Care Services in Prospect Park, Passaic County',
-                    customTitle:
-                        'Personal Care Prospect Park NJ | Culturally Sensitive Home Care',
-                    customMetaDescription:
-                        'Culturally sensitive personal care in Prospect Park, NJ. Our diverse team provides compassionate support for daily living. Call today.',
-                    localKeywords: [
-                        'personal care Prospect Park',
-                        'home care 07508',
-                        'Prospect Park caregivers',
-                        'multicultural care Passaic County'
-                    ],
+                'personal-care': addPersonalCare('prospect-park', {
                     contentBlocks: {
                         whyChooseUs:
                             "Our multicultural team is adept at serving Prospect Park's diverse community with respectful and tailored personal care.",
@@ -1351,7 +1233,7 @@ const passaicCountyData: CountyData = {
                         emergencyInfo:
                             'Quick response within Prospect Park with connections to nearby medical facilities in Paterson and Wayne.'
                     }
-                },
+                }),
                 'companion-care': {
                     customH1: 'Companion Care in Prospect Park',
                     customTitle:
@@ -1463,19 +1345,7 @@ const passaicCountyData: CountyData = {
                     'Elder care solutions in Ringwood, tailored to the needs of seniors seeking comfortable and reliable support in their cherished homes, surrounded by nature.'
             },
             serviceSpecificSEO: {
-                'personal-care': {
-                    customH1:
-                        'Personal Care Services in Ringwood, Passaic County',
-                    customTitle:
-                        'Personal Care Ringwood NJ | Highlands Home Care',
-                    customMetaDescription:
-                        'Professional personal care in Ringwood, NJ. Compassionate caregivers provide discreet assistance for daily living in this scenic, rural borough. Call today.',
-                    localKeywords: [
-                        'personal care Ringwood',
-                        'home care 07456',
-                        'Ringwood caregivers',
-                        'Passaic County Highlands care'
-                    ],
+                'personal-care': addPersonalCare('ringwood', {
                     contentBlocks: {
                         whyChooseUs:
                             'Our team delivers sensitive and professional personal care, respecting the serene and private nature of Ringwood homes amidst its natural beauty.',
@@ -1489,7 +1359,7 @@ const passaicCountyData: CountyData = {
                         emergencyInfo:
                             'Coordinated emergency response with Ringwood first responders and nearby medical facilities, mindful of rural logistics.'
                     }
-                },
+                }),
                 'companion-care': {
                     customH1: 'Companion Care in Ringwood',
                     customTitle:
@@ -1595,18 +1465,7 @@ const passaicCountyData: CountyData = {
                     'Elder care solutions in Totowa, focused on maintaining independence and providing peace of mind for seniors and their families.'
             },
             serviceSpecificSEO: {
-                'personal-care': {
-                    customH1:
-                        'Personal Care Services in Totowa, Passaic County',
-                    customTitle: 'Personal Care Totowa NJ | Suburban Home Care',
-                    customMetaDescription:
-                        'Professional personal care in Totowa, NJ. Dedicated caregivers providing compassionate support for daily living. Contact us today.',
-                    localKeywords: [
-                        'personal care Totowa',
-                        'home care 07512',
-                        'Totowa caregivers',
-                        'Passaic County personal care'
-                    ],
+                'personal-care': addPersonalCare('totowa', {
                     contentBlocks: {
                         whyChooseUs:
                             'Our team provides thoughtful and practical personal care, understanding the needs of Totowa residents and their convenient lifestyle.',
@@ -1620,7 +1479,7 @@ const passaicCountyData: CountyData = {
                         emergencyInfo:
                             'Coordinated emergency response with Totowa first responders and nearby medical facilities.'
                     }
-                },
+                }),
                 'companion-care': {
                     customH1: 'Companion Care in Totowa',
                     customTitle:
@@ -1731,19 +1590,7 @@ const passaicCountyData: CountyData = {
                     'Comprehensive elder care solutions in Wanaque, ensuring peace of mind and quality of life for seniors and their families.'
             },
             serviceSpecificSEO: {
-                'personal-care': {
-                    customH1:
-                        'Personal Care Services in Wanaque, Passaic County',
-                    customTitle:
-                        'Personal Care Wanaque NJ | Lake Community Home Care',
-                    customMetaDescription:
-                        'Professional personal care in Wanaque, NJ. Dedicated caregivers providing compassionate support for daily living. Contact us today.',
-                    localKeywords: [
-                        'personal care Wanaque',
-                        'home care 07465',
-                        'Wanaque caregivers',
-                        'Passaic County lake area care'
-                    ],
+                'personal-care': addPersonalCare('wanaque', {
                     contentBlocks: {
                         whyChooseUs:
                             "Our team understands the needs of Wanaque families, offering respectful and tailored personal care amidst the borough's natural beauty and lake lifestyle.",
@@ -1757,7 +1604,7 @@ const passaicCountyData: CountyData = {
                         emergencyInfo:
                             'Coordinated emergency response with Wanaque first responders and nearby medical facilities.'
                     }
-                },
+                }),
                 'companion-care': {
                     customH1: 'Companion Care in Wanaque',
                     customTitle:
@@ -1870,18 +1717,7 @@ const passaicCountyData: CountyData = {
                     'Comprehensive elder care solutions in Wayne, ensuring peace of mind and quality of life for seniors and their families.'
             },
             serviceSpecificSEO: {
-                'personal-care': {
-                    customH1: 'Personal Care Services in Wayne, Passaic County',
-                    customTitle:
-                        'Personal Care Wayne NJ | Suburban Township Home Care',
-                    customMetaDescription:
-                        'Professional personal care in Wayne, NJ. Dedicated caregivers providing compassionate support for daily living. Contact us today.',
-                    localKeywords: [
-                        'personal care Wayne',
-                        'home care 07470',
-                        'Wayne caregivers',
-                        'Passaic County personal care'
-                    ],
+                'personal-care': addPersonalCare('wayne', {
                     contentBlocks: {
                         whyChooseUs:
                             "Our team understands the needs of Wayne families, offering respectful and tailored personal care amidst the township's diverse offerings.",
@@ -1895,7 +1731,7 @@ const passaicCountyData: CountyData = {
                         emergencyInfo:
                             "Coordinated emergency response with Wayne first responders and nearby medical facilities like St. Joseph's Wayne Medical Center."
                     }
-                },
+                }),
                 'companion-care': {
                     customH1: 'Companion Care in Wayne',
                     customTitle:
@@ -2006,19 +1842,7 @@ const passaicCountyData: CountyData = {
                     'Comprehensive elder care solutions in West Milford, ensuring peace of mind and quality of life for seniors enjoying the quiet, scenic environment.'
             },
             serviceSpecificSEO: {
-                'personal-care': {
-                    customH1:
-                        'Personal Care Services in West Milford, Passaic County',
-                    customTitle:
-                        'Personal Care West Milford NJ | Rural Home Care',
-                    customMetaDescription:
-                        'Professional personal care in West Milford, NJ. Dedicated caregivers providing compassionate support for daily living in this scenic, rural township. Contact us today.',
-                    localKeywords: [
-                        'personal care West Milford',
-                        'home care 07480',
-                        'West Milford caregivers',
-                        'Passaic County rural care'
-                    ],
+                'personal-care': addPersonalCare('west-milford', {
                     contentBlocks: {
                         whyChooseUs:
                             "Our team understands the unique needs of West Milford residents, offering respectful and tailored personal care amidst the township's expansive natural beauty.",
@@ -2032,7 +1856,7 @@ const passaicCountyData: CountyData = {
                         emergencyInfo:
                             'Coordinated emergency response with West Milford first responders and nearby medical facilities, mindful of travel distances.'
                     }
-                },
+                }),
                 'companion-care': {
                     customH1: 'Companion Care in West Milford',
                     customTitle:
@@ -2139,19 +1963,7 @@ const passaicCountyData: CountyData = {
                     'Elder care solutions in Woodland Park, focused on maintaining independence and providing peace of mind for seniors and their families.'
             },
             serviceSpecificSEO: {
-                'personal-care': {
-                    customH1:
-                        'Personal Care Services in Woodland Park, Passaic County',
-                    customTitle:
-                        'Personal Care Woodland Park NJ | Suburban Home Care',
-                    customMetaDescription:
-                        'Professional personal care in Woodland Park, NJ. Dedicated caregivers providing compassionate support for daily living. Contact us today.',
-                    localKeywords: [
-                        'personal care Woodland Park',
-                        'home care 07424',
-                        'Woodland Park caregivers',
-                        'Passaic County personal care'
-                    ],
+                'personal-care': addPersonalCare('woodland-park', {
                     contentBlocks: {
                         whyChooseUs:
                             'Our team provides thoughtful and practical personal care, understanding the needs of Woodland Park residents and their convenient lifestyle.',
@@ -2165,7 +1977,7 @@ const passaicCountyData: CountyData = {
                         emergencyInfo:
                             'Coordinated emergency response with Woodland Park first responders and nearby medical facilities.'
                     }
-                },
+                }),
                 'companion-care': {
                     customH1: 'Companion Care in Woodland Park',
                     customTitle:

@@ -21,8 +21,8 @@ export default function ServiceCta({
     origin
 }: ServiceCtaProps) {
     return (
-        <SlideInSection className="bg-blue text-white">
-            <div className="page-section flex flex-col gap-6 items-center">
+        <div className="bg-blue text-white">
+            <SlideInSection className="page-section flex flex-col gap-6 items-center">
                 <h2 className="text-white">{header}</h2>
                 <p className="max-w-2xl mx-auto text-center leading-snug">
                     {description}
@@ -33,7 +33,7 @@ export default function ServiceCta({
                     value={origin}
                     type="services"
                 />
-            </div>
-        </SlideInSection>
+            </SlideInSection>
+        </div>
     )
 }

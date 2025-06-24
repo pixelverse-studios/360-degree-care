@@ -1,4 +1,5 @@
 import { CountyData } from '@/lib/counties'
+import { addPersonalCare } from '../serviceTemplates/applyTemplate'
 
 const bergenCountyData: CountyData = {
     slug: 'bergen-county',
@@ -85,18 +86,7 @@ const bergenCountyData: CountyData = {
                     'Comprehensive elder care in Hackensack, leveraging proximity to world-class medical facilities and urban conveniences.'
             },
             serviceSpecificSEO: {
-                'personal-care': {
-                    customH1: 'Expert Personal Care Services in Hackensack, NJ',
-                    customTitle:
-                        'Personal Care Hackensack NJ | Medical Center Area Home Care',
-                    customMetaDescription:
-                        'Personal care services in Hackensack, NJ near University Medical Center. Urban home care with medical coordination. 24/7 availability.',
-                    localKeywords: [
-                        'personal care Hackensack NJ',
-                        'home care near HUMC',
-                        'Hackensack caregivers',
-                        'Bergen County seat care'
-                    ],
+                'personal-care': addPersonalCare('hackensack', {
                     contentBlocks: {
                         whyChooseUs:
                             "Located in Bergen County's seat, we provide urban-focused care with unmatched access to medical facilities.",
@@ -111,7 +101,7 @@ const bergenCountyData: CountyData = {
                         emergencyInfo:
                             'Immediate access to Hackensack University Medical Center and Bergen County emergency services.'
                     }
-                }
+                })
             },
             rankingFactors: {
                 primaryKeywords: [
@@ -168,18 +158,7 @@ const bergenCountyData: CountyData = {
                     "Elder care services designed for Ridgewood's discerning families who value excellence and personalized attention."
             },
             serviceSpecificSEO: {
-                'personal-care': {
-                    customH1: 'Premium Personal Care Services in Ridgewood, NJ',
-                    customTitle:
-                        'Personal Care Ridgewood NJ | Trusted Home Care Services',
-                    customMetaDescription:
-                        'Premium personal care services in Ridgewood, NJ. Serving affluent families with personalized home care. Licensed, insured, 24/7 support.',
-                    localKeywords: [
-                        'personal care Ridgewood NJ',
-                        'home care Ridgewood',
-                        'Ridgewood caregivers',
-                        'Bergen County personal care'
-                    ],
+                'personal-care': addPersonalCare('ridgewood', {
                     contentBlocks: {
                         whyChooseUs:
                             "Ridgewood families choose us because we understand the community's high standards for quality care and personalized service.",
@@ -194,7 +173,7 @@ const bergenCountyData: CountyData = {
                         emergencyInfo:
                             'Quick response times throughout Ridgewood with 24/7 coordination with Valley Hospital emergency services.'
                     }
-                },
+                }),
                 'companion-care': {
                     customH1: 'Companion Care Services in Ridgewood Village',
                     customTitle:
@@ -301,19 +280,7 @@ const bergenCountyData: CountyData = {
                     'Elder care services that honor the rich cultural heritage and strong family values of Cliffside Park.'
             },
             serviceSpecificSEO: {
-                'personal-care': {
-                    customH1:
-                        'Personal Care Services in Cliffside Park, Bergen County',
-                    customTitle:
-                        'Personal Care Cliffside Park NJ | Palisades Home Care',
-                    customMetaDescription:
-                        'Personal care services in Cliffside Park, NJ. Multicultural care team serving diverse families along the Palisades. Call today.',
-                    localKeywords: [
-                        'personal care Cliffside Park',
-                        'home care Palisades NJ',
-                        'Cliffside Park caregivers',
-                        'Bergen County care 07010'
-                    ],
+                'personal-care': addPersonalCare('cliffside-park', {
                     contentBlocks: {
                         whyChooseUs:
                             "Our multicultural team understands Cliffside Park's diverse community and provides culturally sensitive care.",
@@ -328,7 +295,7 @@ const bergenCountyData: CountyData = {
                         emergencyInfo:
                             'Quick response throughout Cliffside Park with connections to Palisades Medical Center.'
                     }
-                },
+                }),
                 'companion-care': {
                     customH1: 'Companion Care in Cliffside Park',
                     customTitle:
@@ -435,18 +402,7 @@ const bergenCountyData: CountyData = {
                     'Comprehensive elder care services in Allendale, providing tailored support for seniors and families.'
             },
             serviceSpecificSEO: {
-                'personal-care': {
-                    customH1: 'Professional Personal Care in Allendale, NJ',
-                    customTitle:
-                        'Personal Care Allendale NJ | In-Home Support Services',
-                    customMetaDescription:
-                        'Get trusted personal care in Allendale, NJ. Our certified caregivers provide compassionate assistance with daily activities to help you or your loved one live safely at home.',
-                    localKeywords: [
-                        'personal care Allendale',
-                        'Allendale home assistance',
-                        'bathing support Allendale',
-                        'mobility help Allendale'
-                    ],
+                'personal-care': addPersonalCare('allendale', {
                     contentBlocks: {
                         whyChooseUs:
                             'Our Allendale personal care services focus on maintaining dignity and promoting independence within the comfort of home.',
@@ -460,7 +416,7 @@ const bergenCountyData: CountyData = {
                         emergencyInfo:
                             '24/7 support and coordination with local Allendale emergency services for peace of mind.'
                     }
-                },
+                }),
                 'companion-care': {
                     customH1: 'Compassionate Companion Care in Allendale',
                     customTitle:
@@ -569,18 +525,7 @@ const bergenCountyData: CountyData = {
                     'Premium elder care services in Alpine, tailored to the unique needs of affluent residents.'
             },
             serviceSpecificSEO: {
-                'personal-care': {
-                    customH1: 'Professional Personal Care in Alpine, NJ',
-                    customTitle:
-                        'Personal Care Alpine NJ | In-Home Support Services',
-                    customMetaDescription:
-                        'Get trusted personal care in Alpine, NJ. Our certified caregivers provide compassionate assistance with daily activities to help you or your loved one live safely at home.',
-                    localKeywords: [
-                        'personal care Alpine',
-                        'Alpine home assistance',
-                        'bathing support Alpine',
-                        'private home care Alpine'
-                    ],
+                'personal-care': addPersonalCare('alpine', {
                     contentBlocks: {
                         whyChooseUs:
                             'Our Alpine personal care services are delivered with utmost professionalism and discretion, ensuring top-tier support.',
@@ -594,7 +539,7 @@ const bergenCountyData: CountyData = {
                         emergencyInfo:
                             'Seamless coordination with private medical services and local emergency responders in Alpine.'
                     }
-                },
+                }),
                 'companion-care': {
                     customH1: 'Compassionate Companion Care in Alpine',
                     customTitle:
@@ -702,18 +647,7 @@ const bergenCountyData: CountyData = {
                     'Comprehensive elder care in Bergenfield, providing culturally sensitive and reliable support.'
             },
             serviceSpecificSEO: {
-                'personal-care': {
-                    customH1: 'Professional Personal Care in Bergenfield, NJ',
-                    customTitle:
-                        'Personal Care Bergenfield NJ | In-Home Support Services',
-                    customMetaDescription:
-                        'Get trusted personal care in Bergenfield, NJ. Our certified caregivers provide compassionate assistance with daily activities to help you or your loved one live safely at home.',
-                    localKeywords: [
-                        'personal care Bergenfield',
-                        'Bergenfield home assistance',
-                        'bathing support Bergenfield',
-                        'mobility help Bergenfield'
-                    ],
+                'personal-care': addPersonalCare('bergenfield', {
                     contentBlocks: {
                         whyChooseUs:
                             'Our Bergenfield personal care services are delivered with cultural sensitivity and a deep understanding of local needs.',
@@ -727,7 +661,7 @@ const bergenCountyData: CountyData = {
                         emergencyInfo:
                             'Prompt response and coordination with local Bergenfield emergency services for client safety.'
                     }
-                },
+                }),
                 'companion-care': {
                     customH1: 'Compassionate Companion Care in Bergenfield',
                     customTitle:
@@ -841,18 +775,7 @@ const bergenCountyData: CountyData = {
                     'Dedicated elder care services in Bogota, supporting seniors with dignity and compassion.'
             },
             serviceSpecificSEO: {
-                'personal-care': {
-                    customH1: 'Professional Personal Care in Bogota, NJ',
-                    customTitle:
-                        'Personal Care Bogota NJ | In-Home Support Services',
-                    customMetaDescription:
-                        'Get trusted personal care in Bogota, NJ. Our certified caregivers provide compassionate assistance with daily activities to help you or your loved one live safely at home.',
-                    localKeywords: [
-                        'personal care Bogota',
-                        'Bogota home assistance',
-                        'bathing support Bogota',
-                        'mobility help Bogota'
-                    ],
+                'personal-care': addPersonalCare('bogota', {
                     contentBlocks: {
                         whyChooseUs:
                             'Our Bogota personal care services are tailored to the individual, respecting privacy and promoting independence.',
@@ -866,7 +789,7 @@ const bergenCountyData: CountyData = {
                         emergencyInfo:
                             '24/7 availability and quick coordination with Bogota emergency services for immediate needs.'
                     }
-                },
+                }),
                 'companion-care': {
                     customH1: 'Compassionate Companion Care in Bogota',
                     customTitle:
@@ -979,18 +902,7 @@ const bergenCountyData: CountyData = {
                     'Comprehensive elder care in Carlstadt, providing tailored support for seniors in their homes.'
             },
             serviceSpecificSEO: {
-                'personal-care': {
-                    customH1: 'Professional Personal Care in Carlstadt, NJ',
-                    customTitle:
-                        'Personal Care Carlstadt NJ | In-Home Support Services',
-                    customMetaDescription:
-                        'Get trusted personal care in Carlstadt, NJ. Our certified caregivers provide compassionate assistance with daily activities to help you or your loved one live safely at home.',
-                    localKeywords: [
-                        'personal care Carlstadt',
-                        'Carlstadt home assistance',
-                        'bathing support Carlstadt',
-                        'mobility help Carlstadt'
-                    ],
+                'personal-care': addPersonalCare('carlstadt', {
                     contentBlocks: {
                         whyChooseUs:
                             'Our Carlstadt personal care services are delivered with professionalism, ensuring comfort and dignity for every client.',
@@ -1004,7 +916,7 @@ const bergenCountyData: CountyData = {
                         emergencyInfo:
                             '24/7 care coordination and rapid response with Carlstadt emergency services.'
                     }
-                },
+                }),
                 'companion-care': {
                     customH1: 'Compassionate Companion Care in Carlstadt',
                     customTitle:
@@ -1113,18 +1025,7 @@ const bergenCountyData: CountyData = {
                     'Premium elder care services in Closter, providing comprehensive and compassionate in-home support.'
             },
             serviceSpecificSEO: {
-                'personal-care': {
-                    customH1: 'Professional Personal Care in Closter, NJ',
-                    customTitle:
-                        'Personal Care Closter NJ | In-Home Support Services',
-                    customMetaDescription:
-                        'Get trusted personal care in Closter, NJ. Our certified caregivers provide compassionate assistance with daily activities to help you or your loved one live safely at home.',
-                    localKeywords: [
-                        'personal care Closter',
-                        'Closter home assistance',
-                        'bathing support Closter',
-                        'mobility help Closter'
-                    ],
+                'personal-care': addPersonalCare('closter', {
                     contentBlocks: {
                         whyChooseUs:
                             'Our Closter personal care services uphold the highest standards, offering discreet and professional assistance.',
@@ -1138,7 +1039,7 @@ const bergenCountyData: CountyData = {
                         emergencyInfo:
                             '24/7 care coordination and rapid response with local Closter emergency services.'
                     }
-                },
+                }),
                 'companion-care': {
                     customH1: 'Compassionate Companion Care in Closter',
                     customTitle:
@@ -1247,18 +1148,7 @@ const bergenCountyData: CountyData = {
                     'Comprehensive elder care in Cresskill, with personalized plans for active seniors.'
             },
             serviceSpecificSEO: {
-                'personal-care': {
-                    customH1: 'Professional Personal Care in Cresskill, NJ',
-                    customTitle:
-                        'Personal Care Cresskill NJ | In-Home Support Services',
-                    customMetaDescription:
-                        'Get trusted personal care in Cresskill, NJ. Our certified caregivers provide compassionate assistance with daily activities to help you or your loved one live safely at home.',
-                    localKeywords: [
-                        'personal care Cresskill',
-                        'Cresskill home assistance',
-                        'bathing support Cresskill',
-                        'mobility help Cresskill'
-                    ],
+                'personal-care': addPersonalCare('cresskill', {
                     contentBlocks: {
                         whyChooseUs:
                             'Our Cresskill personal care services are designed to offer discreet and dignified support, promoting independence at home.',
@@ -1272,7 +1162,7 @@ const bergenCountyData: CountyData = {
                         emergencyInfo:
                             '24/7 coordination and prompt response with Cresskill emergency services for utmost safety.'
                     }
-                },
+                }),
                 'companion-care': {
                     customH1: 'Compassionate Companion Care in Cresskill',
                     customTitle:
@@ -1381,18 +1271,7 @@ const bergenCountyData: CountyData = {
                     'Holistic elder care in Demarest, with personalized plans for comfortable living at home.'
             },
             serviceSpecificSEO: {
-                'personal-care': {
-                    customH1: 'Professional Personal Care in Demarest, NJ',
-                    customTitle:
-                        'Personal Care Demarest NJ | In-Home Support Services',
-                    customMetaDescription:
-                        'Get trusted personal care in Demarest, NJ. Our certified caregivers provide compassionate assistance with daily activities to help you or your loved one live safely at home.',
-                    localKeywords: [
-                        'personal care Demarest',
-                        'Demarest home assistance',
-                        'bathing support Demarest',
-                        'mobility help Demarest'
-                    ],
+                'personal-care': addPersonalCare('demarest', {
                     contentBlocks: {
                         whyChooseUs:
                             'Our Demarest personal care services prioritize dignity and independence, tailored to individual needs in this serene community.',
@@ -1406,7 +1285,7 @@ const bergenCountyData: CountyData = {
                         emergencyInfo:
                             '24/7 care coordination and rapid response with local Demarest emergency services.'
                     }
-                },
+                }),
                 'companion-care': {
                     customH1: 'Compassionate Companion Care in Demarest',
                     customTitle:
@@ -1515,18 +1394,7 @@ const bergenCountyData: CountyData = {
                     'Comprehensive elder care in Dumont, providing tailored support for a comfortable life at home.'
             },
             serviceSpecificSEO: {
-                'personal-care': {
-                    customH1: 'Professional Personal Care in Dumont, NJ',
-                    customTitle:
-                        'Personal Care Dumont NJ | In-Home Support Services',
-                    customMetaDescription:
-                        'Get trusted personal care in Dumont, NJ. Our certified caregivers provide compassionate assistance with daily activities to help you or your loved one live safely at home.',
-                    localKeywords: [
-                        'personal care Dumont',
-                        'Dumont home assistance',
-                        'bathing support Dumont',
-                        'mobility help Dumont'
-                    ],
+                'personal-care': addPersonalCare('dumont', {
                     contentBlocks: {
                         whyChooseUs:
                             'Our Dumont personal care services are delivered with compassion and professionalism, enhancing daily living for seniors.',
@@ -1540,7 +1408,7 @@ const bergenCountyData: CountyData = {
                         emergencyInfo:
                             '24/7 care coordination and prompt response with local Dumont emergency services.'
                     }
-                },
+                }),
                 'companion-care': {
                     customH1: 'Compassionate Companion Care in Dumont',
                     customTitle:
@@ -1648,19 +1516,7 @@ const bergenCountyData: CountyData = {
                     'Comprehensive elder care in East Rutherford, providing tailored support for seniors in a lively environment.'
             },
             serviceSpecificSEO: {
-                'personal-care': {
-                    customH1:
-                        'Professional Personal Care in East Rutherford, NJ',
-                    customTitle:
-                        'Personal Care East Rutherford NJ | In-Home Support Services',
-                    customMetaDescription:
-                        'Get trusted personal care in East Rutherford, NJ. Our certified caregivers provide compassionate assistance with daily activities to help you or your loved one live safely at home.',
-                    localKeywords: [
-                        'personal care East Rutherford',
-                        'East Rutherford home assistance',
-                        'bathing support East Rutherford',
-                        'mobility help East Rutherford'
-                    ],
+                'personal-care': addPersonalCare('east-rutherford', {
                     contentBlocks: {
                         whyChooseUs:
                             'Our East Rutherford personal care services are designed to offer flexible and reliable support amidst a dynamic community.',
@@ -1674,7 +1530,7 @@ const bergenCountyData: CountyData = {
                         emergencyInfo:
                             '24/7 care coordination and rapid response with East Rutherford emergency services.'
                     }
-                },
+                }),
                 'companion-care': {
                     customH1: 'Compassionate Companion Care in East Rutherford',
                     customTitle:
@@ -1788,18 +1644,7 @@ const bergenCountyData: CountyData = {
                     'Premium elder care services in Edgewater, tailored to the unique needs of affluent residents.'
             },
             serviceSpecificSEO: {
-                'personal-care': {
-                    customH1: 'Professional Personal Care in Edgewater, NJ',
-                    customTitle:
-                        'Personal Care Edgewater NJ | In-Home Support Services',
-                    customMetaDescription:
-                        'Get trusted personal care in Edgewater, NJ. Our certified caregivers provide compassionate assistance with daily activities to help you or your loved one live safely at home.',
-                    localKeywords: [
-                        'personal care Edgewater',
-                        'Edgewater home assistance',
-                        'bathing support Edgewater',
-                        'private home care Edgewater'
-                    ],
+                'personal-care': addPersonalCare('edgewater', {
                     contentBlocks: {
                         whyChooseUs:
                             'Our Edgewater personal care services are delivered with utmost professionalism and discretion, ensuring top-tier support.',
@@ -1813,7 +1658,7 @@ const bergenCountyData: CountyData = {
                         emergencyInfo:
                             'Seamless coordination with private medical services and local emergency responders in Edgewater.'
                     }
-                },
+                }),
                 'companion-care': {
                     customH1: 'Compassionate Companion Care in Edgewater',
                     customTitle:
@@ -1926,18 +1771,7 @@ const bergenCountyData: CountyData = {
                     'Comprehensive elder care in Emerson, providing tailored support for seniors to live comfortably at home.'
             },
             serviceSpecificSEO: {
-                'personal-care': {
-                    customH1: 'Professional Personal Care in Emerson, NJ',
-                    customTitle:
-                        'Personal Care Emerson NJ | In-Home Support Services',
-                    customMetaDescription:
-                        'Get trusted personal care in Emerson, NJ. Our certified caregivers provide compassionate assistance with daily activities to help you or your loved one live safely at home.',
-                    localKeywords: [
-                        'personal care Emerson',
-                        'Emerson home assistance',
-                        'bathing support Emerson',
-                        'mobility help Emerson'
-                    ],
+                'personal-care': addPersonalCare('emerson', {
                     contentBlocks: {
                         whyChooseUs:
                             'Our Emerson personal care services are delivered with sensitivity and professionalism, prioritizing dignity and independence.',
@@ -1951,7 +1785,7 @@ const bergenCountyData: CountyData = {
                         emergencyInfo:
                             '24/7 care coordination and prompt response with local Emerson emergency services.'
                     }
-                },
+                }),
                 'companion-care': {
                     customH1: 'Compassionate Companion Care in Emerson',
                     customTitle:
@@ -2060,18 +1894,7 @@ const bergenCountyData: CountyData = {
                     'Comprehensive elder care in Englewood, leveraging local medical facilities and resources.'
             },
             serviceSpecificSEO: {
-                'personal-care': {
-                    customH1: 'Expert Personal Care Services in Englewood, NJ',
-                    customTitle:
-                        'Personal Care Englewood NJ | Medical Center Home Care',
-                    customMetaDescription:
-                        'Personal care services in Englewood, NJ near Englewood Hospital. Diverse home care with medical coordination. 24/7 availability.',
-                    localKeywords: [
-                        'personal care Englewood NJ',
-                        'home care near Englewood Hospital',
-                        'Englewood caregivers',
-                        'Bergen County care'
-                    ],
+                'personal-care': addPersonalCare('englewood', {
                     contentBlocks: {
                         whyChooseUs:
                             'Our Englewood personal care services are delivered with cultural understanding and close coordination with local medical centers.',
@@ -2086,7 +1909,7 @@ const bergenCountyData: CountyData = {
                         emergencyInfo:
                             'Immediate access to Englewood Hospital and Medical Center and local emergency services.'
                     }
-                },
+                }),
                 'companion-care': {
                     customH1: 'Companion Care Services in Englewood',
                     customTitle:
@@ -2193,19 +2016,7 @@ const bergenCountyData: CountyData = {
                     'Premium elder care services in Englewood Cliffs, tailored to the unique needs of affluent residents.'
             },
             serviceSpecificSEO: {
-                'personal-care': {
-                    customH1:
-                        'Professional Personal Care in Englewood Cliffs, NJ',
-                    customTitle:
-                        'Personal Care Englewood Cliffs NJ | In-Home Support Services',
-                    customMetaDescription:
-                        'Get trusted personal care in Englewood Cliffs, NJ. Our certified caregivers provide compassionate assistance with daily activities to help you or your loved one live safely at home.',
-                    localKeywords: [
-                        'personal care Englewood Cliffs',
-                        'Englewood Cliffs home assistance',
-                        'bathing support Englewood Cliffs',
-                        'private home care Englewood Cliffs'
-                    ],
+                'personal-care': addPersonalCare('englewood-cliffs', {
                     contentBlocks: {
                         whyChooseUs:
                             'Our Englewood Cliffs personal care services are delivered with utmost professionalism and discretion, ensuring top-tier support.',
@@ -2219,7 +2030,7 @@ const bergenCountyData: CountyData = {
                         emergencyInfo:
                             'Seamless coordination with private medical services and local emergency responders in Englewood Cliffs.'
                     }
-                },
+                }),
                 'companion-care': {
                     customH1:
                         'Compassionate Companion Care in Englewood Cliffs',
@@ -2329,18 +2140,7 @@ const bergenCountyData: CountyData = {
                     'Comprehensive elder care in Fair Lawn, providing tailored support for active seniors and families.'
             },
             serviceSpecificSEO: {
-                'personal-care': {
-                    customH1: 'Professional Personal Care in Fair Lawn, NJ',
-                    customTitle:
-                        'Personal Care Fair Lawn NJ | In-Home Support Services',
-                    customMetaDescription:
-                        'Get trusted personal care in Fair Lawn, NJ. Our certified caregivers provide compassionate assistance with daily activities to help you or your loved one live safely at home.',
-                    localKeywords: [
-                        'personal care Fair Lawn',
-                        'Fair Lawn home assistance',
-                        'bathing support Fair Lawn',
-                        'mobility help Fair Lawn'
-                    ],
+                'personal-care': addPersonalCare('fair-lawn', {
                     contentBlocks: {
                         whyChooseUs:
                             'Our Fair Lawn personal care services are delivered with cultural sensitivity and professionalism, prioritizing dignity and independence.',
@@ -2354,7 +2154,7 @@ const bergenCountyData: CountyData = {
                         emergencyInfo:
                             '24/7 care coordination and prompt response with local Fair Lawn emergency services.'
                     }
-                },
+                }),
                 'companion-care': {
                     customH1: 'Compassionate Companion Care in Fair Lawn',
                     customTitle:
@@ -2468,18 +2268,7 @@ const bergenCountyData: CountyData = {
                     'Comprehensive elder care in Fort Lee, leveraging proximity to New York City medical facilities and urban conveniences.'
             },
             serviceSpecificSEO: {
-                'personal-care': {
-                    customH1: 'Expert Personal Care Services in Fort Lee, NJ',
-                    customTitle:
-                        'Personal Care Fort Lee NJ | GWB Area Home Care',
-                    customMetaDescription:
-                        'Personal care services in Fort Lee, NJ near the George Washington Bridge. Urban home care with medical coordination. 24/7 availability.',
-                    localKeywords: [
-                        'personal care Fort Lee NJ',
-                        'home care near GWB',
-                        'Fort Lee caregivers',
-                        'Bergen County care'
-                    ],
+                'personal-care': addPersonalCare('fort-lee', {
                     contentBlocks: {
                         whyChooseUs:
                             'Located in Fort Lee, we provide urban-focused care with unmatched access to transportation and medical facilities in both NJ and NYC.',
@@ -2494,7 +2283,7 @@ const bergenCountyData: CountyData = {
                         emergencyInfo:
                             'Immediate access to local medical centers and rapid connection to NYC emergency services via GWB.'
                     }
-                },
+                }),
                 'companion-care': {
                     customH1: 'Companion Care Services in Fort Lee',
                     customTitle:
@@ -2601,19 +2390,7 @@ const bergenCountyData: CountyData = {
                     'Premium elder care services in Franklin Lakes, tailored to the unique needs of affluent residents.'
             },
             serviceSpecificSEO: {
-                'personal-care': {
-                    customH1:
-                        'Professional Personal Care in Franklin Lakes, NJ',
-                    customTitle:
-                        'Personal Care Franklin Lakes NJ | In-Home Support Services',
-                    customMetaDescription:
-                        'Get trusted personal care in Franklin Lakes, NJ. Our certified caregivers provide compassionate assistance with daily activities to help you or your loved one live safely at home.',
-                    localKeywords: [
-                        'personal care Franklin Lakes',
-                        'Franklin Lakes home assistance',
-                        'bathing support Franklin Lakes',
-                        'private home care Franklin Lakes'
-                    ],
+                'personal-care': addPersonalCare('franklin-lakes', {
                     contentBlocks: {
                         whyChooseUs:
                             'Our Franklin Lakes personal care services are delivered with utmost professionalism and discretion, ensuring top-tier support.',
@@ -2627,7 +2404,7 @@ const bergenCountyData: CountyData = {
                         emergencyInfo:
                             'Seamless coordination with private medical services and local emergency responders in Franklin Lakes.'
                     }
-                },
+                }),
                 'companion-care': {
                     customH1: 'Compassionate Companion Care in Franklin Lakes',
                     customTitle:
@@ -2736,18 +2513,7 @@ const bergenCountyData: CountyData = {
                     'Comprehensive elder care in Garfield, leveraging local medical facilities and resources.'
             },
             serviceSpecificSEO: {
-                'personal-care': {
-                    customH1: 'Expert Personal Care Services in Garfield, NJ',
-                    customTitle:
-                        'Personal Care Garfield NJ | Diverse Community Home Care',
-                    customMetaDescription:
-                        'Personal care services in Garfield, NJ. Diverse home care with cultural understanding. 24/7 availability.',
-                    localKeywords: [
-                        'personal care Garfield NJ',
-                        'home care Garfield',
-                        'Garfield caregivers',
-                        'Bergen County care'
-                    ],
+                'personal-care': addPersonalCare('garfield', {
                     contentBlocks: {
                         whyChooseUs:
                             'Our Garfield personal care services are delivered with cultural understanding and sensitivity, catering to its diverse community.',
@@ -2762,7 +2528,7 @@ const bergenCountyData: CountyData = {
                         emergencyInfo:
                             'Immediate access to local medical centers and rapid connection to emergency services.'
                     }
-                },
+                }),
                 'companion-care': {
                     customH1: 'Companion Care Services in Garfield',
                     customTitle:
@@ -2869,18 +2635,7 @@ const bergenCountyData: CountyData = {
                     'Premium elder care services in Glen Rock, tailored to the unique needs of affluent residents.'
             },
             serviceSpecificSEO: {
-                'personal-care': {
-                    customH1: 'Professional Personal Care in Glen Rock, NJ',
-                    customTitle:
-                        'Personal Care Glen Rock NJ | In-Home Support Services',
-                    customMetaDescription:
-                        'Get trusted personal care in Glen Rock, NJ. Our certified caregivers provide compassionate assistance with daily activities to help you or your loved one live safely at home.',
-                    localKeywords: [
-                        'personal care Glen Rock',
-                        'Glen Rock home assistance',
-                        'bathing support Glen Rock',
-                        'private home care Glen Rock'
-                    ],
+                'personal-care': addPersonalCare('glen-rock', {
                     contentBlocks: {
                         whyChooseUs:
                             'Our Glen Rock personal care services are delivered with utmost professionalism and discretion, ensuring top-tier support.',
@@ -2894,7 +2649,7 @@ const bergenCountyData: CountyData = {
                         emergencyInfo:
                             'Seamless coordination with private medical services and local emergency responders in Glen Rock.'
                     }
-                },
+                }),
                 'companion-care': {
                     customH1: 'Compassionate Companion Care in Glen Rock',
                     customTitle:
@@ -3002,19 +2757,7 @@ const bergenCountyData: CountyData = {
                     'Holistic elder care in Harrington Park, with personalized plans for comfortable living at home.'
             },
             serviceSpecificSEO: {
-                'personal-care': {
-                    customH1:
-                        'Professional Personal Care in Harrington Park, NJ',
-                    customTitle:
-                        'Personal Care Harrington Park NJ | In-Home Support Services',
-                    customMetaDescription:
-                        'Get trusted personal care in Harrington Park, NJ. Our certified caregivers provide compassionate assistance with daily activities to help you or your loved one live safely at home.',
-                    localKeywords: [
-                        'personal care Harrington Park',
-                        'Harrington Park home assistance',
-                        'bathing support Harrington Park',
-                        'mobility help Harrington Park'
-                    ],
+                'personal-care': addPersonalCare('harrington-park', {
                     contentBlocks: {
                         whyChooseUs:
                             'Our Harrington Park personal care services prioritize dignity and independence, tailored to individual needs in this serene community.',
@@ -3028,7 +2771,7 @@ const bergenCountyData: CountyData = {
                         emergencyInfo:
                             '24/7 care coordination and rapid response with local Harrington Park emergency services.'
                     }
-                },
+                }),
                 'companion-care': {
                     customH1: 'Compassionate Companion Care in Harrington Park',
                     customTitle:
@@ -3137,19 +2880,7 @@ const bergenCountyData: CountyData = {
                     'Comprehensive elder care in Hasbrouck Heights, providing tailored support for a comfortable life at home.'
             },
             serviceSpecificSEO: {
-                'personal-care': {
-                    customH1:
-                        'Professional Personal Care in Hasbrouck Heights, NJ',
-                    customTitle:
-                        'Personal Care Hasbrouck Heights NJ | In-Home Support Services',
-                    customMetaDescription:
-                        'Get trusted personal care in Hasbrouck Heights, NJ. Our certified caregivers provide compassionate assistance with daily activities to help you or your loved one live safely at home.',
-                    localKeywords: [
-                        'personal care Hasbrouck Heights',
-                        'Hasbrouck Heights home assistance',
-                        'bathing support Hasbrouck Heights',
-                        'mobility help Hasbrouck Heights'
-                    ],
+                'personal-care': addPersonalCare('hasbrouck-heights', {
                     contentBlocks: {
                         whyChooseUs:
                             'Our Hasbrouck Heights personal care services are delivered with compassion and professionalism, enhancing daily living for seniors.',
@@ -3163,7 +2894,7 @@ const bergenCountyData: CountyData = {
                         emergencyInfo:
                             '24/7 care coordination and prompt response with local Hasbrouck Heights emergency services.'
                     }
-                },
+                }),
                 'companion-care': {
                     customH1:
                         'Compassionate Companion Care in Hasbrouck Heights',
@@ -3273,18 +3004,7 @@ const bergenCountyData: CountyData = {
                     'Premium elder care services in Haworth, tailored to the unique needs of affluent residents.'
             },
             serviceSpecificSEO: {
-                'personal-care': {
-                    customH1: 'Professional Personal Care in Haworth, NJ',
-                    customTitle:
-                        'Personal Care Haworth NJ | In-Home Support Services',
-                    customMetaDescription:
-                        'Get trusted personal care in Haworth, NJ. Our certified caregivers provide compassionate assistance with daily activities to help you or your loved one live safely at home.',
-                    localKeywords: [
-                        'personal care Haworth',
-                        'Haworth home assistance',
-                        'bathing support Haworth',
-                        'private home care Haworth'
-                    ],
+                'personal-care': addPersonalCare('haworth', {
                     contentBlocks: {
                         whyChooseUs:
                             'Our Haworth personal care services are delivered with utmost professionalism and discretion, ensuring top-tier support.',
@@ -3298,7 +3018,7 @@ const bergenCountyData: CountyData = {
                         emergencyInfo:
                             'Seamless coordination with private medical services and local emergency responders in Haworth.'
                     }
-                },
+                }),
                 'companion-care': {
                     customH1: 'Compassionate Companion Care in Haworth',
                     customTitle:
@@ -3411,18 +3131,7 @@ const bergenCountyData: CountyData = {
                     'Comprehensive elder care in Hillsdale, providing tailored support for seniors to live comfortably at home.'
             },
             serviceSpecificSEO: {
-                'personal-care': {
-                    customH1: 'Professional Personal Care in Hillsdale, NJ',
-                    customTitle:
-                        'Personal Care Hillsdale NJ | In-Home Support Services',
-                    customMetaDescription:
-                        'Get trusted personal care in Hillsdale, NJ. Our certified caregivers provide compassionate assistance with daily activities to help you or your loved one live safely at home.',
-                    localKeywords: [
-                        'personal care Hillsdale',
-                        'Hillsdale home assistance',
-                        'bathing support Hillsdale',
-                        'mobility help Hillsdale'
-                    ],
+                'personal-care': addPersonalCare('hillsdale', {
                     contentBlocks: {
                         whyChooseUs:
                             'Our Hillsdale personal care services are delivered with sensitivity and professionalism, prioritizing dignity and independence.',
@@ -3436,7 +3145,7 @@ const bergenCountyData: CountyData = {
                         emergencyInfo:
                             '24/7 care coordination and prompt response with local Hillsdale emergency services.'
                     }
-                },
+                }),
                 'companion-care': {
                     customH1: 'Compassionate Companion Care in Hillsdale',
                     customTitle:
@@ -3550,18 +3259,7 @@ const bergenCountyData: CountyData = {
                     'Premium elder care services in Ho-Ho-Kus, tailored to the unique needs of affluent residents.'
             },
             serviceSpecificSEO: {
-                'personal-care': {
-                    customH1: 'Professional Personal Care in Ho-Ho-Kus, NJ',
-                    customTitle:
-                        'Personal Care Ho-Ho-Kus NJ | In-Home Support Services',
-                    customMetaDescription:
-                        'Get trusted personal care in Ho-Ho-Kus, NJ. Our certified caregivers provide compassionate assistance with daily activities to help you or your loved one live safely at home.',
-                    localKeywords: [
-                        'personal care Ho-Ho-Kus',
-                        'Ho-Ho-Kus home assistance',
-                        'bathing support Ho-Ho-Kus',
-                        'private home care Ho-Ho-Kus'
-                    ],
+                'personal-care': addPersonalCare('ho-ho-kus', {
                     contentBlocks: {
                         whyChooseUs:
                             'Our Ho-Ho-Kus personal care services are delivered with utmost professionalism and discretion, ensuring top-tier support.',
@@ -3575,7 +3273,7 @@ const bergenCountyData: CountyData = {
                         emergencyInfo:
                             'Seamless coordination with private medical services and local emergency responders in Ho-Ho-Kus.'
                     }
-                },
+                }),
                 'companion-care': {
                     customH1: 'Compassionate Companion Care in Ho-Ho-Kus',
                     customTitle:
@@ -3688,18 +3386,7 @@ const bergenCountyData: CountyData = {
                     'Comprehensive elder care in Leonia, leveraging local medical facilities and resources.'
             },
             serviceSpecificSEO: {
-                'personal-care': {
-                    customH1: 'Expert Personal Care Services in Leonia, NJ',
-                    customTitle:
-                        'Personal Care Leonia NJ | Diverse Community Home Care',
-                    customMetaDescription:
-                        'Personal care services in Leonia, NJ. Diverse home care with cultural understanding. 24/7 availability.',
-                    localKeywords: [
-                        'personal care Leonia NJ',
-                        'home care Leonia',
-                        'Leonia caregivers',
-                        'Bergen County care'
-                    ],
+                'personal-care': addPersonalCare('leonia', {
                     contentBlocks: {
                         whyChooseUs:
                             'Our Leonia personal care services are delivered with cultural understanding and sensitivity, catering to its diverse community.',
@@ -3714,7 +3401,7 @@ const bergenCountyData: CountyData = {
                         emergencyInfo:
                             'Immediate access to local medical centers and rapid connection to emergency services.'
                     }
-                },
+                }),
                 'companion-care': {
                     customH1: 'Companion Care Services in Leonia',
                     customTitle:
@@ -3825,18 +3512,7 @@ const bergenCountyData: CountyData = {
                     'Comprehensive elder care in Little Ferry, providing tailored support for a comfortable life at home.'
             },
             serviceSpecificSEO: {
-                'personal-care': {
-                    customH1: 'Professional Personal Care in Little Ferry, NJ',
-                    customTitle:
-                        'Personal Care Little Ferry NJ | In-Home Support Services',
-                    customMetaDescription:
-                        'Get trusted personal care in Little Ferry, NJ. Our certified caregivers provide compassionate assistance with daily activities to help you or your loved one live safely at home.',
-                    localKeywords: [
-                        'personal care Little Ferry',
-                        'Little Ferry home assistance',
-                        'bathing support Little Ferry',
-                        'mobility help Little Ferry'
-                    ],
+                'personal-care': addPersonalCare('little-ferry', {
                     contentBlocks: {
                         whyChooseUs:
                             'Our Little Ferry personal care services are delivered with compassion and professionalism, enhancing daily living for seniors.',
@@ -3850,7 +3526,7 @@ const bergenCountyData: CountyData = {
                         emergencyInfo:
                             '24/7 care coordination and prompt response with local Little Ferry emergency services.'
                     }
-                },
+                }),
                 'companion-care': {
                     customH1: 'Compassionate Companion Care in Little Ferry',
                     customTitle:
@@ -3964,18 +3640,7 @@ const bergenCountyData: CountyData = {
                     'Comprehensive elder care in Lodi, leveraging local medical facilities and resources.'
             },
             serviceSpecificSEO: {
-                'personal-care': {
-                    customH1: 'Expert Personal Care Services in Lodi, NJ',
-                    customTitle:
-                        'Personal Care Lodi NJ | Diverse Community Home Care',
-                    customMetaDescription:
-                        'Personal care services in Lodi, NJ. Diverse home care with cultural understanding. 24/7 availability.',
-                    localKeywords: [
-                        'personal care Lodi NJ',
-                        'home care Lodi',
-                        'Lodi caregivers',
-                        'Bergen County care'
-                    ],
+                'personal-care': addPersonalCare('lodi', {
                     contentBlocks: {
                         whyChooseUs:
                             'Our Lodi personal care services are delivered with cultural understanding and sensitivity, catering to its diverse community.',
@@ -3990,7 +3655,7 @@ const bergenCountyData: CountyData = {
                         emergencyInfo:
                             'Immediate access to local medical centers and rapid connection to emergency services.'
                     }
-                },
+                }),
                 'companion-care': {
                     customH1: 'Companion Care Services in Lodi',
                     customTitle:
@@ -4101,18 +3766,7 @@ const bergenCountyData: CountyData = {
                     'Comprehensive elder care in Lyndhurst, providing tailored support for a comfortable life at home.'
             },
             serviceSpecificSEO: {
-                'personal-care': {
-                    customH1: 'Professional Personal Care in Lyndhurst, NJ',
-                    customTitle:
-                        'Personal Care Lyndhurst NJ | In-Home Support Services',
-                    customMetaDescription:
-                        'Get trusted personal care in Lyndhurst, NJ. Our certified caregivers provide compassionate assistance with daily activities to help you or your loved one live safely at home.',
-                    localKeywords: [
-                        'personal care Lyndhurst',
-                        'Lyndhurst home assistance',
-                        'bathing support Lyndhurst',
-                        'mobility help Lyndhurst'
-                    ],
+                'personal-care': addPersonalCare('lyndhurst', {
                     contentBlocks: {
                         whyChooseUs:
                             'Our Lyndhurst personal care services are delivered with compassion and professionalism, enhancing daily living for seniors.',
@@ -4126,7 +3780,7 @@ const bergenCountyData: CountyData = {
                         emergencyInfo:
                             '24/7 care coordination and prompt response with local Lyndhurst emergency services.'
                     }
-                },
+                }),
                 'companion-care': {
                     customH1: 'Compassionate Companion Care in Lyndhurst',
                     customTitle:
@@ -4240,18 +3894,7 @@ const bergenCountyData: CountyData = {
                     'Comprehensive elder care in Mahwah, providing tailored support for seniors in a scenic setting.'
             },
             serviceSpecificSEO: {
-                'personal-care': {
-                    customH1: 'Professional Personal Care in Mahwah, NJ',
-                    customTitle:
-                        'Personal Care Mahwah NJ | In-Home Support Services',
-                    customMetaDescription:
-                        'Get trusted personal care in Mahwah, NJ. Our certified caregivers provide compassionate assistance with daily activities to help you or your loved one live safely at home.',
-                    localKeywords: [
-                        'personal care Mahwah',
-                        'Mahwah home assistance',
-                        'bathing support Mahwah',
-                        'mobility help Mahwah'
-                    ],
+                'personal-care': addPersonalCare('mahwah', {
                     contentBlocks: {
                         whyChooseUs:
                             'Our Mahwah personal care services are designed to offer flexible and reliable support, enhancing daily living for seniors in a spacious community.',
@@ -4265,7 +3908,7 @@ const bergenCountyData: CountyData = {
                         emergencyInfo:
                             '24/7 care coordination and prompt response with local Mahwah emergency services.'
                     }
-                },
+                }),
                 'companion-care': {
                     customH1: 'Compassionate Companion Care in Mahwah',
                     customTitle:
@@ -4373,18 +4016,7 @@ const bergenCountyData: CountyData = {
                     'Comprehensive elder care in Maywood, providing tailored support for a comfortable life at home.'
             },
             serviceSpecificSEO: {
-                'personal-care': {
-                    customH1: 'Professional Personal Care in Maywood, NJ',
-                    customTitle:
-                        'Personal Care Maywood NJ | In-Home Support Services',
-                    customMetaDescription:
-                        'Get trusted personal care in Maywood, NJ. Our certified caregivers provide compassionate assistance with daily activities to help you or your loved one live safely at home.',
-                    localKeywords: [
-                        'personal care Maywood',
-                        'Maywood home assistance',
-                        'bathing support Maywood',
-                        'mobility help Maywood'
-                    ],
+                'personal-care': addPersonalCare('maywood', {
                     contentBlocks: {
                         whyChooseUs:
                             'Our Maywood personal care services are delivered with compassion and professionalism, enhancing daily living for seniors.',
@@ -4398,7 +4030,7 @@ const bergenCountyData: CountyData = {
                         emergencyInfo:
                             '24/7 care coordination and prompt response with local Maywood emergency services.'
                     }
-                },
+                }),
                 'companion-care': {
                     customH1: 'Compassionate Companion Care in Maywood',
                     customTitle:
@@ -4507,18 +4139,7 @@ const bergenCountyData: CountyData = {
                     'Dedicated elder care services in Midland Park, supporting seniors with dignity and compassion.'
             },
             serviceSpecificSEO: {
-                'personal-care': {
-                    customH1: 'Professional Personal Care in Midland Park, NJ',
-                    customTitle:
-                        'Personal Care Midland Park NJ | In-Home Support Services',
-                    customMetaDescription:
-                        'Get trusted personal care in Midland Park, NJ. Our certified caregivers provide compassionate assistance with daily activities to help you or your loved one live safely at home.',
-                    localKeywords: [
-                        'personal care Midland Park',
-                        'Midland Park home assistance',
-                        'bathing support Midland Park',
-                        'mobility help Midland Park'
-                    ],
+                'personal-care': addPersonalCare('midland-park', {
                     contentBlocks: {
                         whyChooseUs:
                             'Our Midland Park personal care services are tailored to the individual, respecting privacy and promoting independence.',
@@ -4532,7 +4153,7 @@ const bergenCountyData: CountyData = {
                         emergencyInfo:
                             '24/7 availability and quick coordination with Midland Park emergency services for immediate needs.'
                     }
-                },
+                }),
                 'companion-care': {
                     customH1: 'Compassionate Companion Care in Midland Park',
                     customTitle:
@@ -4646,18 +4267,7 @@ const bergenCountyData: CountyData = {
                     'Premium elder care services in Montvale, tailored to the unique needs of affluent residents.'
             },
             serviceSpecificSEO: {
-                'personal-care': {
-                    customH1: 'Professional Personal Care in Montvale, NJ',
-                    customTitle:
-                        'Personal Care Montvale NJ | In-Home Support Services',
-                    customMetaDescription:
-                        'Get trusted personal care in Montvale, NJ. Our certified caregivers provide compassionate assistance with daily activities to help you or your loved one live safely at home.',
-                    localKeywords: [
-                        'personal care Montvale',
-                        'Montvale home assistance',
-                        'bathing support Montvale',
-                        'private home care Montvale'
-                    ],
+                'personal-care': addPersonalCare('montvale', {
                     contentBlocks: {
                         whyChooseUs:
                             'Our Montvale personal care services are delivered with utmost professionalism and discretion, ensuring top-tier support.',
@@ -4671,7 +4281,7 @@ const bergenCountyData: CountyData = {
                         emergencyInfo:
                             'Seamless coordination with private medical services and local emergency responders in Montvale.'
                     }
-                },
+                }),
                 'companion-care': {
                     customH1: 'Compassionate Companion Care in Montvale',
                     customTitle:
@@ -4784,18 +4394,7 @@ const bergenCountyData: CountyData = {
                     'Comprehensive elder care in Moonachie, providing tailored support for seniors in their homes.'
             },
             serviceSpecificSEO: {
-                'personal-care': {
-                    customH1: 'Professional Personal Care in Moonachie, NJ',
-                    customTitle:
-                        'Personal Care Moonachie NJ | In-Home Support Services',
-                    customMetaDescription:
-                        'Get trusted personal care in Moonachie, NJ. Our certified caregivers provide compassionate assistance with daily activities to help you or your loved one live safely at home.',
-                    localKeywords: [
-                        'personal care Moonachie',
-                        'Moonachie home assistance',
-                        'bathing support Moonachie',
-                        'mobility help Moonachie'
-                    ],
+                'personal-care': addPersonalCare('moonachie', {
                     contentBlocks: {
                         whyChooseUs:
                             'Our Moonachie personal care services are delivered with professionalism, ensuring comfort and dignity for every client.',
@@ -4809,7 +4408,7 @@ const bergenCountyData: CountyData = {
                         emergencyInfo:
                             '24/7 care coordination and rapid response with Moonachie emergency services.'
                     }
-                },
+                }),
                 'companion-care': {
                     customH1: 'Compassionate Companion Care in Moonachie',
                     customTitle:
@@ -4918,18 +4517,7 @@ const bergenCountyData: CountyData = {
                     'Comprehensive elder care in New Milford, providing tailored support for a comfortable life at home.'
             },
             serviceSpecificSEO: {
-                'personal-care': {
-                    customH1: 'Professional Personal Care in New Milford, NJ',
-                    customTitle:
-                        'Personal Care New Milford NJ | In-Home Support Services',
-                    customMetaDescription:
-                        'Get trusted personal care in New Milford, NJ. Our certified caregivers provide compassionate assistance with daily activities to help you or your loved one live safely at home.',
-                    localKeywords: [
-                        'personal care New Milford',
-                        'New Milford home assistance',
-                        'bathing support New Milford',
-                        'mobility help New Milford'
-                    ],
+                'personal-care': addPersonalCare('new-milford', {
                     contentBlocks: {
                         whyChooseUs:
                             'Our New Milford personal care services are delivered with compassion and professionalism, enhancing daily living for seniors.',
@@ -4943,7 +4531,7 @@ const bergenCountyData: CountyData = {
                         emergencyInfo:
                             '24/7 care coordination and prompt response with local New Milford emergency services.'
                     }
-                },
+                }),
                 'companion-care': {
                     customH1: 'Compassionate Companion Care in New Milford',
                     customTitle:
@@ -5052,19 +4640,7 @@ const bergenCountyData: CountyData = {
                     'Comprehensive elder care in North Arlington, providing tailored support for a comfortable life at home.'
             },
             serviceSpecificSEO: {
-                'personal-care': {
-                    customH1:
-                        'Professional Personal Care in North Arlington, NJ',
-                    customTitle:
-                        'Personal Care North Arlington NJ | In-Home Support Services',
-                    customMetaDescription:
-                        'Get trusted personal care in North Arlington, NJ. Our certified caregivers provide compassionate assistance with daily activities to help you or your loved one live safely at home.',
-                    localKeywords: [
-                        'personal care North Arlington',
-                        'North Arlington home assistance',
-                        'bathing support North Arlington',
-                        'mobility help North Arlington'
-                    ],
+                'personal-care': addPersonalCare('north-arlington', {
                     contentBlocks: {
                         whyChooseUs:
                             'Our North Arlington personal care services are delivered with compassion and professionalism, enhancing daily living for seniors.',
@@ -5078,7 +4654,7 @@ const bergenCountyData: CountyData = {
                         emergencyInfo:
                             '24/7 care coordination and prompt response with local North Arlington emergency services.'
                     }
-                },
+                }),
                 'companion-care': {
                     customH1: 'Compassionate Companion Care in North Arlington',
                     customTitle:
@@ -5192,18 +4768,7 @@ const bergenCountyData: CountyData = {
                     'Holistic elder care in Norwood, with personalized plans for comfortable living at home.'
             },
             serviceSpecificSEO: {
-                'personal-care': {
-                    customH1: 'Professional Personal Care in Norwood, NJ',
-                    customTitle:
-                        'Personal Care Norwood NJ | In-Home Support Services',
-                    customMetaDescription:
-                        'Get trusted personal care in Norwood, NJ. Our certified caregivers provide compassionate assistance with daily activities to help you or your loved one live safely at home.',
-                    localKeywords: [
-                        'personal care Norwood',
-                        'Norwood home assistance',
-                        'bathing support Norwood',
-                        'mobility help Norwood'
-                    ],
+                'personal-care': addPersonalCare('norwood', {
                     contentBlocks: {
                         whyChooseUs:
                             'Our Norwood personal care services prioritize dignity and independence, tailored to individual needs in this serene community.',
@@ -5217,7 +4782,7 @@ const bergenCountyData: CountyData = {
                         emergencyInfo:
                             '24/7 care coordination and rapid response with local Norwood emergency services.'
                     }
-                },
+                }),
                 'companion-care': {
                     customH1: 'Compassionate Companion Care in Norwood',
                     customTitle:
@@ -5331,18 +4896,7 @@ const bergenCountyData: CountyData = {
                     'Comprehensive elder care in Oakland, providing tailored support for seniors in a scenic setting.'
             },
             serviceSpecificSEO: {
-                'personal-care': {
-                    customH1: 'Professional Personal Care in Oakland, NJ',
-                    customTitle:
-                        'Personal Care Oakland NJ | In-Home Support Services',
-                    customMetaDescription:
-                        'Get trusted personal care in Oakland, NJ. Our certified caregivers provide compassionate assistance with daily activities to help you or your loved one live safely at home.',
-                    localKeywords: [
-                        'personal care Oakland',
-                        'Oakland home assistance',
-                        'bathing support Oakland',
-                        'mobility help Oakland'
-                    ],
+                'personal-care': addPersonalCare('oakland', {
                     contentBlocks: {
                         whyChooseUs:
                             'Our Oakland personal care services are designed to offer flexible and reliable support, enhancing daily living for seniors in a spacious community.',
@@ -5356,7 +4910,7 @@ const bergenCountyData: CountyData = {
                         emergencyInfo:
                             '24/7 care coordination and prompt response with local Oakland emergency services.'
                     }
-                },
+                }),
                 'companion-care': {
                     customH1: 'Compassionate Companion Care in Oakland',
                     customTitle:
@@ -5470,18 +5024,7 @@ const bergenCountyData: CountyData = {
                     'Premium elder care services in Old Tappan, tailored to the unique needs of affluent residents.'
             },
             serviceSpecificSEO: {
-                'personal-care': {
-                    customH1: 'Professional Personal Care in Old Tappan, NJ',
-                    customTitle:
-                        'Personal Care Old Tappan NJ | In-Home Support Services',
-                    customMetaDescription:
-                        'Get trusted personal care in Old Tappan, NJ. Our certified caregivers provide compassionate assistance with daily activities to help you or your loved one live safely at home.',
-                    localKeywords: [
-                        'personal care Old Tappan',
-                        'Old Tappan home assistance',
-                        'bathing support Old Tappan',
-                        'private home care Old Tappan'
-                    ],
+                'personal-care': addPersonalCare('old-tappan', {
                     contentBlocks: {
                         whyChooseUs:
                             'Our Old Tappan personal care services are delivered with utmost professionalism and discretion, ensuring top-tier support.',
@@ -5495,7 +5038,7 @@ const bergenCountyData: CountyData = {
                         emergencyInfo:
                             'Seamless coordination with private medical services and local emergency responders in Old Tappan.'
                     }
-                },
+                }),
                 'companion-care': {
                     customH1: 'Compassionate Companion Care in Old Tappan',
                     customTitle:
@@ -5603,18 +5146,7 @@ const bergenCountyData: CountyData = {
                     'Holistic elder care in Oradell, with personalized plans for comfortable living at home.'
             },
             serviceSpecificSEO: {
-                'personal-care': {
-                    customH1: 'Professional Personal Care in Oradell, NJ',
-                    customTitle:
-                        'Personal Care Oradell NJ | In-Home Support Services',
-                    customMetaDescription:
-                        'Get trusted personal care in Oradell, NJ. Our certified caregivers provide compassionate assistance with daily activities to help you or your loved one live safely at home.',
-                    localKeywords: [
-                        'personal care Oradell',
-                        'Oradell home assistance',
-                        'bathing support Oradell',
-                        'mobility help Oradell'
-                    ],
+                'personal-care': addPersonalCare('oradell', {
                     contentBlocks: {
                         whyChooseUs:
                             'Our Oradell personal care services prioritize dignity and independence, tailored to individual needs in this charming community.',
@@ -5628,7 +5160,7 @@ const bergenCountyData: CountyData = {
                         emergencyInfo:
                             '24/7 care coordination and rapid response with local Oradell emergency services.'
                     }
-                },
+                }),
                 'companion-care': {
                     customH1: 'Compassionate Companion Care in Oradell',
                     customTitle:
@@ -5737,19 +5269,7 @@ const bergenCountyData: CountyData = {
                     'Comprehensive elder care in Palisades Park, leveraging local medical facilities and resources.'
             },
             serviceSpecificSEO: {
-                'personal-care': {
-                    customH1:
-                        'Expert Personal Care Services in Palisades Park, NJ',
-                    customTitle:
-                        'Personal Care Palisades Park NJ | Diverse Community Home Care',
-                    customMetaDescription:
-                        'Personal care services in Palisades Park, NJ. Diverse home care with cultural understanding. 24/7 availability.',
-                    localKeywords: [
-                        'personal care Palisades Park NJ',
-                        'home care Palisades Park',
-                        'Palisades Park caregivers',
-                        'Bergen County care'
-                    ],
+                'personal-care': addPersonalCare('palisades-park', {
                     contentBlocks: {
                         whyChooseUs:
                             'Our Palisades Park personal care services are delivered with cultural understanding and sensitivity, catering to its diverse community, especially the Korean-American population.',
@@ -5764,7 +5284,7 @@ const bergenCountyData: CountyData = {
                         emergencyInfo:
                             'Immediate access to local medical centers and rapid connection to emergency services.'
                     }
-                },
+                }),
                 'companion-care': {
                     customH1: 'Companion Care Services in Palisades Park',
                     customTitle:
@@ -5871,18 +5391,7 @@ const bergenCountyData: CountyData = {
                     'Comprehensive elder care in Paramus, leveraging local medical facilities and resources.'
             },
             serviceSpecificSEO: {
-                'personal-care': {
-                    customH1: 'Expert Personal Care Services in Paramus, NJ',
-                    customTitle:
-                        'Personal Care Paramus NJ | Retail Hub Home Care',
-                    customMetaDescription:
-                        'Personal care services in Paramus, NJ. Home care adapting to active suburban lifestyles. 24/7 availability.',
-                    localKeywords: [
-                        'personal care Paramus NJ',
-                        'home care Paramus',
-                        'Paramus caregivers',
-                        'Bergen County care'
-                    ],
+                'personal-care': addPersonalCare('paramus', {
                     contentBlocks: {
                         whyChooseUs:
                             'Our Paramus personal care services are designed to offer flexible and reliable support for residents in this bustling retail hub.',
@@ -5897,7 +5406,7 @@ const bergenCountyData: CountyData = {
                         emergencyInfo:
                             'Immediate access to local medical centers and rapid connection to emergency services within Paramus.'
                     }
-                },
+                }),
                 'companion-care': {
                     customH1: 'Companion Care Services in Paramus',
                     customTitle:
@@ -6009,18 +5518,7 @@ const bergenCountyData: CountyData = {
                     'Premium elder care services in Park Ridge, tailored to the unique needs of affluent residents.'
             },
             serviceSpecificSEO: {
-                'personal-care': {
-                    customH1: 'Professional Personal Care in Park Ridge, NJ',
-                    customTitle:
-                        'Personal Care Park Ridge NJ | In-Home Support Services',
-                    customMetaDescription:
-                        'Get trusted personal care in Park Ridge, NJ. Our certified caregivers provide compassionate assistance with daily activities to help you or your loved one live safely at home.',
-                    localKeywords: [
-                        'personal care Park Ridge',
-                        'Park Ridge home assistance',
-                        'bathing support Park Ridge',
-                        'private home care Park Ridge'
-                    ],
+                'personal-care': addPersonalCare('park-ridge', {
                     contentBlocks: {
                         whyChooseUs:
                             'Our Park Ridge personal care services are delivered with utmost professionalism and discretion, ensuring top-tier support.',
@@ -6034,7 +5532,7 @@ const bergenCountyData: CountyData = {
                         emergencyInfo:
                             'Seamless coordination with private medical services and local emergency responders in Park Ridge.'
                     }
-                },
+                }),
                 'companion-care': {
                     customH1: 'Compassionate Companion Care in Park Ridge',
                     customTitle:
@@ -6147,18 +5645,7 @@ const bergenCountyData: CountyData = {
                     'Premium elder care services in Ramsey, tailored to the unique needs of affluent residents.'
             },
             serviceSpecificSEO: {
-                'personal-care': {
-                    customH1: 'Professional Personal Care in Ramsey, NJ',
-                    customTitle:
-                        'Personal Care Ramsey NJ | In-Home Support Services',
-                    customMetaDescription:
-                        'Get trusted personal care in Ramsey, NJ. Our certified caregivers provide compassionate assistance with daily activities to help you or your loved one live safely at home.',
-                    localKeywords: [
-                        'personal care Ramsey',
-                        'Ramsey home assistance',
-                        'bathing support Ramsey',
-                        'private home care Ramsey'
-                    ],
+                'personal-care': addPersonalCare('ramsey', {
                     contentBlocks: {
                         whyChooseUs:
                             'Our Ramsey personal care services are delivered with utmost professionalism and discretion, ensuring top-tier support.',
@@ -6172,7 +5659,7 @@ const bergenCountyData: CountyData = {
                         emergencyInfo:
                             'Seamless coordination with private medical services and local emergency responders in Ramsey.'
                     }
-                },
+                }),
                 'companion-care': {
                     customH1: 'Compassionate Companion Care in Ramsey',
                     customTitle:
@@ -6280,18 +5767,7 @@ const bergenCountyData: CountyData = {
                     'Comprehensive elder care in Ridgefield, leveraging local medical facilities and resources.'
             },
             serviceSpecificSEO: {
-                'personal-care': {
-                    customH1: 'Expert Personal Care Services in Ridgefield, NJ',
-                    customTitle:
-                        'Personal Care Ridgefield NJ | Diverse Community Home Care',
-                    customMetaDescription:
-                        'Personal care services in Ridgefield, NJ. Diverse home care with cultural understanding. 24/7 availability.',
-                    localKeywords: [
-                        'personal care Ridgefield NJ',
-                        'home care Ridgefield',
-                        'Ridgefield caregivers',
-                        'Bergen County care'
-                    ],
+                'personal-care': addPersonalCare('ridgefield', {
                     contentBlocks: {
                         whyChooseUs:
                             'Our Ridgefield personal care services are delivered with cultural understanding and sensitivity, catering to its diverse community.',
@@ -6306,7 +5782,7 @@ const bergenCountyData: CountyData = {
                         emergencyInfo:
                             'Immediate access to local medical centers and rapid connection to emergency services.'
                     }
-                },
+                }),
                 'companion-care': {
                     customH1: 'Companion Care Services in Ridgefield',
                     customTitle:
@@ -6413,19 +5889,7 @@ const bergenCountyData: CountyData = {
                     'Comprehensive elder care in Ridgefield Park, providing tailored support for a comfortable life at home.'
             },
             serviceSpecificSEO: {
-                'personal-care': {
-                    customH1:
-                        'Professional Personal Care in Ridgefield Park, NJ',
-                    customTitle:
-                        'Personal Care Ridgefield Park NJ | In-Home Support Services',
-                    customMetaDescription:
-                        'Get trusted personal care in Ridgefield Park, NJ. Our certified caregivers provide compassionate assistance with daily activities to help you or your loved one live safely at home.',
-                    localKeywords: [
-                        'personal care Ridgefield Park',
-                        'Ridgefield Park home assistance',
-                        'bathing support Ridgefield Park',
-                        'mobility help Ridgefield Park'
-                    ],
+                'personal-care': addPersonalCare('ridgefield-park', {
                     contentBlocks: {
                         whyChooseUs:
                             'Our Ridgefield Park personal care services are delivered with compassion and professionalism, enhancing daily living for seniors.',
@@ -6439,7 +5903,7 @@ const bergenCountyData: CountyData = {
                         emergencyInfo:
                             '24/7 care coordination and prompt response with local Ridgefield Park emergency services.'
                     }
-                },
+                }),
                 'companion-care': {
                     customH1: 'Compassionate Companion Care in Ridgefield Park',
                     customTitle:
@@ -6548,19 +6012,7 @@ const bergenCountyData: CountyData = {
                     'Comprehensive elder care solutions for Elmwood Park families, ensuring dignity and comfort for seniors in their homes.'
             },
             serviceSpecificSEO: {
-                'personal-care': {
-                    customH1:
-                        'Personal Care Services in Elmwood Park, Bergen County',
-                    customTitle:
-                        'Personal Care Elmwood Park NJ | Home Care Solutions',
-                    customMetaDescription:
-                        'Professional personal care services in Elmwood Park, NJ. Dedicated caregivers providing compassionate support for daily living. Contact us today.',
-                    localKeywords: [
-                        'personal care Elmwood Park',
-                        'home care 07407',
-                        'Elmwood Park caregivers',
-                        'Bergen County personal care'
-                    ],
+                'personal-care': addPersonalCare('elmwood-park', {
                     contentBlocks: {
                         whyChooseUs:
                             'Our team understands the needs of Elmwood Park families, offering respectful and tailored personal care.',
@@ -6574,7 +6026,7 @@ const bergenCountyData: CountyData = {
                         emergencyInfo:
                             'Coordinated emergency response with Elmwood Park first responders and nearby medical facilities.'
                     }
-                },
+                }),
                 'companion-care': {
                     customH1: 'Companion Care in Elmwood Park',
                     customTitle:
@@ -6687,19 +6139,7 @@ const bergenCountyData: CountyData = {
                     "Elder care services for Fairview's senior population, honoring their unique backgrounds and ensuring comprehensive support."
             },
             serviceSpecificSEO: {
-                'personal-care': {
-                    customH1:
-                        'Personal Care Services in Fairview, Bergen County',
-                    customTitle:
-                        'Personal Care Fairview NJ | Culturally Sensitive Home Care',
-                    customMetaDescription:
-                        'Culturally sensitive personal care in Fairview, NJ. Our diverse team provides compassionate support for daily living. Call today.',
-                    localKeywords: [
-                        'personal care Fairview',
-                        'home care 07022',
-                        'Fairview caregivers',
-                        'multicultural care Bergen County'
-                    ],
+                'personal-care': addPersonalCare('fairview', {
                     contentBlocks: {
                         whyChooseUs:
                             "Our multicultural team is adept at serving Fairview's diverse community with respectful and tailored personal care.",
@@ -6713,7 +6153,7 @@ const bergenCountyData: CountyData = {
                         emergencyInfo:
                             'Quick response within Fairview with connections to nearby medical facilities.'
                     }
-                },
+                }),
                 'companion-care': {
                     customH1: 'Companion Care in Fairview',
                     customTitle:
@@ -6819,19 +6259,7 @@ const bergenCountyData: CountyData = {
                     'Elder care solutions in Northvale, tailored to the needs of seniors seeking comfortable and reliable support in their cherished homes.'
             },
             serviceSpecificSEO: {
-                'personal-care': {
-                    customH1:
-                        'Personal Care Services in Northvale, Bergen County',
-                    customTitle:
-                        'Personal Care Northvale NJ | Northern Valley Home Care',
-                    customMetaDescription:
-                        'Professional personal care in Northvale, NJ. Compassionate caregivers provide discreet assistance for daily living. Call today.',
-                    localKeywords: [
-                        'personal care Northvale',
-                        'home care 07647',
-                        'Northvale caregivers',
-                        'Northern Valley care'
-                    ],
+                'personal-care': addPersonalCare('northvale', {
                     contentBlocks: {
                         whyChooseUs:
                             'Our team delivers sensitive and professional personal care, respecting the quiet and private nature of Northvale homes.',
@@ -6845,7 +6273,7 @@ const bergenCountyData: CountyData = {
                         emergencyInfo:
                             'Coordinated emergency response with Northvale first responders and nearby medical facilities.'
                     }
-                },
+                }),
                 'companion-care': {
                     customH1: 'Companion Care in Northvale',
                     customTitle:
@@ -6951,19 +6379,7 @@ const bergenCountyData: CountyData = {
                     'Comprehensive elder care solutions in River Edge, ensuring peace of mind and quality of life for seniors and their families.'
             },
             serviceSpecificSEO: {
-                'personal-care': {
-                    customH1:
-                        'Personal Care Services in River Edge, Bergen County',
-                    customTitle:
-                        'Personal Care River Edge NJ | Suburban Home Care',
-                    customMetaDescription:
-                        'Professional personal care in River Edge, NJ. Dedicated caregivers providing compassionate support for daily living. Contact us today.',
-                    localKeywords: [
-                        'personal care River Edge',
-                        'home care 07661',
-                        'River Edge caregivers',
-                        'Bergen County personal care'
-                    ],
+                'personal-care': addPersonalCare('river-edge', {
                     contentBlocks: {
                         whyChooseUs:
                             'Our team understands the needs of River Edge families, offering respectful and tailored personal care.',
@@ -6977,7 +6393,7 @@ const bergenCountyData: CountyData = {
                         emergencyInfo:
                             'Coordinated emergency response with River Edge first responders and nearby medical facilities.'
                     }
-                },
+                }),
                 'companion-care': {
                     customH1: 'Companion Care in River Edge',
                     customTitle:
@@ -7083,19 +6499,7 @@ const bergenCountyData: CountyData = {
                     'Elder care solutions in River Vale, tailored to the needs of seniors seeking comfortable and reliable support in their cherished homes.'
             },
             serviceSpecificSEO: {
-                'personal-care': {
-                    customH1:
-                        'Personal Care Services in River Vale, Bergen County',
-                    customTitle:
-                        'Personal Care River Vale NJ | Pascack Valley Home Care',
-                    customMetaDescription:
-                        'Professional personal care in River Vale, NJ. Compassionate caregivers provide discreet assistance for daily living. Call today.',
-                    localKeywords: [
-                        'personal care River Vale',
-                        'home care 07675',
-                        'River Vale caregivers',
-                        'Pascack Valley care'
-                    ],
+                'personal-care': addPersonalCare('river-vale', {
                     contentBlocks: {
                         whyChooseUs:
                             'Our team delivers sensitive and professional personal care, respecting the upscale and private nature of River Vale homes.',
@@ -7109,7 +6513,7 @@ const bergenCountyData: CountyData = {
                         emergencyInfo:
                             'Coordinated emergency response with River Vale first responders and nearby medical facilities.'
                     }
-                },
+                }),
                 'companion-care': {
                     customH1: 'Companion Care in River Vale',
                     customTitle:
@@ -7215,19 +6619,7 @@ const bergenCountyData: CountyData = {
                     'Elder care solutions in Rochelle Park, focused on maintaining independence and providing peace of mind for seniors and their families.'
             },
             serviceSpecificSEO: {
-                'personal-care': {
-                    customH1:
-                        'Personal Care Services in Rochelle Park, Bergen County',
-                    customTitle:
-                        'Personal Care Rochelle Park NJ | Home Care Solutions',
-                    customMetaDescription:
-                        'Professional personal care in Rochelle Park, NJ. Dedicated caregivers providing compassionate support for daily living. Contact us today.',
-                    localKeywords: [
-                        'personal care Rochelle Park',
-                        'home care 07662',
-                        'Rochelle Park caregivers',
-                        'Bergen County personal care'
-                    ],
+                'personal-care': addPersonalCare('rochelle-park', {
                     contentBlocks: {
                         whyChooseUs:
                             'Our team provides thoughtful and practical personal care, understanding the needs of Rochelle Park residents.',
@@ -7241,7 +6633,7 @@ const bergenCountyData: CountyData = {
                         emergencyInfo:
                             'Coordinated emergency response with Rochelle Park first responders and nearby medical facilities.'
                     }
-                },
+                }),
                 'companion-care': {
                     customH1: 'Companion Care in Rochelle Park',
                     customTitle:
@@ -7348,19 +6740,7 @@ const bergenCountyData: CountyData = {
                     'Elder care solutions in Rockleigh, tailored to the unique needs of seniors seeking comfortable and reliable support in this tranquil community.'
             },
             serviceSpecificSEO: {
-                'personal-care': {
-                    customH1:
-                        'Personal Care Services in Rockleigh, Bergen County',
-                    customTitle:
-                        'Personal Care Rockleigh NJ | Exclusive Home Care',
-                    customMetaDescription:
-                        'Professional personal care in Rockleigh, NJ. Compassionate caregivers provide discreet assistance for daily living in this exclusive borough. Call today.',
-                    localKeywords: [
-                        'personal care Rockleigh',
-                        'home care 07647',
-                        'Rockleigh caregivers',
-                        'Northern Valley luxury care'
-                    ],
+                'personal-care': addPersonalCare('rockleigh', {
                     contentBlocks: {
                         whyChooseUs:
                             'Our team delivers sensitive and professional personal care, respecting the private and upscale nature of Rockleigh homes.',
@@ -7374,7 +6754,7 @@ const bergenCountyData: CountyData = {
                         emergencyInfo:
                             'Coordinated emergency response with Rockleigh first responders and nearby medical facilities.'
                     }
-                },
+                }),
                 'companion-care': {
                     customH1: 'Companion Care in Rockleigh',
                     customTitle:
@@ -7485,19 +6865,7 @@ const bergenCountyData: CountyData = {
                     'Comprehensive elder care in Rutherford, dedicated to enhancing the well-being and independence of seniors in their historic hometown.'
             },
             serviceSpecificSEO: {
-                'personal-care': {
-                    customH1:
-                        'Personal Care Services in Rutherford, Bergen County',
-                    customTitle:
-                        'Personal Care Rutherford NJ | Walkable Community Home Care',
-                    customMetaDescription:
-                        'Professional personal care in Rutherford, NJ. Dedicated caregivers providing compassionate support for daily living. Contact us today.',
-                    localKeywords: [
-                        'personal care Rutherford',
-                        'home care 07070',
-                        'Rutherford caregivers',
-                        'Bergen County personal care'
-                    ],
+                'personal-care': addPersonalCare('rutherford', {
                     contentBlocks: {
                         whyChooseUs:
                             'Our team understands the needs of Rutherford families, offering respectful and tailored personal care to support their lifestyle.',
@@ -7511,7 +6879,7 @@ const bergenCountyData: CountyData = {
                         emergencyInfo:
                             'Coordinated emergency response with Rutherford first responders and nearby medical facilities.'
                     }
-                },
+                }),
                 'companion-care': {
                     customH1: 'Companion Care in Rutherford',
                     customTitle:
@@ -7617,19 +6985,7 @@ const bergenCountyData: CountyData = {
                     'Elder care solutions in Saddle Brook, focused on maintaining independence and providing peace of mind for seniors and their families.'
             },
             serviceSpecificSEO: {
-                'personal-care': {
-                    customH1:
-                        'Personal Care Services in Saddle Brook, Bergen County',
-                    customTitle:
-                        'Personal Care Saddle Brook NJ | Suburban Home Care',
-                    customMetaDescription:
-                        'Professional personal care in Saddle Brook, NJ. Dedicated caregivers providing compassionate support for daily living. Contact us today.',
-                    localKeywords: [
-                        'personal care Saddle Brook',
-                        'home care 07663',
-                        'Saddle Brook caregivers',
-                        'Bergen County personal care'
-                    ],
+                'personal-care': addPersonalCare('saddle-brook', {
                     contentBlocks: {
                         whyChooseUs:
                             'Our team provides thoughtful and practical personal care, understanding the needs of Saddle Brook residents.',
@@ -7643,7 +6999,7 @@ const bergenCountyData: CountyData = {
                         emergencyInfo:
                             'Coordinated emergency response with Saddle Brook first responders and nearby medical facilities.'
                     }
-                },
+                }),
                 'companion-care': {
                     customH1: 'Companion Care in Saddle Brook',
                     customTitle:
@@ -7755,19 +7111,7 @@ const bergenCountyData: CountyData = {
                     'Elder care solutions in Saddle River, tailored to the unique needs of seniors seeking comfortable and reliable support in this tranquil, affluent borough.'
             },
             serviceSpecificSEO: {
-                'personal-care': {
-                    customH1:
-                        'Personal Care Services in Saddle River, Bergen County',
-                    customTitle:
-                        'Personal Care Saddle River NJ | Luxury Home Care',
-                    customMetaDescription:
-                        'Professional personal care in Saddle River, NJ. Compassionate caregivers provide discreet assistance for daily living in this exclusive community. Call today.',
-                    localKeywords: [
-                        'personal care Saddle River',
-                        'home care 07458',
-                        'Saddle River caregivers',
-                        'Bergen County luxury care'
-                    ],
+                'personal-care': addPersonalCare('saddle-river', {
                     contentBlocks: {
                         whyChooseUs:
                             'Our team delivers sensitive and professional personal care, respecting the private and upscale nature of Saddle River homes and estates.',
@@ -7781,7 +7125,7 @@ const bergenCountyData: CountyData = {
                         emergencyInfo:
                             'Coordinated emergency response with Saddle River first responders and nearby medical facilities.'
                     }
-                },
+                }),
                 'companion-care': {
                     customH1: 'Companion Care in Saddle River',
                     customTitle:
@@ -7888,19 +7232,7 @@ const bergenCountyData: CountyData = {
                     'Elder care solutions in South Hackensack, focused on maintaining independence and providing peace of mind for seniors and their families.'
             },
             serviceSpecificSEO: {
-                'personal-care': {
-                    customH1:
-                        'Personal Care Services in South Hackensack, Bergen County',
-                    customTitle:
-                        'Personal Care South Hackensack NJ | Home Care Solutions',
-                    customMetaDescription:
-                        'Professional personal care in South Hackensack, NJ. Dedicated caregivers providing compassionate support for daily living. Contact us today.',
-                    localKeywords: [
-                        'personal care South Hackensack',
-                        'home care 07606',
-                        'South Hackensack caregivers',
-                        'Bergen County personal care'
-                    ],
+                'personal-care': addPersonalCare('south-hackensack', {
                     contentBlocks: {
                         whyChooseUs:
                             'Our team provides thoughtful and practical personal care, understanding the unique needs of South Hackensack residents.',
@@ -7914,7 +7246,7 @@ const bergenCountyData: CountyData = {
                         emergencyInfo:
                             'Coordinated emergency response with South Hackensack first responders and nearby medical facilities.'
                     }
-                },
+                }),
                 'companion-care': {
                     customH1: 'Companion Care in South Hackensack',
                     customTitle:
@@ -8026,19 +7358,7 @@ const bergenCountyData: CountyData = {
                     'Comprehensive elder care solutions in Teaneck, dedicated to enhancing the well-being and independence of seniors in their diverse community.'
             },
             serviceSpecificSEO: {
-                'personal-care': {
-                    customH1:
-                        'Personal Care Services in Teaneck, Bergen County',
-                    customTitle:
-                        'Personal Care Teaneck NJ | Diverse Community Home Care',
-                    customMetaDescription:
-                        'Culturally sensitive personal care in Teaneck, NJ. Our diverse team provides compassionate support for daily living. Call today.',
-                    localKeywords: [
-                        'personal care Teaneck',
-                        'home care 07666',
-                        'Teaneck caregivers',
-                        'diverse care Bergen County'
-                    ],
+                'personal-care': addPersonalCare('teaneck', {
                     contentBlocks: {
                         whyChooseUs:
                             "Our multicultural team is adept at serving Teaneck's diverse community with respectful and tailored personal care.",
@@ -8052,7 +7372,7 @@ const bergenCountyData: CountyData = {
                         emergencyInfo:
                             'Quick response within Teaneck with connections to nearby medical facilities.'
                     }
-                },
+                }),
                 'companion-care': {
                     customH1: 'Companion Care in Teaneck',
                     customTitle:
@@ -8158,19 +7478,7 @@ const bergenCountyData: CountyData = {
                     'Elder care solutions in Tenafly, tailored to the needs of seniors seeking comfortable and reliable support in their cherished homes.'
             },
             serviceSpecificSEO: {
-                'personal-care': {
-                    customH1:
-                        'Personal Care Services in Tenafly, Bergen County',
-                    customTitle:
-                        'Personal Care Tenafly NJ | Northern Valley Home Care',
-                    customMetaDescription:
-                        'Professional personal care in Tenafly, NJ. Compassionate caregivers provide discreet assistance for daily living. Call today.',
-                    localKeywords: [
-                        'personal care Tenafly',
-                        'home care 07670',
-                        'Tenafly caregivers',
-                        'Northern Valley luxury care'
-                    ],
+                'personal-care': addPersonalCare('tenafly', {
                     contentBlocks: {
                         whyChooseUs:
                             'Our team delivers sensitive and professional personal care, respecting the upscale and private nature of Tenafly homes.',
@@ -8184,7 +7492,7 @@ const bergenCountyData: CountyData = {
                         emergencyInfo:
                             'Coordinated emergency response with Tenafly first responders and nearby medical facilities.'
                     }
-                },
+                }),
                 'companion-care': {
                     customH1: 'Companion Care in Tenafly',
                     customTitle:
@@ -8296,19 +7604,7 @@ const bergenCountyData: CountyData = {
                     'Elder care solutions in Teterboro, tailored to the specific needs of seniors within this predominantly commercial borough.'
             },
             serviceSpecificSEO: {
-                'personal-care': {
-                    customH1:
-                        'Personal Care Services in Teterboro, Bergen County',
-                    customTitle:
-                        'Personal Care Teterboro NJ | Specialized Home Care',
-                    customMetaDescription:
-                        'Professional personal care in Teterboro, NJ. Discreet and specialized support for daily living in this unique borough. Call today.',
-                    localKeywords: [
-                        'personal care Teterboro',
-                        'home care 07608',
-                        'Teterboro caregivers',
-                        'corporate area care'
-                    ],
+                'personal-care': addPersonalCare('teterboro', {
                     contentBlocks: {
                         whyChooseUs:
                             'Our team provides highly specialized and discreet personal care, understanding the unique environment of Teterboro.',
@@ -8322,7 +7618,7 @@ const bergenCountyData: CountyData = {
                         emergencyInfo:
                             'Coordinated emergency response with Teterboro services and nearby medical facilities, especially around the airport.'
                     }
-                },
+                }),
                 'companion-care': {
                     customH1: 'Companion Care in Teterboro',
                     customTitle:
@@ -8433,19 +7729,7 @@ const bergenCountyData: CountyData = {
                     'Elder care solutions in Upper Saddle River, tailored to the unique needs of seniors seeking comfortable and reliable support in this tranquil, affluent borough.'
             },
             serviceSpecificSEO: {
-                'personal-care': {
-                    customH1:
-                        'Personal Care Services in Upper Saddle River, Bergen County',
-                    customTitle:
-                        'Personal Care Upper Saddle River NJ | Luxury Home Care',
-                    customMetaDescription:
-                        'Professional personal care in Upper Saddle River, NJ. Compassionate caregivers provide discreet assistance for daily living in this exclusive community. Call today.',
-                    localKeywords: [
-                        'personal care Upper Saddle River',
-                        'home care 07458',
-                        'Upper Saddle River caregivers',
-                        'Bergen County luxury care'
-                    ],
+                'personal-care': addPersonalCare('upper-saddle-river', {
                     contentBlocks: {
                         whyChooseUs:
                             'Our team delivers sensitive and professional personal care, respecting the private and upscale nature of Upper Saddle River homes and estates.',
@@ -8459,7 +7743,7 @@ const bergenCountyData: CountyData = {
                         emergencyInfo:
                             'Coordinated emergency response with Upper Saddle River first responders and nearby medical facilities.'
                     }
-                },
+                }),
                 'companion-care': {
                     customH1: 'Companion Care in Upper Saddle River',
                     customTitle:
@@ -8566,19 +7850,7 @@ const bergenCountyData: CountyData = {
                     'Comprehensive elder care solutions in Waldwick, ensuring peace of mind and quality of life for seniors and their families.'
             },
             serviceSpecificSEO: {
-                'personal-care': {
-                    customH1:
-                        'Personal Care Services in Waldwick, Bergen County',
-                    customTitle:
-                        'Personal Care Waldwick NJ | Suburban Home Care',
-                    customMetaDescription:
-                        'Professional personal care in Waldwick, NJ. Dedicated caregivers providing compassionate support for daily living. Contact us today.',
-                    localKeywords: [
-                        'personal care Waldwick',
-                        'home care 07463',
-                        'Waldwick caregivers',
-                        'Bergen County personal care'
-                    ],
+                'personal-care': addPersonalCare('waldwick', {
                     contentBlocks: {
                         whyChooseUs:
                             'Our team understands the needs of Waldwick families, offering respectful and tailored personal care.',
@@ -8592,7 +7864,7 @@ const bergenCountyData: CountyData = {
                         emergencyInfo:
                             'Coordinated emergency response with Waldwick first responders and nearby medical facilities.'
                     }
-                },
+                }),
                 'companion-care': {
                     customH1: 'Companion Care in Waldwick',
                     customTitle:
@@ -8704,19 +7976,7 @@ const bergenCountyData: CountyData = {
                     'Comprehensive elder care in Wallington, dedicated to enhancing the well-being and independence of seniors, honoring their unique heritage.'
             },
             serviceSpecificSEO: {
-                'personal-care': {
-                    customH1:
-                        'Personal Care Services in Wallington, Bergen County',
-                    customTitle:
-                        'Personal Care Wallington NJ | Culturally Sensitive Home Care',
-                    customMetaDescription:
-                        'Culturally sensitive personal care in Wallington, NJ. Our diverse team provides compassionate support for daily living. Call today.',
-                    localKeywords: [
-                        'personal care Wallington',
-                        'home care 07057',
-                        'Wallington caregivers',
-                        'multicultural care Bergen County'
-                    ],
+                'personal-care': addPersonalCare('wallington', {
                     contentBlocks: {
                         whyChooseUs:
                             "Our multicultural team is adept at serving Wallington's diverse community with respectful and tailored personal care, especially its Polish-American heritage.",
@@ -8730,7 +7990,7 @@ const bergenCountyData: CountyData = {
                         emergencyInfo:
                             'Quick response within Wallington with connections to nearby medical facilities.'
                     }
-                },
+                }),
                 'companion-care': {
                     customH1: 'Companion Care in Wallington',
                     customTitle:
@@ -8836,19 +8096,7 @@ const bergenCountyData: CountyData = {
                     'Comprehensive elder care solutions in Washington Township, ensuring peace of mind and quality of life for seniors and their families.'
             },
             serviceSpecificSEO: {
-                'personal-care': {
-                    customH1:
-                        'Personal Care Services in Washington Township, Bergen County',
-                    customTitle:
-                        'Personal Care Washington Township NJ | Pascack Valley Home Care',
-                    customMetaDescription:
-                        'Professional personal care in Washington Township, NJ. Dedicated caregivers providing compassionate support for daily living. Contact us today.',
-                    localKeywords: [
-                        'personal care Washington Township',
-                        'home care 07676',
-                        'Washington Township caregivers',
-                        'Pascack Valley care'
-                    ],
+                'personal-care': addPersonalCare('washington-township', {
                     contentBlocks: {
                         whyChooseUs:
                             'Our team understands the needs of Washington Township families, offering respectful and tailored personal care.',
@@ -8862,7 +8110,7 @@ const bergenCountyData: CountyData = {
                         emergencyInfo:
                             'Coordinated emergency response with Washington Township first responders and nearby medical facilities.'
                     }
-                },
+                }),
                 'companion-care': {
                     customH1: 'Companion Care in Washington Township',
                     customTitle:
@@ -8974,19 +8222,7 @@ const bergenCountyData: CountyData = {
                     'Comprehensive elder care solutions in Westwood, ensuring peace of mind and quality of life for seniors and their families.'
             },
             serviceSpecificSEO: {
-                'personal-care': {
-                    customH1:
-                        'Personal Care Services in Westwood, Bergen County',
-                    customTitle:
-                        'Personal Care Westwood NJ | Pascack Valley Home Care',
-                    customMetaDescription:
-                        'Professional personal care in Westwood, NJ. Dedicated caregivers providing compassionate support for daily living. Contact us today.',
-                    localKeywords: [
-                        'personal care Westwood',
-                        'home care 07675',
-                        'Westwood caregivers',
-                        'Pascack Valley care'
-                    ],
+                'personal-care': addPersonalCare('westwood', {
                     contentBlocks: {
                         whyChooseUs:
                             'Our team understands the needs of Westwood families, offering respectful and tailored personal care.',
@@ -9000,7 +8236,7 @@ const bergenCountyData: CountyData = {
                         emergencyInfo:
                             'Coordinated emergency response with Westwood first responders and nearby medical facilities.'
                     }
-                },
+                }),
                 'companion-care': {
                     customH1: 'Companion Care in Westwood',
                     customTitle:
@@ -9106,19 +8342,7 @@ const bergenCountyData: CountyData = {
                     'Elder care solutions in Woodcliff Lake, tailored to the needs of seniors seeking comfortable and reliable support in their cherished homes.'
             },
             serviceSpecificSEO: {
-                'personal-care': {
-                    customH1:
-                        'Personal Care Services in Woodcliff Lake, Bergen County',
-                    customTitle:
-                        'Personal Care Woodcliff Lake NJ | Pascack Valley Home Care',
-                    customMetaDescription:
-                        'Professional personal care in Woodcliff Lake, NJ. Compassionate caregivers provide discreet assistance for daily living. Call today.',
-                    localKeywords: [
-                        'personal care Woodcliff Lake',
-                        'home care 07677',
-                        'Woodcliff Lake caregivers',
-                        'Pascack Valley luxury care'
-                    ],
+                'personal-care': addPersonalCare('woodcliff-lake', {
                     contentBlocks: {
                         whyChooseUs:
                             'Our team delivers sensitive and professional personal care, respecting the upscale and private nature of Woodcliff Lake homes.',
@@ -9132,7 +8356,7 @@ const bergenCountyData: CountyData = {
                         emergencyInfo:
                             'Coordinated emergency response with Woodcliff Lake first responders and nearby medical facilities.'
                     }
-                },
+                }),
                 'companion-care': {
                     customH1: 'Companion Care in Woodcliff Lake',
                     customTitle:
@@ -9244,19 +8468,7 @@ const bergenCountyData: CountyData = {
                     'Elder care solutions in Wood-Ridge, focused on maintaining independence and providing peace of mind for seniors and their families.'
             },
             serviceSpecificSEO: {
-                'personal-care': {
-                    customH1:
-                        'Personal Care Services in Wood-Ridge, Bergen County',
-                    customTitle:
-                        'Personal Care Wood-Ridge NJ | Home Care Solutions',
-                    customMetaDescription:
-                        'Professional personal care in Wood-Ridge, NJ. Dedicated caregivers providing compassionate support for daily living. Contact us today.',
-                    localKeywords: [
-                        'personal care Wood-Ridge',
-                        'home care 07075',
-                        'Wood-Ridge caregivers',
-                        'Bergen County personal care'
-                    ],
+                'personal-care': addPersonalCare('wood-ridge', {
                     contentBlocks: {
                         whyChooseUs:
                             'Our team provides thoughtful and practical personal care, understanding the needs of Wood-Ridge residents.',
@@ -9270,7 +8482,7 @@ const bergenCountyData: CountyData = {
                         emergencyInfo:
                             'Coordinated emergency response with Wood-Ridge first responders and nearby medical facilities.'
                     }
-                },
+                }),
                 'companion-care': {
                     customH1: 'Companion Care in Wood-Ridge',
                     customTitle:
@@ -9381,18 +8593,7 @@ const bergenCountyData: CountyData = {
                     'Elder care solutions in Wyckoff, tailored to the needs of seniors seeking comfortable and reliable support in their cherished homes.'
             },
             serviceSpecificSEO: {
-                'personal-care': {
-                    customH1:
-                        'Personal Care Services in Wyckoff, Bergen County',
-                    customTitle: 'Personal Care Wyckoff NJ | Luxury Home Care',
-                    customMetaDescription:
-                        'Professional personal care in Wyckoff, NJ. Compassionate caregivers provide discreet assistance for daily living in this exclusive community. Call today.',
-                    localKeywords: [
-                        'personal care Wyckoff',
-                        'home care 07481',
-                        'Wyckoff caregivers',
-                        'Bergen County luxury care'
-                    ],
+                'personal-care': addPersonalCare('wyckoff', {
                     contentBlocks: {
                         whyChooseUs:
                             'Our team delivers sensitive and professional personal care, respecting the upscale and private nature of Wyckoff homes.',
@@ -9406,7 +8607,7 @@ const bergenCountyData: CountyData = {
                         emergencyInfo:
                             'Coordinated emergency response with Wyckoff first responders and nearby medical facilities.'
                     }
-                },
+                }),
                 'companion-care': {
                     customH1: 'Companion Care in Wyckoff',
                     customTitle:

@@ -1,11 +1,7 @@
-// src/lib/locationSeo.ts
 import { counties, CountyData, CityData, ServiceSEOData } from './counties'
 
-// Re-export types for easy access in other files
 export type { CountyData, CityData, ServiceSEOData }
 
-// --- SERVICE DEFINITIONS ---
-// These are not location-specific, so they can stay here.
 export interface Service {
     name: string
     baseDescription: string
@@ -72,8 +68,6 @@ export function getAllCitySlugs(): string[] {
 export function getCityAndCountyData(citySlug: string) {
     return cityMap.get(citySlug) || null
 }
-
-// --- SEO GENERATION LOGIC ---
 
 export interface GeneratedSEO {
     title: string
