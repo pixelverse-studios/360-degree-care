@@ -75,7 +75,7 @@ export default function BlogArchives({ posts }: BlogArchivesProps) {
     return (
         <main>
             {/* Header Section */}
-            <div className="gradient-left text-white max-w-custom">
+            <div className="gradient-left text-white">
                 <div className="px-6 py-10">
                     <div className="text-center">
                         <h1 className="text-white">Blog Archives</h1>
@@ -88,7 +88,7 @@ export default function BlogArchives({ posts }: BlogArchivesProps) {
                 </div>
             </div>
 
-            <div className="mx-auto px-6 py-10">
+            <div className="mx-auto px-6 py-10 max-w-custom">
                 {/* Search and Filter Section */}
                 {/* <div className="mb-12">
                     <div className="flex flex-col lg:flex-row gap-4 items-center justify-between mb-6">

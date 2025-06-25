@@ -104,7 +104,7 @@ export default function BlogTemplate({ blogPost }: BlogTemplateProps) {
                 />
 
                 <div className="absolute inset-0 p-6 text-white flex items-center">
-                    <div className="w-full">
+                    <div className="w-full max-w-custom mx-auto">
                         {/* The "glass" container is now perfectly clipped inside the parent */}
                         <div className="p-6 flex flex-col gap-4 items-start bg-gray-800/50 rounded-xl">
                             <span className="inline-block px-4 py-2 bg-primary text-white text-sm font-medium rounded-full shadow-lg">
@@ -122,7 +122,7 @@ export default function BlogTemplate({ blogPost }: BlogTemplateProps) {
             </div>
 
             {/* Article Content */}
-            <div className="max-w-4xl mx-auto px-6 py-12">
+            <div className="max-w-custom mx-auto px-6 py-12">
                 {/* Article Meta */}
                 <div className="flex flex-wrap items-center gap-6 pb-8 mb-12 border-b border-gray-200">
                     {blogPost.author && (
