@@ -3,15 +3,14 @@
 import {
     Calendar,
     Clock,
-    ArrowLeft
-    // Share2,
-    // Bookmark,
-    // Facebook,
-    // Twitter,
-    // Linkedin,
-    // Phone,
-    // Mail
+    ArrowLeft,
+    Mail,
+    Share2,
+    Twitter,
+    Facebook,
+    Instagram
 } from 'lucide-react'
+import { useState } from 'react'
 import MarkdownRenderer from './MarkdownRenderer'
 import { getImgSrc } from '@/lib/images'
 import { BlogPost } from '@/app/blog/[slug]/page'
@@ -21,6 +20,7 @@ interface BlogTemplateProps {
 }
 
 export default function BlogTemplate({ blogPost }: BlogTemplateProps) {
+    const [isShareOpen, setIsShareOpen] = useState(false)
     if (!blogPost) {
         return (
             <div className="min-h-screen bg-white flex items-center justify-center">
@@ -51,23 +51,46 @@ export default function BlogTemplate({ blogPost }: BlogTemplateProps) {
         })
     }
 
-    // const shareUrl = typeof window !== 'undefined' ? window.location.href : ''
-    // const shareText = `Check out this article: ${blogPost.title}`
+    const shareUrl = typeof window !== 'undefined' ? window.location.href : ''
+    const shareText = `Check out this article: ${blogPost.title}`
 
-    // const handleShare = (platform: string) => {
-    //     const encodedUrl = encodeURIComponent(shareUrl)
-    //     const encodedText = encodeURIComponent(shareText)
+    const handleEmailShare = () => {
+        const subject = encodeURIComponent(
+            `Thought you'd find this interesting: ${blogPost.title}`
+        )
+        const body = encodeURIComponent(`${shareText}\n\n${shareUrl}`)
+        const mailtoUrl = `mailto:?subject=${subject}&body=${body}`
+        window.location.href = mailtoUrl
+    }
 
-    //     const shareUrls: Record<string, string> = {
-    //         facebook: `https://www.facebook.com/sharer/sharer.php?u=${encodedUrl}`,
-    //         twitter: `https://twitter.com/intent/tweet?url=${encodedUrl}&text=${encodedText}`,
-    //         linkedin: `https://www.linkedin.com/sharing/share-offsite/?url=${encodedUrl}`
-    //     }
+    const handleXShare = () => {
+        const encodedUrl = encodeURIComponent(shareUrl)
+        const encodedText = encodeURIComponent(shareText)
+        const xUrl = `https://twitter.com/intent/tweet?url=${encodedUrl}&text=${encodedText}`
+        window.open(xUrl, '_blank', 'width=600,height=400')
+    }
 
-    //     if (shareUrls[platform]) {
-    //         window.open(shareUrls[platform], '_blank', 'width=600,height=400')
-    //     }
-    // }
+    const handleFacebookShare = () => {
+        const currentUrl = window.location.href
+        const encodedUrl = encodeURIComponent(currentUrl)
+        const encodedQuote = encodeURIComponent(shareText)
+        const facebookUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodedUrl}&quote=${encodedQuote}`
+        window.open(facebookUrl, '_blank', 'width=600,height=400')
+    }
+
+    const handleInstagramShare = () => {
+        // Instagram doesn't have a direct URL sharing API, so we'll copy the URL to clipboard
+        // and show a message to the user
+        if (navigator.clipboard) {
+            navigator.clipboard.writeText(`${shareText} ${shareUrl}`)
+            alert(
+                'Link copied to clipboard! You can now paste it in your Instagram story or post.'
+            )
+        } else {
+            // Fallback for browsers that don't support clipboard API
+            alert(`Copy this link to share on Instagram: ${shareUrl}`)
+        }
+    }
 
     return (
         <main>
@@ -189,35 +212,62 @@ export default function BlogTemplate({ blogPost }: BlogTemplateProps) {
                     </div>
                 )}
 
-                {/* Share Section */}
-                {/* <div className="mt-12 pt-8 border-t border-gray-200">
-                    <h4 className="font-semibold text-gray-900 mb-6 text-lg">
-                        Share this article
-                    </h4>
-                    <div className="flex flex-wrap gap-4">
-                        <button
-                            onClick={() => handleShare('facebook')}
-                            className="flex items-center gap-2 px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors shadow-md"
+                {/* Floating Share Speed Dial */}
+                <div className="fixed bottom-8 right-8 z-50">
+                    <div
+                        className="relative"
+                        onMouseEnter={() => setIsShareOpen(true)}
+                        onMouseLeave={() => setIsShareOpen(false)}
+                    >
+                        {/* Extended hover area to bridge the gap */}
+                        <div className="absolute bottom-0 right-0 w-14 h-32 bg-transparent" />
+
+                        {/* Share Options */}
+                        <div
+                            className={`absolute bottom-14 right-0 transition-all duration-500 ease-out ${
+                                isShareOpen
+                                    ? 'opacity-100 translate-y-0 scale-100 pointer-events-auto'
+                                    : 'opacity-0 translate-y-2 scale-95 pointer-events-none'
+                            }`}
                         >
-                            <Facebook className="h-5 w-5" />
-                            Facebook
-                        </button>
-                        <button
-                            onClick={() => handleShare('twitter')}
-                            className="flex items-center gap-2 px-6 py-3 bg-sky-500 text-white rounded-lg hover:bg-sky-600 transition-colors shadow-md"
-                        >
-                            <Twitter className="h-5 w-5" />
-                            Twitter
-                        </button>
-                        <button
-                            onClick={() => handleShare('linkedin')}
-                            className="flex items-center gap-2 px-6 py-3 bg-blue-700 text-white rounded-lg hover:bg-blue-800 transition-colors shadow-md"
-                        >
-                            <Linkedin className="h-5 w-5" />
-                            LinkedIn
+                            <div className="flex flex-col gap-3 pb-2">
+                                <button
+                                    onClick={handleInstagramShare}
+                                    className="flex items-center gap-2 px-4 py-3 bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-lg hover:from-purple-600 hover:to-pink-600 transition-all duration-200 ease-out shadow-lg whitespace-nowrap hover:shadow-xl hover:scale-105 transform"
+                                >
+                                    <Instagram className="h-5 w-5" />
+                                    Share on Instagram
+                                </button>
+                                <button
+                                    onClick={handleFacebookShare}
+                                    className="flex items-center gap-2 px-4 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-all duration-200 ease-out shadow-lg whitespace-nowrap hover:shadow-xl hover:scale-105 transform"
+                                >
+                                    <Facebook className="h-5 w-5" />
+                                    Share on Facebook
+                                </button>
+                                <button
+                                    onClick={handleXShare}
+                                    className="flex items-center gap-2 px-4 py-3 bg-black text-white rounded-lg hover:bg-gray-800 transition-all duration-200 ease-out shadow-lg whitespace-nowrap hover:shadow-xl hover:scale-105 transform"
+                                >
+                                    <Twitter className="h-5 w-5" />
+                                    Share on X
+                                </button>
+                                <button
+                                    onClick={handleEmailShare}
+                                    className="flex items-center gap-2 px-4 py-3 bg-white text-gray-700 rounded-lg hover:bg-gray-50 transition-all duration-200 ease-out shadow-lg border border-gray-200 whitespace-nowrap hover:shadow-xl hover:scale-105 transform"
+                                >
+                                    <Mail className="h-5 w-5" />
+                                    Share via Email
+                                </button>
+                            </div>
+                        </div>
+
+                        {/* Main Share Button */}
+                        <button className="flex items-center justify-center w-14 h-14 bg-primary text-white rounded-full shadow-lg hover:bg-green transition-all duration-300 ease-out hover:scale-110 hover:shadow-xl transform">
+                            <Share2 className="h-6 w-6" />
                         </button>
                     </div>
-                </div> */}
+                </div>
 
                 {/* Navigation */}
                 <div className="mt-16 pt-8 border-t border-gray-200">
