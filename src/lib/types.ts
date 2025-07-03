@@ -7,7 +7,7 @@ export interface ImageProps {
 }
 
 export interface ServiceItemProps {
-    Icon: IconType
+    Icon: IconType | string
     title: string
     description: string
 }

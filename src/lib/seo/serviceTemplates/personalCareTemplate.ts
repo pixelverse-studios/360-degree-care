@@ -1,18 +1,5 @@
 import { ServiceSEOData } from '@/lib/counties'
 import { getImgSrc } from '../../images'
-import {
-    FaBath,
-    FaBroom,
-    FaCar,
-    FaWheelchair,
-    FaUtensils,
-    FaCapsules,
-    FaHeart,
-    FaToilet,
-    FaHouseUser,
-    FaFaceSmile,
-    FaNotesMedical
-} from 'react-icons/fa6'
 
 interface PersonalCareTemplateVars {
     cityName: string
@@ -111,46 +98,46 @@ export function generatePersonalCareData(
                     title: 'Bathing, dressing, and grooming',
                     description:
                         'Assistance with personal hygiene and daily dressing routines',
-                    Icon: FaBath
+                    Icon: 'FaBath'
                 },
                 {
                     title: 'Light housekeeping and laundry',
                     description: 'Maintaining a clean, safe living environment',
-                    Icon: FaBroom
+                    Icon: 'FaBroom'
                 },
                 {
                     title: 'Transportation to appointments',
                     description:
                         'Safe rides to medical visits and community activities',
-                    Icon: FaCar
+                    Icon: 'FaCar'
                 },
                 {
                     title: 'Assistance with mobility and transfers',
                     description: 'Help with safe movement around the home',
-                    Icon: FaWheelchair
+                    Icon: 'FaWheelchair'
                 },
                 {
                     title: 'Meal preparation and feeding assistance',
                     description:
                         'Nutritious meal planning and help with eating when needed',
-                    Icon: FaUtensils
+                    Icon: 'FaUtensils'
                 },
                 {
                     title: 'Medication reminders',
                     description:
                         'Timely prompts for taking prescribed medications',
-                    Icon: FaCapsules
+                    Icon: 'FaCapsules'
                 },
                 {
                     title: 'Companionship and conversation',
                     description:
                         'Meaningful social interaction and emotional support',
-                    Icon: FaHeart
+                    Icon: 'FaHeart'
                 },
                 {
                     title: 'Incontinence care',
                     description: 'Dignified assistance with toileting needs',
-                    Icon: FaToilet
+                    Icon: 'FaToilet'
                 }
             ]
         },
@@ -161,25 +148,25 @@ export function generatePersonalCareData(
                     title: 'Promotes Independence',
                     description:
                         'Help seniors remain in their homes longer with dignity and comfort',
-                    Icon: FaHouseUser
+                    Icon: 'FaHouseUser'
                 },
                 {
                     title: 'Reduces Caregiver Stress',
                     description:
                         'Offers relief for family members and prevents caregiver burnout',
-                    Icon: FaHeart
+                    Icon: 'FaHeart'
                 },
                 {
                     title: 'Improves Emotional Well-being',
                     description:
                         'Consistent companionship and support reduces feelings of isolation',
-                    Icon: FaFaceSmile
+                    Icon: 'FaFaceSmile'
                 },
                 {
                     title: 'Customizable Plans',
                     description:
                         "Every client's needs and preferences are unique and fully accommodated",
-                    Icon: FaNotesMedical
+                    Icon: 'FaNotesMedical'
                 }
             ]
         }

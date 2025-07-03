@@ -29,6 +29,7 @@ export default function ServiceHero({
                     value=""
                     variant="pillPrimary"
                     type="services"
+                    buttonClass="flex gap-2"
                 />
             </SlideInSection>
             <SlideInSection direction="right">

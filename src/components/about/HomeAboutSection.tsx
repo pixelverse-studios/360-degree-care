@@ -9,12 +9,26 @@ export default function HomeAboutSection() {
                 animation="zoom"
                 className="max-w-custom mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 justify-between items-start p-6"
             >
-                <img
+                {/* <img
                     className="rounded-2xl h-full w-fit object-cover"
                     src={getImgSrc('swimmer')}
                     alt="Content senior man"
-                />
+                /> */}
+                {/* 
+                <iframe
+                    src="https://youtu.be/940TQdvwoxs"
+                    title="Transition from Interim to 360 Degree Care"
+                    className="h-[90%] w-full rounded-lg"
+                /> */}
 
+                <iframe
+                    className="h-full w-full rounded-lg"
+                    src="https://www.youtube.com/embed/940TQdvwoxs?si=fqdzPoORSzGveCqZ"
+                    title="YouTube video player"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerPolicy="strict-origin-when-cross-origin"
+                    allowFullScreen
+                />
                 <div className="flex flex-col gap-4">
                     <h1 className="text-primary font-bold text-3xl">
                         About 360° Care

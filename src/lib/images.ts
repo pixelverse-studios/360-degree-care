@@ -183,7 +183,7 @@ const cloudinaryImageMap = new Map([
         'https://res.cloudinary.com/pixelverse-studios/image/upload/v1750022033/clients/360dc/assets/nurse_care_tclckz.jpg'
     ],
     [
-        'nurse_heart',
+        'staffing_hero',
         'https://res.cloudinary.com/pixelverse-studios/image/upload/v1750022029/clients/360dc/assets/nurse_heart_jeijuc.jpg'
     ],
     [
@@ -201,6 +201,22 @@ const cloudinaryImageMap = new Map([
     [
         'personal-care-hero',
         'https://res.cloudinary.com/pixelverse-studios/image/upload/v1750423042/clients/360dc/services/Haircut_af5j8e.jpg'
+    ],
+    [
+        'companion-care-hero',
+        'https://res.cloudinary.com/pixelverse-studios/image/upload/v1751388150/clients/360dc/heros/CompanionCare_Hero_ejbo8x.jpg'
+    ],
+    [
+        'home-aides-hero',
+        'https://res.cloudinary.com/pixelverse-studios/image/upload/v1751388149/clients/360dc/heros/HomeHealthAides_Hero_mji15n.jpg'
+    ],
+    [
+        'nursing-hero',
+        'https://res.cloudinary.com/pixelverse-studios/image/upload/v1751388148/clients/360dc/heros/Nursing_Hero_sjligk.jpg'
+    ],
+    [
+        'elder-care-hero',
+        'https://res.cloudinary.com/pixelverse-studios/image/upload/v1751388148/clients/360dc/heros/ElderCare_Hero_vmz6au.jpg'
     ]
 ])
 

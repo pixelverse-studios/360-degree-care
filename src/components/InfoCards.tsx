@@ -22,7 +22,7 @@ export default function InfoCards({ cards, header, styles }: InfoCardProps) {
     return (
         <section className={`${styles} py-8`}>
             {header != null ? (
-                <h1 className="text-center max-w-custom py-2 px-6 text-black text-3xl font-bold">
+                <h1 className="text-center max-w-custom mx-auto py-2 px-6 text-black text-3xl font-bold">
                     {header}
                 </h1>
             ) : null}

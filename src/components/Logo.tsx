@@ -61,32 +61,18 @@ export const CompanyName = ({
     )
 }
 
-const Logo = ({ invert = false, size = 'md', className }: LogoProps) => {
-    const sizeClasses = {
-        sm: 'text-xl',
-        md: 'text-3xl',
-        lg: 'text-6xl'
-    }
-
+const Logo = ({ invert = false }: LogoProps) => {
     return (
-        <div className="animate-fade-in">
-            <div
+        <div className={cn(invert ? 'bg-primary' : 'bg-transparent', 'flex-1')}>
+            <img
+                src="/logo.png"
+                alt="360 Care Logo"
                 className={cn(
-                    'flex items-center cursor-pointer transition-transform hover:scale-105 font-bold',
-                    invert ? 'text-white' : 'text-primary'
+                    invert
+                        ? 'w-fit max-w-[20rem] drop-shadow-[0_0_4px_rgba(255,255,255,0.6)]'
+                        : 'w-2/3'
                 )}
-            >
-                <p className={cn('font-logo', sizeClasses[size])}>360</p>
-                <RotateCw
-                    className={cn(
-                        'h-4 w-4 mt-[-1.75rem] mr-2 transition-all animate-spin-very-slow',
-                        invert ? '' : 'text-blue',
-                        className ?? ''
-                    )}
-                    strokeWidth={4}
-                />
-                <p className={cn('font-logo', sizeClasses[size])}>CARE</p>
-            </div>
+            />
         </div>
     )
 }

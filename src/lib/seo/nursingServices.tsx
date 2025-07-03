@@ -3,33 +3,32 @@
 import Head from 'next/head'
 import Script from 'next/script'
 import {
-    FaComments,
-    FaCapsules,
-    FaBroom,
-    FaPersonWalking,
-    FaHandHoldingHeart,
-    FaFaceSmile,
-    FaBrain,
-    FaShieldHeart,
-    FaRoute,
+    FaStethoscope,
+    FaClipboardList,
+    FaSyringe,
+    FaBandage,
+    FaGraduationCap,
+    FaUserDoctor,
+    FaHandshake,
+    FaClock,
     FaArrowRight
 } from 'react-icons/fa6'
 import { getImgSrc } from '../images'
 
-const StaticCompanionCareData = {
+const StaticNursingServicesData = {
     SeoHead: () => {
         const schema = {
             '@context': 'https://schema.org',
             '@type': 'Service',
-            name: 'Companion Care Services',
-            serviceType: 'Companion Care',
+            name: 'In-Home Nursing Services',
+            serviceType: 'Nursing Services',
             provider: {
                 '@type': 'HomeHealthCareService',
                 name: '360 Degree Care',
                 url: 'https://www.360degreecare.net/',
                 logo: 'https://www.360degreecare.net/assets/logo.png',
                 description:
-                    "For over 10 years, we've been providing compassionate companion care services to families across New Jersey.",
+                    "For over 10 years, we've been providing professional in-home nursing services to families across New Jersey.",
                 address: {
                     '@type': 'PostalAddress',
                     streetAddress: '27 Chestnut Street, Floor 1',
@@ -47,7 +46,7 @@ const StaticCompanionCareData = {
                 name: 'New Jersey'
             },
             description:
-                '360 Degree Care provides professional companion care services including compassionate social support, emotional connection, and daily life assistance. Our companions provide meaningful interaction and trusted friendship.',
+                '360 Degree Care provides professional in-home nursing services including licensed nurses for wound care, assessments, injections, and medication management. All care is coordinated with physicians and available 24/7.',
             offers: {
                 '@type': 'Offer',
                 availability: 'https://schema.org/InStock',
@@ -75,37 +74,37 @@ const StaticCompanionCareData = {
             <>
                 <Head>
                     <title>
-                        Companion Care Services in New Jersey | 360 Degree Care
+                        In-Home Nursing Services in New Jersey | 360 Degree Care
                     </title>
                     <meta
                         name="title"
-                        content="Companion Care Services in New Jersey | 360 Degree Care"
+                        content="In-Home Nursing Services in New Jersey | 360 Degree Care"
                     />
                     <meta
                         name="description"
-                        content="Professional companion care services in New Jersey. Compassionate social support, emotional connection, and daily life assistance. Reduce loneliness and support mental health."
+                        content="Professional in-home nursing services in New Jersey. Licensed nurses providing skilled clinical care, wound care, medication management, and health assessments at home."
                     />
                     <meta
                         name="keywords"
-                        content="companion care, companionship services, social support, emotional connection, senior companionship, New Jersey"
+                        content="in-home nursing, skilled nursing, wound care, medication management, home nursing, New Jersey"
                     />
 
                     <meta property="og:type" content="website" />
                     <meta
                         property="og:url"
-                        content="https://www.360degreecare.net/services/companion-care"
+                        content="https://www.360degreecare.net/services/nursing-services"
                     />
                     <meta
                         property="og:title"
-                        content="Companion Care Services in New Jersey | 360 Degree Care"
+                        content="In-Home Nursing Services in New Jersey | 360 Degree Care"
                     />
                     <meta
                         property="og:description"
-                        content="Professional companion care services in New Jersey. Compassionate social support and emotional connection for daily life."
+                        content="Professional in-home nursing services in New Jersey. Licensed nurses providing skilled clinical care at home."
                     />
                     <meta
                         property="og:image"
-                        content="https://www.360degreecare.net/assets/companion-care-image.jpg"
+                        content="https://www.360degreecare.net/assets/nursing-services-image.jpg"
                     />
                     <meta property="og:locale" content="en_US" />
                     <meta property="og:site_name" content="360 Degree Care" />
@@ -116,24 +115,24 @@ const StaticCompanionCareData = {
                     />
                     <meta
                         property="twitter:url"
-                        content="https://www.360degreecare.net/services/companion-care"
+                        content="https://www.360degreecare.net/services/nursing-services"
                     />
                     <meta
                         property="twitter:title"
-                        content="Companion Care Services in New Jersey | 360 Degree Care"
+                        content="In-Home Nursing Services in New Jersey | 360 Degree Care"
                     />
                     <meta
                         property="twitter:description"
-                        content="Professional companion care services in New Jersey. Compassionate social support and emotional connection for daily life."
+                        content="Professional in-home nursing services in New Jersey. Licensed nurses providing skilled clinical care at home."
                     />
                     <meta
                         property="twitter:image"
-                        content="https://www.360degreecare.net/assets/companion-care-image.jpg"
+                        content="https://www.360degreecare.net/assets/nursing-services-image.jpg"
                     />
 
                     <link
                         rel="canonical"
-                        href="https://www.360degreecare.net/services/companion-care"
+                        href="https://www.360degreecare.net/services/nursing-services"
                     />
                     <meta name="robots" content="index, follow" />
                     <meta name="geo.region" content="US-NJ" />
@@ -141,7 +140,7 @@ const StaticCompanionCareData = {
                 </Head>
 
                 <Script
-                    id="ld-json-companion-care"
+                    id="ld-json-nursing-services"
                     type="application/ld+json"
                     dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
                 />
@@ -151,86 +150,84 @@ const StaticCompanionCareData = {
     hero: {
         cta: (
             <>
-                Contact Us <FaArrowRight size={24} className="ml-4" />
+                Contact Us Today <FaArrowRight size={24} className="ml-4" />
             </>
         ),
-        description: (
-            <>Social support and emotional connection for daily life.</>
-        ),
-        header: 'Companion Care Services in New Jersey',
+        description: <>Skilled clinical care — at home and on your terms.</>,
+        header: 'In-Home Nursing Services in New Jersey',
         img: {
-            src: getImgSrc('companion-care-hero') ?? '',
-            alt: 'companion care services example'
+            src: getImgSrc('nursing-hero') ?? '',
+            alt: 'in-home nursing services example'
         }
     },
     description: {
-        header: 'What is Companion Care?',
+        header: 'What is In-Home Nursing?',
         description:
-            "A companion caregiver is a compassionate, reliable professional who spends quality time with individuals, supporting them with daily tasks and—most importantly—meaningful social interaction. Whether it's sharing stories over tea, going for a walk, or playing a game, a trusted companion brings joy and emotional connection. 360°Care's Companion Care emphasizes trust, comfort, and presence. A companion becomes a friend you can count on."
+            'Licensed nurses provide wound care, assessments, injections, and medication management — all coordinated with your doctor and available 24/7.'
     },
     listItems: {
         header: "What's Included",
         items: [
             {
-                title: 'Conversation and hobbies',
+                title: 'Physical exams and vitals',
                 description:
-                    'Engaging discussions, shared interests, and meaningful activities',
-                Icon: 'FaComments'
+                    'Comprehensive health assessments and vital sign monitoring',
+                Icon: 'FaStethoscope'
             },
             {
-                title: 'Medication reminders',
-                description: 'Gentle prompts for taking prescribed medications',
-                Icon: 'FaCapsules'
+                title: 'Care plan coordination',
+                description:
+                    'Working with your physician to implement treatment plans',
+                Icon: 'FaClipboardList'
             },
             {
-                title: 'Light tidying',
+                title: 'Medication administration',
                 description:
-                    'Assistance with maintaining a comfortable living space',
-                Icon: 'FaBroom'
+                    'Professional administration of injections and complex medications',
+                Icon: 'FaSyringe'
             },
             {
-                title: 'Accompaniment to outings',
+                title: 'Advanced wound care',
                 description:
-                    'Safe companionship for walks, shopping, and social activities',
-                Icon: 'FaPersonWalking'
+                    'Specialized treatment for complex wounds and dressings',
+                Icon: 'FaBandage'
             },
             {
-                title: 'Emotional presence and monitoring',
+                title: 'Health education for families',
                 description:
-                    'Compassionate support and awareness of emotional well-being',
-                Icon: 'FaHandHoldingHeart'
+                    'Teaching family members about care procedures and health management',
+                Icon: 'FaGraduationCap'
             }
         ]
     },
     benefits: {
-        header: 'Benefits of Companion Care',
+        header: 'Benefits of In-Home Nursing',
         items: [
             {
-                title: 'Reduces Loneliness',
+                title: 'Highly Qualified Nurses',
                 description:
-                    'Regular social interaction helps combat isolation and depression',
-                Icon: 'FaFaceSmile'
+                    'Licensed RNs and LPNs with specialized training and experience',
+                Icon: 'FaUserDoctor'
             },
             {
-                title: 'Supports Mental Health',
+                title: 'Collaborative Care',
                 description:
-                    'Meaningful conversations and activities promote cognitive wellness',
-                Icon: 'FaBrain'
+                    'Close coordination with your physician and healthcare team',
+                Icon: 'FaHandshake'
             },
             {
-                title: 'Builds Routine & Safety',
-                description:
-                    'Consistent presence creates structure and peace of mind for families',
-                Icon: 'FaShieldHeart'
+                title: 'Round-the-Clock Availability',
+                description: '24/7 nursing support when you need it most',
+                Icon: 'FaClock'
             },
             {
-                title: 'Flexible Companionship',
+                title: 'Comprehensive Education',
                 description:
-                    'Services adapted to individual interests, needs, and schedules',
-                Icon: 'FaRoute'
+                    'Teaching and support for family members to continue care',
+                Icon: 'FaGraduationCap'
             }
         ]
     }
 }
 
-export default StaticCompanionCareData
+export default StaticNursingServicesData

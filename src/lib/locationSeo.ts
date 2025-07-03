@@ -99,6 +99,7 @@ export function generateLocationSEO(
     }
 
     const { city: location, county } = locationInfo
+
     const serviceSpecificData = location.serviceSpecificSEO?.[serviceSlug]
 
     // Build H1, Title, and Description with smart fallbacks

@@ -1,5 +1,12 @@
 import { CountyData } from '@/lib/counties'
-import { addPersonalCare } from '../serviceTemplates/applyTemplate'
+import {
+    addPersonalCare,
+    addElderCareConsulting,
+    addStaffingServices,
+    addHomeHealthAides,
+    addNursingServices,
+    addCompanionCare
+} from '../serviceTemplates/applyTemplate'
 
 const bergenCountyData: CountyData = {
     slug: 'bergen-county',
@@ -101,7 +108,12 @@ const bergenCountyData: CountyData = {
                         emergencyInfo:
                             'Immediate access to Hackensack University Medical Center and Bergen County emergency services.'
                     }
-                })
+                }),
+                'elder-care': addElderCareConsulting('hackensack'),
+                staffing: addStaffingServices('hackensack'),
+                'home-health-aides': addHomeHealthAides('hackensack'),
+                nursing: addNursingServices('hackensack'),
+                'companion-care': addCompanionCare('hackensack')
             },
             rankingFactors: {
                 primaryKeywords: [
@@ -174,57 +186,11 @@ const bergenCountyData: CountyData = {
                             'Quick response times throughout Ridgewood with 24/7 coordination with Valley Hospital emergency services.'
                     }
                 }),
-                'companion-care': {
-                    customH1: 'Companion Care Services in Ridgewood Village',
-                    customTitle:
-                        'Companion Care Ridgewood NJ | Social Support & Friendship',
-                    customMetaDescription:
-                        'Companion care in Ridgewood, NJ. Social support for seniors in this close-knit community. Transportation, activities, friendship.',
-                    localKeywords: [
-                        'companion care Ridgewood',
-                        'senior companionship Ridgewood',
-                        'elderly social support Ridgewood'
-                    ],
-                    contentBlocks: {
-                        whyChooseUs:
-                            "We provide companionship that honors Ridgewood's strong community spirit and family values.",
-                        serviceHighlights: [
-                            'Engaging activities tailored to Ridgewood lifestyle',
-                            'Transportation for local appointments and errands',
-                            'Support for social outings in Ridgewood Village'
-                        ],
-                        localExpertise:
-                            'Familiar with Ridgewood activities like Graydon Pool events, Village shopping, and community gatherings.',
-                        emergencyInfo:
-                            '24/7 coordination for peace of mind, ensuring safety during outings in Ridgewood.'
-                    }
-                },
-                'elder-care': {
-                    customH1:
-                        'Comprehensive Elder Care Services in Ridgewood, NJ',
-                    customTitle:
-                        'Elder Care Ridgewood NJ | Senior Home Care Solutions',
-                    customMetaDescription:
-                        '360 Degree Care offers expert elder care services in Ridgewood, NJ. From personal assistance to skilled nursing, we create customized care plans for seniors.',
-                    localKeywords: [
-                        'elder care Ridgewood',
-                        'senior care Ridgewood NJ',
-                        'at-home care for elderly Ridgewood'
-                    ],
-                    contentBlocks: {
-                        whyChooseUs:
-                            'Our comprehensive elder care solutions in Ridgewood ensure seniors receive personalized attention and support.',
-                        serviceHighlights: [
-                            'Customized care plans for long-term well-being',
-                            'Coordination with local healthcare providers',
-                            'Family caregiver respite support'
-                        ],
-                        localExpertise:
-                            'Deep understanding of Ridgewood’s senior resources and community support networks.',
-                        emergencyInfo:
-                            'Seamless integration with emergency services and healthcare facilities in Ridgewood.'
-                    }
-                }
+                'elder-care': addElderCareConsulting('ridgewood'),
+                staffing: addStaffingServices('ridgewood'),
+                'home-health-aides': addHomeHealthAides('ridgewood'),
+                nursing: addNursingServices('ridgewood'),
+                'companion-care': addCompanionCare('ridgewood')
             },
             rankingFactors: {
                 primaryKeywords: [
@@ -296,32 +262,7 @@ const bergenCountyData: CountyData = {
                             'Quick response throughout Cliffside Park with connections to Palisades Medical Center.'
                     }
                 }),
-                'companion-care': {
-                    customH1: 'Companion Care in Cliffside Park',
-                    customTitle:
-                        'Companion Care Cliffside Park NJ | Social Support for Seniors',
-                    customMetaDescription:
-                        'Find compassionate companion care in Cliffside Park, NJ. We offer social engagement, activities, and friendly companionship to enhance senior well-being.',
-                    localKeywords: [
-                        'companion care Cliffside Park',
-                        'senior activities Cliffside Park',
-                        'elderly companionship 07010'
-                    ],
-                    contentBlocks: {
-                        whyChooseUs:
-                            'Our caregivers provide enriching companionship, supporting seniors in Cliffside Park to stay active and connected.',
-                        serviceHighlights: [
-                            'Engaging conversations and shared hobbies',
-                            'Escorted outings to local parks and community events',
-                            'Support for cultural and social activities'
-                        ],
-                        localExpertise:
-                            'Familiar with Cliffside Park’s community centers and local attractions for enriching outings.',
-                        emergencyInfo:
-                            'Immediate support and coordination with family for any unforeseen circumstances during companionship.'
-                    }
-                },
-                'elder-care': {
+                'elder-care': addElderCareConsulting('cliffside-park', {
                     customH1:
                         'Comprehensive Elder Care Services in Cliffside Park',
                     customTitle:
@@ -346,7 +287,11 @@ const bergenCountyData: CountyData = {
                         emergencyInfo:
                             'Proactive emergency planning and rapid response to ensure senior safety in Cliffside Park.'
                     }
-                }
+                }),
+                staffing: addStaffingServices('cliffside-park'),
+                'home-health-aides': addHomeHealthAides('cliffside-park'),
+                nursing: addNursingServices('cliffside-park'),
+                'companion-care': addCompanionCare('cliffside-park')
             },
             rankingFactors: {
                 primaryKeywords: [
@@ -417,33 +362,7 @@ const bergenCountyData: CountyData = {
                             '24/7 support and coordination with local Allendale emergency services for peace of mind.'
                     }
                 }),
-                'companion-care': {
-                    customH1: 'Compassionate Companion Care in Allendale',
-                    customTitle:
-                        'Companion Care Services in Allendale, NJ | 360 Degree Care',
-                    customMetaDescription:
-                        'Searching for companion care in Allendale? We provide emotional support, social engagement, and friendly companionship for seniors. Reduce isolation and improve quality of life.',
-                    localKeywords: [
-                        'companion care Allendale',
-                        'senior companionship Allendale',
-                        'elderly social support Allendale',
-                        'Allendale activities for seniors'
-                    ],
-                    contentBlocks: {
-                        whyChooseUs:
-                            'We offer enriching companionship to seniors in Allendale, helping them stay engaged and connected to their community.',
-                        serviceHighlights: [
-                            'Engaging conversations and shared hobbies',
-                            'Accompaniment to local events or appointments',
-                            'Light housekeeping and meal prep support'
-                        ],
-                        localExpertise:
-                            'Understanding of Allendale’s community activities and interests for meaningful companionship.',
-                        emergencyInfo:
-                            'Reliable support during outings in Allendale, ensuring safety and comfort.'
-                    }
-                },
-                'elder-care': {
+                'elder-care': addElderCareConsulting('allendale', {
                     customH1:
                         'Comprehensive Elder Care Services in Allendale, NJ',
                     customTitle:
@@ -465,11 +384,15 @@ const bergenCountyData: CountyData = {
                             'Flexible scheduling for diverse care requirements'
                         ],
                         localExpertise:
-                            'Connected with Allendale’s senior resources and community support networks.',
+                            "Connected with Allendale's senior resources and community support networks.",
                         emergencyInfo:
                             'Proactive planning and rapid response for any health or safety concerns in Allendale.'
                     }
-                }
+                }),
+                staffing: addStaffingServices('allendale'),
+                'home-health-aides': addHomeHealthAides('allendale'),
+                nursing: addNursingServices('allendale'),
+                'companion-care': addCompanionCare('allendale')
             },
             rankingFactors: {
                 primaryKeywords: [
@@ -540,58 +463,11 @@ const bergenCountyData: CountyData = {
                             'Seamless coordination with private medical services and local emergency responders in Alpine.'
                     }
                 }),
-                'companion-care': {
-                    customH1: 'Compassionate Companion Care in Alpine',
-                    customTitle:
-                        'Companion Care Services in Alpine, NJ | 360 Degree Care',
-                    customMetaDescription:
-                        'Searching for companion care in Alpine? We provide emotional support, social engagement, and friendly companionship for seniors. Reduce isolation and improve quality of life.',
-                    localKeywords: [
-                        'companion care Alpine',
-                        'senior companionship Alpine',
-                        'elderly social support Alpine',
-                        'Alpine luxury companion'
-                    ],
-                    contentBlocks: {
-                        whyChooseUs:
-                            'Our companion care in Alpine offers discreet, respectful, and engaging companionship for seniors.',
-                        serviceHighlights: [
-                            'Culturally sensitive and engaging activities',
-                            'Personalized outings and social engagement',
-                            'Assistance with errands and appointments in Alpine'
-                        ],
-                        localExpertise:
-                            'Familiar with Alpine’s exclusive community and lifestyle, ensuring appropriate and considerate care.',
-                        emergencyInfo:
-                            'Dedicated support for peace of mind during all companion care activities in Alpine.'
-                    }
-                },
-                'elder-care': {
-                    customH1: 'Premium Elder Care Services in Alpine, NJ',
-                    customTitle:
-                        'Elder Care Alpine NJ | Exclusive Senior Home Care',
-                    customMetaDescription:
-                        'Discover premium elder care services in Alpine, NJ. 360 Degree Care offers tailored solutions, from personal care to skilled nursing, designed for discerning families.',
-                    localKeywords: [
-                        'elder care Alpine',
-                        'senior care Alpine NJ',
-                        'at-home care for elderly Alpine',
-                        'Alpine elite elder care'
-                    ],
-                    contentBlocks: {
-                        whyChooseUs:
-                            'Our elder care services in Alpine are characterized by exceptional quality, tailored to the unique needs of the community.',
-                        serviceHighlights: [
-                            'Comprehensive and personalized care plans',
-                            'Access to highly qualified and discreet caregivers',
-                            'Coordination with private healthcare networks'
-                        ],
-                        localExpertise:
-                            'Deep understanding of the specific requirements for high-end elder care in Alpine.',
-                        emergencyInfo:
-                            'Proactive emergency preparedness and immediate response, ensuring safety and security in Alpine.'
-                    }
-                }
+                'companion-care': addCompanionCare('alpine'),
+                'elder-care': addElderCareConsulting('alpine'),
+                staffing: addStaffingServices('alpine'),
+                'home-health-aides': addHomeHealthAides('alpine'),
+                nursing: addNursingServices('alpine')
             },
             rankingFactors: {
                 primaryKeywords: [
@@ -662,59 +538,11 @@ const bergenCountyData: CountyData = {
                             'Prompt response and coordination with local Bergenfield emergency services for client safety.'
                     }
                 }),
-                'companion-care': {
-                    customH1: 'Compassionate Companion Care in Bergenfield',
-                    customTitle:
-                        'Companion Care Services in Bergenfield, NJ | 360 Degree Care',
-                    customMetaDescription:
-                        'Searching for companion care in Bergenfield? We provide emotional support, social engagement, and friendly companionship for seniors. Reduce isolation and improve quality of life.',
-                    localKeywords: [
-                        'companion care Bergenfield',
-                        'senior companionship Bergenfield',
-                        'elderly social support Bergenfield',
-                        'Bergenfield activities for seniors'
-                    ],
-                    contentBlocks: {
-                        whyChooseUs:
-                            'We provide engaging companion care in Bergenfield, enhancing the lives of seniors through meaningful interactions.',
-                        serviceHighlights: [
-                            'Social engagement and mental stimulation',
-                            'Accompaniment to local events and community centers',
-                            'Support for hobbies and interests'
-                        ],
-                        localExpertise:
-                            'Knowledgeable about Bergenfield’s community programs and places of interest for enriching outings.',
-                        emergencyInfo:
-                            'Reliable support and immediate action during any unforeseen circumstances in Bergenfield.'
-                    }
-                },
-                'elder-care': {
-                    customH1:
-                        'Comprehensive Elder Care Services in Bergenfield, NJ',
-                    customTitle:
-                        'Elder Care Bergenfield NJ | Senior Home Care Solutions',
-                    customMetaDescription:
-                        '360 Degree Care offers expert elder care services in Bergenfield, NJ. From personal assistance to skilled nursing, we create customized care plans for seniors.',
-                    localKeywords: [
-                        'elder care Bergenfield',
-                        'senior care Bergenfield NJ',
-                        'at-home care for elderly Bergenfield',
-                        'Bergenfield senior support'
-                    ],
-                    contentBlocks: {
-                        whyChooseUs:
-                            'Our elder care services in Bergenfield offer comprehensive and culturally appropriate support for seniors and their families.',
-                        serviceHighlights: [
-                            'Individualized care plans focused on holistic well-being',
-                            'Coordination with local healthcare providers and specialists',
-                            'Assistance with navigating local senior resources'
-                        ],
-                        localExpertise:
-                            'Familiarity with Bergenfield’s healthcare landscape and social support systems.',
-                        emergencyInfo:
-                            'Proactive safety planning and rapid response for any medical or personal emergencies in Bergenfield.'
-                    }
-                }
+                'companion-care': addCompanionCare('bergenfield'),
+                'elder-care': addElderCareConsulting('bergenfield'),
+                staffing: addStaffingServices('bergenfield'),
+                'home-health-aides': addHomeHealthAides('bergenfield'),
+                nursing: addNursingServices('bergenfield')
             },
             rankingFactors: {
                 primaryKeywords: [
@@ -790,58 +618,11 @@ const bergenCountyData: CountyData = {
                             '24/7 availability and quick coordination with Bogota emergency services for immediate needs.'
                     }
                 }),
-                'companion-care': {
-                    customH1: 'Compassionate Companion Care in Bogota',
-                    customTitle:
-                        'Companion Care Services in Bogota, NJ | 360 Degree Care',
-                    customMetaDescription:
-                        'Searching for companion care in Bogota? We provide emotional support, social engagement, and friendly companionship for seniors. Reduce isolation and improve quality of life.',
-                    localKeywords: [
-                        'companion care Bogota',
-                        'senior companionship Bogota',
-                        'elderly social support Bogota',
-                        'Bogota activities for seniors'
-                    ],
-                    contentBlocks: {
-                        whyChooseUs:
-                            'We offer heartfelt companion care in Bogota, focusing on social interaction and mental well-being.',
-                        serviceHighlights: [
-                            'Engaging activities and stimulating conversations',
-                            'Accompaniment to local Bogota events or errands',
-                            'Reading aloud and shared hobbies'
-                        ],
-                        localExpertise:
-                            'Knowledgeable about Bogota’s community atmosphere and local attractions for enriching companionship.',
-                        emergencyInfo:
-                            'Reliable oversight during social outings in Bogota, ensuring a safe and enjoyable experience.'
-                    }
-                },
-                'elder-care': {
-                    customH1: 'Comprehensive Elder Care Services in Bogota, NJ',
-                    customTitle:
-                        'Elder Care Bogota NJ | Senior Home Care Solutions',
-                    customMetaDescription:
-                        '360 Degree Care offers expert elder care services in Bogota, NJ. From personal assistance to skilled nursing, we create customized care plans for seniors.',
-                    localKeywords: [
-                        'elder care Bogota',
-                        'senior care Bogota NJ',
-                        'at-home care for elderly Bogota',
-                        'Bogota senior support'
-                    ],
-                    contentBlocks: {
-                        whyChooseUs:
-                            'Our comprehensive elder care in Bogota is designed to provide complete support for seniors, enabling them to thrive at home.',
-                        serviceHighlights: [
-                            'Customized care plans addressing all aspects of senior living',
-                            'Coordination with local medical and social services',
-                            'Support for families navigating elder care decisions'
-                        ],
-                        localExpertise:
-                            'Deep understanding of Bogota’s community support systems and healthcare options.',
-                        emergencyInfo:
-                            'Proactive emergency planning and swift response for reliable elder care in Bogota.'
-                    }
-                }
+                'companion-care': addCompanionCare('bogota'),
+                'elder-care': addElderCareConsulting('bogota'),
+                staffing: addStaffingServices('bogota'),
+                'home-health-aides': addHomeHealthAides('bogota'),
+                nursing: addNursingServices('bogota')
             },
             rankingFactors: {
                 primaryKeywords: [
@@ -917,59 +698,11 @@ const bergenCountyData: CountyData = {
                             '24/7 care coordination and rapid response with Carlstadt emergency services.'
                     }
                 }),
-                'companion-care': {
-                    customH1: 'Compassionate Companion Care in Carlstadt',
-                    customTitle:
-                        'Companion Care Services in Carlstadt, NJ | 360 Degree Care',
-                    customMetaDescription:
-                        'Searching for companion care in Carlstadt? We provide emotional support, social engagement, and friendly companionship for seniors. Reduce isolation and improve quality of life.',
-                    localKeywords: [
-                        'companion care Carlstadt',
-                        'senior companionship Carlstadt',
-                        'elderly social support Carlstadt',
-                        'Carlstadt activities for seniors'
-                    ],
-                    contentBlocks: {
-                        whyChooseUs:
-                            'We offer enriching companion care in Carlstadt, helping seniors stay connected and active within their community.',
-                        serviceHighlights: [
-                            'Engaging conversations and shared activities',
-                            'Accompaniment to Carlstadt community events',
-                            'Support for errands and appointments'
-                        ],
-                        localExpertise:
-                            'Knowledgeable about Carlstadt’s local offerings for senior engagement and social opportunities.',
-                        emergencyInfo:
-                            'Constant vigilance and quick response during outings and home visits in Carlstadt.'
-                    }
-                },
-                'elder-care': {
-                    customH1:
-                        'Comprehensive Elder Care Services in Carlstadt, NJ',
-                    customTitle:
-                        'Elder Care Carlstadt NJ | Senior Home Care Solutions',
-                    customMetaDescription:
-                        '360 Degree Care offers expert elder care services in Carlstadt, NJ. From personal assistance to skilled nursing, we create customized care plans for seniors.',
-                    localKeywords: [
-                        'elder care Carlstadt',
-                        'senior care Carlstadt NJ',
-                        'at-home care for elderly Carlstadt',
-                        'Carlstadt senior support'
-                    ],
-                    contentBlocks: {
-                        whyChooseUs:
-                            'Our comprehensive elder care services in Carlstadt provide peace of mind through reliable and tailored support.',
-                        serviceHighlights: [
-                            'Personalized care plans adapting to evolving needs',
-                            'Coordination with local medical and rehabilitation services',
-                            'Family support and educational resources'
-                        ],
-                        localExpertise:
-                            'Strong ties with Carlstadt’s healthcare network and community support for integrated care.',
-                        emergencyInfo:
-                            'Robust emergency protocols and immediate response for health and safety in Carlstadt.'
-                    }
-                }
+                'companion-care': addCompanionCare('carlstadt'),
+                'elder-care': addElderCareConsulting('carlstadt'),
+                staffing: addStaffingServices('carlstadt'),
+                'home-health-aides': addHomeHealthAides('carlstadt'),
+                nursing: addNursingServices('carlstadt')
             },
             rankingFactors: {
                 primaryKeywords: [
@@ -1040,59 +773,11 @@ const bergenCountyData: CountyData = {
                             '24/7 care coordination and rapid response with local Closter emergency services.'
                     }
                 }),
-                'companion-care': {
-                    customH1: 'Compassionate Companion Care in Closter',
-                    customTitle:
-                        'Companion Care Services in Closter, NJ | 360 Degree Care',
-                    customMetaDescription:
-                        'Searching for companion care in Closter? We provide emotional support, social engagement, and friendly companionship for seniors. Reduce isolation and improve quality of life.',
-                    localKeywords: [
-                        'companion care Closter',
-                        'senior companionship Closter',
-                        'elderly social support Closter',
-                        'Closter activities for seniors'
-                    ],
-                    contentBlocks: {
-                        whyChooseUs:
-                            'We provide engaging companion care in Closter, enriching seniors’ lives through meaningful interaction and support.',
-                        serviceHighlights: [
-                            'Stimulating conversations and shared hobbies',
-                            'Accompaniment to Closter Plaza or local parks',
-                            'Assistance with social outings and appointments'
-                        ],
-                        localExpertise:
-                            'Knowledgeable about Closter’s social scene and community offerings for tailored companionship.',
-                        emergencyInfo:
-                            'Reliable supervision and prompt action during any social engagements in Closter.'
-                    }
-                },
-                'elder-care': {
-                    customH1:
-                        'Comprehensive Elder Care Services in Closter, NJ',
-                    customTitle:
-                        'Elder Care Closter NJ | Senior Home Care Solutions',
-                    customMetaDescription:
-                        '360 Degree Care offers expert elder care services in Closter, NJ. From personal assistance to skilled nursing, we create customized care plans for seniors.',
-                    localKeywords: [
-                        'elder care Closter',
-                        'senior care Closter NJ',
-                        'at-home care for elderly Closter',
-                        'Closter senior support'
-                    ],
-                    contentBlocks: {
-                        whyChooseUs:
-                            'Our comprehensive elder care in Closter is delivered with a commitment to excellence and personalized attention.',
-                        serviceHighlights: [
-                            'Individualized care plans focused on long-term well-being',
-                            'Coordination with leading medical professionals in Closter',
-                            'Family education and support services'
-                        ],
-                        localExpertise:
-                            'Deep understanding of Closter’s healthcare and senior support network for integrated care.',
-                        emergencyInfo:
-                            'Proactive safety planning and rapid response for any medical or personal emergencies in Closter.'
-                    }
-                }
+                'companion-care': addCompanionCare('closter'),
+                'elder-care': addElderCareConsulting('closter'),
+                staffing: addStaffingServices('closter'),
+                'home-health-aides': addHomeHealthAides('closter'),
+                nursing: addNursingServices('closter')
             },
             rankingFactors: {
                 primaryKeywords: [
@@ -1163,59 +848,11 @@ const bergenCountyData: CountyData = {
                             '24/7 coordination and prompt response with Cresskill emergency services for utmost safety.'
                     }
                 }),
-                'companion-care': {
-                    customH1: 'Compassionate Companion Care in Cresskill',
-                    customTitle:
-                        'Companion Care Services in Cresskill, NJ | 360 Degree Care',
-                    customMetaDescription:
-                        'Searching for companion care in Cresskill? We provide emotional support, social engagement, and friendly companionship for seniors. Reduce isolation and improve quality of life.',
-                    localKeywords: [
-                        'companion care Cresskill',
-                        'senior companionship Cresskill',
-                        'elderly social support Cresskill',
-                        'Cresskill activities for seniors'
-                    ],
-                    contentBlocks: {
-                        whyChooseUs:
-                            'We offer engaging companion care in Cresskill, helping seniors maintain active social lives and mental well-being.',
-                        serviceHighlights: [
-                            'Stimulating conversations and shared interests',
-                            'Accompaniment to local Cresskill events or errands',
-                            'Support for hobbies and recreational activities'
-                        ],
-                        localExpertise:
-                            'Knowledgeable about Cresskill’s community offerings and senior programs for enriching companionship.',
-                        emergencyInfo:
-                            'Reliable supervision and quick response during all social outings in Cresskill.'
-                    }
-                },
-                'elder-care': {
-                    customH1:
-                        'Comprehensive Elder Care Services in Cresskill, NJ',
-                    customTitle:
-                        'Elder Care Cresskill NJ | Senior Home Care Solutions',
-                    customMetaDescription:
-                        '360 Degree Care offers expert elder care services in Cresskill, NJ. From personal assistance to skilled nursing, we create customized care plans for seniors.',
-                    localKeywords: [
-                        'elder care Cresskill',
-                        'senior care Cresskill NJ',
-                        'at-home care for elderly Cresskill',
-                        'Cresskill senior support'
-                    ],
-                    contentBlocks: {
-                        whyChooseUs:
-                            'Our comprehensive elder care in Cresskill provides peace of mind through tailored, high-quality support.',
-                        serviceHighlights: [
-                            'Individualized care plans for long-term health and wellness',
-                            'Coordination with local medical professionals and therapists',
-                            'Family support and educational resources'
-                        ],
-                        localExpertise:
-                            'Strong ties with Cresskill’s healthcare network and senior resources for seamless integrated care.',
-                        emergencyInfo:
-                            'Proactive safety measures and immediate response for any health or safety concerns in Cresskill.'
-                    }
-                }
+                'companion-care': addCompanionCare('cresskill'),
+                'elder-care': addElderCareConsulting('cresskill'),
+                staffing: addStaffingServices('cresskill'),
+                'home-health-aides': addHomeHealthAides('cresskill'),
+                nursing: addNursingServices('cresskill')
             },
             rankingFactors: {
                 primaryKeywords: [
@@ -1286,59 +923,11 @@ const bergenCountyData: CountyData = {
                             '24/7 care coordination and rapid response with local Demarest emergency services.'
                     }
                 }),
-                'companion-care': {
-                    customH1: 'Compassionate Companion Care in Demarest',
-                    customTitle:
-                        'Companion Care Services in Demarest, NJ | 360 Degree Care',
-                    customMetaDescription:
-                        'Searching for companion care in Demarest? We provide emotional support, social engagement, and friendly companionship for seniors. Reduce isolation and improve quality of life.',
-                    localKeywords: [
-                        'companion care Demarest',
-                        'senior companionship Demarest',
-                        'elderly social support Demarest',
-                        'Demarest activities for seniors'
-                    ],
-                    contentBlocks: {
-                        whyChooseUs:
-                            'We offer enriching companion care in Demarest, fostering social connections and a sense of belonging for seniors.',
-                        serviceHighlights: [
-                            'Engaging conversations and shared interests',
-                            'Accompaniment to Demarest Nature Center or local events',
-                            'Support for hobbies and light household tasks'
-                        ],
-                        localExpertise:
-                            'Knowledgeable about Demarest’s peaceful environment and community activities for tailored companionship.',
-                        emergencyInfo:
-                            'Reliable supervision and prompt action during any social outings in Demarest.'
-                    }
-                },
-                'elder-care': {
-                    customH1:
-                        'Comprehensive Elder Care Services in Demarest, NJ',
-                    customTitle:
-                        'Elder Care Demarest NJ | Senior Home Care Solutions',
-                    customMetaDescription:
-                        '360 Degree Care offers expert elder care services in Demarest, NJ. From personal assistance to skilled nursing, we create customized care plans for seniors.',
-                    localKeywords: [
-                        'elder care Demarest',
-                        'senior care Demarest NJ',
-                        'at-home care for elderly Demarest',
-                        'Demarest senior support'
-                    ],
-                    contentBlocks: {
-                        whyChooseUs:
-                            'Our comprehensive elder care in Demarest provides tailored support, ensuring seniors enjoy a comfortable and fulfilling life at home.',
-                        serviceHighlights: [
-                            'Personalized care plans adapting to evolving needs',
-                            'Coordination with local medical providers and specialists',
-                            'Family education and respite care'
-                        ],
-                        localExpertise:
-                            'Deep understanding of Demarest’s healthcare resources and senior support networks for integrated care.',
-                        emergencyInfo:
-                            'Proactive safety measures and immediate response for any health or safety concerns in Demarest.'
-                    }
-                }
+                'companion-care': addCompanionCare('demarest'),
+                'elder-care': addElderCareConsulting('demarest'),
+                staffing: addStaffingServices('demarest'),
+                'home-health-aides': addHomeHealthAides('demarest'),
+                nursing: addNursingServices('demarest')
             },
             rankingFactors: {
                 primaryKeywords: [
@@ -1409,58 +998,11 @@ const bergenCountyData: CountyData = {
                             '24/7 care coordination and prompt response with local Dumont emergency services.'
                     }
                 }),
-                'companion-care': {
-                    customH1: 'Compassionate Companion Care in Dumont',
-                    customTitle:
-                        'Companion Care Services in Dumont, NJ | 360 Degree Care',
-                    customMetaDescription:
-                        'Searching for companion care in Dumont? We provide emotional support, social engagement, and friendly companionship for seniors. Reduce isolation and improve quality of life.',
-                    localKeywords: [
-                        'companion care Dumont',
-                        'senior companionship Dumont',
-                        'elderly social support Dumont',
-                        'Dumont activities for seniors'
-                    ],
-                    contentBlocks: {
-                        whyChooseUs:
-                            'We offer engaging companion care in Dumont, promoting social interaction and mental well-being for seniors.',
-                        serviceHighlights: [
-                            'Stimulating conversations and shared interests',
-                            'Accompaniment to Dumont Memorial Park or local events',
-                            'Support for errands and light household tasks'
-                        ],
-                        localExpertise:
-                            'Knowledgeable about Dumont’s community activities and senior programs for enriching companionship.',
-                        emergencyInfo:
-                            'Reliable supervision and quick response during all social outings in Dumont.'
-                    }
-                },
-                'elder-care': {
-                    customH1: 'Comprehensive Elder Care Services in Dumont, NJ',
-                    customTitle:
-                        'Elder Care Dumont NJ | Senior Home Care Solutions',
-                    customMetaDescription:
-                        '360 Degree Care offers expert elder care services in Dumont, NJ. From personal assistance to skilled nursing, we create customized care plans for seniors.',
-                    localKeywords: [
-                        'elder care Dumont',
-                        'senior care Dumont NJ',
-                        'at-home care for elderly Dumont',
-                        'Dumont senior support'
-                    ],
-                    contentBlocks: {
-                        whyChooseUs:
-                            'Our comprehensive elder care in Dumont provides families with peace of mind through dedicated and reliable support.',
-                        serviceHighlights: [
-                            'Individualized care plans adapting to evolving needs',
-                            'Coordination with local medical professionals and specialists',
-                            'Family caregiver support and education'
-                        ],
-                        localExpertise:
-                            'Strong ties with Dumont’s healthcare network and senior resources for seamless integrated care.',
-                        emergencyInfo:
-                            'Proactive safety measures and immediate response for any health or safety concerns in Dumont.'
-                    }
-                }
+                'companion-care': addCompanionCare('dumont'),
+                'elder-care': addElderCareConsulting('dumont'),
+                staffing: addStaffingServices('dumont'),
+                'home-health-aides': addHomeHealthAides('dumont'),
+                nursing: addNursingServices('dumont')
             },
             rankingFactors: {
                 primaryKeywords: [
@@ -1531,59 +1073,12 @@ const bergenCountyData: CountyData = {
                             '24/7 care coordination and rapid response with East Rutherford emergency services.'
                     }
                 }),
-                'companion-care': {
-                    customH1: 'Compassionate Companion Care in East Rutherford',
-                    customTitle:
-                        'Companion Care Services in East Rutherford, NJ | 360 Degree Care',
-                    customMetaDescription:
-                        'Searching for companion care in East Rutherford? We provide emotional support, social engagement, and friendly companionship for seniors. Reduce isolation and improve quality of life.',
-                    localKeywords: [
-                        'companion care East Rutherford',
-                        'senior companionship East Rutherford',
-                        'elderly social support East Rutherford',
-                        'East Rutherford activities for seniors'
-                    ],
-                    contentBlocks: {
-                        whyChooseUs:
-                            'We offer engaging companion care in East Rutherford, encouraging seniors to enjoy all the borough has to offer.',
-                        serviceHighlights: [
-                            'Stimulating conversations and shared interests',
-                            'Accompaniment to MetLife Stadium events or local attractions',
-                            'Support for social outings and errands'
-                        ],
-                        localExpertise:
-                            'Knowledgeable about East Rutherford’s vibrant community and entertainment options for enriching companionship.',
-                        emergencyInfo:
-                            'Reliable supervision and quick response during all social engagements in East Rutherford.'
-                    }
-                },
-                'elder-care': {
-                    customH1:
-                        'Comprehensive Elder Care Services in East Rutherford, NJ',
-                    customTitle:
-                        'Elder Care East Rutherford NJ | Senior Home Care Solutions',
-                    customMetaDescription:
-                        '360 Degree Care offers expert elder care services in East Rutherford, NJ. From personal assistance to skilled nursing, we create customized care plans for seniors.',
-                    localKeywords: [
-                        'elder care East Rutherford',
-                        'senior care East Rutherford NJ',
-                        'at-home care for elderly East Rutherford',
-                        'East Rutherford senior support'
-                    ],
-                    contentBlocks: {
-                        whyChooseUs:
-                            'Our comprehensive elder care in East Rutherford provides holistic support, allowing seniors to live comfortably and securely at home.',
-                        serviceHighlights: [
-                            'Personalized care plans adapting to changing needs',
-                            'Coordination with local medical providers and specialists',
-                            'Family support and educational resources for caregivers'
-                        ],
-                        localExpertise:
-                            'Strong ties with East Rutherford’s healthcare network and community resources for integrated care.',
-                        emergencyInfo:
-                            'Proactive safety measures and immediate response for any health or safety concerns in East Rutherford.'
-                    }
-                }
+                'companion-care': addCompanionCare('east-rutherford'),
+                'elder-care-consulting':
+                    addElderCareConsulting('east-rutherford'),
+                staffing: addStaffingServices('east-rutherford'),
+                'home-health-aides': addHomeHealthAides('east-rutherford'),
+                nursing: addNursingServices('east-rutherford')
             },
             rankingFactors: {
                 primaryKeywords: [
@@ -1659,58 +1154,11 @@ const bergenCountyData: CountyData = {
                             'Seamless coordination with private medical services and local emergency responders in Edgewater.'
                     }
                 }),
-                'companion-care': {
-                    customH1: 'Compassionate Companion Care in Edgewater',
-                    customTitle:
-                        'Companion Care Services in Edgewater, NJ | 360 Degree Care',
-                    customMetaDescription:
-                        'Searching for companion care in Edgewater? We provide emotional support, social engagement, and friendly companionship for seniors. Reduce isolation and improve quality of life.',
-                    localKeywords: [
-                        'companion care Edgewater',
-                        'senior companionship Edgewater',
-                        'elderly social support Edgewater',
-                        'Edgewater luxury companion'
-                    ],
-                    contentBlocks: {
-                        whyChooseUs:
-                            'Our companion care in Edgewater offers discreet, respectful, and engaging companionship for seniors.',
-                        serviceHighlights: [
-                            'Culturally sensitive and engaging activities',
-                            'Personalized outings and social engagement',
-                            'Assistance with errands and appointments in Edgewater'
-                        ],
-                        localExpertise:
-                            'Familiar with Edgewater’s exclusive community and lifestyle, ensuring appropriate and considerate care.',
-                        emergencyInfo:
-                            'Dedicated support for peace of mind during all companion care activities in Edgewater.'
-                    }
-                },
-                'elder-care': {
-                    customH1: 'Premium Elder Care Services in Edgewater, NJ',
-                    customTitle:
-                        'Elder Care Edgewater NJ | Exclusive Senior Home Care',
-                    customMetaDescription:
-                        'Discover premium elder care services in Edgewater, NJ. 360 Degree Care offers tailored solutions, from personal care to skilled nursing, designed for discerning families.',
-                    localKeywords: [
-                        'elder care Edgewater',
-                        'senior care Edgewater NJ',
-                        'at-home care for elderly Edgewater',
-                        'Edgewater elite elder care'
-                    ],
-                    contentBlocks: {
-                        whyChooseUs:
-                            'Our elder care services in Edgewater are characterized by exceptional quality, tailored to the unique needs of the community.',
-                        serviceHighlights: [
-                            'Comprehensive and personalized care plans',
-                            'Access to highly qualified and discreet caregivers',
-                            'Coordination with private healthcare networks'
-                        ],
-                        localExpertise:
-                            'Deep understanding of the specific requirements for high-end elder care in Edgewater.',
-                        emergencyInfo:
-                            'Proactive emergency preparedness and immediate response, ensuring safety and security in Edgewater.'
-                    }
-                }
+                'companion-care': addCompanionCare('edgewater'),
+                'elder-care': addElderCareConsulting('edgewater'),
+                staffing: addStaffingServices('edgewater'),
+                'home-health-aides': addHomeHealthAides('edgewater'),
+                nursing: addNursingServices('edgewater')
             },
             rankingFactors: {
                 primaryKeywords: [
@@ -1786,59 +1234,11 @@ const bergenCountyData: CountyData = {
                             '24/7 care coordination and prompt response with local Emerson emergency services.'
                     }
                 }),
-                'companion-care': {
-                    customH1: 'Compassionate Companion Care in Emerson',
-                    customTitle:
-                        'Companion Care Services in Emerson, NJ | 360 Degree Care',
-                    customMetaDescription:
-                        'Searching for companion care in Emerson? We provide emotional support, social engagement, and friendly companionship for seniors. Reduce isolation and improve quality of life.',
-                    localKeywords: [
-                        'companion care Emerson',
-                        'senior companionship Emerson',
-                        'elderly social support Emerson',
-                        'Emerson activities for seniors'
-                    ],
-                    contentBlocks: {
-                        whyChooseUs:
-                            'We offer engaging companion care in Emerson, helping seniors stay connected and participate in community life.',
-                        serviceHighlights: [
-                            'Stimulating conversations and shared interests',
-                            'Accompaniment to Emerson Veterans Memorial Park or local events',
-                            'Support for hobbies and light household tasks'
-                        ],
-                        localExpertise:
-                            'Knowledgeable about Emerson’s community events and senior programs for enriching companionship.',
-                        emergencyInfo:
-                            'Reliable supervision and quick response during all social outings in Emerson.'
-                    }
-                },
-                'elder-care': {
-                    customH1:
-                        'Comprehensive Elder Care Services in Emerson, NJ',
-                    customTitle:
-                        'Elder Care Emerson NJ | Senior Home Care Solutions',
-                    customMetaDescription:
-                        '360 Degree Care offers expert elder care services in Emerson, NJ. From personal assistance to skilled nursing, we create customized care plans for seniors.',
-                    localKeywords: [
-                        'elder care Emerson',
-                        'senior care Emerson NJ',
-                        'at-home care for elderly Emerson',
-                        'Emerson senior support'
-                    ],
-                    contentBlocks: {
-                        whyChooseUs:
-                            'Our comprehensive elder care in Emerson provides families with peace of mind through dedicated and personalized support.',
-                        serviceHighlights: [
-                            'Individualized care plans adapting to evolving needs',
-                            'Coordination with local medical providers and specialists',
-                            'Family caregiver support and education'
-                        ],
-                        localExpertise:
-                            'Strong ties with Emerson’s healthcare network and senior resources for seamless integrated care.',
-                        emergencyInfo:
-                            'Proactive safety measures and immediate response for any health or safety concerns in Emerson.'
-                    }
-                }
+                'companion-care': addCompanionCare('emerson'),
+                'elder-care': addElderCareConsulting('emerson'),
+                staffing: addStaffingServices('emerson'),
+                'home-health-aides': addHomeHealthAides('emerson'),
+                nursing: addNursingServices('emerson')
             },
             rankingFactors: {
                 primaryKeywords: [
@@ -1910,57 +1310,11 @@ const bergenCountyData: CountyData = {
                             'Immediate access to Englewood Hospital and Medical Center and local emergency services.'
                     }
                 }),
-                'companion-care': {
-                    customH1: 'Companion Care Services in Englewood',
-                    customTitle:
-                        'Companion Care Englewood NJ | Social Support & Friendship',
-                    customMetaDescription:
-                        'Companion care in Englewood, NJ. Social support for seniors in this diverse community. Transportation, activities, friendship.',
-                    localKeywords: [
-                        'companion care Englewood',
-                        'senior companionship Englewood',
-                        'elderly social support Englewood'
-                    ],
-                    contentBlocks: {
-                        whyChooseUs:
-                            'We provide companionship that embraces Englewood’s rich cultural tapestry and vibrant community.',
-                        serviceHighlights: [
-                            'Engaging activities tailored to diverse cultural backgrounds',
-                            'Transportation for local appointments and errands',
-                            'Support for social outings at Bergen Performing Arts Center'
-                        ],
-                        localExpertise:
-                            'Familiar with Englewood activities like community events, local parks, and cultural venues.',
-                        emergencyInfo:
-                            '24/7 coordination for peace of mind, ensuring safety during outings in Englewood.'
-                    }
-                },
-                'elder-care': {
-                    customH1:
-                        'Comprehensive Elder Care Services in Englewood, NJ',
-                    customTitle:
-                        'Elder Care Englewood NJ | Senior Home Care Solutions',
-                    customMetaDescription:
-                        '360 Degree Care offers expert elder care services in Englewood, NJ. From personal assistance to skilled nursing, we create customized care plans for seniors.',
-                    localKeywords: [
-                        'elder care Englewood',
-                        'senior care Englewood NJ',
-                        'at-home care for elderly Englewood'
-                    ],
-                    contentBlocks: {
-                        whyChooseUs:
-                            'Our comprehensive elder care solutions in Englewood ensure seniors receive personalized attention and support, leveraging local resources.',
-                        serviceHighlights: [
-                            'Customized care plans for long-term well-being',
-                            'Coordination with local healthcare providers and specialists',
-                            'Family caregiver respite support'
-                        ],
-                        localExpertise:
-                            'Deep understanding of Englewood’s senior resources and community support networks, including medical facilities.',
-                        emergencyInfo:
-                            'Seamless integration with emergency services and Englewood Hospital for immediate care.'
-                    }
-                }
+                'companion-care': addCompanionCare('englewood'),
+                'elder-care': addElderCareConsulting('englewood'),
+                staffing: addStaffingServices('englewood'),
+                'home-health-aides': addHomeHealthAides('englewood'),
+                nursing: addNursingServices('englewood')
             },
             rankingFactors: {
                 primaryKeywords: [
@@ -2031,60 +1385,11 @@ const bergenCountyData: CountyData = {
                             'Seamless coordination with private medical services and local emergency responders in Englewood Cliffs.'
                     }
                 }),
-                'companion-care': {
-                    customH1:
-                        'Compassionate Companion Care in Englewood Cliffs',
-                    customTitle:
-                        'Companion Care Services in Englewood Cliffs, NJ | 360 Degree Care',
-                    customMetaDescription:
-                        'Searching for companion care in Englewood Cliffs? We provide emotional support, social engagement, and friendly companionship for seniors. Reduce isolation and improve quality of life.',
-                    localKeywords: [
-                        'companion care Englewood Cliffs',
-                        'senior companionship Englewood Cliffs',
-                        'elderly social support Englewood Cliffs',
-                        'Englewood Cliffs luxury companion'
-                    ],
-                    contentBlocks: {
-                        whyChooseUs:
-                            'Our companion care in Englewood Cliffs offers discreet, respectful, and engaging companionship for seniors.',
-                        serviceHighlights: [
-                            'Culturally sensitive and engaging activities',
-                            'Personalized outings and social engagement',
-                            'Assistance with errands and appointments in Englewood Cliffs'
-                        ],
-                        localExpertise:
-                            'Familiar with Englewood Cliffs’ exclusive community and lifestyle, ensuring appropriate and considerate care.',
-                        emergencyInfo:
-                            'Dedicated support for peace of mind during all companion care activities in Englewood Cliffs.'
-                    }
-                },
-                'elder-care': {
-                    customH1:
-                        'Premium Elder Care Services in Englewood Cliffs, NJ',
-                    customTitle:
-                        'Elder Care Englewood Cliffs NJ | Exclusive Senior Home Care',
-                    customMetaDescription:
-                        'Discover premium elder care services in Englewood Cliffs, NJ. 360 Degree Care offers tailored solutions, from personal care to skilled nursing, designed for discerning families.',
-                    localKeywords: [
-                        'elder care Englewood Cliffs',
-                        'senior care Englewood Cliffs NJ',
-                        'at-home care for elderly Englewood Cliffs',
-                        'Englewood Cliffs elite elder care'
-                    ],
-                    contentBlocks: {
-                        whyChooseUs:
-                            'Our elder care services in Englewood Cliffs are characterized by exceptional quality, tailored to the unique needs of the community.',
-                        serviceHighlights: [
-                            'Comprehensive and personalized care plans',
-                            'Access to highly qualified and discreet caregivers',
-                            'Coordination with private healthcare networks'
-                        ],
-                        localExpertise:
-                            'Deep understanding of the specific requirements for high-end elder care in Englewood Cliffs.',
-                        emergencyInfo:
-                            'Proactive emergency preparedness and immediate response, ensuring safety and security in Englewood Cliffs.'
-                    }
-                }
+                'companion-care': addCompanionCare('englewood-cliffs'),
+                'elder-care': addElderCareConsulting('englewood-cliffs'),
+                staffing: addStaffingServices('englewood-cliffs'),
+                'home-health-aides': addHomeHealthAides('englewood-cliffs'),
+                nursing: addNursingServices('englewood-cliffs')
             },
             rankingFactors: {
                 primaryKeywords: [
@@ -2155,59 +1460,11 @@ const bergenCountyData: CountyData = {
                             '24/7 care coordination and prompt response with local Fair Lawn emergency services.'
                     }
                 }),
-                'companion-care': {
-                    customH1: 'Compassionate Companion Care in Fair Lawn',
-                    customTitle:
-                        'Companion Care Services in Fair Lawn, NJ | 360 Degree Care',
-                    customMetaDescription:
-                        'Searching for companion care in Fair Lawn? We provide emotional support, social engagement, and friendly companionship for seniors. Reduce isolation and improve quality of life.',
-                    localKeywords: [
-                        'companion care Fair Lawn',
-                        'senior companionship Fair Lawn',
-                        'elderly social support Fair Lawn',
-                        'Fair Lawn activities for seniors'
-                    ],
-                    contentBlocks: {
-                        whyChooseUs:
-                            'We offer engaging companion care in Fair Lawn, helping seniors stay connected and participate in community life.',
-                        serviceHighlights: [
-                            'Stimulating conversations and shared interests',
-                            'Accompaniment to Memorial Park or local events',
-                            'Support for hobbies and light household tasks'
-                        ],
-                        localExpertise:
-                            'Knowledgeable about Fair Lawn’s community events and senior programs for enriching companionship.',
-                        emergencyInfo:
-                            'Reliable supervision and quick response during all social outings in Fair Lawn.'
-                    }
-                },
-                'elder-care': {
-                    customH1:
-                        'Comprehensive Elder Care Services in Fair Lawn, NJ',
-                    customTitle:
-                        'Elder Care Fair Lawn NJ | Senior Home Care Solutions',
-                    customMetaDescription:
-                        '360 Degree Care offers expert elder care services in Fair Lawn, NJ. From personal assistance to skilled nursing, we create customized care plans for seniors.',
-                    localKeywords: [
-                        'elder care Fair Lawn',
-                        'senior care Fair Lawn NJ',
-                        'at-home care for elderly Fair Lawn',
-                        'Fair Lawn senior support'
-                    ],
-                    contentBlocks: {
-                        whyChooseUs:
-                            'Our comprehensive elder care in Fair Lawn provides families with peace of mind through dedicated and personalized support.',
-                        serviceHighlights: [
-                            'Individualized care plans adapting to evolving needs',
-                            'Coordination with local medical providers and specialists',
-                            'Family caregiver support and education'
-                        ],
-                        localExpertise:
-                            'Strong ties with Fair Lawn’s healthcare network and senior resources for seamless integrated care.',
-                        emergencyInfo:
-                            'Proactive safety measures and immediate response for any health or safety concerns in Fair Lawn.'
-                    }
-                }
+                'companion-care': addCompanionCare('fair-lawn'),
+                'elder-care': addElderCareConsulting('fair-lawn'),
+                staffing: addStaffingServices('fair-lawn'),
+                'home-health-aides': addHomeHealthAides('fair-lawn'),
+                nursing: addNursingServices('fair-lawn')
             },
             rankingFactors: {
                 primaryKeywords: [
@@ -2284,57 +1541,11 @@ const bergenCountyData: CountyData = {
                             'Immediate access to local medical centers and rapid connection to NYC emergency services via GWB.'
                     }
                 }),
-                'companion-care': {
-                    customH1: 'Companion Care Services in Fort Lee',
-                    customTitle:
-                        'Companion Care Fort Lee NJ | Social Support & Friendship',
-                    customMetaDescription:
-                        'Companion care in Fort Lee, NJ. Social support for seniors in this vibrant, diverse community. Transportation, activities, friendship.',
-                    localKeywords: [
-                        'companion care Fort Lee',
-                        'senior companionship Fort Lee',
-                        'elderly social support Fort Lee'
-                    ],
-                    contentBlocks: {
-                        whyChooseUs:
-                            'We provide companionship that embraces Fort Lee’s dynamic and multicultural environment.',
-                        serviceHighlights: [
-                            'Engaging activities tailored to diverse cultural backgrounds',
-                            'Transportation for local appointments and errands',
-                            'Support for social outings to Fort Lee Historic Park'
-                        ],
-                        localExpertise:
-                            'Familiar with Fort Lee activities, from community events to shopping on Main Street and cultural venues.',
-                        emergencyInfo:
-                            '24/7 coordination for peace of mind, ensuring safety during outings in Fort Lee.'
-                    }
-                },
-                'elder-care': {
-                    customH1:
-                        'Comprehensive Elder Care Services in Fort Lee, NJ',
-                    customTitle:
-                        'Elder Care Fort Lee NJ | Senior Home Care Solutions',
-                    customMetaDescription:
-                        '360 Degree Care offers expert elder care services in Fort Lee, NJ. From personal assistance to skilled nursing, we create customized care plans for seniors.',
-                    localKeywords: [
-                        'elder care Fort Lee',
-                        'senior care Fort Lee NJ',
-                        'at-home care for elderly Fort Lee'
-                    ],
-                    contentBlocks: {
-                        whyChooseUs:
-                            'Our comprehensive elder care solutions in Fort Lee ensure seniors receive personalized attention and support, leveraging local and NYC resources.',
-                        serviceHighlights: [
-                            'Customized care plans for long-term well-being',
-                            'Coordination with local and NYC healthcare providers',
-                            'Family caregiver respite support'
-                        ],
-                        localExpertise:
-                            'Deep understanding of Fort Lee’s senior resources and community support networks, including medical facilities across the river.',
-                        emergencyInfo:
-                            'Seamless integration with emergency services and access to premier hospitals in Fort Lee and NYC.'
-                    }
-                }
+                'companion-care': addCompanionCare('fort-lee'),
+                'elder-care': addElderCareConsulting('fort-lee'),
+                staffing: addStaffingServices('fort-lee'),
+                'home-health-aides': addHomeHealthAides('fort-lee'),
+                nursing: addNursingServices('fort-lee')
             },
             rankingFactors: {
                 primaryKeywords: [
@@ -2405,59 +1616,11 @@ const bergenCountyData: CountyData = {
                             'Seamless coordination with private medical services and local emergency responders in Franklin Lakes.'
                     }
                 }),
-                'companion-care': {
-                    customH1: 'Compassionate Companion Care in Franklin Lakes',
-                    customTitle:
-                        'Companion Care Services in Franklin Lakes, NJ | 360 Degree Care',
-                    customMetaDescription:
-                        'Searching for companion care in Franklin Lakes? We provide emotional support, social engagement, and friendly companionship for seniors. Reduce isolation and improve quality of life.',
-                    localKeywords: [
-                        'companion care Franklin Lakes',
-                        'senior companionship Franklin Lakes',
-                        'elderly social support Franklin Lakes',
-                        'Franklin Lakes luxury companion'
-                    ],
-                    contentBlocks: {
-                        whyChooseUs:
-                            'Our companion care in Franklin Lakes offers discreet, respectful, and engaging companionship for seniors.',
-                        serviceHighlights: [
-                            'Culturally sensitive and engaging activities',
-                            'Personalized outings and social engagement',
-                            'Assistance with errands and appointments in Franklin Lakes'
-                        ],
-                        localExpertise:
-                            'Familiar with Franklin Lakes’ exclusive community and lifestyle, ensuring appropriate and considerate care.',
-                        emergencyInfo:
-                            'Dedicated support for peace of mind during all companion care activities in Franklin Lakes.'
-                    }
-                },
-                'elder-care': {
-                    customH1:
-                        'Premium Elder Care Services in Franklin Lakes, NJ',
-                    customTitle:
-                        'Elder Care Franklin Lakes NJ | Exclusive Senior Home Care',
-                    customMetaDescription:
-                        'Discover premium elder care services in Franklin Lakes, NJ. 360 Degree Care offers tailored solutions, from personal care to skilled nursing, designed for discerning families.',
-                    localKeywords: [
-                        'elder care Franklin Lakes',
-                        'senior care Franklin Lakes NJ',
-                        'at-home care for elderly Franklin Lakes',
-                        'Franklin Lakes elite elder care'
-                    ],
-                    contentBlocks: {
-                        whyChooseUs:
-                            'Our elder care services in Franklin Lakes are characterized by exceptional quality, tailored to the unique needs of the community.',
-                        serviceHighlights: [
-                            'Comprehensive and personalized care plans',
-                            'Access to highly qualified and discreet caregivers',
-                            'Coordination with private healthcare networks'
-                        ],
-                        localExpertise:
-                            'Deep understanding of the specific requirements for high-end elder care in Franklin Lakes.',
-                        emergencyInfo:
-                            'Proactive emergency preparedness and immediate response, ensuring safety and security in Franklin Lakes.'
-                    }
-                }
+                'companion-care': addCompanionCare('franklin-lakes'),
+                'elder-care': addElderCareConsulting('franklin-lakes'),
+                staffing: addStaffingServices('franklin-lakes'),
+                'home-health-aides': addHomeHealthAides('franklin-lakes'),
+                nursing: addNursingServices('franklin-lakes')
             },
             rankingFactors: {
                 primaryKeywords: [
@@ -2529,57 +1692,11 @@ const bergenCountyData: CountyData = {
                             'Immediate access to local medical centers and rapid connection to emergency services.'
                     }
                 }),
-                'companion-care': {
-                    customH1: 'Companion Care Services in Garfield',
-                    customTitle:
-                        'Companion Care Garfield NJ | Social Support & Friendship',
-                    customMetaDescription:
-                        'Companion care in Garfield, NJ. Social support for seniors in this vibrant, diverse community. Transportation, activities, friendship.',
-                    localKeywords: [
-                        'companion care Garfield',
-                        'senior companionship Garfield',
-                        'elderly social support Garfield'
-                    ],
-                    contentBlocks: {
-                        whyChooseUs:
-                            'We provide companionship that embraces Garfield’s rich cultural tapestry and dynamic community.',
-                        serviceHighlights: [
-                            'Engaging activities tailored to diverse cultural backgrounds',
-                            'Transportation for local appointments and errands',
-                            'Support for social outings and community events'
-                        ],
-                        localExpertise:
-                            'Familiar with Garfield activities, from local markets to community gatherings and parks.',
-                        emergencyInfo:
-                            '24/7 coordination for peace of mind, ensuring safety during outings in Garfield.'
-                    }
-                },
-                'elder-care': {
-                    customH1:
-                        'Comprehensive Elder Care Services in Garfield, NJ',
-                    customTitle:
-                        'Elder Care Garfield NJ | Senior Home Care Solutions',
-                    customMetaDescription:
-                        '360 Degree Care offers expert elder care services in Garfield, NJ. From personal assistance to skilled nursing, we create customized care plans for seniors.',
-                    localKeywords: [
-                        'elder care Garfield',
-                        'senior care Garfield NJ',
-                        'at-home care for elderly Garfield'
-                    ],
-                    contentBlocks: {
-                        whyChooseUs:
-                            'Our comprehensive elder care solutions in Garfield ensure seniors receive personalized attention and support, leveraging local resources.',
-                        serviceHighlights: [
-                            'Customized care plans for long-term well-being',
-                            'Coordination with local healthcare providers and specialists',
-                            'Family caregiver respite support'
-                        ],
-                        localExpertise:
-                            'Deep understanding of Garfield’s senior resources and community support networks, including medical facilities.',
-                        emergencyInfo:
-                            'Seamless integration with emergency services and local hospitals for immediate care.'
-                    }
-                }
+                'companion-care': addCompanionCare('garfield'),
+                'elder-care': addElderCareConsulting('garfield'),
+                staffing: addStaffingServices('garfield'),
+                'home-health-aides': addHomeHealthAides('garfield'),
+                nursing: addNursingServices('garfield')
             },
             rankingFactors: {
                 primaryKeywords: [
@@ -2650,58 +1767,11 @@ const bergenCountyData: CountyData = {
                             'Seamless coordination with private medical services and local emergency responders in Glen Rock.'
                     }
                 }),
-                'companion-care': {
-                    customH1: 'Compassionate Companion Care in Glen Rock',
-                    customTitle:
-                        'Companion Care Services in Glen Rock, NJ | 360 Degree Care',
-                    customMetaDescription:
-                        'Searching for companion care in Glen Rock? We provide emotional support, social engagement, and friendly companionship for seniors. Reduce isolation and improve quality of life.',
-                    localKeywords: [
-                        'companion care Glen Rock',
-                        'senior companionship Glen Rock',
-                        'elderly social support Glen Rock',
-                        'Glen Rock luxury companion'
-                    ],
-                    contentBlocks: {
-                        whyChooseUs:
-                            'Our companion care in Glen Rock offers discreet, respectful, and engaging companionship for seniors.',
-                        serviceHighlights: [
-                            'Culturally sensitive and engaging activities',
-                            'Personalized outings and social engagement',
-                            'Assistance with errands and appointments in Glen Rock'
-                        ],
-                        localExpertise:
-                            'Familiar with Glen Rock’s exclusive community and lifestyle, ensuring appropriate and considerate care.',
-                        emergencyInfo:
-                            'Dedicated support for peace of mind during all companion care activities in Glen Rock.'
-                    }
-                },
-                'elder-care': {
-                    customH1: 'Premium Elder Care Services in Glen Rock, NJ',
-                    customTitle:
-                        'Elder Care Glen Rock NJ | Exclusive Senior Home Care',
-                    customMetaDescription:
-                        'Discover premium elder care services in Glen Rock, NJ. 360 Degree Care offers tailored solutions, from personal care to skilled nursing, designed for discerning families.',
-                    localKeywords: [
-                        'elder care Glen Rock',
-                        'senior care Glen Rock NJ',
-                        'at-home care for elderly Glen Rock',
-                        'Glen Rock elite elder care'
-                    ],
-                    contentBlocks: {
-                        whyChooseUs:
-                            'Our elder care services in Glen Rock are characterized by exceptional quality, tailored to the unique needs of the community.',
-                        serviceHighlights: [
-                            'Comprehensive and personalized care plans',
-                            'Access to highly qualified and discreet caregivers',
-                            'Coordination with private healthcare networks'
-                        ],
-                        localExpertise:
-                            'Deep understanding of the specific requirements for high-end elder care in Glen Rock.',
-                        emergencyInfo:
-                            'Proactive emergency preparedness and immediate response, ensuring safety and security in Glen Rock.'
-                    }
-                }
+                'companion-care': addCompanionCare('glen-rock'),
+                'elder-care': addElderCareConsulting('glen-rock'),
+                staffing: addStaffingServices('glen-rock'),
+                'home-health-aides': addHomeHealthAides('glen-rock'),
+                nursing: addNursingServices('glen-rock')
             },
             rankingFactors: {
                 primaryKeywords: [
@@ -2772,59 +1842,11 @@ const bergenCountyData: CountyData = {
                             '24/7 care coordination and rapid response with local Harrington Park emergency services.'
                     }
                 }),
-                'companion-care': {
-                    customH1: 'Compassionate Companion Care in Harrington Park',
-                    customTitle:
-                        'Companion Care Services in Harrington Park, NJ | 360 Degree Care',
-                    customMetaDescription:
-                        'Searching for companion care in Harrington Park? We provide emotional support, social engagement, and friendly companionship for seniors. Reduce isolation and improve quality of life.',
-                    localKeywords: [
-                        'companion care Harrington Park',
-                        'senior companionship Harrington Park',
-                        'elderly social support Harrington Park',
-                        'Harrington Park activities for seniors'
-                    ],
-                    contentBlocks: {
-                        whyChooseUs:
-                            'We offer enriching companion care in Harrington Park, fostering social connections and a sense of belonging for seniors.',
-                        serviceHighlights: [
-                            'Engaging conversations and shared interests',
-                            'Accompaniment to local events or errands',
-                            'Support for hobbies and light household tasks'
-                        ],
-                        localExpertise:
-                            'Knowledgeable about Harrington Park’s peaceful environment and community activities for tailored companionship.',
-                        emergencyInfo:
-                            'Reliable supervision and prompt action during any social outings in Harrington Park.'
-                    }
-                },
-                'elder-care': {
-                    customH1:
-                        'Comprehensive Elder Care Services in Harrington Park, NJ',
-                    customTitle:
-                        'Elder Care Harrington Park NJ | Senior Home Care Solutions',
-                    customMetaDescription:
-                        '360 Degree Care offers expert elder care services in Harrington Park, NJ. From personal assistance to skilled nursing, we create customized care plans for seniors.',
-                    localKeywords: [
-                        'elder care Harrington Park',
-                        'senior care Harrington Park NJ',
-                        'at-home care for elderly Harrington Park',
-                        'Harrington Park senior support'
-                    ],
-                    contentBlocks: {
-                        whyChooseUs:
-                            'Our comprehensive elder care in Harrington Park provides tailored support, ensuring seniors enjoy a comfortable and fulfilling life at home.',
-                        serviceHighlights: [
-                            'Personalized care plans adapting to evolving needs',
-                            'Coordination with local medical providers and specialists',
-                            'Family education and respite care'
-                        ],
-                        localExpertise:
-                            'Deep understanding of Harrington Park’s healthcare resources and senior support networks for integrated care.',
-                        emergencyInfo:
-                            'Proactive safety measures and immediate response for any health or safety concerns in Harrington Park.'
-                    }
-                }
+                'companion-care': addCompanionCare('harrington-park'),
+                'elder-care': addElderCareConsulting('harrington-park'),
+                staffing: addStaffingServices('harrington-park'),
+                'home-health-aides': addHomeHealthAides('harrington-park'),
+                nursing: addNursingServices('harrington-park')
             },
             rankingFactors: {
                 primaryKeywords: [
@@ -2895,60 +1917,11 @@ const bergenCountyData: CountyData = {
                             '24/7 care coordination and prompt response with local Hasbrouck Heights emergency services.'
                     }
                 }),
-                'companion-care': {
-                    customH1:
-                        'Compassionate Companion Care in Hasbrouck Heights',
-                    customTitle:
-                        'Companion Care Services in Hasbrouck Heights, NJ | 360 Degree Care',
-                    customMetaDescription:
-                        'Searching for companion care in Hasbrouck Heights? We provide emotional support, social engagement, and friendly companionship for seniors. Reduce isolation and improve quality of life.',
-                    localKeywords: [
-                        'companion care Hasbrouck Heights',
-                        'senior companionship Hasbrouck Heights',
-                        'elderly social support Hasbrouck Heights',
-                        'Hasbrouck Heights activities for seniors'
-                    ],
-                    contentBlocks: {
-                        whyChooseUs:
-                            'We offer engaging companion care in Hasbrouck Heights, promoting social interaction and mental well-being for seniors.',
-                        serviceHighlights: [
-                            'Stimulating conversations and shared interests',
-                            'Accompaniment to Memorial Park or local events',
-                            'Support for errands and light household tasks'
-                        ],
-                        localExpertise:
-                            'Knowledgeable about Hasbrouck Heights’ community activities and senior programs for enriching companionship.',
-                        emergencyInfo:
-                            'Reliable supervision and quick response during all social outings in Hasbrouck Heights.'
-                    }
-                },
-                'elder-care': {
-                    customH1:
-                        'Comprehensive Elder Care Services in Hasbrouck Heights, NJ',
-                    customTitle:
-                        'Elder Care Hasbrouck Heights NJ | Senior Home Care Solutions',
-                    customMetaDescription:
-                        '360 Degree Care offers expert elder care services in Hasbrouck Heights, NJ. From personal assistance to skilled nursing, we create customized care plans for seniors.',
-                    localKeywords: [
-                        'elder care Hasbrouck Heights',
-                        'senior care Hasbrouck Heights NJ',
-                        'at-home care for elderly Hasbrouck Heights',
-                        'Hasbrouck Heights senior support'
-                    ],
-                    contentBlocks: {
-                        whyChooseUs:
-                            'Our comprehensive elder care in Hasbrouck Heights provides families with peace of mind through dedicated and reliable support.',
-                        serviceHighlights: [
-                            'Individualized care plans adapting to evolving needs',
-                            'Coordination with local medical providers and specialists',
-                            'Family caregiver support and education'
-                        ],
-                        localExpertise:
-                            'Strong ties with Hasbrouck Heights’ healthcare network and senior resources for seamless integrated care.',
-                        emergencyInfo:
-                            'Proactive safety measures and immediate response for any health or safety concerns in Hasbrouck Heights.'
-                    }
-                }
+                'companion-care': addCompanionCare('hasbrouck-heights'),
+                'elder-care': addElderCareConsulting('hasbrouck-heights'),
+                staffing: addStaffingServices('hasbrouck-heights'),
+                'home-health-aides': addHomeHealthAides('hasbrouck-heights'),
+                nursing: addNursingServices('hasbrouck-heights')
             },
             rankingFactors: {
                 primaryKeywords: [
@@ -3019,58 +1992,11 @@ const bergenCountyData: CountyData = {
                             'Seamless coordination with private medical services and local emergency responders in Haworth.'
                     }
                 }),
-                'companion-care': {
-                    customH1: 'Compassionate Companion Care in Haworth',
-                    customTitle:
-                        'Companion Care Services in Haworth, NJ | 360 Degree Care',
-                    customMetaDescription:
-                        'Searching for companion care in Haworth? We provide emotional support, social engagement, and friendly companionship for seniors. Reduce isolation and improve quality of life.',
-                    localKeywords: [
-                        'companion care Haworth',
-                        'senior companionship Haworth',
-                        'elderly social support Haworth',
-                        'Haworth luxury companion'
-                    ],
-                    contentBlocks: {
-                        whyChooseUs:
-                            'Our companion care in Haworth offers discreet, respectful, and engaging companionship for seniors.',
-                        serviceHighlights: [
-                            'Culturally sensitive and engaging activities',
-                            'Personalized outings and social engagement',
-                            'Assistance with errands and appointments in Haworth'
-                        ],
-                        localExpertise:
-                            'Familiar with Haworth’s exclusive community and lifestyle, ensuring appropriate and considerate care.',
-                        emergencyInfo:
-                            'Dedicated support for peace of mind during all companion care activities in Haworth.'
-                    }
-                },
-                'elder-care': {
-                    customH1: 'Premium Elder Care Services in Haworth, NJ',
-                    customTitle:
-                        'Elder Care Haworth NJ | Exclusive Senior Home Care',
-                    customMetaDescription:
-                        'Discover premium elder care services in Haworth, NJ. 360 Degree Care offers tailored solutions, from personal care to skilled nursing, designed for discerning families.',
-                    localKeywords: [
-                        'elder care Haworth',
-                        'senior care Haworth NJ',
-                        'at-home care for elderly Haworth',
-                        'Haworth elite elder care'
-                    ],
-                    contentBlocks: {
-                        whyChooseUs:
-                            'Our elder care services in Haworth are characterized by exceptional quality, tailored to the unique needs of the community.',
-                        serviceHighlights: [
-                            'Comprehensive and personalized care plans',
-                            'Access to highly qualified and discreet caregivers',
-                            'Coordination with private healthcare networks'
-                        ],
-                        localExpertise:
-                            'Deep understanding of the specific requirements for high-end elder care in Haworth.',
-                        emergencyInfo:
-                            'Proactive emergency preparedness and immediate response, ensuring safety and security in Haworth.'
-                    }
-                }
+                'companion-care': addCompanionCare('haworth'),
+                'elder-care': addElderCareConsulting('haworth'),
+                staffing: addStaffingServices('haworth'),
+                'home-health-aides': addHomeHealthAides('haworth'),
+                nursing: addNursingServices('haworth')
             },
             rankingFactors: {
                 primaryKeywords: [
@@ -3146,59 +2072,11 @@ const bergenCountyData: CountyData = {
                             '24/7 care coordination and prompt response with local Hillsdale emergency services.'
                     }
                 }),
-                'companion-care': {
-                    customH1: 'Compassionate Companion Care in Hillsdale',
-                    customTitle:
-                        'Companion Care Services in Hillsdale, NJ | 360 Degree Care',
-                    customMetaDescription:
-                        'Searching for companion care in Hillsdale? We provide emotional support, social engagement, and friendly companionship for seniors. Reduce isolation and improve quality of life.',
-                    localKeywords: [
-                        'companion care Hillsdale',
-                        'senior companionship Hillsdale',
-                        'elderly social support Hillsdale',
-                        'Hillsdale activities for seniors'
-                    ],
-                    contentBlocks: {
-                        whyChooseUs:
-                            'We offer engaging companion care in Hillsdale, helping seniors stay connected and participate in community life.',
-                        serviceHighlights: [
-                            'Stimulating conversations and shared interests',
-                            'Accompaniment to Stonybrook Swim Club or local events',
-                            'Support for hobbies and light household tasks'
-                        ],
-                        localExpertise:
-                            'Knowledgeable about Hillsdale’s community events and senior programs for enriching companionship.',
-                        emergencyInfo:
-                            'Reliable supervision and quick response during all social outings in Hillsdale.'
-                    }
-                },
-                'elder-care': {
-                    customH1:
-                        'Comprehensive Elder Care Services in Hillsdale, NJ',
-                    customTitle:
-                        'Elder Care Hillsdale NJ | Senior Home Care Solutions',
-                    customMetaDescription:
-                        '360 Degree Care offers expert elder care services in Hillsdale, NJ. From personal assistance to skilled nursing, we create customized care plans for seniors.',
-                    localKeywords: [
-                        'elder care Hillsdale',
-                        'senior care Hillsdale NJ',
-                        'at-home care for elderly Hillsdale',
-                        'Hillsdale senior support'
-                    ],
-                    contentBlocks: {
-                        whyChooseUs:
-                            'Our comprehensive elder care in Hillsdale provides families with peace of mind through dedicated and personalized support.',
-                        serviceHighlights: [
-                            'Individualized care plans adapting to evolving needs',
-                            'Coordination with local medical providers and specialists',
-                            'Family caregiver support and education'
-                        ],
-                        localExpertise:
-                            'Strong ties with Hillsdale’s healthcare network and senior resources for seamless integrated care.',
-                        emergencyInfo:
-                            'Proactive safety measures and immediate response for any health or safety concerns in Hillsdale.'
-                    }
-                }
+                'companion-care': addCompanionCare('hillsdale'),
+                'elder-care': addElderCareConsulting('hillsdale'),
+                staffing: addStaffingServices('hillsdale'),
+                'home-health-aides': addHomeHealthAides('hillsdale'),
+                nursing: addNursingServices('hillsdale')
             },
             rankingFactors: {
                 primaryKeywords: [
@@ -3274,58 +2152,11 @@ const bergenCountyData: CountyData = {
                             'Seamless coordination with private medical services and local emergency responders in Ho-Ho-Kus.'
                     }
                 }),
-                'companion-care': {
-                    customH1: 'Compassionate Companion Care in Ho-Ho-Kus',
-                    customTitle:
-                        'Companion Care Services in Ho-Ho-Kus, NJ | 360 Degree Care',
-                    customMetaDescription:
-                        'Searching for companion care in Ho-Ho-Kus? We provide emotional support, social engagement, and friendly companionship for seniors. Reduce isolation and improve quality of life.',
-                    localKeywords: [
-                        'companion care Ho-Ho-Kus',
-                        'senior companionship Ho-Ho-Kus',
-                        'elderly social support Ho-Ho-Kus',
-                        'Ho-Ho-Kus luxury companion'
-                    ],
-                    contentBlocks: {
-                        whyChooseUs:
-                            'Our companion care in Ho-Ho-Kus offers discreet, respectful, and engaging companionship for seniors.',
-                        serviceHighlights: [
-                            'Culturally sensitive and engaging activities',
-                            'Personalized outings and social engagement',
-                            'Assistance with errands and appointments in Ho-Ho-Kus'
-                        ],
-                        localExpertise:
-                            'Familiar with Ho-Ho-Kus’ exclusive community and lifestyle, ensuring appropriate and considerate care.',
-                        emergencyInfo:
-                            'Dedicated support for peace of mind during all companion care activities in Ho-Ho-Kus.'
-                    }
-                },
-                'elder-care': {
-                    customH1: 'Premium Elder Care Services in Ho-Ho-Kus, NJ',
-                    customTitle:
-                        'Elder Care Ho-Ho-Kus NJ | Exclusive Senior Home Care',
-                    customMetaDescription:
-                        'Discover premium elder care services in Ho-Ho-Kus, NJ. 360 Degree Care offers tailored solutions, from personal care to skilled nursing, designed for discerning families.',
-                    localKeywords: [
-                        'elder care Ho-Ho-Kus',
-                        'senior care Ho-Ho-Kus NJ',
-                        'at-home care for elderly Ho-Ho-Kus',
-                        'Ho-Ho-Kus elite elder care'
-                    ],
-                    contentBlocks: {
-                        whyChooseUs:
-                            'Our elder care services in Ho-Ho-Kus are characterized by exceptional quality, tailored to the unique needs of the community.',
-                        serviceHighlights: [
-                            'Comprehensive and personalized care plans',
-                            'Access to highly qualified and discreet caregivers',
-                            'Coordination with private healthcare networks'
-                        ],
-                        localExpertise:
-                            'Deep understanding of the specific requirements for high-end elder care in Ho-Ho-Kus.',
-                        emergencyInfo:
-                            'Proactive emergency preparedness and immediate response, ensuring safety and security in Ho-Ho-Kus.'
-                    }
-                }
+                'companion-care': addCompanionCare('ho-ho-kus'),
+                'elder-care': addElderCareConsulting('ho-ho-kus'),
+                staffing: addStaffingServices('ho-ho-kus'),
+                'home-health-aides': addHomeHealthAides('ho-ho-kus'),
+                nursing: addNursingServices('ho-ho-kus')
             },
             rankingFactors: {
                 primaryKeywords: [
@@ -3402,56 +2233,11 @@ const bergenCountyData: CountyData = {
                             'Immediate access to local medical centers and rapid connection to emergency services.'
                     }
                 }),
-                'companion-care': {
-                    customH1: 'Companion Care Services in Leonia',
-                    customTitle:
-                        'Companion Care Leonia NJ | Social Support & Friendship',
-                    customMetaDescription:
-                        'Companion care in Leonia, NJ. Social support for seniors in this vibrant, diverse community. Transportation, activities, friendship.',
-                    localKeywords: [
-                        'companion care Leonia',
-                        'senior companionship Leonia',
-                        'elderly social support Leonia'
-                    ],
-                    contentBlocks: {
-                        whyChooseUs:
-                            'We provide companionship that embraces Leonia’s rich cultural tapestry and dynamic community.',
-                        serviceHighlights: [
-                            'Engaging activities tailored to diverse cultural backgrounds',
-                            'Transportation for local appointments and errands',
-                            'Support for social outings and community events'
-                        ],
-                        localExpertise:
-                            'Familiar with Leonia activities, from local markets to community gatherings and parks.',
-                        emergencyInfo:
-                            '24/7 coordination for peace of mind, ensuring safety during outings in Leonia.'
-                    }
-                },
-                'elder-care': {
-                    customH1: 'Comprehensive Elder Care Services in Leonia, NJ',
-                    customTitle:
-                        'Elder Care Leonia NJ | Senior Home Care Solutions',
-                    customMetaDescription:
-                        '360 Degree Care offers expert elder care services in Leonia, NJ. From personal assistance to skilled nursing, we create customized care plans for seniors.',
-                    localKeywords: [
-                        'elder care Leonia',
-                        'senior care Leonia NJ',
-                        'at-home care for elderly Leonia'
-                    ],
-                    contentBlocks: {
-                        whyChooseUs:
-                            'Our comprehensive elder care solutions in Leonia ensure seniors receive personalized attention and support, leveraging local resources.',
-                        serviceHighlights: [
-                            'Customized care plans for long-term well-being',
-                            'Coordination with local healthcare providers and specialists',
-                            'Family caregiver respite support'
-                        ],
-                        localExpertise:
-                            'Deep understanding of Leonia’s senior resources and community support networks, including medical facilities.',
-                        emergencyInfo:
-                            'Seamless integration with emergency services and local hospitals for immediate care.'
-                    }
-                }
+                'companion-care': addCompanionCare('leonia'),
+                'elder-care': addElderCareConsulting('leonia'),
+                staffing: addStaffingServices('leonia'),
+                'home-health-aides': addHomeHealthAides('leonia'),
+                nursing: addNursingServices('leonia')
             },
             rankingFactors: {
                 primaryKeywords: [
@@ -3527,59 +2313,11 @@ const bergenCountyData: CountyData = {
                             '24/7 care coordination and prompt response with local Little Ferry emergency services.'
                     }
                 }),
-                'companion-care': {
-                    customH1: 'Compassionate Companion Care in Little Ferry',
-                    customTitle:
-                        'Companion Care Services in Little Ferry, NJ | 360 Degree Care',
-                    customMetaDescription:
-                        'Searching for companion care in Little Ferry? We provide emotional support, social engagement, and friendly companionship for seniors. Reduce isolation and improve quality of life.',
-                    localKeywords: [
-                        'companion care Little Ferry',
-                        'senior companionship Little Ferry',
-                        'elderly social support Little Ferry',
-                        'Little Ferry activities for seniors'
-                    ],
-                    contentBlocks: {
-                        whyChooseUs:
-                            'We offer engaging companion care in Little Ferry, promoting social interaction and mental well-being for seniors.',
-                        serviceHighlights: [
-                            'Stimulating conversations and shared interests',
-                            'Accompaniment to local events or errands',
-                            'Support for hobbies and light household tasks'
-                        ],
-                        localExpertise:
-                            'Knowledgeable about Little Ferry’s community activities and senior programs for enriching companionship.',
-                        emergencyInfo:
-                            'Reliable supervision and quick response during all social outings in Little Ferry.'
-                    }
-                },
-                'elder-care': {
-                    customH1:
-                        'Comprehensive Elder Care Services in Little Ferry, NJ',
-                    customTitle:
-                        'Elder Care Little Ferry NJ | Senior Home Care Solutions',
-                    customMetaDescription:
-                        '360 Degree Care offers expert elder care services in Little Ferry, NJ. From personal assistance to skilled nursing, we create customized care plans for seniors.',
-                    localKeywords: [
-                        'elder care Little Ferry',
-                        'senior care Little Ferry NJ',
-                        'at-home care for elderly Little Ferry',
-                        'Little Ferry senior support'
-                    ],
-                    contentBlocks: {
-                        whyChooseUs:
-                            'Our comprehensive elder care in Little Ferry provides families with peace of mind through dedicated and reliable support.',
-                        serviceHighlights: [
-                            'Individualized care plans adapting to evolving needs',
-                            'Coordination with local medical providers and specialists',
-                            'Family caregiver support and education'
-                        ],
-                        localExpertise:
-                            'Strong ties with Little Ferry’s healthcare network and senior resources for seamless integrated care.',
-                        emergencyInfo:
-                            'Proactive safety measures and immediate response for any health or safety concerns in Little Ferry.'
-                    }
-                }
+                'companion-care': addCompanionCare('little-ferry'),
+                'elder-care': addElderCareConsulting('little-ferry'),
+                staffing: addStaffingServices('little-ferry'),
+                'home-health-aides': addHomeHealthAides('little-ferry'),
+                nursing: addNursingServices('little-ferry')
             },
             rankingFactors: {
                 primaryKeywords: [
@@ -3656,56 +2394,11 @@ const bergenCountyData: CountyData = {
                             'Immediate access to local medical centers and rapid connection to emergency services.'
                     }
                 }),
-                'companion-care': {
-                    customH1: 'Companion Care Services in Lodi',
-                    customTitle:
-                        'Companion Care Lodi NJ | Social Support & Friendship',
-                    customMetaDescription:
-                        'Companion care in Lodi, NJ. Social support for seniors in this vibrant, diverse community. Transportation, activities, friendship.',
-                    localKeywords: [
-                        'companion care Lodi',
-                        'senior companionship Lodi',
-                        'elderly social support Lodi'
-                    ],
-                    contentBlocks: {
-                        whyChooseUs:
-                            'We provide companionship that embraces Lodi’s rich cultural tapestry and dynamic community.',
-                        serviceHighlights: [
-                            'Engaging activities tailored to diverse cultural backgrounds',
-                            'Transportation for local appointments and errands',
-                            'Support for social outings and community events'
-                        ],
-                        localExpertise:
-                            'Familiar with Lodi activities, from local markets to community gatherings and parks.',
-                        emergencyInfo:
-                            '24/7 coordination for peace of mind, ensuring safety during outings in Lodi.'
-                    }
-                },
-                'elder-care': {
-                    customH1: 'Comprehensive Elder Care Services in Lodi, NJ',
-                    customTitle:
-                        'Elder Care Lodi NJ | Senior Home Care Solutions',
-                    customMetaDescription:
-                        '360 Degree Care offers expert elder care services in Lodi, NJ. From personal assistance to skilled nursing, we create customized care plans for seniors.',
-                    localKeywords: [
-                        'elder care Lodi',
-                        'senior care Lodi NJ',
-                        'at-home care for elderly Lodi'
-                    ],
-                    contentBlocks: {
-                        whyChooseUs:
-                            'Our comprehensive elder care solutions in Lodi ensure seniors receive personalized attention and support, leveraging local resources.',
-                        serviceHighlights: [
-                            'Customized care plans for long-term well-being',
-                            'Coordination with local healthcare providers and specialists',
-                            'Family caregiver respite support'
-                        ],
-                        localExpertise:
-                            'Deep understanding of Lodi’s senior resources and community support networks, including medical facilities.',
-                        emergencyInfo:
-                            'Seamless integration with emergency services and local hospitals for immediate care.'
-                    }
-                }
+                'companion-care': addCompanionCare('lodi'),
+                'elder-care': addElderCareConsulting('lodi'),
+                staffing: addStaffingServices('lodi'),
+                'home-health-aides': addHomeHealthAides('lodi'),
+                nursing: addNursingServices('lodi')
             },
             rankingFactors: {
                 primaryKeywords: [
@@ -3781,59 +2474,11 @@ const bergenCountyData: CountyData = {
                             '24/7 care coordination and prompt response with local Lyndhurst emergency services.'
                     }
                 }),
-                'companion-care': {
-                    customH1: 'Compassionate Companion Care in Lyndhurst',
-                    customTitle:
-                        'Companion Care Services in Lyndhurst, NJ | 360 Degree Care',
-                    customMetaDescription:
-                        'Searching for companion care in Lyndhurst? We provide emotional support, social engagement, and friendly companionship for seniors. Reduce isolation and improve quality of life.',
-                    localKeywords: [
-                        'companion care Lyndhurst',
-                        'senior companionship Lyndhurst',
-                        'elderly social support Lyndhurst',
-                        'Lyndhurst activities for seniors'
-                    ],
-                    contentBlocks: {
-                        whyChooseUs:
-                            'We offer engaging companion care in Lyndhurst, promoting social interaction and mental well-being for seniors.',
-                        serviceHighlights: [
-                            'Stimulating conversations and shared interests',
-                            'Accompaniment to Riverside County Park or local events',
-                            'Support for errands and light household tasks'
-                        ],
-                        localExpertise:
-                            'Knowledgeable about Lyndhurst’s community activities and senior programs for enriching companionship.',
-                        emergencyInfo:
-                            'Reliable supervision and quick response during all social outings in Lyndhurst.'
-                    }
-                },
-                'elder-care': {
-                    customH1:
-                        'Comprehensive Elder Care Services in Lyndhurst, NJ',
-                    customTitle:
-                        'Elder Care Lyndhurst NJ | Senior Home Care Solutions',
-                    customMetaDescription:
-                        '360 Degree Care offers expert elder care services in Lyndhurst, NJ. From personal assistance to skilled nursing, we create customized care plans for seniors.',
-                    localKeywords: [
-                        'elder care Lyndhurst',
-                        'senior care Lyndhurst NJ',
-                        'at-home care for elderly Lyndhurst',
-                        'Lyndhurst senior support'
-                    ],
-                    contentBlocks: {
-                        whyChooseUs:
-                            'Our comprehensive elder care in Lyndhurst provides families with peace of mind through dedicated and reliable support.',
-                        serviceHighlights: [
-                            'Individualized care plans adapting to evolving needs',
-                            'Coordination with local medical providers and specialists',
-                            'Family caregiver support and education'
-                        ],
-                        localExpertise:
-                            'Strong ties with Lyndhurst’s healthcare network and senior resources for seamless integrated care.',
-                        emergencyInfo:
-                            'Proactive safety measures and immediate response for any health or safety concerns in Lyndhurst.'
-                    }
-                }
+                'companion-care': addCompanionCare('lyndhurst'),
+                'elder-care': addElderCareConsulting('lyndhurst'),
+                staffing: addStaffingServices('lyndhurst'),
+                'home-health-aides': addHomeHealthAides('lyndhurst'),
+                nursing: addNursingServices('lyndhurst')
             },
             rankingFactors: {
                 primaryKeywords: [
@@ -3909,58 +2554,11 @@ const bergenCountyData: CountyData = {
                             '24/7 care coordination and prompt response with local Mahwah emergency services.'
                     }
                 }),
-                'companion-care': {
-                    customH1: 'Compassionate Companion Care in Mahwah',
-                    customTitle:
-                        'Companion Care Services in Mahwah, NJ | 360 Degree Care',
-                    customMetaDescription:
-                        'Searching for companion care in Mahwah? We provide emotional support, social engagement, and friendly companionship for seniors. Reduce isolation and improve quality of life.',
-                    localKeywords: [
-                        'companion care Mahwah',
-                        'senior companionship Mahwah',
-                        'elderly social support Mahwah',
-                        'Mahwah activities for seniors'
-                    ],
-                    contentBlocks: {
-                        whyChooseUs:
-                            'We offer engaging companion care in Mahwah, promoting social interaction and mental well-being for seniors.',
-                        serviceHighlights: [
-                            'Stimulating conversations and shared interests',
-                            'Accompaniment to local parks or community events',
-                            'Support for hobbies and light household tasks'
-                        ],
-                        localExpertise:
-                            'Knowledgeable about Mahwah’s community activities and senior programs for enriching companionship.',
-                        emergencyInfo:
-                            'Reliable supervision and quick response during all social outings in Mahwah.'
-                    }
-                },
-                'elder-care': {
-                    customH1: 'Comprehensive Elder Care Services in Mahwah, NJ',
-                    customTitle:
-                        'Elder Care Mahwah NJ | Senior Home Care Solutions',
-                    customMetaDescription:
-                        '360 Degree Care offers expert elder care services in Mahwah, NJ. From personal assistance to skilled nursing, we create customized care plans for seniors.',
-                    localKeywords: [
-                        'elder care Mahwah',
-                        'senior care Mahwah NJ',
-                        'at-home care for elderly Mahwah',
-                        'Mahwah senior support'
-                    ],
-                    contentBlocks: {
-                        whyChooseUs:
-                            'Our comprehensive elder care in Mahwah provides families with peace of mind through dedicated and reliable support.',
-                        serviceHighlights: [
-                            'Individualized care plans adapting to evolving needs',
-                            'Coordination with local medical providers and specialists',
-                            'Family caregiver support and education'
-                        ],
-                        localExpertise:
-                            'Strong ties with Mahwah’s healthcare network and senior resources for seamless integrated care.',
-                        emergencyInfo:
-                            'Proactive safety measures and immediate response for any health or safety concerns in Mahwah.'
-                    }
-                }
+                'companion-care': addCompanionCare('mahwah'),
+                'elder-care': addElderCareConsulting('mahwah'),
+                staffing: addStaffingServices('mahwah'),
+                'home-health-aides': addHomeHealthAides('mahwah'),
+                nursing: addNursingServices('mahwah')
             },
             rankingFactors: {
                 primaryKeywords: [
@@ -4031,59 +2629,11 @@ const bergenCountyData: CountyData = {
                             '24/7 care coordination and prompt response with local Maywood emergency services.'
                     }
                 }),
-                'companion-care': {
-                    customH1: 'Compassionate Companion Care in Maywood',
-                    customTitle:
-                        'Companion Care Services in Maywood, NJ | 360 Degree Care',
-                    customMetaDescription:
-                        'Searching for companion care in Maywood? We provide emotional support, social engagement, and friendly companionship for seniors. Reduce isolation and improve quality of life.',
-                    localKeywords: [
-                        'companion care Maywood',
-                        'senior companionship Maywood',
-                        'elderly social support Maywood',
-                        'Maywood activities for seniors'
-                    ],
-                    contentBlocks: {
-                        whyChooseUs:
-                            'We offer engaging companion care in Maywood, promoting social interaction and mental well-being for seniors.',
-                        serviceHighlights: [
-                            'Stimulating conversations and shared interests',
-                            'Accompaniment to Memorial Park or local events',
-                            'Support for errands and light household tasks'
-                        ],
-                        localExpertise:
-                            'Knowledgeable about Maywood’s community activities and senior programs for enriching companionship.',
-                        emergencyInfo:
-                            'Reliable supervision and quick response during all social outings in Maywood.'
-                    }
-                },
-                'elder-care': {
-                    customH1:
-                        'Comprehensive Elder Care Services in Maywood, NJ',
-                    customTitle:
-                        'Elder Care Maywood NJ | Senior Home Care Solutions',
-                    customMetaDescription:
-                        '360 Degree Care offers expert elder care services in Maywood, NJ. From personal assistance to skilled nursing, we create customized care plans for seniors.',
-                    localKeywords: [
-                        'elder care Maywood',
-                        'senior care Maywood NJ',
-                        'at-home care for elderly Maywood',
-                        'Maywood senior support'
-                    ],
-                    contentBlocks: {
-                        whyChooseUs:
-                            'Our comprehensive elder care in Maywood provides families with peace of mind through dedicated and reliable support.',
-                        serviceHighlights: [
-                            'Individualized care plans adapting to evolving needs',
-                            'Coordination with local medical providers and specialists',
-                            'Family caregiver support and education'
-                        ],
-                        localExpertise:
-                            'Strong ties with Maywood’s healthcare network and senior resources for seamless integrated care.',
-                        emergencyInfo:
-                            'Proactive safety measures and immediate response for any health or safety concerns in Maywood.'
-                    }
-                }
+                'companion-care': addCompanionCare('maywood'),
+                'elder-care': addElderCareConsulting('maywood'),
+                staffing: addStaffingServices('maywood'),
+                'home-health-aides': addHomeHealthAides('maywood'),
+                nursing: addNursingServices('maywood')
             },
             rankingFactors: {
                 primaryKeywords: [
@@ -4154,59 +2704,11 @@ const bergenCountyData: CountyData = {
                             '24/7 availability and quick coordination with Midland Park emergency services for immediate needs.'
                     }
                 }),
-                'companion-care': {
-                    customH1: 'Compassionate Companion Care in Midland Park',
-                    customTitle:
-                        'Companion Care Services in Midland Park, NJ | 360 Degree Care',
-                    customMetaDescription:
-                        'Searching for companion care in Midland Park? We provide emotional support, social engagement, and friendly companionship for seniors. Reduce isolation and improve quality of life.',
-                    localKeywords: [
-                        'companion care Midland Park',
-                        'senior companionship Midland Park',
-                        'elderly social support Midland Park',
-                        'Midland Park activities for seniors'
-                    ],
-                    contentBlocks: {
-                        whyChooseUs:
-                            'We offer heartfelt companion care in Midland Park, focusing on social interaction and mental well-being.',
-                        serviceHighlights: [
-                            'Engaging activities and stimulating conversations',
-                            'Accompaniment to Godwin Park or local errands',
-                            'Reading aloud and shared hobbies'
-                        ],
-                        localExpertise:
-                            'Knowledgeable about Midland Park’s community atmosphere and local attractions for enriching companionship.',
-                        emergencyInfo:
-                            'Reliable oversight during social outings in Midland Park, ensuring a safe and enjoyable experience.'
-                    }
-                },
-                'elder-care': {
-                    customH1:
-                        'Comprehensive Elder Care Services in Midland Park, NJ',
-                    customTitle:
-                        'Elder Care Midland Park NJ | Senior Home Care Solutions',
-                    customMetaDescription:
-                        '360 Degree Care offers expert elder care services in Midland Park, NJ. From personal assistance to skilled nursing, we create customized care plans for seniors.',
-                    localKeywords: [
-                        'elder care Midland Park',
-                        'senior care Midland Park NJ',
-                        'at-home care for elderly Midland Park',
-                        'Midland Park senior support'
-                    ],
-                    contentBlocks: {
-                        whyChooseUs:
-                            'Our comprehensive elder care in Midland Park is designed to provide complete support for seniors, enabling them to thrive at home.',
-                        serviceHighlights: [
-                            'Customized care plans addressing all aspects of senior living',
-                            'Coordination with local medical and social services',
-                            'Support for families navigating elder care decisions'
-                        ],
-                        localExpertise:
-                            'Deep understanding of Midland Park’s community support systems and healthcare options.',
-                        emergencyInfo:
-                            'Proactive emergency planning and swift response for reliable elder care in Midland Park.'
-                    }
-                }
+                'companion-care': addCompanionCare('midland-park'),
+                'elder-care': addElderCareConsulting('midland-park'),
+                staffing: addStaffingServices('midland-park'),
+                'home-health-aides': addHomeHealthAides('midland-park'),
+                nursing: addNursingServices('midland-park')
             },
             rankingFactors: {
                 primaryKeywords: [
@@ -4282,58 +2784,11 @@ const bergenCountyData: CountyData = {
                             'Seamless coordination with private medical services and local emergency responders in Montvale.'
                     }
                 }),
-                'companion-care': {
-                    customH1: 'Compassionate Companion Care in Montvale',
-                    customTitle:
-                        'Companion Care Services in Montvale, NJ | 360 Degree Care',
-                    customMetaDescription:
-                        'Searching for companion care in Montvale? We provide emotional support, social engagement, and friendly companionship for seniors. Reduce isolation and improve quality of life.',
-                    localKeywords: [
-                        'companion care Montvale',
-                        'senior companionship Montvale',
-                        'elderly social support Montvale',
-                        'Montvale luxury companion'
-                    ],
-                    contentBlocks: {
-                        whyChooseUs:
-                            'Our companion care in Montvale offers discreet, respectful, and engaging companionship for seniors.',
-                        serviceHighlights: [
-                            'Culturally sensitive and engaging activities',
-                            'Personalized outings and social engagement',
-                            'Assistance with errands and appointments in Montvale'
-                        ],
-                        localExpertise:
-                            'Familiar with Montvale’s exclusive community and lifestyle, ensuring appropriate and considerate care.',
-                        emergencyInfo:
-                            'Dedicated support for peace of mind during all companion care activities in Montvale.'
-                    }
-                },
-                'elder-care': {
-                    customH1: 'Premium Elder Care Services in Montvale, NJ',
-                    customTitle:
-                        'Elder Care Montvale NJ | Exclusive Senior Home Care',
-                    customMetaDescription:
-                        'Discover premium elder care services in Montvale, NJ. 360 Degree Care offers tailored solutions, from personal care to skilled nursing, designed for discerning families.',
-                    localKeywords: [
-                        'elder care Montvale',
-                        'senior care Montvale NJ',
-                        'at-home care for elderly Montvale',
-                        'Montvale elite elder care'
-                    ],
-                    contentBlocks: {
-                        whyChooseUs:
-                            'Our elder care services in Montvale are characterized by exceptional quality, tailored to the unique needs of the community.',
-                        serviceHighlights: [
-                            'Comprehensive and personalized care plans',
-                            'Access to highly qualified and discreet caregivers',
-                            'Coordination with private healthcare networks'
-                        ],
-                        localExpertise:
-                            'Deep understanding of the specific requirements for high-end elder care in Montvale.',
-                        emergencyInfo:
-                            'Proactive emergency preparedness and immediate response, ensuring safety and security in Montvale.'
-                    }
-                }
+                'companion-care': addCompanionCare('montvale'),
+                'elder-care': addElderCareConsulting('montvale'),
+                staffing: addStaffingServices('montvale'),
+                'home-health-aides': addHomeHealthAides('montvale'),
+                nursing: addNursingServices('montvale')
             },
             rankingFactors: {
                 primaryKeywords: [
@@ -4409,59 +2864,11 @@ const bergenCountyData: CountyData = {
                             '24/7 care coordination and rapid response with Moonachie emergency services.'
                     }
                 }),
-                'companion-care': {
-                    customH1: 'Compassionate Companion Care in Moonachie',
-                    customTitle:
-                        'Companion Care Services in Moonachie, NJ | 360 Degree Care',
-                    customMetaDescription:
-                        'Searching for companion care in Moonachie? We provide emotional support, social engagement, and friendly companionship for seniors. Reduce isolation and improve quality of life.',
-                    localKeywords: [
-                        'companion care Moonachie',
-                        'senior companionship Moonachie',
-                        'elderly social support Moonachie',
-                        'Moonachie activities for seniors'
-                    ],
-                    contentBlocks: {
-                        whyChooseUs:
-                            'We offer enriching companion care in Moonachie, helping seniors stay connected and active within their community.',
-                        serviceHighlights: [
-                            'Engaging conversations and shared activities',
-                            'Accompaniment to local events or errands',
-                            'Support for cultural and social activities'
-                        ],
-                        localExpertise:
-                            'Knowledgeable about Moonachie’s local offerings for senior engagement and social opportunities.',
-                        emergencyInfo:
-                            'Constant vigilance and quick response during outings and home visits in Moonachie.'
-                    }
-                },
-                'elder-care': {
-                    customH1:
-                        'Comprehensive Elder Care Services in Moonachie, NJ',
-                    customTitle:
-                        'Elder Care Moonachie NJ | Senior Home Care Solutions',
-                    customMetaDescription:
-                        '360 Degree Care offers expert elder care services in Moonachie, NJ. From personal assistance to skilled nursing, we create customized care plans for seniors.',
-                    localKeywords: [
-                        'elder care Moonachie',
-                        'senior care Moonachie NJ',
-                        'at-home care for elderly Moonachie',
-                        'Moonachie senior support'
-                    ],
-                    contentBlocks: {
-                        whyChooseUs:
-                            'Our comprehensive elder care services in Moonachie provide peace of mind through reliable and tailored support.',
-                        serviceHighlights: [
-                            'Personalized care plans adapting to evolving needs',
-                            'Coordination with local medical and rehabilitation services',
-                            'Family support and educational resources'
-                        ],
-                        localExpertise:
-                            'Strong ties with Moonachie’s healthcare network and community support for integrated care.',
-                        emergencyInfo:
-                            'Robust emergency protocols and immediate response for health and safety in Moonachie.'
-                    }
-                }
+                'companion-care': addCompanionCare('moonachie'),
+                'elder-care': addElderCareConsulting('moonachie'),
+                staffing: addStaffingServices('moonachie'),
+                'home-health-aides': addHomeHealthAides('moonachie'),
+                nursing: addNursingServices('moonachie')
             },
             rankingFactors: {
                 primaryKeywords: [
@@ -4532,59 +2939,11 @@ const bergenCountyData: CountyData = {
                             '24/7 care coordination and prompt response with local New Milford emergency services.'
                     }
                 }),
-                'companion-care': {
-                    customH1: 'Compassionate Companion Care in New Milford',
-                    customTitle:
-                        'Companion Care Services in New Milford, NJ | 360 Degree Care',
-                    customMetaDescription:
-                        'Searching for companion care in New Milford? We provide emotional support, social engagement, and friendly companionship for seniors. Reduce isolation and improve quality of life.',
-                    localKeywords: [
-                        'companion care New Milford',
-                        'senior companionship New Milford',
-                        'elderly social support New Milford',
-                        'New Milford activities for seniors'
-                    ],
-                    contentBlocks: {
-                        whyChooseUs:
-                            'We offer engaging companion care in New Milford, promoting social interaction and mental well-being for seniors.',
-                        serviceHighlights: [
-                            'Stimulating conversations and shared interests',
-                            'Accompaniment to Foschini Park or local events',
-                            'Support for errands and light household tasks'
-                        ],
-                        localExpertise:
-                            'Knowledgeable about New Milford’s community activities and senior programs for enriching companionship.',
-                        emergencyInfo:
-                            'Reliable supervision and quick response during all social outings in New Milford.'
-                    }
-                },
-                'elder-care': {
-                    customH1:
-                        'Comprehensive Elder Care Services in New Milford, NJ',
-                    customTitle:
-                        'Elder Care New Milford NJ | Senior Home Care Solutions',
-                    customMetaDescription:
-                        '360 Degree Care offers expert elder care services in New Milford, NJ. From personal assistance to skilled nursing, we create customized care plans for seniors.',
-                    localKeywords: [
-                        'elder care New Milford',
-                        'senior care New Milford NJ',
-                        'at-home care for elderly New Milford',
-                        'New Milford senior support'
-                    ],
-                    contentBlocks: {
-                        whyChooseUs:
-                            'Our comprehensive elder care in New Milford provides families with peace of mind through dedicated and reliable support.',
-                        serviceHighlights: [
-                            'Individualized care plans adapting to evolving needs',
-                            'Coordination with local medical providers and specialists',
-                            'Family caregiver support and education'
-                        ],
-                        localExpertise:
-                            'Strong ties with New Milford’s healthcare network and senior resources for seamless integrated care.',
-                        emergencyInfo:
-                            'Proactive safety measures and immediate response for any health or safety concerns in New Milford.'
-                    }
-                }
+                'companion-care': addCompanionCare('new-milford'),
+                'elder-care': addElderCareConsulting('new-milford'),
+                staffing: addStaffingServices('new-milford'),
+                'home-health-aides': addHomeHealthAides('new-milford'),
+                nursing: addNursingServices('new-milford')
             },
             rankingFactors: {
                 primaryKeywords: [
@@ -4655,59 +3014,11 @@ const bergenCountyData: CountyData = {
                             '24/7 care coordination and prompt response with local North Arlington emergency services.'
                     }
                 }),
-                'companion-care': {
-                    customH1: 'Compassionate Companion Care in North Arlington',
-                    customTitle:
-                        'Companion Care Services in North Arlington, NJ | 360 Degree Care',
-                    customMetaDescription:
-                        'Searching for companion care in North Arlington? We provide emotional support, social engagement, and friendly companionship for seniors. Reduce isolation and improve quality of life.',
-                    localKeywords: [
-                        'companion care North Arlington',
-                        'senior companionship North Arlington',
-                        'elderly social support North Arlington',
-                        'North Arlington activities for seniors'
-                    ],
-                    contentBlocks: {
-                        whyChooseUs:
-                            'We offer engaging companion care in North Arlington, promoting social interaction and mental well-being for seniors.',
-                        serviceHighlights: [
-                            'Stimulating conversations and shared interests',
-                            'Accompaniment to Fabian Park or local events',
-                            'Support for errands and light household tasks'
-                        ],
-                        localExpertise:
-                            'Knowledgeable about North Arlington’s community activities and senior programs for enriching companionship.',
-                        emergencyInfo:
-                            'Reliable supervision and quick response during all social outings in North Arlington.'
-                    }
-                },
-                'elder-care': {
-                    customH1:
-                        'Comprehensive Elder Care Services in North Arlington, NJ',
-                    customTitle:
-                        'Elder Care North Arlington NJ | Senior Home Care Solutions',
-                    customMetaDescription:
-                        '360 Degree Care offers expert elder care services in North Arlington, NJ. From personal assistance to skilled nursing, we create customized care plans for seniors.',
-                    localKeywords: [
-                        'elder care North Arlington',
-                        'senior care North Arlington NJ',
-                        'at-home care for elderly North Arlington',
-                        'North Arlington senior support'
-                    ],
-                    contentBlocks: {
-                        whyChooseUs:
-                            'Our comprehensive elder care in North Arlington provides families with peace of mind through dedicated and reliable support.',
-                        serviceHighlights: [
-                            'Individualized care plans adapting to evolving needs',
-                            'Coordination with local medical providers and specialists',
-                            'Family caregiver support and education'
-                        ],
-                        localExpertise:
-                            'Strong ties with North Arlington’s healthcare network and senior resources for seamless integrated care.',
-                        emergencyInfo:
-                            'Proactive safety measures and immediate response for any health or safety concerns in North Arlington.'
-                    }
-                }
+                'companion-care': addCompanionCare('north-arlington'),
+                'elder-care': addElderCareConsulting('north-arlington'),
+                staffing: addStaffingServices('north-arlington'),
+                'home-health-aides': addHomeHealthAides('north-arlington'),
+                nursing: addNursingServices('north-arlington')
             },
             rankingFactors: {
                 primaryKeywords: [
@@ -4783,59 +3094,11 @@ const bergenCountyData: CountyData = {
                             '24/7 care coordination and rapid response with local Norwood emergency services.'
                     }
                 }),
-                'companion-care': {
-                    customH1: 'Compassionate Companion Care in Norwood',
-                    customTitle:
-                        'Companion Care Services in Norwood, NJ | 360 Degree Care',
-                    customMetaDescription:
-                        'Searching for companion care in Norwood? We provide emotional support, social engagement, and friendly companionship for seniors. Reduce isolation and improve quality of life.',
-                    localKeywords: [
-                        'companion care Norwood',
-                        'senior companionship Norwood',
-                        'elderly social support Norwood',
-                        'Norwood activities for seniors'
-                    ],
-                    contentBlocks: {
-                        whyChooseUs:
-                            'We offer enriching companion care in Norwood, fostering social connections and a sense of belonging for seniors.',
-                        serviceHighlights: [
-                            'Engaging conversations and shared interests',
-                            'Accompaniment to local events or errands',
-                            'Support for hobbies and light household tasks'
-                        ],
-                        localExpertise:
-                            'Knowledgeable about Norwood’s peaceful environment and community activities for tailored companionship.',
-                        emergencyInfo:
-                            'Reliable supervision and prompt action during any social outings in Norwood.'
-                    }
-                },
-                'elder-care': {
-                    customH1:
-                        'Comprehensive Elder Care Services in Norwood, NJ',
-                    customTitle:
-                        'Elder Care Norwood NJ | Senior Home Care Solutions',
-                    customMetaDescription:
-                        '360 Degree Care offers expert elder care services in Norwood, NJ. From personal assistance to skilled nursing, we create customized care plans for seniors.',
-                    localKeywords: [
-                        'elder care Norwood',
-                        'senior care Norwood NJ',
-                        'at-home care for elderly Norwood',
-                        'Norwood senior support'
-                    ],
-                    contentBlocks: {
-                        whyChooseUs:
-                            'Our comprehensive elder care in Norwood provides tailored support, ensuring seniors enjoy a comfortable and fulfilling life at home.',
-                        serviceHighlights: [
-                            'Personalized care plans adapting to evolving needs',
-                            'Coordination with local medical providers and specialists',
-                            'Family education and respite care'
-                        ],
-                        localExpertise:
-                            'Deep understanding of Norwood’s healthcare resources and senior support networks for integrated care.',
-                        emergencyInfo:
-                            'Proactive safety measures and immediate response for any health or safety concerns in Norwood.'
-                    }
-                }
+                'companion-care': addCompanionCare('norwood'),
+                'elder-care': addElderCareConsulting('norwood'),
+                staffing: addStaffingServices('norwood'),
+                'home-health-aides': addHomeHealthAides('norwood'),
+                nursing: addNursingServices('norwood')
             },
             rankingFactors: {
                 primaryKeywords: [
@@ -4911,59 +3174,11 @@ const bergenCountyData: CountyData = {
                             '24/7 care coordination and prompt response with local Oakland emergency services.'
                     }
                 }),
-                'companion-care': {
-                    customH1: 'Compassionate Companion Care in Oakland',
-                    customTitle:
-                        'Companion Care Services in Oakland, NJ | 360 Degree Care',
-                    customMetaDescription:
-                        'Searching for companion care in Oakland? We provide emotional support, social engagement, and friendly companionship for seniors. Reduce isolation and improve quality of life.',
-                    localKeywords: [
-                        'companion care Oakland',
-                        'senior companionship Oakland',
-                        'elderly social support Oakland',
-                        'Oakland activities for seniors'
-                    ],
-                    contentBlocks: {
-                        whyChooseUs:
-                            'We offer engaging companion care in Oakland, promoting social interaction and mental well-being for seniors.',
-                        serviceHighlights: [
-                            'Stimulating conversations and shared interests',
-                            'Accompaniment to Great Oak Park or local events',
-                            'Support for hobbies and light household tasks'
-                        ],
-                        localExpertise:
-                            'Knowledgeable about Oakland’s community activities and senior programs for enriching companionship.',
-                        emergencyInfo:
-                            'Reliable supervision and quick response during all social outings in Oakland.'
-                    }
-                },
-                'elder-care': {
-                    customH1:
-                        'Comprehensive Elder Care Services in Oakland, NJ',
-                    customTitle:
-                        'Elder Care Oakland NJ | Senior Home Care Solutions',
-                    customMetaDescription:
-                        '360 Degree Care offers expert elder care services in Oakland, NJ. From personal assistance to skilled nursing, we create customized care plans for seniors.',
-                    localKeywords: [
-                        'elder care Oakland',
-                        'senior care Oakland NJ',
-                        'at-home care for elderly Oakland',
-                        'Oakland senior support'
-                    ],
-                    contentBlocks: {
-                        whyChooseUs:
-                            'Our comprehensive elder care in Oakland provides families with peace of mind through dedicated and reliable support.',
-                        serviceHighlights: [
-                            'Individualized care plans adapting to evolving needs',
-                            'Coordination with local medical providers and specialists',
-                            'Family caregiver support and education'
-                        ],
-                        localExpertise:
-                            'Strong ties with Oakland’s healthcare network and senior resources for seamless integrated care.',
-                        emergencyInfo:
-                            'Proactive safety measures and immediate response for any health or safety concerns in Oakland.'
-                    }
-                }
+                'companion-care': addCompanionCare('oakland'),
+                'elder-care': addElderCareConsulting('oakland'),
+                staffing: addStaffingServices('oakland'),
+                'home-health-aides': addHomeHealthAides('oakland'),
+                nursing: addNursingServices('oakland')
             },
             rankingFactors: {
                 primaryKeywords: [
@@ -5039,58 +3254,11 @@ const bergenCountyData: CountyData = {
                             'Seamless coordination with private medical services and local emergency responders in Old Tappan.'
                     }
                 }),
-                'companion-care': {
-                    customH1: 'Compassionate Companion Care in Old Tappan',
-                    customTitle:
-                        'Companion Care Services in Old Tappan, NJ | 360 Degree Care',
-                    customMetaDescription:
-                        'Searching for companion care in Old Tappan? We provide emotional support, social engagement, and friendly companionship for seniors. Reduce isolation and improve quality of life.',
-                    localKeywords: [
-                        'companion care Old Tappan',
-                        'senior companionship Old Tappan',
-                        'elderly social support Old Tappan',
-                        'Old Tappan luxury companion'
-                    ],
-                    contentBlocks: {
-                        whyChooseUs:
-                            'Our companion care in Old Tappan offers discreet, respectful, and engaging companionship for seniors.',
-                        serviceHighlights: [
-                            'Culturally sensitive and engaging activities',
-                            'Personalized outings and social engagement',
-                            'Assistance with errands and appointments in Old Tappan'
-                        ],
-                        localExpertise:
-                            'Familiar with Old Tappan’s exclusive community and lifestyle, ensuring appropriate and considerate care.',
-                        emergencyInfo:
-                            'Dedicated support for peace of mind during all companion care activities in Old Tappan.'
-                    }
-                },
-                'elder-care': {
-                    customH1: 'Premium Elder Care Services in Old Tappan, NJ',
-                    customTitle:
-                        'Elder Care Old Tappan NJ | Exclusive Senior Home Care',
-                    customMetaDescription:
-                        'Discover premium elder care services in Old Tappan, NJ. 360 Degree Care offers tailored solutions, from personal care to skilled nursing, designed for discerning families.',
-                    localKeywords: [
-                        'elder care Old Tappan',
-                        'senior care Old Tappan NJ',
-                        'at-home care for elderly Old Tappan',
-                        'Old Tappan elite elder care'
-                    ],
-                    contentBlocks: {
-                        whyChooseUs:
-                            'Our elder care services in Old Tappan are characterized by exceptional quality, tailored to the unique needs of the community.',
-                        serviceHighlights: [
-                            'Comprehensive and personalized care plans',
-                            'Access to highly qualified and discreet caregivers',
-                            'Coordination with private healthcare networks'
-                        ],
-                        localExpertise:
-                            'Deep understanding of the specific requirements for high-end elder care in Old Tappan.',
-                        emergencyInfo:
-                            'Proactive emergency preparedness and immediate response, ensuring safety and security in Old Tappan.'
-                    }
-                }
+                'companion-care': addCompanionCare('old-tappan'),
+                'elder-care': addElderCareConsulting('old-tappan'),
+                staffing: addStaffingServices('old-tappan'),
+                'home-health-aides': addHomeHealthAides('old-tappan'),
+                nursing: addNursingServices('old-tappan')
             },
             rankingFactors: {
                 primaryKeywords: [
@@ -5161,59 +3329,11 @@ const bergenCountyData: CountyData = {
                             '24/7 care coordination and rapid response with local Oradell emergency services.'
                     }
                 }),
-                'companion-care': {
-                    customH1: 'Compassionate Companion Care in Oradell',
-                    customTitle:
-                        'Companion Care Services in Oradell, NJ | 360 Degree Care',
-                    customMetaDescription:
-                        'Searching for companion care in Oradell? We provide emotional support, social engagement, and friendly companionship for seniors. Reduce isolation and improve quality of life.',
-                    localKeywords: [
-                        'companion care Oradell',
-                        'senior companionship Oradell',
-                        'elderly social support Oradell',
-                        'Oradell activities for seniors'
-                    ],
-                    contentBlocks: {
-                        whyChooseUs:
-                            'We offer enriching companion care in Oradell, fostering social connections and a sense of belonging for seniors.',
-                        serviceHighlights: [
-                            'Engaging conversations and shared interests',
-                            'Accompaniment to Oradell Reservoir or local events',
-                            'Support for hobbies and light household tasks'
-                        ],
-                        localExpertise:
-                            'Knowledgeable about Oradell’s peaceful environment and community activities for tailored companionship.',
-                        emergencyInfo:
-                            'Reliable supervision and prompt action during any social outings in Oradell.'
-                    }
-                },
-                'elder-care': {
-                    customH1:
-                        'Comprehensive Elder Care Services in Oradell, NJ',
-                    customTitle:
-                        'Elder Care Oradell NJ | Senior Home Care Solutions',
-                    customMetaDescription:
-                        '360 Degree Care offers expert elder care services in Oradell, NJ. From personal assistance to skilled nursing, we create customized care plans for seniors.',
-                    localKeywords: [
-                        'elder care Oradell',
-                        'senior care Oradell NJ',
-                        'at-home care for elderly Oradell',
-                        'Oradell senior support'
-                    ],
-                    contentBlocks: {
-                        whyChooseUs:
-                            'Our comprehensive elder care in Oradell provides tailored support, ensuring seniors enjoy a comfortable and fulfilling life at home.',
-                        serviceHighlights: [
-                            'Personalized care plans adapting to evolving needs',
-                            'Coordination with local medical providers and specialists',
-                            'Family education and respite care'
-                        ],
-                        localExpertise:
-                            'Deep understanding of Oradell’s healthcare resources and senior support networks for integrated care.',
-                        emergencyInfo:
-                            'Proactive safety measures and immediate response for any health or safety concerns in Oradell.'
-                    }
-                }
+                'companion-care': addCompanionCare('oradell'),
+                'elder-care': addElderCareConsulting('oradell'),
+                staffing: addStaffingServices('oradell'),
+                'home-health-aides': addHomeHealthAides('oradell'),
+                nursing: addNursingServices('oradell')
             },
             rankingFactors: {
                 primaryKeywords: [
@@ -5285,57 +3405,11 @@ const bergenCountyData: CountyData = {
                             'Immediate access to local medical centers and rapid connection to emergency services.'
                     }
                 }),
-                'companion-care': {
-                    customH1: 'Companion Care Services in Palisades Park',
-                    customTitle:
-                        'Companion Care Palisades Park NJ | Social Support & Friendship',
-                    customMetaDescription:
-                        'Companion care in Palisades Park, NJ. Social support for seniors in this vibrant, diverse community. Transportation, activities, friendship.',
-                    localKeywords: [
-                        'companion care Palisades Park',
-                        'senior companionship Palisades Park',
-                        'elderly social support Palisades Park'
-                    ],
-                    contentBlocks: {
-                        whyChooseUs:
-                            'We provide companionship that embraces Palisades Park’s rich cultural tapestry and dynamic community.',
-                        serviceHighlights: [
-                            'Engaging activities tailored to diverse cultural backgrounds',
-                            'Transportation for local appointments and errands',
-                            'Support for social outings and community events along Broad Avenue'
-                        ],
-                        localExpertise:
-                            'Familiar with Palisades Park activities, from local markets to community gatherings and parks.',
-                        emergencyInfo:
-                            '24/7 coordination for peace of mind, ensuring safety during outings in Palisades Park.'
-                    }
-                },
-                'elder-care': {
-                    customH1:
-                        'Comprehensive Elder Care Services in Palisades Park, NJ',
-                    customTitle:
-                        'Elder Care Palisades Park NJ | Senior Home Care Solutions',
-                    customMetaDescription:
-                        '360 Degree Care offers expert elder care services in Palisades Park, NJ. From personal assistance to skilled nursing, we create customized care plans for seniors.',
-                    localKeywords: [
-                        'elder care Palisades Park',
-                        'senior care Palisades Park NJ',
-                        'at-home care for elderly Palisades Park'
-                    ],
-                    contentBlocks: {
-                        whyChooseUs:
-                            'Our comprehensive elder care solutions in Palisades Park ensure seniors receive personalized attention and support, leveraging local resources.',
-                        serviceHighlights: [
-                            'Customized care plans for long-term well-being',
-                            'Coordination with local healthcare providers and specialists',
-                            'Family caregiver respite support'
-                        ],
-                        localExpertise:
-                            'Deep understanding of Palisades Park’s senior resources and community support networks, including medical facilities.',
-                        emergencyInfo:
-                            'Seamless integration with emergency services and local hospitals for immediate care.'
-                    }
-                }
+                'companion-care': addCompanionCare('palisades-park'),
+                'elder-care': addElderCareConsulting('palisades-park'),
+                staffing: addStaffingServices('palisades-park'),
+                'home-health-aides': addHomeHealthAides('palisades-park'),
+                nursing: addNursingServices('palisades-park')
             },
             rankingFactors: {
                 primaryKeywords: [
@@ -5407,57 +3481,11 @@ const bergenCountyData: CountyData = {
                             'Immediate access to local medical centers and rapid connection to emergency services within Paramus.'
                     }
                 }),
-                'companion-care': {
-                    customH1: 'Companion Care Services in Paramus',
-                    customTitle:
-                        'Companion Care Paramus NJ | Social Support & Friendship',
-                    customMetaDescription:
-                        'Companion care in Paramus, NJ. Social support for seniors in this active suburban community. Transportation, activities, friendship.',
-                    localKeywords: [
-                        'companion care Paramus',
-                        'senior companionship Paramus',
-                        'elderly social support Paramus'
-                    ],
-                    contentBlocks: {
-                        whyChooseUs:
-                            'We provide companionship that embraces Paramus’s dynamic environment and extensive amenities.',
-                        serviceHighlights: [
-                            'Engaging activities tailored to individual interests',
-                            'Transportation for local appointments and shopping at malls',
-                            'Support for social outings and community events'
-                        ],
-                        localExpertise:
-                            'Familiar with Paramus activities, from shopping centers to parks and senior community programs.',
-                        emergencyInfo:
-                            '24/7 coordination for peace of mind, ensuring safety during outings in Paramus.'
-                    }
-                },
-                'elder-care': {
-                    customH1:
-                        'Comprehensive Elder Care Services in Paramus, NJ',
-                    customTitle:
-                        'Elder Care Paramus NJ | Senior Home Care Solutions',
-                    customMetaDescription:
-                        '360 Degree Care offers expert elder care services in Paramus, NJ. From personal assistance to skilled nursing, we create customized care plans for seniors.',
-                    localKeywords: [
-                        'elder care Paramus',
-                        'senior care Paramus NJ',
-                        'at-home care for elderly Paramus'
-                    ],
-                    contentBlocks: {
-                        whyChooseUs:
-                            'Our comprehensive elder care solutions in Paramus ensure seniors receive personalized attention and support, leveraging local resources.',
-                        serviceHighlights: [
-                            'Customized care plans for long-term well-being',
-                            'Coordination with local healthcare providers and specialists',
-                            'Family caregiver respite support'
-                        ],
-                        localExpertise:
-                            'Deep understanding of Paramus’s senior resources and community support networks, including its numerous medical offices and clinics.',
-                        emergencyInfo:
-                            'Seamless integration with emergency services and local medical facilities in Paramus for immediate care.'
-                    }
-                }
+                'companion-care': addCompanionCare('paramus'),
+                'elder-care': addElderCareConsulting('paramus'),
+                staffing: addStaffingServices('paramus'),
+                'home-health-aides': addHomeHealthAides('paramus'),
+                nursing: addNursingServices('paramus')
             },
             rankingFactors: {
                 primaryKeywords: [
@@ -5533,58 +3561,11 @@ const bergenCountyData: CountyData = {
                             'Seamless coordination with private medical services and local emergency responders in Park Ridge.'
                     }
                 }),
-                'companion-care': {
-                    customH1: 'Compassionate Companion Care in Park Ridge',
-                    customTitle:
-                        'Companion Care Services in Park Ridge, NJ | 360 Degree Care',
-                    customMetaDescription:
-                        'Searching for companion care in Park Ridge? We provide emotional support, social engagement, and friendly companionship for seniors. Reduce isolation and improve quality of life.',
-                    localKeywords: [
-                        'companion care Park Ridge',
-                        'senior companionship Park Ridge',
-                        'elderly social support Park Ridge',
-                        'Park Ridge luxury companion'
-                    ],
-                    contentBlocks: {
-                        whyChooseUs:
-                            'Our companion care in Park Ridge offers discreet, respectful, and engaging companionship for seniors.',
-                        serviceHighlights: [
-                            'Culturally sensitive and engaging activities',
-                            'Personalized outings and social engagement',
-                            'Assistance with errands and appointments in Park Ridge'
-                        ],
-                        localExpertise:
-                            'Familiar with Park Ridge’s exclusive community and lifestyle, ensuring appropriate and considerate care.',
-                        emergencyInfo:
-                            'Dedicated support for peace of mind during all companion care activities in Park Ridge.'
-                    }
-                },
-                'elder-care': {
-                    customH1: 'Premium Elder Care Services in Park Ridge, NJ',
-                    customTitle:
-                        'Elder Care Park Ridge NJ | Exclusive Senior Home Care',
-                    customMetaDescription:
-                        'Discover premium elder care services in Park Ridge, NJ. 360 Degree Care offers tailored solutions, from personal care to skilled nursing, designed for discerning families.',
-                    localKeywords: [
-                        'elder care Park Ridge',
-                        'senior care Park Ridge NJ',
-                        'at-home care for elderly Park Ridge',
-                        'Park Ridge elite elder care'
-                    ],
-                    contentBlocks: {
-                        whyChooseUs:
-                            'Our elder care services in Park Ridge are characterized by exceptional quality, tailored to the unique needs of the community.',
-                        serviceHighlights: [
-                            'Comprehensive and personalized care plans',
-                            'Access to highly qualified and discreet caregivers',
-                            'Coordination with private healthcare networks'
-                        ],
-                        localExpertise:
-                            'Deep understanding of the specific requirements for high-end elder care in Park Ridge.',
-                        emergencyInfo:
-                            'Proactive emergency preparedness and immediate response, ensuring safety and security in Park Ridge.'
-                    }
-                }
+                'companion-care': addCompanionCare('park-ridge'),
+                'elder-care': addElderCareConsulting('park-ridge'),
+                staffing: addStaffingServices('park-ridge'),
+                'home-health-aides': addHomeHealthAides('park-ridge'),
+                nursing: addNursingServices('park-ridge')
             },
             rankingFactors: {
                 primaryKeywords: [
@@ -5660,58 +3641,11 @@ const bergenCountyData: CountyData = {
                             'Seamless coordination with private medical services and local emergency responders in Ramsey.'
                     }
                 }),
-                'companion-care': {
-                    customH1: 'Compassionate Companion Care in Ramsey',
-                    customTitle:
-                        'Companion Care Services in Ramsey, NJ | 360 Degree Care',
-                    customMetaDescription:
-                        'Searching for companion care in Ramsey? We provide emotional support, social engagement, and friendly companionship for seniors. Reduce isolation and improve quality of life.',
-                    localKeywords: [
-                        'companion care Ramsey',
-                        'senior companionship Ramsey',
-                        'elderly social support Ramsey',
-                        'Ramsey luxury companion'
-                    ],
-                    contentBlocks: {
-                        whyChooseUs:
-                            'Our companion care in Ramsey offers discreet, respectful, and engaging companionship for seniors.',
-                        serviceHighlights: [
-                            'Culturally sensitive and engaging activities',
-                            'Personalized outings and social engagement',
-                            'Assistance with errands and appointments in Ramsey'
-                        ],
-                        localExpertise:
-                            'Familiar with Ramsey’s exclusive community and lifestyle, ensuring appropriate and considerate care.',
-                        emergencyInfo:
-                            'Dedicated support for peace of mind during all companion care activities in Ramsey.'
-                    }
-                },
-                'elder-care': {
-                    customH1: 'Premium Elder Care Services in Ramsey, NJ',
-                    customTitle:
-                        'Elder Care Ramsey NJ | Exclusive Senior Home Care',
-                    customMetaDescription:
-                        'Discover premium elder care services in Ramsey, NJ. 360 Degree Care offers tailored solutions, from personal care to skilled nursing, designed for discerning families.',
-                    localKeywords: [
-                        'elder care Ramsey',
-                        'senior care Ramsey NJ',
-                        'at-home care for elderly Ramsey',
-                        'Ramsey elite elder care'
-                    ],
-                    contentBlocks: {
-                        whyChooseUs:
-                            'Our elder care services in Ramsey are characterized by exceptional quality, tailored to the unique needs of the community.',
-                        serviceHighlights: [
-                            'Comprehensive and personalized care plans',
-                            'Access to highly qualified and discreet caregivers',
-                            'Coordination with private healthcare networks'
-                        ],
-                        localExpertise:
-                            'Deep understanding of the specific requirements for high-end elder care in Ramsey.',
-                        emergencyInfo:
-                            'Proactive emergency preparedness and immediate response, ensuring safety and security in Ramsey.'
-                    }
-                }
+                'companion-care': addCompanionCare('ramsey'),
+                'elder-care': addElderCareConsulting('ramsey'),
+                staffing: addStaffingServices('ramsey'),
+                'home-health-aides': addHomeHealthAides('ramsey'),
+                nursing: addNursingServices('ramsey')
             },
             rankingFactors: {
                 primaryKeywords: [
@@ -5783,57 +3717,11 @@ const bergenCountyData: CountyData = {
                             'Immediate access to local medical centers and rapid connection to emergency services.'
                     }
                 }),
-                'companion-care': {
-                    customH1: 'Companion Care Services in Ridgefield',
-                    customTitle:
-                        'Companion Care Ridgefield NJ | Social Support & Friendship',
-                    customMetaDescription:
-                        'Companion care in Ridgefield, NJ. Social support for seniors in this vibrant, diverse community. Transportation, activities, friendship.',
-                    localKeywords: [
-                        'companion care Ridgefield',
-                        'senior companionship Ridgefield',
-                        'elderly social support Ridgefield'
-                    ],
-                    contentBlocks: {
-                        whyChooseUs:
-                            'We provide companionship that embraces Ridgefield’s rich cultural tapestry and dynamic community.',
-                        serviceHighlights: [
-                            'Engaging activities tailored to diverse cultural backgrounds',
-                            'Transportation for local appointments and errands',
-                            'Support for social outings and community events'
-                        ],
-                        localExpertise:
-                            'Familiar with Ridgefield activities, from local markets to community gatherings and parks.',
-                        emergencyInfo:
-                            '24/7 coordination for peace of mind, ensuring safety during outings in Ridgefield.'
-                    }
-                },
-                'elder-care': {
-                    customH1:
-                        'Comprehensive Elder Care Services in Ridgefield, NJ',
-                    customTitle:
-                        'Elder Care Ridgefield NJ | Senior Home Care Solutions',
-                    customMetaDescription:
-                        '360 Degree Care offers expert elder care services in Ridgefield, NJ. From personal assistance to skilled nursing, we create customized care plans for seniors.',
-                    localKeywords: [
-                        'elder care Ridgefield',
-                        'senior care Ridgefield NJ',
-                        'at-home care for elderly Ridgefield'
-                    ],
-                    contentBlocks: {
-                        whyChooseUs:
-                            'Our comprehensive elder care solutions in Ridgefield ensure seniors receive personalized attention and support, leveraging local resources.',
-                        serviceHighlights: [
-                            'Customized care plans for long-term well-being',
-                            'Coordination with local healthcare providers and specialists',
-                            'Family caregiver respite support'
-                        ],
-                        localExpertise:
-                            'Deep understanding of Ridgefield’s senior resources and community support networks, including medical facilities.',
-                        emergencyInfo:
-                            'Seamless integration with emergency services and local hospitals for immediate care.'
-                    }
-                }
+                'companion-care': addCompanionCare('fair-lawn'),
+                'elder-care': addElderCareConsulting('fair-lawn'),
+                staffing: addStaffingServices('fair-lawn'),
+                'home-health-aides': addHomeHealthAides('fair-lawn'),
+                nursing: addNursingServices('fair-lawn')
             },
             rankingFactors: {
                 primaryKeywords: [
@@ -5904,59 +3792,11 @@ const bergenCountyData: CountyData = {
                             '24/7 care coordination and prompt response with local Ridgefield Park emergency services.'
                     }
                 }),
-                'companion-care': {
-                    customH1: 'Compassionate Companion Care in Ridgefield Park',
-                    customTitle:
-                        'Companion Care Services in Ridgefield Park, NJ | 360 Degree Care',
-                    customMetaDescription:
-                        'Searching for companion care in Ridgefield Park? We provide emotional support, social engagement, and friendly companionship for seniors. Reduce isolation and improve quality of life.',
-                    localKeywords: [
-                        'companion care Ridgefield Park',
-                        'senior companionship Ridgefield Park',
-                        'elderly social support Ridgefield Park',
-                        'Ridgefield Park activities for seniors'
-                    ],
-                    contentBlocks: {
-                        whyChooseUs:
-                            'We offer engaging companion care in Ridgefield Park, promoting social interaction and mental well-being for seniors.',
-                        serviceHighlights: [
-                            'Stimulating conversations and shared interests',
-                            'Accompaniment to Overpeck County Park or local events',
-                            'Support for errands and light household tasks'
-                        ],
-                        localExpertise:
-                            'Knowledgeable about Ridgefield Park’s community activities and senior programs for enriching companionship.',
-                        emergencyInfo:
-                            'Reliable supervision and quick response during all social outings in Ridgefield Park.'
-                    }
-                },
-                'elder-care': {
-                    customH1:
-                        'Comprehensive Elder Care Services in Ridgefield Park, NJ',
-                    customTitle:
-                        'Elder Care Ridgefield Park NJ | Senior Home Care Solutions',
-                    customMetaDescription:
-                        '360 Degree Care offers expert elder care services in Ridgefield Park, NJ. From personal assistance to skilled nursing, we create customized care plans for seniors.',
-                    localKeywords: [
-                        'elder care Ridgefield Park',
-                        'senior care Ridgefield Park NJ',
-                        'at-home care for elderly Ridgefield Park',
-                        'Ridgefield Park senior support'
-                    ],
-                    contentBlocks: {
-                        whyChooseUs:
-                            'Our comprehensive elder care in Ridgefield Park provides families with peace of mind through dedicated and reliable support.',
-                        serviceHighlights: [
-                            'Individualized care plans adapting to evolving needs',
-                            'Coordination with local medical providers and specialists',
-                            'Family caregiver support and education'
-                        ],
-                        localExpertise:
-                            'Strong ties with Ridgefield Park’s healthcare network and senior resources for seamless integrated care.',
-                        emergencyInfo:
-                            'Proactive safety measures and immediate response for any health or safety concerns in Ridgefield Park.'
-                    }
-                }
+                'companion-care': addCompanionCare('ridgefield-park'),
+                'elder-care': addElderCareConsulting('ridgefield-park'),
+                staffing: addStaffingServices('ridgefield-park'),
+                'home-health-aides': addHomeHealthAides('ridgefield-park'),
+                nursing: addNursingServices('ridgefield-park')
             },
             rankingFactors: {
                 primaryKeywords: [
@@ -6027,57 +3867,11 @@ const bergenCountyData: CountyData = {
                             'Coordinated emergency response with Elmwood Park first responders and nearby medical facilities.'
                     }
                 }),
-                'companion-care': {
-                    customH1: 'Companion Care in Elmwood Park',
-                    customTitle:
-                        'Companion Care Elmwood Park NJ | Social Support',
-                    customMetaDescription:
-                        "Discover engaging companion care in Elmwood Park, NJ. Our caregivers provide friendly companionship and support for social activities to enhance seniors' lives.",
-                    localKeywords: [
-                        'companion care Elmwood Park',
-                        'senior activities Elmwood Park',
-                        'elderly companionship Elmwood Park'
-                    ],
-                    contentBlocks: {
-                        whyChooseUs:
-                            'Our caregivers offer meaningful companionship, helping Elmwood Park seniors stay active and socially connected.',
-                        serviceHighlights: [
-                            'Engaging conversations and shared interests',
-                            'Escorted outings to local parks and community events',
-                            'Assistance with errands and appointments'
-                        ],
-                        localExpertise:
-                            'Familiar with Elmwood Park’s community centers and local attractions for enriching outings.',
-                        emergencyInfo:
-                            'Immediate support and coordination with family for any unforeseen circumstances during companionship.'
-                    }
-                },
-                'elder-care': {
-                    customH1:
-                        'Comprehensive Elder Care Services in Elmwood Park',
-                    customTitle:
-                        'Elder Care Elmwood Park NJ | Senior Home Care',
-                    customMetaDescription:
-                        'Explore comprehensive elder care services in Elmwood Park, NJ. From personal assistance to specialized support, we offer tailored care plans for seniors.',
-                    localKeywords: [
-                        'elder care Elmwood Park',
-                        'senior care Elmwood Park NJ',
-                        'in-home elder support Elmwood Park'
-                    ],
-                    contentBlocks: {
-                        whyChooseUs:
-                            'Our holistic approach to elder care in Elmwood Park focuses on the overall well-being and independence of seniors.',
-                        serviceHighlights: [
-                            'Personalized care plans adapting to evolving needs',
-                            'Coordination with medical professionals and therapists',
-                            'Respite care for family caregivers'
-                        ],
-                        localExpertise:
-                            'Strong ties with Elmwood Park healthcare network and senior resources, ensuring integrated care.',
-                        emergencyInfo:
-                            'Proactive emergency planning and rapid response to ensure senior safety in Elmwood Park.'
-                    }
-                }
+                'companion-care': addCompanionCare('elmwood-park'),
+                'elder-care': addElderCareConsulting('elmwood-park'),
+                staffing: addStaffingServices('elmwood-park'),
+                'home-health-aides': addHomeHealthAides('elmwood-park'),
+                nursing: addNursingServices('elmwood-park')
             },
             rankingFactors: {
                 primaryKeywords: [
@@ -6139,71 +3933,11 @@ const bergenCountyData: CountyData = {
                     "Elder care services for Fairview's senior population, honoring their unique backgrounds and ensuring comprehensive support."
             },
             serviceSpecificSEO: {
-                'personal-care': addPersonalCare('fairview', {
-                    contentBlocks: {
-                        whyChooseUs:
-                            "Our multicultural team is adept at serving Fairview's diverse community with respectful and tailored personal care.",
-                        serviceHighlights: [
-                            'Multilingual caregivers for diverse families',
-                            'Familiar with local healthcare providers',
-                            'Understanding of local transportation and amenities'
-                        ],
-                        localExpertise:
-                            'We navigate Fairview from Anderson Avenue to its residential streets, providing care throughout the borough.',
-                        emergencyInfo:
-                            'Quick response within Fairview with connections to nearby medical facilities.'
-                    }
-                }),
-                'companion-care': {
-                    customH1: 'Companion Care in Fairview',
-                    customTitle:
-                        'Companion Care Fairview NJ | Social Support for Seniors',
-                    customMetaDescription:
-                        'Find compassionate companion care in Fairview, NJ. We offer social engagement, activities, and friendly companionship to enhance senior well-being.',
-                    localKeywords: [
-                        'companion care Fairview',
-                        'senior activities Fairview',
-                        'elderly companionship Fairview'
-                    ],
-                    contentBlocks: {
-                        whyChooseUs:
-                            'Our caregivers provide enriching companionship, supporting seniors in Fairview to stay active and connected within their community.',
-                        serviceHighlights: [
-                            'Engaging conversations and shared cultural activities',
-                            'Escorted outings to local parks and community events',
-                            'Support for social and recreational interests'
-                        ],
-                        localExpertise:
-                            'Familiar with Fairview’s community centers and local gathering spots for enriching outings.',
-                        emergencyInfo:
-                            'Immediate support and coordination with family for any unforeseen circumstances during companionship.'
-                    }
-                },
-                'elder-care': {
-                    customH1: 'Comprehensive Elder Care Services in Fairview',
-                    customTitle:
-                        'Elder Care Fairview NJ | Senior Home Care Solutions',
-                    customMetaDescription:
-                        'Explore comprehensive elder care services in Fairview, NJ. From personal assistance to specialized medical support, we offer tailored care plans for seniors.',
-                    localKeywords: [
-                        'elder care Fairview',
-                        'senior care Fairview NJ',
-                        'in-home elder support 07022'
-                    ],
-                    contentBlocks: {
-                        whyChooseUs:
-                            'Our holistic approach to elder care in Fairview prioritizes dignity, comfort, and cultural sensitivity for seniors.',
-                        serviceHighlights: [
-                            'Personalized care plans adapting to evolving needs',
-                            'Coordination with local medical professionals and therapists',
-                            'Family support and educational resources'
-                        ],
-                        localExpertise:
-                            'Strong ties with Fairview healthcare network and senior resources, ensuring integrated care.',
-                        emergencyInfo:
-                            'Proactive emergency planning and rapid response to ensure senior safety in Fairview.'
-                    }
-                }
+                'companion-care': addCompanionCare('fairview'),
+                'elder-care': addElderCareConsulting('fairview'),
+                staffing: addStaffingServices('fairview'),
+                'home-health-aides': addHomeHealthAides('fairview'),
+                nursing: addNursingServices('fairview')
             },
             rankingFactors: {
                 primaryKeywords: [
@@ -6274,56 +4008,11 @@ const bergenCountyData: CountyData = {
                             'Coordinated emergency response with Northvale first responders and nearby medical facilities.'
                     }
                 }),
-                'companion-care': {
-                    customH1: 'Companion Care in Northvale',
-                    customTitle:
-                        'Companion Care Northvale NJ | Social Support for Seniors',
-                    customMetaDescription:
-                        'Find compassionate companion care in Northvale, NJ. We offer social engagement, activities, and friendly companionship to enhance senior well-being.',
-                    localKeywords: [
-                        'companion care Northvale',
-                        'senior activities Northvale',
-                        'elderly companionship Northvale'
-                    ],
-                    contentBlocks: {
-                        whyChooseUs:
-                            'Our caregivers provide enriching companionship, supporting seniors in Northvale to stay active and connected.',
-                        serviceHighlights: [
-                            'Engaging conversations and shared hobbies',
-                            'Escorted outings to local parks and community events',
-                            'Support for cultural and social activities'
-                        ],
-                        localExpertise:
-                            'Familiar with Northvale’s quiet community and local attractions for enriching outings.',
-                        emergencyInfo:
-                            'Immediate support and coordination with family for any unforeseen circumstances during companionship.'
-                    }
-                },
-                'elder-care': {
-                    customH1: 'Comprehensive Elder Care Services in Northvale',
-                    customTitle:
-                        'Elder Care Northvale NJ | Senior Home Care Solutions',
-                    customMetaDescription:
-                        'Explore comprehensive elder care services in Northvale, NJ. From personal assistance to specialized medical support, we offer tailored care plans for seniors.',
-                    localKeywords: [
-                        'elder care Northvale',
-                        'senior care Northvale NJ',
-                        'in-home elder support 07647'
-                    ],
-                    contentBlocks: {
-                        whyChooseUs:
-                            'Our holistic approach to elder care in Northvale focuses on dignity, comfort, and comprehensive well-being in a peaceful setting.',
-                        serviceHighlights: [
-                            'Personalized care plans adapting to evolving needs',
-                            'Coordination with medical professionals and therapists',
-                            'Family support and education services'
-                        ],
-                        localExpertise:
-                            'Strong ties with Northvale healthcare network and senior resources, ensuring integrated care.',
-                        emergencyInfo:
-                            'Proactive emergency planning and rapid response to ensure senior safety in Northvale.'
-                    }
-                }
+                'companion-care': addCompanionCare('norwood'),
+                'elder-care': addElderCareConsulting('norwood'),
+                staffing: addStaffingServices('norwood'),
+                'home-health-aides': addHomeHealthAides('norwood'),
+                nursing: addNursingServices('norwood')
             },
             rankingFactors: {
                 primaryKeywords: [
@@ -6394,7 +4083,7 @@ const bergenCountyData: CountyData = {
                             'Coordinated emergency response with River Edge first responders and nearby medical facilities.'
                     }
                 }),
-                'companion-care': {
+                'companion-care': addCompanionCare('river-edge', {
                     customH1: 'Companion Care in River Edge',
                     customTitle:
                         'Companion Care River Edge NJ | Social Support for Seniors',
@@ -6418,8 +4107,8 @@ const bergenCountyData: CountyData = {
                         emergencyInfo:
                             'Immediate support and coordination with family for any unforeseen circumstances during companionship.'
                     }
-                },
-                'elder-care': {
+                }),
+                'elder-care': addElderCareConsulting('river-edge', {
                     customH1: 'Comprehensive Elder Care Services in River Edge',
                     customTitle:
                         'Elder Care River Edge NJ | Senior Home Care Solutions',
@@ -6443,7 +4132,40 @@ const bergenCountyData: CountyData = {
                         emergencyInfo:
                             'Proactive emergency planning and rapid response to ensure senior safety in River Edge.'
                     }
-                }
+                }),
+                'home-health-aides': addHomeHealthAides('river-edge', {
+                    contentBlocks: {
+                        whyChooseUs:
+                            'Our certified home health aides in River Edge provide professional medical support and personal care with dignity and respect.',
+                        serviceHighlights: [
+                            'Certified and trained home health professionals',
+                            'Assistance with activities of daily living',
+                            'Medication management and health monitoring',
+                            'Coordination with healthcare providers'
+                        ],
+                        localExpertise:
+                            "Experienced with River Edge's healthcare facilities and local medical resources for comprehensive care coordination.",
+                        emergencyInfo:
+                            'Immediate access to emergency protocols and coordination with River Edge medical facilities.'
+                    }
+                }),
+                nursing: addNursingServices('river-edge', {
+                    contentBlocks: {
+                        whyChooseUs:
+                            'Professional nursing services in River Edge delivered by licensed RNs and LPNs for complex medical care at home.',
+                        serviceHighlights: [
+                            'Skilled wound care and medical monitoring',
+                            'Medication administration and IV therapy',
+                            'Post-surgical and chronic condition management',
+                            'Coordination with physicians and specialists'
+                        ],
+                        localExpertise:
+                            'Strong partnerships with River Edge medical providers and hospitals for seamless nursing care transitions.',
+                        emergencyInfo:
+                            '24/7 on-call nursing support and immediate response for medical emergencies in River Edge.'
+                    }
+                }),
+                staffing: addStaffingServices('river-edge')
             },
             rankingFactors: {
                 primaryKeywords: [
@@ -6514,56 +4236,41 @@ const bergenCountyData: CountyData = {
                             'Coordinated emergency response with River Vale first responders and nearby medical facilities.'
                     }
                 }),
-                'companion-care': {
-                    customH1: 'Companion Care in River Vale',
-                    customTitle:
-                        'Companion Care River Vale NJ | Social Support for Seniors',
-                    customMetaDescription:
-                        'Find compassionate companion care in River Vale, NJ. We offer social engagement, activities, and friendly companionship to enhance senior well-being.',
-                    localKeywords: [
-                        'companion care River Vale',
-                        'senior activities River Vale',
-                        'elderly companionship River Vale'
-                    ],
+                'companion-care': addCompanionCare('river-vale'),
+                'elder-care': addElderCareConsulting('river-vale'),
+                staffing: addStaffingServices('river-vale'),
+                'home-health-aides': addHomeHealthAides('river-vale', {
                     contentBlocks: {
                         whyChooseUs:
-                            'Our caregivers provide enriching companionship, supporting seniors in River Vale to stay active and connected.',
+                            'Our certified home health aides in River Vale provide professional medical support and personal care with dignity and respect.',
                         serviceHighlights: [
-                            'Engaging conversations and shared hobbies',
-                            'Escorted outings to local parks and community events',
-                            'Support for cultural and social activities'
+                            'Certified and trained home health professionals',
+                            'Assistance with activities of daily living',
+                            'Medication management and health monitoring',
+                            'Coordination with healthcare providers'
                         ],
                         localExpertise:
-                            'Familiar with River Vale’s beautiful surroundings and local attractions like the golf courses for enriching outings.',
+                            "Experienced with River Vale's healthcare facilities and local medical resources for comprehensive care coordination.",
                         emergencyInfo:
-                            'Immediate support and coordination with family for any unforeseen circumstances during companionship.'
+                            'Immediate access to emergency protocols and coordination with River Vale medical facilities.'
                     }
-                },
-                'elder-care': {
-                    customH1: 'Comprehensive Elder Care Services in River Vale',
-                    customTitle:
-                        'Elder Care River Vale NJ | Senior Home Care Solutions',
-                    customMetaDescription:
-                        'Explore comprehensive elder care services in River Vale, NJ. From personal assistance to specialized medical support, we offer tailored care plans for seniors.',
-                    localKeywords: [
-                        'elder care River Vale',
-                        'senior care River Vale NJ',
-                        'in-home elder support 07675'
-                    ],
+                }),
+                nursing: addNursingServices('river-vale', {
                     contentBlocks: {
                         whyChooseUs:
-                            'Our holistic approach to elder care in River Vale focuses on dignity, comfort, and comprehensive well-being in a peaceful setting.',
+                            'Professional nursing services in River Vale delivered by licensed RNs and LPNs for complex medical care at home.',
                         serviceHighlights: [
-                            'Personalized care plans adapting to evolving needs',
-                            'Coordination with medical professionals and therapists',
-                            'Family support and education services'
+                            'Skilled wound care and medical monitoring',
+                            'Medication administration and IV therapy',
+                            'Post-surgical and chronic condition management',
+                            'Coordination with physicians and specialists'
                         ],
                         localExpertise:
-                            'Strong ties with River Vale healthcare network and senior resources, ensuring integrated care.',
+                            'Strong partnerships with River Vale medical providers and hospitals for seamless nursing care transitions.',
                         emergencyInfo:
-                            'Proactive emergency planning and rapid response to ensure senior safety in River Vale.'
+                            '24/7 on-call nursing support and immediate response for medical emergencies in River Vale.'
                     }
-                }
+                })
             },
             rankingFactors: {
                 primaryKeywords: [
@@ -6634,57 +4341,41 @@ const bergenCountyData: CountyData = {
                             'Coordinated emergency response with Rochelle Park first responders and nearby medical facilities.'
                     }
                 }),
-                'companion-care': {
-                    customH1: 'Companion Care in Rochelle Park',
-                    customTitle:
-                        'Companion Care Rochelle Park NJ | Social Support for Seniors',
-                    customMetaDescription:
-                        'Find compassionate companion care in Rochelle Park, NJ. We offer social engagement, activities, and friendly companionship to enhance senior well-being.',
-                    localKeywords: [
-                        'companion care Rochelle Park',
-                        'senior activities Rochelle Park',
-                        'elderly companionship Rochelle Park'
-                    ],
+                'companion-care': addCompanionCare('rochelle-park'),
+                'elder-care': addElderCareConsulting('rochelle-park'),
+                staffing: addStaffingServices('rochelle-park'),
+                'home-health-aides': addHomeHealthAides('rochelle-park', {
                     contentBlocks: {
                         whyChooseUs:
-                            'Our caregivers provide enriching companionship, supporting seniors in Rochelle Park to stay active and socially connected.',
+                            'Our certified home health aides in Rochelle Park provide professional medical support and personal care with dignity and respect.',
                         serviceHighlights: [
-                            'Engaging conversations and shared hobbies',
-                            'Escorted outings to nearby shopping centers and parks',
-                            'Support for social and recreational activities'
+                            'Certified and trained home health professionals',
+                            'Assistance with activities of daily living',
+                            'Medication management and health monitoring',
+                            'Coordination with healthcare providers'
                         ],
                         localExpertise:
-                            'Familiar with Rochelle Park’s community and its convenient location for local errands and outings.',
+                            "Experienced with Rochelle Park's healthcare facilities and local medical resources for comprehensive care coordination.",
                         emergencyInfo:
-                            'Immediate support and coordination with family for any unforeseen circumstances during companionship.'
+                            'Immediate access to emergency protocols and coordination with Rochelle Park medical facilities.'
                     }
-                },
-                'elder-care': {
-                    customH1:
-                        'Comprehensive Elder Care Services in Rochelle Park',
-                    customTitle:
-                        'Elder Care Rochelle Park NJ | Senior Home Care Solutions',
-                    customMetaDescription:
-                        'Explore comprehensive elder care services in Rochelle Park, NJ. From personal assistance to specialized medical support, we offer tailored care plans for seniors.',
-                    localKeywords: [
-                        'elder care Rochelle Park',
-                        'senior care Rochelle Park NJ',
-                        'in-home elder support 07662'
-                    ],
+                }),
+                nursing: addNursingServices('rochelle-park', {
                     contentBlocks: {
                         whyChooseUs:
-                            'Our holistic approach to elder care in Rochelle Park focuses on dignity, comfort, and comprehensive well-being.',
+                            'Professional nursing services in Rochelle Park delivered by licensed RNs and LPNs for complex medical care at home.',
                         serviceHighlights: [
-                            'Personalized care plans adapting to evolving needs',
-                            'Coordination with medical professionals and therapists',
-                            'Family support and education services'
+                            'Skilled wound care and medical monitoring',
+                            'Medication administration and IV therapy',
+                            'Post-surgical and chronic condition management',
+                            'Coordination with physicians and specialists'
                         ],
                         localExpertise:
-                            'Strong ties with Rochelle Park healthcare network and senior resources, ensuring integrated care.',
+                            'Strong partnerships with Rochelle Park medical providers and hospitals for seamless nursing care transitions.',
                         emergencyInfo:
-                            'Proactive emergency planning and rapid response to ensure senior safety in Rochelle Park.'
+                            '24/7 on-call nursing support and immediate response for medical emergencies in Rochelle Park.'
                     }
-                }
+                })
             },
             rankingFactors: {
                 primaryKeywords: [
@@ -6755,56 +4446,41 @@ const bergenCountyData: CountyData = {
                             'Coordinated emergency response with Rockleigh first responders and nearby medical facilities.'
                     }
                 }),
-                'companion-care': {
-                    customH1: 'Companion Care in Rockleigh',
-                    customTitle:
-                        'Companion Care Rockleigh NJ | Personalized Social Support',
-                    customMetaDescription:
-                        'Find compassionate companion care in Rockleigh, NJ. We offer personalized social engagement, activities, and friendly companionship to enhance senior well-being.',
-                    localKeywords: [
-                        'companion care Rockleigh',
-                        'senior activities Rockleigh',
-                        'elderly companionship Rockleigh'
-                    ],
+                'companion-care': addCompanionCare('rockleigh'),
+                'elder-care': addElderCareConsulting('rockleigh'),
+                staffing: addStaffingServices('rockleigh'),
+                'home-health-aides': addHomeHealthAides('rockleigh', {
                     contentBlocks: {
                         whyChooseUs:
-                            'Our caregivers provide enriching and personalized companionship, supporting seniors in Rockleigh to stay active and connected.',
+                            'Our certified home health aides in Rockleigh provide professional medical support and personal care with dignity and respect.',
                         serviceHighlights: [
-                            'Engaging conversations and shared sophisticated interests',
-                            'Escorted outings to local cultural events or private clubs',
-                            'Support for social and recreational activities tailored to individual preferences'
+                            'Certified and trained home health professionals',
+                            'Assistance with activities of daily living',
+                            'Medication management and health monitoring',
+                            'Coordination with healthcare providers'
                         ],
                         localExpertise:
-                            'Familiar with Rockleigh’s serene environment and local attractions for enriching outings.',
+                            "Experienced with Rockleigh's healthcare facilities and local medical resources for comprehensive care coordination.",
                         emergencyInfo:
-                            'Immediate support and coordination with family for any unforeseen circumstances during companionship.'
+                            'Immediate access to emergency protocols and coordination with Rockleigh medical facilities.'
                     }
-                },
-                'elder-care': {
-                    customH1: 'Comprehensive Elder Care Services in Rockleigh',
-                    customTitle:
-                        'Elder Care Rockleigh NJ | Premium Senior Home Care Solutions',
-                    customMetaDescription:
-                        'Explore comprehensive elder care services in Rockleigh, NJ. From personal assistance to specialized medical support, we offer tailored care plans for seniors.',
-                    localKeywords: [
-                        'elder care Rockleigh',
-                        'senior care Rockleigh NJ',
-                        'in-home elder support 07647'
-                    ],
+                }),
+                nursing: addNursingServices('rockleigh', {
                     contentBlocks: {
                         whyChooseUs:
-                            'Our holistic approach to elder care in Rockleigh focuses on dignity, comfort, and comprehensive well-being in an exclusive setting.',
+                            'Professional nursing services in Rockleigh delivered by licensed RNs and LPNs for complex medical care at home.',
                         serviceHighlights: [
-                            'Personalized care plans adapting to evolving needs with discretion',
-                            'Coordination with private medical professionals and therapists',
-                            'Family support and education services'
+                            'Skilled wound care and medical monitoring',
+                            'Medication administration and IV therapy',
+                            'Post-surgical and chronic condition management',
+                            'Coordination with physicians and specialists'
                         ],
                         localExpertise:
-                            'Strong ties with Rockleigh healthcare network and senior resources, ensuring integrated care.',
+                            'Strong partnerships with Rockleigh medical providers and hospitals for seamless nursing care transitions.',
                         emergencyInfo:
-                            'Proactive emergency planning and rapid response to ensure senior safety in Rockleigh.'
+                            '24/7 on-call nursing support and immediate response for medical emergencies in Rockleigh.'
                     }
-                }
+                })
             },
             rankingFactors: {
                 primaryKeywords: [
@@ -6880,56 +4556,41 @@ const bergenCountyData: CountyData = {
                             'Coordinated emergency response with Rutherford first responders and nearby medical facilities.'
                     }
                 }),
-                'companion-care': {
-                    customH1: 'Companion Care in Rutherford',
-                    customTitle:
-                        'Companion Care Rutherford NJ | Social Support for Seniors',
-                    customMetaDescription:
-                        'Find compassionate companion care in Rutherford, NJ. We offer social engagement, activities, and friendly companionship to enhance senior well-being.',
-                    localKeywords: [
-                        'companion care Rutherford',
-                        'senior activities Rutherford',
-                        'elderly companionship Rutherford'
-                    ],
+                'companion-care': addCompanionCare('rutherford'),
+                'elder-care': addElderCareConsulting('rutherford'),
+                staffing: addStaffingServices('rutherford'),
+                'home-health-aides': addHomeHealthAides('rutherford', {
                     contentBlocks: {
                         whyChooseUs:
-                            'Our caregivers provide enriching companionship, supporting seniors in Rutherford to stay active and socially connected within their lively community.',
+                            'Our certified home health aides in Rutherford provide professional medical support and personal care with dignity and respect.',
                         serviceHighlights: [
-                            'Engaging conversations and shared interests',
-                            'Escorted outings to downtown Rutherford and local parks',
-                            'Support for cultural and social activities'
+                            'Certified and trained home health professionals',
+                            'Assistance with activities of daily living',
+                            'Medication management and health monitoring',
+                            'Coordination with healthcare providers'
                         ],
                         localExpertise:
-                            'Familiar with Rutherford’s walkable downtown and local attractions for enriching outings.',
+                            "Experienced with Rutherford's healthcare facilities and local medical resources for comprehensive care coordination.",
                         emergencyInfo:
-                            'Immediate support and coordination with family for any unforeseen circumstances during companionship.'
+                            'Immediate access to emergency protocols and coordination with Rutherford medical facilities.'
                     }
-                },
-                'elder-care': {
-                    customH1: 'Comprehensive Elder Care Services in Rutherford',
-                    customTitle:
-                        'Elder Care Rutherford NJ | Senior Home Care Solutions',
-                    customMetaDescription:
-                        'Explore comprehensive elder care services in Rutherford, NJ. From personal assistance to specialized medical support, we offer tailored care plans for seniors.',
-                    localKeywords: [
-                        'elder care Rutherford',
-                        'senior care Rutherford NJ',
-                        'in-home elder support 07070'
-                    ],
+                }),
+                nursing: addNursingServices('rutherford', {
                     contentBlocks: {
                         whyChooseUs:
-                            'Our holistic approach to elder care in Rutherford focuses on dignity, comfort, and comprehensive well-being in this historic town.',
+                            'Professional nursing services in Rutherford delivered by licensed RNs and LPNs for complex medical care at home.',
                         serviceHighlights: [
-                            'Personalized care plans adapting to evolving needs',
-                            'Coordination with medical professionals and therapists',
-                            'Family support and education services'
+                            'Skilled wound care and medical monitoring',
+                            'Medication administration and IV therapy',
+                            'Post-surgical and chronic condition management',
+                            'Coordination with physicians and specialists'
                         ],
                         localExpertise:
-                            'Strong ties with Rutherford healthcare network and senior resources, ensuring integrated care.',
+                            'Strong partnerships with Rutherford medical providers and hospitals for seamless nursing care transitions.',
                         emergencyInfo:
-                            'Proactive emergency planning and rapid response to ensure senior safety in Rutherford.'
+                            '24/7 on-call nursing support and immediate response for medical emergencies in Rutherford.'
                     }
-                }
+                })
             },
             rankingFactors: {
                 primaryKeywords: [
@@ -7000,57 +4661,41 @@ const bergenCountyData: CountyData = {
                             'Coordinated emergency response with Saddle Brook first responders and nearby medical facilities.'
                     }
                 }),
-                'companion-care': {
-                    customH1: 'Companion Care in Saddle Brook',
-                    customTitle:
-                        'Companion Care Saddle Brook NJ | Social Support for Seniors',
-                    customMetaDescription:
-                        'Find compassionate companion care in Saddle Brook, NJ. We offer social engagement, activities, and friendly companionship to enhance senior well-being.',
-                    localKeywords: [
-                        'companion care Saddle Brook',
-                        'senior activities Saddle Brook',
-                        'elderly companionship Saddle Brook'
-                    ],
+                'companion-care': addCompanionCare('saddle-brook'),
+                'elder-care': addElderCareConsulting('saddle-brook'),
+                staffing: addStaffingServices('saddle-brook'),
+                'home-health-aides': addHomeHealthAides('saddle-brook', {
                     contentBlocks: {
                         whyChooseUs:
-                            'Our caregivers provide enriching companionship, supporting seniors in Saddle Brook to stay active and socially connected.',
+                            'Our certified home health aides in Saddle Brook provide professional medical support and personal care with dignity and respect.',
                         serviceHighlights: [
-                            'Engaging conversations and shared hobbies',
-                            'Escorted outings to nearby shopping centers and parks',
-                            'Support for social and recreational activities'
+                            'Certified and trained home health professionals',
+                            'Assistance with activities of daily living',
+                            'Medication management and health monitoring',
+                            'Coordination with healthcare providers'
                         ],
                         localExpertise:
-                            'Familiar with Saddle Brook’s community and its convenient location for local errands and outings.',
+                            "Experienced with Saddle Brook's healthcare facilities and local medical resources for comprehensive care coordination.",
                         emergencyInfo:
-                            'Immediate support and coordination with family for any unforeseen circumstances during companionship.'
+                            'Immediate access to emergency protocols and coordination with Saddle Brook medical facilities.'
                     }
-                },
-                'elder-care': {
-                    customH1:
-                        'Comprehensive Elder Care Services in Saddle Brook',
-                    customTitle:
-                        'Elder Care Saddle Brook NJ | Senior Home Care Solutions',
-                    customMetaDescription:
-                        'Explore comprehensive elder care services in Saddle Brook, NJ. From personal assistance to specialized medical support, we offer tailored care plans for seniors.',
-                    localKeywords: [
-                        'elder care Saddle Brook',
-                        'senior care Saddle Brook NJ',
-                        'in-home elder support 07663'
-                    ],
+                }),
+                nursing: addNursingServices('saddle-brook', {
                     contentBlocks: {
                         whyChooseUs:
-                            'Our holistic approach to elder care in Saddle Brook focuses on dignity, comfort, and comprehensive well-being.',
+                            'Professional nursing services in Saddle Brook delivered by licensed RNs and LPNs for complex medical care at home.',
                         serviceHighlights: [
-                            'Personalized care plans adapting to evolving needs',
-                            'Coordination with medical professionals and therapists',
-                            'Family support and education services'
+                            'Skilled wound care and medical monitoring',
+                            'Medication administration and IV therapy',
+                            'Post-surgical and chronic condition management',
+                            'Coordination with physicians and specialists'
                         ],
                         localExpertise:
-                            'Strong ties with Saddle Brook healthcare network and senior resources, ensuring integrated care.',
+                            'Strong partnerships with Saddle Brook medical providers and hospitals for seamless nursing care transitions.',
                         emergencyInfo:
-                            'Proactive emergency planning and rapid response to ensure senior safety in Saddle Brook.'
+                            '24/7 on-call nursing support and immediate response for medical emergencies in Saddle Brook.'
                     }
-                }
+                })
             },
             rankingFactors: {
                 primaryKeywords: [
@@ -7126,57 +4771,41 @@ const bergenCountyData: CountyData = {
                             'Coordinated emergency response with Saddle River first responders and nearby medical facilities.'
                     }
                 }),
-                'companion-care': {
-                    customH1: 'Companion Care in Saddle River',
-                    customTitle:
-                        'Companion Care Saddle River NJ | Personalized Social Support',
-                    customMetaDescription:
-                        'Find compassionate companion care in Saddle River, NJ. We offer personalized social engagement, activities, and friendly companionship to enhance senior well-being.',
-                    localKeywords: [
-                        'companion care Saddle River',
-                        'senior activities Saddle River',
-                        'elderly companionship Saddle River'
-                    ],
+                'companion-care': addCompanionCare('saddle-river'),
+                'elder-care': addElderCareConsulting('saddle-river'),
+                staffing: addStaffingServices('saddle-river'),
+                'home-health-aides': addHomeHealthAides('saddle-river', {
                     contentBlocks: {
                         whyChooseUs:
-                            'Our caregivers provide enriching and personalized companionship, supporting seniors in Saddle River to stay active and connected.',
+                            'Our certified home health aides in Saddle River provide professional medical support and personal care with dignity and respect.',
                         serviceHighlights: [
-                            'Engaging conversations and shared sophisticated interests',
-                            'Escorted outings to local cultural events or private clubs',
-                            'Support for social and recreational activities tailored to individual preferences'
+                            'Certified and trained home health professionals',
+                            'Assistance with activities of daily living',
+                            'Medication management and health monitoring',
+                            'Coordination with healthcare providers'
                         ],
                         localExpertise:
-                            'Familiar with Saddle River’s serene environment and local attractions for enriching outings.',
+                            "Experienced with Saddle River's healthcare facilities and local medical resources for comprehensive care coordination.",
                         emergencyInfo:
-                            'Immediate support and coordination with family for any unforeseen circumstances during companionship.'
+                            'Immediate access to emergency protocols and coordination with Saddle River medical facilities.'
                     }
-                },
-                'elder-care': {
-                    customH1:
-                        'Comprehensive Elder Care Services in Saddle River',
-                    customTitle:
-                        'Elder Care Saddle River NJ | Premium Senior Home Care Solutions',
-                    customMetaDescription:
-                        'Explore comprehensive elder care services in Saddle River, NJ. From personal assistance to specialized medical support, we offer tailored care plans for seniors.',
-                    localKeywords: [
-                        'elder care Saddle River',
-                        'senior care Saddle River NJ',
-                        'in-home elder support 07458'
-                    ],
+                }),
+                nursing: addNursingServices('saddle-river', {
                     contentBlocks: {
                         whyChooseUs:
-                            'Our holistic approach to elder care in Saddle River focuses on dignity, comfort, and comprehensive well-being in an exclusive setting.',
+                            'Professional nursing services in Saddle River delivered by licensed RNs and LPNs for complex medical care at home.',
                         serviceHighlights: [
-                            'Personalized care plans adapting to evolving needs with discretion',
-                            'Coordination with private medical professionals and therapists',
-                            'Family support and education services'
+                            'Skilled wound care and medical monitoring',
+                            'Medication administration and IV therapy',
+                            'Post-surgical and chronic condition management',
+                            'Coordination with physicians and specialists'
                         ],
                         localExpertise:
-                            'Strong ties with Saddle River healthcare network and senior resources, ensuring integrated care.',
+                            'Strong partnerships with Saddle River medical providers and hospitals for seamless nursing care transitions.',
                         emergencyInfo:
-                            'Proactive emergency planning and rapid response to ensure senior safety in Saddle River.'
+                            '24/7 on-call nursing support and immediate response for medical emergencies in Saddle River.'
                     }
-                }
+                })
             },
             rankingFactors: {
                 primaryKeywords: [
@@ -7247,57 +4876,41 @@ const bergenCountyData: CountyData = {
                             'Coordinated emergency response with South Hackensack first responders and nearby medical facilities.'
                     }
                 }),
-                'companion-care': {
-                    customH1: 'Companion Care in South Hackensack',
-                    customTitle:
-                        'Companion Care South Hackensack NJ | Social Support for Seniors',
-                    customMetaDescription:
-                        'Find compassionate companion care in South Hackensack, NJ. We offer social engagement, activities, and friendly companionship to enhance senior well-being.',
-                    localKeywords: [
-                        'companion care South Hackensack',
-                        'senior activities South Hackensack',
-                        'elderly companionship South Hackensack'
-                    ],
+                'companion-care': addCompanionCare('south-hackensack'),
+                'elder-care': addElderCareConsulting('south-hackensack'),
+                staffing: addStaffingServices('south-hackensack'),
+                'home-health-aides': addHomeHealthAides('south-hackensack', {
                     contentBlocks: {
                         whyChooseUs:
-                            'Our caregivers provide enriching companionship, supporting seniors in South Hackensack to stay active and socially connected.',
+                            'Our certified home health aides in South Hackensack provide professional medical support and personal care with dignity and respect.',
                         serviceHighlights: [
-                            'Engaging conversations and shared hobbies',
-                            'Escorted outings to nearby shopping centers or parks',
-                            'Support for social and recreational activities'
+                            'Certified and trained home health professionals',
+                            'Assistance with activities of daily living',
+                            'Medication management and health monitoring',
+                            'Coordination with healthcare providers'
                         ],
                         localExpertise:
-                            'Familiar with South Hackensack’s community and its convenient location for local errands and outings.',
+                            "Experienced with South Hackensack's healthcare facilities and local medical resources for comprehensive care coordination.",
                         emergencyInfo:
-                            'Immediate support and coordination with family for any unforeseen circumstances during companionship.'
+                            'Immediate access to emergency protocols and coordination with South Hackensack medical facilities.'
                     }
-                },
-                'elder-care': {
-                    customH1:
-                        'Comprehensive Elder Care Services in South Hackensack',
-                    customTitle:
-                        'Elder Care South Hackensack NJ | Senior Home Care Solutions',
-                    customMetaDescription:
-                        'Explore comprehensive elder care services in South Hackensack, NJ. From personal assistance to specialized medical support, we offer tailored care plans for seniors.',
-                    localKeywords: [
-                        'elder care South Hackensack',
-                        'senior care South Hackensack NJ',
-                        'in-home elder support 07606'
-                    ],
+                }),
+                nursing: addNursingServices('south-hackensack', {
                     contentBlocks: {
                         whyChooseUs:
-                            'Our holistic approach to elder care in South Hackensack focuses on dignity, comfort, and comprehensive well-being.',
+                            'Professional nursing services in South Hackensack delivered by licensed RNs and LPNs for complex medical care at home.',
                         serviceHighlights: [
-                            'Personalized care plans adapting to evolving needs',
-                            'Coordination with medical professionals and therapists',
-                            'Family support and education services'
+                            'Skilled wound care and medical monitoring',
+                            'Medication administration and IV therapy',
+                            'Post-surgical and chronic condition management',
+                            'Coordination with physicians and specialists'
                         ],
                         localExpertise:
-                            'Strong ties with South Hackensack healthcare network and senior resources, ensuring integrated care.',
+                            'Strong partnerships with South Hackensack medical providers and hospitals for seamless nursing care transitions.',
                         emergencyInfo:
-                            'Proactive emergency planning and rapid response to ensure senior safety in South Hackensack.'
+                            '24/7 on-call nursing support and immediate response for medical emergencies in South Hackensack.'
                     }
-                }
+                })
             },
             rankingFactors: {
                 primaryKeywords: [
@@ -7373,56 +4986,41 @@ const bergenCountyData: CountyData = {
                             'Quick response within Teaneck with connections to nearby medical facilities.'
                     }
                 }),
-                'companion-care': {
-                    customH1: 'Companion Care in Teaneck',
-                    customTitle:
-                        'Companion Care Teaneck NJ | Social Support for Seniors',
-                    customMetaDescription:
-                        'Find compassionate companion care in Teaneck, NJ. We offer social engagement, activities, and friendly companionship to enhance senior well-being.',
-                    localKeywords: [
-                        'companion care Teaneck',
-                        'senior activities Teaneck',
-                        'elderly companionship Teaneck'
-                    ],
+                'companion-care': addCompanionCare('teaneck'),
+                'elder-care': addElderCareConsulting('teaneck'),
+                staffing: addStaffingServices('teaneck'),
+                'home-health-aides': addHomeHealthAides('teaneck', {
                     contentBlocks: {
                         whyChooseUs:
-                            'Our caregivers provide enriching companionship, supporting seniors in Teaneck to stay active and socially connected within their lively community.',
+                            'Our certified home health aides in Teaneck provide professional medical support and personal care with dignity and respect.',
                         serviceHighlights: [
-                            'Engaging conversations and shared interests',
-                            'Escorted outings to local parks and community events',
-                            'Support for cultural and social activities'
+                            'Certified and trained home health professionals',
+                            'Assistance with activities of daily living',
+                            'Medication management and health monitoring',
+                            'Coordination with healthcare providers'
                         ],
                         localExpertise:
-                            'Familiar with Teaneck’s community centers, parks like Votee Park, and local attractions for enriching outings.',
+                            "Experienced with Teaneck's healthcare facilities and local medical resources for comprehensive care coordination.",
                         emergencyInfo:
-                            'Immediate support and coordination with family for any unforeseen circumstances during companionship.'
+                            'Immediate access to emergency protocols and coordination with Teaneck medical facilities.'
                     }
-                },
-                'elder-care': {
-                    customH1: 'Comprehensive Elder Care Services in Teaneck',
-                    customTitle:
-                        'Elder Care Teaneck NJ | Senior Home Care Solutions',
-                    customMetaDescription:
-                        'Explore comprehensive elder care services in Teaneck, NJ. From personal assistance to specialized medical support, we offer tailored care plans for seniors.',
-                    localKeywords: [
-                        'elder care Teaneck',
-                        'senior care Teaneck NJ',
-                        'in-home elder support 07666'
-                    ],
+                }),
+                nursing: addNursingServices('teaneck', {
                     contentBlocks: {
                         whyChooseUs:
-                            'Our holistic approach to elder care in Teaneck prioritizes dignity, comfort, and cultural sensitivity for seniors.',
+                            'Professional nursing services in Teaneck delivered by licensed RNs and LPNs for complex medical care at home.',
                         serviceHighlights: [
-                            'Personalized care plans adapting to evolving needs',
-                            'Coordination with local medical professionals and therapists',
-                            'Family support and educational resources'
+                            'Skilled wound care and medical monitoring',
+                            'Medication administration and IV therapy',
+                            'Post-surgical and chronic condition management',
+                            'Coordination with physicians and specialists'
                         ],
                         localExpertise:
-                            'Strong ties with Teaneck healthcare network and senior resources, ensuring integrated care.',
+                            'Strong partnerships with Teaneck medical providers and hospitals for seamless nursing care transitions.',
                         emergencyInfo:
-                            'Proactive emergency planning and rapid response to ensure senior safety in Teaneck.'
+                            '24/7 on-call nursing support and immediate response for medical emergencies in Teaneck.'
                     }
-                }
+                })
             },
             rankingFactors: {
                 primaryKeywords: [
@@ -7493,56 +5091,11 @@ const bergenCountyData: CountyData = {
                             'Coordinated emergency response with Tenafly first responders and nearby medical facilities.'
                     }
                 }),
-                'companion-care': {
-                    customH1: 'Companion Care in Tenafly',
-                    customTitle:
-                        'Companion Care Tenafly NJ | Social Support for Seniors',
-                    customMetaDescription:
-                        'Find compassionate companion care in Tenafly, NJ. We offer social engagement, activities, and friendly companionship to enhance senior well-being.',
-                    localKeywords: [
-                        'companion care Tenafly',
-                        'senior activities Tenafly',
-                        'elderly companionship Tenafly'
-                    ],
-                    contentBlocks: {
-                        whyChooseUs:
-                            'Our caregivers provide enriching companionship, supporting seniors in Tenafly to stay active and connected.',
-                        serviceHighlights: [
-                            'Engaging conversations and shared hobbies',
-                            'Escorted outings to local parks and community events like Tenafly Nature Center',
-                            'Support for cultural and social activities'
-                        ],
-                        localExpertise:
-                            'Familiar with Tenafly’s beautiful surroundings and local attractions for enriching outings.',
-                        emergencyInfo:
-                            'Immediate support and coordination with family for any unforeseen circumstances during companionship.'
-                    }
-                },
-                'elder-care': {
-                    customH1: 'Comprehensive Elder Care Services in Tenafly',
-                    customTitle:
-                        'Elder Care Tenafly NJ | Senior Home Care Solutions',
-                    customMetaDescription:
-                        'Explore comprehensive elder care services in Tenafly, NJ. From personal assistance to specialized medical support, we offer tailored care plans for seniors.',
-                    localKeywords: [
-                        'elder care Tenafly',
-                        'senior care Tenafly NJ',
-                        'in-home elder support 07670'
-                    ],
-                    contentBlocks: {
-                        whyChooseUs:
-                            'Our holistic approach to elder care in Tenafly focuses on dignity, comfort, and comprehensive well-being in a peaceful setting.',
-                        serviceHighlights: [
-                            'Personalized care plans adapting to evolving needs',
-                            'Coordination with medical professionals and therapists',
-                            'Family support and education services'
-                        ],
-                        localExpertise:
-                            'Strong ties with Tenafly healthcare network and senior resources, ensuring integrated care.',
-                        emergencyInfo:
-                            'Proactive emergency planning and rapid response to ensure senior safety in Tenafly.'
-                    }
-                }
+                'elder-care': addElderCareConsulting('tenafly'),
+                staffing: addStaffingServices('tenafly'),
+                'home-health-aides': addHomeHealthAides('tenafly'),
+                nursing: addNursingServices('tenafly'),
+                'companion-care': addCompanionCare('tenafly')
             },
             rankingFactors: {
                 primaryKeywords: [
@@ -7619,56 +5172,11 @@ const bergenCountyData: CountyData = {
                             'Coordinated emergency response with Teterboro services and nearby medical facilities, especially around the airport.'
                     }
                 }),
-                'companion-care': {
-                    customH1: 'Companion Care in Teterboro',
-                    customTitle:
-                        'Companion Care Teterboro NJ | Personalized Social Support',
-                    customMetaDescription:
-                        'Find compassionate companion care in Teterboro, NJ. We offer personalized social engagement, activities, and friendly companionship to enhance well-being.',
-                    localKeywords: [
-                        'companion care Teterboro',
-                        'executive companionship Teterboro',
-                        'elderly companionship Teterboro'
-                    ],
-                    contentBlocks: {
-                        whyChooseUs:
-                            'Our caregivers provide enriching and personalized companionship, understanding the unique routines of Teterboro residents.',
-                        serviceHighlights: [
-                            'Engaging conversations and shared interests tailored to individual lifestyles',
-                            'Support for professional and personal errands',
-                            'Assistance with communication and scheduling'
-                        ],
-                        localExpertise:
-                            'Familiar with Teterboro’s corporate environment and convenient access to travel and services.',
-                        emergencyInfo:
-                            'Immediate support and coordination with family for any unforeseen circumstances during companionship.'
-                    }
-                },
-                'elder-care': {
-                    customH1: 'Comprehensive Elder Care Services in Teterboro',
-                    customTitle:
-                        'Elder Care Teterboro NJ | Specialized Senior Home Care Solutions',
-                    customMetaDescription:
-                        'Explore comprehensive elder care services in Teterboro, NJ. From personal assistance to specialized medical support, we offer tailored care plans for seniors.',
-                    localKeywords: [
-                        'elder care Teterboro',
-                        'senior care Teterboro NJ',
-                        'in-home elder support 07608'
-                    ],
-                    contentBlocks: {
-                        whyChooseUs:
-                            'Our holistic approach to elder care in Teterboro focuses on the unique needs of seniors in this specialized environment.',
-                        serviceHighlights: [
-                            'Personalized care plans adapting to evolving needs with discretion',
-                            'Coordination with private medical professionals and therapists',
-                            'Family support and specialized resources'
-                        ],
-                        localExpertise:
-                            'Strong ties with local healthcare network and specialized resources, ensuring integrated care around Teterboro.',
-                        emergencyInfo:
-                            'Proactive emergency planning and rapid response to ensure senior safety in Teterboro, especially with its unique logistics.'
-                    }
-                }
+                'elder-care': addElderCareConsulting('teterboro'),
+                staffing: addStaffingServices('teterboro'),
+                'home-health-aides': addHomeHealthAides('teterboro'),
+                nursing: addNursingServices('teterboro'),
+                'companion-care': addCompanionCare('teterboro')
             },
             rankingFactors: {
                 primaryKeywords: [
@@ -7744,57 +5252,13 @@ const bergenCountyData: CountyData = {
                             'Coordinated emergency response with Upper Saddle River first responders and nearby medical facilities.'
                     }
                 }),
-                'companion-care': {
-                    customH1: 'Companion Care in Upper Saddle River',
-                    customTitle:
-                        'Companion Care Upper Saddle River NJ | Personalized Social Support',
-                    customMetaDescription:
-                        'Find compassionate companion care in Upper Saddle River, NJ. We offer personalized social engagement, activities, and friendly companionship to enhance senior well-being.',
-                    localKeywords: [
-                        'companion care Upper Saddle River',
-                        'senior activities Upper Saddle River',
-                        'elderly companionship Upper Saddle River'
-                    ],
-                    contentBlocks: {
-                        whyChooseUs:
-                            'Our caregivers provide enriching and personalized companionship, supporting seniors in Upper Saddle River to stay active and connected.',
-                        serviceHighlights: [
-                            'Engaging conversations and shared sophisticated interests',
-                            'Escorted outings to local cultural events or private clubs',
-                            'Support for social and recreational activities tailored to individual preferences'
-                        ],
-                        localExpertise:
-                            'Familiar with Upper Saddle River’s serene environment and local attractions for enriching outings.',
-                        emergencyInfo:
-                            'Immediate support and coordination with family for any unforeseen circumstances during companionship.'
-                    }
-                },
-                'elder-care': {
-                    customH1:
-                        'Comprehensive Elder Care Services in Upper Saddle River',
-                    customTitle:
-                        'Elder Care Upper Saddle River NJ | Premium Senior Home Care Solutions',
-                    customMetaDescription:
-                        'Explore comprehensive elder care services in Upper Saddle River, NJ. From personal assistance to specialized medical support, we offer tailored care plans for seniors.',
-                    localKeywords: [
-                        'elder care Upper Saddle River',
-                        'senior care Upper Saddle River NJ',
-                        'in-home elder support 07458'
-                    ],
-                    contentBlocks: {
-                        whyChooseUs:
-                            'Our holistic approach to elder care in Upper Saddle River focuses on dignity, comfort, and comprehensive well-being in an exclusive setting.',
-                        serviceHighlights: [
-                            'Personalized care plans adapting to evolving needs with discretion',
-                            'Coordination with private medical professionals and therapists',
-                            'Family support and education services'
-                        ],
-                        localExpertise:
-                            'Strong ties with Upper Saddle River healthcare network and senior resources, ensuring integrated care.',
-                        emergencyInfo:
-                            'Proactive emergency planning and rapid response to ensure senior safety in Upper Saddle River.'
-                    }
-                }
+                'elder-care-consulting':
+                    addElderCareConsulting('upper-saddle-river'),
+                staffing: addStaffingServices('upper-saddle-river'),
+                'home-health-aides': addHomeHealthAides('upper-saddle-river'),
+                nursing: addNursingServices('upper-saddle-river'),
+                'companion-care': addCompanionCare('upper-saddle-river'),
+                'elder-care': addElderCareConsulting('upper-saddle-river')
             },
             rankingFactors: {
                 primaryKeywords: [
@@ -7865,56 +5329,11 @@ const bergenCountyData: CountyData = {
                             'Coordinated emergency response with Waldwick first responders and nearby medical facilities.'
                     }
                 }),
-                'companion-care': {
-                    customH1: 'Companion Care in Waldwick',
-                    customTitle:
-                        'Companion Care Waldwick NJ | Social Support for Seniors',
-                    customMetaDescription:
-                        'Find compassionate companion care in Waldwick, NJ. We offer social engagement, activities, and friendly companionship to enhance senior well-being.',
-                    localKeywords: [
-                        'companion care Waldwick',
-                        'senior activities Waldwick',
-                        'elderly companionship Waldwick'
-                    ],
-                    contentBlocks: {
-                        whyChooseUs:
-                            'Our caregivers provide enriching companionship, supporting seniors in Waldwick to stay active and socially connected.',
-                        serviceHighlights: [
-                            'Engaging conversations and shared hobbies',
-                            'Escorted outings to local parks and community events',
-                            'Support for cultural and social activities'
-                        ],
-                        localExpertise:
-                            'Familiar with Waldwick’s charming downtown and local attractions for enriching outings.',
-                        emergencyInfo:
-                            'Immediate support and coordination with family for any unforeseen circumstances during companionship.'
-                    }
-                },
-                'elder-care': {
-                    customH1: 'Comprehensive Elder Care Services in Waldwick',
-                    customTitle:
-                        'Elder Care Waldwick NJ | Senior Home Care Solutions',
-                    customMetaDescription:
-                        'Explore comprehensive elder care services in Waldwick, NJ. From personal assistance to specialized medical support, we offer tailored care plans for seniors.',
-                    localKeywords: [
-                        'elder care Waldwick',
-                        'senior care Waldwick NJ',
-                        'in-home elder support 07463'
-                    ],
-                    contentBlocks: {
-                        whyChooseUs:
-                            'Our holistic approach to elder care in Waldwick focuses on dignity, comfort, and comprehensive well-being.',
-                        serviceHighlights: [
-                            'Personalized care plans adapting to evolving needs',
-                            'Coordination with medical professionals and therapists',
-                            'Family support and education services'
-                        ],
-                        localExpertise:
-                            'Strong ties with Waldwick healthcare network and senior resources, ensuring integrated care.',
-                        emergencyInfo:
-                            'Proactive emergency planning and rapid response to ensure senior safety in Waldwick.'
-                    }
-                }
+                'elder-care': addElderCareConsulting('waldwick'),
+                staffing: addStaffingServices('waldwick'),
+                'home-health-aides': addHomeHealthAides('waldwick'),
+                nursing: addNursingServices('waldwick'),
+                'companion-care': addCompanionCare('waldwick')
             },
             rankingFactors: {
                 primaryKeywords: [
@@ -7991,56 +5410,11 @@ const bergenCountyData: CountyData = {
                             'Quick response within Wallington with connections to nearby medical facilities.'
                     }
                 }),
-                'companion-care': {
-                    customH1: 'Companion Care in Wallington',
-                    customTitle:
-                        'Companion Care Wallington NJ | Social Support for Seniors',
-                    customMetaDescription:
-                        'Find compassionate companion care in Wallington, NJ. We offer social engagement, activities, and friendly companionship to enhance senior well-being.',
-                    localKeywords: [
-                        'companion care Wallington',
-                        'senior activities Wallington',
-                        'elderly companionship Wallington'
-                    ],
-                    contentBlocks: {
-                        whyChooseUs:
-                            'Our caregivers provide enriching companionship, supporting seniors in Wallington to stay active and socially connected within their lively community.',
-                        serviceHighlights: [
-                            'Engaging conversations and shared cultural interests',
-                            'Escorted outings to local parks and community events',
-                            'Support for cultural and social activities'
-                        ],
-                        localExpertise:
-                            'Familiar with Wallington’s community centers and local attractions for enriching outings.',
-                        emergencyInfo:
-                            'Immediate support and coordination with family for any unforeseen circumstances during companionship.'
-                    }
-                },
-                'elder-care': {
-                    customH1: 'Comprehensive Elder Care Services in Wallington',
-                    customTitle:
-                        'Elder Care Wallington NJ | Senior Home Care Solutions',
-                    customMetaDescription:
-                        'Explore comprehensive elder care services in Wallington, NJ. From personal assistance to specialized medical support, we offer tailored care plans for seniors.',
-                    localKeywords: [
-                        'elder care Wallington',
-                        'senior care Wallington NJ',
-                        'in-home elder support 07057'
-                    ],
-                    contentBlocks: {
-                        whyChooseUs:
-                            'Our holistic approach to elder care in Wallington prioritizes dignity, comfort, and cultural sensitivity for seniors.',
-                        serviceHighlights: [
-                            'Personalized care plans adapting to evolving needs',
-                            'Coordination with local medical professionals and therapists',
-                            'Family support and educational resources'
-                        ],
-                        localExpertise:
-                            'Strong ties with Wallington healthcare network and senior resources, ensuring integrated care.',
-                        emergencyInfo:
-                            'Proactive emergency planning and rapid response to ensure senior safety in Wallington.'
-                    }
-                }
+                'elder-care': addElderCareConsulting('wallington'),
+                staffing: addStaffingServices('wallington'),
+                'home-health-aides': addHomeHealthAides('wallington'),
+                nursing: addNursingServices('wallington'),
+                'companion-care': addCompanionCare('wallington')
             },
             rankingFactors: {
                 primaryKeywords: [
@@ -8111,57 +5485,11 @@ const bergenCountyData: CountyData = {
                             'Coordinated emergency response with Washington Township first responders and nearby medical facilities.'
                     }
                 }),
-                'companion-care': {
-                    customH1: 'Companion Care in Washington Township',
-                    customTitle:
-                        'Companion Care Washington Township NJ | Social Support for Seniors',
-                    customMetaDescription:
-                        'Find compassionate companion care in Washington Township, NJ. We offer social engagement, activities, and friendly companionship to enhance senior well-being.',
-                    localKeywords: [
-                        'companion care Washington Township',
-                        'senior activities Washington Township',
-                        'elderly companionship Washington Township'
-                    ],
-                    contentBlocks: {
-                        whyChooseUs:
-                            'Our caregivers provide enriching companionship, supporting seniors in Washington Township to stay active and socially connected.',
-                        serviceHighlights: [
-                            'Engaging conversations and shared hobbies',
-                            'Escorted outings to local parks and community events',
-                            'Support for cultural and social activities'
-                        ],
-                        localExpertise:
-                            'Familiar with Washington Township’s community centers and local attractions for enriching outings.',
-                        emergencyInfo:
-                            'Immediate support and coordination with family for any unforeseen circumstances during companionship.'
-                    }
-                },
-                'elder-care': {
-                    customH1:
-                        'Comprehensive Elder Care Services in Washington Township',
-                    customTitle:
-                        'Elder Care Washington Township NJ | Senior Home Care Solutions',
-                    customMetaDescription:
-                        'Explore comprehensive elder care services in Washington Township, NJ. From personal assistance to specialized medical support, we offer tailored care plans for seniors.',
-                    localKeywords: [
-                        'elder care Washington Township',
-                        'senior care Washington Township NJ',
-                        'in-home elder support 07676'
-                    ],
-                    contentBlocks: {
-                        whyChooseUs:
-                            'Our holistic approach to elder care in Washington Township focuses on dignity, comfort, and comprehensive well-being.',
-                        serviceHighlights: [
-                            'Personalized care plans adapting to evolving needs',
-                            'Coordination with medical professionals and therapists',
-                            'Family support and education services'
-                        ],
-                        localExpertise:
-                            'Strong ties with Washington Township healthcare network and senior resources, ensuring integrated care.',
-                        emergencyInfo:
-                            'Proactive emergency planning and rapid response to ensure senior safety in Washington Township.'
-                    }
-                }
+                'elder-care': addElderCareConsulting('washington-township'),
+                staffing: addStaffingServices('washington-township'),
+                'home-health-aides': addHomeHealthAides('washington-township'),
+                nursing: addNursingServices('washington-township'),
+                'companion-care': addCompanionCare('washington-township')
             },
             rankingFactors: {
                 primaryKeywords: [
@@ -8237,56 +5565,11 @@ const bergenCountyData: CountyData = {
                             'Coordinated emergency response with Westwood first responders and nearby medical facilities.'
                     }
                 }),
-                'companion-care': {
-                    customH1: 'Companion Care in Westwood',
-                    customTitle:
-                        'Companion Care Westwood NJ | Social Support for Seniors',
-                    customMetaDescription:
-                        'Find compassionate companion care in Westwood, NJ. We offer social engagement, activities, and friendly companionship to enhance senior well-being.',
-                    localKeywords: [
-                        'companion care Westwood',
-                        'senior activities Westwood',
-                        'elderly companionship Westwood'
-                    ],
-                    contentBlocks: {
-                        whyChooseUs:
-                            'Our caregivers provide enriching companionship, supporting seniors in Westwood to stay active and socially connected within their lively community.',
-                        serviceHighlights: [
-                            'Engaging conversations and shared hobbies',
-                            'Escorted outings to downtown Westwood and local parks',
-                            'Support for cultural and social activities'
-                        ],
-                        localExpertise:
-                            'Familiar with Westwood’s walkable downtown and local attractions for enriching outings.',
-                        emergencyInfo:
-                            'Immediate support and coordination with family for any unforeseen circumstances during companionship.'
-                    }
-                },
-                'elder-care': {
-                    customH1: 'Comprehensive Elder Care Services in Westwood',
-                    customTitle:
-                        'Elder Care Westwood NJ | Senior Home Care Solutions',
-                    customMetaDescription:
-                        'Explore comprehensive elder care services in Westwood, NJ. From personal assistance to specialized medical support, we offer tailored care plans for seniors.',
-                    localKeywords: [
-                        'elder care Westwood',
-                        'senior care Westwood NJ',
-                        'in-home elder support 07675'
-                    ],
-                    contentBlocks: {
-                        whyChooseUs:
-                            'Our holistic approach to elder care in Westwood focuses on dignity, comfort, and comprehensive well-being.',
-                        serviceHighlights: [
-                            'Personalized care plans adapting to evolving needs',
-                            'Coordination with medical professionals and therapists',
-                            'Family support and education services'
-                        ],
-                        localExpertise:
-                            'Strong ties with Westwood healthcare network and senior resources, ensuring integrated care.',
-                        emergencyInfo:
-                            'Proactive emergency planning and rapid response to ensure senior safety in Westwood.'
-                    }
-                }
+                'elder-care': addElderCareConsulting('westwood'),
+                staffing: addStaffingServices('westwood'),
+                'home-health-aides': addHomeHealthAides('westwood'),
+                nursing: addNursingServices('westwood'),
+                'companion-care': addCompanionCare('westwood')
             },
             rankingFactors: {
                 primaryKeywords: [
@@ -8357,57 +5640,13 @@ const bergenCountyData: CountyData = {
                             'Coordinated emergency response with Woodcliff Lake first responders and nearby medical facilities.'
                     }
                 }),
-                'companion-care': {
-                    customH1: 'Companion Care in Woodcliff Lake',
-                    customTitle:
-                        'Companion Care Woodcliff Lake NJ | Social Support for Seniors',
-                    customMetaDescription:
-                        'Find compassionate companion care in Woodcliff Lake, NJ. We offer social engagement, activities, and friendly companionship to enhance senior well-being.',
-                    localKeywords: [
-                        'companion care Woodcliff Lake',
-                        'senior activities Woodcliff Lake',
-                        'elderly companionship Woodcliff Lake'
-                    ],
-                    contentBlocks: {
-                        whyChooseUs:
-                            'Our caregivers provide enriching companionship, supporting seniors in Woodcliff Lake to stay active and connected.',
-                        serviceHighlights: [
-                            'Engaging conversations and shared hobbies',
-                            'Escorted outings to local parks and community events',
-                            'Support for cultural and social activities'
-                        ],
-                        localExpertise:
-                            'Familiar with Woodcliff Lake’s beautiful surroundings and local attractions for enriching outings.',
-                        emergencyInfo:
-                            'Immediate support and coordination with family for any unforeseen circumstances during companionship.'
-                    }
-                },
-                'elder-care': {
-                    customH1:
-                        'Comprehensive Elder Care Services in Woodcliff Lake',
-                    customTitle:
-                        'Elder Care Woodcliff Lake NJ | Senior Home Care Solutions',
-                    customMetaDescription:
-                        'Explore comprehensive elder care services in Woodcliff Lake, NJ. From personal assistance to specialized medical support, we offer tailored care plans for seniors.',
-                    localKeywords: [
-                        'elder care Woodcliff Lake',
-                        'senior care Woodcliff Lake NJ',
-                        'in-home elder support 07677'
-                    ],
-                    contentBlocks: {
-                        whyChooseUs:
-                            'Our holistic approach to elder care in Woodcliff Lake focuses on dignity, comfort, and comprehensive well-being in a peaceful setting.',
-                        serviceHighlights: [
-                            'Personalized care plans adapting to evolving needs',
-                            'Coordination with medical professionals and therapists',
-                            'Family support and education services'
-                        ],
-                        localExpertise:
-                            'Strong ties with Woodcliff Lake healthcare network and senior resources, ensuring integrated care.',
-                        emergencyInfo:
-                            'Proactive emergency planning and rapid response to ensure senior safety in Woodcliff Lake.'
-                    }
-                }
+                'elder-care-consulting':
+                    addElderCareConsulting('woodcliff-lake'),
+                staffing: addStaffingServices('woodcliff-lake'),
+                'home-health-aides': addHomeHealthAides('woodcliff-lake'),
+                nursing: addNursingServices('woodcliff-lake'),
+                'companion-care': addCompanionCare('woodcliff-lake'),
+                'elder-care': addElderCareConsulting('woodcliff-lake')
             },
             rankingFactors: {
                 primaryKeywords: [
@@ -8483,56 +5722,11 @@ const bergenCountyData: CountyData = {
                             'Coordinated emergency response with Wood-Ridge first responders and nearby medical facilities.'
                     }
                 }),
-                'companion-care': {
-                    customH1: 'Companion Care in Wood-Ridge',
-                    customTitle:
-                        'Companion Care Wood-Ridge NJ | Social Support for Seniors',
-                    customMetaDescription:
-                        'Find compassionate companion care in Wood-Ridge, NJ. We offer social engagement, activities, and friendly companionship to enhance senior well-being.',
-                    localKeywords: [
-                        'companion care Wood-Ridge',
-                        'senior activities Wood-Ridge',
-                        'elderly companionship Wood-Ridge'
-                    ],
-                    contentBlocks: {
-                        whyChooseUs:
-                            'Our caregivers provide enriching companionship, supporting seniors in Wood-Ridge to stay active and socially connected.',
-                        serviceHighlights: [
-                            'Engaging conversations and shared hobbies',
-                            'Escorted outings to local parks and community events',
-                            'Support for social and recreational activities'
-                        ],
-                        localExpertise:
-                            'Familiar with Wood-Ridge’s community and its convenient location for local errands and outings.',
-                        emergencyInfo:
-                            'Immediate support and coordination with family for any unforeseen circumstances during companionship.'
-                    }
-                },
-                'elder-care': {
-                    customH1: 'Comprehensive Elder Care Services in Wood-Ridge',
-                    customTitle:
-                        'Elder Care Wood-Ridge NJ | Senior Home Care Solutions',
-                    customMetaDescription:
-                        'Explore comprehensive elder care services in Wood-Ridge, NJ. From personal assistance to specialized medical support, we offer tailored care plans for seniors.',
-                    localKeywords: [
-                        'elder care Wood-Ridge',
-                        'senior care Wood-Ridge NJ',
-                        'in-home elder support 07075'
-                    ],
-                    contentBlocks: {
-                        whyChooseUs:
-                            'Our holistic approach to elder care in Wood-Ridge focuses on dignity, comfort, and comprehensive well-being.',
-                        serviceHighlights: [
-                            'Personalized care plans adapting to evolving needs',
-                            'Coordination with medical professionals and therapists',
-                            'Family support and education services'
-                        ],
-                        localExpertise:
-                            'Strong ties with Wood-Ridge healthcare network and senior resources, ensuring integrated care.',
-                        emergencyInfo:
-                            'Proactive emergency planning and rapid response to ensure senior safety in Wood-Ridge.'
-                    }
-                }
+                'elder-care': addElderCareConsulting('wood-ridge'),
+                staffing: addStaffingServices('wood-ridge'),
+                'home-health-aides': addHomeHealthAides('wood-ridge'),
+                nursing: addNursingServices('wood-ridge'),
+                'companion-care': addCompanionCare('wood-ridge')
             },
             rankingFactors: {
                 primaryKeywords: [
@@ -8608,56 +5802,11 @@ const bergenCountyData: CountyData = {
                             'Coordinated emergency response with Wyckoff first responders and nearby medical facilities.'
                     }
                 }),
-                'companion-care': {
-                    customH1: 'Companion Care in Wyckoff',
-                    customTitle:
-                        'Companion Care Wyckoff NJ | Personalized Social Support',
-                    customMetaDescription:
-                        'Find compassionate companion care in Wyckoff, NJ. We offer personalized social engagement, activities, and friendly companionship to enhance senior well-being.',
-                    localKeywords: [
-                        'companion care Wyckoff',
-                        'senior activities Wyckoff',
-                        'elderly companionship Wyckoff'
-                    ],
-                    contentBlocks: {
-                        whyChooseUs:
-                            'Our caregivers provide enriching and personalized companionship, supporting seniors in Wyckoff to stay active and connected.',
-                        serviceHighlights: [
-                            'Engaging conversations and shared sophisticated interests',
-                            'Escorted outings to local parks and community events',
-                            'Support for social and recreational activities tailored to individual preferences'
-                        ],
-                        localExpertise:
-                            'Familiar with Wyckoff’s beautiful surroundings and local attractions for enriching outings.',
-                        emergencyInfo:
-                            'Immediate support and coordination with family for any unforeseen circumstances during companionship.'
-                    }
-                },
-                'elder-care': {
-                    customH1: 'Comprehensive Elder Care Services in Wyckoff',
-                    customTitle:
-                        'Elder Care Wyckoff NJ | Premium Senior Home Care Solutions',
-                    customMetaDescription:
-                        'Explore comprehensive elder care services in Wyckoff, NJ. From personal assistance to specialized medical support, we offer tailored care plans for seniors.',
-                    localKeywords: [
-                        'elder care Wyckoff',
-                        'senior care Wyckoff NJ',
-                        'in-home elder support 07481'
-                    ],
-                    contentBlocks: {
-                        whyChooseUs:
-                            'Our holistic approach to elder care in Wyckoff focuses on dignity, comfort, and comprehensive well-being in a peaceful setting.',
-                        serviceHighlights: [
-                            'Personalized care plans adapting to evolving needs with discretion',
-                            'Coordination with private medical professionals and therapists',
-                            'Family support and education services'
-                        ],
-                        localExpertise:
-                            'Strong ties with Wyckoff healthcare network and senior resources, ensuring integrated care.',
-                        emergencyInfo:
-                            'Proactive emergency planning and rapid response to ensure senior safety in Wyckoff.'
-                    }
-                }
+                'elder-care': addElderCareConsulting('wyckoff'),
+                staffing: addStaffingServices('wyckoff'),
+                'home-health-aides': addHomeHealthAides('wyckoff'),
+                nursing: addNursingServices('wyckoff'),
+                'companion-care': addCompanionCare('wyckoff')
             },
             rankingFactors: {
                 primaryKeywords: [
@@ -8684,6 +5833,1950 @@ const bergenCountyData: CountyData = {
                     'Serving all areas of Wyckoff, from its quiet streets to homes near Boulder Run and environmental centers.',
                 localPartners:
                     'Connected with local community programs, senior services, and healthcare providers in the Wyckoff area.'
+            }
+        },
+        {
+            slug: 'fort-lee',
+            name: 'Fort Lee',
+            zipCodes: ['07024'],
+            population: '37,000',
+            demographics: 'diverse, high-rise residential, Hudson River views',
+            localKeywords: [
+                'Fort Lee NJ',
+                'Bergen County',
+                'George Washington Bridge',
+                'Hudson River'
+            ],
+            nearbyAreas: [
+                'Englewood Cliffs',
+                'Cliffside Park',
+                'Edgewater',
+                'Tenafly'
+            ],
+            localLandmarks: [
+                'George Washington Bridge',
+                'Historic Park',
+                'Fort Lee Museum',
+                'Hudson River Waterfront'
+            ],
+            customDescriptions: {
+                'personal-care':
+                    'Personal care services in Fort Lee, providing compassionate and professional support for residents in this vibrant Hudson River community.',
+                'companion-care':
+                    'Companion care for Fort Lee seniors, fostering engagement and connection within their diverse and dynamic hometown.',
+                'elder-care':
+                    'Comprehensive elder care solutions in Fort Lee, ensuring peace of mind and quality of life for seniors and their families.'
+            },
+            serviceSpecificSEO: {
+                'elder-care': addElderCareConsulting('fort-lee'),
+                staffing: addStaffingServices('fort-lee'),
+                'home-health-aides': addHomeHealthAides('fort-lee'),
+                nursing: addNursingServices('fort-lee'),
+                'companion-care': addCompanionCare('fort-lee')
+            },
+            rankingFactors: {
+                primaryKeywords: [
+                    'personal care Fort Lee',
+                    'home care Fort Lee',
+                    'Fort Lee elder care'
+                ],
+                secondaryKeywords: [
+                    'Bergen County care',
+                    'Hudson River area care',
+                    'Fort Lee senior services'
+                ],
+                competitionLevel: 'high',
+                focusAreas: [
+                    'high-rise residential',
+                    'diverse community',
+                    'Hudson River proximity'
+                ]
+            },
+            seoContent: {
+                communityFocus:
+                    'Fort Lee is a diverse community with stunning Hudson River views, known for its high-rise residential buildings and proximity to the George Washington Bridge.',
+                serviceAreas:
+                    'Serving all areas of Fort Lee, from its waterfront high-rises to homes near the Historic Park and bridge approaches.',
+                localPartners:
+                    'Connected with local community programs, senior services, and healthcare providers in the Fort Lee area.'
+            }
+        },
+        {
+            slug: 'franklin-lakes',
+            name: 'Franklin Lakes',
+            zipCodes: ['07417'],
+            population: '11,000',
+            demographics: 'affluent, family-oriented, luxury homes',
+            localKeywords: [
+                'Franklin Lakes NJ',
+                'Bergen County',
+                'Ramapo Mountains',
+                'luxury residential'
+            ],
+            nearbyAreas: ['Wyckoff', 'Oakland', 'Allendale', 'Mahwah'],
+            localLandmarks: [
+                'Franklin Lakes Nature Preserve',
+                'Ramapo Valley County Reservation',
+                'Colonial Park',
+                'Franklin Lakes Borough Hall'
+            ],
+            customDescriptions: {
+                'personal-care':
+                    'Personal care services in Franklin Lakes, providing compassionate and professional support for residents in this affluent lakeside community.',
+                'companion-care':
+                    'Companion care for Franklin Lakes seniors, fostering engagement and connection within their peaceful and upscale hometown.',
+                'elder-care':
+                    'Comprehensive elder care solutions in Franklin Lakes, ensuring peace of mind and quality of life for seniors and their families.'
+            },
+            serviceSpecificSEO: {
+                staffing: addStaffingServices('franklin-lakes'),
+                'home-health-aides': addHomeHealthAides('franklin-lakes'),
+                nursing: addNursingServices('franklin-lakes'),
+                'companion-care': addCompanionCare('franklin-lakes'),
+                'elder-care': addElderCareConsulting('franklin-lakes'),
+                'personal-care': addPersonalCare('franklin-lakes')
+            },
+            rankingFactors: {
+                primaryKeywords: [
+                    'personal care Franklin Lakes',
+                    'home care Franklin Lakes',
+                    'Franklin Lakes elder care'
+                ],
+                secondaryKeywords: [
+                    'Bergen County luxury care',
+                    'Ramapo Mountains area care',
+                    'Franklin Lakes senior services'
+                ],
+                competitionLevel: 'medium-low',
+                focusAreas: [
+                    'affluent residential',
+                    'luxury homes',
+                    'nature preserve proximity'
+                ]
+            },
+            seoContent: {
+                communityFocus:
+                    'Franklin Lakes is an affluent community known for its luxury homes, beautiful lakes, and proximity to the Ramapo Mountains nature preserves.',
+                serviceAreas:
+                    'Serving all areas of Franklin Lakes, from its lakeside estates to homes near the nature preserve and residential neighborhoods.',
+                localPartners:
+                    'Connected with local community programs, senior services, and healthcare providers in the Franklin Lakes area.'
+            }
+        },
+        {
+            slug: 'garfield',
+            name: 'Garfield',
+            zipCodes: ['07026'],
+            population: '32,000',
+            demographics: 'diverse, working-class, strong community ties',
+            localKeywords: [
+                'Garfield NJ',
+                'Bergen County',
+                'Passaic River',
+                'diverse community'
+            ],
+            nearbyAreas: ['Lodi', 'Elmwood Park', 'Saddle Brook', 'Wallington'],
+            localLandmarks: [
+                'Garfield Public Library',
+                'Passaic River',
+                'Garfield City Hall',
+                'Outwater Park'
+            ],
+            customDescriptions: {
+                'personal-care':
+                    'Personal care services in Garfield, providing compassionate and professional support for residents in this diverse and close-knit community.',
+                'companion-care':
+                    'Companion care for Garfield seniors, fostering engagement and connection within their vibrant and multicultural hometown.',
+                'elder-care':
+                    'Comprehensive elder care solutions in Garfield, ensuring peace of mind and quality of life for seniors and their families.'
+            },
+            serviceSpecificSEO: {
+                'elder-care': addElderCareConsulting('garfield'),
+                staffing: addStaffingServices('garfield'),
+                'home-health-aides': addHomeHealthAides('garfield'),
+                nursing: addNursingServices('garfield'),
+                'personal-care': addPersonalCare('garfield'),
+                'companion-care': addCompanionCare('garfield')
+            },
+            rankingFactors: {
+                primaryKeywords: [
+                    'personal care Garfield',
+                    'home care Garfield',
+                    'Garfield elder care'
+                ],
+                secondaryKeywords: [
+                    'Bergen County care',
+                    'Passaic River area care',
+                    'Garfield senior services'
+                ],
+                competitionLevel: 'medium',
+                focusAreas: [
+                    'diverse community',
+                    'working-class families',
+                    'strong community ties'
+                ]
+            },
+            seoContent: {
+                communityFocus:
+                    'Garfield is a diverse, working-class community with strong community ties, known for its multicultural population and proximity to the Passaic River.',
+                serviceAreas:
+                    'Serving all areas of Garfield, from its residential neighborhoods to areas near Outwater Park and the Passaic River.',
+                localPartners:
+                    'Connected with local community programs, senior services, and healthcare providers in the Garfield area.'
+            }
+        },
+        {
+            slug: 'glen-rock',
+            name: 'Glen Rock',
+            zipCodes: ['07452'],
+            population: '12,000',
+            demographics: 'family-oriented, suburban, excellent schools',
+            localKeywords: [
+                'Glen Rock NJ',
+                'Bergen County',
+                'Ridgewood area',
+                'family community'
+            ],
+            nearbyAreas: ['Ridgewood', 'Fair Lawn', 'Paramus', 'Midland Park'],
+            localLandmarks: [
+                'Glen Rock Public Library',
+                'Glen Rock Train Station',
+                'Saddle River County Park',
+                'Glen Rock High School'
+            ],
+            customDescriptions: {
+                'personal-care':
+                    'Personal care services in Glen Rock, providing compassionate and professional support for residents in this family-oriented suburban community.',
+                'companion-care':
+                    'Companion care for Glen Rock seniors, fostering engagement and connection within their peaceful and close-knit hometown.',
+                'elder-care':
+                    'Comprehensive elder care solutions in Glen Rock, ensuring peace of mind and quality of life for seniors and their families.'
+            },
+            serviceSpecificSEO: {
+                'elder-care': addElderCareConsulting('glen-rock'),
+                staffing: addStaffingServices('glen-rock'),
+                'home-health-aides': addHomeHealthAides('glen-rock'),
+                nursing: addNursingServices('glen-rock'),
+                'personal-care': addPersonalCare('glen-rock'),
+                'companion-care': addCompanionCare('glen-rock')
+            },
+            rankingFactors: {
+                primaryKeywords: [
+                    'personal care Glen Rock',
+                    'home care Glen Rock',
+                    'Glen Rock elder care'
+                ],
+                secondaryKeywords: [
+                    'Bergen County care',
+                    'Ridgewood area care',
+                    'Glen Rock senior services'
+                ],
+                competitionLevel: 'medium',
+                focusAreas: [
+                    'family-oriented',
+                    'suburban community',
+                    'excellent schools'
+                ]
+            },
+            seoContent: {
+                communityFocus:
+                    'Glen Rock is a family-oriented suburban community known for its excellent schools, tree-lined streets, and strong sense of community.',
+                serviceAreas:
+                    'Serving all areas of Glen Rock, from its residential neighborhoods to areas near the train station and Saddle River County Park.',
+                localPartners:
+                    'Connected with local community programs, senior services, and healthcare providers in the Glen Rock area.'
+            }
+        },
+        {
+            slug: 'harrington-park',
+            name: 'Harrington Park',
+            zipCodes: ['07640'],
+            population: '5,000',
+            demographics: 'small town, family-friendly, quiet residential',
+            localKeywords: [
+                'Harrington Park NJ',
+                'Bergen County',
+                'Pascack Valley',
+                'small town'
+            ],
+            nearbyAreas: ['Closter', 'Demarest', 'Northvale', 'Old Tappan'],
+            localLandmarks: [
+                'Harrington Park Public Library',
+                'Harrington Park Train Station',
+                'Pascack Valley Park',
+                'Harrington Park Borough Hall'
+            ],
+            customDescriptions: {
+                'personal-care':
+                    'Personal care services in Harrington Park, providing compassionate and professional support for residents in this charming small town community.',
+                'companion-care':
+                    'Companion care for Harrington Park seniors, fostering engagement and connection within their quiet and friendly hometown.',
+                'elder-care':
+                    'Comprehensive elder care solutions in Harrington Park, ensuring peace of mind and quality of life for seniors and their families.'
+            },
+            serviceSpecificSEO: {
+                'elder-care': addElderCareConsulting('harrington-park'),
+                staffing: addStaffingServices('harrington-park'),
+                'home-health-aides': addHomeHealthAides('harrington-park'),
+                nursing: addNursingServices('harrington-park'),
+                'personal-care': addPersonalCare('harrington-park'),
+                'companion-care': addCompanionCare('harrington-park')
+            },
+            rankingFactors: {
+                primaryKeywords: [
+                    'personal care Harrington Park',
+                    'home care Harrington Park',
+                    'Harrington Park elder care'
+                ],
+                secondaryKeywords: [
+                    'Bergen County care',
+                    'Pascack Valley care',
+                    'Harrington Park senior services'
+                ],
+                competitionLevel: 'low',
+                focusAreas: [
+                    'small town charm',
+                    'family-friendly',
+                    'quiet residential'
+                ]
+            },
+            seoContent: {
+                communityFocus:
+                    'Harrington Park is a small, family-friendly town in the Pascack Valley, known for its quiet residential streets and strong community bonds.',
+                serviceAreas:
+                    'Serving all areas of Harrington Park, from its residential neighborhoods to areas near the train station and borough facilities.',
+                localPartners:
+                    'Connected with local community programs, senior services, and healthcare providers in the Harrington Park area.'
+            }
+        },
+        {
+            slug: 'hasbrouck-heights',
+            name: 'Hasbrouck Heights',
+            zipCodes: ['07604'],
+            population: '12,000',
+            demographics: 'diverse, aviation history, close-knit community',
+            localKeywords: [
+                'Hasbrouck Heights NJ',
+                'Bergen County',
+                'Teterboro Airport',
+                'aviation community'
+            ],
+            nearbyAreas: ['Wood-Ridge', 'Lodi', 'Moonachie', 'Little Ferry'],
+            localLandmarks: [
+                'Teterboro Airport',
+                'Hasbrouck Heights Public Library',
+                'Aviation Hall of Fame',
+                'Hasbrouck Heights Municipal Building'
+            ],
+            customDescriptions: {
+                'personal-care':
+                    'Personal care services in Hasbrouck Heights, providing compassionate and professional support for residents in this historic aviation community.',
+                'companion-care':
+                    'Companion care for Hasbrouck Heights seniors, fostering engagement and connection within their diverse and close-knit hometown.',
+                'elder-care':
+                    'Comprehensive elder care solutions in Hasbrouck Heights, ensuring peace of mind and quality of life for seniors and their families.'
+            },
+            serviceSpecificSEO: {
+                'elder-care': addElderCareConsulting('hasbrouck-heights'),
+                staffing: addStaffingServices('hasbrouck-heights'),
+                'home-health-aides': addHomeHealthAides('hasbrouck-heights'),
+                nursing: addNursingServices('hasbrouck-heights'),
+                'personal-care': addPersonalCare('hasbrouck-heights'),
+                'companion-care': addCompanionCare('hasbrouck-heights')
+            },
+            rankingFactors: {
+                primaryKeywords: [
+                    'personal care Hasbrouck Heights',
+                    'home care Hasbrouck Heights',
+                    'Hasbrouck Heights elder care'
+                ],
+                secondaryKeywords: [
+                    'Bergen County care',
+                    'Teterboro area care',
+                    'Hasbrouck Heights senior services'
+                ],
+                competitionLevel: 'medium',
+                focusAreas: [
+                    'aviation history',
+                    'diverse community',
+                    'close-knit neighborhood'
+                ]
+            },
+            seoContent: {
+                communityFocus:
+                    'Hasbrouck Heights is a diverse community with rich aviation history, known for its proximity to Teterboro Airport and close-knit neighborhood feel.',
+                serviceAreas:
+                    'Serving all areas of Hasbrouck Heights, from its residential neighborhoods to areas near Teterboro Airport and municipal facilities.',
+                localPartners:
+                    'Connected with local community programs, senior services, and healthcare providers in the Hasbrouck Heights area.'
+            }
+        },
+        {
+            slug: 'haworth',
+            name: 'Haworth',
+            zipCodes: ['07641'],
+            population: '3,500',
+            demographics: 'affluent, small town, family-oriented',
+            localKeywords: [
+                'Haworth NJ',
+                'Bergen County',
+                'small town',
+                'affluent community'
+            ],
+            nearbyAreas: ['Demarest', 'Closter', 'Dumont', 'Cresskill'],
+            localLandmarks: [
+                'Haworth Public Library',
+                'Haworth Nature Preserve',
+                'Haworth Borough Hall',
+                'Pfister Pond'
+            ],
+            customDescriptions: {
+                'personal-care':
+                    'Personal care services in Haworth, providing compassionate and professional support for residents in this affluent small town community.',
+                'companion-care':
+                    'Companion care for Haworth seniors, fostering engagement and connection within their peaceful and upscale hometown.',
+                'elder-care':
+                    'Comprehensive elder care solutions in Haworth, ensuring peace of mind and quality of life for seniors and their families.'
+            },
+            serviceSpecificSEO: {
+                'elder-care': addElderCareConsulting('haworth'),
+                staffing: addStaffingServices('haworth'),
+                'home-health-aides': addHomeHealthAides('haworth'),
+                nursing: addNursingServices('haworth'),
+                'personal-care': addPersonalCare('haworth'),
+                'companion-care': addCompanionCare('haworth')
+            },
+            rankingFactors: {
+                primaryKeywords: [
+                    'personal care Haworth',
+                    'home care Haworth',
+                    'Haworth elder care'
+                ],
+                secondaryKeywords: [
+                    'Bergen County care',
+                    'small town care',
+                    'Haworth senior services'
+                ],
+                competitionLevel: 'low',
+                focusAreas: [
+                    'affluent community',
+                    'small town charm',
+                    'family-oriented'
+                ]
+            },
+            seoContent: {
+                communityFocus:
+                    'Haworth is a small, affluent town known for its family-oriented atmosphere, nature preserves, and peaceful residential character.',
+                serviceAreas:
+                    'Serving all areas of Haworth, from its residential neighborhoods to areas near the nature preserve and Pfister Pond.',
+                localPartners:
+                    'Connected with local community programs, senior services, and healthcare providers in the Haworth area.'
+            }
+        },
+        {
+            slug: 'hillsdale',
+            name: 'Hillsdale',
+            zipCodes: ['07642'],
+            population: '10,000',
+            demographics: 'family-friendly, suburban, tree-lined streets',
+            localKeywords: [
+                'Hillsdale NJ',
+                'Bergen County',
+                'Pascack Valley',
+                'suburban community'
+            ],
+            nearbyAreas: [
+                'Westwood',
+                'River Vale',
+                'Woodcliff Lake',
+                'Washington Township'
+            ],
+            localLandmarks: [
+                'Hillsdale Public Library',
+                'Hillsdale Train Station',
+                'Pascack Valley High School',
+                'Hillsdale Municipal Building'
+            ],
+            customDescriptions: {
+                'personal-care':
+                    'Personal care services in Hillsdale, providing compassionate and professional support for residents in this family-friendly suburban community.',
+                'companion-care':
+                    'Companion care for Hillsdale seniors, fostering engagement and connection within their peaceful and tree-lined hometown.',
+                'elder-care':
+                    'Comprehensive elder care solutions in Hillsdale, ensuring peace of mind and quality of life for seniors and their families.'
+            },
+            serviceSpecificSEO: {
+                'elder-care': addElderCareConsulting('hillsdale'),
+                staffing: addStaffingServices('hillsdale'),
+                'home-health-aides': addHomeHealthAides('hillsdale'),
+                nursing: addNursingServices('hillsdale'),
+                'personal-care': addPersonalCare('hillsdale'),
+                'companion-care': addCompanionCare('hillsdale')
+            },
+            rankingFactors: {
+                primaryKeywords: [
+                    'personal care Hillsdale',
+                    'home care Hillsdale',
+                    'Hillsdale elder care'
+                ],
+                secondaryKeywords: [
+                    'Bergen County care',
+                    'Pascack Valley care',
+                    'Hillsdale senior services'
+                ],
+                competitionLevel: 'medium',
+                focusAreas: [
+                    'family-friendly',
+                    'suburban community',
+                    'tree-lined streets'
+                ]
+            },
+            seoContent: {
+                communityFocus:
+                    'Hillsdale is a family-friendly suburban community in the Pascack Valley, known for its tree-lined streets and strong school system.',
+                serviceAreas:
+                    'Serving all areas of Hillsdale, from its residential neighborhoods to areas near the train station and municipal facilities.',
+                localPartners:
+                    'Connected with local community programs, senior services, and healthcare providers in the Hillsdale area.'
+            }
+        },
+        {
+            slug: 'ho-ho-kus',
+            name: 'Ho-Ho-Kus',
+            zipCodes: ['07423'],
+            population: '4,000',
+            demographics: 'historic, affluent, small town charm',
+            localKeywords: [
+                'Ho-Ho-Kus NJ',
+                'Bergen County',
+                'historic borough',
+                'affluent community'
+            ],
+            nearbyAreas: ['Ridgewood', 'Waldwick', 'Allendale', 'Saddle River'],
+            localLandmarks: [
+                'Ho-Ho-Kus Inn',
+                'Hermitage Museum',
+                'Ho-Ho-Kus Train Station',
+                'Saddle River'
+            ],
+            customDescriptions: {
+                'personal-care':
+                    'Personal care services in Ho-Ho-Kus, providing compassionate and professional support for residents in this historic and affluent small town.',
+                'companion-care':
+                    'Companion care for Ho-Ho-Kus seniors, fostering engagement and connection within their charming and historic hometown.',
+                'elder-care':
+                    'Comprehensive elder care solutions in Ho-Ho-Kus, ensuring peace of mind and quality of life for seniors and their families.'
+            },
+            serviceSpecificSEO: {
+                'elder-care': addElderCareConsulting('ho-ho-kus'),
+                staffing: addStaffingServices('ho-ho-kus'),
+                'home-health-aides': addHomeHealthAides('ho-ho-kus'),
+                nursing: addNursingServices('ho-ho-kus'),
+                'personal-care': addPersonalCare('ho-ho-kus'),
+                'companion-care': addCompanionCare('ho-ho-kus')
+            },
+            rankingFactors: {
+                primaryKeywords: [
+                    'personal care Ho-Ho-Kus',
+                    'home care Ho-Ho-Kus',
+                    'Ho-Ho-Kus elder care'
+                ],
+                secondaryKeywords: [
+                    'Bergen County care',
+                    'historic borough care',
+                    'Ho-Ho-Kus senior services'
+                ],
+                competitionLevel: 'low',
+                focusAreas: [
+                    'historic charm',
+                    'affluent community',
+                    'small town atmosphere'
+                ]
+            },
+            seoContent: {
+                communityFocus:
+                    'Ho-Ho-Kus is a historic, affluent borough known for its small town charm, historic landmarks, and proximity to the Saddle River.',
+                serviceAreas:
+                    'Serving all areas of Ho-Ho-Kus, from its historic districts to residential areas near the train station and Saddle River.',
+                localPartners:
+                    'Connected with local community programs, senior services, and healthcare providers in the Ho-Ho-Kus area.'
+            }
+        },
+        {
+            slug: 'leonia',
+            name: 'Leonia',
+            zipCodes: ['07605'],
+            population: '9,000',
+            demographics: 'diverse, artistic community, small town feel',
+            localKeywords: [
+                'Leonia NJ',
+                'Bergen County',
+                'Hudson River',
+                'artistic community'
+            ],
+            nearbyAreas: ['Englewood', 'Palisades Park', 'Fort Lee', 'Teaneck'],
+            localLandmarks: [
+                'Leonia Public Library',
+                'Overpeck County Park',
+                'Leonia High School',
+                'Hudson River waterfront'
+            ],
+            customDescriptions: {
+                'personal-care':
+                    'Personal care services in Leonia, providing compassionate and professional support for residents in this diverse artistic community.',
+                'companion-care':
+                    'Companion care for Leonia seniors, fostering engagement and connection within their creative and welcoming hometown.',
+                'elder-care':
+                    'Comprehensive elder care solutions in Leonia, ensuring peace of mind and quality of life for seniors and their families.'
+            },
+            serviceSpecificSEO: {
+                'elder-care': addElderCareConsulting('leonia'),
+                staffing: addStaffingServices('leonia'),
+                'home-health-aides': addHomeHealthAides('leonia'),
+                nursing: addNursingServices('leonia'),
+                'personal-care': addPersonalCare('leonia'),
+                'companion-care': addCompanionCare('leonia')
+            },
+            rankingFactors: {
+                primaryKeywords: [
+                    'personal care Leonia',
+                    'home care Leonia',
+                    'Leonia elder care'
+                ],
+                secondaryKeywords: [
+                    'Bergen County care',
+                    'Hudson River area care',
+                    'Leonia senior services'
+                ],
+                competitionLevel: 'medium',
+                focusAreas: [
+                    'diverse community',
+                    'artistic atmosphere',
+                    'small town feel'
+                ]
+            },
+            seoContent: {
+                communityFocus:
+                    'Leonia is a diverse, artistic community with a small town feel, known for its creative atmosphere and proximity to the Hudson River.',
+                serviceAreas:
+                    'Serving all areas of Leonia, from its residential neighborhoods to areas near Overpeck County Park and the Hudson River waterfront.',
+                localPartners:
+                    'Connected with local community programs, senior services, and healthcare providers in the Leonia area.'
+            }
+        },
+        {
+            slug: 'little-ferry',
+            name: 'Little Ferry',
+            zipCodes: ['07643'],
+            population: '10,800',
+            demographics: 'dense suburban borough',
+            nearbyAreas: [
+                'Ridgefield Park',
+                'Hackensack',
+                'Moonachie',
+                'South Hackensack'
+            ],
+            localLandmarks: [
+                'Little Ferry Public Library',
+                'Losen Slote Creek Park',
+                'Little Ferry High School'
+            ],
+            customDescriptions: {
+                'personal-care':
+                    'Reliable personal care services in Little Ferry, promoting dignity and independence for residents.',
+                'companion-care':
+                    'Friendly companion care in Little Ferry, fostering social connections and reducing loneliness.',
+                'elder-care':
+                    'Comprehensive elder care in Little Ferry, providing tailored support for a comfortable life at home.'
+            },
+            localKeywords: [
+                'Little Ferry NJ',
+                'Bergen County',
+                'home care in Little Ferry',
+                'Little Ferry senior living'
+            ],
+            serviceSpecificSEO: {
+                'elder-care': addElderCareConsulting('little-ferry'),
+                staffing: addStaffingServices('little-ferry'),
+                'home-health-aides': addHomeHealthAides('little-ferry'),
+                nursing: addNursingServices('little-ferry'),
+                'personal-care': addPersonalCare('little-ferry'),
+                'companion-care': addCompanionCare('little-ferry')
+            },
+            rankingFactors: {
+                primaryKeywords: [
+                    'personal care Little Ferry',
+                    'home care Little Ferry',
+                    'Little Ferry caregivers',
+                    'senior care Little Ferry'
+                ],
+                secondaryKeywords: [
+                    'elderly care Little Ferry NJ',
+                    'home health Little Ferry',
+                    'companion care Little Ferry',
+                    'Little Ferry senior services'
+                ],
+                competitionLevel: 'low',
+                focusAreas: [
+                    'small town community',
+                    'highway accessibility',
+                    'civic pride'
+                ]
+            },
+            seoContent: {
+                communityFocus:
+                    'Little Ferry is a close-knit borough community with strong civic pride and convenient access to major highways for healthcare needs.',
+                serviceAreas:
+                    'Serving all areas of Little Ferry, from its residential neighborhoods to areas near Memorial Park and commercial districts.',
+                localPartners:
+                    'Connected with local community programs, senior services, and healthcare providers in the Little Ferry area.'
+            }
+        },
+        {
+            slug: 'lodi',
+            name: 'Lodi',
+            zipCodes: ['07644'],
+            population: '25,000',
+            demographics: 'diverse, urban-adjacent borough',
+            localKeywords: [
+                'Lodi NJ',
+                'Bergen County',
+                'home care in Lodi',
+                'Lodi senior services'
+            ],
+            nearbyAreas: [
+                'Garfield',
+                'Saddle Brook',
+                'South Hackensack',
+                'Hasbrouck Heights'
+            ],
+            localLandmarks: [
+                'Lodi Public Library',
+                'Felician University',
+                'Saddle River Park (nearby)'
+            ],
+            customDescriptions: {
+                'personal-care':
+                    'Culturally sensitive personal care services in Lodi, adapting to diverse needs.',
+                'companion-care':
+                    'Vibrant companion care in Lodi, fostering social connections and community involvement.',
+                'elder-care':
+                    'Comprehensive elder care in Lodi, leveraging local medical facilities and resources.'
+            },
+            serviceSpecificSEO: {
+                'elder-care': addElderCareConsulting('lodi'),
+                staffing: addStaffingServices('lodi'),
+                'home-health-aides': addHomeHealthAides('lodi'),
+                nursing: addNursingServices('lodi'),
+                'personal-care': addPersonalCare('lodi'),
+                'companion-care': addCompanionCare('lodi')
+            },
+            rankingFactors: {
+                primaryKeywords: [
+                    'personal care Lodi',
+                    'home care Lodi',
+                    'Lodi caregivers',
+                    'senior care Lodi'
+                ],
+                secondaryKeywords: [
+                    'elderly care Lodi NJ',
+                    'home health Lodi',
+                    'companion care Lodi',
+                    'Lodi senior services'
+                ],
+                competitionLevel: 'medium',
+                focusAreas: [
+                    'Italian-American heritage',
+                    'family values',
+                    'community traditions'
+                ]
+            },
+            seoContent: {
+                communityFocus:
+                    'Lodi is a historic borough with strong Italian-American heritage and family-centered values, creating a warm community environment for seniors.',
+                serviceAreas:
+                    'Serving all areas of Lodi, from its historic neighborhoods to areas near Veterans Memorial Park and Main Street.',
+                localPartners:
+                    'Connected with local community programs, Italian-American organizations, and healthcare providers in the Lodi area.'
+            }
+        },
+        {
+            slug: 'lyndhurst',
+            name: 'Lyndhurst',
+            zipCodes: ['07071'],
+            population: '22,000',
+            demographics: 'suburban township',
+            localKeywords: [
+                'Lyndhurst NJ',
+                'Bergen County',
+                'home care in Lyndhurst',
+                'Lyndhurst senior living'
+            ],
+            nearbyAreas: [
+                'Rutherford',
+                'North Arlington',
+                'Nutley',
+                'East Rutherford'
+            ],
+            localLandmarks: [
+                'Lyndhurst Public Library',
+                'Riverside County Park',
+                'Lyndhurst High School'
+            ],
+            customDescriptions: {
+                'personal-care':
+                    'Reliable personal care services in Lyndhurst, promoting dignity and independence for residents.',
+                'companion-care':
+                    'Friendly companion care in Lyndhurst, fostering social connections and reducing loneliness.',
+                'elder-care':
+                    'Comprehensive elder care in Lyndhurst, providing tailored support for a comfortable life at home.'
+            },
+            serviceSpecificSEO: {
+                'elder-care': addElderCareConsulting('lyndhurst'),
+                staffing: addStaffingServices('lyndhurst'),
+                'home-health-aides': addHomeHealthAides('lyndhurst'),
+                nursing: addNursingServices('lyndhurst'),
+                'personal-care': addPersonalCare('lyndhurst'),
+                'companion-care': addCompanionCare('lyndhurst')
+            },
+            rankingFactors: {
+                primaryKeywords: [
+                    'personal care Lyndhurst',
+                    'home care Lyndhurst',
+                    'Lyndhurst caregivers',
+                    'senior care Lyndhurst'
+                ],
+                secondaryKeywords: [
+                    'elderly care Lyndhurst NJ',
+                    'home health Lyndhurst',
+                    'companion care Lyndhurst',
+                    'Lyndhurst senior services'
+                ],
+                competitionLevel: 'medium',
+                focusAreas: [
+                    'transportation access',
+                    'diverse community',
+                    'urban conveniences'
+                ]
+            },
+            seoContent: {
+                communityFocus:
+                    'Lyndhurst is a dynamic township with excellent transportation connections and a diverse community, offering urban conveniences with suburban comfort.',
+                serviceAreas:
+                    'Serving all areas of Lyndhurst, from residential neighborhoods to areas near Riverside County Park and major transportation hubs.',
+                localPartners:
+                    'Connected with local community programs, healthcare providers, and senior services throughout the Lyndhurst area.'
+            }
+        },
+        {
+            slug: 'mahwah',
+            name: 'Mahwah',
+            zipCodes: ['07430', '07495'],
+            population: '26,000',
+            demographics: 'spacious suburban township',
+            localKeywords: [
+                'Mahwah NJ',
+                'Bergen County',
+                'home care in Mahwah',
+                'Mahwah senior living'
+            ],
+            nearbyAreas: [
+                'Ramsey',
+                'Franklin Lakes',
+                'Oakland',
+                'Upper Saddle River'
+            ],
+            localLandmarks: [
+                'Ramapo College of New Jersey',
+                'Campgaw Mountain Ski Area',
+                'Darlington Golf Course'
+            ],
+            customDescriptions: {
+                'personal-care':
+                    'Flexible personal care services in Mahwah, adapting to diverse needs in a spacious environment.',
+                'companion-care':
+                    'Engaging companion care in Mahwah, fostering active lifestyles and social connections.',
+                'elder-care':
+                    'Comprehensive elder care in Mahwah, providing tailored support for seniors in a scenic setting.'
+            },
+            serviceSpecificSEO: {
+                'elder-care': addElderCareConsulting('mahwah'),
+                staffing: addStaffingServices('mahwah'),
+                'home-health-aides': addHomeHealthAides('mahwah'),
+                nursing: addNursingServices('mahwah'),
+                'personal-care': addPersonalCare('mahwah'),
+                'companion-care': addCompanionCare('mahwah')
+            },
+            rankingFactors: {
+                primaryKeywords: [
+                    'personal care Mahwah',
+                    'home care Mahwah',
+                    'Mahwah caregivers',
+                    'senior care Mahwah'
+                ],
+                secondaryKeywords: [
+                    'elderly care Mahwah NJ',
+                    'home health Mahwah',
+                    'companion care Mahwah',
+                    'Mahwah senior services'
+                ],
+                competitionLevel: 'high',
+                focusAreas: [
+                    'affluent community',
+                    'natural settings',
+                    'premium services'
+                ]
+            },
+            seoContent: {
+                communityFocus:
+                    'Mahwah is an affluent township with beautiful natural settings and excellent community services, providing an ideal environment for aging in place.',
+                serviceAreas:
+                    'Serving all areas of Mahwah, from residential neighborhoods to areas near Campgaw Mountain Reservation and major commercial corridors.',
+                localPartners:
+                    'Connected with premium healthcare providers, community programs, and senior services throughout the Mahwah area.'
+            }
+        },
+        {
+            slug: 'maywood',
+            name: 'Maywood',
+            zipCodes: ['07607'],
+            population: '9,500',
+            demographics: 'quiet suburban borough',
+            localKeywords: [
+                'Maywood NJ',
+                'Bergen County',
+                'home care in Maywood',
+                'Maywood senior living'
+            ],
+            nearbyAreas: ['Hackensack', 'Rochelle Park', 'Paramus', 'Lodi'],
+            localLandmarks: [
+                'Maywood Public Library',
+                'Memorial Park',
+                'Maywood Train Station'
+            ],
+            customDescriptions: {
+                'personal-care':
+                    'Reliable personal care services in Maywood, promoting dignity and independence for residents.',
+                'companion-care':
+                    'Friendly companion care in Maywood, fostering social connections and reducing loneliness.',
+                'elder-care':
+                    'Comprehensive elder care in Maywood, providing tailored support for a comfortable life at home.'
+            },
+            serviceSpecificSEO: {
+                'elder-care': addElderCareConsulting('maywood'),
+                staffing: addStaffingServices('maywood'),
+                'home-health-aides': addHomeHealthAides('maywood'),
+                nursing: addNursingServices('maywood'),
+                'personal-care': addPersonalCare('maywood'),
+                'companion-care': addCompanionCare('maywood')
+            },
+            rankingFactors: {
+                primaryKeywords: [
+                    'personal care Maywood',
+                    'home care Maywood',
+                    'Maywood caregivers',
+                    'senior care Maywood'
+                ],
+                secondaryKeywords: [
+                    'elderly care Maywood NJ',
+                    'home health Maywood',
+                    'companion care Maywood',
+                    'Maywood senior services'
+                ],
+                competitionLevel: 'low',
+                focusAreas: [
+                    'small borough charm',
+                    'community spirit',
+                    'neighborhood connections'
+                ]
+            },
+            seoContent: {
+                communityFocus:
+                    'Maywood is a small, tight-knit borough with strong community spirit and convenient access to healthcare and transportation.',
+                serviceAreas:
+                    'Serving all areas of Maywood, from its residential neighborhoods to areas near Memorial Park and the borough center.',
+                localPartners:
+                    'Connected with local community programs, senior services, and healthcare providers in the Maywood area.'
+            }
+        },
+        {
+            slug: 'midland-park',
+            name: 'Midland Park',
+            zipCodes: ['07432'],
+            population: '7,000',
+            demographics: 'small, residential borough',
+            localKeywords: [
+                'Midland Park NJ',
+                'Bergen County',
+                'home care in Midland Park',
+                'Midland Park senior living'
+            ],
+            nearbyAreas: ['Wyckoff', 'Waldwick', 'Ridgewood', 'Franklin Lakes'],
+            localLandmarks: [
+                'Midland Park Public Library',
+                'Midland Park High School',
+                'Godwin Park'
+            ],
+            customDescriptions: {
+                'personal-care':
+                    'Personalized personal care services in Midland Park, ensuring comfort and independence in this residential borough.',
+                'companion-care':
+                    'Warm companion care in Midland Park, fostering genuine connections and social engagement.',
+                'elder-care':
+                    'Dedicated elder care services in Midland Park, supporting seniors with dignity and compassion.'
+            },
+            serviceSpecificSEO: {
+                'elder-care': addElderCareConsulting('midland-park'),
+                staffing: addStaffingServices('midland-park'),
+                'home-health-aides': addHomeHealthAides('midland-park'),
+                nursing: addNursingServices('midland-park'),
+                'personal-care': addPersonalCare('midland-park'),
+                'companion-care': addCompanionCare('midland-park')
+            },
+            rankingFactors: {
+                primaryKeywords: [
+                    'personal care Midland Park',
+                    'home care Midland Park',
+                    'Midland Park caregivers',
+                    'senior care Midland Park'
+                ],
+                secondaryKeywords: [
+                    'elderly care Midland Park NJ',
+                    'home health Midland Park',
+                    'companion care Midland Park',
+                    'Midland Park senior services'
+                ],
+                competitionLevel: 'low',
+                focusAreas: [
+                    'tree-lined streets',
+                    'community involvement',
+                    'peaceful environment'
+                ]
+            },
+            seoContent: {
+                communityFocus:
+                    'Midland Park is a charming small borough with tree-lined streets and strong community involvement, offering a peaceful environment for seniors.',
+                serviceAreas:
+                    'Serving all areas of Midland Park, from its tree-lined residential streets to areas near Godwin Avenue Park and the borough center.',
+                localPartners:
+                    'Connected with local community programs, senior services, and healthcare providers in the Midland Park area.'
+            }
+        },
+        {
+            slug: 'montvale',
+            name: 'Montvale',
+            zipCodes: ['07645'],
+            population: '8,000',
+            demographics: 'affluent suburban borough',
+            localKeywords: [
+                'Montvale NJ',
+                'Bergen County',
+                'home care in Montvale',
+                'Montvale luxury senior care'
+            ],
+            nearbyAreas: [
+                'Park Ridge',
+                'Woodcliff Lake',
+                'Saddle River',
+                'Upper Saddle River'
+            ],
+            localLandmarks: [
+                'Montvale Public Library',
+                'Montvale Train Station',
+                'Memorial Park'
+            ],
+            customDescriptions: {
+                'personal-care':
+                    'Discreet personal care services in Montvale, respecting privacy and providing high-quality support.',
+                'companion-care':
+                    'Exclusive companion care in Montvale, offering sophisticated companionship and assistance.',
+                'elder-care':
+                    'Premium elder care services in Montvale, tailored to the unique needs of affluent residents.'
+            },
+            serviceSpecificSEO: {
+                'elder-care': addElderCareConsulting('montvale'),
+                staffing: addStaffingServices('montvale'),
+                'home-health-aides': addHomeHealthAides('montvale'),
+                nursing: addNursingServices('montvale'),
+                'personal-care': addPersonalCare('montvale'),
+                'companion-care': addCompanionCare('montvale')
+            },
+            rankingFactors: {
+                primaryKeywords: [
+                    'personal care Montvale',
+                    'home care Montvale',
+                    'Montvale caregivers',
+                    'senior care Montvale'
+                ],
+                secondaryKeywords: [
+                    'elderly care Montvale NJ',
+                    'home health Montvale',
+                    'companion care Montvale',
+                    'Montvale senior services'
+                ],
+                competitionLevel: 'high',
+                focusAreas: [
+                    'affluent community',
+                    'corporate environment',
+                    'premium services'
+                ]
+            },
+            seoContent: {
+                communityFocus:
+                    'Montvale is an affluent borough with corporate headquarters and excellent municipal services, providing a high-quality environment for seniors.',
+                serviceAreas:
+                    'Serving all areas of Montvale, from residential neighborhoods to corporate areas and near Huff Pond Park.',
+                localPartners:
+                    'Connected with premium healthcare providers, community programs, and senior services throughout the Montvale area.'
+            }
+        },
+        {
+            slug: 'moonachie',
+            name: 'Moonachie',
+            zipCodes: ['07074'],
+            population: '3,200',
+            demographics: 'small industrial and residential borough',
+            localKeywords: [
+                'Moonachie NJ',
+                'Bergen County',
+                'home care in Moonachie',
+                'Moonachie senior care'
+            ],
+            nearbyAreas: [
+                'Carlstadt',
+                'Little Ferry',
+                'South Hackensack',
+                'Wood-Ridge'
+            ],
+            localLandmarks: [
+                'Moonachie Public Library',
+                'Richard W. DeKorte Park (nearby)',
+                'Moonachie School'
+            ],
+            customDescriptions: {
+                'personal-care':
+                    'Reliable personal care services in Moonachie, supporting independence for residents in this unique borough.',
+                'companion-care':
+                    'Supportive companion care in Moonachie, offering friendship and assistance for daily living.',
+                'elder-care':
+                    'Comprehensive elder care in Moonachie, providing tailored support for seniors in their homes.'
+            },
+            serviceSpecificSEO: {
+                'elder-care': addElderCareConsulting('moonachie'),
+                staffing: addStaffingServices('moonachie'),
+                'home-health-aides': addHomeHealthAides('moonachie'),
+                nursing: addNursingServices('moonachie'),
+                'personal-care': addPersonalCare('moonachie'),
+                'companion-care': addCompanionCare('moonachie')
+            },
+            rankingFactors: {
+                primaryKeywords: [
+                    'personal care Moonachie',
+                    'home care Moonachie',
+                    'Moonachie caregivers',
+                    'senior care Moonachie'
+                ],
+                secondaryKeywords: [
+                    'elderly care Moonachie NJ',
+                    'home health Moonachie',
+                    'companion care Moonachie',
+                    'Moonachie senior services'
+                ],
+                competitionLevel: 'low',
+                focusAreas: [
+                    'small borough',
+                    'close community',
+                    'transportation access'
+                ]
+            },
+            seoContent: {
+                communityFocus:
+                    'Moonachie is a small industrial borough with a close-knit residential community and convenient access to transportation and healthcare.',
+                serviceAreas:
+                    'Serving all areas of Moonachie, from residential neighborhoods to areas near local businesses and transportation corridors.',
+                localPartners:
+                    'Connected with regional community programs, senior services, and healthcare providers serving the Moonachie area.'
+            }
+        },
+        {
+            slug: 'new-milford',
+            name: 'New Milford',
+            zipCodes: ['07646'],
+            population: '16,000',
+            demographics: 'diverse suburban borough',
+            localKeywords: [
+                'New Milford NJ',
+                'Bergen County',
+                'home care in New Milford',
+                'New Milford senior living'
+            ],
+            nearbyAreas: ['Oradell', 'River Edge', 'Bergenfield', 'Teaneck'],
+            localLandmarks: [
+                'New Milford Public Library',
+                'Foschini Park',
+                'New Milford High School'
+            ],
+            customDescriptions: {
+                'personal-care':
+                    'Reliable personal care services in New Milford, promoting dignity and independence for residents.',
+                'companion-care':
+                    'Friendly companion care in New Milford, fostering social connections and reducing loneliness.',
+                'elder-care':
+                    'Comprehensive elder care in New Milford, providing tailored support for a comfortable life at home.'
+            },
+            serviceSpecificSEO: {
+                'elder-care': addElderCareConsulting('new-milford'),
+                staffing: addStaffingServices('new-milford'),
+                'home-health-aides': addHomeHealthAides('new-milford'),
+                nursing: addNursingServices('new-milford'),
+                'personal-care': addPersonalCare('new-milford'),
+                'companion-care': addCompanionCare('new-milford')
+            },
+            rankingFactors: {
+                primaryKeywords: [
+                    'personal care New Milford',
+                    'home care New Milford',
+                    'New Milford caregivers',
+                    'senior care New Milford'
+                ],
+                secondaryKeywords: [
+                    'elderly care New Milford NJ',
+                    'home health New Milford',
+                    'companion care New Milford',
+                    'New Milford senior services'
+                ],
+                competitionLevel: 'medium',
+                focusAreas: [
+                    'family-friendly',
+                    'community programs',
+                    'convenient amenities'
+                ]
+            },
+            seoContent: {
+                communityFocus:
+                    'New Milford is a family-friendly borough with strong community programs, good schools, and convenient access to healthcare and shopping.',
+                serviceAreas:
+                    'Serving all areas of New Milford, from residential neighborhoods to areas near Zapolski Park and the River Road corridor.',
+                localPartners:
+                    'Connected with local community programs, senior services, and healthcare providers throughout the New Milford area.'
+            }
+        },
+        {
+            slug: 'north-arlington',
+            name: 'North Arlington',
+            zipCodes: ['07031'],
+            population: '16,000',
+            demographics: 'dense suburban borough',
+            localKeywords: [
+                'North Arlington NJ',
+                'Bergen County',
+                'home care in North Arlington',
+                'North Arlington senior living'
+            ],
+            nearbyAreas: ['Lyndhurst', 'Kearny', 'Belleville', 'Rutherford'],
+            localLandmarks: [
+                'North Arlington Public Library',
+                'Fabian Park',
+                'Queen of Peace High School (now elementary)'
+            ],
+            customDescriptions: {
+                'personal-care':
+                    'Reliable personal care services in North Arlington, promoting dignity and independence for residents.',
+                'companion-care':
+                    'Friendly companion care in North Arlington, fostering social connections and reducing loneliness.',
+                'elder-care':
+                    'Comprehensive elder care in North Arlington, providing tailored support for a comfortable life at home.'
+            },
+            serviceSpecificSEO: {
+                'elder-care': addElderCareConsulting('north-arlington'),
+                staffing: addStaffingServices('north-arlington'),
+                'home-health-aides': addHomeHealthAides('north-arlington'),
+                nursing: addNursingServices('north-arlington'),
+                'personal-care': addPersonalCare('north-arlington'),
+                'companion-care': addCompanionCare('north-arlington')
+            },
+            rankingFactors: {
+                primaryKeywords: [
+                    'personal care North Arlington',
+                    'home care North Arlington',
+                    'North Arlington caregivers',
+                    'senior care North Arlington'
+                ],
+                secondaryKeywords: [
+                    'elderly care North Arlington NJ',
+                    'home health North Arlington',
+                    'companion care North Arlington',
+                    'North Arlington senior services'
+                ],
+                competitionLevel: 'medium',
+                focusAreas: [
+                    'diverse community',
+                    'transportation access',
+                    'urban conveniences'
+                ]
+            },
+            seoContent: {
+                communityFocus:
+                    'North Arlington is a diverse borough with excellent transportation connections and strong community services, offering urban conveniences with small-town charm.',
+                serviceAreas:
+                    'Serving all areas of North Arlington, from residential neighborhoods to areas near Ridge Road and major transportation corridors.',
+                localPartners:
+                    'Connected with local community programs, healthcare providers, and senior services throughout the North Arlington area.'
+            }
+        },
+        {
+            slug: 'northvale',
+            name: 'Northvale',
+            zipCodes: ['07647'],
+            population: '5,000',
+            demographics: 'quiet, residential, family-oriented borough',
+            localKeywords: [
+                'Northvale NJ',
+                'Bergen County',
+                'Northern Valley',
+                'Rockland County border'
+            ],
+            nearbyAreas: ['Norwood', 'Old Tappan', 'Closter', 'Rockleigh'],
+            localLandmarks: [
+                'Northvale School District',
+                'Rockland County line',
+                'T.B.D. (to be determined local landmark)'
+            ],
+            customDescriptions: {
+                'personal-care':
+                    'Personal care services in Northvale, providing discreet and professional support for residents in this peaceful northern valley community.',
+                'companion-care':
+                    'Companion care in Northvale, enriching the lives of seniors with friendly visits and engaging activities in their quiet hometown.',
+                'elder-care':
+                    'Elder care solutions in Northvale, tailored to the needs of seniors seeking comfortable and reliable support in their cherished homes.'
+            },
+            serviceSpecificSEO: {
+                'elder-care': addElderCareConsulting('northvale'),
+                staffing: addStaffingServices('northvale'),
+                'home-health-aides': addHomeHealthAides('northvale'),
+                nursing: addNursingServices('northvale'),
+                'personal-care': addPersonalCare('northvale'),
+                'companion-care': addCompanionCare('northvale')
+            },
+            rankingFactors: {
+                primaryKeywords: [
+                    'personal care Northvale',
+                    'home care Northvale',
+                    'Northvale caregivers',
+                    'senior care Northvale'
+                ],
+                secondaryKeywords: [
+                    'elderly care Northvale NJ',
+                    'home health Northvale',
+                    'companion care Northvale',
+                    'Northvale senior services'
+                ],
+                competitionLevel: 'low',
+                focusAreas: [
+                    'small community',
+                    'quiet atmosphere',
+                    'family neighborhoods'
+                ]
+            },
+            seoContent: {
+                communityFocus:
+                    'Northvale is a small, quiet borough with a strong sense of community and family-friendly atmosphere, offering peaceful living near the New York border.',
+                serviceAreas:
+                    'Serving all areas of Northvale, from quiet residential streets to areas near the community center and local parks.',
+                localPartners:
+                    'Connected with local community programs, healthcare providers, and senior services throughout the Northvale area.'
+            }
+        },
+        {
+            slug: 'norwood',
+            name: 'Norwood',
+            zipCodes: ['07648'],
+            population: '5,800',
+            demographics: 'quiet suburban borough',
+            localKeywords: [
+                'Norwood NJ',
+                'Bergen County',
+                'home care in Norwood',
+                'Norwood senior living'
+            ],
+            nearbyAreas: [
+                'Harrington Park',
+                'Old Tappan',
+                'Closter',
+                'Northvale'
+            ],
+            localLandmarks: [
+                'Norwood Public Library',
+                'Norwood Memorial Park',
+                'Northern Valley Regional High School at Norwood'
+            ],
+            customDescriptions: {
+                'personal-care':
+                    'Thoughtful personal care services in Norwood, promoting independence in this peaceful borough.',
+                'companion-care':
+                    'Nurturing companion care in Norwood, offering friendly support and social engagement.',
+                'elder-care':
+                    'Holistic elder care in Norwood, with personalized plans for comfortable living at home.'
+            },
+            serviceSpecificSEO: {
+                'elder-care': addElderCareConsulting('norwood'),
+                staffing: addStaffingServices('norwood'),
+                'home-health-aides': addHomeHealthAides('norwood'),
+                nursing: addNursingServices('norwood'),
+                'personal-care': addPersonalCare('norwood'),
+                'companion-care': addCompanionCare('norwood')
+            },
+            rankingFactors: {
+                primaryKeywords: [
+                    'personal care Norwood',
+                    'home care Norwood',
+                    'Norwood caregivers',
+                    'senior care Norwood'
+                ],
+                secondaryKeywords: [
+                    'elderly care Norwood NJ',
+                    'home health Norwood',
+                    'companion care Norwood',
+                    'Norwood senior services'
+                ],
+                competitionLevel: 'low',
+                focusAreas: [
+                    'suburban lifestyle',
+                    'family community',
+                    'good schools'
+                ]
+            },
+            seoContent: {
+                communityFocus:
+                    'Norwood is a family-oriented suburban borough with strong community services and excellent schools, offering a comfortable residential lifestyle.',
+                serviceAreas:
+                    'Serving all areas of Norwood, from suburban neighborhoods to areas near the community center and local facilities.',
+                localPartners:
+                    'Connected with local community programs, healthcare providers, and senior services throughout the Norwood area.'
+            }
+        },
+        {
+            slug: 'oakland',
+            name: 'Oakland',
+            zipCodes: ['07436'],
+            population: '13,000',
+            demographics: 'spacious suburban borough',
+            localKeywords: [
+                'Oakland NJ',
+                'Bergen County',
+                'home care in Oakland',
+                'Oakland senior living'
+            ],
+            nearbyAreas: [
+                'Franklin Lakes',
+                'Mahwah',
+                'Wyckoff',
+                'Pompton Lakes'
+            ],
+            localLandmarks: [
+                'Oakland Public Library',
+                'Great Oak Park',
+                'Ramapo River'
+            ],
+            customDescriptions: {
+                'personal-care':
+                    'Flexible personal care services in Oakland, adapting to diverse needs in a spacious environment.',
+                'companion-care':
+                    'Engaging companion care in Oakland, fostering active lifestyles and social connections.',
+                'elder-care':
+                    'Comprehensive elder care in Oakland, providing tailored support for seniors in a scenic setting.'
+            },
+            serviceSpecificSEO: {
+                'elder-care': addElderCareConsulting('oakland'),
+                staffing: addStaffingServices('oakland'),
+                'home-health-aides': addHomeHealthAides('oakland'),
+                nursing: addNursingServices('oakland'),
+                'personal-care': addPersonalCare('oakland'),
+                'companion-care': addCompanionCare('oakland')
+            },
+            rankingFactors: {
+                primaryKeywords: [
+                    'personal care Oakland',
+                    'home care Oakland',
+                    'Oakland caregivers',
+                    'senior care Oakland'
+                ],
+                secondaryKeywords: [
+                    'elderly care Oakland NJ',
+                    'home health Oakland',
+                    'companion care Oakland',
+                    'Oakland senior services'
+                ],
+                competitionLevel: 'medium',
+                focusAreas: [
+                    'natural beauty',
+                    'outdoor activities',
+                    'suburban living'
+                ]
+            },
+            seoContent: {
+                communityFocus:
+                    'Oakland is a scenic borough known for its natural beauty and outdoor recreational opportunities, offering a peaceful suburban lifestyle.',
+                serviceAreas:
+                    'Serving all areas of Oakland, from residential neighborhoods to areas near parks, trails, and community facilities.',
+                localPartners:
+                    'Connected with local community programs, healthcare providers, and senior services throughout the Oakland area.'
+            }
+        },
+        {
+            slug: 'old-tappan',
+            name: 'Old Tappan',
+            zipCodes: ['07675'],
+            population: '5,800',
+            demographics: 'affluent suburban borough',
+            localKeywords: [
+                'Old Tappan NJ',
+                'Bergen County',
+                'home care in Old Tappan',
+                'Old Tappan luxury senior care'
+            ],
+            nearbyAreas: [
+                'Harrington Park',
+                'Norwood',
+                'River Vale',
+                'Rockleigh'
+            ],
+            localLandmarks: [
+                'Old Tappan Public Library',
+                'Bi-State Plaza',
+                'Northern Valley Regional High School at Old Tappan'
+            ],
+            customDescriptions: {
+                'personal-care':
+                    'Discreet personal care services in Old Tappan, respecting privacy and providing high-quality support.',
+                'companion-care':
+                    'Exclusive companion care in Old Tappan, offering sophisticated companionship and assistance.',
+                'elder-care':
+                    'Premium elder care services in Old Tappan, tailored to the unique needs of affluent residents.'
+            },
+            serviceSpecificSEO: {
+                'elder-care': addElderCareConsulting('old-tappan'),
+                staffing: addStaffingServices('old-tappan'),
+                'home-health-aides': addHomeHealthAides('old-tappan'),
+                nursing: addNursingServices('old-tappan'),
+                'personal-care': addPersonalCare('old-tappan'),
+                'companion-care': addCompanionCare('old-tappan')
+            },
+            rankingFactors: {
+                primaryKeywords: [
+                    'personal care Old Tappan',
+                    'home care Old Tappan',
+                    'Old Tappan caregivers',
+                    'senior care Old Tappan'
+                ],
+                secondaryKeywords: [
+                    'elderly care Old Tappan NJ',
+                    'home health Old Tappan',
+                    'companion care Old Tappan',
+                    'Old Tappan senior services'
+                ],
+                competitionLevel: 'medium',
+                focusAreas: [
+                    'upscale community',
+                    'excellent schools',
+                    'family focus'
+                ]
+            },
+            seoContent: {
+                communityFocus:
+                    'Old Tappan is an upscale borough known for its excellent schools and family-oriented community, offering premium residential living.',
+                serviceAreas:
+                    'Serving all areas of Old Tappan, from upscale neighborhoods to areas near community facilities and local amenities.',
+                localPartners:
+                    'Connected with local community programs, healthcare providers, and senior services throughout the Old Tappan area.'
+            }
+        },
+        {
+            slug: 'oradell',
+            name: 'Oradell',
+            zipCodes: ['07649'],
+            population: '8,000',
+            demographics: 'charming suburban borough',
+            localKeywords: [
+                'Oradell NJ',
+                'Bergen County',
+                'home care in Oradell',
+                'Oradell senior living'
+            ],
+            nearbyAreas: ['River Edge', 'New Milford', 'Paramus', 'Emerson'],
+            localLandmarks: [
+                'Oradell Public Library',
+                'Oradell Reservoir',
+                'Oradell Train Station'
+            ],
+            customDescriptions: {
+                'personal-care':
+                    'Thoughtful personal care services in Oradell, promoting independence in this charming borough.',
+                'companion-care':
+                    'Nurturing companion care in Oradell, offering friendly support and social engagement.',
+                'elder-care':
+                    'Holistic elder care in Oradell, with personalized plans for comfortable living at home.'
+            },
+            serviceSpecificSEO: {
+                'elder-care': addElderCareConsulting('oradell'),
+                staffing: addStaffingServices('oradell'),
+                'home-health-aides': addHomeHealthAides('oradell'),
+                nursing: addNursingServices('oradell'),
+                'personal-care': addPersonalCare('oradell'),
+                'companion-care': addCompanionCare('oradell')
+            },
+            rankingFactors: {
+                primaryKeywords: [
+                    'personal care Oradell',
+                    'home care Oradell',
+                    'Oradell caregivers',
+                    'senior care Oradell'
+                ],
+                secondaryKeywords: [
+                    'elderly care Oradell NJ',
+                    'home health Oradell',
+                    'companion care Oradell',
+                    'Oradell senior services'
+                ],
+                competitionLevel: 'medium',
+                focusAreas: [
+                    'charming downtown',
+                    'historic character',
+                    'community spirit'
+                ]
+            },
+            seoContent: {
+                communityFocus:
+                    'Oradell is a charming borough with a historic downtown and strong community spirit, offering family-friendly living with small-town appeal.',
+                serviceAreas:
+                    'Serving all areas of Oradell, from downtown to residential neighborhoods and community facilities.',
+                localPartners:
+                    'Connected with local community programs, healthcare providers, and senior services throughout the Oradell area.'
+            }
+        },
+        {
+            slug: 'palisades-park',
+            name: 'Palisades Park',
+            zipCodes: ['07650'],
+            population: '20,000',
+            demographics: 'dense, diverse urban borough',
+            localKeywords: [
+                'Palisades Park NJ',
+                'Bergen County',
+                'home care in Palisades Park',
+                'Korean-American senior care'
+            ],
+            nearbyAreas: ['Fort Lee', 'Edgewater', 'Leonia', 'Ridgefield'],
+            localLandmarks: [
+                'Palisades Park Public Library',
+                'Broad Avenue',
+                'Overpeck County Park (nearby)'
+            ],
+            customDescriptions: {
+                'personal-care':
+                    'Culturally sensitive personal care services in Palisades Park, adapting to diverse needs.',
+                'companion-care':
+                    'Vibrant companion care in Palisades Park, fostering social connections and community involvement.',
+                'elder-care':
+                    'Comprehensive elder care in Palisades Park, leveraging local medical facilities and resources.'
+            },
+            serviceSpecificSEO: {
+                'elder-care': addElderCareConsulting('palisades-park'),
+                staffing: addStaffingServices('palisades-park'),
+                'home-health-aides': addHomeHealthAides('palisades-park'),
+                nursing: addNursingServices('palisades-park'),
+                'personal-care': addPersonalCare('palisades-park'),
+                'companion-care': addCompanionCare('palisades-park')
+            },
+            rankingFactors: {
+                primaryKeywords: [
+                    'personal care Palisades Park',
+                    'home care Palisades Park',
+                    'Palisades Park caregivers',
+                    'senior care Palisades Park'
+                ],
+                secondaryKeywords: [
+                    'elderly care Palisades Park NJ',
+                    'home health Palisades Park',
+                    'companion care Palisades Park',
+                    'Palisades Park senior services'
+                ],
+                competitionLevel: 'high',
+                focusAreas: [
+                    'diverse community',
+                    'urban convenience',
+                    'transportation access'
+                ]
+            },
+            seoContent: {
+                communityFocus:
+                    'Palisades Park is a diverse, densely populated borough with excellent transportation access to New York City and strong multicultural community services.',
+                serviceAreas:
+                    'Serving all areas of Palisades Park, from residential neighborhoods to areas near major transportation corridors and community facilities.',
+                localPartners:
+                    'Connected with local community programs, healthcare providers, and multicultural senior services throughout the Palisades Park area.'
+            }
+        },
+        {
+            slug: 'paramus',
+            name: 'Paramus',
+            zipCodes: ['07652', '07653'],
+            population: '27,000',
+            demographics: 'major retail and suburban hub',
+            localKeywords: [
+                'Paramus NJ',
+                'Bergen County',
+                'home care in Paramus',
+                'Paramus senior living'
+            ],
+            nearbyAreas: ['Fair Lawn', 'Ridgewood', 'Oradell', 'Maywood'],
+            localLandmarks: [
+                'Garden State Plaza',
+                'Paramus Park Mall',
+                'Bergen Community College'
+            ],
+            customDescriptions: {
+                'personal-care':
+                    'Flexible personal care services in Paramus, adapting to diverse lifestyles and needs.',
+                'companion-care':
+                    'Vibrant companion care in Paramus, fostering engaging activities and social connections.',
+                'elder-care':
+                    'Comprehensive elder care in Paramus, leveraging local medical facilities and resources.'
+            },
+            serviceSpecificSEO: {
+                'elder-care': addElderCareConsulting('paramus'),
+                staffing: addStaffingServices('paramus'),
+                'home-health-aides': addHomeHealthAides('paramus'),
+                nursing: addNursingServices('paramus'),
+                'personal-care': addPersonalCare('paramus'),
+                'companion-care': addCompanionCare('paramus')
+            },
+            rankingFactors: {
+                primaryKeywords: [
+                    'personal care Paramus',
+                    'home care Paramus',
+                    'Paramus caregivers',
+                    'senior care Paramus'
+                ],
+                secondaryKeywords: [
+                    'elderly care Paramus NJ',
+                    'home health Paramus',
+                    'companion care Paramus',
+                    'Paramus senior services'
+                ],
+                competitionLevel: 'high',
+                focusAreas: [
+                    'retail hub',
+                    'business district',
+                    'convenient access'
+                ]
+            },
+            seoContent: {
+                communityFocus:
+                    'Paramus is a major retail and commercial hub with diverse communities and excellent access to shopping, healthcare, and business services.',
+                serviceAreas:
+                    'Serving all areas of Paramus, from residential neighborhoods to areas near major shopping centers and business districts.',
+                localPartners:
+                    'Connected with local community programs, healthcare providers, and senior services throughout the Paramus area.'
+            }
+        },
+        {
+            slug: 'park-ridge',
+            name: 'Park Ridge',
+            zipCodes: ['07656'],
+            population: '9,000',
+            demographics: 'affluent suburban borough',
+            localKeywords: [
+                'Park Ridge NJ',
+                'Bergen County',
+                'home care in Park Ridge',
+                'Park Ridge luxury senior care'
+            ],
+            nearbyAreas: [
+                'Montvale',
+                'Woodcliff Lake',
+                'River Vale',
+                'Hillsdale'
+            ],
+            localLandmarks: [
+                'Park Ridge Public Library',
+                'Park Ridge Train Station',
+                'Memorial Field'
+            ],
+            customDescriptions: {
+                'personal-care':
+                    'Discreet personal care services in Park Ridge, respecting privacy and providing high-quality support.',
+                'companion-care':
+                    'Exclusive companion care in Park Ridge, offering sophisticated companionship and assistance.',
+                'elder-care':
+                    'Premium elder care services in Park Ridge, tailored to the unique needs of affluent residents.'
+            },
+            serviceSpecificSEO: {
+                'elder-care': addElderCareConsulting('park-ridge'),
+                staffing: addStaffingServices('park-ridge'),
+                'home-health-aides': addHomeHealthAides('park-ridge'),
+                nursing: addNursingServices('park-ridge'),
+                'personal-care': addPersonalCare('park-ridge'),
+                'companion-care': addCompanionCare('park-ridge')
+            },
+            rankingFactors: {
+                primaryKeywords: [
+                    'personal care Park Ridge',
+                    'home care Park Ridge',
+                    'Park Ridge caregivers',
+                    'senior care Park Ridge'
+                ],
+                secondaryKeywords: [
+                    'elderly care Park Ridge NJ',
+                    'home health Park Ridge',
+                    'companion care Park Ridge',
+                    'Park Ridge senior services'
+                ],
+                competitionLevel: 'medium',
+                focusAreas: [
+                    'suburban living',
+                    'excellent schools',
+                    'family community'
+                ]
+            },
+            seoContent: {
+                communityFocus:
+                    'Park Ridge is a well-maintained suburban borough known for its excellent schools and strong family-oriented community values.',
+                serviceAreas:
+                    'Serving all areas of Park Ridge, from suburban neighborhoods to areas near schools, community facilities, and local parks.',
+                localPartners:
+                    'Connected with local community programs, healthcare providers, and senior services throughout the Park Ridge area.'
+            }
+        },
+        {
+            slug: 'ramsey',
+            name: 'Ramsey',
+            zipCodes: ['07446'],
+            population: '15,000',
+            demographics: 'affluent suburban borough',
+            localKeywords: [
+                'Ramsey NJ',
+                'Bergen County',
+                'home care in Ramsey',
+                'Ramsey senior living'
+            ],
+            nearbyAreas: [
+                'Mahwah',
+                'Upper Saddle River',
+                'Allendale',
+                'Waldwick'
+            ],
+            localLandmarks: [
+                'Ramsey Public Library',
+                'Ramsey Train Station',
+                'Ramsey Golf and Country Club'
+            ],
+            customDescriptions: {
+                'personal-care':
+                    'Discreet personal care services in Ramsey, respecting privacy and providing high-quality support.',
+                'companion-care':
+                    'Exclusive companion care in Ramsey, offering sophisticated companionship and assistance.',
+                'elder-care':
+                    'Premium elder care services in Ramsey, tailored to the unique needs of affluent residents.'
+            },
+            serviceSpecificSEO: {
+                'elder-care': addElderCareConsulting('ramsey'),
+                staffing: addStaffingServices('ramsey'),
+                'home-health-aides': addHomeHealthAides('ramsey'),
+                nursing: addNursingServices('ramsey'),
+                'personal-care': addPersonalCare('ramsey'),
+                'companion-care': addCompanionCare('ramsey')
+            },
+            rankingFactors: {
+                primaryKeywords: [
+                    'personal care Ramsey',
+                    'home care Ramsey',
+                    'Ramsey caregivers',
+                    'senior care Ramsey'
+                ],
+                secondaryKeywords: [
+                    'elderly care Ramsey NJ',
+                    'home health Ramsey',
+                    'companion care Ramsey',
+                    'Ramsey senior services'
+                ],
+                competitionLevel: 'medium',
+                focusAreas: [
+                    'downtown area',
+                    'train access',
+                    'historic character'
+                ]
+            },
+            seoContent: {
+                communityFocus:
+                    'Ramsey is a historic borough with an active downtown and excellent train access to New York City, offering both suburban charm and urban convenience.',
+                serviceAreas:
+                    'Serving all areas of Ramsey, from downtown to residential neighborhoods and areas near the train station and community facilities.',
+                localPartners:
+                    'Connected with local community programs, healthcare providers, and senior services throughout the Ramsey area.'
+            }
+        },
+        {
+            slug: 'ridgefield',
+            name: 'Ridgefield',
+            zipCodes: ['07657'],
+            population: '11,000',
+            demographics: 'diverse suburban borough',
+            localKeywords: [
+                'Ridgefield NJ',
+                'Bergen County',
+                'home care in Ridgefield',
+                'Ridgefield senior living'
+            ],
+            nearbyAreas: ['Palisades Park', 'Leonia', 'Fort Lee', 'Fairview'],
+            localLandmarks: [
+                'Ridgefield Public Library',
+                'Veteran’s Memorial Park',
+                'Ridgefield High School'
+            ],
+            customDescriptions: {
+                'personal-care':
+                    'Culturally sensitive personal care services in Ridgefield, adapting to diverse needs.',
+                'companion-care':
+                    'Vibrant companion care in Ridgefield, fostering social connections and community involvement.',
+                'elder-care':
+                    'Comprehensive elder care in Ridgefield, leveraging local medical facilities and resources.'
+            },
+            serviceSpecificSEO: {
+                'elder-care': addElderCareConsulting('ridgefield'),
+                staffing: addStaffingServices('ridgefield'),
+                'home-health-aides': addHomeHealthAides('ridgefield'),
+                nursing: addNursingServices('ridgefield'),
+                'personal-care': addPersonalCare('ridgefield'),
+                'companion-care': addCompanionCare('ridgefield')
+            },
+            rankingFactors: {
+                primaryKeywords: [
+                    'personal care Ridgefield',
+                    'home care Ridgefield',
+                    'Ridgefield caregivers',
+                    'senior care Ridgefield'
+                ],
+                secondaryKeywords: [
+                    'elderly care Ridgefield NJ',
+                    'home health Ridgefield',
+                    'companion care Ridgefield',
+                    'Ridgefield senior services'
+                ],
+                competitionLevel: 'high',
+                focusAreas: [
+                    'diverse community',
+                    'NYC proximity',
+                    'urban convenience'
+                ]
+            },
+            seoContent: {
+                communityFocus:
+                    'Ridgefield is a diverse borough with excellent access to New York City and strong multicultural community services.',
+                serviceAreas:
+                    'Serving all areas of Ridgefield, from residential neighborhoods to areas near transportation corridors and community facilities.',
+                localPartners:
+                    'Connected with local community programs, healthcare providers, and multicultural senior services throughout the Ridgefield area.'
             }
         }
     ]

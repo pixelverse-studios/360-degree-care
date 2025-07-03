@@ -123,6 +123,44 @@ export const PERSONAL_CARE_FAQS: FAQ[] = [
     }
 ]
 
+export const ELDER_CARE_CONSULTING_FAQS: FAQ[] = [
+    {
+        question: 'Who benefits from consulting?',
+        answer: 'Families unsure of next steps, especially at a distance.'
+    },
+    {
+        question: 'Is this the same as care management?',
+        answer: 'No — this focuses on guidance, not ongoing coordination.'
+    },
+    {
+        question: 'What happens in a consult?',
+        answer: 'We review needs and map options.'
+    },
+    {
+        question: 'How long does it take?',
+        answer: 'Usually 1–2 sessions yield a clear care roadmap.'
+    }
+]
+
+export const STAFFING_SERVICES_FAQS: FAQ[] = [
+    {
+        question: 'What roles do you staff?',
+        answer: 'Nurses, aides, therapists, and administrative staff.'
+    },
+    {
+        question: 'Do you handle emergencies?',
+        answer: 'Yes, short-term and last-minute coverage available.'
+    },
+    {
+        question: 'Can I test staff before hiring?',
+        answer: 'We offer temp-to-perm flexibility.'
+    },
+    {
+        question: 'Who do you work with?',
+        answer: 'Facilities across NJ — hospitals, SNFs, and more.'
+    }
+]
+
 export const STAFFING_FAQS: FAQ[] = [
     {
         question: "What's your employee screening process?",
@@ -139,6 +177,63 @@ export const STAFFING_FAQS: FAQ[] = [
     {
         question: 'What kinds of organizations do you work with?',
         answer: 'We work with a wide variety of facilities, including clinics, hospitals, schools, and rehabilitation centers.'
+    }
+]
+
+export const HOME_HEALTH_AIDES_FAQS: FAQ[] = [
+    {
+        question: 'What hours do you offer?',
+        answer: 'From 2-hour shifts to 24/7 live-in support.'
+    },
+    {
+        question: 'What training do your aides have?',
+        answer: 'All are state-certified and supervised by RNs.'
+    },
+    {
+        question: 'Can we customize services?',
+        answer: 'Absolutely — all plans are tailored.'
+    },
+    {
+        question: 'What is Concierge-Level™?',
+        answer: "It's our elevated standard for comfort and personalization."
+    }
+]
+
+export const NURSING_SERVICES_FAQS: FAQ[] = [
+    {
+        question: 'What conditions do you support?',
+        answer: 'Post-surgical, chronic illness, and aging in place needs.'
+    },
+    {
+        question: 'Do you coordinate with doctors?',
+        answer: "Yes — our nurses update and follow your provider's plan."
+    },
+    {
+        question: 'Is this covered by insurance?',
+        answer: "Often — we'll help you check."
+    },
+    {
+        question: 'What equipment do you bring?',
+        answer: 'Varies by case — includes wound kits, PPE, monitoring tools.'
+    }
+]
+
+export const COMPANION_CARE_FAQS: FAQ[] = [
+    {
+        question: 'Is this medical care?',
+        answer: 'No — this is non-medical companionship and daily support.'
+    },
+    {
+        question: 'Can we request the same caregiver each visit?',
+        answer: 'We do our best to maintain continuity.'
+    },
+    {
+        question: 'How often can we schedule?',
+        answer: 'From once a week to daily — fully flexible.'
+    },
+    {
+        question: "What's the difference between this and personal care?",
+        answer: 'Companion care is more social, not physical support-focused.'
     }
 ]
 

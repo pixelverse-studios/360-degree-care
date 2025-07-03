@@ -25,12 +25,11 @@ export default function Footer() {
     return (
         <footer className="bg-primary py-10 text-black">
             <div className="max-w-custom mx-auto px-6">
-                <div className="flex flex-wrap gap-4 justify-between text-white">
+                {/* <div className="flex flex-wrap gap-4 justify-between text-white"> */}
+                <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-[2fr_1fr_1fr_1fr] gap-8 justify-between text-white">
                     <div className="space-y-6">
-                        <div>
-                            <div className="flex gap-2 items-center">
-                                <Logo invert />
-                            </div>
+                        <div className="">
+                            <Logo invert />
                             <p className="mt-2 text-sm">
                                 Providing compassionate in-home care services
                                 for seniors

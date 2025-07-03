@@ -194,53 +194,50 @@ export default function PersonalCareCityPage({ params }: Props) {
 
     const listItemsData = {
         header: serviceSpecificData?.listItems?.header || "What's Included",
-        items: serviceSpecificData?.listItems?.items?.map(item => ({
-            ...item,
-            Icon: item.Icon || (() => null)
-        })) || [
+        items: serviceSpecificData?.listItems?.items || [
             {
                 title: 'Bathing, dressing, and grooming',
                 description:
                     'Assistance with personal hygiene and daily dressing routines',
-                Icon: () => null
+                Icon: 'FaBath'
             },
             {
                 title: 'Light housekeeping and laundry',
                 description: 'Maintaining a clean, safe living environment',
-                Icon: () => null
+                Icon: 'FaBath'
             },
             {
                 title: 'Transportation to appointments',
                 description:
                     'Safe rides to medical visits and community activities',
-                Icon: () => null
+                Icon: 'FaBath'
             },
             {
                 title: 'Assistance with mobility and transfers',
                 description: 'Help with safe movement around the home',
-                Icon: () => null
+                Icon: 'FaBath'
             },
             {
                 title: 'Meal preparation and feeding assistance',
                 description:
                     'Nutritious meal planning and help with eating when needed',
-                Icon: () => null
+                Icon: 'FaBath'
             },
             {
                 title: 'Medication reminders',
                 description: 'Timely prompts for taking prescribed medications',
-                Icon: () => null
+                Icon: 'FaBath'
             },
             {
                 title: 'Companionship and conversation',
                 description:
                     'Meaningful social interaction and emotional support',
-                Icon: () => null
+                Icon: 'FaBath'
             },
             {
                 title: 'Incontinence care',
                 description: 'Dignified assistance with toileting needs',
-                Icon: () => null
+                Icon: 'FaBath'
             }
         ]
     }
@@ -249,33 +246,30 @@ export default function PersonalCareCityPage({ params }: Props) {
         header:
             serviceSpecificData?.benefits?.header ||
             'Benefits of Personal Care',
-        items: serviceSpecificData?.benefits?.items?.map(item => ({
-            ...item,
-            Icon: item.Icon || (() => null)
-        })) || [
+        items: serviceSpecificData?.benefits?.items || [
             {
                 title: 'Promotes Independence',
                 description:
                     'Help seniors remain in their homes longer with dignity and comfort',
-                Icon: () => null
+                Icon: 'FaBath'
             },
             {
                 title: 'Reduces Caregiver Stress',
                 description:
                     'Offers relief for family members and prevents caregiver burnout',
-                Icon: () => null
+                Icon: 'FaBath'
             },
             {
                 title: 'Improves Emotional Well-being',
                 description:
                     'Consistent companionship and support reduces feelings of isolation',
-                Icon: () => null
+                Icon: 'FaBath'
             },
             {
                 title: 'Customizable Plans',
                 description:
                     "Every client's needs and preferences are unique and fully accommodated",
-                Icon: () => null
+                Icon: 'FaBath'
             }
         ]
     }

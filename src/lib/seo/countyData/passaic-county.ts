@@ -1,5 +1,12 @@
 import { CountyData } from '@/lib/counties'
-import { addPersonalCare } from '../serviceTemplates/applyTemplate'
+import {
+    addPersonalCare,
+    addElderCareConsulting,
+    addStaffingServices,
+    addHomeHealthAides,
+    addNursingServices,
+    addCompanionCare
+} from '../serviceTemplates/applyTemplate'
 
 const passaicCountyData: CountyData = {
     slug: 'passaic-county',
@@ -101,57 +108,11 @@ const passaicCountyData: CountyData = {
                             'Coordinated emergency response with Bloomingdale first responders and nearby medical facilities.'
                     }
                 }),
-                'companion-care': {
-                    customH1: 'Companion Care in Bloomingdale',
-                    customTitle:
-                        'Companion Care Bloomingdale NJ | Social Support for Seniors',
-                    customMetaDescription:
-                        'Find compassionate companion care in Bloomingdale, NJ. We offer social engagement, activities, and friendly companionship to enhance senior well-being.',
-                    localKeywords: [
-                        'companion care Bloomingdale',
-                        'senior activities Bloomingdale',
-                        'elderly companionship Bloomingdale'
-                    ],
-                    contentBlocks: {
-                        whyChooseUs:
-                            'Our caregivers provide enriching companionship, supporting seniors in Bloomingdale to stay active and socially connected within their serene community.',
-                        serviceHighlights: [
-                            'Engaging conversations and shared hobbies',
-                            'Escorted outings to local parks and community events',
-                            'Support for cultural and social activities'
-                        ],
-                        localExpertise:
-                            'Familiar with Bloomingdale’s community, parks like Federal Hill, and proximity to Wanaque Reservoir for enriching outings.',
-                        emergencyInfo:
-                            'Immediate support and coordination with family for any unforeseen circumstances during companionship.'
-                    }
-                },
-                'elder-care': {
-                    customH1:
-                        'Comprehensive Elder Care Services in Bloomingdale',
-                    customTitle:
-                        'Elder Care Bloomingdale NJ | Senior Home Care Solutions',
-                    customMetaDescription:
-                        'Explore comprehensive elder care services in Bloomingdale, NJ. From personal assistance to specialized medical support, we offer tailored care plans for seniors.',
-                    localKeywords: [
-                        'elder care Bloomingdale',
-                        'senior care Bloomingdale NJ',
-                        'in-home elder support 07403'
-                    ],
-                    contentBlocks: {
-                        whyChooseUs:
-                            'Our holistic approach to elder care in Bloomingdale focuses on dignity, comfort, and comprehensive well-being in a peaceful setting.',
-                        serviceHighlights: [
-                            'Personalized care plans adapting to evolving needs',
-                            'Coordination with medical professionals and therapists',
-                            'Family support and education services'
-                        ],
-                        localExpertise:
-                            'Strong ties with Bloomingdale healthcare network and senior resources, ensuring integrated care.',
-                        emergencyInfo:
-                            'Proactive emergency planning and rapid response to ensure senior safety in Bloomingdale.'
-                    }
-                }
+                'elder-care': addElderCareConsulting('bloomingdale'),
+                staffing: addStaffingServices('bloomingdale'),
+                'home-health-aides': addHomeHealthAides('bloomingdale'),
+                'nursing-services': addNursingServices('bloomingdale'),
+                'companion-care': addCompanionCare('bloomingdale')
             },
             rankingFactors: {
                 primaryKeywords: [
@@ -229,56 +190,11 @@ const passaicCountyData: CountyData = {
                             'Quick response within Clifton with connections to nearby medical facilities and major highways.'
                     }
                 }),
-                'companion-care': {
-                    customH1: 'Companion Care in Clifton',
-                    customTitle:
-                        'Companion Care Clifton NJ | Social Support for Seniors',
-                    customMetaDescription:
-                        'Find compassionate companion care in Clifton, NJ. We offer social engagement, activities, and friendly companionship to enhance senior well-being.',
-                    localKeywords: [
-                        'companion care Clifton',
-                        'senior activities Clifton',
-                        'elderly companionship Clifton'
-                    ],
-                    contentBlocks: {
-                        whyChooseUs:
-                            'Our caregivers provide enriching companionship, supporting seniors in Clifton to stay active and socially connected within their lively community.',
-                        serviceHighlights: [
-                            'Engaging conversations and shared interests',
-                            'Escorted outings to local parks like Main Memorial Park and community events',
-                            'Support for cultural and social activities'
-                        ],
-                        localExpertise:
-                            'Familiar with Clifton’s community centers, parks, and local attractions for enriching outings.',
-                        emergencyInfo:
-                            'Immediate support and coordination with family for any unforeseen circumstances during companionship.'
-                    }
-                },
-                'elder-care': {
-                    customH1: 'Comprehensive Elder Care Services in Clifton',
-                    customTitle:
-                        'Elder Care Clifton NJ | Senior Home Care Solutions',
-                    customMetaDescription:
-                        'Explore comprehensive elder care services in Clifton, NJ. From personal assistance to specialized medical support, we offer tailored care plans for seniors.',
-                    localKeywords: [
-                        'elder care Clifton',
-                        'senior care Clifton NJ',
-                        'in-home elder support 07013'
-                    ],
-                    contentBlocks: {
-                        whyChooseUs:
-                            'Our holistic approach to elder care in Clifton prioritizes dignity, comfort, and cultural sensitivity for seniors, addressing their diverse needs.',
-                        serviceHighlights: [
-                            'Personalized care plans adapting to evolving needs',
-                            'Coordination with local medical professionals and therapists',
-                            'Family support and educational resources'
-                        ],
-                        localExpertise:
-                            'Strong ties with Clifton healthcare network and senior resources, ensuring integrated care.',
-                        emergencyInfo:
-                            'Proactive emergency planning and rapid response to ensure senior safety in Clifton.'
-                    }
-                }
+                'elder-care': addElderCareConsulting('clifton'),
+                staffing: addStaffingServices('clifton'),
+                'home-health-aides': addHomeHealthAides('clifton'),
+                'nursing-services': addNursingServices('clifton'),
+                'companion-care': addCompanionCare('clifton')
             },
             rankingFactors: {
                 primaryKeywords: [
@@ -354,56 +270,11 @@ const passaicCountyData: CountyData = {
                             'Quick response within Haledon with connections to nearby medical facilities in Paterson and Wayne.'
                     }
                 }),
-                'companion-care': {
-                    customH1: 'Companion Care in Haledon',
-                    customTitle:
-                        'Companion Care Haledon NJ | Social Support for Seniors',
-                    customMetaDescription:
-                        'Find compassionate companion care in Haledon, NJ. We offer social engagement, activities, and friendly companionship to enhance senior well-being.',
-                    localKeywords: [
-                        'companion care Haledon',
-                        'senior activities Haledon',
-                        'elderly companionship Haledon'
-                    ],
-                    contentBlocks: {
-                        whyChooseUs:
-                            'Our caregivers provide enriching companionship, supporting seniors in Haledon to stay active and socially connected within their lively community.',
-                        serviceHighlights: [
-                            'Engaging conversations and shared cultural interests',
-                            'Escorted outings to local parks and community events',
-                            'Support for cultural and social activities'
-                        ],
-                        localExpertise:
-                            'Familiar with Haledon’s community centers and local attractions like the Botto House for enriching outings.',
-                        emergencyInfo:
-                            'Immediate support and coordination with family for any unforeseen circumstances during companionship.'
-                    }
-                },
-                'elder-care': {
-                    customH1: 'Comprehensive Elder Care Services in Haledon',
-                    customTitle:
-                        'Elder Care Haledon NJ | Senior Home Care Solutions',
-                    customMetaDescription:
-                        'Explore comprehensive elder care services in Haledon, NJ. From personal assistance to specialized medical support, we offer tailored care plans for seniors.',
-                    localKeywords: [
-                        'elder care Haledon',
-                        'senior care Haledon NJ',
-                        'in-home elder support 07508'
-                    ],
-                    contentBlocks: {
-                        whyChooseUs:
-                            'Our holistic approach to elder care in Haledon prioritizes dignity, comfort, and cultural sensitivity for seniors.',
-                        serviceHighlights: [
-                            'Personalized care plans adapting to evolving needs',
-                            'Coordination with local medical professionals and therapists',
-                            'Family support and educational resources'
-                        ],
-                        localExpertise:
-                            'Strong ties with Haledon healthcare network and senior resources, ensuring integrated care.',
-                        emergencyInfo:
-                            'Proactive emergency planning and rapid response to ensure senior safety in Haledon.'
-                    }
-                }
+                'elder-care': addElderCareConsulting('haledon'),
+                staffing: addStaffingServices('haledon'),
+                'home-health-aides': addHomeHealthAides('haledon'),
+                'nursing-services': addNursingServices('haledon'),
+                'companion-care': addCompanionCare('haledon')
             },
             rankingFactors: {
                 primaryKeywords: [
@@ -479,56 +350,11 @@ const passaicCountyData: CountyData = {
                             'Coordinated emergency response with Hawthorne first responders and nearby medical facilities.'
                     }
                 }),
-                'companion-care': {
-                    customH1: 'Companion Care in Hawthorne',
-                    customTitle:
-                        'Companion Care Hawthorne NJ | Social Support for Seniors',
-                    customMetaDescription:
-                        'Find compassionate companion care in Hawthorne, NJ. We offer social engagement, activities, and friendly companionship to enhance senior well-being.',
-                    localKeywords: [
-                        'companion care Hawthorne',
-                        'senior activities Hawthorne',
-                        'elderly companionship Hawthorne'
-                    ],
-                    contentBlocks: {
-                        whyChooseUs:
-                            'Our caregivers provide enriching companionship, supporting seniors in Hawthorne to stay active and socially connected.',
-                        serviceHighlights: [
-                            'Engaging conversations and shared hobbies',
-                            'Escorted outings to local parks like Goffle Brook Park and community events',
-                            'Support for social and recreational activities'
-                        ],
-                        localExpertise:
-                            'Familiar with Hawthorne’s community and its convenient location for local errands and outings.',
-                        emergencyInfo:
-                            'Immediate support and coordination with family for any unforeseen circumstances during companionship.'
-                    }
-                },
-                'elder-care': {
-                    customH1: 'Comprehensive Elder Care Services in Hawthorne',
-                    customTitle:
-                        'Elder Care Hawthorne NJ | Senior Home Care Solutions',
-                    customMetaDescription:
-                        'Explore comprehensive elder care services in Hawthorne, NJ. From personal assistance to specialized medical support, we offer tailored care plans for seniors.',
-                    localKeywords: [
-                        'elder care Hawthorne',
-                        'senior care Hawthorne NJ',
-                        'in-home elder support 07506'
-                    ],
-                    contentBlocks: {
-                        whyChooseUs:
-                            'Our holistic approach to elder care in Hawthorne focuses on dignity, comfort, and comprehensive well-being.',
-                        serviceHighlights: [
-                            'Personalized care plans adapting to evolving needs',
-                            'Coordination with medical professionals and therapists',
-                            'Family support and education services'
-                        ],
-                        localExpertise:
-                            'Strong ties with Hawthorne healthcare network and senior resources, ensuring integrated care.',
-                        emergencyInfo:
-                            'Proactive emergency planning and rapid response to ensure senior safety in Hawthorne.'
-                    }
-                }
+                'elder-care': addElderCareConsulting('hawthorne'),
+                staffing: addStaffingServices('hawthorne'),
+                'home-health-aides': addHomeHealthAides('hawthorne'),
+                'nursing-services': addNursingServices('hawthorne'),
+                'companion-care': addCompanionCare('hawthorne')
             },
             rankingFactors: {
                 primaryKeywords: [
@@ -604,57 +430,11 @@ const passaicCountyData: CountyData = {
                             'Coordinated emergency response with Little Falls first responders and nearby medical facilities.'
                     }
                 }),
-                'companion-care': {
-                    customH1: 'Companion Care in Little Falls',
-                    customTitle:
-                        'Companion Care Little Falls NJ | Social Support for Seniors',
-                    customMetaDescription:
-                        'Find compassionate companion care in Little Falls, NJ. We offer social engagement, activities, and friendly companionship to enhance senior well-being.',
-                    localKeywords: [
-                        'companion care Little Falls',
-                        'senior activities Little Falls',
-                        'elderly companionship Little Falls'
-                    ],
-                    contentBlocks: {
-                        whyChooseUs:
-                            'Our caregivers provide enriching companionship, supporting seniors in Little Falls to stay active and socially connected.',
-                        serviceHighlights: [
-                            'Engaging conversations and shared hobbies',
-                            'Escorted outings to local parks and community events near MSU',
-                            'Support for cultural and social activities'
-                        ],
-                        localExpertise:
-                            'Familiar with Little Falls’ community, its unique character influenced by Montclair State University, and local attractions for enriching outings.',
-                        emergencyInfo:
-                            'Immediate support and coordination with family for any unforeseen circumstances during companionship.'
-                    }
-                },
-                'elder-care': {
-                    customH1:
-                        'Comprehensive Elder Care Services in Little Falls',
-                    customTitle:
-                        'Elder Care Little Falls NJ | Senior Home Care Solutions',
-                    customMetaDescription:
-                        'Explore comprehensive elder care services in Little Falls, NJ. From personal assistance to specialized medical support, we offer tailored care plans for seniors.',
-                    localKeywords: [
-                        'elder care Little Falls',
-                        'senior care Little Falls NJ',
-                        'in-home elder support 07424'
-                    ],
-                    contentBlocks: {
-                        whyChooseUs:
-                            'Our holistic approach to elder care in Little Falls focuses on dignity, comfort, and comprehensive well-being.',
-                        serviceHighlights: [
-                            'Personalized care plans adapting to evolving needs',
-                            'Coordination with medical professionals and therapists',
-                            'Family support and education services'
-                        ],
-                        localExpertise:
-                            'Strong ties with Little Falls healthcare network and senior resources, ensuring integrated care.',
-                        emergencyInfo:
-                            'Proactive emergency planning and rapid response to ensure senior safety in Little Falls.'
-                    }
-                }
+                'elder-care': addElderCareConsulting('little-falls'),
+                staffing: addStaffingServices('little-falls'),
+                'home-health-aides': addHomeHealthAides('little-falls'),
+                'nursing-services': addNursingServices('little-falls'),
+                'companion-care': addCompanionCare('little-falls')
             },
             rankingFactors: {
                 primaryKeywords: [
@@ -730,57 +510,11 @@ const passaicCountyData: CountyData = {
                             'Coordinated emergency response with North Haledon first responders and nearby medical facilities.'
                     }
                 }),
-                'companion-care': {
-                    customH1: 'Companion Care in North Haledon',
-                    customTitle:
-                        'Companion Care North Haledon NJ | Social Support for Seniors',
-                    customMetaDescription:
-                        'Find compassionate companion care in North Haledon, NJ. We offer social engagement, activities, and friendly companionship to enhance senior well-being.',
-                    localKeywords: [
-                        'companion care North Haledon',
-                        'senior activities North Haledon',
-                        'elderly companionship North Haledon'
-                    ],
-                    contentBlocks: {
-                        whyChooseUs:
-                            'Our caregivers provide enriching companionship, supporting seniors in North Haledon to stay active and connected.',
-                        serviceHighlights: [
-                            'Engaging conversations and shared hobbies',
-                            'Escorted outings to local parks and community events',
-                            'Support for cultural and social activities'
-                        ],
-                        localExpertise:
-                            'Familiar with North Haledon’s beautiful surroundings and local attractions for enriching outings.',
-                        emergencyInfo:
-                            'Immediate support and coordination with family for any unforeseen circumstances during companionship.'
-                    }
-                },
-                'elder-care': {
-                    customH1:
-                        'Comprehensive Elder Care Services in North Haledon',
-                    customTitle:
-                        'Elder Care North Haledon NJ | Senior Home Care Solutions',
-                    customMetaDescription:
-                        'Explore comprehensive elder care services in North Haledon, NJ. From personal assistance to specialized medical support, we offer tailored care plans for seniors.',
-                    localKeywords: [
-                        'elder care North Haledon',
-                        'senior care North Haledon NJ',
-                        'in-home elder support 07508'
-                    ],
-                    contentBlocks: {
-                        whyChooseUs:
-                            'Our holistic approach to elder care in North Haledon focuses on dignity, comfort, and comprehensive well-being in a peaceful setting.',
-                        serviceHighlights: [
-                            'Personalized care plans adapting to evolving needs',
-                            'Coordination with medical professionals and therapists',
-                            'Family support and education services'
-                        ],
-                        localExpertise:
-                            'Strong ties with North Haledon healthcare network and senior resources, ensuring integrated care.',
-                        emergencyInfo:
-                            'Proactive emergency planning and rapid response to ensure senior safety in North Haledon.'
-                    }
-                }
+                'elder-care': addElderCareConsulting('north-haledon'),
+                staffing: addStaffingServices('north-haledon'),
+                'home-health-aides': addHomeHealthAides('north-haledon'),
+                'nursing-services': addNursingServices('north-haledon'),
+                'companion-care': addCompanionCare('north-haledon')
             },
             rankingFactors: {
                 primaryKeywords: [
@@ -857,56 +591,11 @@ const passaicCountyData: CountyData = {
                             "Quick response within Passaic with direct connections to St. Mary's General Hospital and local emergency services."
                     }
                 }),
-                'companion-care': {
-                    customH1: 'Companion Care in Passaic',
-                    customTitle:
-                        'Companion Care Passaic NJ | Social Support for Seniors',
-                    customMetaDescription:
-                        'Find compassionate companion care in Passaic, NJ. We offer social engagement, activities, and friendly companionship to enhance senior well-being.',
-                    localKeywords: [
-                        'companion care Passaic',
-                        'senior activities Passaic',
-                        'elderly companionship Passaic'
-                    ],
-                    contentBlocks: {
-                        whyChooseUs:
-                            'Our caregivers provide enriching companionship, supporting seniors in Passaic to stay active and socially connected within their lively and diverse community.',
-                        serviceHighlights: [
-                            'Engaging conversations and shared cultural interests',
-                            'Escorted outings to local parks and community events',
-                            'Support for cultural and social activities in the vibrant city'
-                        ],
-                        localExpertise:
-                            'Familiar with Passaic’s community centers and local attractions for enriching outings, catering to diverse preferences.',
-                        emergencyInfo:
-                            'Immediate support and coordination with family for any unforeseen circumstances during companionship.'
-                    }
-                },
-                'elder-care': {
-                    customH1: 'Comprehensive Elder Care Services in Passaic',
-                    customTitle:
-                        'Elder Care Passaic NJ | Senior Home Care Solutions',
-                    customMetaDescription:
-                        'Explore comprehensive elder care services in Passaic, NJ. From personal assistance to specialized medical support, we offer tailored care plans for seniors.',
-                    localKeywords: [
-                        'elder care Passaic',
-                        'senior care Passaic NJ',
-                        'in-home elder support 07055'
-                    ],
-                    contentBlocks: {
-                        whyChooseUs:
-                            'Our holistic approach to elder care in Passaic prioritizes dignity, comfort, and cultural sensitivity for seniors, addressing their diverse needs in an urban environment.',
-                        serviceHighlights: [
-                            'Personalized care plans adapting to evolving needs',
-                            'Coordination with local medical professionals and therapists',
-                            'Family support and educational resources'
-                        ],
-                        localExpertise:
-                            "Strong ties with Passaic healthcare network, including St. Mary's General Hospital, and senior resources, ensuring integrated care.",
-                        emergencyInfo:
-                            'Proactive emergency planning and rapid response to ensure senior safety in Passaic.'
-                    }
-                }
+                'elder-care': addElderCareConsulting('passaic'),
+                staffing: addStaffingServices('passaic'),
+                'home-health-aides': addHomeHealthAides('passaic'),
+                'nursing-services': addNursingServices('passaic'),
+                'companion-care': addCompanionCare('passaic')
             },
             rankingFactors: {
                 primaryKeywords: [
@@ -988,56 +677,11 @@ const passaicCountyData: CountyData = {
                             "Immediate access to St. Joseph's University Medical Center and Passaic County emergency services."
                     }
                 }),
-                'companion-care': {
-                    customH1: 'Companion Care in Paterson',
-                    customTitle:
-                        'Companion Care Paterson NJ | Social Support for Seniors',
-                    customMetaDescription:
-                        'Find compassionate companion care in Paterson, NJ. We offer social engagement, activities, and friendly companionship to enhance senior well-being.',
-                    localKeywords: [
-                        'companion care Paterson',
-                        'senior activities Paterson',
-                        'elderly companionship Paterson'
-                    ],
-                    contentBlocks: {
-                        whyChooseUs:
-                            'Our caregivers provide enriching companionship, supporting seniors in Paterson to stay active and socially connected within their lively and diverse community.',
-                        serviceHighlights: [
-                            'Engaging conversations and shared cultural interests',
-                            'Escorted outings to Paterson Great Falls, local parks, and community events',
-                            'Support for cultural and social activities in the vibrant city'
-                        ],
-                        localExpertise:
-                            'Familiar with Paterson’s community centers and local attractions for enriching outings, catering to diverse preferences.',
-                        emergencyInfo:
-                            'Immediate support and coordination with family for any unforeseen circumstances during companionship.'
-                    }
-                },
-                'elder-care': {
-                    customH1: 'Comprehensive Elder Care Services in Paterson',
-                    customTitle:
-                        'Elder Care Paterson NJ | Senior Home Care Solutions',
-                    customMetaDescription:
-                        'Explore comprehensive elder care services in Paterson, NJ. From personal assistance to specialized medical support, we offer tailored care plans for seniors.',
-                    localKeywords: [
-                        'elder care Paterson',
-                        'senior care Paterson NJ',
-                        'in-home elder support 07501'
-                    ],
-                    contentBlocks: {
-                        whyChooseUs:
-                            'Our holistic approach to elder care in Paterson prioritizes dignity, comfort, and cultural sensitivity for seniors, addressing their diverse needs in an urban environment.',
-                        serviceHighlights: [
-                            'Personalized care plans adapting to evolving needs',
-                            'Coordination with local medical professionals and therapists',
-                            'Family support and educational resources'
-                        ],
-                        localExpertise:
-                            "Strong ties with Paterson healthcare network, including St. Joseph's University Medical Center, and senior resources, ensuring integrated care.",
-                        emergencyInfo:
-                            'Proactive emergency planning and rapid response to ensure senior safety in Paterson.'
-                    }
-                }
+                'elder-care': addElderCareConsulting('patterson'),
+                staffing: addStaffingServices('patterson'),
+                'home-health-aides': addHomeHealthAides('patterson'),
+                'nursing-services': addNursingServices('patterson'),
+                'companion-care': addCompanionCare('patterson')
             },
             rankingFactors: {
                 primaryKeywords: [
@@ -1113,57 +757,11 @@ const passaicCountyData: CountyData = {
                             'Coordinated emergency response with Pompton Lakes first responders and nearby medical facilities.'
                     }
                 }),
-                'companion-care': {
-                    customH1: 'Companion Care in Pompton Lakes',
-                    customTitle:
-                        'Companion Care Pompton Lakes NJ | Social Support for Seniors',
-                    customMetaDescription:
-                        'Find compassionate companion care in Pompton Lakes, NJ. We offer social engagement, activities, and friendly companionship to enhance senior well-being.',
-                    localKeywords: [
-                        'companion care Pompton Lakes',
-                        'senior activities Pompton Lakes',
-                        'elderly companionship Pompton Lakes'
-                    ],
-                    contentBlocks: {
-                        whyChooseUs:
-                            'Our caregivers provide enriching companionship, supporting seniors in Pompton Lakes to stay active and socially connected within their serene community.',
-                        serviceHighlights: [
-                            'Engaging conversations and shared hobbies, often outdoors by the lakes',
-                            'Escorted outings to local parks and community events',
-                            'Support for cultural and social activities'
-                        ],
-                        localExpertise:
-                            'Familiar with Pompton Lakes’ community, its lake-centric lifestyle, and local attractions for enriching outings.',
-                        emergencyInfo:
-                            'Immediate support and coordination with family for any unforeseen circumstances during companionship.'
-                    }
-                },
-                'elder-care': {
-                    customH1:
-                        'Comprehensive Elder Care Services in Pompton Lakes',
-                    customTitle:
-                        'Elder Care Pompton Lakes NJ | Senior Home Care Solutions',
-                    customMetaDescription:
-                        'Explore comprehensive elder care services in Pompton Lakes, NJ. From personal assistance to specialized medical support, we offer tailored care plans for seniors.',
-                    localKeywords: [
-                        'elder care Pompton Lakes',
-                        'senior care Pompton Lakes NJ',
-                        'in-home elder support 07442'
-                    ],
-                    contentBlocks: {
-                        whyChooseUs:
-                            'Our holistic approach to elder care in Pompton Lakes focuses on dignity, comfort, and comprehensive well-being in a peaceful, natural setting.',
-                        serviceHighlights: [
-                            'Personalized care plans adapting to evolving needs',
-                            'Coordination with medical professionals and therapists',
-                            'Family support and education services'
-                        ],
-                        localExpertise:
-                            'Strong ties with Pompton Lakes healthcare network and senior resources, ensuring integrated care.',
-                        emergencyInfo:
-                            'Proactive emergency planning and rapid response to ensure senior safety in Pompton Lakes.'
-                    }
-                }
+                'elder-care': addElderCareConsulting('pompton-lakes'),
+                staffing: addStaffingServices('pompton-lakes'),
+                'home-health-aides': addHomeHealthAides('pompton-lakes'),
+                'nursing-services': addNursingServices('pompton-lakes'),
+                'companion-care': addCompanionCare('pompton-lakes')
             },
             rankingFactors: {
                 primaryKeywords: [
@@ -1234,57 +832,11 @@ const passaicCountyData: CountyData = {
                             'Quick response within Prospect Park with connections to nearby medical facilities in Paterson and Wayne.'
                     }
                 }),
-                'companion-care': {
-                    customH1: 'Companion Care in Prospect Park',
-                    customTitle:
-                        'Companion Care Prospect Park NJ | Social Support for Seniors',
-                    customMetaDescription:
-                        'Find compassionate companion care in Prospect Park, NJ. We offer social engagement, activities, and friendly companionship to enhance senior well-being.',
-                    localKeywords: [
-                        'companion care Prospect Park',
-                        'senior activities Prospect Park',
-                        'elderly companionship Prospect Park'
-                    ],
-                    contentBlocks: {
-                        whyChooseUs:
-                            'Our caregivers provide enriching companionship, supporting seniors in Prospect Park to stay active and socially connected within their lively community.',
-                        serviceHighlights: [
-                            'Engaging conversations and shared cultural interests',
-                            'Escorted outings to local parks and community events',
-                            'Support for cultural and social activities'
-                        ],
-                        localExpertise:
-                            'Familiar with Prospect Park’s community and local attractions for enriching outings.',
-                        emergencyInfo:
-                            'Immediate support and coordination with family for any unforeseen circumstances during companionship.'
-                    }
-                },
-                'elder-care': {
-                    customH1:
-                        'Comprehensive Elder Care Services in Prospect Park',
-                    customTitle:
-                        'Elder Care Prospect Park NJ | Senior Home Care Solutions',
-                    customMetaDescription:
-                        'Explore comprehensive elder care services in Prospect Park, NJ. From personal assistance to specialized medical support, we offer tailored care plans for seniors.',
-                    localKeywords: [
-                        'elder care Prospect Park',
-                        'senior care Prospect Park NJ',
-                        'in-home elder support 07508'
-                    ],
-                    contentBlocks: {
-                        whyChooseUs:
-                            'Our holistic approach to elder care in Prospect Park prioritizes dignity, comfort, and cultural sensitivity for seniors.',
-                        serviceHighlights: [
-                            'Personalized care plans adapting to evolving needs',
-                            'Coordination with local medical professionals and therapists',
-                            'Family support and educational resources'
-                        ],
-                        localExpertise:
-                            'Strong ties with Prospect Park healthcare network and senior resources, ensuring integrated care.',
-                        emergencyInfo:
-                            'Proactive emergency planning and rapid response to ensure senior safety in Prospect Park.'
-                    }
-                }
+                'elder-care': addElderCareConsulting('prospect-park'),
+                staffing: addStaffingServices('prospect-park'),
+                'home-health-aides': addHomeHealthAides('prospect-park'),
+                'nursing-services': addNursingServices('prospect-park'),
+                'companion-care': addCompanionCare('prospect-park')
             },
             rankingFactors: {
                 primaryKeywords: [
@@ -1360,56 +912,11 @@ const passaicCountyData: CountyData = {
                             'Coordinated emergency response with Ringwood first responders and nearby medical facilities, mindful of rural logistics.'
                     }
                 }),
-                'companion-care': {
-                    customH1: 'Companion Care in Ringwood',
-                    customTitle:
-                        'Companion Care Ringwood NJ | Social Support for Seniors',
-                    customMetaDescription:
-                        'Find compassionate companion care in Ringwood, NJ. We offer social engagement, activities, and friendly companionship to enhance senior well-being.',
-                    localKeywords: [
-                        'companion care Ringwood',
-                        'senior activities Ringwood',
-                        'elderly companionship Ringwood'
-                    ],
-                    contentBlocks: {
-                        whyChooseUs:
-                            'Our caregivers provide enriching companionship, supporting seniors in Ringwood to stay active and connected, often with activities enjoying the natural surroundings.',
-                        serviceHighlights: [
-                            'Engaging conversations and shared hobbies',
-                            'Escorted outings to Ringwood State Park or local natural attractions',
-                            'Support for outdoor activities as appropriate'
-                        ],
-                        localExpertise:
-                            'Familiar with Ringwood’s natural beauty, its state parks, and local attractions for enriching outings.',
-                        emergencyInfo:
-                            'Immediate support and coordination with family for any unforeseen circumstances during companionship.'
-                    }
-                },
-                'elder-care': {
-                    customH1: 'Comprehensive Elder Care Services in Ringwood',
-                    customTitle:
-                        'Elder Care Ringwood NJ | Senior Home Care Solutions',
-                    customMetaDescription:
-                        'Explore comprehensive elder care services in Ringwood, NJ. From personal assistance to specialized medical support, we offer tailored care plans for seniors.',
-                    localKeywords: [
-                        'elder care Ringwood',
-                        'senior care Ringwood NJ',
-                        'in-home elder support 07456'
-                    ],
-                    contentBlocks: {
-                        whyChooseUs:
-                            'Our holistic approach to elder care in Ringwood focuses on dignity, comfort, and comprehensive well-being in a serene, natural setting.',
-                        serviceHighlights: [
-                            'Personalized care plans adapting to evolving needs',
-                            'Coordination with medical professionals and therapists',
-                            'Family support and education services'
-                        ],
-                        localExpertise:
-                            'Strong ties with Ringwood healthcare network and senior resources, ensuring integrated care.',
-                        emergencyInfo:
-                            'Proactive emergency planning and rapid response to ensure senior safety in Ringwood.'
-                    }
-                }
+                'elder-care': addElderCareConsulting('ringwood'),
+                staffing: addStaffingServices('ringwood'),
+                'home-health-aides': addHomeHealthAides('ringwood'),
+                'nursing-services': addNursingServices('ringwood'),
+                'companion-care': addCompanionCare('ringwood')
             },
             rankingFactors: {
                 primaryKeywords: [
@@ -1480,56 +987,11 @@ const passaicCountyData: CountyData = {
                             'Coordinated emergency response with Totowa first responders and nearby medical facilities.'
                     }
                 }),
-                'companion-care': {
-                    customH1: 'Companion Care in Totowa',
-                    customTitle:
-                        'Companion Care Totowa NJ | Social Support for Seniors',
-                    customMetaDescription:
-                        'Find compassionate companion care in Totowa, NJ. We offer social engagement, activities, and friendly companionship to enhance senior well-being.',
-                    localKeywords: [
-                        'companion care Totowa',
-                        'senior activities Totowa',
-                        'elderly companionship Totowa'
-                    ],
-                    contentBlocks: {
-                        whyChooseUs:
-                            'Our caregivers provide enriching companionship, supporting seniors in Totowa to stay active and socially connected.',
-                        serviceHighlights: [
-                            'Engaging conversations and shared hobbies',
-                            'Escorted outings to local parks and nearby shopping centers',
-                            'Support for social and recreational activities'
-                        ],
-                        localExpertise:
-                            'Familiar with Totowa’s community and its convenient location for local errands and outings.',
-                        emergencyInfo:
-                            'Immediate support and coordination with family for any unforeseen circumstances during companionship.'
-                    }
-                },
-                'elder-care': {
-                    customH1: 'Comprehensive Elder Care Services in Totowa',
-                    customTitle:
-                        'Elder Care Totowa NJ | Senior Home Care Solutions',
-                    customMetaDescription:
-                        'Explore comprehensive elder care services in Totowa, NJ. From personal assistance to specialized medical support, we offer tailored care plans for seniors.',
-                    localKeywords: [
-                        'elder care Totowa',
-                        'senior care Totowa NJ',
-                        'in-home elder support 07512'
-                    ],
-                    contentBlocks: {
-                        whyChooseUs:
-                            'Our holistic approach to elder care in Totowa focuses on dignity, comfort, and comprehensive well-being.',
-                        serviceHighlights: [
-                            'Personalized care plans adapting to evolving needs',
-                            'Coordination with medical professionals and therapists',
-                            'Family support and education services'
-                        ],
-                        localExpertise:
-                            'Strong ties with Totowa healthcare network and senior resources, ensuring integrated care.',
-                        emergencyInfo:
-                            'Proactive emergency planning and rapid response to ensure senior safety in Totowa.'
-                    }
-                }
+                'elder-care': addElderCareConsulting('totowa'),
+                staffing: addStaffingServices('totowa'),
+                'home-health-aides': addHomeHealthAides('totowa'),
+                'nursing-services': addNursingServices('totowa'),
+                'companion-care': addCompanionCare('totowa')
             },
             rankingFactors: {
                 primaryKeywords: [
@@ -1605,56 +1067,11 @@ const passaicCountyData: CountyData = {
                             'Coordinated emergency response with Wanaque first responders and nearby medical facilities.'
                     }
                 }),
-                'companion-care': {
-                    customH1: 'Companion Care in Wanaque',
-                    customTitle:
-                        'Companion Care Wanaque NJ | Social Support for Seniors',
-                    customMetaDescription:
-                        'Find compassionate companion care in Wanaque, NJ. We offer social engagement, activities, and friendly companionship to enhance senior well-being.',
-                    localKeywords: [
-                        'companion care Wanaque',
-                        'senior activities Wanaque',
-                        'elderly companionship Wanaque'
-                    ],
-                    contentBlocks: {
-                        whyChooseUs:
-                            'Our caregivers provide enriching companionship, supporting seniors in Wanaque to stay active and socially connected within their serene community.',
-                        serviceHighlights: [
-                            'Engaging conversations and shared hobbies, often outdoors by the lakes',
-                            'Escorted outings to local parks and community events',
-                            'Support for cultural and social activities'
-                        ],
-                        localExpertise:
-                            'Familiar with Wanaque’s community, its lake-centric lifestyle, and local attractions for enriching outings.',
-                        emergencyInfo:
-                            'Immediate support and coordination with family for any unforeseen circumstances during companionship.'
-                    }
-                },
-                'elder-care': {
-                    customH1: 'Comprehensive Elder Care Services in Wanaque',
-                    customTitle:
-                        'Elder Care Wanaque NJ | Senior Home Care Solutions',
-                    customMetaDescription:
-                        'Explore comprehensive elder care services in Wanaque, NJ. From personal assistance to specialized medical support, we offer tailored care plans for seniors.',
-                    localKeywords: [
-                        'elder care Wanaque',
-                        'senior care Wanaque NJ',
-                        'in-home elder support 07465'
-                    ],
-                    contentBlocks: {
-                        whyChooseUs:
-                            'Our holistic approach to elder care in Wanaque focuses on dignity, comfort, and comprehensive well-being in a peaceful, natural setting.',
-                        serviceHighlights: [
-                            'Personalized care plans adapting to evolving needs',
-                            'Coordination with medical professionals and therapists',
-                            'Family support and education services'
-                        ],
-                        localExpertise:
-                            'Strong ties with Wanaque healthcare network and senior resources, ensuring integrated care.',
-                        emergencyInfo:
-                            'Proactive emergency planning and rapid response to ensure senior safety in Wanaque.'
-                    }
-                }
+                'elder-care': addElderCareConsulting('wanaque'),
+                staffing: addStaffingServices('wanaque'),
+                'home-health-aides': addHomeHealthAides('wanaque'),
+                'nursing-services': addNursingServices('wanaque'),
+                'companion-care': addCompanionCare('wanaque')
             },
             rankingFactors: {
                 primaryKeywords: [
@@ -1732,56 +1149,11 @@ const passaicCountyData: CountyData = {
                             "Coordinated emergency response with Wayne first responders and nearby medical facilities like St. Joseph's Wayne Medical Center."
                     }
                 }),
-                'companion-care': {
-                    customH1: 'Companion Care in Wayne',
-                    customTitle:
-                        'Companion Care Wayne NJ | Social Support for Seniors',
-                    customMetaDescription:
-                        'Find compassionate companion care in Wayne, NJ. We offer social engagement, activities, and friendly companionship to enhance senior well-being.',
-                    localKeywords: [
-                        'companion care Wayne',
-                        'senior activities Wayne',
-                        'elderly companionship Wayne'
-                    ],
-                    contentBlocks: {
-                        whyChooseUs:
-                            'Our caregivers provide enriching companionship, supporting seniors in Wayne to stay active and socially connected within their amenity-rich community.',
-                        serviceHighlights: [
-                            'Engaging conversations and shared hobbies',
-                            'Escorted outings to Willowbrook Mall, local parks, and cultural events at William Paterson University',
-                            'Support for recreational activities'
-                        ],
-                        localExpertise:
-                            'Familiar with Wayne’s diverse offerings, from its shopping centers to its natural preserves, for enriching outings.',
-                        emergencyInfo:
-                            'Immediate support and coordination with family for any unforeseen circumstances during companionship.'
-                    }
-                },
-                'elder-care': {
-                    customH1: 'Comprehensive Elder Care Services in Wayne',
-                    customTitle:
-                        'Elder Care Wayne NJ | Senior Home Care Solutions',
-                    customMetaDescription:
-                        'Explore comprehensive elder care services in Wayne, NJ. From personal assistance to specialized medical support, we offer tailored care plans for seniors.',
-                    localKeywords: [
-                        'elder care Wayne',
-                        'senior care Wayne NJ',
-                        'in-home elder support 07470'
-                    ],
-                    contentBlocks: {
-                        whyChooseUs:
-                            "Our holistic approach to elder care in Wayne focuses on dignity, comfort, and comprehensive well-being, leveraging the township's resources.",
-                        serviceHighlights: [
-                            'Personalized care plans adapting to evolving needs',
-                            'Coordination with medical professionals and therapists',
-                            'Family support and education services'
-                        ],
-                        localExpertise:
-                            "Strong ties with Wayne healthcare network, including St. Joseph's Wayne Medical Center, and senior resources, ensuring integrated care.",
-                        emergencyInfo:
-                            'Proactive emergency planning and rapid response to ensure senior safety in Wayne.'
-                    }
-                }
+                'elder-care': addElderCareConsulting('wayne'),
+                staffing: addStaffingServices('wayne'),
+                'home-health-aides': addHomeHealthAides('wayne'),
+                'nursing-services': addNursingServices('wayne'),
+                'companion-care': addCompanionCare('wayne')
             },
             rankingFactors: {
                 primaryKeywords: [
@@ -1857,57 +1229,11 @@ const passaicCountyData: CountyData = {
                             'Coordinated emergency response with West Milford first responders and nearby medical facilities, mindful of travel distances.'
                     }
                 }),
-                'companion-care': {
-                    customH1: 'Companion Care in West Milford',
-                    customTitle:
-                        'Companion Care West Milford NJ | Social Support for Seniors',
-                    customMetaDescription:
-                        'Find compassionate companion care in West Milford, NJ. We offer social engagement, activities, and friendly companionship to enhance senior well-being.',
-                    localKeywords: [
-                        'companion care West Milford',
-                        'senior activities West Milford',
-                        'elderly companionship West Milford'
-                    ],
-                    contentBlocks: {
-                        whyChooseUs:
-                            'Our caregivers provide enriching companionship, supporting seniors in West Milford to stay active and socially connected within their serene, nature-rich community.',
-                        serviceHighlights: [
-                            'Engaging conversations and shared hobbies, often enjoying the outdoors',
-                            'Escorted outings to local parks, lakes, and community events',
-                            'Support for hobbies related to nature and quiet living'
-                        ],
-                        localExpertise:
-                            'Familiar with West Milford’s many lakes, state parks, and local attractions for enriching outings.',
-                        emergencyInfo:
-                            'Immediate support and coordination with family for any unforeseen circumstances during companionship.'
-                    }
-                },
-                'elder-care': {
-                    customH1:
-                        'Comprehensive Elder Care Services in West Milford',
-                    customTitle:
-                        'Elder Care West Milford NJ | Senior Home Care Solutions',
-                    customMetaDescription:
-                        'Explore comprehensive elder care services in West Milford, NJ. From personal assistance to specialized medical support, we offer tailored care plans for seniors.',
-                    localKeywords: [
-                        'elder care West Milford',
-                        'senior care West Milford NJ',
-                        'in-home elder support 07480'
-                    ],
-                    contentBlocks: {
-                        whyChooseUs:
-                            'Our holistic approach to elder care in West Milford focuses on dignity, comfort, and comprehensive well-being in a peaceful, natural setting.',
-                        serviceHighlights: [
-                            'Personalized care plans adapting to evolving needs',
-                            'Coordination with medical professionals and therapists',
-                            'Family support and education services'
-                        ],
-                        localExpertise:
-                            'Strong ties with West Milford healthcare network and senior resources, ensuring integrated care.',
-                        emergencyInfo:
-                            'Proactive emergency planning and rapid response to ensure senior safety in West Milford.'
-                    }
-                }
+                'elder-care': addElderCareConsulting('west-milford'),
+                staffing: addStaffingServices('west-milford'),
+                'home-health-aides': addHomeHealthAides('west-milford'),
+                'nursing-services': addNursingServices('west-milford'),
+                'companion-care': addCompanionCare('west-milford')
             },
             rankingFactors: {
                 primaryKeywords: [
@@ -1978,57 +1304,11 @@ const passaicCountyData: CountyData = {
                             'Coordinated emergency response with Woodland Park first responders and nearby medical facilities.'
                     }
                 }),
-                'companion-care': {
-                    customH1: 'Companion Care in Woodland Park',
-                    customTitle:
-                        'Companion Care Woodland Park NJ | Social Support for Seniors',
-                    customMetaDescription:
-                        'Find compassionate companion care in Woodland Park, NJ. We offer social engagement, activities, and friendly companionship to enhance senior well-being.',
-                    localKeywords: [
-                        'companion care Woodland Park',
-                        'senior activities Woodland Park',
-                        'elderly companionship Woodland Park'
-                    ],
-                    contentBlocks: {
-                        whyChooseUs:
-                            'Our caregivers provide enriching companionship, supporting seniors in Woodland Park to stay active and socially connected.',
-                        serviceHighlights: [
-                            'Engaging conversations and shared hobbies',
-                            'Escorted outings to nearby Garret Mountain Reservation and local parks',
-                            'Support for social and recreational activities'
-                        ],
-                        localExpertise:
-                            'Familiar with Woodland Park’s community and its convenient location for local errands and outings.',
-                        emergencyInfo:
-                            'Immediate support and coordination with family for any unforeseen circumstances during companionship.'
-                    }
-                },
-                'elder-care': {
-                    customH1:
-                        'Comprehensive Elder Care Services in Woodland Park',
-                    customTitle:
-                        'Elder Care Woodland Park NJ | Senior Home Care Solutions',
-                    customMetaDescription:
-                        'Explore comprehensive elder care services in Woodland Park, NJ. From personal assistance to specialized medical support, we offer tailored care plans for seniors.',
-                    localKeywords: [
-                        'elder care Woodland Park',
-                        'senior care Woodland Park NJ',
-                        'in-home elder support 07424'
-                    ],
-                    contentBlocks: {
-                        whyChooseUs:
-                            'Our holistic approach to elder care in Woodland Park focuses on dignity, comfort, and comprehensive well-being.',
-                        serviceHighlights: [
-                            'Personalized care plans adapting to evolving needs',
-                            'Coordination with medical professionals and therapists',
-                            'Family support and education services'
-                        ],
-                        localExpertise:
-                            'Strong ties with Woodland Park healthcare network and senior resources, ensuring integrated care.',
-                        emergencyInfo:
-                            'Proactive emergency planning and rapid response to ensure senior safety in Woodland Park.'
-                    }
-                }
+                'elder-care': addElderCareConsulting('woodland-park'),
+                staffing: addStaffingServices('woodland-park'),
+                'home-health-aides': addHomeHealthAides('woodland-park'),
+                'nursing-services': addNursingServices('woodland-park'),
+                'companion-care': addCompanionCare('woodland-park')
             },
             rankingFactors: {
                 primaryKeywords: [

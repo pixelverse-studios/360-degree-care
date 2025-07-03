@@ -7,7 +7,7 @@ import ServiceList from '@/components/services/ServiceList'
 import ServiceBenefits from '@/components/services/ServiceBenefits'
 import ServiceFaqs from '@/components/services/ServiceFaqs'
 import ServiceCta from '@/components/services/ServiceCta'
-import { NURSING_SERVICES_FAQS } from '@/utils/faqs'
+import { STAFFING_SERVICES_FAQS } from '@/utils/faqs'
 
 interface Props {
     params: {
@@ -17,7 +17,7 @@ interface Props {
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
     const { city } = params
-    const seoData = generateLocationSEO('nursing', city)
+    const seoData = generateLocationSEO('staffing', city)
 
     if (!seoData) {
         return {
@@ -31,15 +31,15 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
     const pageTitle =
         seoHeadData?.title ||
-        `In-Home Nursing Services in ${location.name}, NJ | 360 Degree Care`
+        `Medical Staffing Solutions for Healthcare Facilities in ${location.name}, NJ | 360 Degree Care`
     const pageDescription =
         seoHeadData?.metaDescription ||
-        `Professional in-home nursing services in ${location.name}. Licensed nurses providing skilled clinical care, wound care, medication management, and health assessments at home.`
+        `Professional medical staffing services in ${location.name}. Credentialed RNs, LPNs, CNAs, therapists, and support staff for hospitals, rehab centers, and healthcare facilities.`
     const pageKeywords =
         seoHeadData?.keywords ||
-        `in-home nursing, skilled nursing, wound care, medication management, home nursing, ${location.name}, New Jersey`
+        `medical staffing, healthcare staffing, nursing staff, RN staffing, LPN staffing, CNA staffing, ${location.name}, New Jersey`
     const canonicalUrl =
-        seoHeadData?.canonicalUrl || `/services/nursing-services/${city}`
+        seoHeadData?.canonicalUrl || `/services/staffing-services/${city}`
 
     return {
         title: pageTitle,
@@ -55,10 +55,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
                 {
                     url:
                         seoHeadData?.ogImage ||
-                        'https://www.360degreecare.net/assets/nursing-services-image.jpg',
+                        'https://www.360degreecare.net/assets/staffing-services-image.jpg',
                     width: 1200,
                     height: 630,
-                    alt: `In-Home Nursing Services in ${location.name}`
+                    alt: `Medical Staffing Services in ${location.name}`
                 }
             ]
         },
@@ -68,7 +68,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
             description: seoHeadData?.twitterDescription || pageDescription,
             images: [
                 seoHeadData?.twitterImage ||
-                    'https://www.360degreecare.net/assets/nursing-services-image.jpg'
+                    'https://www.360degreecare.net/assets/staffing-services-image.jpg'
             ]
         },
         alternates: {
@@ -85,16 +85,16 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
             'ld+json': JSON.stringify({
                 '@context': 'https://schema.org',
                 '@type': 'Service',
-                name: seoHeadData?.schema?.name || 'In-Home Nursing Services',
+                name: seoHeadData?.schema?.name || 'Medical Staffing Services',
                 serviceType:
-                    seoHeadData?.schema?.serviceType || 'Nursing Services',
+                    seoHeadData?.schema?.serviceType || 'Medical Staffing',
                 provider: {
-                    '@type': 'HomeHealthCareService',
+                    '@type': 'Organization',
                     name: '360 Degree Care',
                     url: 'https://www.360degreecare.net/',
                     logo: 'https://www.360degreecare.net/assets/logo.png',
                     description:
-                        "For over 10 years, we've been providing professional in-home nursing services to families across New Jersey.",
+                        "For over 10 years, we've been providing reliable staffing solutions to healthcare facilities across New Jersey.",
                     address: {
                         '@type': 'PostalAddress',
                         streetAddress:
@@ -113,9 +113,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
                             seoHeadData?.schema?.address?.addressCountry || 'US'
                     },
                     telephone:
-                        seoHeadData?.schema?.telephone || '(800) 338-7786',
-                    award: 'CHAP Certified Organization',
-                    hasCredential: 'Licensed by the State Attorney General'
+                        seoHeadData?.schema?.telephone || '(800) 338-7786'
                 },
                 areaServed: {
                     '@type': seoHeadData?.schema?.areaServed?.type || 'City',
@@ -123,7 +121,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
                 },
                 description:
                     seoHeadData?.schema?.description ||
-                    `360 Degree Care provides professional in-home nursing services in ${location.name} including licensed nurses for wound care, assessments, injections, and medication management.`,
+                    `360 Degree Care provides professional medical staffing solutions in ${location.name} including qualified RNs, LPNs, CNAs, therapists, and support staff for healthcare facilities.`,
                 offers: {
                     '@type': 'Offer',
                     availability: 'https://schema.org/InStock',
@@ -135,14 +133,6 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
                             addressLocality: location.name,
                             addressRegion: 'NJ'
                         }
-                    }
-                },
-                availableChannel: {
-                    '@type': 'ServiceChannel',
-                    name: '24/7 Customer Service',
-                    availableLanguage: {
-                        '@type': 'Language',
-                        name: 'English'
                     }
                 }
             })
@@ -157,10 +147,10 @@ export async function generateStaticParams() {
     }))
 }
 
-export default function NursineCityPage({ params }: Props) {
+export default function StaffingServicesCityPage({ params }: Props) {
     const { city } = params
 
-    const seoData = generateLocationSEO('nursing', city)
+    const seoData = generateLocationSEO('staffing', city)
 
     if (!seoData) {
         notFound()
@@ -172,55 +162,51 @@ export default function NursineCityPage({ params }: Props) {
         header: serviceSpecificData?.hero?.header || h1,
         description:
             serviceSpecificData?.hero?.description ||
-            `Skilled clinical care — at home and on your terms.`,
-        cta: serviceSpecificData?.hero?.cta || 'Contact Us Today',
+            `Credentialed professionals for hospitals, rehab centers, and more.`,
+        cta: serviceSpecificData?.hero?.cta || 'Join the Team',
         img: serviceSpecificData?.hero?.img || {
             src: '',
-            alt: 'in-home nursing services example'
+            alt: 'medical staffing services example'
         }
     }
+
+    console.log('serviceSpecificData: ', serviceSpecificData)
 
     const descriptionData = {
         header:
             serviceSpecificData?.description?.header ||
-            `What is In-Home Nursing in ${location.name}?`,
+            'What is Medical Staffing?',
         description:
             serviceSpecificData?.description?.description ||
-            `Licensed nurses in ${location.name} provide wound care, assessments, injections, and medication management — all coordinated with your doctor and available 24/7.`
+            `We match facilities in ${location.name} with qualified RNs, LPNs, CNAs, therapists, and support staff. Every placement is vetted and ready to provide excellent care — without staffing disruptions.`
     }
 
     const listItemsData = {
         header: serviceSpecificData?.listItems?.header || "What's Included",
         items: serviceSpecificData?.listItems?.items || [
             {
-                title: 'Physical exams and vitals',
+                title: 'RNs, LPNs, CNAs, PT/OT/SLP, medical admin staff',
                 description:
-                    'Comprehensive health assessments and vital sign monitoring',
-                Icon: 'FaStethoscope'
+                    'Comprehensive range of qualified healthcare professionals',
+                Icon: 'FaUserCheck'
             },
             {
-                title: 'Care plan coordination',
+                title: 'Rigorous screening for skills and fit',
                 description:
-                    'Working with your physician to implement treatment plans',
-                Icon: 'FaStethoscope'
+                    'Thorough vetting process to ensure quality placements',
+                Icon: 'FaUserCheck'
             },
             {
-                title: 'Medication administration',
+                title: 'Flexible contracts: short- or long-term',
                 description:
-                    'Professional administration of injections and complex medications',
-                Icon: 'FaStethoscope'
+                    "Adaptable staffing solutions to meet your facility's needs",
+                Icon: 'FaUserCheck'
             },
             {
-                title: 'Advanced wound care',
+                title: 'Industries Served: Hospitals, clinics, assisted living, schools, correctional, SNFs, rehab',
                 description:
-                    'Specialized treatment for complex wounds and dressings',
-                Icon: 'FaStethoscope'
-            },
-            {
-                title: 'Health education for families',
-                description:
-                    'Teaching family members about care procedures and health management',
-                Icon: 'FaStethoscope'
+                    'Wide range of healthcare settings and specialties covered',
+                Icon: 'FaUserCheck'
             }
         ]
     }
@@ -228,40 +214,43 @@ export default function NursineCityPage({ params }: Props) {
     const benefitsData = {
         header:
             serviceSpecificData?.benefits?.header ||
-            'Benefits of In-Home Nursing',
+            'Benefits of Our Staffing Services',
         items: serviceSpecificData?.benefits?.items || [
             {
-                title: 'Highly Qualified Nurses',
+                title: 'Flexibility',
                 description:
-                    'Licensed RNs and LPNs with specialized training and experience',
-                Icon: 'FaStethoscope'
+                    'Adaptable staffing solutions for temporary, permanent, and emergency coverage',
+                Icon: 'FaUserCheck'
             },
             {
-                title: 'Collaborative Care',
+                title: 'Quality Professionals',
                 description:
-                    'Close coordination with your physician and healthcare team',
-                Icon: 'FaStethoscope'
+                    'All staff are credentialed, experienced, and committed to excellence',
+                Icon: 'FaUserCheck'
             },
             {
-                title: 'Round-the-Clock Availability',
-                description: '24/7 nursing support when you need it most',
-                Icon: 'FaStethoscope'
+                title: 'Cost-Efficient Coverage',
+                description:
+                    'Reduce recruitment costs and minimize staffing disruptions',
+                Icon: 'FaUserCheck'
             },
             {
-                title: 'Comprehensive Education',
+                title: 'Comprehensive Training',
                 description:
-                    'Teaching and support for family members to continue care',
-                Icon: 'FaStethoscope'
+                    'Ongoing education and skills development for all placed professionals',
+                Icon: 'FaUserCheck'
             }
         ]
     }
 
     const ctaData = {
-        header: serviceSpecificData?.cta?.header || 'Ready to Get Started?',
+        header:
+            serviceSpecificData?.cta?.header ||
+            'Your Trusted Medical Staffing Partner',
         description:
             serviceSpecificData?.cta?.description ||
-            `Experience professional in-home nursing care in ${location.name}. Contact us today to learn how our licensed nurses can support your health needs at home.`,
-        cta: serviceSpecificData?.cta?.cta || 'Contact Us Today',
+            `Partner with us for reliable medical staffing solutions in ${location.name}. Contact us today to learn how we can support your healthcare facility.`,
+        cta: serviceSpecificData?.cta?.cta || 'Join the Team',
         origin:
             (serviceSpecificData?.cta?.origin as
                 | 'Personal Care'
@@ -269,7 +258,7 @@ export default function NursineCityPage({ params }: Props) {
                 | 'Staffing'
                 | 'Home Health Aides'
                 | 'Nursing Services'
-                | 'Companion Care') || 'Nursing Services'
+                | 'Companion Care') || 'Staffing'
     }
 
     return (
@@ -279,8 +268,8 @@ export default function NursineCityPage({ params }: Props) {
             <ServiceList {...listItemsData} />
             <ServiceBenefits {...benefitsData} />
             <ServiceFaqs
-                header="Questions About In-Home Nursing Services"
-                faqs={NURSING_SERVICES_FAQS}
+                header="Questions About Medical Staffing Services"
+                faqs={STAFFING_SERVICES_FAQS}
             />
             <ServiceCta {...ctaData} />
         </main>
