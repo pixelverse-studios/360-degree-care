@@ -4,8 +4,6 @@ import { navLinks } from '@/utils/routes'
 import CallToAction from '../CallToAction'
 import { getImgSrc } from '@/lib/images'
 
-const couple = getImgSrc('happy_couple_1')
-
 const [serviceLink] = navLinks
 
 export default function HomeHero() {
@@ -51,7 +49,7 @@ export default function HomeHero() {
             </div>
             <img
                 className="rounded-2xl max-h-[20rem] h-fit w-full object-cover"
-                src={couple}
+                src={getImgSrc('home-hero')}
                 alt=""
             />
         </section>

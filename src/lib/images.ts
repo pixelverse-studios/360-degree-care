@@ -217,6 +217,10 @@ const cloudinaryImageMap = new Map([
     [
         'elder-care-hero',
         'https://res.cloudinary.com/pixelverse-studios/image/upload/v1751388148/clients/360dc/heros/ElderCare_Hero_vmz6au.jpg'
+    ],
+    [
+        'home-hero',
+        'https://res.cloudinary.com/pixelverse-studios/image/upload/v1751563005/clients/360dc/heros/HomePage_Hero_w8mpka.jpg'
     ]
 ])
 
