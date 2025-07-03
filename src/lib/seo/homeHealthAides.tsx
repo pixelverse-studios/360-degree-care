@@ -2,22 +2,7 @@
 
 import Head from 'next/head'
 import Script from 'next/script'
-import {
-    FaShield,
-    FaShirt,
-    FaStethoscope,
-    FaBroom,
-    FaBath,
-    FaUtensils,
-    FaCapsules,
-    FaHeart,
-    FaCalendarDays,
-    FaHandHoldingHeart,
-    FaUserDoctor,
-    FaUserCheck,
-    FaClock,
-    FaArrowRight
-} from 'react-icons/fa6'
+import { FaArrowRight } from 'react-icons/fa6'
 import { getImgSrc } from '../images'
 
 const StaticHomeHealthAidesData = {

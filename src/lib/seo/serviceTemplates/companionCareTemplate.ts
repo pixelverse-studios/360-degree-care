@@ -1,16 +1,5 @@
 import { ServiceSEOData } from '@/lib/counties'
 import { getImgSrc } from '../../images'
-import {
-    FaComments,
-    FaCapsules,
-    FaBroom,
-    FaPersonWalking,
-    FaHandHoldingHeart,
-    FaFaceSmile,
-    FaBrain,
-    FaShieldHeart,
-    FaRoute
-} from 'react-icons/fa6'
 
 interface CompanionCareTemplateVars {
     cityName: string

@@ -2,18 +2,7 @@
 
 import Head from 'next/head'
 import Script from 'next/script'
-import {
-    FaComments,
-    FaCapsules,
-    FaBroom,
-    FaPersonWalking,
-    FaHandHoldingHeart,
-    FaFaceSmile,
-    FaBrain,
-    FaShieldHeart,
-    FaRoute,
-    FaArrowRight
-} from 'react-icons/fa6'
+import { FaArrowRight } from 'react-icons/fa6'
 import { getImgSrc } from '../images'
 
 const StaticCompanionCareData = {

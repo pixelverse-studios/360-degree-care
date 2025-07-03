@@ -1,20 +1,5 @@
 import { ServiceSEOData } from '@/lib/counties'
 import { getImgSrc } from '../../images'
-import {
-    FaShield,
-    FaShirt,
-    FaStethoscope,
-    FaBroom,
-    FaBath,
-    FaUtensils,
-    FaCapsules,
-    FaHeart,
-    FaCalendarDays,
-    FaHandHoldingHeart,
-    FaUserDoctor,
-    FaUserCheck,
-    FaClock
-} from 'react-icons/fa6'
 
 interface HomeHealthAidesTemplateVars {
     cityName: string

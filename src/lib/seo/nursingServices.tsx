@@ -2,17 +2,7 @@
 
 import Head from 'next/head'
 import Script from 'next/script'
-import {
-    FaStethoscope,
-    FaClipboardList,
-    FaSyringe,
-    FaBandage,
-    FaGraduationCap,
-    FaUserDoctor,
-    FaHandshake,
-    FaClock,
-    FaArrowRight
-} from 'react-icons/fa6'
+import { FaArrowRight } from 'react-icons/fa6'
 import { getImgSrc } from '../images'
 
 const StaticNursingServicesData = {

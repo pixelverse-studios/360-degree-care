@@ -2,20 +2,7 @@
 
 import Head from 'next/head'
 import Script from 'next/script'
-import {
-    FaBath,
-    FaBroom,
-    FaCar,
-    FaWheelchair,
-    FaUtensils,
-    FaCapsules,
-    FaHeart,
-    FaToilet,
-    FaArrowRight,
-    FaHouseUser,
-    FaFaceSmile,
-    FaNotesMedical
-} from 'react-icons/fa6'
+import { FaArrowRight } from 'react-icons/fa6'
 import { getImgSrc } from '../images'
 
 import { CompanyName } from '@/components/Logo'
