@@ -1,3 +1,5 @@
+'use client'
+import { useRouter } from 'next/navigation'
 import { allServices } from '@/lib/services'
 
 interface CityServiceListProps {
@@ -9,6 +11,8 @@ export default function CityServiceList({
     offeredServiceSlugs,
     cityName
 }: CityServiceListProps) {
+    const router = useRouter()
+
     const servicesToDisplay = allServices.filter(service =>
         offeredServiceSlugs.includes(service.slug)
     )
@@ -17,6 +21,8 @@ export default function CityServiceList({
         return null // Or a message indicating no services are offered
     }
 
+    const onServiceClick = (route: string) => router.push(route)
+
     return (
         <section>
             <div className="section">
@@ -24,8 +30,9 @@ export default function CityServiceList({
                 <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                     {servicesToDisplay.map(service => (
                         <li
-                            className="bg-white-bright p-4 rounded-xl shadow-xl h-full flex flex-col gap-3"
+                            className="bg-white-bright p-4 rounded-xl h-full flex flex-col gap-3 transition-all duration-300 hover:shadow-xl cursor-pointer"
                             key={service.slug}
+                            onClick={() => onServiceClick(service.route)}
                         >
                             <h3>{service.name}</h3>
                             <p>{service.description}</p>

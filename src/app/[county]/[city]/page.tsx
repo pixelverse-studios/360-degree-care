@@ -1,5 +1,7 @@
 import CityHero from '@/components/county/CityHero'
 import CityServiceList from '@/components/county/CityServiceList'
+import CountyCta from '@/components/county/CountyCta'
+import CityFocusList from '@/components/county/CityFocusList'
 
 export async function generateStaticParams() {
     const { counties } = await import('@/lib/counties')
@@ -29,14 +31,20 @@ export default async function CityPage({
     }
 
     return (
-        <main className="py-[4rem] space-y-10">
+        <main className="pb-[4rem] space-y-10">
             <CityHero cityName={cityData.name} countyName={countyData.name} />
+            <CityFocusList {...cityData.seoContent} />
             {cityData.offeredServices && (
                 <CityServiceList
                     offeredServiceSlugs={cityData.offeredServices}
                     cityName={cityData.name}
                 />
             )}
+            <CountyCta
+                header={`Need In-Home Care in ${cityData.name}`}
+                subHeader={countyData.cta.subheading}
+                buttonText={countyData.cta.buttonText}
+            />
         </main>
     )
 }

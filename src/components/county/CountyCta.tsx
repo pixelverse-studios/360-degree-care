@@ -16,9 +16,9 @@ export default function CountyCta({
     return (
         <section>
             <div className="section">
-                <article className="max-w-2xl bg-blue text-white h-fit p-8 rounded-xl mx-auto text-center space-y-4">
+                <article className="max-w-2xl bg-blue text-white h-fit p-8 rounded-xl mx-auto text-center space-y-4 flex flex-col items-center">
                     <h3 className="text-white">{header}</h3>
-                    <p>{subHeader}</p>
+                    <p className="text-balance">{subHeader}</p>
                     <CallToAction
                         buttonLabel={buttonText}
                         value=""
