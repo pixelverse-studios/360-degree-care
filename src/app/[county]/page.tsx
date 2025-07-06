@@ -1,5 +1,3 @@
-// src/app/[county]/page.tsx
-
 import { counties } from '@/lib/counties'
 import CountyHero from '@/components/county/CountyHero'
 import CountyIntro from '@/components/county/CountyIntro'

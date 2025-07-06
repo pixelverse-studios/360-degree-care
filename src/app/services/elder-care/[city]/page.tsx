@@ -17,8 +17,11 @@ interface Props {
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
     const { city } = params
+    console.log('city: ', city)
     const seoData = generateLocationSEO('elder-care', city)
 
+    console.log(seoData)
+    console.log('---')
     if (!seoData) {
         return {
             title: 'Service Not Found',

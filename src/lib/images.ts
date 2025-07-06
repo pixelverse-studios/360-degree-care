@@ -221,6 +221,18 @@ const cloudinaryImageMap = new Map([
     [
         'home-hero',
         'https://res.cloudinary.com/pixelverse-studios/image/upload/v1751563005/clients/360dc/heros/HomePage_Hero_w8mpka.jpg'
+    ],
+    [
+        'sandwich-generation',
+        'https://res.cloudinary.com/pixelverse-studios/image/upload/v1751584907/clients/360dc/blog/sandwich-generation_dbo2s5.png'
+    ],
+    [
+        'ai-vs-hhc',
+        'https://res.cloudinary.com/pixelverse-studios/image/upload/v1751756635/clients/360dc/blog/ai-vs-homehealthcare_cycyxn.png'
+    ],
+    [
+        'assisted-living',
+        'https://res.cloudinary.com/pixelverse-studios/image/upload/v1751757051/clients/360dc/blog/assisted-living-giude_dblpuh.png'
     ]
 ])
 

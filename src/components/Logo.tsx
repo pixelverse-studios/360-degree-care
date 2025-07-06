@@ -69,7 +69,7 @@ const Logo = ({ invert = false }: LogoProps) => {
                 alt="360 Care Logo"
                 className={cn(
                     invert
-                        ? 'w-fit max-w-[20rem] drop-shadow-[0_0_4px_rgba(255,255,255,0.6)]'
+                        ? 'w-full md:w-fit md:max-w-[20rem] drop-shadow-[0_0_4px_rgba(255,255,255,0.6)]'
                         : 'w-2/3'
                 )}
             />

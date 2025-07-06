@@ -1,3 +1,5 @@
+import oceanCountyData from './seo/countyData/ocean-county'
+import monmouthCountyData from './seo/countyData/monmouth-county'
 import bergenCountyData from './seo/countyData/bergen-county'
 import passaicCountyData from './seo/countyData/passaic-county'
 export interface ServiceSEOData {
@@ -132,4 +134,9 @@ export interface CountyData {
 // --- DATA ASSEMBLY ---
 // The data for each county is now self-contained and hard-coded for maximum flexibility.
 
-export const counties: CountyData[] = [bergenCountyData, passaicCountyData]
+export const counties: CountyData[] = [
+    bergenCountyData,
+    monmouthCountyData,
+    oceanCountyData,
+    passaicCountyData
+]
