@@ -1,14 +1,4 @@
-type ServiceProps = {
-    slug: string
-    name: string
-    description: string
-}
-
-interface CountyServiceListProps {
-    services: ServiceProps[]
-    slug: string
-    countyName: string
-}
+import { CountyServiceListProps } from '@/lib/types'
 
 export default function CountyServiceList({
     services,

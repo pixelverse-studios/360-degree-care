@@ -1,4 +1,4 @@
-import { CountyData } from '@/lib/counties'
+import { CountyData, allServiceSlugs } from '@/lib/types'
 import {
     addPersonalCare,
     addElderCareConsulting,
@@ -68,6 +68,7 @@ const oceanCountyData: CountyData = {
         {
             slug: 'barnegat-township',
             name: 'Barnegat Township',
+            offeredServices: allServiceSlugs,
             zipCodes: ['08005'],
             population: '23,167',
             demographics: 'growing, coastal township',
@@ -132,6 +133,7 @@ const oceanCountyData: CountyData = {
         {
             slug: 'barnegat-light-borough',
             name: 'Barnegat Light',
+            offeredServices: allServiceSlugs,
             zipCodes: ['08006'],
             population: '574',
             demographics: 'small, historic coastal borough',
@@ -198,6 +200,7 @@ const oceanCountyData: CountyData = {
         {
             slug: 'bay-head-borough',
             name: 'Bay Head',
+            offeredServices: allServiceSlugs,
             zipCodes: ['08742'],
             population: '968',
             demographics: 'affluent, coastal borough',
@@ -264,6 +267,7 @@ const oceanCountyData: CountyData = {
         {
             slug: 'beach-haven-borough',
             name: 'Beach Haven',
+            offeredServices: allServiceSlugs,
             zipCodes: ['08008'],
             population: '1,170',
             demographics: 'popular, coastal resort town',
@@ -330,6 +334,7 @@ const oceanCountyData: CountyData = {
         {
             slug: 'beachwood-borough',
             name: 'Beachwood',
+            offeredServices: allServiceSlugs,
             zipCodes: ['08722'],
             population: '11,045',
             demographics: 'suburban, riverside borough',
@@ -396,6 +401,7 @@ const oceanCountyData: CountyData = {
         {
             slug: 'berkeley-township',
             name: 'Berkeley Township',
+            offeredServices: allServiceSlugs,
             zipCodes: ['08721'],
             population: '41,255',
             demographics: 'large, suburban township',
@@ -460,6 +466,7 @@ const oceanCountyData: CountyData = {
         {
             slug: 'brick-township',
             name: 'Brick',
+            offeredServices: allServiceSlugs,
             zipCodes: ['08723', '08724'],
             population: '75,072',
             demographics: 'large, suburban township',
@@ -521,6 +528,7 @@ const oceanCountyData: CountyData = {
         {
             slug: 'eagleswood-township',
             name: 'Eagleswood',
+            offeredServices: allServiceSlugs,
             zipCodes: ['08092'],
             population: '1,603',
             demographics: 'rural, coastal township',
@@ -587,6 +595,7 @@ const oceanCountyData: CountyData = {
         {
             slug: 'harvey-cedars-borough',
             name: 'Harvey Cedars',
+            offeredServices: allServiceSlugs,
             zipCodes: ['08008'],
             population: '337',
             demographics: 'small, coastal borough',
@@ -653,6 +662,7 @@ const oceanCountyData: CountyData = {
         {
             slug: 'island-heights-borough',
             name: 'Island Heights',
+            offeredServices: allServiceSlugs,
             zipCodes: ['08732'],
             population: '1,673',
             demographics: 'historic, riverside borough',
@@ -719,6 +729,7 @@ const oceanCountyData: CountyData = {
         {
             slug: 'jackson-township',
             name: 'Jackson',
+            offeredServices: allServiceSlugs,
             zipCodes: ['08527'],
             population: '58,544',
             demographics: 'large, suburban township',
@@ -780,6 +791,7 @@ const oceanCountyData: CountyData = {
         {
             slug: 'lacey-township',
             name: 'Lacey',
+            offeredServices: allServiceSlugs,
             zipCodes: ['08731'],
             population: '28,655',
             demographics: 'suburban township',
@@ -846,6 +858,7 @@ const oceanCountyData: CountyData = {
         {
             slug: 'lakehurst-borough',
             name: 'Lakehurst',
+            offeredServices: allServiceSlugs,
             zipCodes: ['08733'],
             population: '2,654',
             demographics: 'historic, small borough',
@@ -907,6 +920,7 @@ const oceanCountyData: CountyData = {
         {
             slug: 'lakewood-township',
             name: 'Lakewood',
+            offeredServices: allServiceSlugs,
             zipCodes: ['08701'],
             population: '106,300',
             demographics: 'large, diverse township',
@@ -968,6 +982,7 @@ const oceanCountyData: CountyData = {
         {
             slug: 'lavallette-borough',
             name: 'Lavallette',
+            offeredServices: allServiceSlugs,
             zipCodes: ['08735'],
             population: '1,875',
             demographics: 'coastal, residential borough',
@@ -1034,6 +1049,7 @@ const oceanCountyData: CountyData = {
         {
             slug: 'little-egg-harbor-township',
             name: 'Little Egg Harbor',
+            offeredServices: allServiceSlugs,
             zipCodes: ['08087'],
             population: '20,087',
             demographics: 'coastal township',
@@ -1103,6 +1119,7 @@ const oceanCountyData: CountyData = {
         {
             slug: 'long-beach-township',
             name: 'Long Beach Township',
+            offeredServices: allServiceSlugs,
             zipCodes: ['08008'],
             population: '3,050',
             demographics: 'coastal township',
@@ -1172,6 +1189,7 @@ const oceanCountyData: CountyData = {
         {
             slug: 'manchester-township',
             name: 'Manchester',
+            offeredServices: allServiceSlugs,
             zipCodes: ['08759'],
             population: '43,070',
             demographics: 'large, suburban township',
@@ -1233,6 +1251,7 @@ const oceanCountyData: CountyData = {
         {
             slug: 'mantoloking-borough',
             name: 'Mantoloking',
+            offeredServices: allServiceSlugs,
             zipCodes: ['08738'],
             population: '296',
             demographics: 'affluent, coastal borough',
@@ -1294,6 +1313,7 @@ const oceanCountyData: CountyData = {
         {
             slug: 'ocean-gate-borough',
             name: 'Ocean Gate',
+            offeredServices: allServiceSlugs,
             zipCodes: ['08740'],
             population: '2,011',
             demographics: 'small, riverside borough',
@@ -1355,6 +1375,7 @@ const oceanCountyData: CountyData = {
         {
             slug: 'ocean-township-ocean',
             name: 'Ocean Township (Waretown)',
+            offeredServices: allServiceSlugs,
             zipCodes: ['08758'],
             population: '8,443',
             demographics: 'suburban township',
@@ -1425,6 +1446,7 @@ const oceanCountyData: CountyData = {
         {
             slug: 'pine-beach-borough',
             name: 'Pine Beach',
+            offeredServices: allServiceSlugs,
             zipCodes: ['08741'],
             population: '2,127',
             demographics: 'small, riverside borough',
@@ -1486,6 +1508,7 @@ const oceanCountyData: CountyData = {
         {
             slug: 'plumsted-township',
             name: 'Plumsted',
+            offeredServices: allServiceSlugs,
             zipCodes: ['08533'],
             population: '8,421',
             demographics: 'rural township',
@@ -1547,6 +1570,7 @@ const oceanCountyData: CountyData = {
         {
             slug: 'point-pleasant-beach-borough',
             name: 'Point Pleasant Beach',
+            offeredServices: allServiceSlugs,
             zipCodes: ['08742'],
             population: '4,665',
             demographics: 'popular, coastal resort town',
@@ -1614,6 +1638,7 @@ const oceanCountyData: CountyData = {
         {
             slug: 'point-pleasant-borough',
             name: 'Point Pleasant',
+            offeredServices: allServiceSlugs,
             zipCodes: ['08742'],
             population: '18,392',
             demographics: 'suburban borough',
@@ -1680,6 +1705,7 @@ const oceanCountyData: CountyData = {
         {
             slug: 'seaside-heights-borough',
             name: 'Seaside Heights',
+            offeredServices: allServiceSlugs,
             zipCodes: ['08751'],
             population: '2,887',
             demographics: 'popular, coastal resort town',
@@ -1746,6 +1772,7 @@ const oceanCountyData: CountyData = {
         {
             slug: 'seaside-park-borough',
             name: 'Seaside Park',
+            offeredServices: allServiceSlugs,
             zipCodes: ['08752'],
             population: '1,579',
             demographics: 'coastal, residential borough',
@@ -1812,6 +1839,7 @@ const oceanCountyData: CountyData = {
         {
             slug: 'ship-bottom-borough',
             name: 'Ship Bottom',
+            offeredServices: allServiceSlugs,
             zipCodes: ['08008'],
             population: '1,156',
             demographics: 'coastal borough, gateway to LBI',
@@ -1878,6 +1906,7 @@ const oceanCountyData: CountyData = {
         {
             slug: 'south-toms-river-borough',
             name: 'South Toms River',
+            offeredServices: allServiceSlugs,
             zipCodes: ['08757'],
             population: '3,746',
             demographics: 'small, suburban borough',
@@ -1944,6 +1973,7 @@ const oceanCountyData: CountyData = {
         {
             slug: 'stafford-township',
             name: 'Stafford',
+            offeredServices: allServiceSlugs,
             zipCodes: ['08050'],
             population: '26,535',
             demographics: 'suburban township',
@@ -2010,6 +2040,7 @@ const oceanCountyData: CountyData = {
         {
             slug: 'surf-city-borough',
             name: 'Surf City',
+            offeredServices: allServiceSlugs,
             zipCodes: ['08008'],
             population: '1,205',
             demographics: 'coastal borough',
@@ -2076,6 +2107,7 @@ const oceanCountyData: CountyData = {
         {
             slug: 'toms-river-township',
             name: 'Toms River',
+            offeredServices: allServiceSlugs,
             zipCodes: ['08753', '08755', '08757'],
             population: '91,239',
             demographics: 'large, suburban township',
@@ -2137,6 +2169,7 @@ const oceanCountyData: CountyData = {
         {
             slug: 'tuckerton-borough',
             name: 'Tuckerton',
+            offeredServices: allServiceSlugs,
             zipCodes: ['08087'],
             population: '3,347',
             demographics: 'historic, coastal borough',

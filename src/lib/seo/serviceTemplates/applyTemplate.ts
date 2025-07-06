@@ -22,7 +22,7 @@ import {
     generateCompanionCareData,
     companionCareCityConfigs
 } from './companionCareTemplate'
-import { ServiceSEOData } from '@/lib/counties'
+import { ServiceSEOData } from '@/lib/types'
 
 /**
  * Applies personal care template data to a city

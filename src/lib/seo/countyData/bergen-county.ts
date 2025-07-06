@@ -1,4 +1,4 @@
-import { CountyData } from '@/lib/counties'
+import { CountyData, allServiceSlugs } from '@/lib/types'
 import {
     addPersonalCare,
     addElderCareConsulting,
@@ -68,6 +68,7 @@ const bergenCountyData: CountyData = {
         {
             slug: 'hackensack',
             name: 'Hackensack',
+            offeredServices: allServiceSlugs,
             zipCodes: ['07601', '07602'],
             population: '46,000',
             demographics: 'diverse urban center and county seat',
@@ -145,6 +146,7 @@ const bergenCountyData: CountyData = {
         {
             slug: 'ridgewood',
             name: 'Ridgewood',
+            offeredServices: allServiceSlugs,
             zipCodes: ['07450', '07451'],
             population: '25,000',
             demographics: 'affluent suburban community',
@@ -222,6 +224,7 @@ const bergenCountyData: CountyData = {
         {
             slug: 'cliffside-park',
             name: 'Cliffside Park',
+            offeredServices: allServiceSlugs,
             zipCodes: ['07010'],
             population: '25,400',
             demographics: 'diverse, family-friendly borough',
@@ -323,6 +326,7 @@ const bergenCountyData: CountyData = {
         {
             slug: 'allendale',
             name: 'Allendale',
+            offeredServices: allServiceSlugs,
             zipCodes: ['07401'],
             population: '6,700',
             demographics: 'peaceful suburban community',
@@ -424,6 +428,7 @@ const bergenCountyData: CountyData = {
         {
             slug: 'alpine',
             name: 'Alpine',
+            offeredServices: allServiceSlugs,
             zipCodes: ['07620'],
             population: '1,800',
             demographics: 'exclusive, affluent residential community',
@@ -499,6 +504,7 @@ const bergenCountyData: CountyData = {
         {
             slug: 'bergenfield',
             name: 'Bergenfield',
+            offeredServices: allServiceSlugs,
             zipCodes: ['07621'],
             population: '28,000',
             demographics: 'diverse suburban community',
@@ -574,6 +580,7 @@ const bergenCountyData: CountyData = {
         {
             slug: 'bogota',
             name: 'Bogota',
+            offeredServices: allServiceSlugs,
             zipCodes: ['07603'],
             population: '8,000',
             demographics: 'small, close-knit borough',
@@ -654,6 +661,7 @@ const bergenCountyData: CountyData = {
         {
             slug: 'carlstadt',
             name: 'Carlstadt',
+            offeredServices: allServiceSlugs,
             zipCodes: ['07072'],
             population: '6,400',
             demographics: 'industrial and residential borough',
@@ -734,6 +742,7 @@ const bergenCountyData: CountyData = {
         {
             slug: 'closter',
             name: 'Closter',
+            offeredServices: allServiceSlugs,
             zipCodes: ['07624'],
             population: '8,300',
             demographics: 'affluent suburban borough',
@@ -809,6 +818,7 @@ const bergenCountyData: CountyData = {
         {
             slug: 'cresskill',
             name: 'Cresskill',
+            offeredServices: allServiceSlugs,
             zipCodes: ['07626'],
             population: '8,800',
             demographics: 'upscale suburban community',
@@ -884,6 +894,7 @@ const bergenCountyData: CountyData = {
         {
             slug: 'demarest',
             name: 'Demarest',
+            offeredServices: allServiceSlugs,
             zipCodes: ['07627'],
             population: '4,800',
             demographics: 'picturesque suburban borough',
@@ -959,6 +970,7 @@ const bergenCountyData: CountyData = {
         {
             slug: 'dumont',
             name: 'Dumont',
+            offeredServices: allServiceSlugs,
             zipCodes: ['07628'],
             population: '17,800',
             demographics: 'diverse suburban community',
@@ -1034,6 +1046,7 @@ const bergenCountyData: CountyData = {
         {
             slug: 'east-rutherford',
             name: 'East Rutherford',
+            offeredServices: allServiceSlugs,
             zipCodes: ['07073'],
             population: '10,000',
             demographics: 'dynamic borough, home to sports complex',
@@ -1110,6 +1123,7 @@ const bergenCountyData: CountyData = {
         {
             slug: 'edgewater',
             name: 'Edgewater',
+            offeredServices: allServiceSlugs,
             zipCodes: ['07020'],
             population: '12,000',
             demographics: 'riverfront, affluent community',
@@ -1190,6 +1204,7 @@ const bergenCountyData: CountyData = {
         {
             slug: 'emerson',
             name: 'Emerson',
+            offeredServices: allServiceSlugs,
             zipCodes: ['07630'],
             population: '7,400',
             demographics: 'family-friendly suburban borough',
@@ -1270,6 +1285,7 @@ const bergenCountyData: CountyData = {
         {
             slug: 'englewood',
             name: 'Englewood',
+            offeredServices: allServiceSlugs,
             zipCodes: ['07631', '07632'],
             population: '28,000',
             demographics: 'diverse urban and suburban city',
@@ -1346,6 +1362,7 @@ const bergenCountyData: CountyData = {
         {
             slug: 'englewood-cliffs',
             name: 'Englewood Cliffs',
+            offeredServices: allServiceSlugs,
             zipCodes: ['07632'],
             population: '5,300',
             demographics: 'affluent, exclusive borough',
@@ -1421,6 +1438,7 @@ const bergenCountyData: CountyData = {
         {
             slug: 'fair-lawn',
             name: 'Fair Lawn',
+            offeredServices: allServiceSlugs,
             zipCodes: ['07410'],
             population: '34,000',
             demographics: 'large, diverse suburban borough',
@@ -1496,6 +1514,7 @@ const bergenCountyData: CountyData = {
         {
             slug: 'fort-lee',
             name: 'Fort Lee',
+            offeredServices: allServiceSlugs,
             zipCodes: ['07024'],
             population: '40,000',
             demographics: 'diverse urban community at the GWB',
@@ -1577,6 +1596,7 @@ const bergenCountyData: CountyData = {
         {
             slug: 'franklin-lakes',
             name: 'Franklin Lakes',
+            offeredServices: allServiceSlugs,
             zipCodes: ['07417'],
             population: '11,000',
             demographics: 'affluent, spacious suburban community',
@@ -1652,6 +1672,7 @@ const bergenCountyData: CountyData = {
         {
             slug: 'garfield',
             name: 'Garfield',
+            offeredServices: allServiceSlugs,
             zipCodes: ['07026'],
             population: '32,000',
             demographics: 'diverse urban community',
@@ -1728,6 +1749,7 @@ const bergenCountyData: CountyData = {
         {
             slug: 'glen-rock',
             name: 'Glen Rock',
+            offeredServices: allServiceSlugs,
             zipCodes: ['07452'],
             population: '12,000',
             demographics: 'affluent, family-friendly suburban borough',
@@ -1803,6 +1825,7 @@ const bergenCountyData: CountyData = {
         {
             slug: 'harrington-park',
             name: 'Harrington Park',
+            offeredServices: allServiceSlugs,
             zipCodes: ['07640'],
             population: '4,800',
             demographics: 'peaceful suburban borough',
@@ -1878,6 +1901,7 @@ const bergenCountyData: CountyData = {
         {
             slug: 'hasbrouck-heights',
             name: 'Hasbrouck Heights',
+            offeredServices: allServiceSlugs,
             zipCodes: ['07604'],
             population: '12,000',
             demographics: 'tight-knit suburban borough',
@@ -1953,6 +1977,7 @@ const bergenCountyData: CountyData = {
         {
             slug: 'haworth',
             name: 'Haworth',
+            offeredServices: allServiceSlugs,
             zipCodes: ['07641'],
             population: '3,300',
             demographics: 'picturesque, affluent suburban community',
@@ -2028,9 +2053,10 @@ const bergenCountyData: CountyData = {
         {
             slug: 'hillsdale',
             name: 'Hillsdale',
+            offeredServices: allServiceSlugs,
             zipCodes: ['07642'],
             population: '10,000',
-            demographics: 'family-friendly suburban borough',
+            demographics: 'suburban community',
             localKeywords: [
                 'Hillsdale NJ',
                 'Bergen County',
@@ -2108,9 +2134,10 @@ const bergenCountyData: CountyData = {
         {
             slug: 'ho-ho-kus',
             name: 'Ho-Ho-Kus',
+            offeredServices: allServiceSlugs,
             zipCodes: ['07423'],
             population: '4,000',
-            demographics: 'affluent, small suburban borough',
+            demographics: 'affluent, historic borough',
             localKeywords: [
                 'Ho-Ho-Kus NJ',
                 'Bergen County',
@@ -2188,6 +2215,7 @@ const bergenCountyData: CountyData = {
         {
             slug: 'leonia',
             name: 'Leonia',
+            offeredServices: allServiceSlugs,
             zipCodes: ['07605'],
             population: '9,300',
             demographics: 'diverse suburban borough',
@@ -2269,6 +2297,7 @@ const bergenCountyData: CountyData = {
         {
             slug: 'little-ferry',
             name: 'Little Ferry',
+            offeredServices: allServiceSlugs,
             zipCodes: ['07643'],
             population: '10,800',
             demographics: 'dense suburban borough',
@@ -2349,6 +2378,7 @@ const bergenCountyData: CountyData = {
         {
             slug: 'lodi',
             name: 'Lodi',
+            offeredServices: allServiceSlugs,
             zipCodes: ['07644'],
             population: '25,000',
             demographics: 'diverse, urban-adjacent borough',
@@ -2430,6 +2460,7 @@ const bergenCountyData: CountyData = {
         {
             slug: 'lyndhurst',
             name: 'Lyndhurst',
+            offeredServices: allServiceSlugs,
             zipCodes: ['07071'],
             population: '22,000',
             demographics: 'suburban township',
@@ -2510,6 +2541,7 @@ const bergenCountyData: CountyData = {
         {
             slug: 'mahwah',
             name: 'Mahwah',
+            offeredServices: allServiceSlugs,
             zipCodes: ['07430', '07495'],
             population: '26,000',
             demographics: 'spacious suburban township',
@@ -2590,6 +2622,7 @@ const bergenCountyData: CountyData = {
         {
             slug: 'maywood',
             name: 'Maywood',
+            offeredServices: allServiceSlugs,
             zipCodes: ['07607'],
             population: '9,500',
             demographics: 'quiet suburban borough',
@@ -2665,6 +2698,7 @@ const bergenCountyData: CountyData = {
         {
             slug: 'midland-park',
             name: 'Midland Park',
+            offeredServices: allServiceSlugs,
             zipCodes: ['07432'],
             population: '7,000',
             demographics: 'small, residential borough',
@@ -2740,6 +2774,7 @@ const bergenCountyData: CountyData = {
         {
             slug: 'montvale',
             name: 'Montvale',
+            offeredServices: allServiceSlugs,
             zipCodes: ['07645'],
             population: '8,000',
             demographics: 'affluent suburban borough',
@@ -2820,6 +2855,7 @@ const bergenCountyData: CountyData = {
         {
             slug: 'moonachie',
             name: 'Moonachie',
+            offeredServices: allServiceSlugs,
             zipCodes: ['07074'],
             population: '3,200',
             demographics: 'small industrial and residential borough',
@@ -2900,6 +2936,7 @@ const bergenCountyData: CountyData = {
         {
             slug: 'new-milford',
             name: 'New Milford',
+            offeredServices: allServiceSlugs,
             zipCodes: ['07646'],
             population: '16,000',
             demographics: 'diverse suburban borough',
@@ -2975,6 +3012,7 @@ const bergenCountyData: CountyData = {
         {
             slug: 'north-arlington',
             name: 'North Arlington',
+            offeredServices: allServiceSlugs,
             zipCodes: ['07031'],
             population: '16,000',
             demographics: 'dense suburban borough',
@@ -3050,6 +3088,7 @@ const bergenCountyData: CountyData = {
         {
             slug: 'norwood',
             name: 'Norwood',
+            offeredServices: allServiceSlugs,
             zipCodes: ['07648'],
             population: '5,800',
             demographics: 'quiet suburban borough',
@@ -3130,6 +3169,7 @@ const bergenCountyData: CountyData = {
         {
             slug: 'oakland',
             name: 'Oakland',
+            offeredServices: allServiceSlugs,
             zipCodes: ['07436'],
             population: '13,000',
             demographics: 'spacious suburban borough',
@@ -3210,6 +3250,7 @@ const bergenCountyData: CountyData = {
         {
             slug: 'old-tappan',
             name: 'Old Tappan',
+            offeredServices: allServiceSlugs,
             zipCodes: ['07675'],
             population: '5,800',
             demographics: 'affluent suburban borough',
@@ -3290,6 +3331,7 @@ const bergenCountyData: CountyData = {
         {
             slug: 'oradell',
             name: 'Oradell',
+            offeredServices: allServiceSlugs,
             zipCodes: ['07649'],
             population: '8,000',
             demographics: 'charming suburban borough',
@@ -3365,6 +3407,7 @@ const bergenCountyData: CountyData = {
         {
             slug: 'palisades-park',
             name: 'Palisades Park',
+            offeredServices: allServiceSlugs,
             zipCodes: ['07650'],
             population: '20,000',
             demographics: 'dense, diverse urban borough',
@@ -3441,6 +3484,7 @@ const bergenCountyData: CountyData = {
         {
             slug: 'paramus',
             name: 'Paramus',
+            offeredServices: allServiceSlugs,
             zipCodes: ['07652', '07653'],
             population: '27,000',
             demographics: 'major retail and suburban hub',
@@ -3517,6 +3561,7 @@ const bergenCountyData: CountyData = {
         {
             slug: 'park-ridge',
             name: 'Park Ridge',
+            offeredServices: allServiceSlugs,
             zipCodes: ['07656'],
             population: '9,000',
             demographics: 'affluent suburban borough',
@@ -3597,6 +3642,7 @@ const bergenCountyData: CountyData = {
         {
             slug: 'ramsey',
             name: 'Ramsey',
+            offeredServices: allServiceSlugs,
             zipCodes: ['07446'],
             population: '15,000',
             demographics: 'affluent suburban borough',
@@ -3677,6 +3723,7 @@ const bergenCountyData: CountyData = {
         {
             slug: 'ridgefield',
             name: 'Ridgefield',
+            offeredServices: allServiceSlugs,
             zipCodes: ['07657'],
             population: '11,000',
             demographics: 'diverse suburban borough',
@@ -3753,6 +3800,7 @@ const bergenCountyData: CountyData = {
         {
             slug: 'ridgefield-park',
             name: 'Ridgefield Park',
+            offeredServices: allServiceSlugs,
             zipCodes: ['07660'],
             population: '12,000',
             demographics: 'dense suburban village',
@@ -3828,9 +3876,10 @@ const bergenCountyData: CountyData = {
         {
             slug: 'elmwood-park',
             name: 'Elmwood Park',
+            offeredServices: allServiceSlugs,
             zipCodes: ['07407'],
             population: '20,000',
-            demographics: 'diverse, established community with suburban feel',
+            demographics: 'diverse suburban borough',
             localKeywords: [
                 'Elmwood Park NJ',
                 'Bergen County',
@@ -3903,6 +3952,7 @@ const bergenCountyData: CountyData = {
         {
             slug: 'fairview',
             name: 'Fairview',
+            offeredServices: allServiceSlugs,
             zipCodes: ['07022'],
             population: '15,000',
             demographics:
@@ -3969,6 +4019,7 @@ const bergenCountyData: CountyData = {
         {
             slug: 'northvale',
             name: 'Northvale',
+            offeredServices: allServiceSlugs,
             zipCodes: ['07647'],
             population: '5,000',
             demographics: 'quiet, residential, family-oriented borough',
@@ -4044,6 +4095,7 @@ const bergenCountyData: CountyData = {
         {
             slug: 'river-edge',
             name: 'River Edge',
+            offeredServices: allServiceSlugs,
             zipCodes: ['07661'],
             population: '11,000',
             demographics: 'suburban, family-friendly, strong community feel',
@@ -4197,6 +4249,7 @@ const bergenCountyData: CountyData = {
         {
             slug: 'river-vale',
             name: 'River Vale',
+            offeredServices: allServiceSlugs,
             zipCodes: ['07675'],
             population: '10,000',
             demographics: 'affluent, residential, strong school system',
@@ -4302,6 +4355,7 @@ const bergenCountyData: CountyData = {
         {
             slug: 'rochelle-park',
             name: 'Rochelle Park',
+            offeredServices: allServiceSlugs,
             zipCodes: ['07662'],
             population: '6,000',
             demographics: 'suburban, well-established, convenient location',
@@ -4407,7 +4461,8 @@ const bergenCountyData: CountyData = {
         {
             slug: 'rockleigh',
             name: 'Rockleigh',
-            zipCodes: ['07647', '07677'],
+            offeredServices: allServiceSlugs,
+            zipCodes: ['07647'],
             population: '500',
             demographics: 'affluent, highly residential, very small borough',
             localKeywords: [
@@ -4512,6 +4567,7 @@ const bergenCountyData: CountyData = {
         {
             slug: 'rutherford',
             name: 'Rutherford',
+            offeredServices: allServiceSlugs,
             zipCodes: ['07070'],
             population: '19,000',
             demographics: 'vibrant, walkable, historic downtown, diverse',
@@ -4622,6 +4678,7 @@ const bergenCountyData: CountyData = {
         {
             slug: 'saddle-brook',
             name: 'Saddle Brook',
+            offeredServices: allServiceSlugs,
             zipCodes: ['07663'],
             population: '14,000',
             demographics: 'suburban, convenient, established community',
@@ -4727,6 +4784,7 @@ const bergenCountyData: CountyData = {
         {
             slug: 'saddle-river',
             name: 'Saddle River',
+            offeredServices: allServiceSlugs,
             zipCodes: ['07458'],
             population: '3,000',
             demographics: 'affluent, equestrian, large properties, rural feel',
@@ -4837,6 +4895,7 @@ const bergenCountyData: CountyData = {
         {
             slug: 'south-hackensack',
             name: 'South Hackensack',
+            offeredServices: allServiceSlugs,
             zipCodes: ['07606'],
             population: '2,500',
             demographics: 'small, industrial/commercial, close-knit community',
@@ -4942,9 +5001,10 @@ const bergenCountyData: CountyData = {
         {
             slug: 'teaneck',
             name: 'Teaneck',
+            offeredServices: allServiceSlugs,
             zipCodes: ['07666'],
             population: '41,000',
-            demographics: 'large, diverse, active community, suburban feel',
+            demographics: 'diverse suburban township',
             localKeywords: [
                 'Teaneck NJ',
                 'Bergen County',
@@ -5052,6 +5112,7 @@ const bergenCountyData: CountyData = {
         {
             slug: 'tenafly',
             name: 'Tenafly',
+            offeredServices: allServiceSlugs,
             zipCodes: ['07670'],
             population: '15,000',
             demographics: 'affluent, highly residential, strong school system',
@@ -5127,6 +5188,7 @@ const bergenCountyData: CountyData = {
         {
             slug: 'teterboro',
             name: 'Teterboro',
+            offeredServices: allServiceSlugs,
             zipCodes: ['07608'],
             population: '100',
             demographics:
@@ -5208,6 +5270,7 @@ const bergenCountyData: CountyData = {
         {
             slug: 'upper-saddle-river',
             name: 'Upper Saddle River',
+            offeredServices: allServiceSlugs,
             zipCodes: ['07458'],
             population: '8,000',
             demographics: 'affluent, highly residential, spacious properties',
@@ -5290,6 +5353,7 @@ const bergenCountyData: CountyData = {
         {
             slug: 'waldwick',
             name: 'Waldwick',
+            offeredServices: allServiceSlugs,
             zipCodes: ['07463'],
             population: '9,000',
             demographics: 'suburban, family-friendly, charming downtown',
@@ -5365,8 +5429,9 @@ const bergenCountyData: CountyData = {
         {
             slug: 'wallington',
             name: 'Wallington',
+            offeredServices: allServiceSlugs,
             zipCodes: ['07057'],
-            population: '11,000',
+            population: '12,000',
             demographics:
                 'densely populated, diverse, strong Polish-American heritage',
             localKeywords: [
@@ -5446,6 +5511,7 @@ const bergenCountyData: CountyData = {
         {
             slug: 'washington-township',
             name: 'Washington Township',
+            offeredServices: allServiceSlugs,
             zipCodes: ['07676'],
             population: '9,000',
             demographics: 'suburban, family-oriented, strong community feel',
@@ -5521,6 +5587,7 @@ const bergenCountyData: CountyData = {
         {
             slug: 'westwood',
             name: 'Westwood',
+            offeredServices: allServiceSlugs,
             zipCodes: ['07675'],
             population: '11,000',
             demographics: 'vibrant, walkable downtown, family-friendly',
@@ -5601,6 +5668,7 @@ const bergenCountyData: CountyData = {
         {
             slug: 'woodcliff-lake',
             name: 'Woodcliff Lake',
+            offeredServices: allServiceSlugs,
             zipCodes: ['07677'],
             population: '6,000',
             demographics: 'affluent, residential, corporate presence',
@@ -5678,9 +5746,10 @@ const bergenCountyData: CountyData = {
         {
             slug: 'wood-ridge',
             name: 'Wood-Ridge',
+            offeredServices: allServiceSlugs,
             zipCodes: ['07075'],
             population: '9,000',
-            demographics: 'suburban, family-friendly, established community',
+            demographics: 'suburban borough',
             localKeywords: [
                 'Wood-Ridge NJ',
                 'Bergen County',
@@ -5758,6 +5827,7 @@ const bergenCountyData: CountyData = {
         {
             slug: 'wyckoff',
             name: 'Wyckoff',
+            offeredServices: allServiceSlugs,
             zipCodes: ['07481'],
             population: '17,000',
             demographics: 'affluent, spacious, family-oriented, suburban',
@@ -5838,6 +5908,7 @@ const bergenCountyData: CountyData = {
         {
             slug: 'fort-lee',
             name: 'Fort Lee',
+            offeredServices: allServiceSlugs,
             zipCodes: ['07024'],
             population: '37,000',
             demographics: 'diverse, high-rise residential, Hudson River views',
@@ -5904,6 +5975,7 @@ const bergenCountyData: CountyData = {
         {
             slug: 'franklin-lakes',
             name: 'Franklin Lakes',
+            offeredServices: allServiceSlugs,
             zipCodes: ['07417'],
             population: '11,000',
             demographics: 'affluent, family-oriented, luxury homes',
@@ -5966,6 +6038,7 @@ const bergenCountyData: CountyData = {
         {
             slug: 'garfield',
             name: 'Garfield',
+            offeredServices: allServiceSlugs,
             zipCodes: ['07026'],
             population: '32,000',
             demographics: 'diverse, working-class, strong community ties',
@@ -6028,6 +6101,7 @@ const bergenCountyData: CountyData = {
         {
             slug: 'glen-rock',
             name: 'Glen Rock',
+            offeredServices: allServiceSlugs,
             zipCodes: ['07452'],
             population: '12,000',
             demographics: 'family-oriented, suburban, excellent schools',
@@ -6090,6 +6164,7 @@ const bergenCountyData: CountyData = {
         {
             slug: 'harrington-park',
             name: 'Harrington Park',
+            offeredServices: allServiceSlugs,
             zipCodes: ['07640'],
             population: '5,000',
             demographics: 'small town, family-friendly, quiet residential',
@@ -6152,6 +6227,7 @@ const bergenCountyData: CountyData = {
         {
             slug: 'hasbrouck-heights',
             name: 'Hasbrouck Heights',
+            offeredServices: allServiceSlugs,
             zipCodes: ['07604'],
             population: '12,000',
             demographics: 'diverse, aviation history, close-knit community',
@@ -6214,6 +6290,7 @@ const bergenCountyData: CountyData = {
         {
             slug: 'haworth',
             name: 'Haworth',
+            offeredServices: allServiceSlugs,
             zipCodes: ['07641'],
             population: '3,500',
             demographics: 'affluent, small town, family-oriented',
@@ -6276,6 +6353,7 @@ const bergenCountyData: CountyData = {
         {
             slug: 'hillsdale',
             name: 'Hillsdale',
+            offeredServices: allServiceSlugs,
             zipCodes: ['07642'],
             population: '10,000',
             demographics: 'family-friendly, suburban, tree-lined streets',
@@ -6343,6 +6421,7 @@ const bergenCountyData: CountyData = {
         {
             slug: 'ho-ho-kus',
             name: 'Ho-Ho-Kus',
+            offeredServices: allServiceSlugs,
             zipCodes: ['07423'],
             population: '4,000',
             demographics: 'historic, affluent, small town charm',
@@ -6405,6 +6484,7 @@ const bergenCountyData: CountyData = {
         {
             slug: 'leonia',
             name: 'Leonia',
+            offeredServices: allServiceSlugs,
             zipCodes: ['07605'],
             population: '9,000',
             demographics: 'diverse, artistic community, small town feel',
@@ -6467,6 +6547,7 @@ const bergenCountyData: CountyData = {
         {
             slug: 'little-ferry',
             name: 'Little Ferry',
+            offeredServices: allServiceSlugs,
             zipCodes: ['07643'],
             population: '10,800',
             demographics: 'dense suburban borough',
@@ -6535,6 +6616,7 @@ const bergenCountyData: CountyData = {
         {
             slug: 'lodi',
             name: 'Lodi',
+            offeredServices: allServiceSlugs,
             zipCodes: ['07644'],
             population: '25,000',
             demographics: 'diverse, urban-adjacent borough',
@@ -6603,6 +6685,7 @@ const bergenCountyData: CountyData = {
         {
             slug: 'lyndhurst',
             name: 'Lyndhurst',
+            offeredServices: allServiceSlugs,
             zipCodes: ['07071'],
             population: '22,000',
             demographics: 'suburban township',
@@ -6671,6 +6754,7 @@ const bergenCountyData: CountyData = {
         {
             slug: 'mahwah',
             name: 'Mahwah',
+            offeredServices: allServiceSlugs,
             zipCodes: ['07430', '07495'],
             population: '26,000',
             demographics: 'spacious suburban township',
@@ -6739,6 +6823,7 @@ const bergenCountyData: CountyData = {
         {
             slug: 'maywood',
             name: 'Maywood',
+            offeredServices: allServiceSlugs,
             zipCodes: ['07607'],
             population: '9,500',
             demographics: 'quiet suburban borough',
@@ -6802,6 +6887,7 @@ const bergenCountyData: CountyData = {
         {
             slug: 'midland-park',
             name: 'Midland Park',
+            offeredServices: allServiceSlugs,
             zipCodes: ['07432'],
             population: '7,000',
             demographics: 'small, residential borough',
@@ -6865,6 +6951,7 @@ const bergenCountyData: CountyData = {
         {
             slug: 'montvale',
             name: 'Montvale',
+            offeredServices: allServiceSlugs,
             zipCodes: ['07645'],
             population: '8,000',
             demographics: 'affluent suburban borough',
@@ -6933,6 +7020,7 @@ const bergenCountyData: CountyData = {
         {
             slug: 'moonachie',
             name: 'Moonachie',
+            offeredServices: allServiceSlugs,
             zipCodes: ['07074'],
             population: '3,200',
             demographics: 'small industrial and residential borough',
@@ -7001,6 +7089,7 @@ const bergenCountyData: CountyData = {
         {
             slug: 'new-milford',
             name: 'New Milford',
+            offeredServices: allServiceSlugs,
             zipCodes: ['07646'],
             population: '16,000',
             demographics: 'diverse suburban borough',
@@ -7064,6 +7153,7 @@ const bergenCountyData: CountyData = {
         {
             slug: 'north-arlington',
             name: 'North Arlington',
+            offeredServices: allServiceSlugs,
             zipCodes: ['07031'],
             population: '16,000',
             demographics: 'dense suburban borough',
@@ -7127,6 +7217,7 @@ const bergenCountyData: CountyData = {
         {
             slug: 'northvale',
             name: 'Northvale',
+            offeredServices: allServiceSlugs,
             zipCodes: ['07647'],
             population: '5,000',
             demographics: 'quiet, residential, family-oriented borough',
@@ -7190,6 +7281,7 @@ const bergenCountyData: CountyData = {
         {
             slug: 'norwood',
             name: 'Norwood',
+            offeredServices: allServiceSlugs,
             zipCodes: ['07648'],
             population: '5,800',
             demographics: 'quiet suburban borough',
@@ -7258,6 +7350,7 @@ const bergenCountyData: CountyData = {
         {
             slug: 'oakland',
             name: 'Oakland',
+            offeredServices: allServiceSlugs,
             zipCodes: ['07436'],
             population: '13,000',
             demographics: 'spacious suburban borough',
@@ -7326,6 +7419,7 @@ const bergenCountyData: CountyData = {
         {
             slug: 'old-tappan',
             name: 'Old Tappan',
+            offeredServices: allServiceSlugs,
             zipCodes: ['07675'],
             population: '5,800',
             demographics: 'affluent suburban borough',
@@ -7394,6 +7488,7 @@ const bergenCountyData: CountyData = {
         {
             slug: 'oradell',
             name: 'Oradell',
+            offeredServices: allServiceSlugs,
             zipCodes: ['07649'],
             population: '8,000',
             demographics: 'charming suburban borough',
@@ -7457,6 +7552,7 @@ const bergenCountyData: CountyData = {
         {
             slug: 'palisades-park',
             name: 'Palisades Park',
+            offeredServices: allServiceSlugs,
             zipCodes: ['07650'],
             population: '20,000',
             demographics: 'dense, diverse urban borough',
@@ -7520,6 +7616,7 @@ const bergenCountyData: CountyData = {
         {
             slug: 'paramus',
             name: 'Paramus',
+            offeredServices: allServiceSlugs,
             zipCodes: ['07652', '07653'],
             population: '27,000',
             demographics: 'major retail and suburban hub',
@@ -7583,6 +7680,7 @@ const bergenCountyData: CountyData = {
         {
             slug: 'park-ridge',
             name: 'Park Ridge',
+            offeredServices: allServiceSlugs,
             zipCodes: ['07656'],
             population: '9,000',
             demographics: 'affluent suburban borough',
@@ -7651,6 +7749,7 @@ const bergenCountyData: CountyData = {
         {
             slug: 'ramsey',
             name: 'Ramsey',
+            offeredServices: allServiceSlugs,
             zipCodes: ['07446'],
             population: '15,000',
             demographics: 'affluent suburban borough',
@@ -7719,6 +7818,7 @@ const bergenCountyData: CountyData = {
         {
             slug: 'ridgefield',
             name: 'Ridgefield',
+            offeredServices: allServiceSlugs,
             zipCodes: ['07657'],
             population: '11,000',
             demographics: 'diverse suburban borough',

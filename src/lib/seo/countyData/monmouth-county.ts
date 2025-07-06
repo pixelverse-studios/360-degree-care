@@ -1,4 +1,4 @@
-import { CountyData } from '@/lib/counties'
+import { CountyData, allServiceSlugs } from '@/lib/types'
 import {
     addPersonalCare,
     addElderCareConsulting,
@@ -68,6 +68,7 @@ const monmouthCountyData: CountyData = {
         {
             slug: 'aberdeen-township',
             name: 'Aberdeen Township',
+            offeredServices: allServiceSlugs,
             zipCodes: ['07747'],
             population: '18,210',
             demographics: 'diverse suburban township',
@@ -132,6 +133,7 @@ const monmouthCountyData: CountyData = {
         {
             slug: 'allenhurst-borough',
             name: 'Allenhurst',
+            offeredServices: allServiceSlugs,
             zipCodes: ['07711'],
             population: '496',
             demographics: 'small, affluent coastal borough',
@@ -193,6 +195,7 @@ const monmouthCountyData: CountyData = {
         {
             slug: 'allentown-borough',
             name: 'Allentown',
+            offeredServices: allServiceSlugs,
             zipCodes: ['08501'],
             population: '1828',
             demographics: 'historic, small-town borough',
@@ -259,6 +262,7 @@ const monmouthCountyData: CountyData = {
         {
             slug: 'asbury-park-city',
             name: 'Asbury Park',
+            offeredServices: allServiceSlugs,
             zipCodes: ['07712'],
             population: '16,116',
             demographics: 'vibrant, diverse coastal city',
@@ -326,6 +330,7 @@ const monmouthCountyData: CountyData = {
         {
             slug: 'atlantic-highlands-borough',
             name: 'Atlantic Highlands',
+            offeredServices: allServiceSlugs,
             zipCodes: ['07716'],
             population: '4,385',
             demographics: 'historic, waterfront borough',
@@ -390,6 +395,7 @@ const monmouthCountyData: CountyData = {
         {
             slug: 'avon-by-the-sea-borough',
             name: 'Avon-by-the-Sea',
+            offeredServices: allServiceSlugs,
             zipCodes: ['07717'],
             population: '1,901',
             demographics: 'charming, small coastal borough',
@@ -451,6 +457,7 @@ const monmouthCountyData: CountyData = {
         {
             slug: 'belmar-borough',
             name: 'Belmar',
+            offeredServices: allServiceSlugs,
             zipCodes: ['07719'],
             population: '5,794',
             demographics: 'popular, lively coastal borough',
@@ -517,6 +524,7 @@ const monmouthCountyData: CountyData = {
         {
             slug: 'bradley-beach-borough',
             name: 'Bradley Beach',
+            offeredServices: allServiceSlugs,
             zipCodes: ['07720'],
             population: '4,298',
             demographics: 'charming, family-friendly coastal borough',
@@ -583,6 +591,7 @@ const monmouthCountyData: CountyData = {
         {
             slug: 'brielle-borough',
             name: 'Brielle',
+            offeredServices: allServiceSlugs,
             zipCodes: ['08730'],
             population: '4,774',
             demographics: 'picturesque, waterfront borough',
@@ -644,6 +653,7 @@ const monmouthCountyData: CountyData = {
         {
             slug: 'colts-neck-township',
             name: 'Colts Neck',
+            offeredServices: allServiceSlugs,
             zipCodes: ['07722'],
             population: '10,142',
             demographics: 'affluent, rural township',
@@ -705,6 +715,7 @@ const monmouthCountyData: CountyData = {
         {
             slug: 'deal-borough',
             name: 'Deal',
+            offeredServices: allServiceSlugs,
             zipCodes: ['07723'],
             population: '750',
             demographics: 'exclusive, coastal borough',
@@ -771,6 +782,7 @@ const monmouthCountyData: CountyData = {
         {
             slug: 'eatontown-borough',
             name: 'Eatontown',
+            offeredServices: allServiceSlugs,
             zipCodes: ['07724'],
             population: '12,709',
             demographics: 'diverse, suburban borough',
@@ -837,6 +849,7 @@ const monmouthCountyData: CountyData = {
         {
             slug: 'englishtown-borough',
             name: 'Englishtown',
+            offeredServices: allServiceSlugs,
             zipCodes: ['07726'],
             population: '1,847',
             demographics: 'small, historic borough',
@@ -898,6 +911,7 @@ const monmouthCountyData: CountyData = {
         {
             slug: 'fair-haven-borough',
             name: 'Fair Haven',
+            offeredServices: allServiceSlugs,
             zipCodes: ['07704'],
             population: '6,121',
             demographics: 'affluent, suburban borough',
@@ -959,6 +973,7 @@ const monmouthCountyData: CountyData = {
         {
             slug: 'farmingdale-borough',
             name: 'Farmingdale',
+            offeredServices: allServiceSlugs,
             zipCodes: ['07727'],
             population: '1,329',
             demographics: 'small, rural borough',
@@ -1020,6 +1035,7 @@ const monmouthCountyData: CountyData = {
         {
             slug: 'freehold-borough',
             name: 'Freehold',
+            offeredServices: allServiceSlugs,
             zipCodes: ['07728'],
             population: '12,052',
             demographics: 'historic, diverse borough',
@@ -1086,6 +1102,7 @@ const monmouthCountyData: CountyData = {
         {
             slug: 'freehold-township',
             name: 'Freehold Township',
+            offeredServices: allServiceSlugs,
             zipCodes: ['07728'],
             population: '36,184',
             demographics: 'large, suburban township',
@@ -1155,6 +1172,7 @@ const monmouthCountyData: CountyData = {
         {
             slug: 'hazlet-township',
             name: 'Hazlet',
+            offeredServices: allServiceSlugs,
             zipCodes: ['07730'],
             population: '20,334',
             demographics: 'suburban township',
@@ -1216,6 +1234,7 @@ const monmouthCountyData: CountyData = {
         {
             slug: 'highlands-borough',
             name: 'Highlands',
+            offeredServices: allServiceSlugs,
             zipCodes: ['07732'],
             population: '5,005',
             demographics: 'historic, waterfront borough',
@@ -1282,6 +1301,7 @@ const monmouthCountyData: CountyData = {
         {
             slug: 'holmdel-township',
             name: 'Holmdel',
+            offeredServices: allServiceSlugs,
             zipCodes: ['07733'],
             population: '16,773',
             demographics: 'affluent, suburban township',
@@ -1343,6 +1363,7 @@ const monmouthCountyData: CountyData = {
         {
             slug: 'howell-township',
             name: 'Howell',
+            offeredServices: allServiceSlugs,
             zipCodes: ['07731'],
             population: '52,076',
             demographics: 'large, suburban township',
@@ -1404,6 +1425,7 @@ const monmouthCountyData: CountyData = {
         {
             slug: 'interlaken-borough',
             name: 'Interlaken',
+            offeredServices: allServiceSlugs,
             zipCodes: ['07712'],
             population: '820',
             demographics: 'small, residential borough',
@@ -1470,6 +1492,7 @@ const monmouthCountyData: CountyData = {
         {
             slug: 'keansburg-borough',
             name: 'Keansburg',
+            offeredServices: allServiceSlugs,
             zipCodes: ['07734'],
             population: '10,105',
             demographics: 'bayside, family-friendly borough',
@@ -1536,6 +1559,7 @@ const monmouthCountyData: CountyData = {
         {
             slug: 'keyport-borough',
             name: 'Keyport',
+            offeredServices: allServiceSlugs,
             zipCodes: ['07735'],
             population: '7,240',
             demographics: 'historic, waterfront borough',
@@ -1597,6 +1621,7 @@ const monmouthCountyData: CountyData = {
         {
             slug: 'lake-como-borough',
             name: 'Lake Como',
+            offeredServices: allServiceSlugs,
             zipCodes: ['07719'],
             population: '1,759',
             demographics: 'small, coastal borough',
@@ -1658,6 +1683,7 @@ const monmouthCountyData: CountyData = {
         {
             slug: 'little-silver-borough',
             name: 'Little Silver',
+            offeredServices: allServiceSlugs,
             zipCodes: ['07739'],
             population: '5,950',
             demographics: 'affluent, suburban borough',
@@ -1719,6 +1745,7 @@ const monmouthCountyData: CountyData = {
         {
             slug: 'loch-arbour-village',
             name: 'Loch Arbour',
+            offeredServices: allServiceSlugs,
             zipCodes: ['07711'],
             population: '193',
             demographics: 'small, exclusive coastal village',
@@ -1780,6 +1807,7 @@ const monmouthCountyData: CountyData = {
         {
             slug: 'long-branch-city',
             name: 'Long Branch',
+            offeredServices: allServiceSlugs,
             zipCodes: ['07740'],
             population: '30,719',
             demographics: 'diverse, coastal city',
@@ -1846,6 +1874,7 @@ const monmouthCountyData: CountyData = {
         {
             slug: 'manalapan-township',
             name: 'Manalapan',
+            offeredServices: allServiceSlugs,
             zipCodes: ['07726'],
             population: '40,994',
             demographics: 'large, suburban township',
@@ -1907,6 +1936,7 @@ const monmouthCountyData: CountyData = {
         {
             slug: 'manasquan-borough',
             name: 'Manasquan',
+            offeredServices: allServiceSlugs,
             zipCodes: ['08736'],
             population: '5,897',
             demographics: 'popular, coastal borough',
@@ -1968,6 +1998,7 @@ const monmouthCountyData: CountyData = {
         {
             slug: 'marlboro-township',
             name: 'Marlboro',
+            offeredServices: allServiceSlugs,
             zipCodes: ['07746'],
             population: '40,191',
             demographics: 'affluent, suburban township',
@@ -2029,6 +2060,7 @@ const monmouthCountyData: CountyData = {
         {
             slug: 'matawan-borough',
             name: 'Matawan',
+            offeredServices: allServiceSlugs,
             zipCodes: ['07747'],
             population: '8,810',
             demographics: 'historic, suburban borough',
@@ -2090,6 +2122,7 @@ const monmouthCountyData: CountyData = {
         {
             slug: 'middletown-township',
             name: 'Middletown',
+            offeredServices: allServiceSlugs,
             zipCodes: ['07748'],
             population: '66,522',
             demographics: 'large, suburban township',
@@ -2156,6 +2189,7 @@ const monmouthCountyData: CountyData = {
         {
             slug: 'millstone-township',
             name: 'Millstone',
+            offeredServices: allServiceSlugs,
             zipCodes: ['08510'],
             population: '10,566',
             demographics: 'rural, suburban township',
@@ -2222,6 +2256,7 @@ const monmouthCountyData: CountyData = {
         {
             slug: 'monmouth-beach-borough',
             name: 'Monmouth Beach',
+            offeredServices: allServiceSlugs,
             zipCodes: ['07750'],
             population: '3,279',
             demographics: 'coastal, residential borough',
@@ -2283,6 +2318,7 @@ const monmouthCountyData: CountyData = {
         {
             slug: 'neptune-city-borough',
             name: 'Neptune City',
+            offeredServices: allServiceSlugs,
             zipCodes: ['07753'],
             population: '4,869',
             demographics: 'small, suburban borough',
@@ -2349,6 +2385,7 @@ const monmouthCountyData: CountyData = {
         {
             slug: 'neptune-township',
             name: 'Neptune',
+            offeredServices: allServiceSlugs,
             zipCodes: ['07753'],
             population: '27,935',
             demographics: 'large, diverse township',
@@ -2410,6 +2447,7 @@ const monmouthCountyData: CountyData = {
         {
             slug: 'ocean-township',
             name: 'Ocean Township',
+            offeredServices: allServiceSlugs,
             zipCodes: ['07712'],
             population: '27,291',
             demographics: 'suburban township',
@@ -2476,6 +2514,7 @@ const monmouthCountyData: CountyData = {
         {
             slug: 'oceanport-borough',
             name: 'Oceanport',
+            offeredServices: allServiceSlugs,
             zipCodes: ['07757'],
             population: '5,832',
             demographics: 'suburban borough',
@@ -2542,6 +2581,7 @@ const monmouthCountyData: CountyData = {
         {
             slug: 'red-bank-borough',
             name: 'Red Bank',
+            offeredServices: allServiceSlugs,
             zipCodes: ['07701'],
             population: '12,206',
             demographics: 'vibrant, cultural hub',
@@ -2608,6 +2648,7 @@ const monmouthCountyData: CountyData = {
         {
             slug: 'roosevelt-borough',
             name: 'Roosevelt',
+            offeredServices: allServiceSlugs,
             zipCodes: ['08555'],
             population: '882',
             demographics: 'historic, cooperative borough',
@@ -2674,6 +2715,7 @@ const monmouthCountyData: CountyData = {
         {
             slug: 'rumson-borough',
             name: 'Rumson',
+            offeredServices: allServiceSlugs,
             zipCodes: ['07760'],
             population: '7,122',
             demographics: 'affluent, suburban borough',
@@ -2740,6 +2782,7 @@ const monmouthCountyData: CountyData = {
         {
             slug: 'sea-bright-borough',
             name: 'Sea Bright',
+            offeredServices: allServiceSlugs,
             zipCodes: ['07760'],
             population: '1,412',
             demographics: 'coastal, resilient borough',
@@ -2806,6 +2849,7 @@ const monmouthCountyData: CountyData = {
         {
             slug: 'sea-girt-borough',
             name: 'Sea Girt',
+            offeredServices: allServiceSlugs,
             zipCodes: ['08750'],
             population: '1,828',
             demographics: 'affluent, coastal borough',
@@ -2867,6 +2911,7 @@ const monmouthCountyData: CountyData = {
         {
             slug: 'shrewsbury-borough',
             name: 'Shrewsbury',
+            offeredServices: allServiceSlugs,
             zipCodes: ['07702'],
             population: '4,085',
             demographics: 'historic, suburban borough',
@@ -2933,6 +2978,7 @@ const monmouthCountyData: CountyData = {
         {
             slug: 'shrewsbury-township',
             name: 'Shrewsbury Township',
+            offeredServices: allServiceSlugs,
             zipCodes: ['07724'],
             population: '1,141',
             demographics: 'small, residential township',
@@ -3002,6 +3048,7 @@ const monmouthCountyData: CountyData = {
         {
             slug: 'spring-lake-borough',
             name: 'Spring Lake',
+            offeredServices: allServiceSlugs,
             zipCodes: ['07762'],
             population: '2,993',
             demographics: 'affluent, coastal borough',
@@ -3063,6 +3110,7 @@ const monmouthCountyData: CountyData = {
         {
             slug: 'spring-lake-heights-borough',
             name: 'Spring Lake Heights',
+            offeredServices: allServiceSlugs,
             zipCodes: ['07762'],
             population: '4,697',
             demographics: 'suburban borough',
@@ -3127,6 +3175,7 @@ const monmouthCountyData: CountyData = {
         {
             slug: 'tinton-falls-borough',
             name: 'Tinton Falls',
+            offeredServices: allServiceSlugs,
             zipCodes: ['07724'],
             population: '17,892',
             demographics: 'suburban borough',
@@ -3188,6 +3237,7 @@ const monmouthCountyData: CountyData = {
         {
             slug: 'union-beach-borough',
             name: 'Union Beach',
+            offeredServices: allServiceSlugs,
             zipCodes: ['07735'],
             population: '6,245',
             demographics: 'bayside, residential borough',
@@ -3249,6 +3299,7 @@ const monmouthCountyData: CountyData = {
         {
             slug: 'upper-freehold-township',
             name: 'Upper Freehold',
+            offeredServices: allServiceSlugs,
             zipCodes: ['08501'],
             population: '6,902',
             demographics: 'rural, agricultural township',
@@ -3310,6 +3361,7 @@ const monmouthCountyData: CountyData = {
         {
             slug: 'wall-township',
             name: 'Wall',
+            offeredServices: allServiceSlugs,
             zipCodes: ['07719'],
             population: '26,164',
             demographics: 'suburban township',
@@ -3371,6 +3423,7 @@ const monmouthCountyData: CountyData = {
         {
             slug: 'west-long-branch-borough',
             name: 'West Long Branch',
+            offeredServices: allServiceSlugs,
             zipCodes: ['07764'],
             population: '8,097',
             demographics: 'suburban borough',

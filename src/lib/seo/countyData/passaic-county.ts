@@ -1,4 +1,4 @@
-import { CountyData } from '@/lib/counties'
+import { CountyData, allServiceSlugs } from '@/lib/types'
 import {
     addPersonalCare,
     addElderCareConsulting,
@@ -68,6 +68,7 @@ const passaicCountyData: CountyData = {
         {
             slug: 'bloomingdale',
             name: 'Bloomingdale',
+            offeredServices: allServiceSlugs,
             zipCodes: ['07403'],
             population: '7,700',
             demographics:
@@ -144,6 +145,7 @@ const passaicCountyData: CountyData = {
         {
             slug: 'clifton',
             name: 'Clifton',
+            offeredServices: allServiceSlugs,
             zipCodes: ['07011', '07012', '07013', '07014', '07015'],
             population: '90,000',
             demographics:
@@ -226,6 +228,7 @@ const passaicCountyData: CountyData = {
         {
             slug: 'haledon',
             name: 'Haledon',
+            offeredServices: allServiceSlugs,
             zipCodes: ['07508'],
             population: '9,000',
             demographics: 'densely populated, diverse, tight-knit borough',
@@ -306,6 +309,7 @@ const passaicCountyData: CountyData = {
         {
             slug: 'hawthorne',
             name: 'Hawthorne',
+            offeredServices: allServiceSlugs,
             zipCodes: ['07506'],
             population: '19,500',
             demographics: 'suburban, established, diverse, family-friendly',
@@ -386,6 +390,7 @@ const passaicCountyData: CountyData = {
         {
             slug: 'little-falls',
             name: 'Little Falls',
+            offeredServices: allServiceSlugs,
             zipCodes: ['07424'],
             population: '11,000',
             demographics: 'suburban, vibrant, college town feel (due to MSU)',
@@ -466,6 +471,7 @@ const passaicCountyData: CountyData = {
         {
             slug: 'north-haledon',
             name: 'North Haledon',
+            offeredServices: allServiceSlugs,
             zipCodes: ['07508'],
             population: '8,900',
             demographics: 'affluent, residential, strong community feel',
@@ -546,6 +552,7 @@ const passaicCountyData: CountyData = {
         {
             slug: 'passaic',
             name: 'Passaic',
+            offeredServices: allServiceSlugs,
             zipCodes: ['07055'],
             population: '70,500',
             demographics:
@@ -627,6 +634,7 @@ const passaicCountyData: CountyData = {
         {
             slug: 'paterson',
             name: 'Paterson',
+            offeredServices: allServiceSlugs,
             zipCodes: [
                 '07501',
                 '07502',
@@ -713,9 +721,10 @@ const passaicCountyData: CountyData = {
         {
             slug: 'pompton-lakes',
             name: 'Pompton Lakes',
+            offeredServices: allServiceSlugs,
             zipCodes: ['07442'],
             population: '11,000',
-            demographics: 'suburban, picturesque, lake community',
+            demographics: 'suburban borough',
             localKeywords: [
                 'Pompton Lakes NJ',
                 'Passaic County',
@@ -793,6 +802,7 @@ const passaicCountyData: CountyData = {
         {
             slug: 'prospect-park',
             name: 'Prospect Park',
+            offeredServices: allServiceSlugs,
             zipCodes: ['07508'],
             population: '6,300',
             demographics: 'small, densely populated, highly diverse borough',
@@ -868,6 +878,7 @@ const passaicCountyData: CountyData = {
         {
             slug: 'ringwood',
             name: 'Ringwood',
+            offeredServices: allServiceSlugs,
             zipCodes: ['07456'],
             population: '12,000',
             demographics: 'rural, spacious, heavily wooded, lake communities',
@@ -948,9 +959,10 @@ const passaicCountyData: CountyData = {
         {
             slug: 'totowa',
             name: 'Totowa',
+            offeredServices: allServiceSlugs,
             zipCodes: ['07512'],
-            population: '11,000',
-            demographics: 'suburban, well-established, convenient location',
+            population: '10,000',
+            demographics: 'suburban borough',
             localKeywords: [
                 'Totowa NJ',
                 'Passaic County',
@@ -1023,6 +1035,7 @@ const passaicCountyData: CountyData = {
         {
             slug: 'wanaque',
             name: 'Wanaque',
+            offeredServices: allServiceSlugs,
             zipCodes: ['07465'],
             population: '11,300',
             demographics: 'suburban, lake communities, close to nature',
@@ -1103,6 +1116,7 @@ const passaicCountyData: CountyData = {
         {
             slug: 'wayne',
             name: 'Wayne',
+            offeredServices: allServiceSlugs,
             zipCodes: ['07470', '07474', '07477'],
             population: '55,000',
             demographics:
@@ -1185,6 +1199,7 @@ const passaicCountyData: CountyData = {
         {
             slug: 'west-milford',
             name: 'West Milford',
+            offeredServices: allServiceSlugs,
             zipCodes: ['07480'],
             population: '24,800',
             demographics: 'sprawling, rural, lake communities, mountainous',
@@ -1265,6 +1280,7 @@ const passaicCountyData: CountyData = {
         {
             slug: 'woodland-park',
             name: 'Woodland Park',
+            offeredServices: allServiceSlugs,
             zipCodes: ['07424'],
             population: '13,500',
             demographics: 'suburban, established, convenient location',
