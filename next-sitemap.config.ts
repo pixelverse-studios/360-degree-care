@@ -1,81 +1,20 @@
-/** @type {import('next-sitemap').IConfig} */
-module.exports = {
+import type { IConfig } from 'next-sitemap'
+import { counties } from './src/lib/counties'
+import { getAllCitySlugs } from './src/lib/locationSeo'
+
+const config: IConfig = {
     siteUrl: 'https://www.360degreecare.net',
     generateRobotsTxt: true,
     additionalPaths: async () => {
-        // Import your actual cities and services from locationSeo.ts
-        const cities = [
-            'allendale',
-            'alpine',
-            'bergenfield',
-            'bogota',
-            'carlstadt',
-            'cliffside-park',
-            'closter',
-            'cresskill',
-            'demarest',
-            'dumont',
-            'east-rutherford',
-            'edgewater',
-            'emerson',
-            'englewood',
-            'englewood-cliffs',
-            'fair-lawn',
-            'fairview',
-            'fort-lee',
-            'franklin-lakes',
-            'garfield',
-            'glen-rock',
-            'hackensack',
-            'harrington-park',
-            'hasbrouck-heights',
-            'haworth',
-            'hillsdale',
-            'ho-ho-kus',
-            'leonia',
-            'little-ferry',
-            'lodi',
-            'lyndhurst',
-            'mahwah',
-            'maywood',
-            'midland-park',
-            'montvale',
-            'moonachie',
-            'new-milford',
-            'north-arlington',
-            'northvale',
-            'norwood',
-            'oakland',
-            'old-tappan',
-            'oradell',
-            'palisades-park',
-            'paramus',
-            'park-ridge',
-            'ramsey',
-            'ridgefield',
-            'ridgefield-park',
-            'ridgewood',
-            'river-edge',
-            'river-vale',
-            'rochelle-park',
-            'rockleigh',
-            'rutherford',
-            'saddle-brook',
-            'saddle-river',
-            'south-hackensack',
-            'teaneck',
-            'tenafly',
-            'teterboro',
-            'upper-saddle-river',
-            'waldwick',
-            'wallington',
-            'washington-township',
-            'westwood',
-            'wood-ridge',
-            'wyckoff'
-        ]
+        // Get all cities from all counties
+        const cities = getAllCitySlugs()
 
-        const paths = []
+        const paths: Array<{
+            loc: string
+            changefreq: 'weekly' | 'monthly'
+            priority: number
+            lastmod: string
+        }> = []
 
         // Services from your locationSeo.ts
         const services = [
@@ -87,11 +26,33 @@ module.exports = {
             'staffing'
         ]
 
+        // Add county pages (/{county-slug})
+        counties.forEach(county => {
+            paths.push({
+                loc: `/${county.slug}`,
+                changefreq: 'weekly' as const,
+                priority: 0.8,
+                lastmod: new Date().toISOString()
+            })
+        })
+
+        // Add city pages (/{county-slug}/{city-slug})
+        counties.forEach(county => {
+            county.cities.forEach(city => {
+                paths.push({
+                    loc: `/${county.slug}/${city.slug}`,
+                    changefreq: 'weekly' as const,
+                    priority: 0.7,
+                    lastmod: new Date().toISOString()
+                })
+            })
+        })
+
         // Add main service pages
         services.forEach(service => {
             paths.push({
                 loc: `/services/${service}`,
-                changefreq: 'weekly',
+                changefreq: 'weekly' as const,
                 priority: 0.8,
                 lastmod: new Date().toISOString()
             })
@@ -102,7 +63,7 @@ module.exports = {
             cities.forEach(city => {
                 paths.push({
                     loc: `/services/${service}/${city}`,
-                    changefreq: 'monthly',
+                    changefreq: 'monthly' as const,
                     priority: 0.7,
                     lastmod: new Date().toISOString()
                 })
@@ -124,7 +85,7 @@ module.exports = {
         staticPages.forEach(page => {
             paths.push({
                 loc: page.loc,
-                changefreq: 'monthly',
+                changefreq: 'monthly' as const,
                 priority: page.priority,
                 lastmod: new Date().toISOString()
             })
@@ -151,3 +112,5 @@ module.exports = {
     sitemapSize: 5000,
     generateIndexSitemap: false
 }
+
+export default config

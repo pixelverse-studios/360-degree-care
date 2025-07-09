@@ -1,4 +1,5 @@
-import { counties, CountyData, CityData, ServiceSEOData } from './counties'
+import { counties } from './counties'
+import { CountyData, CityData, ServiceSEOData } from './types'
 
 export type { CountyData, CityData, ServiceSEOData }
 

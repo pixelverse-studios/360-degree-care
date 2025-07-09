@@ -1,4 +1,4 @@
-import { ServiceSEOData } from '@/lib/counties'
+import { ServiceSEOData } from '@/lib/types'
 import { getImgSrc } from '../../images'
 
 interface ElderCareConsultingTemplateVars {

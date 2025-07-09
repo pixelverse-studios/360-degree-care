@@ -1,4 +1,4 @@
-import { FaqSectionProps } from '@/lib/types'
+import { FaqSectionProps } from '@/components/faqs/FaqSection'
 import {
     Accordion,
     AccordionItem,

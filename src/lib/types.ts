@@ -154,6 +154,11 @@ export interface ServiceListProps {
     }>
 }
 
+export interface ImageProps {
+    src: string
+    alt: string
+}
+
 export const allServiceSlugs = [
     'personal-care',
     'elder-care-consulting',

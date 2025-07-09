@@ -77,7 +77,7 @@ const TopBar = () => (
     <div className="hidden lg:block bg-white-bright border-b border-gray-200 h-30">
         <div className="max-w-custom mx-auto px-6 py-2 flex items-center justify-between">
             <Link href="/">
-                <Logo invert={false} size="lg" />
+                <Logo invert={false} />
             </Link>
             <div className="flex flex-col-reverse items-end max-w-80 gap-2 text-right">
                 <p className="text-sm text-blue-dark font-medium italic">

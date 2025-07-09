@@ -1,20 +1,14 @@
-# START of updated robots.txt for 360degreecare.net
-
-# General rules for all crawlers
+# *
 User-agent: *
-Disallow: /wp-admin/
+Allow: /
+
+# *
+User-agent: *
 Disallow: /api/
 Disallow: /_next/
-Allow: /wp-admin/admin-ajax.php
 
-# Allow specific AI crawlers for training & to be featured in generative search
-User-agent: Google-Extended
-Disallow:
+# Host
+Host: https://www.360degreecare.net
 
-User-agent: CCBot
-Disallow:
-
-# Sitemap location
-Sitemap: https://360degreecare.net/sitemap_index.xml
-
-# END of updated robots.txt
+# Sitemaps
+Sitemap: https://www.360degreecare.net/sitemap.xml

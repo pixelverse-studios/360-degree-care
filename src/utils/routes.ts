@@ -137,6 +137,7 @@ const countyHubPages = counties.map(county => ({
     route: `/${county.slug}`,
     label: county.name,
     canVisit: true,
+    hasDynamicChildren: true,
     subLinks: []
 }))
 

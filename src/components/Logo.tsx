@@ -70,7 +70,7 @@ const Logo = ({ invert = false }: LogoProps) => {
                 className={cn(
                     invert
                         ? 'w-full md:w-fit md:max-w-[20rem] drop-shadow-[0_0_4px_rgba(255,255,255,0.6)]'
-                        : 'w-2/3'
+                        : 'w-1/2'
                 )}
             />
         </div>

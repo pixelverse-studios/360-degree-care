@@ -12,7 +12,7 @@ interface FaqItemProps {
     answer: ReactNode
 }
 
-interface FaqSectionProps {
+export interface FaqSectionProps {
     header: string
     faqs: FaqItemProps[]
     headerClass?: string

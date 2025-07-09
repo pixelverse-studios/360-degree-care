@@ -1,5 +1,5 @@
 import { FaLocationDot } from 'react-icons/fa6'
-import { CityData } from '@/lib/counties'
+import { CityData } from '@/lib/types'
 import Link from 'next/link'
 
 interface CountyCityGridProps {

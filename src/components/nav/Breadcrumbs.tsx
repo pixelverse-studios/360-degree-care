@@ -5,6 +5,7 @@ import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { cn } from '@/lib/utils'
 import { availablePages } from '@/utils/routes'
+import { counties } from '@/lib/counties'
 import {
     Breadcrumb,
     BreadcrumbItem,
@@ -58,6 +59,10 @@ export default function Breadcrumbs() {
             const parentPath = `/${pathSegments.slice(0, index).join('/')}`
 
             const page = findPageByRoute(availablePages as Page[], currentPath)
+            const parentPage = findPageByRoute(
+                availablePages as Page[],
+                parentPath === '/' ? '' : parentPath
+            )
 
             if (page) {
                 return {
@@ -66,26 +71,41 @@ export default function Breadcrumbs() {
                     canVisit: page.canVisit ?? true,
                     isValid: true
                 }
-            } else {
-                const parentPage = findPageByRoute(
-                    availablePages as Page[],
-                    parentPath === '/' ? '' : parentPath
-                )
+            } else if (parentPage?.hasDynamicChildren) {
+                // Check if it's a county/city dynamic route
+                const countyCityMatch = currentPath.match(/\/([^/]+)\/([^/]+)$/)
+                if (countyCityMatch) {
+                    const countySlug = countyCityMatch[1]
+                    const citySlug = countyCityMatch[2]
 
-                if (parentPage?.hasDynamicChildren) {
-                    return {
-                        route: currentPath,
-                        label: formatSegmentAsLabel(segment),
-                        canVisit: true,
-                        isValid: true
+                    const foundCounty = counties.find(
+                        c => c.slug === countySlug
+                    )
+                    const foundCity = foundCounty?.cities.find(
+                        c => c.slug === citySlug
+                    )
+
+                    if (foundCity) {
+                        return {
+                            route: currentPath,
+                            label: foundCity.name,
+                            canVisit: true,
+                            isValid: true
+                        }
                     }
-                } else {
-                    return {
-                        route: currentPath,
-                        label: '404',
-                        isValid: false,
-                        canVisit: false
-                    }
+                }
+                return {
+                    route: currentPath,
+                    label: formatSegmentAsLabel(segment),
+                    canVisit: true,
+                    isValid: true
+                }
+            } else {
+                return {
+                    route: currentPath,
+                    label: '404',
+                    isValid: false,
+                    canVisit: false
                 }
             }
         })
