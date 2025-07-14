@@ -21,6 +21,8 @@ export default function MarkdownRenderer({ content }: MarkdownRendererProps) {
         let elementType = 'p'
         let inList = false
         let listItems: string[] = []
+        let inTable = false
+        let tableRows: string[][] = []
         let skipNext = false
 
         lines.forEach((line, index) => {
@@ -31,8 +33,46 @@ export default function MarkdownRenderer({ content }: MarkdownRendererProps) {
 
             const trimmedLine = line.trim()
 
+            // Check for table separator line (|---|---|)
+            if (trimmedLine.match(/^\s*\|[\s\-:]+\|\s*$/)) {
+                // Skip separator line, but don't end table - this indicates we have a proper table
+                return
+            }
+            // Check for table rows (contains | and not just a separator line)
+            else if (trimmedLine.includes('|')) {
+                if (inList) {
+                    elements.push({ type: 'ul', content: listItems })
+                    inList = false
+                    listItems = []
+                }
+                if (currentElement) {
+                    elements.push({
+                        type: elementType,
+                        content: currentElement
+                    })
+                    currentElement = ''
+                }
+
+                if (!inTable) {
+                    inTable = true
+                    tableRows = []
+                }
+
+                // Parse table row
+                const cells = trimmedLine
+                    .split('|')
+                    .map(cell => cell.trim())
+                    .filter(cell => cell !== '') // Remove empty cells from start/end
+
+                tableRows.push(cells)
+            }
             // Headers
-            if (trimmedLine.startsWith('###')) {
+            else if (trimmedLine.startsWith('###')) {
+                if (inTable) {
+                    elements.push({ type: 'table', content: tableRows })
+                    inTable = false
+                    tableRows = []
+                }
                 if (inList) {
                     elements.push({ type: 'ul', content: listItems })
                     inList = false
@@ -50,6 +90,11 @@ export default function MarkdownRenderer({ content }: MarkdownRendererProps) {
                     content: trimmedLine.replace('### ', '')
                 })
             } else if (trimmedLine.startsWith('##')) {
+                if (inTable) {
+                    elements.push({ type: 'table', content: tableRows })
+                    inTable = false
+                    tableRows = []
+                }
                 if (inList) {
                     elements.push({ type: 'ul', content: listItems })
                     inList = false
@@ -67,6 +112,11 @@ export default function MarkdownRenderer({ content }: MarkdownRendererProps) {
                     content: trimmedLine.replace('## ', '')
                 })
             } else if (trimmedLine.startsWith('#')) {
+                if (inTable) {
+                    elements.push({ type: 'table', content: tableRows })
+                    inTable = false
+                    tableRows = []
+                }
                 if (inList) {
                     elements.push({ type: 'ul', content: listItems })
                     inList = false
@@ -86,6 +136,11 @@ export default function MarkdownRenderer({ content }: MarkdownRendererProps) {
             }
             // Images
             else if (trimmedLine.startsWith('![')) {
+                if (inTable) {
+                    elements.push({ type: 'table', content: tableRows })
+                    inTable = false
+                    tableRows = []
+                }
                 if (inList) {
                     elements.push({ type: 'ul', content: listItems })
                     inList = false
@@ -123,6 +178,11 @@ export default function MarkdownRenderer({ content }: MarkdownRendererProps) {
             }
             // Blockquotes
             else if (trimmedLine.startsWith('>')) {
+                if (inTable) {
+                    elements.push({ type: 'table', content: tableRows })
+                    inTable = false
+                    tableRows = []
+                }
                 if (inList) {
                     elements.push({ type: 'ul', content: listItems })
                     inList = false
@@ -145,6 +205,11 @@ export default function MarkdownRenderer({ content }: MarkdownRendererProps) {
                 trimmedLine.startsWith('- ') ||
                 trimmedLine.startsWith('* ')
             ) {
+                if (inTable) {
+                    elements.push({ type: 'table', content: tableRows })
+                    inTable = false
+                    tableRows = []
+                }
                 if (!inList) {
                     if (currentElement) {
                         elements.push({
@@ -160,6 +225,11 @@ export default function MarkdownRenderer({ content }: MarkdownRendererProps) {
             }
             // Horizontal rule
             else if (trimmedLine === '---') {
+                if (inTable) {
+                    elements.push({ type: 'table', content: tableRows })
+                    inTable = false
+                    tableRows = []
+                }
                 if (inList) {
                     elements.push({ type: 'ul', content: listItems })
                     inList = false
@@ -176,6 +246,11 @@ export default function MarkdownRenderer({ content }: MarkdownRendererProps) {
             }
             // Regular paragraph
             else if (trimmedLine) {
+                if (inTable) {
+                    elements.push({ type: 'table', content: tableRows })
+                    inTable = false
+                    tableRows = []
+                }
                 if (inList) {
                     elements.push({ type: 'ul', content: listItems })
                     inList = false
@@ -191,6 +266,11 @@ export default function MarkdownRenderer({ content }: MarkdownRendererProps) {
             }
             // Empty line
             else {
+                if (inTable) {
+                    elements.push({ type: 'table', content: tableRows })
+                    inTable = false
+                    tableRows = []
+                }
                 if (inList) {
                     elements.push({ type: 'ul', content: listItems })
                     inList = false
@@ -208,7 +288,9 @@ export default function MarkdownRenderer({ content }: MarkdownRendererProps) {
         })
 
         // Handle remaining content
-        if (inList) {
+        if (inTable) {
+            elements.push({ type: 'table', content: tableRows })
+        } else if (inList) {
             elements.push({ type: 'ul', content: listItems })
         } else if (currentElement) {
             elements.push({ type: elementType, content: currentElement })
@@ -270,6 +352,72 @@ export default function MarkdownRenderer({ content }: MarkdownRendererProps) {
                                     __html: formatText(element.content)
                                 }}
                             />
+                        )
+                    case 'table':
+                        // Ensure we have at least one row
+                        if (!element.content || element.content.length === 0) {
+                            return null
+                        }
+
+                        return (
+                            <div key={index} className="my-8 overflow-x-auto">
+                                <table className="min-w-full border-collapse border border-gray-300 rounded-lg overflow-hidden shadow-sm">
+                                    <thead>
+                                        <tr className="bg-primary-muted">
+                                            {element.content[0]?.map(
+                                                (
+                                                    cell: string,
+                                                    cellIndex: number
+                                                ) => (
+                                                    <th
+                                                        key={cellIndex}
+                                                        className="border border-gray-300 px-6 py-4 text-left text-sm font-semibold text-gray-900"
+                                                        dangerouslySetInnerHTML={{
+                                                            __html: formatText(
+                                                                cell
+                                                            )
+                                                        }}
+                                                    />
+                                                )
+                                            )}
+                                        </tr>
+                                    </thead>
+                                    <tbody className="bg-white">
+                                        {element.content
+                                            .slice(1)
+                                            .map(
+                                                (
+                                                    row: string[],
+                                                    rowIndex: number
+                                                ) => (
+                                                    <tr
+                                                        key={rowIndex}
+                                                        className="hover:bg-gray-50 transition-colors"
+                                                    >
+                                                        {row.map(
+                                                            (
+                                                                cell: string,
+                                                                cellIndex: number
+                                                            ) => (
+                                                                <td
+                                                                    key={
+                                                                        cellIndex
+                                                                    }
+                                                                    className="border border-gray-300 px-6 py-4 text-sm text-gray-700"
+                                                                    dangerouslySetInnerHTML={{
+                                                                        __html: formatText(
+                                                                            cell
+                                                                        )
+                                                                    }}
+                                                                />
+                                                            )
+                                                        )}
+                                                    </tr>
+                                                )
+                                            )}
+                                    </tbody>
+                                </table>
+                            </div>
                         )
                     case 'image':
                         return (

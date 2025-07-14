@@ -115,7 +115,7 @@ Only then can we ensure that those **caught in the middle** aren’t left to sho
 
 If you're a Gen S-er trying to balance it all, you're not alone. At [360 Degree Care](https://www.360degreecare.net), we see you—and we're here to help. [Explore support resources and caregiving solutions](/careers) that can ease your load.
 
-*Jeff DeJoseph is a leader in the evolving field of aging in place and the services that enable people to remain happy and healthy at home. His company, [Interim HealthCare of Ridgewood NJ](https://www.interimhealthcare.com/ridgewoodnj/home/), provides concierge home care services for seniors and those returning from the hospital or rehab.*
+*Jeff DeJoseph is a leader in the evolving field of aging in place and the services that enable people to remain happy and healthy at home. His company, [360 Degree Care](https://www.360degreecare.net), provides concierge home care services for seniors and those returning from the hospital or rehab.*
 `
 }
 

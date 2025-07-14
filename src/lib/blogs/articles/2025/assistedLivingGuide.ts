@@ -58,7 +58,6 @@ Every situation is unique, but there are common indicators that a senior may nee
 Before making a decision, it’s helpful to compare **assisted living** with **in-home care** to understand which model fits your loved one’s needs:
 
 | Factor              | In-Home Care                  | Assisted Living Facility        |
-|---------------------|-------------------------------|----------------------------------|
 | Independence        | High, familiar setting        | Moderate, structured environment |
 | Social Engagement   | Limited, depends on visitors  | High, community-oriented         |
 | Level of Care       | Varies, basic to advanced     | Daily support, staff on-site     |
@@ -91,7 +90,7 @@ Waiting for a crisis can drastically reduce your options and increase family str
 5. **Plan the Transition Thoughtfully**  
    Help them pack familiar belongings, set up their new space, and schedule regular visits to support adjustment.
 
-![Helping a parent transition to assisted living can be emotional—but planning ahead leads to better outcomes](/images/blog/assisted-living-transition.jpg)
+![Helping a parent transition to assisted living can be emotional—but planning ahead leads to better outcomes](assisted-living)
 *A compassionate transition supports dignity and long-term well-being for aging loved ones*
 
 ## Final Thoughts
@@ -104,7 +103,7 @@ Moving a loved one to assisted living is a **major life change**, but it can als
 
 Need help navigating the next steps? [Connect with our care experts](/careers) at 360 Degree Care to explore senior living options that support your loved one's needs.
 
-*Jeff DeJoseph is a leader in the evolving field of aging in place and the services that enable people to remain happy and healthy at home. His company, [Interim HealthCare of Ridgewood NJ](https://www.interimhealthcare.com/ridgewoodnj/home/), provides concierge home care services for seniors and those transitioning from hospital or rehab to home.*
+*Jeff DeJoseph is a leader in the evolving field of aging in place and the services that enable people to remain happy and healthy at home. His company, [360 Degree Care](https://www.360degreecare.net), provides concierge home care services for seniors and those transitioning from hospital or rehab to home.*
 `
 }
 

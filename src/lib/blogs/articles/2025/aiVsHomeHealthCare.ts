@@ -75,7 +75,7 @@ The future of **home healthcare** depends on people—committed, compassionate c
 
 If you or a loved one needs personalized in-home care, or you're inspired to make a difference as a caregiver, [learn more about our services and careers](/careers) at 360 Degree Care.
 
-*Jeff DeJoseph is a leader in the evolving field of aging in place and the services that enable people to remain happy and healthy at home. His company, [Interim HealthCare of Ridgewood NJ](https://www.interimhealthcare.com/ridgewoodnj/home/), provides concierge home care services for seniors and those returning from the hospital or rehab.*
+*Jeff DeJoseph is a leader in the evolving field of aging in place and the services that enable people to remain happy and healthy at home. His company, [360 Degree Care](https://www.360degreecare.net), provides concierge home care services for seniors and those returning from the hospital or rehab.*
 `
 }
 
