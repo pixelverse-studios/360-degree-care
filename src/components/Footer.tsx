@@ -56,6 +56,7 @@ export default function Footer() {
                             <p className="mt-1">
                                 <a
                                     href={`tel:${PHONE}`}
+                                    id="footer-phone-btn"
                                     className="text-white hover:underline"
                                 >
                                     {PHONE}

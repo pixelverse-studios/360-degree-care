@@ -23,6 +23,7 @@ function ContactLinks() {
             >
                 <a
                     href={`tel:${PHONE}`}
+                    id="header-phone-btn"
                     className="flex items-center gap-2 text-sm lg:text-initial"
                 >
                     <Phone size={16} />
