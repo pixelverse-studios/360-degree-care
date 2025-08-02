@@ -233,6 +233,18 @@ const cloudinaryImageMap = new Map([
     [
         'assisted-living',
         'https://res.cloudinary.com/pixelverse-studios/image/upload/v1751757051/clients/360dc/blog/assisted-living-giude_dblpuh.png'
+    ],
+    [
+        'whoCares-blog',
+        'https://res.cloudinary.com/pixelverse-studios/image/upload/v1754090836/clients/360dc/blog/caregiver-care_mhk0li.jpg'
+    ],
+    [
+        'debate-blog',
+        'https://res.cloudinary.com/pixelverse-studios/image/upload/v1754091806/clients/360dc/blog/debate-blog_znrhe5.jpg'
+    ],
+    [
+        'elder-care-blog',
+        'https://res.cloudinary.com/pixelverse-studios/image/upload/v1754095302/clients/360dc/blog/elder-care-blog_mjc6be.jpg'
     ]
 ])
 
