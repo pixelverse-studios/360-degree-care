@@ -42,5 +42,12 @@ export const videoMetadata = [
         description:
             'Our team always touches base to provide updates on our clients.',
         src: 'https://www.youtube.com/embed/nQJ8cBh-8VU?rel=0&controls=1&modestbranding=1&showinfo=0'
+    },
+    {
+        id: 'v9',
+        title: 'Patience',
+        description:
+            'Our team always touches base to provide updates on our clients.',
+        src: 'https://www.youtube.com/embed/ZxnfaiJrhsw?rel=0&controls=1&modestbranding=1&showinfo=0'
     }
 ]
