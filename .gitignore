@@ -39,3 +39,6 @@ next-env.d.ts
 
 /.repomix
 .repomix-output.txt
+
+# documentation
+/docs

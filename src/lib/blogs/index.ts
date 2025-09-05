@@ -6,8 +6,12 @@ import assistedLivingDecisionGuide from './articles/2025/assistedLivingGuide'
 import whoCares from './articles/2025/whoCares'
 import politicalGame from './articles/2025/politicalGame'
 import elderCareConsulting from './articles/2025/elderCareConsulting'
+import nursingHomeDecision from './articles/2025/nursingHomeDecision'
+import immigrantsHomeHealthcare from './articles/2025/immigrantsHomeHealthcare'
 
 const allBlogs = [
+    immigrantsHomeHealthcare,
+    nursingHomeDecision,
     elderCareConsulting,
     politicalGame,
     whoCares,
