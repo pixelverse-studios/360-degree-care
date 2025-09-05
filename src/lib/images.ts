@@ -245,6 +245,18 @@ const cloudinaryImageMap = new Map([
     [
         'elder-care-blog',
         'https://res.cloudinary.com/pixelverse-studios/image/upload/v1754095302/clients/360dc/blog/elder-care-blog_mjc6be.jpg'
+    ],
+    [
+        'nursing-decision-blog',
+        'https://res.cloudinary.com/pixelverse-studios/image/upload/v1757113868/clients/360dc/blog/Difficult_Decision_zvybgk.jpg'
+    ],
+    [
+        'need-more-care-blog',
+        'https://res.cloudinary.com/pixelverse-studios/image/upload/v1757113867/clients/360dc/blog/Need_More_tuj0k7.jpg'
+    ],
+    [
+        'immigrants-blog',
+        'https://res.cloudinary.com/pixelverse-studios/image/upload/v1757113867/clients/360dc/blog/Without_Immigrants_ze8x2u.jpg'
     ]
 ])
 

@@ -14,7 +14,7 @@ const nursingHomeDecision = {
     },
     publishDate: '2025-09-05',
     readTime: '10 min read',
-    featuredImage: 'elder-care-blog',
+    featuredImage: 'nursing-decision-blog',
     tags: [
         'nursing home decision',
         'aging parents',

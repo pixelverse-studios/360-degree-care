@@ -14,7 +14,7 @@ const immigrantsHomeHealthcare = {
     },
     publishDate: '2025-09-05',
     readTime: '9 min read',
-    featuredImage: 'elder-care-blog',
+    featuredImage: 'immigrants-blog',
     tags: [
         'healthcare workforce',
         'immigrant workers',

@@ -1,6 +1,6 @@
 import { getImgSrc } from '@/lib/images'
 
-const elderCareConsulting = {
+const needMoreCareBlog = {
     id: 'elder-care-consulting-services-adult-children',
     title: 'When Your Parents Need More Care Than You Can Provide',
     slug: 'elder-care-consulting-services-adult-children',
@@ -14,7 +14,7 @@ const elderCareConsulting = {
     },
     publishDate: '2025-08-02',
     readTime: '8 min read',
-    featuredImage: 'elder-care-blog',
+    featuredImage: 'need-more-care-blog',
     tags: [
         'elder care consulting',
         'aging parents',
@@ -220,4 +220,4 @@ Call us at [phone number] or [schedule your consultation online](/contact/servic
 *Jeff DeJoseph is a leader in the evolving field of aging in place and the services that enable people to remain happy and healthy at home. His company, [360 Degree Care](https://www.360degreecare.net), provides comprehensive elder care consulting and concierge home care services for families throughout New Jersey.*`
 }
 
-export default elderCareConsulting
+export default needMoreCareBlog
