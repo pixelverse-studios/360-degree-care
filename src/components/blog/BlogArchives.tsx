@@ -235,7 +235,7 @@ export default function BlogArchives({ posts }: BlogArchivesProps) {
                                         className="w-full h-48 object-cover"
                                     />
                                     <div className="absolute top-4 left-4">
-                                        <span className="inline-flex items-center gap-1 px-3 py-1 bg-white/90 backdrop-blur-sm text-gray-800 text-sm font-medium rounded-full">
+                                        <span className="inline-flex items-center gap-1 px-3 py-1 bg-[rgba(255,255,255,0.6)] text-gray-800 text-sm font-medium rounded-full">
                                             <Tag className="h-3 w-3" />
                                             {post.category}
                                         </span>

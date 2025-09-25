@@ -257,6 +257,10 @@ const cloudinaryImageMap = new Map([
     [
         'immigrants-blog',
         'https://res.cloudinary.com/pixelverse-studios/image/upload/v1757113867/clients/360dc/blog/Without_Immigrants_ze8x2u.jpg'
+    ],
+    [
+        'decision-shift-blog',
+        'https://res.cloudinary.com/pixelverse-studios/image/upload/v1758745381/clients/360dc/blog/decision-shift-blog_ciqfyh.jpg'
     ]
 ])
 

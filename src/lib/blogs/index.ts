@@ -8,8 +8,10 @@ import politicalGame from './articles/2025/politicalGame'
 import needMoreCareThanProvided from './articles/2025/needMoreCareThanProvided'
 import nursingHomeDecision from './articles/2025/nursingHomeDecision'
 import immigrantsHomeHealthcare from './articles/2025/immigrantsHomeHealthcare'
+import homecareDecisionShift from './articles/2025/homecareDecisionShift'
 
 const allBlogs = [
+    homecareDecisionShift,
     immigrantsHomeHealthcare,
     nursingHomeDecision,
     needMoreCareThanProvided,
