@@ -12,6 +12,7 @@ import Footer from '@/components/Footer'
 import { Toaster } from '@/components/ui/sonner'
 import { RouteStateProvider } from '@/lib/providers'
 import { getImgSrc } from '@/lib/images'
+import { CampaignTracker } from '@/components/CampaignTracker'
 
 // import 'animate.css'
 import '../styles/globals.css'
@@ -53,7 +54,7 @@ export const metadata = {
         manifest: '/manifest.json'
     }
 }
-export const permanentMarker = Permanent_Marker({
+const permanentMarker = Permanent_Marker({
     weight: ['400'],
     subsets: ['latin'],
     display: 'swap',
@@ -136,6 +137,7 @@ export default function RootLayout({
                     ></iframe>
                 </noscript>
                 <RouteStateProvider>
+                    <CampaignTracker />
                     <Header />
                     <Breadcrumbs />
                     {children}
