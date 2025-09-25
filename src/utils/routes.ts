@@ -130,11 +130,30 @@ export const additionalPages = [
         label: 'General',
         canVisit: true,
         subLinks: []
+    },
+    {
+        route: '/docs',
+        label: 'Documentation',
+        canVisit: true,
+        hasDynamicChildren: true,
+        subLinks: []
+    },
+    {
+        route: '/docs/blog',
+        label: 'Blog Documentation',
+        canVisit: true,
+        subLinks: []
+    },
+    {
+        route: '/docs/blogs',
+        label: 'Blog Documentation',
+        canVisit: true,
+        subLinks: []
     }
 ]
 
 const countyHubPages = counties.map(county => ({
-    route: `/${county.slug}`,
+    route: `/location/${county.slug}`,
     label: county.name,
     canVisit: true,
     hasDynamicChildren: true,

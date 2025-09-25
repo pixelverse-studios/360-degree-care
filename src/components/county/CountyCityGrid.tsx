@@ -29,7 +29,7 @@ export default function CountyCityGrid({
                 <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-6 gap-y-4 pt-4 max-w-5xl mx-auto">
                     {cities.map(city => (
                         <li key={city.slug}>
-                            <Link href={`/${countySlug}/${city.slug}`}>
+                            <Link href={`/location/${countySlug}/${city.slug}`}>
                                 <div className="flex items-center gap-3 font-semibold transition-all duration-300 p-2 rounded-lg hover:shadow-xl">
                                     <FaLocationDot
                                         size={20}

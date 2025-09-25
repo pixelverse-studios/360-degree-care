@@ -1,3 +1,4 @@
+import { notFound } from 'next/navigation'
 import CountyHero from '@/components/county/CountyHero'
 import CountyIntro from '@/components/county/CountyIntro'
 import CountyServiceList from '@/components/county/CountyServiceList'
@@ -17,7 +18,9 @@ export default async function CountyHubPage({
     const { counties } = await import('@/lib/counties')
     const countyData = counties.find(c => c.slug === params.county)
 
-    if (!countyData) return <div>County not found.</div>
+    if (!countyData) {
+        notFound()
+    }
 
     return (
         <main className="py-[4rem] space-y-10">

@@ -86,7 +86,7 @@ export default function Footer() {
                         {activeCounties.map(county => (
                             <Link
                                 key={county.slug}
-                                href={'/' + county.slug}
+                                href={'/location/' + county.slug}
                                 className={cn(quickLinkStyles, linkHover)}
                             >
                                 {county.name}

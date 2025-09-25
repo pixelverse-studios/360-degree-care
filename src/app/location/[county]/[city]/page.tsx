@@ -1,3 +1,4 @@
+import { notFound } from 'next/navigation'
 import CityHero from '@/components/county/CityHero'
 import CityServiceList from '@/components/county/CityServiceList'
 import CountyCta from '@/components/county/CountyCta'
@@ -22,12 +23,12 @@ export default async function CityPage({
     const { counties } = await import('@/lib/counties')
     const countyData = counties.find(c => c.slug === params.county)
     if (!countyData) {
-        return <div>County not found.</div>
+        notFound()
     }
 
     const cityData = countyData.cities.find(c => c.slug === params.city)
     if (!cityData) {
-        return <div>City not found.</div>
+        notFound()
     }
 
     return (
