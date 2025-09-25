@@ -112,7 +112,9 @@ const trackCampaign = (data?: CampaignData) => {
             utm_campaign: campaignData.utm_campaign,
             utm_term: campaignData.utm_term,
             utm_content: campaignData.utm_content,
-            landing_page: campaignData.landing_page
+            landing_page:
+                (campaignData as CampaignData).landing_page ||
+                window.location.pathname
         }
 
         // Log for debugging
