@@ -1,4 +1,5 @@
 import Script from 'next/script'
+import { Suspense } from 'react'
 import {
     Bodoni_Moda,
     Merriweather,
@@ -137,7 +138,9 @@ export default function RootLayout({
                     ></iframe>
                 </noscript>
                 <RouteStateProvider>
-                    <CampaignTracker />
+                    <Suspense fallback={null}>
+                        <CampaignTracker />
+                    </Suspense>
                     <Header />
                     <Breadcrumbs />
                     {children}
