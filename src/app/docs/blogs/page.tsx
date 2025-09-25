@@ -27,7 +27,7 @@ const tocItems = [
 
 export default function BlogDocsPage() {
     return (
-        <main className="min-h-screen bg-white">
+        <main className="">
             <div className="flex">
                 {/* Main Content */}
                 <div className="flex-1 max-w-5xl mx-auto px-6 lg:px-8 py-12">
