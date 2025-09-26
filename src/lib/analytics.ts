@@ -99,8 +99,8 @@ const trackCampaign = (data?: CampaignData) => {
                 const eventName = campaignData.utm_campaign
                     ? `Campaign: ${campaignData.utm_campaign}`
                     : campaignData.utm_source
-                    ? `Source: ${campaignData.utm_source}`
-                    : 'Campaign Visit'
+                      ? `Source: ${campaignData.utm_source}`
+                      : 'Campaign Visit'
 
                 ;(window as any).sbVisitorCustomEvent(eventName)
                 console.log('SiteBehaviour event sent:', eventName)
@@ -108,7 +108,9 @@ const trackCampaign = (data?: CampaignData) => {
                 console.log('SiteBehaviour custom event error:', error)
             }
         } else {
-            console.log('SiteBehaviour not loaded yet - sbVisitorCustomEvent not available')
+            console.log(
+                'SiteBehaviour not loaded yet - sbVisitorCustomEvent not available'
+            )
         }
 
         // Also try to add UTM params to the data layer that SiteBehaviour might monitor

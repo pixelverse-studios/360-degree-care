@@ -42,8 +42,8 @@ export function CampaignTracker() {
                 const eventName = campaignData.utm_campaign
                     ? `Campaign: ${campaignData.utm_campaign}`
                     : campaignData.utm_source
-                    ? `Source: ${campaignData.utm_source}`
-                    : 'Campaign Visit'
+                      ? `Source: ${campaignData.utm_source}`
+                      : 'Campaign Visit'
                 ;(window as any).sbVisitorCustomEvent(eventName)
             }
         } else {
