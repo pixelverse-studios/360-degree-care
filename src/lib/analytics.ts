@@ -88,20 +88,27 @@ const trackCampaign = (data?: CampaignData) => {
     }
 
     // SiteBehaviour tracking - add UTM params to window for their script to pick up
-    if (window.sitebehaviourTrackingSecret && campaignData) {
+    if (campaignData && Object.keys(campaignData).length > 0) {
         // Store UTM data in window object for SiteBehaviour to access
         ;(window as any).siteBehaviourUTM = campaignData
 
         // Trigger a custom event that SiteBehaviour can capture
-        if (typeof (window as any).siteBehaviour !== 'undefined') {
+        if (typeof (window as any).sbVisitorCustomEvent !== 'undefined') {
             try {
-                ;(window as any).siteBehaviour.track(
-                    'campaign_visit',
-                    campaignData
-                )
-            } catch {
-                console.log('SiteBehaviour custom event not available yet')
+                // Send custom event with campaign name or source
+                const eventName = campaignData.utm_campaign
+                    ? `Campaign: ${campaignData.utm_campaign}`
+                    : campaignData.utm_source
+                    ? `Source: ${campaignData.utm_source}`
+                    : 'Campaign Visit'
+
+                ;(window as any).sbVisitorCustomEvent(eventName)
+                console.log('SiteBehaviour event sent:', eventName)
+            } catch (error) {
+                console.log('SiteBehaviour custom event error:', error)
             }
+        } else {
+            console.log('SiteBehaviour not loaded yet - sbVisitorCustomEvent not available')
         }
 
         // Also try to add UTM params to the data layer that SiteBehaviour might monitor

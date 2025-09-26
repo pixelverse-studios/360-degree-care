@@ -36,8 +36,15 @@ export function CampaignTracker() {
             console.log('Campaign tracked:', campaignData)
 
             // Try to notify SiteBehaviour directly if it's loaded
-            if (typeof (window as any).siteBehaviour !== 'undefined') {
+            if (typeof (window as any).sbVisitorCustomEvent !== 'undefined') {
                 console.log('SiteBehaviour found, sending UTM data')
+                // Send a custom event for immediate tracking
+                const eventName = campaignData.utm_campaign
+                    ? `Campaign: ${campaignData.utm_campaign}`
+                    : campaignData.utm_source
+                    ? `Source: ${campaignData.utm_source}`
+                    : 'Campaign Visit'
+                ;(window as any).sbVisitorCustomEvent(eventName)
             }
         } else {
             const cookieData = analytics.getCampaignDataFromCookie()
