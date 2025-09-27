@@ -93,24 +93,44 @@ const trackCampaign = (data?: CampaignData) => {
         ;(window as any).siteBehaviourUTM = campaignData
 
         // Trigger a custom event that SiteBehaviour can capture
-        if (typeof (window as any).sbVisitorCustomEvent !== 'undefined') {
-            try {
-                // Send custom event with campaign name or source
-                const eventName = campaignData.utm_campaign
-                    ? `Campaign: ${campaignData.utm_campaign}`
-                    : campaignData.utm_source
-                      ? `Source: ${campaignData.utm_source}`
-                      : 'Campaign Visit'
+        const sendToSiteBehaviour = () => {
+            if (typeof (window as any).sbVisitorCustomEvent !== 'undefined') {
+                try {
+                    // Send custom event with campaign name or source
+                    const eventName = campaignData.utm_campaign
+                        ? `Campaign: ${campaignData.utm_campaign}`
+                        : campaignData.utm_source
+                          ? `Source: ${campaignData.utm_source}`
+                          : 'Campaign Visit'
 
-                ;(window as any).sbVisitorCustomEvent(eventName)
-                console.log('SiteBehaviour event sent:', eventName)
-            } catch (error) {
-                console.log('SiteBehaviour custom event error:', error)
+                    ;(window as any).sbVisitorCustomEvent(eventName)
+                    console.log('SiteBehaviour event sent:', eventName)
+                    return true
+                } catch (error) {
+                    console.log('SiteBehaviour custom event error:', error)
+                    return false
+                }
             }
-        } else {
+            return false
+        }
+
+        // Try to send immediately
+        if (!sendToSiteBehaviour()) {
             console.log(
-                'SiteBehaviour not loaded yet - sbVisitorCustomEvent not available'
+                'SiteBehaviour not loaded yet - will retry...'
             )
+            // Retry logic - wait for SiteBehaviour to load
+            let attempts = 0
+            const maxAttempts = 20 // 10 seconds total
+            const checkInterval = setInterval(() => {
+                attempts++
+                if (sendToSiteBehaviour() || attempts >= maxAttempts) {
+                    clearInterval(checkInterval)
+                    if (attempts >= maxAttempts) {
+                        console.log('SiteBehaviour did not load within 10 seconds')
+                    }
+                }
+            }, 500) // Check every 500ms
         }
 
         // Also try to add UTM params to the data layer that SiteBehaviour might monitor

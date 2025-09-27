@@ -36,15 +36,36 @@ export function CampaignTracker() {
             console.log('Campaign tracked:', campaignData)
 
             // Try to notify SiteBehaviour directly if it's loaded
-            if (typeof (window as any).sbVisitorCustomEvent !== 'undefined') {
-                console.log('SiteBehaviour found, sending UTM data')
-                // Send a custom event for immediate tracking
-                const eventName = campaignData.utm_campaign
-                    ? `Campaign: ${campaignData.utm_campaign}`
-                    : campaignData.utm_source
-                      ? `Source: ${campaignData.utm_source}`
-                      : 'Campaign Visit'
-                ;(window as any).sbVisitorCustomEvent(eventName)
+            const sendToSiteBehaviour = () => {
+                if (typeof (window as any).sbVisitorCustomEvent !== 'undefined') {
+                    console.log('SiteBehaviour found, sending UTM data')
+                    // Send a custom event for immediate tracking
+                    const eventName = campaignData.utm_campaign
+                        ? `Campaign: ${campaignData.utm_campaign}`
+                        : campaignData.utm_source
+                          ? `Source: ${campaignData.utm_source}`
+                          : 'Campaign Visit'
+                    ;(window as any).sbVisitorCustomEvent(eventName)
+                    console.log('SiteBehaviour custom event sent:', eventName)
+                    return true
+                }
+                return false
+            }
+
+            // Try immediately
+            if (!sendToSiteBehaviour()) {
+                // If not ready, wait for it to load
+                let attempts = 0
+                const maxAttempts = 20 // 10 seconds total
+                const checkInterval = setInterval(() => {
+                    attempts++
+                    if (sendToSiteBehaviour() || attempts >= maxAttempts) {
+                        clearInterval(checkInterval)
+                        if (attempts >= maxAttempts) {
+                            console.log('SiteBehaviour did not load within 10 seconds')
+                        }
+                    }
+                }, 500) // Check every 500ms
             }
         } else {
             const cookieData = analytics.getCampaignDataFromCookie()
