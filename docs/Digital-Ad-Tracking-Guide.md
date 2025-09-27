@@ -122,6 +122,43 @@ Visit `/test-tracking` on the website to:
 - Preview how your campaigns will be tracked
 - See live data capture in action
 
+### Ready-to-Use Test URLs
+Use these pre-configured URLs to verify tracking is working properly:
+
+**Basic Test URL:**
+```
+https://www.360degreecare.net?utm_source=test&utm_campaign=tracking_test
+```
+
+**SiteBehaviour Dashboard Test:**
+```
+https://www.360degreecare.net?utm_source=test&utm_campaign=sb_dashboard_test
+```
+
+**Facebook Campaign Test:**
+```
+https://www.360degreecare.net?utm_source=facebook&utm_medium=social&utm_campaign=test_campaign&utm_content=test_ad
+```
+
+**Google Ads Test:**
+```
+https://www.360degreecare.net?utm_source=google&utm_medium=cpc&utm_campaign=test_search&utm_term=test_keyword
+```
+
+**Complete Test with All Parameters:**
+```
+https://www.360degreecare.net?utm_source=test&utm_medium=test&utm_campaign=full_test&utm_content=test_content&utm_term=test_term
+```
+
+#### How to Verify Tracking is Working:
+1. Open browser DevTools (F12) → Console tab
+2. Visit any test URL above
+3. Look for these console messages:
+   - "Campaign tracked:" (shows captured data)
+   - "SiteBehaviour event sent:" (confirms SiteBehaviour integration)
+4. Check SiteBehaviour dashboard → Events → Custom Events filter
+5. Custom events will appear as "Campaign: [campaign_name]" or "Source: [source_name]"
+
 ### Technical Details
 - **Cookie Duration:** 30 days (visitors tracked across multiple sessions)
 - **Data Storage:** Local storage + cookies for redundancy
@@ -142,5 +179,5 @@ The tracking is automatic once you use these URLs. No additional setup needed on
 
 ---
 
-*Last Updated: January 2025*
-*Version: 2.0 - Enhanced with cookie persistence, attribution tracking, and additional platforms*
+*Last Updated: September 2025*
+*Version: 2.1 - Added SiteBehaviour integration with custom events and test URLs*

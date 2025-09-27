@@ -37,7 +37,9 @@ export function CampaignTracker() {
 
             // Try to notify SiteBehaviour directly if it's loaded
             const sendToSiteBehaviour = () => {
-                if (typeof (window as any).sbVisitorCustomEvent !== 'undefined') {
+                if (
+                    typeof (window as any).sbVisitorCustomEvent !== 'undefined'
+                ) {
                     console.log('SiteBehaviour found, sending UTM data')
                     // Send a custom event for immediate tracking
                     const eventName = campaignData.utm_campaign
@@ -62,7 +64,9 @@ export function CampaignTracker() {
                     if (sendToSiteBehaviour() || attempts >= maxAttempts) {
                         clearInterval(checkInterval)
                         if (attempts >= maxAttempts) {
-                            console.log('SiteBehaviour did not load within 10 seconds')
+                            console.log(
+                                'SiteBehaviour did not load within 10 seconds'
+                            )
                         }
                     }
                 }, 500) // Check every 500ms

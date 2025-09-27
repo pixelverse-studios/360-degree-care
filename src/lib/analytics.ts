@@ -116,9 +116,7 @@ const trackCampaign = (data?: CampaignData) => {
 
         // Try to send immediately
         if (!sendToSiteBehaviour()) {
-            console.log(
-                'SiteBehaviour not loaded yet - will retry...'
-            )
+            console.log('SiteBehaviour not loaded yet - will retry...')
             // Retry logic - wait for SiteBehaviour to load
             let attempts = 0
             const maxAttempts = 20 // 10 seconds total
@@ -127,7 +125,9 @@ const trackCampaign = (data?: CampaignData) => {
                 if (sendToSiteBehaviour() || attempts >= maxAttempts) {
                     clearInterval(checkInterval)
                     if (attempts >= maxAttempts) {
-                        console.log('SiteBehaviour did not load within 10 seconds')
+                        console.log(
+                            'SiteBehaviour did not load within 10 seconds'
+                        )
                     }
                 }
             }, 500) // Check every 500ms
