@@ -1,20 +1,15 @@
-import type { IConfig } from 'next-sitemap'
-import { counties } from './src/lib/counties'
-import { getAllCitySlugs } from './src/lib/locationSeo'
+const { counties } = require('./src/lib/counties')
+const { getAllCitySlugs } = require('./src/lib/locationSeo')
 
-const config: IConfig = {
+/** @type {import('next-sitemap').IConfig} */
+const config = {
     siteUrl: 'https://www.360degreecare.net',
     generateRobotsTxt: true,
     additionalPaths: async () => {
         // Get all cities from all counties
         const cities = getAllCitySlugs()
 
-        const paths: Array<{
-            loc: string
-            changefreq: 'weekly' | 'monthly'
-            priority: number
-            lastmod: string
-        }> = []
+        const paths = []
 
         // Services from your locationSeo.ts
         const services = [
@@ -30,7 +25,7 @@ const config: IConfig = {
         counties.forEach(county => {
             paths.push({
                 loc: `/${county.slug}`,
-                changefreq: 'weekly' as const,
+                changefreq: 'weekly',
                 priority: 0.8,
                 lastmod: new Date().toISOString()
             })
@@ -41,7 +36,7 @@ const config: IConfig = {
             county.cities.forEach(city => {
                 paths.push({
                     loc: `/${county.slug}/${city.slug}`,
-                    changefreq: 'weekly' as const,
+                    changefreq: 'weekly',
                     priority: 0.7,
                     lastmod: new Date().toISOString()
                 })
@@ -52,7 +47,7 @@ const config: IConfig = {
         services.forEach(service => {
             paths.push({
                 loc: `/services/${service}`,
-                changefreq: 'weekly' as const,
+                changefreq: 'weekly',
                 priority: 0.8,
                 lastmod: new Date().toISOString()
             })
@@ -63,7 +58,7 @@ const config: IConfig = {
             cities.forEach(city => {
                 paths.push({
                     loc: `/services/${service}/${city}`,
-                    changefreq: 'monthly' as const,
+                    changefreq: 'monthly',
                     priority: 0.7,
                     lastmod: new Date().toISOString()
                 })
@@ -82,7 +77,7 @@ const config: IConfig = {
         countyServicePages.forEach(page => {
             paths.push({
                 loc: page.loc,
-                changefreq: 'weekly' as const,
+                changefreq: 'weekly',
                 priority: page.priority,
                 lastmod: new Date().toISOString()
             })
@@ -103,7 +98,7 @@ const config: IConfig = {
         staticPages.forEach(page => {
             paths.push({
                 loc: page.loc,
-                changefreq: 'monthly' as const,
+                changefreq: 'monthly',
                 priority: page.priority,
                 lastmod: new Date().toISOString()
             })
@@ -131,4 +126,4 @@ const config: IConfig = {
     generateIndexSitemap: false
 }
 
-export default config
+module.exports = config
