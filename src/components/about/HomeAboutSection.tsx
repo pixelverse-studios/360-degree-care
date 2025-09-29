@@ -37,9 +37,16 @@ export default function HomeAboutSection() {
                         For over 10 years, 360 Degree Care has proudly served
                         families across New Jersey with compassionate,
                         dependable home care services — all from our base in
-                        Ridgewood, NJ. Whether it’s senior home care, companion
-                        care, or other personalized solutions, we’re dedicated
-                        to meeting each client’s unique needs.
+                        Ridgewood, NJ. We provide comprehensive{' '}
+                        <a
+                            href="/personal-care-bergen-county"
+                            className="text-primary hover:underline"
+                        >
+                            Bergen County personal care
+                        </a>{' '}
+                        services, including senior home care, companion care,
+                        and other personalized solutions, all dedicated to
+                        meeting each client's unique needs.
                     </p>
                     <p>
                         As a certified CHAP organization and licensed by the
