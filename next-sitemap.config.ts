@@ -72,11 +72,12 @@ const config: IConfig = {
 
         // Add county-level service hub pages (high priority SEO pages)
         const countyServicePages = [
-            { loc: '/personal-care-bergen-county', priority: 0.9 }
-            // Future pages to add:
-            // { loc: '/companion-care-bergen-county', priority: 0.9 },
-            // { loc: '/nursing-services-bergen-county', priority: 0.9 },
-            // { loc: '/home-health-aides-bergen-county', priority: 0.9 }
+            { loc: '/personal-care-bergen-county', priority: 0.9 },
+            { loc: '/companion-care-bergen-county', priority: 0.9 },
+            { loc: '/elder-care-bergen-county', priority: 0.9 },
+            { loc: '/home-health-aides-bergen-county', priority: 0.9 },
+            { loc: '/nursing-bergen-county', priority: 0.9 },
+            { loc: '/staffing-bergen-county', priority: 0.9 }
         ]
 
         countyServicePages.forEach(page => {

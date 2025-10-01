@@ -2,9 +2,9 @@ import { FaCheckCircle } from 'react-icons/fa'
 
 export interface ServiceAreaRegion {
     name: string
-    bgColor: string
+    bgColor?: string
     cities: string[]
-    description: string
+    description?: string
 }
 
 export interface ServiceAreaGridProps {
@@ -34,7 +34,7 @@ export default function ServiceAreaGrid({
                     {regions.map(region => (
                         <div
                             key={region.name}
-                            className={`${region.bgColor} rounded-lg p-6`}
+                            className={`${region.bgColor || 'bg-gray-50'} rounded-lg p-6`}
                         >
                             <h3 className="font-bold text-lg text-secondary mb-4">
                                 {region.name}
