@@ -122,7 +122,7 @@ export const bergenCountyHomeHealthAidesContent: ServiceCountyPageContent = {
             "Certified home health aides providing skilled medical support throughout Bergen County's 70 municipalities. From Fort Lee to Ridgewood, our CHAP-certified aides deliver professional care that bridges the gap between independence and medical supervision at home.",
         ctaButtonLabel: 'Get Your Free Assessment',
         ctaValue: 'Home Health Aides Bergen County',
-        imageSrc: 'home-health-aides-hero',
+        imageSrc: 'home-aides-hero',
         imageAlt: 'Professional home health aide services in Bergen County'
     },
 
