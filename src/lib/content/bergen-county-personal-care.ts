@@ -128,7 +128,7 @@ export const bergenCountyPersonalCareContent: ServiceCountyPageContent = {
     intro: {
         title: 'Compassionate Personal Care Across All of Bergen County',
         content: [
-            "When you search for <strong>\"personal care near me\"</strong> in Bergen County, you're looking for more than just assistance—you're seeking a trusted partner who understands the unique needs of your loved one and your community. At 360 Degree Care, we've been that partner for thousands of Bergen County families for over a decade.",
+            "When you search for personal care near me in Bergen County, you're looking for more than just assistance—you're seeking a trusted partner who understands the unique needs of your loved one and your community. At 360 Degree Care, we've been that partner for thousands of Bergen County families for over a decade.",
             'Our personal care team serves families throughout Bergen County, including bustling urban centers like Hackensack and Fort Lee, charming suburban communities like Ridgewood and Westwood, and every neighborhood in between. We understand that each community has its own character—from the high-rise senior communities along the Hudson River to the tree-lined streets of Teaneck and Bergenfield.',
             "Whether you're in Fort Lee, Westwood, or anywhere in Bergen County, our certified caregivers provide personalized support that goes beyond basic assistance. We help with daily activities like bathing, dressing, and meal preparation, while also offering the companionship and emotional support that makes a real difference in quality of life. Our goal is simple: to help your loved one maintain their independence, dignity, and connection to the community they love."
         ]
