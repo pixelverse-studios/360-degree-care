@@ -4,7 +4,6 @@ import HomeHero from '@/components/hero/HomeHero'
 import InfoCards from '@/components/InfoCards'
 import HomeAboutSection from '@/components/about/HomeAboutSection'
 import HomeTestimonials from '@/components/testimonials/HomeTestimonials'
-import HomeSeoHead from '@/lib/seo/home'
 import SimpleCard from '@/components/card/SimpleCard'
 import { cn } from '@/lib/utils'
 
@@ -13,7 +12,6 @@ import { HIGHLIGHT_CARDS, SERVICE_CARDS } from '@/utils/home'
 export default function HomePage() {
     return (
         <>
-            <HomeSeoHead />
             <main className="">
                 <HomeHero />
                 <section className={`gradient-right py-8`}>

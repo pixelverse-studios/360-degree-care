@@ -77,7 +77,25 @@ const config: IConfig = {
             { loc: '/elder-care-bergen-county', priority: 0.9 },
             { loc: '/home-health-aides-bergen-county', priority: 0.9 },
             { loc: '/nursing-bergen-county', priority: 0.9 },
-            { loc: '/staffing-bergen-county', priority: 0.9 }
+            { loc: '/staffing-bergen-county', priority: 0.9 },
+            { loc: '/personal-care-monmouth-county', priority: 0.9 },
+            { loc: '/companion-care-monmouth-county', priority: 0.9 },
+            { loc: '/elder-care-monmouth-county', priority: 0.9 },
+            { loc: '/home-health-aides-monmouth-county', priority: 0.9 },
+            { loc: '/nursing-monmouth-county', priority: 0.9 },
+            { loc: '/staffing-monmouth-county', priority: 0.9 },
+            { loc: '/personal-care-passaic-county', priority: 0.9 },
+            { loc: '/companion-care-passaic-county', priority: 0.9 },
+            { loc: '/elder-care-passaic-county', priority: 0.9 },
+            { loc: '/home-health-aides-passaic-county', priority: 0.9 },
+            { loc: '/nursing-passaic-county', priority: 0.9 },
+            { loc: '/staffing-passaic-county', priority: 0.9 },
+            { loc: '/personal-care-ocean-county', priority: 0.9 },
+            { loc: '/companion-care-ocean-county', priority: 0.9 },
+            { loc: '/elder-care-ocean-county', priority: 0.9 },
+            { loc: '/home-health-aides-ocean-county', priority: 0.9 },
+            { loc: '/nursing-ocean-county', priority: 0.9 },
+            { loc: '/staffing-ocean-county', priority: 0.9 }
         ]
 
         countyServicePages.forEach(page => {
