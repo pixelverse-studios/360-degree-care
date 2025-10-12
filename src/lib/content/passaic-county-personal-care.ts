@@ -45,7 +45,7 @@ export const passaicCountyPersonalCareContent: CountyPageContent = {
         availableChannel: {
             '@type': 'ServiceChannel',
             serviceUrl:
-                'https://www.360degreecare.net/personal-care-passaic-county',
+                'https://360degreecare.net/services/personal-care/passaic-county',
             servicePhone: '+1-800-338-7786',
             availableLanguage: 'en'
         }

@@ -3,7 +3,7 @@ import { ServiceCountyPageContent } from './county-types'
 export const bergenCountyNursingContent: ServiceCountyPageContent = {
     serviceName: 'Nursing',
     serviceSlug: 'nursing',
-    slug: 'nursing-bergen-county',
+    slug: 'services/nursing/bergen-county',
 
     metadata: {
         title: 'Nursing Services Bergen County NJ | RN & LPN Care | 360 Degree Care',
@@ -18,7 +18,7 @@ export const bergenCountyNursingContent: ServiceCountyPageContent = {
             type: 'website',
             locale: 'en_US',
             siteName: '360 Degree Care',
-            url: 'https://360degreecare.net/nursing-bergen-county',
+            url: 'https://360degreecare.net/services/nursing/bergen-county',
             images: [
                 {
                     url: 'https://360degreecare.net/og-images/bergen-county-nursing.jpg',
@@ -38,7 +38,8 @@ export const bergenCountyNursingContent: ServiceCountyPageContent = {
             ]
         },
         alternates: {
-            canonical: 'https://360degreecare.net/nursing-bergen-county'
+            canonical:
+                'https://360degreecare.net/services/nursing/bergen-county'
         },
         robots: {
             index: true,

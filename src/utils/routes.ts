@@ -1,7 +1,5 @@
 // src/utils/routes.ts
 
-import { counties } from '@/lib/counties'
-
 const wisdomVaultLinks = [
     {
         route: '/wisdom-vault',
@@ -152,19 +150,10 @@ export const additionalPages = [
     }
 ]
 
-const countyHubPages = counties.map(county => ({
-    route: `/location/${county.slug}`,
-    label: county.name,
-    canVisit: true,
-    hasDynamicChildren: true,
-    subLinks: []
-}))
-
 export const availablePages = [
     ...navLinks,
     ...footerResources,
-    ...additionalPages,
-    ...countyHubPages
+    ...additionalPages
     // --- FIX 3: Removed the redundant '...wisdomVaultLinks' spread. ---
     // It's already included inside navLinks, and having it twice can cause unexpected behavior.
 ]

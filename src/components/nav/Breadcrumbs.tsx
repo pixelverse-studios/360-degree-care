@@ -5,7 +5,6 @@ import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { cn } from '@/lib/utils'
 import { availablePages } from '@/utils/routes'
-import { counties } from '@/lib/counties'
 import {
     Breadcrumb,
     BreadcrumbItem,
@@ -72,28 +71,6 @@ export default function Breadcrumbs() {
                     isValid: true
                 }
             } else if (parentPage?.hasDynamicChildren) {
-                // Check if it's a county/city dynamic route
-                const countyCityMatch = currentPath.match(/\/([^/]+)\/([^/]+)$/)
-                if (countyCityMatch) {
-                    const countySlug = countyCityMatch[1]
-                    const citySlug = countyCityMatch[2]
-
-                    const foundCounty = counties.find(
-                        c => c.slug === countySlug
-                    )
-                    const foundCity = foundCounty?.cities.find(
-                        c => c.slug === citySlug
-                    )
-
-                    if (foundCity) {
-                        return {
-                            route: currentPath,
-                            label: foundCity.name,
-                            canVisit: true,
-                            isValid: true
-                        }
-                    }
-                }
                 return {
                     route: currentPath,
                     label: formatSegmentAsLabel(segment),

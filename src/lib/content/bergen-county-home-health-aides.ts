@@ -3,7 +3,7 @@ import { ServiceCountyPageContent } from './county-types'
 export const bergenCountyHomeHealthAidesContent: ServiceCountyPageContent = {
     serviceName: 'Home Health Aides',
     serviceSlug: 'home-health-aides',
-    slug: 'home-health-aides-bergen-county',
+    slug: 'services/home-health-aides/bergen-county',
 
     metadata: {
         title: 'Home Health Aides Bergen County NJ | 360 Degree Care',
@@ -18,7 +18,7 @@ export const bergenCountyHomeHealthAidesContent: ServiceCountyPageContent = {
             type: 'website',
             locale: 'en_US',
             siteName: '360 Degree Care',
-            url: 'https://360degreecare.net/home-health-aides-bergen-county',
+            url: 'https://360degreecare.net/services/home-health-aides/bergen-county',
             images: [
                 {
                     url: 'https://360degreecare.net/og-images/bergen-county-home-health-aides.jpg',
@@ -39,7 +39,7 @@ export const bergenCountyHomeHealthAidesContent: ServiceCountyPageContent = {
         },
         alternates: {
             canonical:
-                'https://360degreecare.net/home-health-aides-bergen-county'
+                'https://360degreecare.net/services/home-health-aides/bergen-county'
         },
         robots: {
             index: true,

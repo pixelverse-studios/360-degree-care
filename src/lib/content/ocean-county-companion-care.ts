@@ -45,7 +45,7 @@ export const oceanCountyCompanionCareContent: CountyPageContent = {
         availableChannel: {
             '@type': 'ServiceChannel',
             serviceUrl:
-                'https://www.360degreecare.net/companion-care-ocean-county',
+                'https://360degreecare.net/services/companion-care/ocean-county',
             servicePhone: '+1-800-338-7786',
             availableLanguage: 'en'
         }

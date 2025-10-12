@@ -4,7 +4,7 @@
 This document outlines the implementation strategy for creating a high-performing county-level hub page for personal care services in Bergen County, NJ. This page will serve as the authoritative resource for Bergen County personal care searches and help resolve current indexation issues.
 
 ## Goal
-Create a comprehensive 2,000+ word page at `/personal-care-bergen-county` that ranks for:
+Create a comprehensive 2,000+ word page at `/services/personal-care/bergen-county` that ranks for:
 - "personal care bergen county nj" (target: positions 3-8)
 - "personal care near me" (local searches)
 - City-specific long-tail keywords
@@ -23,7 +23,7 @@ Create a comprehensive 2,000+ word page at `/personal-care-bergen-county` that r
 ### Phase 1: Setup & Planning ⏱️ Week 1 ✅ COMPLETED
 
 - [x] **1.1 Create Route Structure** ✅ COMPLETED (Dec 28, 2024)
-  - [x] Create new file: `/src/app/personal-care-bergen-county/page.tsx`
+  - [x] Create new file: `/src/app/services/personal-care/bergen-county/page.tsx`
   - [x] Set up metadata generation
   - [x] Configure schema markup
   - [x] Fix Next.js image configuration for Cloudinary
@@ -173,9 +173,9 @@ Create a comprehensive 2,000+ word page at `/personal-care-bergen-county` that r
   - [ ] Refresh statistics
 
 - [ ] **6.3 Expand to Other Services**
-  - [ ] `/companion-care-bergen-county`
-  - [ ] `/nursing-services-bergen-county`
-  - [ ] `/home-health-aides-bergen-county`
+  - [ ] `/services/companion-care/bergen-county`
+  - [ ] `/services/nursing/bergen-county`
+  - [ ] `/services/home-health-aides/bergen-county`
 
 ---
 
@@ -304,7 +304,7 @@ _Use this space to track decisions, changes, and observations during implementat
 - Note: Fort Lee gets primary focus due to high search volume and competition
 - Observation: "Near me" searches are increasing 20% YoY
 - **Dec 28, 2024**: Completed Phase 1-2 implementation
-  - Created `/personal-care-bergen-county/page.tsx` with 2,000+ words of content
+  - Created `/services/personal-care/bergen-county/page.tsx` with 2,000+ words of content
   - Fixed Next.js image configuration to support Cloudinary
   - Changed `<article>` tag to `<main>` to avoid duplicate main elements
   - Implemented all regional sections with rich local content

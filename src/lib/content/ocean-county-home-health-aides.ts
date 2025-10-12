@@ -42,7 +42,7 @@ export const oceanCountyHomeHealthAidesContent: CountyPageContent = {
         availableChannel: {
             '@type': 'ServiceChannel',
             serviceUrl:
-                'https://www.360degreecare.net/home-health-aides-ocean-county',
+                'https://360degreecare.net/services/home-health-aides/ocean-county',
             servicePhone: '+1-800-338-7786',
             availableLanguage: 'en'
         }

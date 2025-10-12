@@ -1,145 +1,98 @@
 import type { IConfig } from 'next-sitemap'
-import { counties } from './src/lib/counties'
-import { getAllCitySlugs } from './src/lib/locationSeo'
+
+const weeklyServicePages = [
+    '/services/personal-care',
+    '/services/companion-care',
+    '/services/elder-care',
+    '/services/home-health-aides',
+    '/services/nursing',
+    '/services/staffing'
+]
+
+const countyServicePages = [
+    '/services/personal-care/bergen-county',
+    '/services/companion-care/bergen-county',
+    '/services/elder-care/bergen-county',
+    '/services/home-health-aides/bergen-county',
+    '/services/nursing/bergen-county',
+    '/services/staffing/bergen-county',
+    '/services/personal-care/monmouth-county',
+    '/services/companion-care/monmouth-county',
+    '/services/elder-care/monmouth-county',
+    '/services/home-health-aides/monmouth-county',
+    '/services/nursing/monmouth-county',
+    '/services/staffing/monmouth-county',
+    '/services/personal-care/passaic-county',
+    '/services/companion-care/passaic-county',
+    '/services/elder-care/passaic-county',
+    '/services/home-health-aides/passaic-county',
+    '/services/nursing/passaic-county',
+    '/services/staffing/passaic-county',
+    '/services/personal-care/ocean-county',
+    '/services/companion-care/ocean-county',
+    '/services/elder-care/ocean-county',
+    '/services/home-health-aides/ocean-county',
+    '/services/nursing/ocean-county',
+    '/services/staffing/ocean-county'
+]
+
+const monthlyStaticPages = [
+    { loc: '/about', priority: 0.8 },
+    { loc: '/contact', priority: 0.9 },
+    { loc: '/faq', priority: 0.6 },
+    { loc: '/how-to-pay', priority: 0.7 },
+    { loc: '/legal-disclaimer', priority: 0.3 },
+    { loc: '/nondiscrimination', priority: 0.3 },
+    { loc: '/privacy-policy', priority: 0.3 },
+    { loc: '/not-found', priority: 0.1 }
+]
 
 const config: IConfig = {
     siteUrl: 'https://www.360degreecare.net',
     generateRobotsTxt: true,
     additionalPaths: async () => {
-        // Get all cities from all counties
-        const cities = getAllCitySlugs()
+        const lastmod = new Date().toISOString()
 
-        const paths: Array<{
+        const entries: Array<{
             loc: string
             changefreq: 'weekly' | 'monthly'
             priority: number
             lastmod: string
         }> = []
 
-        // Services from your locationSeo.ts
-        const services = [
-            'personal-care',
-            'companion-care',
-            'elder-care',
-            'home-health-aides',
-            'nursing',
-            'staffing'
-        ]
-
-        // Add county pages (/{county-slug})
-        counties.forEach(county => {
-            paths.push({
-                loc: `/${county.slug}`,
-                changefreq: 'weekly' as const,
+        weeklyServicePages.forEach(loc => {
+            entries.push({
+                loc,
+                changefreq: 'weekly',
                 priority: 0.8,
-                lastmod: new Date().toISOString()
+                lastmod
             })
         })
 
-        // Add city pages (/{county-slug}/{city-slug})
-        counties.forEach(county => {
-            county.cities.forEach(city => {
-                paths.push({
-                    loc: `/${county.slug}/${city.slug}`,
-                    changefreq: 'weekly' as const,
-                    priority: 0.7,
-                    lastmod: new Date().toISOString()
-                })
+        countyServicePages.forEach(loc => {
+            entries.push({
+                loc,
+                changefreq: 'weekly',
+                priority: 0.9,
+                lastmod
             })
         })
 
-        // Add main service pages
-        services.forEach(service => {
-            paths.push({
-                loc: `/services/${service}`,
-                changefreq: 'weekly' as const,
-                priority: 0.8,
-                lastmod: new Date().toISOString()
-            })
-        })
-
-        // Add city-specific service pages
-        services.forEach(service => {
-            cities.forEach(city => {
-                paths.push({
-                    loc: `/services/${service}/${city}`,
-                    changefreq: 'monthly' as const,
-                    priority: 0.7,
-                    lastmod: new Date().toISOString()
-                })
-            })
-        })
-
-        // Add county-level service hub pages (high priority SEO pages)
-        const countyServicePages = [
-            { loc: '/personal-care-bergen-county', priority: 0.9 },
-            { loc: '/companion-care-bergen-county', priority: 0.9 },
-            { loc: '/elder-care-bergen-county', priority: 0.9 },
-            { loc: '/home-health-aides-bergen-county', priority: 0.9 },
-            { loc: '/nursing-bergen-county', priority: 0.9 },
-            { loc: '/staffing-bergen-county', priority: 0.9 },
-            { loc: '/personal-care-monmouth-county', priority: 0.9 },
-            { loc: '/companion-care-monmouth-county', priority: 0.9 },
-            { loc: '/elder-care-monmouth-county', priority: 0.9 },
-            { loc: '/home-health-aides-monmouth-county', priority: 0.9 },
-            { loc: '/nursing-monmouth-county', priority: 0.9 },
-            { loc: '/staffing-monmouth-county', priority: 0.9 },
-            { loc: '/personal-care-passaic-county', priority: 0.9 },
-            { loc: '/companion-care-passaic-county', priority: 0.9 },
-            { loc: '/elder-care-passaic-county', priority: 0.9 },
-            { loc: '/home-health-aides-passaic-county', priority: 0.9 },
-            { loc: '/nursing-passaic-county', priority: 0.9 },
-            { loc: '/staffing-passaic-county', priority: 0.9 },
-            { loc: '/personal-care-ocean-county', priority: 0.9 },
-            { loc: '/companion-care-ocean-county', priority: 0.9 },
-            { loc: '/elder-care-ocean-county', priority: 0.9 },
-            { loc: '/home-health-aides-ocean-county', priority: 0.9 },
-            { loc: '/nursing-ocean-county', priority: 0.9 },
-            { loc: '/staffing-ocean-county', priority: 0.9 }
-        ]
-
-        countyServicePages.forEach(page => {
-            paths.push({
+        monthlyStaticPages.forEach(page => {
+            entries.push({
                 loc: page.loc,
-                changefreq: 'weekly' as const,
+                changefreq: 'monthly',
                 priority: page.priority,
-                lastmod: new Date().toISOString()
+                lastmod
             })
         })
 
-        // Add other static pages
-        const staticPages = [
-            { loc: '/about', priority: 0.8 },
-            { loc: '/contact', priority: 0.9 },
-            { loc: '/faq', priority: 0.6 },
-            { loc: '/how-to-pay', priority: 0.7 },
-            { loc: '/legal-disclaimer', priority: 0.3 },
-            { loc: '/nondiscrimination', priority: 0.3 },
-            { loc: '/privacy-policy', priority: 0.3 },
-            { loc: '/not-found', priority: 0.1 }
-        ]
-
-        staticPages.forEach(page => {
-            paths.push({
-                loc: page.loc,
-                changefreq: 'monthly' as const,
-                priority: page.priority,
-                lastmod: new Date().toISOString()
-            })
-        })
-
-        return paths
+        return entries
     },
     robotsTxtOptions: {
         policies: [
-            {
-                userAgent: '*',
-                allow: '/'
-            },
-            {
-                userAgent: '*',
-                disallow: ['/api/', '/_next/']
-            }
+            { userAgent: '*', allow: '/' },
+            { userAgent: '*', disallow: ['/api/', '/_next/'] }
         ],
         additionalSitemaps: ['https://www.360degreecare.net/sitemap.xml']
     },

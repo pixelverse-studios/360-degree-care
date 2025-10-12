@@ -2,7 +2,7 @@
 ## Bergen County Personal Care Services Page
 
 **Date:** December 28, 2024
-**Page URL:** `/personal-care-bergen-county`
+**Page URL:** `/services/personal-care/bergen-county`
 **Review Dashboard:** `/seo-review`
 
 ---

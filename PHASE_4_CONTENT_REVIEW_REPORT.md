@@ -2,7 +2,7 @@
 
 ## Executive Summary
 Date: December 29, 2024
-Page URL: `/personal-care-bergen-county`
+Page URL: `/services/personal-care/bergen-county`
 Status: Quality Assurance Review Complete
 
 ---
@@ -131,7 +131,7 @@ Target Keywords Analysis:
   "serviceType": "Personal Care Services",
   "availableChannel": {
     "@type": "ServiceChannel",
-    "serviceUrl": "https://www.360degreecare.com/personal-care-bergen-county",
+    "serviceUrl": "https://www.360degreecare.com/services/personal-care/bergen-county",
     "servicePhone": "+1-856-874-0067",
     "availableLanguage": "en"
   }
@@ -191,15 +191,15 @@ h1: Personal Care Services Throughout Bergen County
 - ✅ Contact form links
 
 #### Pending (for future implementation):
-- Link to `/companion-care-bergen-county` (when created)
-- Link to `/nursing-services-bergen-county` (when created)
-- Link to `/home-health-aides-bergen-county` (when created)
+- Link to `/services/companion-care/bergen-county` (when created)
+- Link to `/services/nursing/bergen-county` (when created)
+- Link to `/services/home-health-aides/bergen-county` (when created)
 
 **Internal Linking Status**: Strategic Implementation ✅ PASSED
 
 ### Canonical Tags ✅
 - **Implementation**: Via Next.js metadata export
-- **Canonical URL**: `/personal-care-bergen-county`
+- **Canonical URL**: `/services/personal-care/bergen-county`
 - **Self-referencing**: Yes
 - **Format**: Relative URL (correct for Next.js)
 

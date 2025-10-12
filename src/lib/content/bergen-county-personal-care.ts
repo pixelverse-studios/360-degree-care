@@ -3,7 +3,7 @@ import { ServiceCountyPageContent } from './county-types'
 export const bergenCountyPersonalCareContent: ServiceCountyPageContent = {
     serviceName: 'Personal Care',
     serviceSlug: 'personal-care',
-    slug: 'personal-care-bergen-county',
+    slug: 'services/personal-care/bergen-county',
 
     metadata: {
         title: 'Personal Care Services Bergen County NJ | 360 Degree Care',
@@ -18,7 +18,7 @@ export const bergenCountyPersonalCareContent: ServiceCountyPageContent = {
             type: 'website',
             locale: 'en_US',
             siteName: '360 Degree Care',
-            url: 'https://360degreecare.net/personal-care-bergen-county',
+            url: 'https://360degreecare.net/services/personal-care/bergen-county',
             images: [
                 {
                     url: 'https://360degreecare.net/og-images/bergen-county-personal-care.jpg',
@@ -38,7 +38,8 @@ export const bergenCountyPersonalCareContent: ServiceCountyPageContent = {
             ]
         },
         alternates: {
-            canonical: 'https://360degreecare.net/personal-care-bergen-county'
+            canonical:
+                'https://360degreecare.net/services/personal-care/bergen-county'
         },
         robots: {
             index: true,

@@ -9,12 +9,25 @@ import { navLinks, footerResources } from '@/utils/routes'
 import { ADDRESS, FACEBOOK, INSTA, PHONE } from '@/utils/constants'
 import GoogleReviewLink from './GoogleReviewLink'
 import ContactMap from './contact/ContactMap'
-import { counties } from '@/lib/counties'
 
-const activeCounties = counties.map(county => ({
-    name: county.name,
-    slug: county.slug
-}))
+const servicedCounties = [
+    {
+        name: 'Bergen County',
+        href: '/services/personal-care/bergen-county'
+    },
+    {
+        name: 'Monmouth County',
+        href: '/services/personal-care/monmouth-county'
+    },
+    {
+        name: 'Passaic County',
+        href: '/services/personal-care/passaic-county'
+    },
+    {
+        name: 'Ocean County',
+        href: '/services/personal-care/ocean-county'
+    }
+]
 const [aboutLink, serviceLink, vaultLink] = navLinks
 
 const quickLinkStyles = 'text-sm'
@@ -83,10 +96,10 @@ export default function Footer() {
                     </div>
                     <div className="flex flex-col space-y-2 text-sm">
                         <p className="font-bold text-lg">Now Servicing</p>
-                        {activeCounties.map(county => (
+                        {servicedCounties.map(county => (
                             <Link
-                                key={county.slug}
-                                href={'/location/' + county.slug}
+                                key={county.href}
+                                href={county.href}
                                 className={cn(quickLinkStyles, linkHover)}
                             >
                                 {county.name}

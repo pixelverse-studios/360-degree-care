@@ -18,7 +18,7 @@ Date: December 29, 2024
 - [ ] Confirm zero downtime deployment
 
 #### Post-Deployment Verification
-- [ ] Live page accessible at: `https://www.360degreecare.com/personal-care-bergen-county`
+- [ ] Live page accessible at: `https://www.360degreecare.com/services/personal-care/bergen-county`
 - [ ] All images loading correctly via Cloudinary
 - [ ] Mobile responsiveness confirmed
 - [ ] Page speed < 3 seconds
@@ -31,7 +31,7 @@ Date: December 29, 2024
 ```
 1. Log into Google Search Console
 2. Navigate to URL Inspection tool
-3. Enter: https://www.360degreecare.com/personal-care-bergen-county
+3. Enter: https://www.360degreecare.com/services/personal-care/bergen-county
 4. Click "Request Indexing"
 5. Verify "URL is on Google" status
 ```
@@ -226,7 +226,7 @@ None at launch
 ### Weekly Report Format
 ```
 Week of: [Date]
-Page: /personal-care-bergen-county
+Page: /services/personal-care/bergen-county
 
 Traffic:
 - Organic visits: X
@@ -328,11 +328,11 @@ _Use this section to track important observations during monitoring_
 ## Next County Pages to Create
 
 Based on this model's success:
-1. `/companion-care-bergen-county`
-2. `/nursing-services-bergen-county`
-3. `/home-health-aides-bergen-county`
-4. `/personal-care-passaic-county`
-5. `/personal-care-essex-county`
+1. `/services/companion-care/bergen-county`
+2. `/services/nursing/bergen-county`
+3. `/services/home-health-aides/bergen-county`
+4. `/services/personal-care/passaic-county`
+5. `/services/personal-care/essex-county`
 
 ---
 

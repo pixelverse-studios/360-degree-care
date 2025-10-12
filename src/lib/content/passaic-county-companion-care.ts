@@ -45,7 +45,7 @@ export const passaicCountyCompanionCareContent: CountyPageContent = {
         availableChannel: {
             '@type': 'ServiceChannel',
             serviceUrl:
-                'https://www.360degreecare.net/companion-care-passaic-county',
+                'https://360degreecare.net/services/companion-care/passaic-county',
             servicePhone: '+1-800-338-7786',
             availableLanguage: 'en'
         }

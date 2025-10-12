@@ -97,7 +97,7 @@ export default function SEOReviewPage() {
                             <p className="text-gray-600">
                                 Bergen County Personal Care Services page at{' '}
                                 <code className="bg-gray-100 px-2 py-1 rounded text-sm">
-                                    /personal-care-bergen-county
+                                    /services/personal-care/bergen-county
                                 </code>
                             </p>
                         </div>

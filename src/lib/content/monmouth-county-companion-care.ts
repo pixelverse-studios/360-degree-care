@@ -46,7 +46,7 @@ export const monmouthCountyCompanionCareContent: CountyPageContent = {
         availableChannel: {
             '@type': 'ServiceChannel',
             serviceUrl:
-                'https://www.360degreecare.net/companion-care-monmouth-county',
+                'https://360degreecare.net/services/companion-care/monmouth-county',
             servicePhone: '+1-800-338-7786',
             availableLanguage: 'en'
         }

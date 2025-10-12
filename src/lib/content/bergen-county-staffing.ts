@@ -3,7 +3,7 @@ import { ServiceCountyPageContent } from './county-types'
 export const bergenCountyStaffingContent: ServiceCountyPageContent = {
     serviceName: 'Healthcare Staffing',
     serviceSlug: 'staffing',
-    slug: 'staffing-bergen-county',
+    slug: 'services/staffing/bergen-county',
 
     metadata: {
         title: 'Healthcare Staffing Bergen County NJ | Medical Staffing Solutions | 360 Degree Care',
@@ -18,7 +18,7 @@ export const bergenCountyStaffingContent: ServiceCountyPageContent = {
             type: 'website',
             locale: 'en_US',
             siteName: '360 Degree Care',
-            url: 'https://360degreecare.net/staffing-bergen-county',
+            url: 'https://360degreecare.net/services/staffing/bergen-county',
             images: [
                 {
                     url: 'https://360degreecare.net/og-images/bergen-county-staffing.jpg',
@@ -38,7 +38,8 @@ export const bergenCountyStaffingContent: ServiceCountyPageContent = {
             ]
         },
         alternates: {
-            canonical: 'https://360degreecare.net/staffing-bergen-county'
+            canonical:
+                'https://360degreecare.net/services/staffing/bergen-county'
         },
         robots: {
             index: true,

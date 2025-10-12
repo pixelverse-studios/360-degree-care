@@ -39,7 +39,7 @@ export default function HomeAboutSection() {
                         dependable home care services — all from our base in
                         Ridgewood, NJ. We provide comprehensive{' '}
                         <a
-                            href="/personal-care-bergen-county"
+                            href="/services/personal-care/bergen-county"
                             className="text-primary hover:underline"
                         >
                             Bergen County personal care

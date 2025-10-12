@@ -32,7 +32,7 @@ export interface CountyPageContent {
     // Service Areas
     serviceAreas: {
         title: string
-        subtitle: string
+        subtitle?: string
         regions: Array<{
             name: string
             cities: string[]

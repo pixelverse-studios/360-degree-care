@@ -44,7 +44,8 @@ export const oceanCountyElderCareContent: CountyPageContent = {
         serviceType: 'Elder Care Consulting',
         availableChannel: {
             '@type': 'ServiceChannel',
-            serviceUrl: 'https://www.360degreecare.net/elder-care-ocean-county',
+            serviceUrl:
+                'https://360degreecare.net/services/elder-care/ocean-county',
             servicePhone: '+1-800-338-7786',
             availableLanguage: 'en'
         }

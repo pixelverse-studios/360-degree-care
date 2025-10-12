@@ -45,7 +45,7 @@ export const passaicCountyElderCareContent: CountyPageContent = {
         availableChannel: {
             '@type': 'ServiceChannel',
             serviceUrl:
-                'https://www.360degreecare.net/elder-care-passaic-county',
+                'https://360degreecare.net/services/elder-care/passaic-county',
             servicePhone: '+1-800-338-7786',
             availableLanguage: 'en'
         }

@@ -46,7 +46,7 @@ export const bergenCountyCompanionCareContent: CountyPageContent = {
         availableChannel: {
             '@type': 'ServiceChannel',
             serviceUrl:
-                'https://www.360degreecare.com/companion-care-bergen-county',
+                'https://360degreecare.net/services/companion-care/bergen-county',
             servicePhone: '+1-856-874-0067',
             availableLanguage: 'en'
         }
