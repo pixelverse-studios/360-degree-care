@@ -64,5 +64,7 @@ export interface CountyPageContent {
         description: string[]
         buttonLabel: string
         value: string
+        ctaButtonLabel?: string
+        ctaValue?: string
     }
 }

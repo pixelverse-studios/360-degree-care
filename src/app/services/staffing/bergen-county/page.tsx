@@ -52,7 +52,7 @@ export default function StaffingBergenCountyPage() {
                             County
                         </h2>
 
-                        {content.regions.map((region, index) => (
+                        {content.regionalSections.map((region, index) => (
                             <RegionalSection
                                 key={index}
                                 title={region.title}
@@ -79,8 +79,10 @@ export default function StaffingBergenCountyPage() {
                 <CountyCTASection
                     title={content.cta.title}
                     description={content.cta.description}
-                    ctaButtonLabel={content.cta.ctaButtonLabel}
-                    ctaValue={content.cta.ctaValue}
+                    ctaButtonLabel={
+                        content.cta.ctaButtonLabel ?? content.cta.buttonLabel
+                    }
+                    ctaValue={content.cta.ctaValue ?? content.cta.value}
                 />
             </main>
         </>

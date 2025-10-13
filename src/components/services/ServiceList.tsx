@@ -4,12 +4,46 @@ import { ServiceListProps } from '@/lib/types'
 import { SlideInSection, StaggeredSection } from '../animations'
 import * as FA6Icons from 'react-icons/fa6'
 
-export default function ServiceList({ header, items }: ServiceListProps) {
+type LegacyServiceListProps = {
+    title: string
+    description?: string
+    servicesList: string[]
+}
+
+type CombinedServiceListProps = ServiceListProps | LegacyServiceListProps
+
+function isModernServiceListProps(
+    props: CombinedServiceListProps
+): props is ServiceListProps {
+    return 'items' in props
+}
+
+const DEFAULT_ICON = 'FaCircleCheck'
+
+export default function ServiceList(props: CombinedServiceListProps) {
+    const isModern = isModernServiceListProps(props)
+
+    const header = isModern ? props.header : props.title
+    const description = isModern ? undefined : props.description
+
+    const items = isModern
+        ? props.items
+        : props.servicesList.map(title => ({
+              title,
+              description: '',
+              Icon: DEFAULT_ICON
+          }))
+
     return (
         <section className="gradient-left">
             <section className="page-section text-white">
                 <SlideInSection direction="down">
                     <h2 className="text-white mb-8 text-center">{header}</h2>
+                    {description && (
+                        <p className="max-w-2xl mx-auto text-center text-blue-50">
+                            {description}
+                        </p>
+                    )}
                 </SlideInSection>
                 <StaggeredSection className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-4xl mx-auto">
                     {items.map(({ title, description, Icon }) => {

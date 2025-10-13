@@ -7,7 +7,9 @@ export default function SEOReviewPage() {
         bergenCountyPersonalCareContent.hero.title,
         bergenCountyPersonalCareContent.hero.description,
         ...bergenCountyPersonalCareContent.intro.content,
-        ...bergenCountyPersonalCareContent.regions.flatMap(r => r.content),
+        ...bergenCountyPersonalCareContent.regionalSections.flatMap(
+            section => section.content
+        ),
         bergenCountyPersonalCareContent.serviceAreas.subtitle,
         ...bergenCountyPersonalCareContent.serviceAreas.regions.map(
             r => `${r.name}: ${r.cities.join(', ')}. ${r.description}`

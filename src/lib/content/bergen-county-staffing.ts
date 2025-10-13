@@ -3,7 +3,6 @@ import { ServiceCountyPageContent } from './county-types'
 export const bergenCountyStaffingContent: ServiceCountyPageContent = {
     serviceName: 'Healthcare Staffing',
     serviceSlug: 'staffing',
-    slug: 'services/staffing/bergen-county',
 
     metadata: {
         title: 'Healthcare Staffing Bergen County NJ | Medical Staffing Solutions | 360 Degree Care',
@@ -135,7 +134,7 @@ export const bergenCountyStaffingContent: ServiceCountyPageContent = {
         ]
     },
 
-    regions: [
+    regionalSections: [
         {
             title: 'Healthcare Staffing in Fort Lee & Southeast Bergen County',
             content: [

@@ -1,7 +1,7 @@
 import CallToAction from '../CallToAction'
 import { SlideInSection } from '../animations'
 
-interface ServiceCtaProps {
+export interface ServiceCtaProps {
     header: string
     description: string
     cta: string

@@ -1,40 +1,32 @@
 import type { IConfig } from 'next-sitemap'
 
-const weeklyServicePages = [
-    '/services/personal-care',
-    '/services/companion-care',
-    '/services/elder-care',
-    '/services/home-health-aides',
-    '/services/nursing',
-    '/services/staffing'
+const serviceSlugs = [
+    'personal-care',
+    'companion-care',
+    'elder-care',
+    'home-health-aides',
+    'nursing',
+    'staffing'
 ]
 
+const weeklyServicePages = serviceSlugs.map(
+    slug => `/services/${slug}`
+)
+
 const countyServicePages = [
-    '/services/personal-care/bergen-county',
-    '/services/companion-care/bergen-county',
-    '/services/elder-care/bergen-county',
-    '/services/home-health-aides/bergen-county',
-    '/services/nursing/bergen-county',
-    '/services/staffing/bergen-county',
-    '/services/personal-care/monmouth-county',
-    '/services/companion-care/monmouth-county',
-    '/services/elder-care/monmouth-county',
-    '/services/home-health-aides/monmouth-county',
-    '/services/nursing/monmouth-county',
-    '/services/staffing/monmouth-county',
-    '/services/personal-care/passaic-county',
-    '/services/companion-care/passaic-county',
-    '/services/elder-care/passaic-county',
-    '/services/home-health-aides/passaic-county',
-    '/services/nursing/passaic-county',
-    '/services/staffing/passaic-county',
-    '/services/personal-care/ocean-county',
-    '/services/companion-care/ocean-county',
-    '/services/elder-care/ocean-county',
-    '/services/home-health-aides/ocean-county',
-    '/services/nursing/ocean-county',
-    '/services/staffing/ocean-county'
-]
+    'bergen-county',
+    'monmouth-county',
+    'passaic-county',
+    'ocean-county'
+].flatMap(county =>
+    serviceSlugs.map(slug => `/services/${slug}/${county}`)
+)
+
+const bergenCountyCities = ['fort-lee', 'ridgewood', 'river-vale']
+
+const bergenCityServicePages = serviceSlugs.flatMap(slug =>
+    bergenCountyCities.map(city => `/services/${slug}/bergen-county/${city}`)
+)
 
 const monthlyStaticPages = [
     { loc: '/about', priority: 0.8 },
@@ -74,6 +66,15 @@ const config: IConfig = {
                 loc,
                 changefreq: 'weekly',
                 priority: 0.9,
+                lastmod
+            })
+        })
+
+        bergenCityServicePages.forEach(loc => {
+            entries.push({
+                loc,
+                changefreq: 'weekly',
+                priority: 0.85,
                 lastmod
             })
         })

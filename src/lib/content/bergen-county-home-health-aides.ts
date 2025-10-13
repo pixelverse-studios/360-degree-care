@@ -3,7 +3,6 @@ import { ServiceCountyPageContent } from './county-types'
 export const bergenCountyHomeHealthAidesContent: ServiceCountyPageContent = {
     serviceName: 'Home Health Aides',
     serviceSlug: 'home-health-aides',
-    slug: 'services/home-health-aides/bergen-county',
 
     metadata: {
         title: 'Home Health Aides Bergen County NJ | 360 Degree Care',
@@ -135,7 +134,7 @@ export const bergenCountyHomeHealthAidesContent: ServiceCountyPageContent = {
         ]
     },
 
-    regions: [
+    regionalSections: [
         {
             title: 'Home Health Aides in Fort Lee & Southeast Bergen County',
             content: [

@@ -3,7 +3,6 @@ import { ServiceCountyPageContent } from './county-types'
 export const bergenCountyPersonalCareContent: ServiceCountyPageContent = {
     serviceName: 'Personal Care',
     serviceSlug: 'personal-care',
-    slug: 'services/personal-care/bergen-county',
 
     metadata: {
         title: 'Personal Care Services Bergen County NJ | 360 Degree Care',
@@ -135,7 +134,7 @@ export const bergenCountyPersonalCareContent: ServiceCountyPageContent = {
         ]
     },
 
-    regions: [
+    regionalSections: [
         {
             title: 'Personal Care in Fort Lee & Southeast Bergen County',
             content: [

@@ -3,7 +3,6 @@ import { ServiceCountyPageContent } from './county-types'
 export const bergenCountyNursingContent: ServiceCountyPageContent = {
     serviceName: 'Nursing',
     serviceSlug: 'nursing',
-    slug: 'services/nursing/bergen-county',
 
     metadata: {
         title: 'Nursing Services Bergen County NJ | RN & LPN Care | 360 Degree Care',
@@ -135,7 +134,7 @@ export const bergenCountyNursingContent: ServiceCountyPageContent = {
         ]
     },
 
-    regions: [
+    regionalSections: [
         {
             title: 'Nursing Services in Fort Lee & Southeast Bergen County',
             content: [

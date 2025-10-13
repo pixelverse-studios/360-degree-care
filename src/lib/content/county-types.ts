@@ -14,7 +14,6 @@ export interface CountyServiceArea {
 
 export interface CountyPageContent {
     // SEO & Meta
-    slug: string
     metadata: Metadata
     schemaData: any
 
@@ -36,7 +35,7 @@ export interface CountyPageContent {
     }
 
     // Regional Sections
-    regions: CountyRegionalContent[]
+    regionalSections: CountyRegionalContent[]
 
     // Service Areas
     serviceAreas: {
@@ -71,6 +70,8 @@ export interface CountyPageContent {
         description: string[]
         ctaButtonLabel?: string
         ctaValue?: string
+        buttonLabel?: string
+        value?: string
     }
 }
 
