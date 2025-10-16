@@ -38,6 +38,11 @@ export const navLinks = [
         hasDynamicChildren: true,
         subLinks: [
             {
+                route: '/services',
+                label: 'All Services',
+                canVisit: true
+            },
+            {
                 route: '/services/personal-care',
                 label: 'Personal Care',
                 canVisit: true

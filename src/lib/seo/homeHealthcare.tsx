@@ -63,16 +63,15 @@ const HomeHealthAidesSeoHead = () => {
             <Head>
                 {/* Primary Meta Tags */}
                 <title>
-                    Certified Home Health Aide Services in New Jersey | 360
-                    Degree Care
+                    Skilled Home Health Care Services in NJ | 360 Degree Care
                 </title>
                 <meta
                     name="title"
-                    content="Certified Home Health Aide Services in New Jersey | 360 Degree Care"
+                    content="Skilled Home Health Care Services in NJ | 360 Degree Care"
                 />
                 <meta
                     name="description"
-                    content="Professional home health aides providing 24/7 assistance with daily activities, medication reminders, and personal care. CHAP-certified caregivers helping clients maintain independence at home."
+                    content="Access home health care in New Jersey with nurses, therapists, and aides coordinating recovery plans, oversight, and family updates through 360 Degree Care."
                 />
                 <meta
                     name="keywords"
@@ -87,11 +86,11 @@ const HomeHealthAidesSeoHead = () => {
                 />
                 <meta
                     property="og:title"
-                    content="Certified Home Health Aide Services in New Jersey | 360 Degree Care"
+                    content="Skilled Home Health Care Services in NJ | 360 Degree Care"
                 />
                 <meta
                     property="og:description"
-                    content="Professional home health aides providing 24/7 assistance with daily activities, medication reminders, and personal care. CHAP-certified caregivers helping clients maintain independence at home."
+                    content="Access home health care in New Jersey with nurses, therapists, and aides coordinating recovery plans, oversight, and family updates through 360 Degree Care."
                 />
                 <meta
                     property="og:image"
@@ -108,11 +107,11 @@ const HomeHealthAidesSeoHead = () => {
                 />
                 <meta
                     property="twitter:title"
-                    content="Certified Home Health Aide Services in New Jersey | 360 Degree Care"
+                    content="Skilled Home Health Care Services in NJ | 360 Degree Care"
                 />
                 <meta
                     property="twitter:description"
-                    content="Professional home health aides providing 24/7 assistance with daily activities, medication reminders, and personal care. CHAP-certified caregivers helping clients maintain independence at home."
+                    content="Access home health care in New Jersey with nurses, therapists, and aides coordinating recovery plans, oversight, and family updates through 360 Degree Care."
                 />
                 <meta
                     property="twitter:image"
@@ -120,10 +119,6 @@ const HomeHealthAidesSeoHead = () => {
                 />
 
                 {/* Canonical & Additional Meta Tags */}
-                <link
-                    rel="canonical"
-                    href="https://www.360degreecare.net/services/home-health-aides"
-                />
                 <meta name="robots" content="index, follow" />
                 <meta name="geo.region" content="US-NJ" />
                 <meta name="geo.placename" content="Ridgewood" />

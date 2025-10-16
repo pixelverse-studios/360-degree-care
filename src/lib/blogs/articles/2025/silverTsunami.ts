@@ -86,7 +86,7 @@ The question isn't whether this demographic shift will happen—it's already und
 
 ---
 
-**Ready to make a difference in your community?** [Learn about career opportunities](/careers) in home healthcare and discover how you can be part of the solution to the Silver Tsunami.
+**Ready to make a difference in your community?** [Learn about career opportunities](/contact/employment) in home healthcare and discover how you can be part of the solution to the Silver Tsunami.
 
 *Jeff DeJoseph is a leader in the evolving field of aging in place and the services that enable people to remain happy and healthy at home. His company, [360 Degree Care](https://www.360degreecare.net), provides concierge home care services for seniors and those returning from the hospital or rehab.*`
 }

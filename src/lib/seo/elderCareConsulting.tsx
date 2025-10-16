@@ -54,16 +54,15 @@ const StaticElderCareConsultingData = {
             <>
                 <Head>
                     <title>
-                        Elder Care Consulting Services in New Jersey | 360
-                        Degree Care
+                        Elder Care Consulting Experts in NJ | 360 Degree Care
                     </title>
                     <meta
                         name="title"
-                        content="Elder Care Consulting Services in New Jersey | 360 Degree Care"
+                        content="Elder Care Consulting Experts in NJ | 360 Degree Care"
                     />
                     <meta
                         name="description"
-                        content="Expert elder care consulting in New Jersey. Professional guidance to help families navigate senior care decisions with confidence. Comprehensive assessments and personalized care planning."
+                        content="Partner with 360 Degree Care's elder care consulting team in New Jersey for assessments, planning, and resource navigation tailored to your family's next step."
                     />
                     <meta
                         name="keywords"
@@ -77,11 +76,11 @@ const StaticElderCareConsultingData = {
                     />
                     <meta
                         property="og:title"
-                        content="Elder Care Consulting Services in New Jersey | 360 Degree Care"
+                        content="Elder Care Consulting Experts in NJ | 360 Degree Care"
                     />
                     <meta
                         property="og:description"
-                        content="Expert elder care consulting in New Jersey. Professional guidance to help families navigate senior care decisions with confidence."
+                        content="Partner with 360 Degree Care's elder care consulting team in New Jersey for assessments, planning, and resource navigation tailored to your family's next step."
                     />
                     <meta
                         property="og:image"
@@ -100,21 +99,17 @@ const StaticElderCareConsultingData = {
                     />
                     <meta
                         property="twitter:title"
-                        content="Elder Care Consulting Services in New Jersey | 360 Degree Care"
+                        content="Elder Care Consulting Experts in NJ | 360 Degree Care"
                     />
                     <meta
                         property="twitter:description"
-                        content="Expert elder care consulting in New Jersey. Professional guidance to help families navigate senior care decisions with confidence."
+                        content="Partner with 360 Degree Care's elder care consulting team in New Jersey for assessments, planning, and resource navigation tailored to your family's next step."
                     />
                     <meta
                         property="twitter:image"
                         content="https://www.360degreecare.net/assets/elder-care-consulting-image.jpg"
                     />
 
-                    <link
-                        rel="canonical"
-                        href="https://www.360degreecare.net/services/elder-care-consulting"
-                    />
                     <meta name="robots" content="index, follow" />
                     <meta name="geo.region" content="US-NJ" />
                     <meta name="geo.placename" content="Ridgewood" />

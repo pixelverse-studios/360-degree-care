@@ -64,15 +64,16 @@ const StaticCompanionCareData = {
             <>
                 <Head>
                     <title>
-                        Companion Care Services in New Jersey | 360 Degree Care
+                        Companion Care Services for Seniors in NJ | 360 Degree
+                        Care
                     </title>
                     <meta
                         name="title"
-                        content="Companion Care Services in New Jersey | 360 Degree Care"
+                        content="Companion Care Services for Seniors in NJ | 360 Degree Care"
                     />
                     <meta
                         name="description"
-                        content="Professional companion care services in New Jersey. Compassionate social support, emotional connection, and daily life assistance. Reduce loneliness and support mental health."
+                        content="Explore companion care in New Jersey with engagement, safety check-ins, and respite support from 360 Degree Care companions who deliver peace of mind."
                     />
                     <meta
                         name="keywords"
@@ -86,11 +87,11 @@ const StaticCompanionCareData = {
                     />
                     <meta
                         property="og:title"
-                        content="Companion Care Services in New Jersey | 360 Degree Care"
+                        content="Companion Care Services for Seniors in NJ | 360 Degree Care"
                     />
                     <meta
                         property="og:description"
-                        content="Professional companion care services in New Jersey. Compassionate social support and emotional connection for daily life."
+                        content="Explore companion care in New Jersey with engagement, safety check-ins, and respite support from 360 Degree Care companions who deliver peace of mind."
                     />
                     <meta
                         property="og:image"
@@ -109,21 +110,17 @@ const StaticCompanionCareData = {
                     />
                     <meta
                         property="twitter:title"
-                        content="Companion Care Services in New Jersey | 360 Degree Care"
+                        content="Companion Care Services for Seniors in NJ | 360 Degree Care"
                     />
                     <meta
                         property="twitter:description"
-                        content="Professional companion care services in New Jersey. Compassionate social support and emotional connection for daily life."
+                        content="Explore companion care in New Jersey with engagement, safety check-ins, and respite support from 360 Degree Care companions who deliver peace of mind."
                     />
                     <meta
                         property="twitter:image"
                         content="https://www.360degreecare.net/assets/companion-care-image.jpg"
                     />
 
-                    <link
-                        rel="canonical"
-                        href="https://www.360degreecare.net/services/companion-care"
-                    />
                     <meta name="robots" content="index, follow" />
                     <meta name="geo.region" content="US-NJ" />
                     <meta name="geo.placename" content="Ridgewood" />

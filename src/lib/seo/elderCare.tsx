@@ -63,16 +63,15 @@ const ElderCareSeoHead = () => {
             <Head>
                 {/* Primary Meta Tags */}
                 <title>
-                    Elder Care Consulting Services in New Jersey | 360 Degree
-                    Care
+                    Comprehensive Elder Care Services in NJ | 360 Degree Care
                 </title>
                 <meta
                     name="title"
-                    content="Elder Care Consulting Services in New Jersey | 360 Degree Care"
+                    content="Comprehensive Elder Care Services in NJ | 360 Degree Care"
                 />
                 <meta
                     name="description"
-                    content="Expert elder care consulting from CHAP-certified specialists. Personalized care plans, family guidance, and resource coordination to help seniors maintain independence with 24/7 support."
+                    content="Find elder care in New Jersey with assessments, dementia expertise, and coordinated teams guiding families through every stage alongside 360 Degree Care."
                 />
                 <meta
                     name="keywords"
@@ -87,11 +86,11 @@ const ElderCareSeoHead = () => {
                 />
                 <meta
                     property="og:title"
-                    content="Elder Care Consulting Services in New Jersey | 360 Degree Care"
+                    content="Comprehensive Elder Care Services in NJ | 360 Degree Care"
                 />
                 <meta
                     property="og:description"
-                    content="Expert elder care consulting from CHAP-certified specialists. Personalized care plans, family guidance, and resource coordination to help seniors maintain independence with 24/7 support."
+                    content="Find elder care in New Jersey with assessments, dementia expertise, and coordinated teams guiding families through every stage alongside 360 Degree Care."
                 />
                 <meta
                     property="og:image"
@@ -108,11 +107,11 @@ const ElderCareSeoHead = () => {
                 />
                 <meta
                     property="twitter:title"
-                    content="Elder Care Consulting Services in New Jersey | 360 Degree Care"
+                    content="Comprehensive Elder Care Services in NJ | 360 Degree Care"
                 />
                 <meta
                     property="twitter:description"
-                    content="Expert elder care consulting from CHAP-certified specialists. Personalized care plans, family guidance, and resource coordination to help seniors maintain independence with 24/7 support."
+                    content="Find elder care in New Jersey with assessments, dementia expertise, and coordinated teams guiding families through every stage alongside 360 Degree Care."
                 />
                 <meta
                     property="twitter:image"
@@ -120,10 +119,6 @@ const ElderCareSeoHead = () => {
                 />
 
                 {/* Canonical & Additional Meta Tags */}
-                <link
-                    rel="canonical"
-                    href="https://www.360degreecare.net/services/elder-care"
-                />
                 <meta name="robots" content="index, follow" />
                 <meta name="geo.region" content="US-NJ" />
                 <meta name="geo.placename" content="Ridgewood" />

@@ -74,7 +74,7 @@ By providing **emotional, practical, health-focused, and financial support**, we
 
 > "You cannot pour from an empty cup. Supporting caregivers isn't just compassionate—it's essential for sustainable care."
 
-If you're a caregiver feeling overwhelmed, or if you want to support a caregiver in your life, [connect with our care experts](/careers) at 360 Degree Care. We understand the challenges and we're here to help.
+If you're a caregiver feeling overwhelmed, or if you want to support a caregiver in your life, [connect with our care experts](/contact/employment) at 360 Degree Care. We understand the challenges and we're here to help.
 
 *Jeff DeJoseph is a leader in the evolving field of aging in place and the services that enable people to remain happy and healthy at home. His company, [360 Degree Care](https://www.360degreecare.net), provides concierge home care services for seniors and those returning from the hospital or rehab.*
 `

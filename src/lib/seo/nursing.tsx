@@ -63,16 +63,15 @@ const SkilledNursingSeoHead = () => {
             <Head>
                 {/* Primary Meta Tags */}
                 <title>
-                    Professional Skilled Nursing Services in New Jersey | 360
-                    Degree Care
+                    Skilled Nursing Care Services in NJ | 360 Degree Care
                 </title>
                 <meta
                     name="title"
-                    content="Professional Skilled Nursing Services in New Jersey | 360 Degree Care"
+                    content="Skilled Nursing Care Services in NJ | 360 Degree Care"
                 />
                 <meta
                     name="description"
-                    content="Experienced, licensed nurses providing specialized care including medication administration, wound care, and chronic disease management. 24/7 CHAP-certified nursing services in the comfort of your home."
+                    content="Secure nursing care in New Jersey for wound support, chronic disease management, and medication oversight delivered at home by 360 Degree Care's licensed team."
                 />
                 <meta
                     name="keywords"
@@ -87,11 +86,11 @@ const SkilledNursingSeoHead = () => {
                 />
                 <meta
                     property="og:title"
-                    content="Professional Skilled Nursing Services in New Jersey | 360 Degree Care"
+                    content="Skilled Nursing Care Services in NJ | 360 Degree Care"
                 />
                 <meta
                     property="og:description"
-                    content="Experienced, licensed nurses providing specialized care including medication administration, wound care, and chronic disease management. 24/7 CHAP-certified nursing services in the comfort of your home."
+                    content="Secure nursing care in New Jersey for wound support, chronic disease management, and medication oversight delivered at home by 360 Degree Care's licensed team."
                 />
                 <meta
                     property="og:image"
@@ -108,11 +107,11 @@ const SkilledNursingSeoHead = () => {
                 />
                 <meta
                     property="twitter:title"
-                    content="Professional Skilled Nursing Services in New Jersey | 360 Degree Care"
+                    content="Skilled Nursing Care Services in NJ | 360 Degree Care"
                 />
                 <meta
                     property="twitter:description"
-                    content="Experienced, licensed nurses providing specialized care including medication administration, wound care, and chronic disease management. 24/7 CHAP-certified nursing services in the comfort of your home."
+                    content="Secure nursing care in New Jersey for wound support, chronic disease management, and medication oversight delivered at home by 360 Degree Care's licensed team."
                 />
                 <meta
                     property="twitter:image"
@@ -120,10 +119,6 @@ const SkilledNursingSeoHead = () => {
                 />
 
                 {/* Canonical & Additional Meta Tags */}
-                <link
-                    rel="canonical"
-                    href="https://www.360degreecare.net/services/nursing"
-                />
                 <meta name="robots" content="index, follow" />
                 <meta name="geo.region" content="US-NJ" />
                 <meta name="geo.placename" content="Ridgewood" />

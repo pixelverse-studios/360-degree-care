@@ -30,6 +30,7 @@ const bergenCityServicePages = serviceSlugs.flatMap(slug =>
 
 const monthlyStaticPages = [
     { loc: '/about', priority: 0.8 },
+    { loc: '/services', priority: 0.8 },
     { loc: '/contact', priority: 0.9 },
     { loc: '/faq', priority: 0.6 },
     { loc: '/how-to-pay', priority: 0.7 },

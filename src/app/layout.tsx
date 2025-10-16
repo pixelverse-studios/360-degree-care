@@ -7,6 +7,7 @@ import {
     Rubik
 } from 'next/font/google'
 
+import CanonicalLink from '@/components/CanonicalLink'
 import { Header } from '@/components/nav/Header'
 import Breadcrumbs from '@/components/nav/Breadcrumbs'
 import Footer from '@/components/Footer'
@@ -39,16 +40,18 @@ export const metadata = {
         ],
         apple: [{ url: getImgSrc('Favicon_16x16'), sizes: '180x180' }]
     },
-    title: '360 Degree Care',
-    description: 'Your description here',
+    title: 'Concierge Home Care Services in NJ | 360 Degree Care',
+    description:
+        '360 Degree Care delivers concierge home care, nursing, companion, and staffing support across New Jersey, empowering families with compassionate caregivers.',
     openGraph: {
         images: [
             {
                 url: '/path-to-your-new-image.png' // TODO: UPDATE
             }
         ],
-        title: '360 Degree Care',
-        description: "New Jersey's finest Home HealthCare provider",
+        title: 'Concierge Home Care Services in NJ | 360 Degree Care',
+        description:
+            '360 Degree Care delivers concierge home care, nursing, companion, and staffing support across New Jersey, empowering families with compassionate caregivers.',
         url: 'https://www.360degreecare.net',
         siteName: '360 Degree Care',
         type: 'website',
@@ -90,6 +93,7 @@ export default function RootLayout({
     return (
         <html lang="en">
             <head>
+                <CanonicalLink />
                 <link
                     rel="stylesheet"
                     media="screen"

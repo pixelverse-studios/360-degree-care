@@ -64,16 +64,15 @@ const StaticHomeHealthAidesData = {
             <>
                 <Head>
                     <title>
-                        Concierge-Level™ Home Health Aide Services in New
-                        Jersey | 360 Degree Care
+                        Certified Home Health Aides in NJ | 360 Degree Care
                     </title>
                     <meta
                         name="title"
-                        content="Concierge-Level™ Home Health Aide Services in New Jersey | 360 Degree Care"
+                        content="Certified Home Health Aides in NJ | 360 Degree Care"
                     />
                     <meta
                         name="description"
-                        content="Professional home health aide services in New Jersey. Certified aides providing compassionate daily living support, hygiene assistance, and companionship with nurse supervision."
+                        content="Hire certified home health aides across New Jersey for daily living help, medication reminders, and companionship delivered by 360 Degree Care's concierge team."
                     />
                     <meta
                         name="keywords"
@@ -87,11 +86,11 @@ const StaticHomeHealthAidesData = {
                     />
                     <meta
                         property="og:title"
-                        content="Concierge-Level™ Home Health Aide Services in New Jersey | 360 Degree Care"
+                        content="Certified Home Health Aides in NJ | 360 Degree Care"
                     />
                     <meta
                         property="og:description"
-                        content="Professional home health aide services in New Jersey. Certified aides providing compassionate daily living support with nurse supervision."
+                        content="Hire certified home health aides across New Jersey for daily living help, medication reminders, and companionship delivered by 360 Degree Care's concierge team."
                     />
                     <meta
                         property="og:image"
@@ -110,21 +109,17 @@ const StaticHomeHealthAidesData = {
                     />
                     <meta
                         property="twitter:title"
-                        content="Concierge-Level™ Home Health Aide Services in New Jersey | 360 Degree Care"
+                        content="Certified Home Health Aides in NJ | 360 Degree Care"
                     />
                     <meta
                         property="twitter:description"
-                        content="Professional home health aide services in New Jersey. Certified aides providing compassionate daily living support with nurse supervision."
+                        content="Hire certified home health aides across New Jersey for daily living help, medication reminders, and companionship delivered by 360 Degree Care's concierge team."
                     />
                     <meta
                         property="twitter:image"
                         content="https://www.360degreecare.net/assets/home-health-aides-image.jpg"
                     />
 
-                    <link
-                        rel="canonical"
-                        href="https://www.360degreecare.net/services/home-health-aides"
-                    />
                     <meta name="robots" content="index, follow" />
                     <meta name="geo.region" content="US-NJ" />
                     <meta name="geo.placename" content="Ridgewood" />

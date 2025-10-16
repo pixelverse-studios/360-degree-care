@@ -64,15 +64,15 @@ const StaticNursingServicesData = {
             <>
                 <Head>
                     <title>
-                        In-Home Nursing Services in New Jersey | 360 Degree Care
+                        Expert In-Home Nursing Care in NJ | 360 Degree Care
                     </title>
                     <meta
                         name="title"
-                        content="In-Home Nursing Services in New Jersey | 360 Degree Care"
+                        content="Expert In-Home Nursing Care in NJ | 360 Degree Care"
                     />
                     <meta
                         name="description"
-                        content="Professional in-home nursing services in New Jersey. Licensed nurses providing skilled clinical care, wound care, medication management, and health assessments at home."
+                        content="Bring in-home nurses to your New Jersey residence for assessments, infusion support, and coordinated clinical care through 360 Degree Care's concierge model."
                     />
                     <meta
                         name="keywords"
@@ -86,11 +86,11 @@ const StaticNursingServicesData = {
                     />
                     <meta
                         property="og:title"
-                        content="In-Home Nursing Services in New Jersey | 360 Degree Care"
+                        content="Expert In-Home Nursing Care in NJ | 360 Degree Care"
                     />
                     <meta
                         property="og:description"
-                        content="Professional in-home nursing services in New Jersey. Licensed nurses providing skilled clinical care at home."
+                        content="Bring in-home nurses to your New Jersey residence for assessments, infusion support, and coordinated clinical care through 360 Degree Care's concierge model."
                     />
                     <meta
                         property="og:image"
@@ -109,21 +109,17 @@ const StaticNursingServicesData = {
                     />
                     <meta
                         property="twitter:title"
-                        content="In-Home Nursing Services in New Jersey | 360 Degree Care"
+                        content="Expert In-Home Nursing Care in NJ | 360 Degree Care"
                     />
                     <meta
                         property="twitter:description"
-                        content="Professional in-home nursing services in New Jersey. Licensed nurses providing skilled clinical care at home."
+                        content="Bring in-home nurses to your New Jersey residence for assessments, infusion support, and coordinated clinical care through 360 Degree Care's concierge model."
                     />
                     <meta
                         property="twitter:image"
                         content="https://www.360degreecare.net/assets/nursing-services-image.jpg"
                     />
 
-                    <link
-                        rel="canonical"
-                        href="https://www.360degreecare.net/services/nursing-services"
-                    />
                     <meta name="robots" content="index, follow" />
                     <meta name="geo.region" content="US-NJ" />
                     <meta name="geo.placename" content="Ridgewood" />

@@ -73,16 +73,15 @@ const AboutSeoHead = () => {
             <Head>
                 {/* Primary Meta Tags */}
                 <title>
-                    About Our CHAP Certified Home Health Care Agency | 360
-                    Degree Care
+                    About 360 Degree Care | NJ Home Care Specialists Since 2013
                 </title>
                 <meta
                     name="title"
-                    content="About Our CHAP Certified Home Health Care Agency | 360 Degree Care"
+                    content="About 360 Degree Care | NJ Home Care Specialists Since 2013"
                 />
                 <meta
                     name="description"
-                    content="For over 10 years, 360 Degree Care has provided 24/7 compassionate home health services across New Jersey. CHAP certified, State Attorney General licensed, with highly trained caregivers."
+                    content="Meet 360 Degree Care, a CHAP-certified New Jersey agency delivering 24/7 caregivers, nurses, and concierge support with a decade of home care leadership."
                 />
                 <meta
                     name="keywords"
@@ -97,11 +96,11 @@ const AboutSeoHead = () => {
                 />
                 <meta
                     property="og:title"
-                    content="About Our CHAP Certified Home Health Care Agency | 360 Degree Care"
+                    content="About 360 Degree Care | NJ Home Care Specialists Since 2013"
                 />
                 <meta
                     property="og:description"
-                    content="For over 10 years, 360 Degree Care has provided 24/7 compassionate home health services across New Jersey. CHAP certified, State Attorney General licensed, with highly trained caregivers."
+                    content="Meet 360 Degree Care, a CHAP-certified New Jersey agency delivering 24/7 caregivers, nurses, and concierge support with a decade of home care leadership."
                 />
                 <meta
                     property="og:image"
@@ -118,11 +117,11 @@ const AboutSeoHead = () => {
                 />
                 <meta
                     property="twitter:title"
-                    content="About Our CHAP Certified Home Health Care Agency | 360 Degree Care"
+                    content="About 360 Degree Care | NJ Home Care Specialists Since 2013"
                 />
                 <meta
                     property="twitter:description"
-                    content="For over 10 years, 360 Degree Care has provided 24/7 compassionate home health services across New Jersey. CHAP certified, State Attorney General licensed, with highly trained caregivers."
+                    content="Meet 360 Degree Care, a CHAP-certified New Jersey agency delivering 24/7 caregivers, nurses, and concierge support with a decade of home care leadership."
                 />
                 <meta
                     property="twitter:image"
@@ -130,10 +129,6 @@ const AboutSeoHead = () => {
                 />
 
                 {/* Canonical & Additional */}
-                <link
-                    rel="canonical"
-                    href="https://www.360degreecare.net/about"
-                />
                 <meta name="author" content="360 Degree Care" />
                 <meta name="robots" content="index, follow" />
                 <meta name="revisit-after" content="7 days" />

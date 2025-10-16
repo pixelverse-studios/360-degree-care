@@ -73,7 +73,7 @@ The future of **home healthcare** depends on people—committed, compassionate c
 
 > "Care is more than a task. It’s a relationship built on presence, trust, and empathy—qualities that no machine can provide."
 
-If you or a loved one needs personalized in-home care, or you're inspired to make a difference as a caregiver, [learn more about our services and careers](/careers) at 360 Degree Care.
+If you or a loved one needs personalized in-home care, or you're inspired to make a difference as a caregiver, [learn more about our services and careers](/contact/employment) at 360 Degree Care.
 
 *Jeff DeJoseph is a leader in the evolving field of aging in place and the services that enable people to remain happy and healthy at home. His company, [360 Degree Care](https://www.360degreecare.net), provides concierge home care services for seniors and those returning from the hospital or rehab.*
 `

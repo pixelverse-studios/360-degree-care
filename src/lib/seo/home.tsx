@@ -165,16 +165,15 @@ const HomeSeoHead = () => {
             <Head>
                 {/* Primary Meta Tags */}
                 <title>
-                    Concierge Level Home Health Care in New Jersey | 360 Degree
-                    Care
+                    Concierge Home Care Services in NJ | 360 Degree Care
                 </title>
                 <meta
                     name="title"
-                    content="Concierge Level Home Health Care in New Jersey | 360 Degree Care"
+                    content="Concierge Home Care Services in NJ | 360 Degree Care"
                 />
                 <meta
                     name="description"
-                    content="360 Degree Care provides 24/7 certified caregivers and personalized home health services in New Jersey. Helping seniors maintain independence with dignity in their own homes."
+                    content="Discover concierge home care in New Jersey with certified caregivers and 24/7 support from 360 Degree Care, keeping loved ones safe, independent, and thriving."
                 />
 
                 {/* Open Graph / Facebook */}
@@ -185,11 +184,11 @@ const HomeSeoHead = () => {
                 />
                 <meta
                     property="og:title"
-                    content="Concierge Level Home Health Care in New Jersey | 360 Degree Care"
+                    content="Concierge Home Care Services in NJ | 360 Degree Care"
                 />
                 <meta
                     property="og:description"
-                    content="Providing compassionate in-home care services with certified caregivers available 24/7. Personalized care plans for seniors in New Jersey."
+                    content="Discover concierge home care in New Jersey with certified caregivers and 24/7 support from 360 Degree Care, keeping loved ones safe, independent, and thriving."
                 />
                 <meta
                     property="og:image"
@@ -204,19 +203,17 @@ const HomeSeoHead = () => {
                 />
                 <meta
                     property="twitter:title"
-                    content="Concierge Level Home Health Care in New Jersey | 360 Degree Care"
+                    content="Concierge Home Care Services in NJ | 360 Degree Care"
                 />
                 <meta
                     property="twitter:description"
-                    content="Providing compassionate in-home care services with certified caregivers available 24/7. Personalized care plans for seniors in New Jersey."
+                    content="Discover concierge home care in New Jersey with certified caregivers and 24/7 support from 360 Degree Care, keeping loved ones safe, independent, and thriving."
                 />
                 <meta
                     property="twitter:image"
                     content="https://www.360degreecare.net/assets/happy%20couple%201.jpg"
                 />
 
-                {/* Canonical URL */}
-                <link rel="canonical" href="https://www.360degreecare.net/" />
             </Head>
 
             <Script

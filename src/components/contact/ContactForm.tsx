@@ -133,7 +133,7 @@ export default function ContactForm() {
                                 </FormItem>
                             )}
                         />
-                        <div className="flex flex-wrap gap-4 w-full">
+                        <div className="flex flex-wrap gap-4 w-full items-end">
                             <FormField
                                 control={form.control}
                                 name="email"

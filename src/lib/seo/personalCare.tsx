@@ -67,16 +67,15 @@ const StaticPersonalCareData = {
                 <Head>
                     {/* Primary Meta Tags */}
                     <title>
-                        Professional Personal Care Services in New Jersey | 360
-                        Degree Care
+                        Compassionate Personal Care in NJ | 360 Degree Care
                     </title>
                     <meta
                         name="title"
-                        content="Professional Personal Care Services in New Jersey | 360 Degree Care"
+                        content="Compassionate Personal Care in NJ | 360 Degree Care"
                     />
                     <meta
                         name="description"
-                        content="Compassionate personal care services from CHAP-certified caregivers. 24/7 assistance with hygiene, mobility, and daily living activities to help seniors maintain dignity and independence at home."
+                        content="Arrange personal care in New Jersey with help for bathing, mobility, grooming, and meals delivered by 360 Degree Care caregivers to keep routines comfortable."
                     />
                     <meta
                         name="keywords"
@@ -91,11 +90,11 @@ const StaticPersonalCareData = {
                     />
                     <meta
                         property="og:title"
-                        content="Professional Personal Care Services in New Jersey | 360 Degree Care"
+                        content="Compassionate Personal Care in NJ | 360 Degree Care"
                     />
                     <meta
                         property="og:description"
-                        content="Compassionate personal care services from CHAP-certified caregivers. 24/7 assistance with hygiene, mobility, and daily living activities to help seniors maintain dignity and independence at home."
+                        content="Arrange personal care in New Jersey with help for bathing, mobility, grooming, and meals delivered by 360 Degree Care caregivers to keep routines comfortable."
                     />
                     <meta
                         property="og:image"
@@ -115,11 +114,11 @@ const StaticPersonalCareData = {
                     />
                     <meta
                         property="twitter:title"
-                        content="Professional Personal Care Services in New Jersey | 360 Degree Care"
+                        content="Compassionate Personal Care in NJ | 360 Degree Care"
                     />
                     <meta
                         property="twitter:description"
-                        content="Compassionate personal care services from CHAP-certified caregivers. 24/7 assistance with hygiene, mobility, and daily living activities to help seniors maintain dignity and independence at home."
+                        content="Arrange personal care in New Jersey with help for bathing, mobility, grooming, and meals delivered by 360 Degree Care caregivers to keep routines comfortable."
                     />
                     <meta
                         property="twitter:image"
@@ -127,10 +126,6 @@ const StaticPersonalCareData = {
                     />
 
                     {/* Canonical URL & Extras */}
-                    <link
-                        rel="canonical"
-                        href="https://www.360degreecare.net/services/personal-care"
-                    />
                     <meta name="robots" content="index, follow" />
                     <meta name="geo.region" content="US-NJ" />
                     <meta name="geo.placename" content="Ridgewood" />

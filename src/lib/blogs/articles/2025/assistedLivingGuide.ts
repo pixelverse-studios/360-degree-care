@@ -101,7 +101,7 @@ Moving a loved one to assisted living is a **major life change**, but it can als
 
 > “The goal isn’t just to find care—it’s to protect dignity, preserve independence, and create a sense of belonging.”
 
-Need help navigating the next steps? [Connect with our care experts](/careers) at 360 Degree Care to explore senior living options that support your loved one's needs.
+Need help navigating the next steps? [Connect with our care experts](/contact/employment) at 360 Degree Care to explore senior living options that support your loved one's needs.
 
 *Jeff DeJoseph is a leader in the evolving field of aging in place and the services that enable people to remain happy and healthy at home. His company, [360 Degree Care](https://www.360degreecare.net), provides concierge home care services for seniors and those transitioning from hospital or rehab to home.*
 `
