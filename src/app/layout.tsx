@@ -15,6 +15,7 @@ import { Toaster } from '@/components/ui/sonner'
 import { RouteStateProvider } from '@/lib/providers'
 import { getImgSrc } from '@/lib/images'
 import { CampaignTracker } from '@/components/CampaignTracker'
+import { FACEBOOK, INSTA, PHONE, EMAIL } from '@/utils/constants'
 
 // import 'animate.css'
 import '../styles/globals.css'
@@ -58,6 +59,65 @@ export const metadata = {
         manifest: '/manifest.json'
     }
 }
+
+const localBusinessSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'HomeHealthCareService',
+    '@id': 'https://www.360degreecare.net/#localbusiness',
+    name: '360 Degree Care',
+    url: 'https://www.360degreecare.net',
+    image: 'https://www.360degreecare.net/assets/logo.png',
+    logo: 'https://www.360degreecare.net/assets/logo.png',
+    telephone: PHONE,
+    email: EMAIL,
+    priceRange: '$$',
+    address: {
+        '@type': 'PostalAddress',
+        streetAddress: '27 Chestnut Street, Floor 1',
+        addressLocality: 'Ridgewood',
+        addressRegion: 'NJ',
+        postalCode: '07450',
+        addressCountry: 'US'
+    },
+    areaServed: {
+        '@type': 'State',
+        name: 'New Jersey'
+    },
+    sameAs: [FACEBOOK, INSTA],
+    serviceType: [
+        'Personal Care',
+        'Companion Care',
+        'Home Health Aides',
+        'Skilled Nursing',
+        'Elder Care Consulting',
+        'Medical Staffing'
+    ],
+    openingHoursSpecification: [
+        {
+            '@type': 'OpeningHoursSpecification',
+            dayOfWeek: [
+                'Monday',
+                'Tuesday',
+                'Wednesday',
+                'Thursday',
+                'Friday',
+                'Saturday',
+                'Sunday'
+            ],
+            opens: '00:00',
+            closes: '23:59'
+        }
+    ],
+    contactPoint: [
+        {
+            '@type': 'ContactPoint',
+            telephone: PHONE,
+            contactType: 'customer service',
+            areaServed: 'US',
+            availableLanguage: ['English']
+        }
+    ]
+}
 const permanentMarker = Permanent_Marker({
     weight: ['400'],
     subsets: ['latin'],
@@ -94,6 +154,14 @@ export default function RootLayout({
         <html lang="en">
             <head>
                 <CanonicalLink />
+                <Script
+                    id="local-business-schema"
+                    type="application/ld+json"
+                    strategy="afterInteractive"
+                    dangerouslySetInnerHTML={{
+                        __html: JSON.stringify(localBusinessSchema)
+                    }}
+                />
                 <link
                     rel="stylesheet"
                     media="screen"
