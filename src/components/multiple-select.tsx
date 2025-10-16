@@ -79,7 +79,8 @@ interface MultiSelectFieldProps {
     placeholder?: string
     emptyMessage?: string
     selectedValues: string[]
-    onValueChange: (values: string[]) => void
+    // eslint-disable-next-line no-unused-vars
+    onValueChange: React.Dispatch<React.SetStateAction<string[]>>
 }
 
 function MultiSelectField({

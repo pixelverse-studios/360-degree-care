@@ -213,7 +213,6 @@ const HomeSeoHead = () => {
                     property="twitter:image"
                     content="https://www.360degreecare.net/assets/happy%20couple%201.jpg"
                 />
-
             </Head>
 
             <Script
