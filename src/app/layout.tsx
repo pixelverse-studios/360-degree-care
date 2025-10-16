@@ -21,6 +21,7 @@ import { FACEBOOK, INSTA, PHONE, EMAIL } from '@/utils/constants'
 import '../styles/globals.css'
 
 export const metadata = {
+    metadataBase: new URL('https://www.360degreecare.net'),
     icons: {
         icon: [
             {
