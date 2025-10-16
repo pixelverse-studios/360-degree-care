@@ -50,7 +50,8 @@ export default function HomeHero() {
             <img
                 className="rounded-2xl max-h-[20rem] h-fit w-full object-cover"
                 src={getImgSrc('home-hero')}
-                alt=""
+                alt="360 Degree Care caregiver supporting senior at home"
+                loading="lazy"
             />
         </section>
     )

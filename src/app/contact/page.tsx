@@ -40,6 +40,7 @@ export default function ContactPage() {
                                 className="mx-auto h-12 w-12"
                                 src={getImgSrc('heart')}
                                 alt="services contact page icon"
+                                loading="lazy"
                             />
                             <h2 className="text-center">Services</h2>
                             <p className="text-center">
@@ -61,6 +62,7 @@ export default function ContactPage() {
                                 className="mx-auto h-12 w-12"
                                 src={getImgSrc('handshake')}
                                 alt="employment contact page icon"
+                                loading="lazy"
                             />
                             <h2 className="text-center">Employment</h2>
                             <p className="text-center">
@@ -79,6 +81,7 @@ export default function ContactPage() {
                                 className="mx-auto h-12 w-12"
                                 src={getImgSrc('question')}
                                 alt="general contact page icon"
+                                loading="lazy"
                             />
                             <h2 className="text-center">General Inquiry</h2>
                             <p className="text-center">

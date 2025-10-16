@@ -49,7 +49,8 @@ export default function InfoCards({ cards, header, styles }: InfoCardProps) {
                                     <img
                                         src={getImgSrc(card.iconPath)}
                                         className="mb-4"
-                                        alt=""
+                                        alt={card.title}
+                                        loading="lazy"
                                     />
                                 )}
                             </div>

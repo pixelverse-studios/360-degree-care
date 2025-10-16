@@ -119,6 +119,29 @@ const localBusinessSchema = {
         }
     ]
 }
+
+const organizationSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Organization',
+    '@id': 'https://www.360degreecare.net/#organization',
+    name: '360 Degree Care',
+    url: 'https://www.360degreecare.net',
+    logo: 'https://www.360degreecare.net/assets/logo.png',
+    legalName: '360 Degree Care',
+    email: EMAIL,
+    telephone: PHONE,
+    sameAs: [FACEBOOK, INSTA],
+    contactPoint: [
+        {
+            '@type': 'ContactPoint',
+            contactType: 'customer service',
+            telephone: PHONE,
+            email: EMAIL,
+            areaServed: 'US',
+            availableLanguage: ['English']
+        }
+    ]
+}
 const permanentMarker = Permanent_Marker({
     weight: ['400'],
     subsets: ['latin'],
@@ -152,7 +175,7 @@ export default function RootLayout({
     children: React.ReactNode
 }>) {
     return (
-        <html lang="en">
+        <html lang="en-US">
             <head>
                 <CanonicalLink />
                 <Script
@@ -161,6 +184,14 @@ export default function RootLayout({
                     strategy="afterInteractive"
                     dangerouslySetInnerHTML={{
                         __html: JSON.stringify(localBusinessSchema)
+                    }}
+                />
+                <Script
+                    id="organization-schema"
+                    type="application/ld+json"
+                    strategy="afterInteractive"
+                    dangerouslySetInnerHTML={{
+                        __html: JSON.stringify(organizationSchema)
                     }}
                 />
                 <link

@@ -14,6 +14,7 @@ const ExpectationItem = ({ img, description }: ExpectationItem) => (
             className="h-[12rem] w-auto mb-4 shadow-lg rounded-lg"
             src={getImgSrc(img)}
             alt={`${description} - image`}
+            loading="lazy"
         />
         <p className="text-sm w-[90%] mx-auto">{description}</p>
     </li>
@@ -58,6 +59,7 @@ export default function HomeHealthCareHero({ header }: { header: string }) {
                     className="h-fit w-fit mx-auto xl:mx-0 rounded-xl shadow-xl object-cover"
                     src={getImgSrc('mother-daughter')}
                     alt="Home Healthcare Aid graphic"
+                    loading="lazy"
                 />
             </AnimatedSection>
             <AnimatedSection

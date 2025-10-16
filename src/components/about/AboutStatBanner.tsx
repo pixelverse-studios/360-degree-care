@@ -79,6 +79,7 @@ export default function AboutStatBanner() {
                                     src={getImgSrc('CHAPLogo')}
                                     alt="CHAP Badge"
                                     className="h-[8rem] w-[8rem] md:h-[6rem] md:w-[6rem] mx-auto mb-2"
+                                    loading="lazy"
                                 />
                             </a>
                             <p className="text-gray-700 text-sm font-medium">

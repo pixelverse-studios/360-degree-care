@@ -70,8 +70,9 @@ export default function CompanionCareView({ header }: CompanionCareViewProps) {
 
                         <img
                             src={rollerCoaster}
-                            alt=""
+                            alt="Care professional providing companion care in New Jersey"
                             className="rounded-xl shadow-xl"
+                            loading="lazy"
                         />
                     </div>
                 </AnimatedSection>

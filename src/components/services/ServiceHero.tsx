@@ -37,6 +37,7 @@ export default function ServiceHero({
                     className="rounded-xl shadow-xl"
                     src={img.src}
                     alt={img.alt}
+                    loading="lazy"
                 />
             </SlideInSection>
         </section>
