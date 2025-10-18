@@ -1,6 +1,6 @@
-import { useRouter } from 'next/navigation'
 import Image from 'next/image'
 import dynamic from 'next/dynamic'
+import Link from 'next/link'
 import { Button } from '../ui/button'
 import { navLinks } from '@/utils/routes'
 import { getImgSrc } from '@/lib/images'
@@ -12,10 +12,7 @@ const CallToAction = dynamic(() => import('../CallToAction'), {
 const [serviceLink] = navLinks
 
 export default function HomeHero() {
-    const router = useRouter()
     const heroImageSrc = getImgSrc('home-hero')
-
-    const onServicesClick = () => router.push(serviceLink.route)
 
     return (
         <section className="mt-2 max-w-custom mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 justify-between items-start p-6">
@@ -48,8 +45,8 @@ export default function HomeHero() {
                         value=""
                         variant="pillPrimary"
                     />
-                    <Button onClick={onServicesClick} variant="pillBlue">
-                        More About Us
+                    <Button variant="pillBlue" asChild>
+                        <Link href={serviceLink.route}>More About Us</Link>
                     </Button>
                 </div>
             </div>

@@ -1,17 +1,36 @@
-import { motion, useInView, useReducedMotion } from 'framer-motion'
+'use client'
+
+import { useEffect, useMemo, useRef, useState } from 'react'
 import { cn } from '@/lib/utils'
-import { useRef, ReactNode, useMemo, useEffect, useState } from 'react'
 
 type AnimationVariant = 'fadeIn' | 'slideLeft' | 'slideUp' | 'zoom'
 
 interface AnimatedSectionProps {
-    children: ReactNode
+    children: React.ReactNode
     className?: string
     animation?: AnimationVariant
     delay?: number
     duration?: number
     threshold?: number
-    rootMargin?: string // Must be in pixel format like "-92px 0px -100px 0px"
+    rootMargin?: string
+}
+
+const supportsReducedMotion = () =>
+    typeof window !== 'undefined' &&
+    window.matchMedia('(prefers-reduced-motion: reduce)').matches
+
+const hiddenClasses: Record<AnimationVariant, string> = {
+    fadeIn: 'opacity-0',
+    slideLeft: 'opacity-0 -translate-x-6',
+    slideUp: 'opacity-0 translate-y-6',
+    zoom: 'opacity-0 scale-95'
+}
+
+const visibleClasses: Record<AnimationVariant, string> = {
+    fadeIn: 'opacity-100',
+    slideLeft: 'opacity-100 translate-x-0',
+    slideUp: 'opacity-100 translate-y-0',
+    zoom: 'opacity-100 scale-100'
 }
 
 export default function AnimatedSection({
@@ -21,124 +40,70 @@ export default function AnimatedSection({
     delay = 0.2,
     duration = 0.4,
     threshold = 0.1,
-    rootMargin = '0px 0px 0px 0px'
+    rootMargin = '0px'
 }: AnimatedSectionProps) {
     const ref = useRef<HTMLDivElement>(null)
-    const prefersReducedMotion = useReducedMotion()
     const [hasAnimated, setHasAnimated] = useState(false)
-    const [hasMounted, setHasMounted] = useState(false)
+    const [prefersReducedMotion, setPrefersReducedMotion] = useState(false)
 
-    // Set mounted state after component mounts to ensure we're on client-side
     useEffect(() => {
-        setHasMounted(true)
-    }, [])
+        const reduced = supportsReducedMotion()
+        setPrefersReducedMotion(reduced)
 
-    // Use provided threshold, the rootMargin is handled manually below
-    const isInView = useInView(ref, {
-        once: true,
-        amount: threshold
-        // rootMargin is not supported in Framer Motion's useInView type
-    })
-
-    // Check if element is visible on initial load, accounting for header height
-    useEffect(() => {
-        if (hasMounted && !hasAnimated && ref.current) {
-            const checkVisibility = () => {
-                const rect = ref.current?.getBoundingClientRect()
-                if (!rect) return false
-
-                // Get header height
-                const header = document.querySelector('header')
-                let headerHeight = 0
-
-                if (header) {
-                    headerHeight = header.getBoundingClientRect().height
-                }
-
-                // Parse rootMargin values
-                const margins = rootMargin
-                    .split(' ')
-                    .map(margin => parseInt(margin))
-                const topMargin = margins[0] || 0
-
-                // Element is visible if it's in viewport and below header
-                const isInitiallyVisible =
-                    rect.top < window.innerHeight + topMargin &&
-                    rect.top > headerHeight &&
-                    rect.bottom > headerHeight &&
-                    rect.left < window.innerWidth &&
-                    rect.right > 0
-
-                if (isInitiallyVisible) {
-                    setHasAnimated(true)
-                }
-            }
-
-            // Check visibility immediately and after a short delay
-            checkVisibility()
-
-            // Additional checks to handle different loading scenarios
-            const timeouts = [
-                setTimeout(checkVisibility, 100),
-                setTimeout(checkVisibility, 500)
-            ]
-
-            return () => {
-                timeouts.forEach(clearTimeout)
-            }
+        if (reduced) {
+            setHasAnimated(true)
+            return
         }
-    }, [hasMounted, hasAnimated, rootMargin])
 
-    // Memoize animations to prevent recreation on each render
-    const animations = useMemo(
-        () => ({
-            fadeIn: {
-                hidden: { opacity: 0 },
-                visible: { opacity: 1 }
+        const element = ref.current
+        const observer = new IntersectionObserver(
+            entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        setHasAnimated(true)
+                        observer.disconnect()
+                    }
+                })
             },
-            slideLeft: {
-                hidden: { opacity: 0, x: -30 },
-                visible: { opacity: 1, x: 0 }
-            },
-            slideUp: {
-                hidden: { opacity: 0, y: 30 },
-                visible: { opacity: 1, y: 0 }
-            },
-            zoom: {
-                hidden: { opacity: 0, scale: 0.95 },
-                visible: { opacity: 1, scale: 1 }
-            }
-        }),
-        []
-    )
+            { threshold, rootMargin }
+        )
 
-    // Respect user's reduced motion preferences
-    const selectedAnimation = prefersReducedMotion
-        ? animations.fadeIn
-        : animations[animation]
+        if (element) {
+            observer.observe(element)
+        }
 
-    // Determine if animation should play
-    const shouldAnimate = isInView || hasAnimated
+        return () => {
+            observer.disconnect()
+        }
+    }, [threshold, rootMargin])
 
-    // Optimize with hardware acceleration and better transition values
+    const transitionDuration = useMemo(() => {
+        const effective = prefersReducedMotion ? duration * 0.5 : duration
+        return `${effective}s`
+    }, [duration, prefersReducedMotion])
+
+    const transitionDelay = useMemo(() => {
+        if (prefersReducedMotion) return '0s'
+        return `${delay}s`
+    }, [delay, prefersReducedMotion])
+
+    const active = prefersReducedMotion || hasAnimated
+
     return (
-        <motion.div
+        <div
             ref={ref}
-            initial="hidden"
-            animate={shouldAnimate ? 'visible' : 'hidden'}
-            variants={selectedAnimation}
-            transition={{
-                duration: prefersReducedMotion ? duration * 0.5 : duration,
-                delay,
-                ease: 'easeOut',
-                staggerChildren: 0.1
-            }}
             className={cn(
-                'will-change-[opacity,transform] [backface-visibility:hidden]',
+                'will-change-[opacity,transform] transition-all ease-out',
+                hiddenClasses[animation],
+                active ? visibleClasses[animation] : '',
                 className
             )}
+            style={{
+                transitionDuration,
+                transitionDelay
+            }}
         >
             {children}
-        </motion.div>
+        </div>
     )
 }

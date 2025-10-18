@@ -156,6 +156,8 @@ export default function RootLayout({
 }: Readonly<{
     children: React.ReactNode
 }>) {
+    const isProduction = process.env.NODE_ENV === 'production'
+
     return (
         <html lang="en-US">
             <head>
@@ -182,23 +184,27 @@ export default function RootLayout({
                     href="https://fontlibrary.org//face/symbola"
                     type="text/css"
                 />
-                <Script
-                    id="gtag-manager-init"
-                    dangerouslySetInnerHTML={{
-                        __html: `
+                {isProduction && (
+                    <Script
+                        id="gtag-manager-init"
+                        strategy="lazyOnload"
+                        dangerouslySetInnerHTML={{
+                            __html: `
               (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
               new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
               j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
               'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
               })(window,document,'script','dataLayer','GTM-PGDVF5CR');
             `
-                    }}
-                />
-                <Script
-                    id="sitebehaviour-init"
-                    strategy="afterInteractive"
-                    dangerouslySetInnerHTML={{
-                        __html: `
+                        }}
+                    />
+                )}
+                {isProduction && (
+                    <Script
+                        id="sitebehaviour-init"
+                        strategy="lazyOnload"
+                        dangerouslySetInnerHTML={{
+                            __html: `
                                     (function() {
                                         var sbSiteSecret = 'dd171ee6-2143-4a6d-b96a-1023e3c53f39';
                                         window.sitebehaviourTrackingSecret = sbSiteSecret;
@@ -209,20 +215,23 @@ export default function RootLayout({
                                         document.head.appendChild(scriptElement); 
                                     })();
                                 `
-                    }}
-                />
+                        }}
+                    />
+                )}
             </head>
             <body
                 className={`antialiased ${rubik.variable} ${merriweather.variable}`}
             >
-                <noscript>
-                    <iframe
-                        src="https://www.googletagmanager.com/ns.html?id=GTM-PGDVF5CR"
-                        height="0"
-                        width="0"
-                        className="hidden invisible"
-                    ></iframe>
-                </noscript>
+                {isProduction && (
+                    <noscript>
+                        <iframe
+                            src="https://www.googletagmanager.com/ns.html?id=GTM-PGDVF5CR"
+                            height="0"
+                            width="0"
+                            className="hidden invisible"
+                        ></iframe>
+                    </noscript>
+                )}
                 <RouteStateProvider>
                     <Suspense fallback={null}>
                         <CampaignTracker />
