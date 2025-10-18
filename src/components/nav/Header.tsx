@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useRef, useEffect } from 'react'
+import dynamic from 'next/dynamic'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { ChevronDown, Phone } from 'lucide-react'
@@ -10,7 +11,10 @@ import { navLinks } from '@/utils/routes'
 import Logo from '../Logo'
 import { Button } from '../ui/button'
 import { FACEBOOK, INSTA, PHONE } from '@/utils/constants'
-import CallToAction from '../CallToAction'
+
+const CallToAction = dynamic(() => import('../CallToAction'), {
+    ssr: false
+})
 
 function ContactLinks() {
     return (

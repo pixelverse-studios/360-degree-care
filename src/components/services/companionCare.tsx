@@ -1,12 +1,16 @@
 'use client'
 
 import Image from 'next/image'
-import CallToAction from '@/components/CallToAction'
+import dynamic from 'next/dynamic'
 import { CompanyName } from '@/components/Logo'
 import AnimatedSection from '@/components/animated-section'
 import { getImgSrc } from '@/lib/images'
 
 const rollerCoaster = getImgSrc('roller_coaster')
+
+const CallToAction = dynamic(() => import('@/components/CallToAction'), {
+    ssr: false
+})
 
 interface CompanionCareViewProps {
     header: string

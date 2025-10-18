@@ -2,10 +2,14 @@
 
 import Image from 'next/image'
 import { ReactNode } from 'react'
-import CallToAction from '../CallToAction'
+import dynamic from 'next/dynamic'
 
 import { SlideInSection } from '../animations'
 import { ImageProps } from '@/lib/types'
+
+const CallToAction = dynamic(() => import('../CallToAction'), {
+    ssr: false
+})
 
 interface ServiceHeroProps {
     header: string

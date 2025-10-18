@@ -1,9 +1,13 @@
 'use client'
 
-import CallToAction from '@/components/CallToAction'
+import dynamic from 'next/dynamic'
 import AnimatedSection from '@/components/animated-section'
 import HomeHealthCareHero from '@/components/hero/HomeHealthcareHero'
 import HomeHealthAideServices from '@/components/services/HomeHealthAideServices'
+
+const CallToAction = dynamic(() => import('@/components/CallToAction'), {
+    ssr: false
+})
 
 interface headerProps {
     header: string

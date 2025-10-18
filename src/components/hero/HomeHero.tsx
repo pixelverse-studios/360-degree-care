@@ -1,9 +1,13 @@
 import { useRouter } from 'next/navigation'
 import Image from 'next/image'
+import dynamic from 'next/dynamic'
 import { Button } from '../ui/button'
 import { navLinks } from '@/utils/routes'
-import CallToAction from '../CallToAction'
 import { getImgSrc } from '@/lib/images'
+
+const CallToAction = dynamic(() => import('../CallToAction'), {
+    ssr: false
+})
 
 const [serviceLink] = navLinks
 

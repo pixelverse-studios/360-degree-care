@@ -1,9 +1,13 @@
 'use client'
 
+import dynamic from 'next/dynamic'
 import { CircleCheck, ListChecks, PillBottle, Bandage } from 'lucide-react'
-import CallToAction from '@/components/CallToAction'
 import { CompanyName } from '@/components/Logo'
 import AnimatedSection from '@/components/animated-section'
+
+const CallToAction = dynamic(() => import('@/components/CallToAction'), {
+    ssr: false
+})
 
 export default function NursingView({ header }: { header: string }) {
     return (

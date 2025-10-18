@@ -1,10 +1,14 @@
 'use client'
 
 import Image from 'next/image'
-import CallToAction from '@/components/CallToAction'
+import dynamic from 'next/dynamic'
 import { CompanyName } from '@/components/Logo'
 import AnimatedSection from '@/components/animated-section'
 import { getImgSrc } from '@/lib/images'
+
+const CallToAction = dynamic(() => import('@/components/CallToAction'), {
+    ssr: false
+})
 
 const wavingModel = getImgSrc('model-waving')
 interface headerProps {

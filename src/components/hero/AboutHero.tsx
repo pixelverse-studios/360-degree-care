@@ -1,7 +1,11 @@
+import dynamic from 'next/dynamic'
 import { CompanyName } from '../Logo'
-import CallToAction from '../CallToAction'
 import AboutServiceOverview from '../about/AboutServiceOverview'
 import AnimatedSection from '../animated-section'
+
+const CallToAction = dynamic(() => import('../CallToAction'), {
+    ssr: false
+})
 
 export default function AboutHero() {
     return (

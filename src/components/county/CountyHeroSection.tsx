@@ -1,7 +1,10 @@
 import Image from 'next/image'
+import dynamic from 'next/dynamic'
 import { FaCheckCircle, FaHeart, FaUserMd } from 'react-icons/fa'
 
-import CallToAction from '@/components/CallToAction'
+const CallToAction = dynamic(() => import('@/components/CallToAction'), {
+    ssr: false
+})
 
 export interface CountyHeroSectionProps {
     title: string

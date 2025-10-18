@@ -1,5 +1,9 @@
-import CallToAction from '../CallToAction'
+import dynamic from 'next/dynamic'
 import { SlideInSection } from '../animations'
+
+const CallToAction = dynamic(() => import('../CallToAction'), {
+    ssr: false
+})
 
 export interface ServiceCtaProps {
     header: string

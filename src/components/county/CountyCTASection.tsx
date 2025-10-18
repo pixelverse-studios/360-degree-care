@@ -1,6 +1,9 @@
+import dynamic from 'next/dynamic'
 import { FaPhone } from 'react-icons/fa'
 
-import CallToAction from '@/components/CallToAction'
+const CallToAction = dynamic(() => import('@/components/CallToAction'), {
+    ssr: false
+})
 
 interface CountyCTASectionProps {
     title: string
