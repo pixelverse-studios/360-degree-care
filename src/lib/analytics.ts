@@ -12,11 +12,15 @@ interface CampaignData extends UTMParams {
     session_id?: string
 }
 
+type EventPayload = Record<string, unknown>
+
 declare global {
     interface Window {
         umami?: any
         dataLayer?: any[]
         sitebehaviourTrackingSecret?: string
+        sbVisitorCustomEvent?: (event: string) => void
+        siteBehaviourEventMeta?: EventPayload
     }
 }
 
@@ -70,6 +74,31 @@ const getCampaignDataFromURL = (): UTMParams => {
     })
 
     return utmParams
+}
+
+const trackEvent = (eventName: string, payload: EventPayload = {}) => {
+    if (typeof window === 'undefined') return
+
+    if (window.dataLayer) {
+        window.dataLayer.push({
+            event: eventName,
+            ...payload
+        })
+    }
+
+    if (typeof (window as any).umami !== 'undefined') {
+        ;(window as any).umami.track(eventName, payload)
+    }
+
+    if (typeof (window as any).sbVisitorCustomEvent === 'function') {
+        try {
+            // SiteBehaviour currently only accepts the event name, so stash payload globally
+            ;(window as any).siteBehaviourEventMeta = payload
+            ;(window as any).sbVisitorCustomEvent(eventName)
+        } catch (error) {
+            console.log('SiteBehaviour custom event error:', error)
+        }
+    }
 }
 
 const trackCampaign = (data?: CampaignData) => {
@@ -203,6 +232,7 @@ const getLastTouchAttribution = (): CampaignData | null => {
 
 const analytics = {
     trackPageView,
+    trackEvent,
     trackCampaign,
     getCampaignDataFromCookie,
     getCampaignDataFromURL,
@@ -212,4 +242,4 @@ const analytics = {
 }
 
 export default analytics
-export type { UTMParams, CampaignData }
+export type { UTMParams, CampaignData, EventPayload }

@@ -10,6 +10,7 @@ import { Toaster } from '@/components/ui/sonner'
 import { RouteStateProvider } from '@/lib/providers'
 import { getImgSrc } from '@/lib/images'
 import { CampaignTracker } from '@/components/CampaignTracker'
+import { BounceTracker } from '@/components/BounceTracker'
 import { FACEBOOK, INSTA, PHONE, EMAIL } from '@/utils/constants'
 
 // import 'animate.css'
@@ -235,6 +236,7 @@ export default function RootLayout({
                 <RouteStateProvider>
                     <Suspense fallback={null}>
                         <CampaignTracker />
+                        <BounceTracker />
                     </Suspense>
                     <Header />
                     <Breadcrumbs />
