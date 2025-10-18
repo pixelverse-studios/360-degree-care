@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import LiteYouTube from '../LiteYouTube'
 import { CircleCheck } from 'lucide-react'
 import AnimatedSection from '../animated-section'
 import { getImgSrc } from '@/lib/images'
@@ -22,13 +23,11 @@ export default function HomeAboutSection() {
                     className="h-[90%] w-full rounded-lg"
                 /> */}
 
-                <iframe
-                    className="h-full w-full rounded-lg"
-                    src="https://www.youtube.com/embed/940TQdvwoxs?si=fqdzPoORSzGveCqZ"
-                    title="YouTube video player"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    referrerPolicy="strict-origin-when-cross-origin"
-                    allowFullScreen
+                <LiteYouTube
+                    className="h-full w-full"
+                    videoId="940TQdvwoxs"
+                    title="Transition from Interim to 360 Degree Care"
+                    params="si=fqdzPoORSzGveCqZ"
                 />
                 <div className="flex flex-col gap-4">
                     <h1 className="text-primary font-bold text-3xl">

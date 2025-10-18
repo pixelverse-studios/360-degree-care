@@ -11,6 +11,7 @@ import {
 } from '@/components/ui/dialog'
 import { videoMetadata } from '@/utils/videos'
 import AnimatedSection from '@/components/animated-section'
+import LiteYouTube from '@/components/LiteYouTube'
 
 export default function VaultOfWisdom() {
     const [currentVideoIndex, setCurrentVideoIndex] = useState(-1)
@@ -51,11 +52,13 @@ export default function VaultOfWisdom() {
                     </ul>
                     <DialogContent className="px-8 py-12 border-none max-w-4xl w-4/5 lg:w-full h-fit shadow-lg">
                         <DialogTitle>{currentVideo?.title ?? ''}</DialogTitle>
-                        {currentVideo?.src ? (
-                            <div className="h-[75dvh]">
-                                <iframe
-                                    src={currentVideo.src}
-                                    className="h-[90%] w-full rounded-lg"
+                        {currentVideo ? (
+                            <div className="space-y-4">
+                                <LiteYouTube
+                                    videoId={currentVideo.youtubeId}
+                                    title={currentVideo.title}
+                                    className="w-full"
+                                    params={currentVideo.params}
                                 />
                                 <p className="pt-4">
                                     {currentVideo.description}
