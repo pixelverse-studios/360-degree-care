@@ -1,5 +1,6 @@
 'use client'
 
+import Image from 'next/image'
 import { useState, useMemo } from 'react'
 import { Calendar, Clock, ArrowRight, Tag } from 'lucide-react'
 import Link from 'next/link'
@@ -157,13 +158,24 @@ export default function BlogArchives({ posts }: BlogArchivesProps) {
                         <div className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 h-fit">
                             <div className="lg:flex">
                                 <div className="lg:w-1/2">
-                                    <img
-                                        src={getImgSrc(
-                                            featuredPost.featuredImage
-                                        )}
-                                        alt={featuredPost.title}
-                                        className="w-full h-64 lg:h-full object-cover"
-                                    />
+                                    {getImgSrc(featuredPost.featuredImage) ? (
+                                        <Image
+                                            src={
+                                                getImgSrc(
+                                                    featuredPost.featuredImage
+                                                ) as string
+                                            }
+                                            alt={featuredPost.title}
+                                            width={1200}
+                                            height={800}
+                                            className="w-full h-64 lg:h-full object-cover"
+                                            sizes="(min-width: 1024px) 50vw, 100vw"
+                                            style={{
+                                                width: '100%',
+                                                height: '100%'
+                                            }}
+                                        />
+                                    ) : null}
                                 </div>
                                 <div className="lg:w-1/2 p-8 lg:p-12">
                                     <div className="flex items-center gap-4 mb-4">
@@ -223,54 +235,71 @@ export default function BlogArchives({ posts }: BlogArchivesProps) {
 
                 {regularPosts.length > 0 ? (
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                        {regularPosts.map(post => (
-                            <article
-                                key={post.id}
-                                className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-all duration-300 hover:-translate-y-1"
-                            >
-                                <div className="relative">
-                                    <img
-                                        src={getImgSrc(post.featuredImage)}
-                                        alt={post.title}
-                                        className="w-full h-48 object-cover"
-                                    />
-                                    <div className="absolute top-4 left-4">
-                                        <span className="inline-flex items-center gap-1 px-3 py-1 bg-[rgba(255,255,255,0.6)] text-gray-800 text-sm font-medium rounded-full">
-                                            <Tag className="h-3 w-3" />
-                                            {post.category}
-                                        </span>
-                                    </div>
-                                </div>
-
-                                <div className="p-6">
-                                    <h3 className="text-xl font-bold text-gray-900 mb-3 line-clamp-2">
-                                        {post.title}
-                                    </h3>
-                                    <p className="text-gray-600 mb-4 line-clamp-3">
-                                        {getExcerptPreview(post.excerpt, 120)}
-                                    </p>
-
-                                    <div className="flex items-center justify-between text-sm text-gray-500 mb-4">
-                                        <span className="flex items-center gap-1">
-                                            <Calendar className="h-4 w-4" />
-                                            {formatDate(post.publishDate)}
-                                        </span>
-                                        <span className="flex items-center gap-1">
-                                            <Clock className="h-4 w-4" />
-                                            {post.readTime}
-                                        </span>
+                        {regularPosts.map(post => {
+                            const featuredImageSrc = getImgSrc(
+                                post.featuredImage
+                            )
+                            return (
+                                <article
+                                    key={post.id}
+                                    className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-all duration-300 hover:-translate-y-1"
+                                >
+                                    <div className="relative">
+                                        {featuredImageSrc ? (
+                                            <Image
+                                                src={featuredImageSrc}
+                                                alt={post.title}
+                                                width={800}
+                                                height={600}
+                                                className="w-full h-48 object-cover"
+                                                sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
+                                                style={{
+                                                    width: '100%',
+                                                    height: '100%'
+                                                }}
+                                            />
+                                        ) : null}
+                                        <div className="absolute top-4 left-4">
+                                            <span className="inline-flex items-center gap-1 px-3 py-1 bg-[rgba(255,255,255,0.6)] text-gray-800 text-sm font-medium rounded-full">
+                                                <Tag className="h-3 w-3" />
+                                                {post.category}
+                                            </span>
+                                        </div>
                                     </div>
 
-                                    <Link
-                                        href={`/blog/${post.slug}`}
-                                        className="w-full flex items-center justify-center gap-2 bg-orange-500 text-white py-3 rounded-lg hover:bg-orange-600 transition-colors font-semibold"
-                                    >
-                                        Read Article
-                                        <ArrowRight className="h-4 w-4" />
-                                    </Link>
-                                </div>
-                            </article>
-                        ))}
+                                    <div className="p-6">
+                                        <h3 className="text-xl font-bold text-gray-900 mb-3 line-clamp-2">
+                                            {post.title}
+                                        </h3>
+                                        <p className="text-gray-600 mb-4 line-clamp-3">
+                                            {getExcerptPreview(
+                                                post.excerpt,
+                                                120
+                                            )}
+                                        </p>
+
+                                        <div className="flex items-center justify-between text-sm text-gray-500 mb-4">
+                                            <span className="flex items-center gap-1">
+                                                <Calendar className="h-4 w-4" />
+                                                {formatDate(post.publishDate)}
+                                            </span>
+                                            <span className="flex items-center gap-1">
+                                                <Clock className="h-4 w-4" />
+                                                {post.readTime}
+                                            </span>
+                                        </div>
+
+                                        <Link
+                                            href={`/blog/${post.slug}`}
+                                            className="w-full flex items-center justify-center gap-2 bg-orange-500 text-white py-3 rounded-lg hover:bg-orange-600 transition-colors font-semibold"
+                                        >
+                                            Read Article
+                                            <ArrowRight className="h-4 w-4" />
+                                        </Link>
+                                    </div>
+                                </article>
+                            )
+                        })}
                     </div>
                 ) : (
                     <div className="text-center py-10">

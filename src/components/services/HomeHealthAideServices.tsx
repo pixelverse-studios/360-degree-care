@@ -1,5 +1,6 @@
 'use client'
 
+import Image from 'next/image'
 import {
     HeartPulse,
     FolderInput,
@@ -18,6 +19,19 @@ const TransportIcon = getImgSrc('Transportation')
 const LaundyrIcon = getImgSrc('laundry')
 const RemindersIcon = getImgSrc('Medication')
 const CompanionIcon = getImgSrc('companionship')
+const iconSize = 48
+
+const renderImageIcon = (src: string | undefined, alt: string) =>
+    src ? (
+        <Image
+            className="mx-auto h-12 w-auto"
+            src={src}
+            alt={alt}
+            width={iconSize}
+            height={iconSize}
+            sizes="48px"
+        />
+    ) : null
 
 const wrapperClass = 'max-w-custom mx-auto py-4 px-6'
 const subServiceClass =
@@ -29,13 +43,7 @@ const homeHealthAideServices = [
         label: 'Fall prevention'
     },
     {
-        icon: (
-            <img
-                className="mx-auto"
-                src={BathIcon}
-                alt="bath and hygiene care"
-            />
-        ),
+        icon: renderImageIcon(BathIcon, 'bath and hygiene care'),
         label: 'Personal hygiene, hair care and manicures'
     },
     {
@@ -43,13 +51,7 @@ const homeHealthAideServices = [
         label: 'Dressing'
     },
     {
-        icon: (
-            <img
-                className="mx-auto"
-                src={MealPrepIcon}
-                alt="meal prep and cooking"
-            />
-        ),
+        icon: renderImageIcon(MealPrepIcon, 'meal prep and cooking'),
         label: 'Meal planning and cooking'
     },
     {
@@ -61,19 +63,11 @@ const homeHealthAideServices = [
         label: 'Daily diary of food intake and activities'
     },
     {
-        icon: (
-            <img
-                className="mx-auto"
-                src={LaundyrIcon}
-                alt="laundry & light housekeeping"
-            />
-        ),
+        icon: renderImageIcon(LaundyrIcon, 'laundry & light housekeeping'),
         label: 'Light Housekeeping'
     },
     {
-        icon: (
-            <img className="mx-auto" src={TransportIcon} alt="transportation" />
-        ),
+        icon: renderImageIcon(TransportIcon, 'transportation'),
         label: 'Transportation'
     }
 ]
@@ -81,23 +75,11 @@ const homeHealthAideServices = [
 // Additional services that complement the client's list
 const additionalServices = [
     {
-        icon: (
-            <img
-                className="mx-auto"
-                src={RemindersIcon}
-                alt="medication reminders"
-            />
-        ),
+        icon: renderImageIcon(RemindersIcon, 'medication reminders'),
         label: 'Medication Reminders'
     },
     {
-        icon: (
-            <img
-                className="mx-auto"
-                src={CompanionIcon}
-                alt="companionship and comfort"
-            />
-        ),
+        icon: renderImageIcon(CompanionIcon, 'companionship and comfort'),
         label: 'Companionship & Comfort'
     },
     {

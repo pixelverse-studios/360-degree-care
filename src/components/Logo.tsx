@@ -1,10 +1,7 @@
-import { cn } from '@/lib/utils'
+import Image from 'next/image'
 import { RotateCw } from 'lucide-react'
 
-interface LogoProps {
-    invert?: boolean
-    size?: 'sm' | 'md' | 'lg'
-}
+import { cn } from '@/lib/utils'
 
 interface LogoProps {
     invert?: boolean
@@ -18,23 +15,29 @@ interface CompanyNameProps {
     className?: string
 }
 
+const sizeTextClasses = {
+    sm: 'text-sm',
+    md: 'text-base',
+    lg: 'text-lg'
+}
+
+const sizeIconClasses = {
+    sm: 'h-[0.5em] w-[0.5em]',
+    md: 'h-[0.6em] w-[0.6em]',
+    lg: 'h-[0.7em] w-[0.7em]'
+}
+
+const sizeWidthClasses = {
+    sm: 'w-28 md:w-32',
+    md: 'w-1/2 max-w-[20rem]',
+    lg: 'w-[22rem]'
+}
+
 export const CompanyName = ({
     invert = false,
     size = 'md',
     className
 }: CompanyNameProps) => {
-    const sizeClasses = {
-        sm: 'text-sm',
-        md: 'text-base',
-        lg: 'text-lg'
-    }
-
-    const iconClasses = {
-        sm: 'h-[0.5em] w-[0.5em]',
-        md: 'h-[0.6em] w-[0.6em]',
-        lg: 'h-[0.7em] w-[0.7em]'
-    }
-
     const colorClass = invert ? 'text-white' : 'text-primary'
 
     return (
@@ -42,16 +45,16 @@ export const CompanyName = ({
             className={cn(
                 'inline-flex font-bold',
                 colorClass,
-                sizeClasses[size],
+                sizeTextClasses[size],
                 className
             )}
         >
             360
-            <span className="">
+            <span>
                 <RotateCw
                     className={cn(
                         'flex items-start text-blue transition-all animate-spin-very-slow mt-[2px]',
-                        iconClasses[size]
+                        sizeIconClasses[size]
                     )}
                     strokeWidth={4}
                 />
@@ -61,17 +64,32 @@ export const CompanyName = ({
     )
 }
 
-const Logo = ({ invert = false }: LogoProps) => {
+const Logo = ({ invert = false, size = 'md', className }: LogoProps) => {
+    const widthClass = invert
+        ? 'w-full md:w-fit md:max-w-[20rem]'
+        : sizeWidthClasses[size]
+
     return (
-        <div className={cn(invert ? 'bg-primary' : 'bg-transparent', 'flex-1')}>
-            <img
+        <div
+            className={cn(
+                invert ? 'bg-primary' : 'bg-transparent',
+                widthClass,
+                className
+            )}
+        >
+            <Image
                 src="/logo.png"
                 alt="360 Care Logo"
+                width={400}
+                height={160}
                 className={cn(
+                    'h-auto w-full',
                     invert
-                        ? 'w-full md:w-fit md:max-w-[20rem] drop-shadow-[0_0_4px_rgba(255,255,255,0.6)]'
-                        : 'w-1/2'
+                        ? 'drop-shadow-[0_0_4px_rgba(255,255,255,0.6)]'
+                        : undefined
                 )}
+                priority
+                sizes="(min-width: 1024px) 20rem, (min-width: 768px) 18rem, 60vw"
             />
         </div>
     )

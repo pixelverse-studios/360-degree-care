@@ -1,5 +1,6 @@
 'use client'
 
+import Image from 'next/image'
 import CallToAction from '@/components/CallToAction'
 import { CompanyName } from '@/components/Logo'
 import AnimatedSection from '@/components/animated-section'
@@ -248,11 +249,17 @@ export default function ElderCareView({ header }: headerProps) {
                         </div>
                     </div>
                     <div className="flex-1">
-                        <img
-                            src={wavingModel}
-                            alt="Caring consultant meeting with family"
-                            className="rounded-lg shadow-lg w-full h-full object-cover"
-                        />
+                        {wavingModel ? (
+                            <Image
+                                src={wavingModel}
+                                alt="Caring consultant meeting with family"
+                                className="rounded-lg shadow-lg w-full h-full object-cover"
+                                width={1200}
+                                height={800}
+                                sizes="(min-width: 1024px) 50vw, 100vw"
+                                style={{ width: '100%', height: '100%' }}
+                            />
+                        ) : null}
                     </div>
                 </AnimatedSection>
             </div>

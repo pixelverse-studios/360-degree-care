@@ -1,5 +1,6 @@
 'use client'
 
+import Image from 'next/image'
 import {
     Calendar,
     Clock,
@@ -97,11 +98,18 @@ export default function BlogTemplate({ blogPost }: BlogTemplateProps) {
             {/* Hero Section */}
             {/* UPDATED: Added rounded-xl and overflow-hidden to the main container */}
             <div className="relative rounded-xl overflow-hidden">
-                <img
-                    src={getImgSrc(blogPost.featuredImage)}
-                    alt={blogPost.title}
-                    className="w-full h-96 lg:h-[500px] object-cover"
-                />
+                {getImgSrc(blogPost.featuredImage) ? (
+                    <Image
+                        src={getImgSrc(blogPost.featuredImage) as string}
+                        alt={blogPost.title}
+                        width={1600}
+                        height={900}
+                        className="w-full h-96 lg:h-[500px] object-cover"
+                        sizes="100vw"
+                        priority
+                        style={{ width: '100%', height: '100%' }}
+                    />
+                ) : null}
 
                 <div className="absolute inset-0 p-6 text-white flex items-center">
                     <div className="w-full max-w-custom mx-auto">
@@ -127,13 +135,17 @@ export default function BlogTemplate({ blogPost }: BlogTemplateProps) {
                 <div className="flex flex-wrap items-center gap-6 pb-8 mb-12 border-b border-gray-200">
                     {blogPost.author && (
                         <div className="flex items-center gap-4">
-                            <img
+                            <Image
                                 src={
                                     blogPost.author.avatar ||
                                     '/api/placeholder/64/64'
                                 }
                                 alt={blogPost.author.name}
-                                className="w-14 h-14 rounded-full ring-2 ring-primary"
+                                width={56}
+                                height={56}
+                                className="w-14 h-14 rounded-full ring-2 ring-primary object-cover"
+                                sizes="56px"
+                                style={{ width: '3.5rem', height: '3.5rem' }}
                             />
                             <div>
                                 <p className="font-semibold text-gray-900 text-lg">

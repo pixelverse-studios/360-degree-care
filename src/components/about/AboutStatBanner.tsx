@@ -1,4 +1,5 @@
 // import { motion } from 'framer-motion' // Note: You would need to install framer-motion
+import Image from 'next/image'
 import { Star, Users, Calendar } from 'lucide-react'
 import AnimatedSection from '../animated-section'
 import { getImgSrc } from '@/lib/images'
@@ -101,12 +102,16 @@ export default function AboutStatBanner() {
                                 href="https://chapinc.org/about/"
                                 target="_blank"
                             >
-                                <img
-                                    src={getImgSrc('CHAPLogo')}
-                                    alt="CHAP Badge"
-                                    className="h-[8rem] w-[8rem] md:h-[6rem] md:w-[6rem] mx-auto mb-2"
-                                    loading="lazy"
-                                />
+                                {getImgSrc('CHAPLogo') ? (
+                                    <Image
+                                        src={getImgSrc('CHAPLogo') as string}
+                                        alt="CHAP Badge"
+                                        className="h-[8rem] w-[8rem] md:h-[6rem] md:w-[6rem] mx-auto mb-2"
+                                        width={128}
+                                        height={128}
+                                        sizes="128px"
+                                    />
+                                ) : null}
                             </a>
                             <p className="text-gray-700 text-sm font-medium">
                                 Community Health Accreditation Program

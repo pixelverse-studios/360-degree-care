@@ -1,4 +1,5 @@
 'use client'
+import Image from 'next/image'
 import { useRouter } from 'next/navigation'
 
 import AnimatedSection from '@/components/animated-section'
@@ -9,6 +10,9 @@ import { getImgSrc } from '@/lib/images'
 export default function ContactPage() {
     const router = useRouter()
     const { setRouteState } = useRouteState()
+    const heartIcon = getImgSrc('heart')
+    const handshakeIcon = getImgSrc('handshake')
+    const questionIcon = getImgSrc('question')
 
     const goToServices = () => {
         setRouteState({ value: '', type: 'services' })
@@ -36,12 +40,16 @@ export default function ContactPage() {
                 <section className="grid grid-cols-1 xl:grid-cols-3 gap-8">
                     <AnimatedSection animation="zoom" className="mb-8">
                         <div className="bg-white rounded-xl p-6 flex flex-col gap-4 hover:shadow-xl transition-all duration-200 ease-in-out">
-                            <img
-                                className="mx-auto h-12 w-12"
-                                src={getImgSrc('heart')}
-                                alt="services contact page icon"
-                                loading="lazy"
-                            />
+                            {heartIcon ? (
+                                <Image
+                                    className="mx-auto h-12 w-12"
+                                    src={heartIcon}
+                                    alt="services contact page icon"
+                                    width={48}
+                                    height={48}
+                                    sizes="48px"
+                                />
+                            ) : null}
                             <h2 className="text-center">Services</h2>
                             <p className="text-center">
                                 Whether you're exploring care for yourself or
@@ -58,12 +66,16 @@ export default function ContactPage() {
                     </AnimatedSection>
                     <AnimatedSection animation="zoom" className="mb-8">
                         <div className="bg-white rounded-xl p-6 flex flex-col gap-4 hover:shadow-xl transition-all duration-200 ease-in-out">
-                            <img
-                                className="mx-auto h-12 w-12"
-                                src={getImgSrc('handshake')}
-                                alt="employment contact page icon"
-                                loading="lazy"
-                            />
+                            {handshakeIcon ? (
+                                <Image
+                                    className="mx-auto h-12 w-12"
+                                    src={handshakeIcon}
+                                    alt="employment contact page icon"
+                                    width={48}
+                                    height={48}
+                                    sizes="48px"
+                                />
+                            ) : null}
                             <h2 className="text-center">Employment</h2>
                             <p className="text-center">
                                 Passionate about making a difference? We're
@@ -77,12 +89,16 @@ export default function ContactPage() {
                     </AnimatedSection>
                     <AnimatedSection animation="zoom" className="mb-8">
                         <div className="bg-white rounded-xl p-6 flex flex-col gap-4 hover:shadow-xl transition-all duration-200 ease-in-out">
-                            <img
-                                className="mx-auto h-12 w-12"
-                                src={getImgSrc('question')}
-                                alt="general contact page icon"
-                                loading="lazy"
-                            />
+                            {questionIcon ? (
+                                <Image
+                                    className="mx-auto h-12 w-12"
+                                    src={questionIcon}
+                                    alt="general contact page icon"
+                                    width={48}
+                                    height={48}
+                                    sizes="48px"
+                                />
+                            ) : null}
                             <h2 className="text-center">General Inquiry</h2>
                             <p className="text-center">
                                 Not sure where to start? Feeling overwhelmed?

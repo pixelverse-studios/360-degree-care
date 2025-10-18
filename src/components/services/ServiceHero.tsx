@@ -1,5 +1,6 @@
 'use client'
 
+import Image from 'next/image'
 import { ReactNode } from 'react'
 import CallToAction from '../CallToAction'
 
@@ -33,11 +34,14 @@ export default function ServiceHero({
                 />
             </SlideInSection>
             <SlideInSection direction="right">
-                <img
-                    className="rounded-xl shadow-xl"
+                <Image
+                    className="rounded-xl shadow-xl w-full h-auto"
                     src={img.src}
                     alt={img.alt}
-                    loading="lazy"
+                    width={1200}
+                    height={800}
+                    sizes="(min-width: 1024px) 50vw, 100vw"
+                    style={{ width: '100%', height: 'auto' }}
                 />
             </SlideInSection>
         </section>

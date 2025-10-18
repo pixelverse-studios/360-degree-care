@@ -1,5 +1,6 @@
 'use client'
 
+import Image from 'next/image'
 import AnimatedSection from '../animated-section'
 import { getImgSrc } from '@/lib/images'
 
@@ -10,12 +11,17 @@ interface ExpectationItem {
 
 const ExpectationItem = ({ img, description }: ExpectationItem) => (
     <li className="">
-        <img
-            className="h-[12rem] w-auto mb-4 shadow-lg rounded-lg"
-            src={getImgSrc(img)}
-            alt={`${description} - image`}
-            loading="lazy"
-        />
+        {getImgSrc(img) ? (
+            <Image
+                className="h-[12rem] w-auto mb-4 shadow-lg rounded-lg object-cover"
+                src={getImgSrc(img) as string}
+                alt={`${description} - image`}
+                width={320}
+                height={320}
+                sizes="(min-width: 1024px) 20vw, (min-width: 768px) 30vw, 60vw"
+                style={{ width: 'auto', height: '12rem' }}
+            />
+        ) : null}
         <p className="text-sm w-[90%] mx-auto">{description}</p>
     </li>
 )
@@ -55,12 +61,17 @@ export default function HomeHealthCareHero({ header }: { header: string }) {
                         can trust.
                     </p>
                 </div>
-                <img
-                    className="h-fit w-fit mx-auto xl:mx-0 rounded-xl shadow-xl object-cover"
-                    src={getImgSrc('mother-daughter')}
-                    alt="Home Healthcare Aid graphic"
-                    loading="lazy"
-                />
+                {getImgSrc('mother-daughter') ? (
+                    <Image
+                        className="h-fit w-fit mx-auto xl:mx-0 rounded-xl shadow-xl object-cover"
+                        src={getImgSrc('mother-daughter') as string}
+                        alt="Home Healthcare Aid graphic"
+                        width={800}
+                        height={600}
+                        sizes="(min-width: 1024px) 45vw, 90vw"
+                        style={{ width: '100%', height: 'auto' }}
+                    />
+                ) : null}
             </AnimatedSection>
             <AnimatedSection
                 animation="zoom"

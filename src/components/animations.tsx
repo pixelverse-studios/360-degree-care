@@ -9,7 +9,8 @@ import React, {
     RefObject,
     Children,
     isValidElement,
-    cloneElement
+    cloneElement,
+    useCallback
 } from 'react'
 
 interface AnimationProps {
@@ -97,9 +98,12 @@ const useStaggeredVisibility = (
         }
 
         const timers = Array.from({ length: itemCount }).map((_, index) =>
-            window.setTimeout(() => {
-                setVisibleCount(prev => Math.max(prev, index + 1))
-            }, clampDelay(index * stepMs))
+            window.setTimeout(
+                () => {
+                    setVisibleCount(prev => Math.max(prev, index + 1))
+                },
+                clampDelay(index * stepMs)
+            )
         )
 
         return () => {
@@ -107,12 +111,10 @@ const useStaggeredVisibility = (
         }
     }, [isInViewState, itemCount, stepMs])
 
-    return (index: number) => index < visibleCount
+    return useCallback((index: number) => index < visibleCount, [visibleCount])
 }
 
-const resolveSlideInHiddenClass = (
-    direction: SlideInProps['direction']
-) => {
+const resolveSlideInHiddenClass = (direction: SlideInProps['direction']) => {
     switch (direction) {
         case 'right':
             return 'translate-x-6 opacity-0'
@@ -270,10 +272,7 @@ const RotateFadeSection: React.FC<AnimationProps> = ({
 }
 
 // Animation Option 7: Elastic Bounce
-const ElasticSection: React.FC<AnimationProps> = ({
-    children,
-    delay = 0
-}) => {
+const ElasticSection: React.FC<AnimationProps> = ({ children, delay = 0 }) => {
     const [ref, isInViewState] = useInView(0.2)
     const isActive = useDelayedVisibility(isInViewState, delay)
 
@@ -413,8 +412,7 @@ const EnhancedTypewriterSection: React.FC<AnimationProps> = ({
 
         const extractText = (element: ReactNode): string => {
             if (typeof element === 'string') return element
-            if (Array.isArray(element))
-                return element.map(extractText).join('')
+            if (Array.isArray(element)) return element.map(extractText).join('')
             if (isValidElement(element) && element.props?.children) {
                 return extractText(element.props.children)
             }
@@ -423,7 +421,6 @@ const EnhancedTypewriterSection: React.FC<AnimationProps> = ({
 
         if (isInViewState && isValidElement(children)) {
             const fullText = extractText(children)
-
             setDisplayedText('')
             setShowCursor(true)
 

@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import { CircleCheck } from 'lucide-react'
 import AnimatedSection from '../animated-section'
 import { getImgSrc } from '@/lib/images'
@@ -80,11 +81,16 @@ export default function HomeAboutSection() {
                             </li>
                         </ul>
                         <a href="https://chapinc.org/about/" target="_blank">
-                            <img
-                                src={getImgSrc('CHAPLogo')}
-                                alt="CHAP badge"
-                                className="w-[8rem] h-[8rem] mx-auto md:mx-0"
-                            />
+                            {getImgSrc('CHAPLogo') ? (
+                                <Image
+                                    src={getImgSrc('CHAPLogo') as string}
+                                    alt="CHAP badge"
+                                    className="w-[8rem] h-[8rem] mx-auto md:mx-0"
+                                    width={128}
+                                    height={128}
+                                    sizes="128px"
+                                />
+                            ) : null}
                         </a>
                     </div>
                 </div>

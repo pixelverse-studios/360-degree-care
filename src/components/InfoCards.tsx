@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import { IconType } from 'react-icons'
 
 import AnimatedSection from './animated-section'
@@ -36,6 +37,10 @@ export default function InfoCards({ cards, header, styles }: InfoCardProps) {
             >
                 {cards.map(card => {
                     const Icon = card.icon
+                    const iconSrc =
+                        card.iconPath != null
+                            ? getImgSrc(card.iconPath)
+                            : undefined
                     return (
                         <AnimatedSection
                             animation="zoom"
@@ -43,14 +48,16 @@ export default function InfoCards({ cards, header, styles }: InfoCardProps) {
                             className="bg-white-bright rounded-xl shadow-xl transition-shadow duration-300 transform p-6 border border-gray-200"
                         >
                             <div className="">
-                                {card.iconPath == undefined ? (
+                                {iconSrc == null ? (
                                     <Icon className="text-4xl mb-4 text-primary" />
                                 ) : (
-                                    <img
-                                        src={getImgSrc(card.iconPath)}
-                                        className="mb-4"
+                                    <Image
+                                        src={iconSrc}
                                         alt={card.title}
-                                        loading="lazy"
+                                        width={64}
+                                        height={64}
+                                        className="mb-4 h-12 w-auto"
+                                        sizes="64px"
                                     />
                                 )}
                             </div>

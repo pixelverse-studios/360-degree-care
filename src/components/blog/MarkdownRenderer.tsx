@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import { getImgSrc } from '@/lib/images'
 
 interface MarkdownRendererProps {
@@ -419,14 +420,25 @@ export default function MarkdownRenderer({ content }: MarkdownRendererProps) {
                                 </table>
                             </div>
                         )
-                    case 'image':
+                    case 'image': {
+                        const resolvedSrc =
+                            getImgSrc(element.content.src) ||
+                            element.content.src
+
+                        if (!resolvedSrc) {
+                            return null
+                        }
+
                         return (
                             <figure key={index} className="my-12">
-                                <img
-                                    src={getImgSrc(element.content.src)}
+                                <Image
+                                    src={resolvedSrc}
                                     alt={element.content.alt}
-                                    className="w-full rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300"
-                                    loading="lazy"
+                                    width={1200}
+                                    height={800}
+                                    className="w-full h-auto rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300"
+                                    sizes="100vw"
+                                    style={{ width: '100%', height: 'auto' }}
                                 />
                                 {element.content.caption && (
                                     <figcaption className="text-center text-gray-600 text-sm mt-4 italic font-medium">
@@ -435,6 +447,7 @@ export default function MarkdownRenderer({ content }: MarkdownRendererProps) {
                                 )}
                             </figure>
                         )
+                    }
                     case 'blockquote': {
                         // Handle quotes with attribution (e.g., > "Quote" - **Author**, *Title*)
                         const quoteWithAttributionMatch = element.content.match(

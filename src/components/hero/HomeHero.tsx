@@ -1,4 +1,5 @@
 import { useRouter } from 'next/navigation'
+import Image from 'next/image'
 import { Button } from '../ui/button'
 import { navLinks } from '@/utils/routes'
 import CallToAction from '../CallToAction'
@@ -8,6 +9,7 @@ const [serviceLink] = navLinks
 
 export default function HomeHero() {
     const router = useRouter()
+    const heroImageSrc = getImgSrc('home-hero')
 
     const onServicesClick = () => router.push(serviceLink.route)
 
@@ -47,12 +49,18 @@ export default function HomeHero() {
                     </Button>
                 </div>
             </div>
-            <img
-                className="rounded-2xl max-h-[20rem] h-fit w-full object-cover"
-                src={getImgSrc('home-hero')}
-                alt="360 Degree Care caregiver supporting senior at home"
-                loading="lazy"
-            />
+            {heroImageSrc ? (
+                <Image
+                    className="rounded-2xl max-h-[20rem] w-full h-auto object-cover"
+                    src={heroImageSrc}
+                    alt="360 Degree Care caregiver supporting senior at home"
+                    width={1200}
+                    height={800}
+                    sizes="(min-width: 768px) 50vw, 100vw"
+                    priority
+                    style={{ width: '100%', height: 'auto' }}
+                />
+            ) : null}
         </section>
     )
 }

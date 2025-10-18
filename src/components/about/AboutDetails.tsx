@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import Autoplay from 'embla-carousel-autoplay'
 
 import { CompanyName } from '@/components/Logo'
@@ -20,6 +21,21 @@ const carouselItems = [
     'man-with-bat-v01'
 ]
 
+const renderCarouselImage = (key: string, alt: string) => {
+    const src = getImgSrc(key)
+    return src ? (
+        <Image
+            src={src}
+            alt={alt}
+            width={900}
+            height={600}
+            className="max-h-[50vh] w-auto object-contain rounded-xl"
+            sizes="(min-width: 1280px) 33vw, (min-width: 768px) 50vw, 90vw"
+            style={{ width: 'auto', height: '100%' }}
+        />
+    ) : null
+}
+
 export default function AboutDetails() {
     return (
         <section>
@@ -28,11 +44,17 @@ export default function AboutDetails() {
                     animation="zoom"
                     className="grid grid-cols-1 md:grid-cols-[1fr_2fr] gap-6"
                 >
-                    <img
-                        src={getImgSrc('runners')}
-                        alt="small details to help"
-                        className="w-fit h-full rounded-3xl object-cover"
-                    />
+                    {getImgSrc('runners') ? (
+                        <Image
+                            src={getImgSrc('runners') as string}
+                            alt="small details to help"
+                            className="w-fit h-full rounded-3xl object-cover"
+                            width={800}
+                            height={600}
+                            sizes="(min-width: 1024px) 40vw, 90vw"
+                            style={{ width: '100%', height: '100%' }}
+                        />
+                    ) : null}
                     <article className="my-auto">
                         <h2 className="text-2xl md:text-3xl font-bold mb-4">
                             The{' '}
@@ -111,31 +133,27 @@ export default function AboutDetails() {
                                             key={index}
                                             className="pl-4 md:pl-6 basis-full md:basis-1/2 xl:basis-1/3 flex items-center justify-center"
                                         >
-                                            <img
-                                                src={getImgSrc(item)}
-                                                className="max-h-[50vh] w-auto object-contain rounded-xl"
-                                                alt={`carousel-item-${index}`}
-                                            />
+                                            {renderCarouselImage(
+                                                item,
+                                                `carousel-item-${index}`
+                                            )}
                                         </CarouselItem>
                                     ))}
                                 <CarouselItem className="pl-4 md:pl-6 basis-full md:basis-1/2 xl:basis-1/3 flex flex-col gap-4 items-center justify-center">
-                                    <img
-                                        src={getImgSrc(carouselItems[3])}
-                                        className="max-h-[50vh] w-auto object-contain rounded-xl"
-                                        alt="carousel-item-4"
-                                    />
-                                    <img
-                                        src={getImgSrc(carouselItems[4])}
-                                        className="max-h-[50vh] w-auto object-contain rounded-xl"
-                                        alt="carousel-item-5"
-                                    />
+                                    {renderCarouselImage(
+                                        carouselItems[3],
+                                        'carousel-item-4'
+                                    )}
+                                    {renderCarouselImage(
+                                        carouselItems[4],
+                                        'carousel-item-5'
+                                    )}
                                 </CarouselItem>
                                 <CarouselItem className="pl-4 md:pl-6 basis-full md:basis-1/2 xl:basis-1/3 flex items-center justify-center">
-                                    <img
-                                        src={getImgSrc(carouselItems[5])}
-                                        className="max-h-[50vh] w-auto object-contain rounded-xl"
-                                        alt="carousel-item-6"
-                                    />
+                                    {renderCarouselImage(
+                                        carouselItems[5],
+                                        'carousel-item-6'
+                                    )}
                                 </CarouselItem>
                             </CarouselContent>
                             <CarouselPrevious />
@@ -194,11 +212,17 @@ export default function AboutDetails() {
                             </div>
                         </div>
                     </div>
-                    <img
-                        src={getImgSrc('done-stamp')}
-                        alt="DONE stamp"
-                        className="w-64 h-64 object-contain m-auto"
-                    />
+                    {getImgSrc('done-stamp') ? (
+                        <Image
+                            src={getImgSrc('done-stamp') as string}
+                            alt="DONE stamp"
+                            className="w-64 h-64 object-contain m-auto"
+                            width={256}
+                            height={256}
+                            sizes="256px"
+                            style={{ width: '16rem', height: '16rem' }}
+                        />
+                    ) : null}
                 </AnimatedSection>
             </div>
             <div className="bg-blue">
@@ -206,11 +230,17 @@ export default function AboutDetails() {
                     animation="zoom"
                     className="max-w-custom mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 p-10"
                 >
-                    <img
-                        src={getImgSrc('staff')}
-                        alt="freedome img"
-                        className="rounded-xl shadow-xl object-cover"
-                    />
+                    {getImgSrc('staff') ? (
+                        <Image
+                            src={getImgSrc('staff') as string}
+                            alt="freedome img"
+                            className="rounded-xl shadow-xl object-cover"
+                            width={1200}
+                            height={800}
+                            sizes="(min-width: 1024px) 50vw, 100vw"
+                            style={{ width: '100%', height: 'auto' }}
+                        />
+                    ) : null}
                     <div className="my-auto">
                         <h2 className="text-2xl md:text-3xl font-bold mb-4 text-white">
                             Elite Staffing for Healthcare Facilities
