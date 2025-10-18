@@ -1,11 +1,6 @@
 import Script from 'next/script'
 import { Suspense } from 'react'
-import {
-    Bodoni_Moda,
-    Merriweather,
-    Permanent_Marker,
-    Rubik
-} from 'next/font/google'
+import { Merriweather, Rubik } from 'next/font/google'
 
 import CanonicalLink from '@/components/CanonicalLink'
 import { Header } from '@/components/nav/Header'
@@ -142,15 +137,9 @@ const organizationSchema = {
         }
     ]
 }
-const permanentMarker = Permanent_Marker({
-    weight: ['400'],
-    subsets: ['latin'],
-    display: 'swap',
-    variable: '--font-permanent-marker'
-})
-
 const rubik = Rubik({
     subsets: ['latin'],
+    weight: ['400', '500', '600', '700'],
     variable: '--font-rubik',
     display: 'swap'
 })
@@ -160,13 +149,6 @@ const merriweather = Merriweather({
     weight: ['300', '400', '700', '900'],
     variable: '--font-merriweather',
     display: 'swap'
-})
-
-const bodoni = Bodoni_Moda({
-    subsets: ['latin'],
-    display: 'swap',
-    variable: '--font-bodoni',
-    weight: ['400', '500', '700']
 })
 
 export default function RootLayout({
@@ -231,7 +213,7 @@ export default function RootLayout({
                 />
             </head>
             <body
-                className={`antialiased ${rubik.variable} ${merriweather.variable} ${bodoni.variable} ${permanentMarker.variable}`}
+                className={`antialiased ${rubik.variable} ${merriweather.variable}`}
             >
                 <noscript>
                     <iframe

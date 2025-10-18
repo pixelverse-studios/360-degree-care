@@ -282,7 +282,7 @@ const ElasticSection: React.FC<AnimationProps> = ({ children, delay = 0 }) => {
             className={cn(
                 'transition-all duration-1000',
                 isActive
-                    ? 'opacity-100 translate-y-0 scale-100 ease-[cubic-bezier(0.68,-0.55,0.265,1.55)]'
+                    ? 'opacity-100 translate-y-0 scale-100 ease-bouncy'
                     : 'opacity-0 translate-y-8 scale-90 ease-out'
             )}
         >

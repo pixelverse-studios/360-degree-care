@@ -1,5 +1,4 @@
 /* @import './reset.css'; */
-@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker');
 @import './animations.css';
 
 @tailwind base;
@@ -51,7 +50,6 @@
 
     --font-rubik: ${rubik.style.fontFamily};
     --font-merriweather: ${merriweather.style.fontFamily};
-    --font-bodoni: ${bodoni.style.fontFamily};
 }
 
 html,
@@ -63,17 +61,10 @@ body {
 
 body {
     color: hsl(var(--black));
-    font-family: 'Rubik', sans-serif;
+    font-family: var(--font-rubik), sans-serif;
     background-color: var(--bright-white);
     min-height: calc(100dvh - 5.8rem);
     line-height: 1.1;
-}
-
-h1,
-h2,
-h3,
-h4 {
-    font-family: 'Merriweather', serif;
 }
 
 .roundButton {
@@ -129,9 +120,6 @@ h4 {
     }
 }
 
-.logo {
-    font-family: var(--font-logo);
-}
 .button-ghost {
     background-color: transparent !important;
     color: var(--ghost-bg) !important;
@@ -221,11 +209,6 @@ h4 {
         @apply text-primary font-semibold;
     }
 
-    .caring {
-        font-family: var(--font-permanent-marker), cursive !important;
-        font-size: 32px;
-    }
-
     .bullet-item {
         @apply grid grid-cols-[1.5rem_1fr] gap-2 items-start;
     }
@@ -270,9 +253,10 @@ h4 {
         font-family: var(--font-merriweather), serif;
     }
 
-    .font-logo {
-        font-family: var(--font-bodoni), serif;
+    .ease-bouncy {
+        transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
     }
+
 }
 
 @layer components {
