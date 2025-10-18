@@ -1,3 +1,5 @@
+'use client'
+
 import { testimonials } from '@/lib/testimonials'
 import { formatDistanceToNow } from 'date-fns'
 import { FaStar } from 'react-icons/fa6'

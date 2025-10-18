@@ -63,7 +63,7 @@ const useDelayedVisibility = (isInViewState: boolean, delayMs: number) => {
     const [isActive, setIsActive] = useState(false)
 
     useEffect(() => {
-        let timeoutId: ReturnType<typeof setTimeout> | undefined
+        let timeoutId: number | undefined
 
         if (isInViewState) {
             timeoutId = window.setTimeout(
@@ -97,13 +97,14 @@ const useStaggeredVisibility = (
             return
         }
 
-        const timers = Array.from({ length: itemCount }).map((_, index) =>
-            window.setTimeout(
-                () => {
-                    setVisibleCount(prev => Math.max(prev, index + 1))
-                },
-                clampDelay(index * stepMs)
-            )
+        const timers: number[] = Array.from({ length: itemCount }).map(
+            (_, index) =>
+                window.setTimeout(
+                    () => {
+                        setVisibleCount(prev => Math.max(prev, index + 1))
+                    },
+                    clampDelay(index * stepMs)
+                )
         )
 
         return () => {
@@ -322,9 +323,9 @@ const TypewriterSection: React.FC<AnimationProps> = ({
     const [showCursor, setShowCursor] = useState(true)
 
     useEffect(() => {
-        let startTimeout: ReturnType<typeof setTimeout> | undefined
-        let intervalId: ReturnType<typeof setInterval> | undefined
-        let cursorTimeout: ReturnType<typeof setTimeout> | undefined
+        let startTimeout: number | undefined
+        let intervalId: number | undefined
+        let cursorTimeout: number | undefined
 
         if (isInViewState && isValidElement(children)) {
             const props = children.props as { children?: string }
@@ -406,9 +407,9 @@ const EnhancedTypewriterSection: React.FC<AnimationProps> = ({
     const [showCursor, setShowCursor] = useState(true)
 
     useEffect(() => {
-        let startTimeout: ReturnType<typeof setTimeout> | undefined
-        let intervalId: ReturnType<typeof setInterval> | undefined
-        let cursorTimeout: ReturnType<typeof setTimeout> | undefined
+        let startTimeout: number | undefined
+        let intervalId: number | undefined
+        let cursorTimeout: number | undefined
 
         const extractText = (element: ReactNode): string => {
             if (typeof element === 'string') return element

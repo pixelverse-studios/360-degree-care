@@ -1,13 +1,16 @@
 import Image from 'next/image'
 import dynamic from 'next/dynamic'
-import Link from 'next/link'
-import { Button } from '../ui/button'
+
 import { navLinks } from '@/utils/routes'
 import { getImgSrc } from '@/lib/images'
 
 const CallToAction = dynamic(() => import('../CallToAction'), {
     ssr: false
 })
+const CallToActionButton = dynamic(
+    () => import('../CallToActionButton').then(mod => mod.CallToActionButton),
+    { ssr: false }
+)
 
 const [serviceLink] = navLinks
 
@@ -45,9 +48,12 @@ export default function HomeHero() {
                         value=""
                         variant="pillPrimary"
                     />
-                    <Button variant="pillBlue" asChild>
-                        <Link href={serviceLink.route}>More About Us</Link>
-                    </Button>
+                    <CallToActionButton
+                        href={serviceLink.route}
+                        variant="pillBlue"
+                    >
+                        More About Us
+                    </CallToActionButton>
                 </div>
             </div>
             {heroImageSrc ? (
