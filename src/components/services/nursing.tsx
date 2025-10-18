@@ -247,8 +247,7 @@ export default function NursingView({ header }: { header: string }) {
                         <div className="rounded-lg p-6 text-center bg-white shadow-xl">
                             <div className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 bg-primary-muted">
                                 <svg
-                                    className="w-8 h-8"
-                                    style={{ color: '#FA3F1A' }}
+                                    className="w-8 h-8 text-[#FA3F1A]"
                                     fill="none"
                                     stroke="currentColor"
                                     viewBox="0 0 24 24"
@@ -273,13 +272,9 @@ export default function NursingView({ header }: { header: string }) {
                             </p>
                         </div>
                         <div className="rounded-lg p-6 text-center bg-white shadow-xl">
-                            <div
-                                className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4"
-                                style={{ backgroundColor: '#FECFBF' }}
-                            >
+                            <div className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 bg-[#FECFBF]">
                                 <svg
-                                    className="w-8 h-8"
-                                    style={{ color: '#FA3F1A' }}
+                                    className="w-8 h-8 text-[#FA3F1A]"
                                     fill="none"
                                     stroke="currentColor"
                                     viewBox="0 0 24 24"
@@ -304,13 +299,9 @@ export default function NursingView({ header }: { header: string }) {
                             </p>
                         </div>
                         <div className="rounded-lg p-6 text-center bg-white shadow-xl">
-                            <div
-                                className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4"
-                                style={{ backgroundColor: '#FECFBF' }}
-                            >
+                            <div className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 bg-[#FECFBF]">
                                 <svg
-                                    className="w-8 h-8"
-                                    style={{ color: '#FA3F1A' }}
+                                    className="w-8 h-8 text-[#FA3F1A]"
                                     fill="none"
                                     stroke="currentColor"
                                     viewBox="0 0 24 24"

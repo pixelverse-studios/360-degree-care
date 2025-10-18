@@ -19,7 +19,8 @@ const buttonVariants = cva(
                     'border border-input bg-background shadow-sm hover:bg-blue',
                 secondary:
                     'bg-blue text-blue-bright shadow-sm hover:bg-blue-muted',
-                ghost: 'button-ghost border border-[var(--ghost-bg)]',
+                ghost:
+                    'border-2 border-primary text-primary bg-transparent hover:bg-primary hover:text-white transition-colors',
                 link: 'text-primary underline-offset-4 hover:underline',
                 cta: 'px-6 py-3 border-2 font-bold bg-primary text-white border-primary hover:bg-transparent hover:text-primary rounded-3xl',
                 glossy: 'bg-gradient-to-b from-primary to-primary text-white border-b-4 border-primary-dark shadow-lg hover:-translate-y-px active:translate-y-0.5 active:border-b-2 active:shadow-md rounded-3xl',
@@ -54,8 +55,6 @@ export interface ButtonProps
     extends React.ButtonHTMLAttributes<HTMLButtonElement>,
         VariantProps<typeof buttonVariants> {
     asChild?: boolean
-    ghostBg?: string
-    ghostText?: string
 }
 
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
@@ -65,30 +64,16 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
             variant,
             size,
             asChild = false,
-            ghostBg,
-            ghostText,
             ...props
         },
         ref
     ) => {
         const Comp = asChild ? Slot : 'button'
 
-        const dynamicStyles: React.CSSProperties =
-            variant === 'ghost' && ghostBg && ghostText
-                ? {
-                      ['--ghost-bg' as any]: ghostBg,
-                      ['--ghost-text' as any]: ghostText,
-                      borderColor: ghostBg, // Border matches ghostBg
-                      backgroundColor: 'transparent', // Default background transparent
-                      color: ghostBg // Text starts as the border color
-                  }
-                : {}
-
         return (
             <Comp
                 className={cn(buttonVariants({ variant, size, className }))}
                 ref={ref}
-                style={dynamicStyles}
                 {...props}
             />
         )

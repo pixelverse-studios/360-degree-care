@@ -12,7 +12,6 @@ import React, {
     cloneElement
 } from 'react'
 
-// Type definitions
 interface AnimationProps {
     children: ReactNode
     delay?: number
@@ -28,6 +27,8 @@ interface StaggeredProps {
     className?: string
     childClass?: string
 }
+
+const clampDelay = (delay: number) => Math.max(delay, 0)
 
 // Custom hook for intersection observer with proper typing
 const useInView = (threshold = 0.1): [RefObject<HTMLDivElement>, boolean] => {
@@ -57,19 +58,88 @@ const useInView = (threshold = 0.1): [RefObject<HTMLDivElement>, boolean] => {
     return [ref, isInView]
 }
 
+const useDelayedVisibility = (isInViewState: boolean, delayMs: number) => {
+    const [isActive, setIsActive] = useState(false)
+
+    useEffect(() => {
+        let timeoutId: ReturnType<typeof setTimeout> | undefined
+
+        if (isInViewState) {
+            timeoutId = window.setTimeout(
+                () => setIsActive(true),
+                clampDelay(delayMs)
+            )
+        } else {
+            setIsActive(false)
+        }
+
+        return () => {
+            if (timeoutId) {
+                window.clearTimeout(timeoutId)
+            }
+        }
+    }, [isInViewState, delayMs])
+
+    return isActive
+}
+
+const useStaggeredVisibility = (
+    isInViewState: boolean,
+    itemCount: number,
+    stepMs: number
+) => {
+    const [visibleCount, setVisibleCount] = useState(0)
+
+    useEffect(() => {
+        if (!isInViewState) {
+            setVisibleCount(0)
+            return
+        }
+
+        const timers = Array.from({ length: itemCount }).map((_, index) =>
+            window.setTimeout(() => {
+                setVisibleCount(prev => Math.max(prev, index + 1))
+            }, clampDelay(index * stepMs))
+        )
+
+        return () => {
+            timers.forEach(timerId => window.clearTimeout(timerId))
+        }
+    }, [isInViewState, itemCount, stepMs])
+
+    return (index: number) => index < visibleCount
+}
+
+const resolveSlideInHiddenClass = (
+    direction: SlideInProps['direction']
+) => {
+    switch (direction) {
+        case 'right':
+            return 'translate-x-6 opacity-0'
+        case 'up':
+            return '-translate-y-6 opacity-0'
+        case 'down':
+            return 'translate-y-6 opacity-0'
+        case 'left':
+        default:
+            return '-translate-x-6 opacity-0'
+    }
+}
+
 // Animation Option 1: Fade Up
 const FadeUpSection: React.FC<AnimationProps> = ({ children, delay = 0 }) => {
-    const [ref, isInView] = useInView(0.2)
+    const [ref, isInViewState] = useInView(0.2)
+    const isActive = useDelayedVisibility(isInViewState, delay)
 
     return (
         <div
             ref={ref}
-            className={`transition-all duration-1000 ease-out ${
-                isInView
+            className={cn(
+                'transition-all duration-1000 ease-out',
+                isActive
                     ? 'opacity-100 translate-y-0'
                     : 'opacity-0 translate-y-8'
-            }`}
-            style={{ transitionDelay: `${delay}ms` }}
+            )}
         >
             {children}
         </div>
@@ -83,34 +153,19 @@ const SlideInSection: React.FC<SlideInProps> = ({
     delay = 0,
     className
 }) => {
-    const [ref, isInView] = useInView(0.2)
-
-    const getTransform = () => {
-        if (!isInView) {
-            switch (direction) {
-                case 'left':
-                    return '-translate-x-6 opacity-0'
-                case 'right':
-                    return 'translate-x-6 opacity-0'
-                case 'up':
-                    return '-translate-y-6 opacity-0'
-                case 'down':
-                    return 'translate-y-6 opacity-0'
-                default:
-                    return 'translate-y-8 opacity-0'
-            }
-        }
-        return 'translate-x-0 translate-y-0 opacity-100'
-    }
+    const [ref, isInViewState] = useInView(0.2)
+    const isActive = useDelayedVisibility(isInViewState, delay)
 
     return (
         <div
             ref={ref}
             className={cn(
-                `transition-all duration-1000 ease-out ${getTransform()}`,
+                'transition-all duration-1000 ease-out',
+                isActive
+                    ? 'translate-x-0 translate-y-0 opacity-100'
+                    : resolveSlideInHiddenClass(direction),
                 className
             )}
-            style={{ transitionDelay: `${delay}ms` }}
         >
             {children}
         </div>
@@ -122,15 +177,16 @@ const ScaleFadeSection: React.FC<AnimationProps> = ({
     children,
     delay = 0
 }) => {
-    const [ref, isInView] = useInView(0.2)
+    const [ref, isInViewState] = useInView(0.2)
+    const isActive = useDelayedVisibility(isInViewState, delay)
 
     return (
         <div
             ref={ref}
-            className={`transition-all duration-1000 ease-out ${
-                isInView ? 'opacity-100 scale-100' : 'opacity-0 scale-95'
-            }`}
-            style={{ transitionDelay: `${delay}ms` }}
+            className={cn(
+                'transition-all duration-1000 ease-out',
+                isActive ? 'opacity-100 scale-100' : 'opacity-0 scale-95'
+            )}
         >
             {children}
         </div>
@@ -143,7 +199,9 @@ const StaggeredSection: React.FC<StaggeredProps> = ({
     className,
     childClass
 }) => {
-    const [ref, isInView] = useInView(0.2)
+    const [ref, isInViewState] = useInView(0.2)
+    const count = Children.count(children)
+    const isItemActive = useStaggeredVisibility(isInViewState, count, 200)
 
     return (
         <div ref={ref} className={cn(className)}>
@@ -151,13 +209,12 @@ const StaggeredSection: React.FC<StaggeredProps> = ({
                 <div
                     key={index}
                     className={cn(
-                        `transition-all duration-1000 ease-out`,
-                        isInView
+                        'transition-all duration-1000 ease-out',
+                        isItemActive(index)
                             ? 'opacity-100 translate-y-0'
                             : 'opacity-0 translate-y-6',
                         childClass ?? ''
                     )}
-                    style={{ transitionDelay: `${index * 200}ms` }}
                 >
                     {child}
                 </div>
@@ -171,17 +228,18 @@ const BlurFocusSection: React.FC<AnimationProps> = ({
     children,
     delay = 0
 }) => {
-    const [ref, isInView] = useInView(0.2)
+    const [ref, isInViewState] = useInView(0.2)
+    const isActive = useDelayedVisibility(isInViewState, delay)
 
     return (
         <div
             ref={ref}
-            className={`transition-all duration-1200 ease-out ${
-                isInView
+            className={cn(
+                'transition-all duration-1200 ease-out',
+                isActive
                     ? 'opacity-100 blur-0 translate-y-0'
                     : 'opacity-0 blur-sm translate-y-4'
-            }`}
-            style={{ transitionDelay: `${delay}ms` }}
+            )}
         >
             {children}
         </div>
@@ -193,17 +251,18 @@ const RotateFadeSection: React.FC<AnimationProps> = ({
     children,
     delay = 0
 }) => {
-    const [ref, isInView] = useInView(0.2)
+    const [ref, isInViewState] = useInView(0.2)
+    const isActive = useDelayedVisibility(isInViewState, delay)
 
     return (
         <div
             ref={ref}
-            className={`transition-all duration-1000 ease-out ${
-                isInView
+            className={cn(
+                'transition-all duration-1000 ease-out',
+                isActive
                     ? 'opacity-100 rotate-0 scale-100'
                     : 'opacity-0 -rotate-3 scale-95'
-            }`}
-            style={{ transitionDelay: `${delay}ms` }}
+            )}
         >
             {children}
         </div>
@@ -211,23 +270,22 @@ const RotateFadeSection: React.FC<AnimationProps> = ({
 }
 
 // Animation Option 7: Elastic Bounce
-const ElasticSection: React.FC<AnimationProps> = ({ children, delay = 0 }) => {
-    const [ref, isInView] = useInView(0.2)
+const ElasticSection: React.FC<AnimationProps> = ({
+    children,
+    delay = 0
+}) => {
+    const [ref, isInViewState] = useInView(0.2)
+    const isActive = useDelayedVisibility(isInViewState, delay)
 
     return (
         <div
             ref={ref}
-            className={`transition-all duration-1000 ${
-                isInView
-                    ? 'opacity-100 translate-y-0 scale-100'
-                    : 'opacity-0 translate-y-8 scale-90'
-            }`}
-            style={{
-                transitionDelay: `${delay}ms`,
-                transitionTimingFunction: isInView
-                    ? 'cubic-bezier(0.68, -0.55, 0.265, 1.55)'
-                    : 'ease-out'
-            }}
+            className={cn(
+                'transition-all duration-1000',
+                isActive
+                    ? 'opacity-100 translate-y-0 scale-100 ease-[cubic-bezier(0.68,-0.55,0.265,1.55)]'
+                    : 'opacity-0 translate-y-8 scale-90 ease-out'
+            )}
         >
             {children}
         </div>
@@ -236,17 +294,18 @@ const ElasticSection: React.FC<AnimationProps> = ({ children, delay = 0 }) => {
 
 // Animation Option 8: Slide and Fade from Bottom
 const SlideUpSection: React.FC<AnimationProps> = ({ children, delay = 0 }) => {
-    const [ref, isInView] = useInView(0.15)
+    const [ref, isInViewState] = useInView(0.15)
+    const isActive = useDelayedVisibility(isInViewState, delay)
 
     return (
         <div
             ref={ref}
-            className={`transition-all duration-1000 ease-out ${
-                isInView
+            className={cn(
+                'transition-all duration-1000 ease-out',
+                isActive
                     ? 'opacity-100 translate-y-0'
                     : 'opacity-0 translate-y-12'
-            }`}
-            style={{ transitionDelay: `${delay}ms` }}
+            )}
         >
             {children}
         </div>
@@ -258,34 +317,65 @@ const TypewriterSection: React.FC<AnimationProps> = ({
     children,
     delay = 0
 }) => {
-    const [ref, isInView] = useInView(0.2)
+    const [ref, isInViewState] = useInView(0.2)
+    const isActive = useDelayedVisibility(isInViewState, delay)
     const [displayedContent, setDisplayedContent] = useState('')
     const [showCursor, setShowCursor] = useState(true)
 
     useEffect(() => {
-        if (isInView && isValidElement(children)) {
+        let startTimeout: ReturnType<typeof setTimeout> | undefined
+        let intervalId: ReturnType<typeof setInterval> | undefined
+        let cursorTimeout: ReturnType<typeof setTimeout> | undefined
+
+        if (isInViewState && isValidElement(children)) {
             const props = children.props as { children?: string }
             const text = props.children || ''
+
             if (typeof text === 'string') {
-                let i = 0
-                const timer = setInterval(() => {
-                    setDisplayedContent(text.slice(0, i))
-                    i++
-                    if (i > text.length) {
-                        clearInterval(timer)
-                        setTimeout(() => setShowCursor(false), 1000)
-                    }
-                }, 50)
-                return () => clearInterval(timer)
+                setDisplayedContent('')
+                setShowCursor(true)
+
+                startTimeout = window.setTimeout(() => {
+                    let index = 0
+                    intervalId = window.setInterval(() => {
+                        index += 1
+                        setDisplayedContent(text.slice(0, index))
+
+                        if (index >= text.length) {
+                            if (intervalId) {
+                                window.clearInterval(intervalId)
+                            }
+                            cursorTimeout = window.setTimeout(
+                                () => setShowCursor(false),
+                                1000
+                            )
+                        }
+                    }, 50)
+                }, clampDelay(delay))
             }
+        } else {
+            setDisplayedContent('')
+            setShowCursor(true)
         }
-    }, [isInView, children])
+
+        return () => {
+            if (startTimeout) window.clearTimeout(startTimeout)
+            if (intervalId) window.clearInterval(intervalId)
+            if (cursorTimeout) window.clearTimeout(cursorTimeout)
+        }
+    }, [isInViewState, children, delay])
 
     if (isValidElement(children)) {
         const props = children.props as { children?: string }
         if (typeof props.children === 'string') {
             return (
-                <div ref={ref} style={{ transitionDelay: `${delay}ms` }}>
+                <div
+                    ref={ref}
+                    className={cn(
+                        'transition-all duration-1000 ease-out',
+                        isActive ? 'opacity-100' : 'opacity-0'
+                    )}
+                >
                     {cloneElement(children, {
                         children: displayedContent + (showCursor ? '|' : '')
                     } as any)}
@@ -297,10 +387,10 @@ const TypewriterSection: React.FC<AnimationProps> = ({
     return (
         <div
             ref={ref}
-            className={`transition-all duration-1000 ease-out ${
-                isInView ? 'opacity-100' : 'opacity-0'
-            }`}
-            style={{ transitionDelay: `${delay}ms` }}
+            className={cn(
+                'transition-all duration-1000 ease-out',
+                isActive ? 'opacity-100' : 'opacity-0'
+            )}
         >
             {children}
         </div>
@@ -311,41 +401,70 @@ const EnhancedTypewriterSection: React.FC<AnimationProps> = ({
     children,
     delay = 0
 }) => {
-    const [ref, isInView] = useInView(0.2)
+    const [ref, isInViewState] = useInView(0.2)
+    const isActive = useDelayedVisibility(isInViewState, delay)
     const [displayedText, setDisplayedText] = useState('')
     const [showCursor, setShowCursor] = useState(true)
 
     useEffect(() => {
-        if (isInView && isValidElement(children)) {
-            // Extract plain text from JSX, ignoring HTML tags
-            const extractText = (element: any): string => {
-                if (typeof element === 'string') return element
-                if (Array.isArray(element))
-                    return element.map(extractText).join('')
-                if (element?.props?.children)
-                    return extractText(element.props.children)
-                return ''
+        let startTimeout: ReturnType<typeof setTimeout> | undefined
+        let intervalId: ReturnType<typeof setInterval> | undefined
+        let cursorTimeout: ReturnType<typeof setTimeout> | undefined
+
+        const extractText = (element: ReactNode): string => {
+            if (typeof element === 'string') return element
+            if (Array.isArray(element))
+                return element.map(extractText).join('')
+            if (isValidElement(element) && element.props?.children) {
+                return extractText(element.props.children)
             }
-
-            const fullText = extractText(children)
-            let i = 0
-
-            const timer = setInterval(() => {
-                setDisplayedText(fullText.slice(0, i))
-                i++
-                if (i > fullText.length) {
-                    clearInterval(timer)
-                    setTimeout(() => setShowCursor(false), 1000)
-                }
-            }, 50)
-
-            return () => clearInterval(timer)
+            return ''
         }
-    }, [isInView, children])
 
-    if (isValidElement(children) && isInView) {
+        if (isInViewState && isValidElement(children)) {
+            const fullText = extractText(children)
+
+            setDisplayedText('')
+            setShowCursor(true)
+
+            startTimeout = window.setTimeout(() => {
+                let index = 0
+                intervalId = window.setInterval(() => {
+                    index += 1
+                    setDisplayedText(fullText.slice(0, index))
+
+                    if (index >= fullText.length) {
+                        if (intervalId) {
+                            window.clearInterval(intervalId)
+                        }
+                        cursorTimeout = window.setTimeout(
+                            () => setShowCursor(false),
+                            1000
+                        )
+                    }
+                }, 50)
+            }, clampDelay(delay))
+        } else {
+            setDisplayedText('')
+            setShowCursor(true)
+        }
+
+        return () => {
+            if (startTimeout) window.clearTimeout(startTimeout)
+            if (intervalId) window.clearInterval(intervalId)
+            if (cursorTimeout) window.clearTimeout(cursorTimeout)
+        }
+    }, [isInViewState, children, delay])
+
+    if (isValidElement(children) && isInViewState) {
         return (
-            <div ref={ref} style={{ transitionDelay: `${delay}ms` }}>
+            <div
+                ref={ref}
+                className={cn(
+                    'transition-all duration-1000 ease-out',
+                    isActive ? 'opacity-100' : 'opacity-0'
+                )}
+            >
                 {cloneElement(children, {
                     children: displayedText + (showCursor ? '|' : '')
                 } as any)}
@@ -354,7 +473,13 @@ const EnhancedTypewriterSection: React.FC<AnimationProps> = ({
     }
 
     return (
-        <div ref={ref} style={{ transitionDelay: `${delay}ms` }}>
+        <div
+            ref={ref}
+            className={cn(
+                'transition-all duration-1000 ease-out',
+                isActive ? 'opacity-100' : 'opacity-0'
+            )}
+        >
             {children}
         </div>
     )
@@ -362,22 +487,18 @@ const EnhancedTypewriterSection: React.FC<AnimationProps> = ({
 
 // Animation Option 10: Flip Card Effect
 const FlipSection: React.FC<AnimationProps> = ({ children, delay = 0 }) => {
-    const [ref, isInView] = useInView(0.2)
+    const [ref, isInViewState] = useInView(0.2)
+    const isActive = useDelayedVisibility(isInViewState, delay)
 
     return (
-        <div
-            ref={ref}
-            className="perspective-1000"
-            style={{ transitionDelay: `${delay}ms` }}
-        >
+        <div ref={ref} className="[perspective:1000px]">
             <div
-                className={`transition-all duration-1000 ease-out transform-gpu ${
-                    isInView ? 'opacity-100' : 'opacity-0'
-                }`}
-                style={{
-                    transform: isInView ? 'rotateY(0deg)' : 'rotateY(-90deg)',
-                    transformStyle: 'preserve-3d'
-                }}
+                className={cn(
+                    'transition-all duration-1000 ease-out transform-gpu [transform-style:preserve-3d]',
+                    isActive
+                        ? 'opacity-100 [transform:rotateY(0deg)]'
+                        : 'opacity-0 [transform:rotateY(-90deg)]'
+                )}
             >
                 {children}
             </div>
@@ -385,7 +506,6 @@ const FlipSection: React.FC<AnimationProps> = ({ children, delay = 0 }) => {
     )
 }
 
-// Export all animation components
 export {
     FadeUpSection,
     SlideInSection,

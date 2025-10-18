@@ -1,4 +1,5 @@
 import { motion, useInView, useReducedMotion } from 'framer-motion'
+import { cn } from '@/lib/utils'
 import { useRef, ReactNode, useMemo, useEffect, useState } from 'react'
 
 type AnimationVariant = 'fadeIn' | 'slideLeft' | 'slideUp' | 'zoom'
@@ -132,11 +133,10 @@ export default function AnimatedSection({
                 ease: 'easeOut',
                 staggerChildren: 0.1
             }}
-            style={{
-                willChange: 'opacity, transform',
-                backfaceVisibility: 'hidden'
-            }}
-            className={className}
+            className={cn(
+                'will-change-[opacity,transform] [backface-visibility:hidden]',
+                className
+            )}
         >
             {children}
         </motion.div>
