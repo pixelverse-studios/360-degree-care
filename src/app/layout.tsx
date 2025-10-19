@@ -11,6 +11,7 @@ import { RouteStateProvider } from '@/lib/providers'
 import { getImgSrc } from '@/lib/images'
 import { CampaignTracker } from '@/components/CampaignTracker'
 import { BounceTracker } from '@/components/BounceTracker'
+import { AccessibilityMenu } from '@/components/accessibility/AccessibilityMenu'
 import { FACEBOOK, INSTA, PHONE, EMAIL } from '@/utils/constants'
 
 // import 'animate.css'
@@ -243,6 +244,7 @@ export default function RootLayout({
                     {children}
                     <Footer />
                     <Toaster richColors position="bottom-left" />
+                    <AccessibilityMenu />
                 </RouteStateProvider>
             </body>
         </html>

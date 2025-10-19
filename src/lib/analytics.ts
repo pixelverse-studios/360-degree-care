@@ -19,7 +19,8 @@ declare global {
         umami?: any
         dataLayer?: any[]
         sitebehaviourTrackingSecret?: string
-        sbVisitorCustomEvent?: (event: string) => void
+        // eslint-disable-next-line no-unused-vars
+        sbVisitorCustomEvent?: (eventName: string) => void
         siteBehaviourEventMeta?: EventPayload
     }
 }

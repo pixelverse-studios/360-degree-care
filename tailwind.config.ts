@@ -137,15 +137,16 @@ const config: Config = {
                     'accordion-up 0.5s cubic-bezier(0.16, 1, 0.3, 1)'
             },
             fontSize: {
-                sm: '20px', // Tailwind's default "sm" is 14px, overriding it to 20px
-                base: '22px', // Default "base" is 16px, adjusting accordingly
-                lg: '24px',
-                xl: '28px',
-                '2xl': '32px',
-                '3xl': '40px',
-                '4xl': '48px',
-                '5xl': '56px',
-                '6xl': '64px'
+                xs: '0.875rem', // 14px
+                sm: '1rem', // 16px
+                base: '1.125rem', // 18px baseline
+                lg: '1.25rem', // 20px
+                xl: '1.5rem', // 24px
+                '2xl': '1.75rem', // 28px
+                '3xl': '2rem', // 32px
+                '4xl': '2.25rem', // 36px
+                '5xl': '2.625rem', // 42px
+                '6xl': '3rem' // 48px
             },
             fontFamily: {
                 body: ['var(--font-rubik)'],

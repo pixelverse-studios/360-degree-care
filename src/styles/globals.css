@@ -47,9 +47,19 @@
     --hero-bg: #a8b5a2;
     --headline-txt: #f8f1eb;
     --sub-h-txt: #d4a373;
+    --card: #ffffff;
+    --card-foreground: #1c1c1c;
+    --border: #dadde3;
+    --input: #dadde3;
+    --ring: #2b3a8d;
 
     --font-rubik: ${rubik.style.fontFamily};
     --font-merriweather: ${merriweather.style.fontFamily};
+    --font-scale: 1;
+}
+
+html {
+    font-size: calc(16px * var(--font-scale));
 }
 
 html,
@@ -66,6 +76,191 @@ body {
     min-height: calc(100dvh - 5.8rem);
     line-height: 1.1;
 }
+
+html.accessibility-grayscale body {
+    filter: grayscale(100%);
+}
+
+html.accessibility-high-contrast {
+    --white: #050505;
+    --muted-white: #101010;
+    --bright-white: #050505;
+    --black: #ffffff;
+    --muted-black: #e5e7eb;
+    --foreground: #f5f5f5;
+
+    --primary: #facc15;
+    --primary-muted: #fde68a;
+    --primary-bright: #fef08a;
+    --primary-dark: #ca8a04;
+
+    --secondary: #38bdf8;
+    --accent: #facc15;
+
+    --blue: #0f172a;
+    --blue-muted: #1f2937;
+    --blue-bright: #1f2937;
+    --blue-dark: #020617;
+
+    --nav-bg: #050505;
+    --nav-txt: #f5f5f5;
+    --hero-bg: #050505;
+    --headline-txt: #facc15;
+    --sub-h-txt: #facc15;
+    --card: #101010;
+    --card-foreground: #f5f5f5;
+    --border: #facc15;
+    --input: #444444;
+    --ring: #facc15;
+}
+
+html.accessibility-high-contrast body {
+    background-color: var(--bright-white) !important;
+    color: var(--black) !important;
+}
+
+html.accessibility-high-contrast a {
+    color: var(--primary) !important;
+    text-decoration: underline;
+}
+
+html.accessibility-high-contrast header,
+html.accessibility-high-contrast footer,
+html.accessibility-high-contrast main,
+html.accessibility-high-contrast section,
+html.accessibility-high-contrast .page-section {
+    background-color: var(--bright-white) !important;
+    color: var(--black) !important;
+}
+
+html.accessibility-high-contrast .gradient-down,
+html.accessibility-high-contrast .gradient-up,
+html.accessibility-high-contrast .gradient-left,
+html.accessibility-high-contrast .gradient-right {
+    background-image: none !important;
+    background-color: var(--bright-white) !important;
+}
+
+html.accessibility-negative-contrast {
+    --white: #001b44;
+    --muted-white: #012b6b;
+    --bright-white: #001b44;
+    --black: #fff97d;
+    --muted-black: #fff9c4;
+    --foreground: #fffb9d;
+
+    --primary: #ffdd1a;
+    --primary-muted: #fff59d;
+    --primary-bright: #fff176;
+    --primary-dark: #f59e0b;
+
+    --secondary: #fde047;
+    --accent: #ffdd1a;
+
+    --nav-bg: #001b44;
+    --nav-txt: #fffb9d;
+    --hero-bg: #001b44;
+    --headline-txt: #fff97d;
+    --sub-h-txt: #ffdd1a;
+    --card: #012e63;
+    --card-foreground: #fffbd1;
+    --border: #ffdd1a;
+    --input: #233a78;
+    --ring: #ffdd1a;
+}
+
+html.accessibility-negative-contrast body {
+    background-color: var(--bright-white) !important;
+    color: var(--black) !important;
+}
+
+html.accessibility-negative-contrast a {
+    color: var(--primary) !important;
+    text-decoration: underline;
+}
+
+html.accessibility-negative-contrast header,
+html.accessibility-negative-contrast footer,
+html.accessibility-negative-contrast main,
+html.accessibility-negative-contrast section,
+html.accessibility-negative-contrast .page-section {
+    background-color: var(--bright-white) !important;
+    color: var(--black) !important;
+}
+
+html.accessibility-negative-contrast .gradient-down,
+html.accessibility-negative-contrast .gradient-up,
+html.accessibility-negative-contrast .gradient-left,
+html.accessibility-negative-contrast .gradient-right {
+    background-image: none !important;
+    background-color: var(--bright-white) !important;
+}
+
+html.accessibility-light-background {
+    --white: #ffffff;
+    --muted-white: #f8fafc;
+    --bright-white: #ffffff;
+    --black: #1f2937;
+    --muted-black: #374151;
+    --foreground: #1f2937;
+
+    --primary: #0f766e;
+    --primary-muted: #5de4c3;
+    --primary-bright: #22d3ee;
+    --primary-dark: #0a4c47;
+
+    --secondary: #0369a1;
+    --accent: #0f766e;
+
+    --nav-bg: #ffffff;
+    --nav-txt: #0f172a;
+    --hero-bg: #e2e8f0;
+    --headline-txt: #0f172a;
+    --sub-h-txt: #0f766e;
+    --card: #f8fafc;
+    --card-foreground: #0f172a;
+    --border: #cbd5f5;
+    --input: #cbd5f5;
+    --ring: #0f766e;
+}
+
+html.accessibility-light-background body {
+    background-color: var(--bright-white) !important;
+    color: var(--black) !important;
+}
+
+html.accessibility-light-background a {
+    color: var(--primary) !important;
+}
+
+html.accessibility-light-background header,
+html.accessibility-light-background footer,
+html.accessibility-light-background main,
+html.accessibility-light-background section,
+html.accessibility-light-background .page-section {
+    background-color: var(--bright-white) !important;
+    color: var(--black) !important;
+}
+
+html.accessibility-light-background .gradient-down,
+html.accessibility-light-background .gradient-up,
+html.accessibility-light-background .gradient-left,
+html.accessibility-light-background .gradient-right {
+    background-image: none !important;
+    background-color: var(--bright-white) !important;
+}
+
+html.accessibility-readable-font body,
+html.accessibility-readable-font button,
+html.accessibility-readable-font input,
+html.accessibility-readable-font textarea {
+    font-family: 'Arial', 'Helvetica Neue', Helvetica, sans-serif !important;
+}
+
+html.accessibility-underline-links a {
+    text-decoration: underline !important;
+}
+
 
 .roundButton {
     height: 8rem;
