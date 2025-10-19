@@ -58,7 +58,7 @@ export default function LiteYouTube({
                 <iframe
                     src={iframeSrc}
                     title={title}
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; fullscreen"
                     allowFullScreen
                     className="absolute inset-0 h-full w-full border-0"
                     loading="lazy"

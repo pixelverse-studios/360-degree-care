@@ -2,7 +2,7 @@
 
 import { useEffect, useMemo, useRef, useState } from 'react'
 import {
-    Accessibility,
+    Settings,
     RefreshCw,
     ZoomIn,
     ZoomOut,
@@ -405,10 +405,13 @@ export function AccessibilityMenu() {
                 aria-expanded={open}
                 aria-controls="accessibility-menu"
                 ref={triggerRef}
-                className="flex h-12 w-12 items-center justify-center rounded-full bg-blue text-white shadow-lg transition hover:scale-[1.03] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue/70"
+                className="group relative flex h-12 w-12 items-center justify-center rounded-full bg-blue text-white shadow-lg transition hover:scale-[1.03] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue/70"
             >
-                <Accessibility className="h-6 w-6" aria-hidden="true" />
+                <Settings className="h-6 w-6" aria-hidden="true" />
                 <span className="sr-only">Toggle accessibility menu</span>
+                <span className="pointer-events-none absolute right-full mr-3 rounded-lg bg-blue text-white px-4 py-1.5 text-sm font-medium opacity-0 w-fit whitespace-nowrap shadow-lg transition-all duration-200 group-hover:translate-x-0 group-hover:opacity-100 group-focus-visible:translate-x-0 group-focus-visible:opacity-100 rtl:left-full rtl:right-auto rtl:ml-3">
+                    Accessibility Menu
+                </span>
             </button>
         </div>
     )

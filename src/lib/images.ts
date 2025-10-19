@@ -1,16 +1,7 @@
 const cloudinaryImageMap = new Map([
-    [
-        'Favicon_16x16',
-        'https://res.cloudinary.com/pixelverse-studios/image/upload/v1750022033/clients/360dc/Favicon_16x16_q22nns.png'
-    ],
-    [
-        'Favicon_64x64',
-        'https://res.cloudinary.com/pixelverse-studios/image/upload/v1750022033/clients/360dc/Favicon_64x64_tke6mn.png'
-    ],
-    [
-        'Favicon_32x32',
-        'https://res.cloudinary.com/pixelverse-studios/image/upload/v1750022033/clients/360dc/Favicon_32x32_hqwio1.png'
-    ],
+    ['Favicon_16x16', '/logo.png'],
+    ['Favicon_32x32', '/logo.png'],
+    ['Favicon_64x64', '/logo.png'],
     [
         'interim-bmv-2page-spread-boombox-hi-res',
         'https://res.cloudinary.com/pixelverse-studios/image/upload/v1750022033/clients/360dc/carousel/interim-bmv-2page-spread-boombox-hi-res_fisyoh.jpg'
