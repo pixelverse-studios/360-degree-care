@@ -9,10 +9,32 @@ import Footer from '@/components/Footer'
 import { Toaster } from '@/components/ui/sonner'
 import { RouteStateProvider } from '@/lib/providers'
 import { getImgSrc } from '@/lib/images'
-import { CampaignTracker } from '@/components/CampaignTracker'
-import { BounceTracker } from '@/components/BounceTracker'
-import { AccessibilityMenu } from '@/components/accessibility/AccessibilityMenu'
+import dynamic from 'next/dynamic'
 import { FACEBOOK, INSTA, PHONE, EMAIL } from '@/utils/constants'
+
+const CampaignTracker = dynamic(
+    () =>
+        import('@/components/CampaignTracker').then(module => ({
+            default: module.CampaignTracker
+        })),
+    { ssr: false, loading: () => null }
+)
+
+const BounceTracker = dynamic(
+    () =>
+        import('@/components/BounceTracker').then(module => ({
+            default: module.BounceTracker
+        })),
+    { ssr: false, loading: () => null }
+)
+
+const AccessibilityMenu = dynamic(
+    () =>
+        import('@/components/accessibility/AccessibilityMenu').then(module => ({
+            default: module.AccessibilityMenu
+        })),
+    { ssr: false, loading: () => null }
+)
 
 // import 'animate.css'
 import '../styles/globals.css'

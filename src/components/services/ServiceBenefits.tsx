@@ -2,7 +2,7 @@
 
 import { SlideInSection, StaggeredSection } from '../animations'
 import { ServiceListProps } from '@/lib/types'
-import * as FA6Icons from 'react-icons/fa6'
+import { resolveIconComponent } from '@/lib/iconMap'
 
 export default function ServiceBenefits({ header, items }: ServiceListProps) {
     return (
@@ -15,11 +15,8 @@ export default function ServiceBenefits({ header, items }: ServiceListProps) {
                 childClass="h-full"
             >
                 {items.map(({ title, description, Icon }) => {
-                    const IconComponent =
-                        typeof Icon === 'string'
-                            ? FA6Icons[Icon as keyof typeof FA6Icons] ||
-                              (() => null)
-                            : Icon
+                    const IconComponent = resolveIconComponent(Icon)
+                    if (!IconComponent) return null
                     return (
                         <div
                             key={title}

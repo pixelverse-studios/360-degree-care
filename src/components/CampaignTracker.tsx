@@ -4,6 +4,13 @@ import { useEffect } from 'react'
 import { usePathname, useSearchParams } from 'next/navigation'
 import analytics from '@/lib/analytics'
 
+const isDev = process.env.NODE_ENV !== 'production'
+const debugLog = (...args: unknown[]) => {
+    if (isDev) {
+        console.log(...args)
+    }
+}
+
 export function CampaignTracker() {
     const pathname = usePathname()
     const searchParams = useSearchParams()
@@ -32,15 +39,14 @@ export function CampaignTracker() {
             }
 
             analytics.trackCampaign(campaignData)
-
-            console.log('Campaign tracked:', campaignData)
+            debugLog('Campaign tracked:', campaignData)
 
             // Try to notify SiteBehaviour directly if it's loaded
             const sendToSiteBehaviour = () => {
                 if (
                     typeof (window as any).sbVisitorCustomEvent !== 'undefined'
                 ) {
-                    console.log('SiteBehaviour found, sending UTM data')
+                    debugLog('SiteBehaviour found, sending UTM data')
                     // Send a custom event for immediate tracking
                     const eventName = campaignData.utm_campaign
                         ? `Campaign: ${campaignData.utm_campaign}`
@@ -48,7 +54,7 @@ export function CampaignTracker() {
                           ? `Source: ${campaignData.utm_source}`
                           : 'Campaign Visit'
                     ;(window as any).sbVisitorCustomEvent(eventName)
-                    console.log('SiteBehaviour custom event sent:', eventName)
+                    debugLog('SiteBehaviour custom event sent:', eventName)
                     return true
                 }
                 return false
@@ -64,7 +70,7 @@ export function CampaignTracker() {
                     if (sendToSiteBehaviour() || attempts >= maxAttempts) {
                         clearInterval(checkInterval)
                         if (attempts >= maxAttempts) {
-                            console.log(
+                            debugLog(
                                 'SiteBehaviour did not load within 10 seconds'
                             )
                         }
@@ -75,7 +81,7 @@ export function CampaignTracker() {
             const cookieData = analytics.getCampaignDataFromCookie()
             if (cookieData) {
                 analytics.trackCampaign(cookieData)
-                console.log('Campaign tracked from cookie:', cookieData)
+                debugLog('Campaign tracked from cookie:', cookieData)
             }
         }
     }, [pathname, searchParams])

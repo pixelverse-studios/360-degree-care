@@ -1,9 +1,12 @@
+import type { IconType } from 'react-icons'
+import type { IconName } from './iconMap'
+
 export interface ServiceListProps {
     header: string
     items: Array<{
         title: string
         description: string
-        Icon: any
+        Icon: IconName | IconType | string
     }>
 }
 

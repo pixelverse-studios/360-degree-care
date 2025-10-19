@@ -2,7 +2,7 @@
 
 import { ServiceListProps } from '@/lib/types'
 import { SlideInSection, StaggeredSection } from '../animations'
-import * as FA6Icons from 'react-icons/fa6'
+import { resolveIconComponent } from '@/lib/iconMap'
 
 type LegacyServiceListProps = {
     title: string
@@ -47,11 +47,8 @@ export default function ServiceList(props: CombinedServiceListProps) {
                 </SlideInSection>
                 <StaggeredSection className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-4xl mx-auto">
                     {items.map(({ title, description, Icon }) => {
-                        const IconComponent =
-                            typeof Icon === 'string'
-                                ? FA6Icons[Icon as keyof typeof FA6Icons] ||
-                                  (() => null)
-                                : Icon
+                        const IconComponent = resolveIconComponent(Icon)
+                        if (!IconComponent) return null
 
                         return (
                             <li

@@ -14,6 +14,13 @@ interface CampaignData extends UTMParams {
 
 type EventPayload = Record<string, unknown>
 
+const isDev = process.env.NODE_ENV !== 'production'
+const debugLog = (...args: unknown[]) => {
+    if (isDev) {
+        console.log(...args)
+    }
+}
+
 declare global {
     interface Window {
         umami?: any
@@ -97,7 +104,7 @@ const trackEvent = (eventName: string, payload: EventPayload = {}) => {
             ;(window as any).siteBehaviourEventMeta = payload
             ;(window as any).sbVisitorCustomEvent(eventName)
         } catch (error) {
-            console.log('SiteBehaviour custom event error:', error)
+            debugLog('SiteBehaviour custom event error:', error)
         }
     }
 }
@@ -134,10 +141,10 @@ const trackCampaign = (data?: CampaignData) => {
                           : 'Campaign Visit'
 
                     ;(window as any).sbVisitorCustomEvent(eventName)
-                    console.log('SiteBehaviour event sent:', eventName)
+                    debugLog('SiteBehaviour event sent:', eventName)
                     return true
                 } catch (error) {
-                    console.log('SiteBehaviour custom event error:', error)
+                    debugLog('SiteBehaviour custom event error:', error)
                     return false
                 }
             }
@@ -146,7 +153,7 @@ const trackCampaign = (data?: CampaignData) => {
 
         // Try to send immediately
         if (!sendToSiteBehaviour()) {
-            console.log('SiteBehaviour not loaded yet - will retry...')
+            debugLog('SiteBehaviour not loaded yet - will retry...')
             // Retry logic - wait for SiteBehaviour to load
             let attempts = 0
             const maxAttempts = 20 // 10 seconds total
@@ -155,9 +162,7 @@ const trackCampaign = (data?: CampaignData) => {
                 if (sendToSiteBehaviour() || attempts >= maxAttempts) {
                     clearInterval(checkInterval)
                     if (attempts >= maxAttempts) {
-                        console.log(
-                            'SiteBehaviour did not load within 10 seconds'
-                        )
+                        debugLog('SiteBehaviour did not load within 10 seconds')
                     }
                 }
             }, 500) // Check every 500ms
@@ -177,7 +182,7 @@ const trackCampaign = (data?: CampaignData) => {
         }
 
         // Log for debugging
-        console.log('SiteBehaviour UTM tracking:', sbData)
+        debugLog('SiteBehaviour UTM tracking:', sbData)
     }
 
     if (typeof (window as any).umami !== 'undefined') {
