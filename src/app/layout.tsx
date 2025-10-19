@@ -210,21 +210,6 @@ export default function RootLayout({
                 />
                 {isProduction && (
                     <Script
-                        id="gtag-manager-init"
-                        strategy="lazyOnload"
-                        dangerouslySetInnerHTML={{
-                            __html: `
-              (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-              new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-              j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-              'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-              })(window,document,'script','dataLayer','GTM-PGDVF5CR');
-            `
-                        }}
-                    />
-                )}
-                {isProduction && (
-                    <Script
                         id="sitebehaviour-init"
                         strategy="lazyOnload"
                         dangerouslySetInnerHTML={{
@@ -246,16 +231,6 @@ export default function RootLayout({
             <body
                 className={`antialiased ${rubik.variable} ${merriweather.variable}`}
             >
-                {isProduction && (
-                    <noscript>
-                        <iframe
-                            src="https://www.googletagmanager.com/ns.html?id=GTM-PGDVF5CR"
-                            height="0"
-                            width="0"
-                            className="hidden invisible"
-                        ></iframe>
-                    </noscript>
-                )}
                 <RouteStateProvider>
                     <Suspense fallback={null}>
                         <CampaignTracker />

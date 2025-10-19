@@ -3,7 +3,7 @@
 ## Overview
 
 - 360 Degree Care is a Next.js 14 App Router marketing site for a New Jersey home-health agency, built with TypeScript, Tailwind CSS, and Radix-based UI primitives.
-- `src/app/layout.tsx` injects global fonts, Google Tag Manager (`GTM-PGDVF5CR`), the SiteBehaviour tracker, and wraps every page with `RouteStateProvider`, `CampaignTracker`, shared navigation, breadcrumbs, footer, and toast notifications.
+- `src/app/layout.tsx` injects global fonts, the SiteBehaviour tracker, and wraps every page with `RouteStateProvider`, `CampaignTracker`, shared navigation, breadcrumbs, footer, and toast notifications.
 - Service and county experiences stitch together structured content from `src/lib/content/**` and purpose-built county components under `src/components/county/**` to deliver rich landing pages per service and geography.
 - Interactive flows (contact, campaign attribution, FAQ accordions, animations) live in client components that lean on React Hook Form, Zod, and Sonner while reusing constants and helpers from `src/utils`.
 
