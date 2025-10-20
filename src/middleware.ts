@@ -1,5 +1,8 @@
 import { NextRequest, NextResponse } from 'next/server'
 
+const middlewareEnabled =
+    process.env.NEXT_PUBLIC_ENABLE_CAMPAIGN_MIDDLEWARE === 'true'
+
 const UTM_PARAMS = [
     'utm_source',
     'utm_medium',
@@ -9,6 +12,10 @@ const UTM_PARAMS = [
 ] as const
 
 export function middleware(request: NextRequest) {
+    if (!middlewareEnabled) {
+        return NextResponse.next()
+    }
+
     const { pathname, searchParams } = request.nextUrl
 
     const response = NextResponse.next()
@@ -43,6 +50,10 @@ export function middleware(request: NextRequest) {
     return response
 }
 
-export const config = {
-    matcher: ['/((?!_next/static|_next/image|favicon.ico|api/).*)']
-}
+export const config = middlewareEnabled
+    ? {
+          matcher: ['/((?!_next/static|_next/image|favicon.ico|api/).*)']
+      }
+    : {
+          matcher: [] as const
+      }
