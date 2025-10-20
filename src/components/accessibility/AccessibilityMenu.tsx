@@ -14,7 +14,7 @@ import {
     Underline
 } from 'lucide-react'
 import type { LucideIcon } from 'lucide-react'
-import { cn } from '@/lib/utils'
+import styles from './accessibility-menu.module.css'
 
 type ToggleSettingKey =
     | 'grayscale'
@@ -268,32 +268,31 @@ export function AccessibilityMenu() {
     }, [open])
 
     return (
-        <div
-            className={cn(
-                'fixed bottom-6 right-6 z-[60] flex flex-col items-end gap-3'
-            )}
-        >
+        <div className={styles.menuContainer}>
             {open && (
                 <div
                     id="accessibility-menu"
                     ref={menuRef}
-                    className="w-64 rounded-xl border border-blue/20 bg-white p-4 shadow-xl ring-1 ring-blue/10"
+                    className={styles.menuShell}
                 >
-                    <div className="mb-3 flex items-center justify-between">
-                        <h2 className="text-base font-semibold text-blue">
+                    <div className={styles.menuHeader}>
+                        <h2 className={styles.menuTitle}>
                             Accessibility Tools
                         </h2>
-                        <span className="rounded-full bg-blue/10 px-2 py-0.5 text-xs font-medium text-blue">
+                        <span className={styles.statusPill}>
                             Text {fontScaleLabel}
                         </span>
                     </div>
-                    <div className="space-y-4 text-sm">
+                    <div className={styles.actionsList}>
                         {MENU_SECTIONS.map(section => (
-                            <div key={section.title} className="space-y-2">
-                                <p className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">
+                            <div
+                                key={section.title}
+                                className={styles.sectionGroup}
+                            >
+                                <p className={styles.sectionLabel}>
                                     {section.title}
                                 </p>
-                                <div className="space-y-1.5">
+                                <div className={styles.sectionItems}>
                                     {section.items.map(item => {
                                         const Icon = item.icon
 
@@ -307,15 +306,14 @@ export function AccessibilityMenu() {
                                                     type="button"
                                                     onClick={increaseText}
                                                     disabled={!canIncrease}
-                                                    className={cn(
-                                                        'flex w-full items-center gap-3 rounded-lg px-3 py-2 text-left transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue',
-                                                        canIncrease
-                                                            ? 'hover:bg-blue/5'
-                                                            : 'cursor-not-allowed opacity-50'
-                                                    )}
+                                                    className={
+                                                        styles.menuButton
+                                                    }
                                                 >
                                                     <Icon
-                                                        className="h-4 w-4 text-blue"
+                                                        className={
+                                                            styles.menuIcon
+                                                        }
                                                         aria-hidden="true"
                                                     />
                                                     <span>{item.label}</span>
@@ -333,15 +331,14 @@ export function AccessibilityMenu() {
                                                     type="button"
                                                     onClick={decreaseText}
                                                     disabled={!canDecrease}
-                                                    className={cn(
-                                                        'flex w-full items-center gap-3 rounded-lg px-3 py-2 text-left transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue',
-                                                        canDecrease
-                                                            ? 'hover:bg-blue/5'
-                                                            : 'cursor-not-allowed opacity-50'
-                                                    )}
+                                                    className={
+                                                        styles.menuButton
+                                                    }
                                                 >
                                                     <Icon
-                                                        className="h-4 w-4 text-blue"
+                                                        className={
+                                                            styles.menuIcon
+                                                        }
                                                         aria-hidden="true"
                                                     />
                                                     <span>{item.label}</span>
@@ -364,20 +361,13 @@ export function AccessibilityMenu() {
                                                         toggleItem.toggleKey
                                                     )
                                                 }
-                                                className={cn(
-                                                    'flex w-full items-center gap-3 rounded-lg px-3 py-2 text-left transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue',
-                                                    isActive
-                                                        ? 'bg-blue text-white'
-                                                        : 'hover:bg-blue/5'
-                                                )}
+                                                data-active={
+                                                    isActive ? 'true' : 'false'
+                                                }
+                                                className={styles.menuButton}
                                             >
                                                 <ToggleIcon
-                                                    className={cn(
-                                                        'h-4 w-4',
-                                                        isActive
-                                                            ? 'text-white'
-                                                            : 'text-blue'
-                                                    )}
+                                                    className={styles.menuIcon}
                                                     aria-hidden="true"
                                                 />
                                                 <span>{toggleItem.label}</span>
@@ -390,9 +380,13 @@ export function AccessibilityMenu() {
                         <button
                             type="button"
                             onClick={resetPreferences}
-                            className="flex w-full items-center gap-3 rounded-lg border border-blue/20 px-3 py-2 text-left text-sm font-medium text-blue transition hover:bg-blue/5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue"
+                            className={styles.menuButton}
+                            data-variant="reset"
                         >
-                            <RefreshCw className="h-4 w-4" aria-hidden="true" />
+                            <RefreshCw
+                                className={styles.menuIcon}
+                                aria-hidden="true"
+                            />
                             Reset
                         </button>
                     </div>
@@ -405,11 +399,14 @@ export function AccessibilityMenu() {
                 aria-expanded={open}
                 aria-controls="accessibility-menu"
                 ref={triggerRef}
-                className="group relative flex h-12 w-12 items-center justify-center rounded-full bg-blue text-white shadow-lg transition hover:scale-[1.03] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue/70"
+                className={styles.menuTrigger}
             >
-                <Settings className="h-6 w-6" aria-hidden="true" />
+                <Settings
+                    style={{ width: 20, height: 20 }}
+                    aria-hidden="true"
+                />
                 <span className="sr-only">Toggle accessibility menu</span>
-                <span className="pointer-events-none absolute right-full mr-3 rounded-lg bg-blue text-white px-4 py-1.5 text-sm font-medium opacity-0 w-fit whitespace-nowrap shadow-lg transition-all duration-200 group-hover:translate-x-0 group-hover:opacity-100 group-focus-visible:translate-x-0 group-focus-visible:opacity-100 rtl:left-full rtl:right-auto rtl:ml-3">
+                <span className={styles.menuTriggerTooltip}>
                     Accessibility Menu
                 </span>
             </button>
