@@ -23,21 +23,132 @@ const debugLog = (...args: unknown[]) => {
 
 declare global {
     interface Window {
-        umami?: any
-        dataLayer?: any[]
         sitebehaviourTrackingSecret?: string
         // eslint-disable-next-line no-unused-vars
         sbVisitorCustomEvent?: (eventName: string) => void
         siteBehaviourEventMeta?: EventPayload
+        siteBehaviourUTM?: CampaignData
+    }
+}
+
+type AdSourceCode = 'G' | 'M'
+
+type AdSourceInfo = {
+    code: AdSourceCode
+    id: 'google_ads' | 'meta_ads'
+    label: 'Google Ads' | 'Meta Ads'
+    eventName: string
+}
+
+const AD_SOURCE_PARAM = 'src'
+const AD_SOURCE_SESSION_KEY = 'ad_source_last'
+
+const AD_SOURCE_MAP: Record<AdSourceCode, AdSourceInfo> = {
+    G: {
+        code: 'G',
+        id: 'google_ads',
+        label: 'Google Ads',
+        eventName: 'Ad Source: Google'
+    },
+    M: {
+        code: 'M',
+        id: 'meta_ads',
+        label: 'Meta Ads',
+        eventName: 'Ad Source: Meta'
+    }
+}
+
+const sendSiteBehaviourEvent = (
+    eventName: string,
+    payload: EventPayload = {}
+): boolean => {
+    if (typeof window === 'undefined') return false
+    if (typeof (window as any).sbVisitorCustomEvent !== 'function') return false
+
+    try {
+        ;(window as any).siteBehaviourEventMeta = payload
+        ;(window as any).sbVisitorCustomEvent(eventName)
+        debugLog('SiteBehaviour event sent:', eventName, payload)
+        return true
+    } catch (error) {
+        debugLog('SiteBehaviour custom event error:', error)
+        return false
+    }
+}
+
+const enqueueSiteBehaviourEvent = (
+    eventName: string,
+    payload: EventPayload = {},
+    options: { maxAttempts?: number; intervalMs?: number } = {}
+) => {
+    const { maxAttempts = 20, intervalMs = 500 } = options
+
+    if (sendSiteBehaviourEvent(eventName, payload)) {
+        return
+    }
+
+    let attempts = 0
+    const timer = setInterval(() => {
+        attempts += 1
+        if (
+            sendSiteBehaviourEvent(eventName, payload) ||
+            attempts >= maxAttempts
+        ) {
+            clearInterval(timer)
+            if (attempts >= maxAttempts) {
+                debugLog(
+                    `SiteBehaviour event "${eventName}" not sent after ${
+                        (maxAttempts * intervalMs) / 1000
+                    }s`
+                )
+            }
+        }
+    }, intervalMs)
+}
+
+const normalizeAdSource = (
+    value: string | null | undefined
+): AdSourceInfo | null => {
+    if (!value) return null
+
+    const normalized = value.trim().toUpperCase() as AdSourceCode
+    return AD_SOURCE_MAP[normalized] ?? null
+}
+
+const readTrackedAdSource = () => {
+    if (typeof window === 'undefined') return null
+
+    try {
+        return window.sessionStorage?.getItem(AD_SOURCE_SESSION_KEY) ?? null
+    } catch {
+        return null
+    }
+}
+
+const storeTrackedAdSource = (value: string) => {
+    if (typeof window === 'undefined') return
+
+    try {
+        window.sessionStorage?.setItem(AD_SOURCE_SESSION_KEY, value)
+    } catch {
+        // ignore storage issues (private mode etc.)
     }
 }
 
 const trackPageView = (url?: string) => {
-    if (typeof window !== 'undefined' && (window as any).umami) {
-        if (url) {
-            ;(window as any).umami.trackView(url)
-        } else {
-            ;(window as any).umami.trackView(window.location.pathname)
+    if (typeof window === 'undefined') return
+
+    const landingPage = url || window.location.pathname
+    debugLog('SiteBehaviour page view:', landingPage)
+
+    if (typeof (window as any).sbVisitorCustomEvent === 'function') {
+        try {
+            ;(window as any).siteBehaviourEventMeta = {
+                landing_page: landingPage
+            }
+            ;(window as any).sbVisitorCustomEvent('Page View')
+        } catch (error) {
+            debugLog('SiteBehaviour page view error:', error)
         }
     }
 }
@@ -87,26 +198,8 @@ const getCampaignDataFromURL = (): UTMParams => {
 const trackEvent = (eventName: string, payload: EventPayload = {}) => {
     if (typeof window === 'undefined') return
 
-    if (window.dataLayer) {
-        window.dataLayer.push({
-            event: eventName,
-            ...payload
-        })
-    }
-
-    if (typeof (window as any).umami !== 'undefined') {
-        ;(window as any).umami.track(eventName, payload)
-    }
-
-    if (typeof (window as any).sbVisitorCustomEvent === 'function') {
-        try {
-            // SiteBehaviour currently only accepts the event name, so stash payload globally
-            ;(window as any).siteBehaviourEventMeta = payload
-            ;(window as any).sbVisitorCustomEvent(eventName)
-        } catch (error) {
-            debugLog('SiteBehaviour custom event error:', error)
-        }
-    }
+    debugLog('Tracking SiteBehaviour event:', eventName, payload)
+    enqueueSiteBehaviourEvent(eventName, payload)
 }
 
 const trackCampaign = (data?: CampaignData) => {
@@ -117,77 +210,67 @@ const trackCampaign = (data?: CampaignData) => {
 
     if (!campaignData || !Object.keys(campaignData).length) return
 
-    if (window.dataLayer) {
-        window.dataLayer.push({
-            event: 'campaign_tracking',
-            ...campaignData
-        })
-    }
+    if (Object.keys(campaignData).length > 0) {
+        const landingPage =
+            (campaignData as CampaignData).landing_page ||
+            window.location.pathname
 
-    // SiteBehaviour tracking - add UTM params to window for their script to pick up
-    if (campaignData && Object.keys(campaignData).length > 0) {
-        // Store UTM data in window object for SiteBehaviour to access
         ;(window as any).siteBehaviourUTM = campaignData
 
-        // Trigger a custom event that SiteBehaviour can capture
-        const sendToSiteBehaviour = () => {
-            if (typeof (window as any).sbVisitorCustomEvent !== 'undefined') {
-                try {
-                    // Send custom event with campaign name or source
-                    const eventName = campaignData.utm_campaign
-                        ? `Campaign: ${campaignData.utm_campaign}`
-                        : campaignData.utm_source
-                          ? `Source: ${campaignData.utm_source}`
-                          : 'Campaign Visit'
+        const eventName = campaignData.utm_campaign
+            ? `Campaign: ${campaignData.utm_campaign}`
+            : campaignData.utm_source
+              ? `Source: ${campaignData.utm_source}`
+              : 'Campaign Visit'
 
-                    ;(window as any).sbVisitorCustomEvent(eventName)
-                    debugLog('SiteBehaviour event sent:', eventName)
-                    return true
-                } catch (error) {
-                    debugLog('SiteBehaviour custom event error:', error)
-                    return false
-                }
-            }
-            return false
-        }
-
-        // Try to send immediately
-        if (!sendToSiteBehaviour()) {
-            debugLog('SiteBehaviour not loaded yet - will retry...')
-            // Retry logic - wait for SiteBehaviour to load
-            let attempts = 0
-            const maxAttempts = 20 // 10 seconds total
-            const checkInterval = setInterval(() => {
-                attempts++
-                if (sendToSiteBehaviour() || attempts >= maxAttempts) {
-                    clearInterval(checkInterval)
-                    if (attempts >= maxAttempts) {
-                        debugLog('SiteBehaviour did not load within 10 seconds')
-                    }
-                }
-            }, 500) // Check every 500ms
-        }
-
-        // Also try to add UTM params to the data layer that SiteBehaviour might monitor
-        const sbData = {
-            event: 'campaign_visit',
+        const payload = {
             utm_source: campaignData.utm_source,
             utm_medium: campaignData.utm_medium,
             utm_campaign: campaignData.utm_campaign,
             utm_term: campaignData.utm_term,
             utm_content: campaignData.utm_content,
-            landing_page:
-                (campaignData as CampaignData).landing_page ||
-                window.location.pathname
+            landing_page: landingPage
         }
 
-        // Log for debugging
-        debugLog('SiteBehaviour UTM tracking:', sbData)
+        debugLog('SiteBehaviour UTM tracking:', payload)
+        enqueueSiteBehaviourEvent(eventName, payload)
+    }
+}
+
+const trackAdSource = (
+    rawSource: string | null | undefined,
+    landingPage?: string
+): AdSourceInfo | null => {
+    if (typeof window === 'undefined') return null
+
+    const sourceInfo = normalizeAdSource(rawSource)
+    if (!sourceInfo) return null
+
+    const lastTracked = readTrackedAdSource()
+    if (lastTracked === sourceInfo.id) {
+        debugLog('Ad source already tracked for this session:', sourceInfo)
+        return sourceInfo
     }
 
-    if (typeof (window as any).umami !== 'undefined') {
-        ;(window as any).umami.track('campaign', campaignData)
+    const destination = landingPage || window.location.pathname
+    const payload = {
+        source: sourceInfo.id,
+        label: sourceInfo.label,
+        landing_page: destination
     }
+
+    debugLog('Tracking ad source via SiteBehaviour:', payload)
+    enqueueSiteBehaviourEvent(sourceInfo.eventName, payload)
+    storeTrackedAdSource(sourceInfo.id)
+
+    return sourceInfo
+}
+
+const getAdSourceFromURL = (): AdSourceInfo | null => {
+    if (typeof window === 'undefined') return null
+
+    const params = new URLSearchParams(window.location.search)
+    return normalizeAdSource(params.get(AD_SOURCE_PARAM))
 }
 
 const storeCampaignData = (data: CampaignData) => {
@@ -240,12 +323,14 @@ const analytics = {
     trackPageView,
     trackEvent,
     trackCampaign,
+    trackAdSource,
     getCampaignDataFromCookie,
     getCampaignDataFromURL,
+    getAdSourceFromURL,
     storeCampaignData,
     getFirstTouchAttribution,
     getLastTouchAttribution
 }
 
 export default analytics
-export type { UTMParams, CampaignData, EventPayload }
+export type { UTMParams, CampaignData, EventPayload, AdSourceInfo }

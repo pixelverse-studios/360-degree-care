@@ -16,6 +16,11 @@ export function CampaignTracker() {
     const searchParams = useSearchParams()
 
     useEffect(() => {
+        const adSourceParam = searchParams.get('src')
+        if (adSourceParam) {
+            analytics.trackAdSource(adSourceParam, pathname)
+        }
+
         const utmParams = analytics.getCampaignDataFromURL()
         const hasCampaignData = Object.keys(utmParams).length > 0
 
