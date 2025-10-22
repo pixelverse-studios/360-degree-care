@@ -401,10 +401,7 @@ export function AccessibilityMenu() {
                 ref={triggerRef}
                 className={styles.menuTrigger}
             >
-                <Settings
-                    style={{ width: 20, height: 20 }}
-                    aria-hidden="true"
-                />
+                <Settings className="h-5 w-5" aria-hidden="true" />
                 <span className="sr-only">Toggle accessibility menu</span>
                 <span className={styles.menuTriggerTooltip}>
                     Accessibility Menu

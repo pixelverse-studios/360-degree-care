@@ -67,17 +67,17 @@ export default function LiteYouTube({
                 <button
                     type="button"
                     aria-label={`Play video: ${title}`}
-                    className="absolute inset-0 h-full w-full cursor-pointer overflow-hidden"
+                    className="group absolute inset-0 h-full w-full cursor-pointer overflow-hidden"
                     onClick={() => setIsActive(true)}
                 >
-                    <span
-                        className="absolute inset-0 z-0 block h-full w-full bg-cover bg-center transition-transform duration-300 hover:scale-105"
-                        style={{
-                            backgroundImage: `url(${generateThumbnail(videoId)})`
-                        }}
-                    ></span>
+                    <img
+                        src={generateThumbnail(videoId)}
+                        alt=""
+                        className="absolute inset-0 z-0 h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
+                        loading="lazy"
+                    />
                     <span className="absolute inset-0 flex h-full w-full items-center justify-center">
-                        <span className="flex h-16 w-16 items-center justify-center rounded-full bg-black/60 text-white transition-transform duration-300 hover:scale-110">
+                        <span className="flex h-16 w-16 items-center justify-center rounded-full bg-black/60 text-white transition-transform duration-300 group-hover:scale-110">
                             ▶
                         </span>
                     </span>

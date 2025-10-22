@@ -2,7 +2,6 @@ import Script from 'next/script'
 import { Suspense } from 'react'
 import { Merriweather, Rubik } from 'next/font/google'
 
-import CanonicalLink from '@/components/CanonicalLink'
 import { Header } from '@/components/nav/Header'
 import Breadcrumbs from '@/components/nav/Breadcrumbs'
 import Footer from '@/components/Footer'
@@ -40,7 +39,7 @@ const AccessibilityMenu = dynamic(
 import '../styles/globals.css'
 
 export const metadata = {
-    metadataBase: new URL('https://www.360degreecare.net'),
+    metadataBase: new URL('https://360degreecare.net'),
     icons: {
         icon: [
             {
@@ -73,21 +72,24 @@ export const metadata = {
         title: 'Concierge Home Care Services in NJ | 360 Degree Care',
         description:
             '360 Degree Care delivers concierge home care, nursing, companion, and staffing support across New Jersey, empowering families with compassionate caregivers.',
-        url: 'https://www.360degreecare.net',
+        url: 'https://360degreecare.net',
         siteName: '360 Degree Care',
         type: 'website',
         manifest: '/manifest.json'
+    },
+    alternates: {
+        canonical: '/'
     }
 }
 
 const localBusinessSchema = {
     '@context': 'https://schema.org',
     '@type': 'HomeHealthCareService',
-    '@id': 'https://www.360degreecare.net/#localbusiness',
+    '@id': 'https://360degreecare.net/#localbusiness',
     name: '360 Degree Care',
-    url: 'https://www.360degreecare.net',
-    image: 'https://www.360degreecare.net/assets/logo.png',
-    logo: 'https://www.360degreecare.net/assets/logo.png',
+    url: 'https://360degreecare.net',
+    image: 'https://360degreecare.net/assets/logo.png',
+    logo: 'https://360degreecare.net/assets/logo.png',
     telephone: PHONE,
     email: EMAIL,
     priceRange: '$$',
@@ -142,10 +144,10 @@ const localBusinessSchema = {
 const organizationSchema = {
     '@context': 'https://schema.org',
     '@type': 'Organization',
-    '@id': 'https://www.360degreecare.net/#organization',
+    '@id': 'https://360degreecare.net/#organization',
     name: '360 Degree Care',
-    url: 'https://www.360degreecare.net',
-    logo: 'https://www.360degreecare.net/assets/logo.png',
+    url: 'https://360degreecare.net',
+    logo: 'https://360degreecare.net/assets/logo.png',
     legalName: '360 Degree Care',
     email: EMAIL,
     telephone: PHONE,
@@ -185,7 +187,6 @@ export default function RootLayout({
     return (
         <html lang="en-US">
             <head>
-                <CanonicalLink />
                 <Script
                     id="local-business-schema"
                     type="application/ld+json"

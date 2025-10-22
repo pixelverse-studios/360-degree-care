@@ -13,13 +13,12 @@ const ExpectationItem = ({ img, description }: ExpectationItem) => (
     <li className="">
         {getImgSrc(img) ? (
             <Image
-                className="h-[12rem] w-auto mb-4 shadow-lg rounded-lg object-cover"
+                className="mb-4 h-48 w-auto rounded-lg shadow-lg object-cover"
                 src={getImgSrc(img) as string}
                 alt={`${description} - image`}
                 width={320}
                 height={320}
                 sizes="(min-width: 1024px) 20vw, (min-width: 768px) 30vw, 60vw"
-                style={{ width: 'auto', height: '12rem' }}
             />
         ) : null}
         <p className="text-sm w-[90%] mx-auto">{description}</p>
@@ -63,13 +62,12 @@ export default function HomeHealthCareHero({ header }: { header: string }) {
                 </div>
                 {getImgSrc('mother-daughter') ? (
                     <Image
-                        className="h-fit w-fit mx-auto xl:mx-0 rounded-xl shadow-xl object-cover"
+                        className="mx-auto h-auto w-full rounded-xl shadow-xl object-cover xl:mx-0 xl:w-fit"
                         src={getImgSrc('mother-daughter') as string}
                         alt="Home Healthcare Aid graphic"
                         width={800}
                         height={600}
                         sizes="(min-width: 1024px) 45vw, 90vw"
-                        style={{ width: '100%', height: 'auto' }}
                     />
                 ) : null}
             </AnimatedSection>

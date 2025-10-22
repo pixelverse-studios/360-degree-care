@@ -74,16 +74,15 @@ export default function CompanionCareView({ header }: CompanionCareViewProps) {
                         </div>
 
                         {rollerCoaster ? (
-                            <Image
-                                src={rollerCoaster}
-                                alt="Care professional providing companion care in New Jersey"
-                                className="rounded-xl shadow-xl w-full h-auto"
-                                width={1200}
-                                height={800}
-                                sizes="(min-width: 1024px) 40vw, 90vw"
-                                style={{ width: '100%', height: 'auto' }}
-                            />
-                        ) : null}
+                        <Image
+                            src={rollerCoaster}
+                            alt="Care professional providing companion care in New Jersey"
+                            className="rounded-xl shadow-xl w-full h-auto"
+                            width={1200}
+                            height={800}
+                            sizes="(min-width: 1024px) 40vw, 90vw"
+                        />
+                    ) : null}
                     </div>
                 </AnimatedSection>
 

@@ -33,6 +33,67 @@ const visibleClasses: Record<AnimationVariant, string> = {
     zoom: 'opacity-100 scale-100'
 }
 
+const DURATION_CLASS_MAP: Record<number, string> = {
+    0: 'duration-0',
+    75: 'duration-75',
+    100: 'duration-100',
+    150: 'duration-150',
+    200: 'duration-200',
+    250: 'duration-[250ms]',
+    300: 'duration-300',
+    350: 'duration-[350ms]',
+    400: 'duration-[400ms]',
+    450: 'duration-[450ms]',
+    500: 'duration-500',
+    600: 'duration-[600ms]',
+    700: 'duration-700',
+    800: 'duration-[800ms]',
+    900: 'duration-[900ms]',
+    1000: 'duration-1000'
+}
+
+const DELAY_CLASS_MAP: Record<number, string> = {
+    0: 'delay-0',
+    75: 'delay-75',
+    100: 'delay-100',
+    150: 'delay-150',
+    200: 'delay-200',
+    250: 'delay-[250ms]',
+    300: 'delay-300',
+    350: 'delay-[350ms]',
+    400: 'delay-[400ms]',
+    450: 'delay-[450ms]',
+    500: 'delay-500',
+    600: 'delay-[600ms]',
+    700: 'delay-700',
+    800: 'delay-[800ms]',
+    900: 'delay-[900ms]',
+    1000: 'delay-1000'
+}
+
+const DURATION_OPTIONS = Object.keys(DURATION_CLASS_MAP).map(Number)
+const DELAY_OPTIONS = Object.keys(DELAY_CLASS_MAP).map(Number)
+
+const getClosestTransitionClass = (
+    valueInSeconds: number,
+    map: Record<number, string>,
+    fallbackMs: number,
+    options: number[]
+) => {
+    const msValue = Math.max(0, Math.round(valueInSeconds * 1000))
+    let closest = options[0]
+
+    for (const option of options) {
+        const currentDiff = Math.abs(msValue - option)
+        const bestDiff = Math.abs(msValue - closest)
+        if (currentDiff < bestDiff) {
+            closest = option
+        }
+    }
+
+    return map[closest] ?? map[fallbackMs]
+}
+
 export default function AnimatedSection({
     children,
     className = '',
@@ -77,15 +138,24 @@ export default function AnimatedSection({
         }
     }, [threshold, rootMargin])
 
-    const transitionDuration = useMemo(() => {
-        const effective = prefersReducedMotion ? duration * 0.5 : duration
-        return `${effective}s`
-    }, [duration, prefersReducedMotion])
+    const effectiveDuration = useMemo(
+        () => (prefersReducedMotion ? duration * 0.5 : duration),
+        [duration, prefersReducedMotion]
+    )
 
-    const transitionDelay = useMemo(() => {
-        if (prefersReducedMotion) return '0s'
-        return `${delay}s`
-    }, [delay, prefersReducedMotion])
+    const effectiveDelay = prefersReducedMotion ? 0 : delay
+    const durationClass = getClosestTransitionClass(
+        effectiveDuration,
+        DURATION_CLASS_MAP,
+        400,
+        DURATION_OPTIONS
+    )
+    const delayClass = getClosestTransitionClass(
+        effectiveDelay,
+        DELAY_CLASS_MAP,
+        200,
+        DELAY_OPTIONS
+    )
 
     const active = prefersReducedMotion || hasAnimated
 
@@ -94,14 +164,12 @@ export default function AnimatedSection({
             ref={ref}
             className={cn(
                 'will-change-[opacity,transform] transition-all ease-out',
+                durationClass,
+                delayClass,
                 hiddenClasses[animation],
                 active ? visibleClasses[animation] : '',
                 className
             )}
-            style={{
-                transitionDuration,
-                transitionDelay
-            }}
         >
             {children}
         </div>

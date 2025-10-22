@@ -107,7 +107,6 @@ export default function BlogTemplate({ blogPost }: BlogTemplateProps) {
                         className="w-full h-96 lg:h-[500px] object-cover"
                         sizes="100vw"
                         priority
-                        style={{ width: '100%', height: '100%' }}
                     />
                 ) : null}
 
@@ -143,9 +142,8 @@ export default function BlogTemplate({ blogPost }: BlogTemplateProps) {
                                 alt={blogPost.author.name}
                                 width={56}
                                 height={56}
-                                className="w-14 h-14 rounded-full ring-2 ring-primary object-cover"
+                                className="h-14 w-14 rounded-full ring-2 ring-primary object-cover"
                                 sizes="56px"
-                                style={{ width: '3.5rem', height: '3.5rem' }}
                             />
                             <div>
                                 <p className="font-semibold text-gray-900 text-lg">

@@ -46,16 +46,12 @@ export default function AboutTheTeam() {
                                 >
                                     {memberImageSrc ? (
                                         <Image
-                                            className="h-[6rem] w-[6rem] rounded-full mx-auto mb-3 object-cover"
+                                            className="mx-auto mb-3 h-24 w-24 rounded-full object-cover"
                                             src={memberImageSrc}
                                             alt={`${member.name} headshot`}
                                             width={96}
                                             height={96}
                                             sizes="96px"
-                                            style={{
-                                                width: '6rem',
-                                                height: '6rem'
-                                            }}
                                         />
                                     ) : null}
                                     <p className="text-center w-[85%] mx-auto">
@@ -93,16 +89,12 @@ export default function AboutTheTeam() {
                                 <div className="flex flex-col items-center">
                                     {selectedImageSrc ? (
                                         <Image
-                                            className="h-[10rem] w-[10rem] rounded-full mb-3 object-cover"
+                                            className="mb-3 h-40 w-40 rounded-full object-cover"
                                             src={selectedImageSrc}
                                             alt={`${selected.name} headshot`}
                                             width={160}
                                             height={160}
                                             sizes="160px"
-                                            style={{
-                                                width: '10rem',
-                                                height: '10rem'
-                                            }}
                                         />
                                     ) : null}
                                     <article className="flex flex-col gap-2 items-center text-center">

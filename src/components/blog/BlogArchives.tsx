@@ -170,10 +170,6 @@ export default function BlogArchives({ posts }: BlogArchivesProps) {
                                             height={800}
                                             className="w-full h-64 lg:h-full object-cover"
                                             sizes="(min-width: 1024px) 50vw, 100vw"
-                                            style={{
-                                                width: '100%',
-                                                height: '100%'
-                                            }}
                                         />
                                     ) : null}
                                 </div>
@@ -253,10 +249,6 @@ export default function BlogArchives({ posts }: BlogArchivesProps) {
                                                 height={600}
                                                 className="w-full h-48 object-cover"
                                                 sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
-                                                style={{
-                                                    width: '100%',
-                                                    height: '100%'
-                                                }}
                                             />
                                         ) : null}
                                         <div className="absolute top-4 left-4">

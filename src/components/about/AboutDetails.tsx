@@ -29,9 +29,8 @@ const renderCarouselImage = (key: string, alt: string) => {
             alt={alt}
             width={900}
             height={600}
-            className="max-h-[50vh] w-auto object-contain rounded-xl"
+            className="max-h-[50vh] h-full w-auto rounded-xl object-contain"
             sizes="(min-width: 1280px) 33vw, (min-width: 768px) 50vw, 90vw"
-            style={{ width: 'auto', height: '100%' }}
         />
     ) : null
 }
@@ -48,11 +47,10 @@ export default function AboutDetails() {
                         <Image
                             src={getImgSrc('runners') as string}
                             alt="small details to help"
-                            className="w-fit h-full rounded-3xl object-cover"
+                            className="h-full w-full rounded-3xl object-cover"
                             width={800}
                             height={600}
                             sizes="(min-width: 1024px) 40vw, 90vw"
-                            style={{ width: '100%', height: '100%' }}
                         />
                     ) : null}
                     <article className="my-auto">
@@ -220,7 +218,6 @@ export default function AboutDetails() {
                             width={256}
                             height={256}
                             sizes="256px"
-                            style={{ width: '16rem', height: '16rem' }}
                         />
                     ) : null}
                 </AnimatedSection>
@@ -234,11 +231,10 @@ export default function AboutDetails() {
                         <Image
                             src={getImgSrc('staff') as string}
                             alt="freedome img"
-                            className="rounded-xl shadow-xl object-cover"
+                            className="h-auto w-full rounded-xl shadow-xl object-cover"
                             width={1200}
                             height={800}
                             sizes="(min-width: 1024px) 50vw, 100vw"
-                            style={{ width: '100%', height: 'auto' }}
                         />
                     ) : null}
                     <div className="my-auto">

@@ -65,7 +65,6 @@ export default function HomeHero() {
                     height={800}
                     sizes="(min-width: 768px) 50vw, 100vw"
                     priority
-                    style={{ width: '100%', height: 'auto' }}
                 />
             ) : null}
         </section>

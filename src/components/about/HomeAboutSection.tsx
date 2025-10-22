@@ -30,9 +30,9 @@ export default function HomeAboutSection() {
                     params="si=fqdzPoORSzGveCqZ"
                 />
                 <div className="flex flex-col gap-4">
-                    <h1 className="text-primary font-bold text-3xl">
+                    <h2 className="text-primary font-bold text-3xl">
                         About 360° Care
-                    </h1>
+                    </h2>
                     <p>
                         For over 10 years, 360 Degree Care has proudly served
                         families across New Jersey with compassionate,

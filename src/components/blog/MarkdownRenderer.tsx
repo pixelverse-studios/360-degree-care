@@ -319,30 +319,30 @@ export default function MarkdownRenderer({ content }: MarkdownRendererProps) {
                 switch (element.type) {
                     case 'h1':
                         return (
-                            <h1
+                            <h2
                                 key={index}
                                 className="text-4xl font-bold text-gray-900 mb-8 mt-12 border-b-2 border-orange-200 pb-4"
                             >
                                 {element.content}
-                            </h1>
+                            </h2>
                         )
                     case 'h2':
                         return (
-                            <h2
+                            <h3
                                 key={index}
                                 className="text-3xl font-bold text-primary mb-6 mt-12"
                             >
                                 {element.content}
-                            </h2>
+                            </h3>
                         )
                     case 'h3':
                         return (
-                            <h3
+                            <h4
                                 key={index}
                                 className="text-2xl font-semibold text-gray-900 mb-4 mt-10"
                             >
                                 {element.content}
-                            </h3>
+                            </h4>
                         )
                     case 'p':
                         return (
@@ -438,7 +438,6 @@ export default function MarkdownRenderer({ content }: MarkdownRendererProps) {
                                     height={800}
                                     className="w-full h-auto rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300"
                                     sizes="100vw"
-                                    style={{ width: '100%', height: 'auto' }}
                                 />
                                 {element.content.caption && (
                                     <figcaption className="text-center text-gray-600 text-sm mt-4 italic font-medium">

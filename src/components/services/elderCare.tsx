@@ -261,7 +261,6 @@ export default function ElderCareView({ header }: headerProps) {
                                 width={1200}
                                 height={800}
                                 sizes="(min-width: 1024px) 50vw, 100vw"
-                                style={{ width: '100%', height: '100%' }}
                             />
                         ) : null}
                     </div>
