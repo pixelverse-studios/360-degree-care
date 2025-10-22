@@ -17,15 +17,31 @@ const countyServicePages = [
     'bergen-county',
     'monmouth-county',
     'passaic-county',
+    'essex-county',
     'ocean-county'
 ].flatMap(county =>
     serviceSlugs.map(slug => `/services/${slug}/${county}`)
 )
 
-const bergenCountyCities = ['fort-lee', 'ridgewood', 'river-vale']
+const citySlugsByCounty: Record<string, string[]> = {
+    'bergen-county': [
+        'fort-lee',
+        'ridgewood',
+        'river-vale',
+        'hackensack',
+        'teaneck',
+        'fair-lawn'
+    ],
+    'monmouth-county': ['middletown', 'howell', 'marlboro'],
+    'passaic-county': ['paterson', 'clifton', 'passaic'],
+    'essex-county': ['newark', 'east-orange', 'montclair']
+}
 
-const bergenCityServicePages = serviceSlugs.flatMap(slug =>
-    bergenCountyCities.map(city => `/services/${slug}/bergen-county/${city}`)
+const cityServicePages = Object.entries(citySlugsByCounty).flatMap(
+    ([county, cities]) =>
+        serviceSlugs.flatMap(slug =>
+            cities.map(city => `/services/${slug}/${county}/${city}`)
+        )
 )
 
 const monthlyStaticPages = [
@@ -71,7 +87,7 @@ const config: IConfig = {
             })
         })
 
-        bergenCityServicePages.forEach(loc => {
+        cityServicePages.forEach(loc => {
             entries.push({
                 loc,
                 changefreq: 'weekly',

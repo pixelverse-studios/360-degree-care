@@ -151,5 +151,33 @@ export const bergenCountyHomeHealthAideCities: Record<
         benefitsHeader: 'Why River Vale families partner with 360 Degree Care',
         ctaDescription:
             'Let’s design an aide schedule for your River Vale household—days, nights, or 24/7 coverage available.'
+    }),
+    hackensack: buildCityContent('Hackensack', 'hackensack', {
+        heroDescription:
+            'Certified home health aides help Hackensack residents navigate HUMC discharges, Prospect Avenue specialists, and dense downtown living.',
+        overviewDescription:
+            'We handle bathing, wound care assistance, medication reminders, and safe mobility while coordinating updates with Hackensack Meridian physicians and managing high-rise building logistics.',
+        benefitsHeader:
+            'How Hackensack families gain confidence with our aides',
+        ctaDescription:
+            'Tell us about your Hackensack routines—we’ll align aide coverage with hospital follow-ups, courthouse visits, and family schedules.'
+    }),
+    teaneck: buildCityContent('Teaneck', 'teaneck', {
+        heroDescription:
+            'Teaneck households appreciate aides who balance clinical excellence with cultural awareness near Holy Name Medical Center.',
+        overviewDescription:
+            'From West Englewood to Glenpointe, we provide hands-on personal care, escort clients to Holy Name appointments, and respect observances that shape the rhythm of each home.',
+        benefitsHeader: 'Benefits Teaneck families see with our CHHAs',
+        ctaDescription:
+            'Share your Teaneck care plan—we will assign aides who honor your traditions while keeping daily health routines on track.'
+    }),
+    'fair-lawn': buildCityContent('Fair Lawn', 'fair-lawn', {
+        heroDescription:
+            'Reliable home health aides keep Fair Lawn residents steady through therapy, chronic conditions, and respite needs.',
+        overviewDescription:
+            'We support clients across Radburn, River Road, and Broadway, coordinating with Valley Hospital clinicians and ensuring safe mobility inside split-level homes.',
+        benefitsHeader: 'Why Fair Lawn chooses our aide coverage',
+        ctaDescription:
+            'Let us know your Fair Lawn schedule—we’ll arrange aide shifts that work around commuter hours, therapy sessions, and family commitments.'
     })
 }

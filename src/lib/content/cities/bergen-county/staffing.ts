@@ -150,5 +150,33 @@ export const bergenCountyStaffingCities: Record<
         benefitsHeader: 'How River Vale benefits from 360 Degree Care Staffing',
         ctaDescription:
             'Let’s review your River Vale staffing requirements and assemble the right mix of caregivers, nurses, and support personnel.'
+    }),
+    hackensack: buildCityContent('Hackensack', 'hackensack', {
+        heroDescription:
+            'Hackensack practices, concierge households, and post-acute facilities count on our rapid-response staffing tied to HUMC’s demanding schedule.',
+        overviewDescription:
+            'We supply licensed nurses, aides, and companions who understand Prospect Avenue medical campuses, courthouse security protocols, and downtown parking challenges.',
+        benefitsHeader: 'Staffing advantages for Hackensack partners',
+        ctaDescription:
+            'Describe your Hackensack coverage needs—we’ll deliver credentialed professionals ready to integrate with your workflows.'
+    }),
+    teaneck: buildCityContent('Teaneck', 'teaneck', {
+        heroDescription:
+            'Teaneck organizations receive culturally aware staffing support that aligns with Holy Name Medical Center standards and community expectations.',
+        overviewDescription:
+            'Our roster includes multilingual clinicians and companions who respect religious observances, Cedar Lane business rhythms, and Glenpointe corporate clientele.',
+        benefitsHeader:
+            'Why Teaneck facilities and families rely on our staffing',
+        ctaDescription:
+            'Share your Teaneck staffing puzzle—we’ll build a pipeline that honors your timelines, faith considerations, and patient goals.'
+    }),
+    'fair-lawn': buildCityContent('Fair Lawn', 'fair-lawn', {
+        heroDescription:
+            'From Radburn households to Broadway medical offices, Fair Lawn partners leverage our staffing team for dependable clinical coverage.',
+        overviewDescription:
+            'We recruit professionals familiar with Valley Health protocols, commuter scheduling, and the nuances of supporting clients in split-level or multi-generational homes.',
+        benefitsHeader: 'Staffing outcomes Fair Lawn clients experience',
+        ctaDescription:
+            'Let us know what shifts you need to fill in Fair Lawn—we’ll assemble ready-to-work clinicians and caregivers.'
     })
 }

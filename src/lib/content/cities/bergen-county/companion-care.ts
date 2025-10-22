@@ -150,5 +150,34 @@ export const bergenCountyCompanionCareCities: Record<
         benefitsHeader: 'The River Vale difference with 360 Degree Care',
         ctaDescription:
             'Let’s build a River Vale companion schedule that fits golf tee times, grandkid visits, and cherished routines.'
+    }),
+    hackensack: buildCityContent('Hackensack', 'hackensack', {
+        heroDescription:
+            'Social, reliable companion care that keeps Hackensack residents connected to Johnson Public Library programs, HUMC follow-ups, and Main Street dining.',
+        overviewDescription:
+            'We plan outings to Foschini Park, shops at Riverside Square, and beloved faith communities while navigating River Street traffic and hospital parking. Each visit blends conversation, errands, and mobility support calibrated to city life.',
+        benefitsHeader:
+            'How our Hackensack companions brighten day-to-day routines',
+        ctaDescription:
+            'Tell us about your Hackensack loved one’s go-to spots—we’ll arrange companionship that keeps them engaged without logistical headaches.'
+    }),
+    teaneck: buildCityContent('Teaneck', 'teaneck', {
+        heroDescription:
+            'Warm, culturally aware companionship for Teaneck residents who cherish Cedar Lane businesses, Votee Park strolls, and Holy Name events.',
+        overviewDescription:
+            'Our companions respect Sabbath schedules, community center calendars, and multilingual households. We provide gentle reminders, meaningful conversation, and escorted outings that honor each family’s traditions.',
+        benefitsHeader:
+            'Benefits Teaneck families notice with our companion team',
+        ctaDescription:
+            'Share the routines and customs that matter most—our Teaneck companions will build visits that feel like an extension of family.'
+    }),
+    'fair-lawn': buildCityContent('Fair Lawn', 'fair-lawn', {
+        heroDescription:
+            'Friendly companions supporting Fair Lawn seniors from Radburn’s walking paths to Broadway’s cafes and community events.',
+        overviewDescription:
+            'We coordinate around Route 4 and 208 traffic, handle NJ Transit escorting, and plan engaging afternoons at the Fair Lawn Community Center or library. Every visit balances independence with dependable support.',
+        benefitsHeader: 'Why Fair Lawn families rely on our companions',
+        ctaDescription:
+            'Let’s plan Fair Lawn companionship that keeps your loved one active, social, and confident in the routines they love.'
     })
 }

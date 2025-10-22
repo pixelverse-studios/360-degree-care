@@ -154,5 +154,35 @@ export const bergenCountyPersonalCareCities: Record<
         benefitsHeader: 'How River Vale families benefit from 360 Degree Care',
         ctaDescription:
             "Tell us about your River Vale household and we'll craft a visit plan that coordinates with family schedules, therapy sessions, and favorite local activities."
+    }),
+    hackensack: buildCityContent('Hackensack', 'hackensack', {
+        heroDescription:
+            'Personal care specialists supporting Hackensack residents who rely on HUMC, downtown Main Street amenities, and the county’s busiest service corridors.',
+        overviewDescription:
+            'As the Bergen County seat, Hackensack offers world-class care at Hackensack University Medical Center, vibrant churches, and high-density apartment living near the bus transit center. We coordinate schedules around clinic visits, courthouse appointments, and traffic on River Street so loved ones stay confident at home.',
+        serviceHeader: 'Hands-on support tailored to Hackensack households',
+        benefitsHeader: 'Why Hackensack families call 360 Degree Care first',
+        ctaDescription:
+            'Let’s align your Hackensack care plan with hospital follow-ups, Main Street errands, and family work schedules so daily routines stay on track.'
+    }),
+    teaneck: buildCityContent('Teaneck', 'teaneck', {
+        heroDescription:
+            'Culturally sensitive personal care that keeps Teaneck seniors thriving near Holy Name Medical Center, Cedar Lane, and Queen Anne Road congregations.',
+        overviewDescription:
+            'We understand Teaneck’s walkable neighborhoods, Sabbath observance considerations, and the importance of timely support for Holy Name appointments. From Glenpointe high-rises to single-family homes by Votee Park, caregivers follow personalized care plans while respecting each household’s traditions.',
+        serviceHeader: 'Personal care services delivered across Teaneck',
+        benefitsHeader: 'Benefits Teaneck families experience with our team',
+        ctaDescription:
+            'Share your Teaneck household’s routines and cultural needs—we’ll design personal care visits that honor them while keeping your loved one safe.'
+    }),
+    'fair-lawn': buildCityContent('Fair Lawn', 'fair-lawn', {
+        heroDescription:
+            'Reliable personal care for Fair Lawn, from Radburn’s historic district to the Route 4 medical corridor and commuter rail neighborhoods.',
+        overviewDescription:
+            'Our aides help Fair Lawn residents stay connected to houses of worship, Trader Joe’s, and recreation at Memorial Park while managing mobility changes. Coordinated support around Valley Health facilities and the Broadway train station ensures families never miss important appointments.',
+        serviceHeader: 'Personal care coverage for every corner of Fair Lawn',
+        benefitsHeader: 'Why Fair Lawn trusts our concierge-level care',
+        ctaDescription:
+            'Tell us about your Fair Lawn routine and we’ll match you with caregivers who know local traffic, apartment layouts, and community resources.'
     })
 }

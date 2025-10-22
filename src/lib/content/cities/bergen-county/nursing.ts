@@ -148,5 +148,32 @@ export const bergenCountyNursingCities: Record<string, CityServicePageContent> =
             benefitsHeader: 'River Vale nursing services with 360 Degree Care',
             ctaDescription:
                 'Let’s design a River Vale nursing schedule that respects physician directives and family routines.'
+        }),
+        hackensack: buildCityContent('Hackensack', 'hackensack', {
+            heroDescription:
+                'Hackensack residents returning from HUMC, rehab centers, or dialysis clinics count on our nurses for hospital-level oversight at home.',
+            overviewDescription:
+                'We support infusion therapy, complex wound care, and cardiology orders while communicating directly with physicians along Prospect Avenue and coordinating with family caregivers.',
+            benefitsHeader: 'Why Hackensack chooses our private duty nurses',
+            ctaDescription:
+                'Tell us about your Hackensack care plan—we’ll deploy nurses who keep you connected to specialists without constant readmissions.'
+        }),
+        teaneck: buildCityContent('Teaneck', 'teaneck', {
+            heroDescription:
+                'Teaneck households balancing Holy Name Medical Center care plans and home comfort rely on our culturally aware nursing team.',
+            overviewDescription:
+                'We manage ventilators, trachs, cardiac monitors, and diabetic care while respecting observances and coordinating with Holy Name physicians and community supports.',
+            benefitsHeader: 'How Teaneck families benefit from our nurses',
+            ctaDescription:
+                'Share your Teaneck nursing requirements and we’ll tailor coverage that honors your household’s routines and clinical goals.'
+        }),
+        'fair-lawn': buildCityContent('Fair Lawn', 'fair-lawn', {
+            heroDescription:
+                'From Route 208 commuters to Radburn residents, Fair Lawn families count on our nurses for post-surgical and chronic condition expertise.',
+            overviewDescription:
+                'We coordinate with Valley Health specialists, manage complex medication setups, and keep meticulous records so physicians and families stay aligned.',
+            benefitsHeader: 'Why Fair Lawn trusts our nursing coverage',
+            ctaDescription:
+                'Let’s map out skilled nursing in Fair Lawn that keeps your loved one stable at home and out of the ER.'
         })
     }

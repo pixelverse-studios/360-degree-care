@@ -150,5 +150,32 @@ export const bergenCountyElderCareCities: Record<
         benefitsHeader: 'How River Vale families benefit from a consult',
         ctaDescription:
             'Tell us what is working — and what isn’t — in River Vale. We’ll provide the next steps and resources you need.'
+    }),
+    hackensack: buildCityContent('Hackensack', 'hackensack', {
+        heroDescription:
+            'Families in Hackensack face fast-paced decisions after HUMC stays or rehab referrals. Our elder care consultants streamline every step.',
+        overviewDescription:
+            'We collaborate with specialists in the Prospect Avenue medical corridor, evaluate downtown apartment safety, and prioritize community resources like the Bergen County Division of Senior Services so plans stay realistic.',
+        benefitsHeader: 'Why Hackensack turns to our elder care consultants',
+        ctaDescription:
+            'Share your Hackensack care questions and we’ll build a plan that aligns hospital guidance with what works at home.'
+    }),
+    teaneck: buildCityContent('Teaneck', 'teaneck', {
+        heroDescription:
+            'Teaneck families balancing cultural traditions, Holy Name follow-ups, and multigenerational households rely on our objective guidance.',
+        overviewDescription:
+            'We review home environments from West Englewood to Glenpointe, integrate clergy or community support when requested, and coordinate transportation plans that respect Sabbath observance.',
+        benefitsHeader: 'How Teaneck households gain clarity with us',
+        ctaDescription:
+            'Let’s discuss your Teaneck situation—we’ll outline next steps that honor your family’s values while addressing medical realities.'
+    }),
+    'fair-lawn': buildCityContent('Fair Lawn', 'fair-lawn', {
+        heroDescription:
+            'When Fair Lawn families weigh Valley Health rehab stays, Radburn community resources, or in-home support, our consultants provide a roadmap.',
+        overviewDescription:
+            'We analyze split-level home safety, coordinate respite for commuting caregivers, and recommend vetted providers along Broadway, Route 4, and 208 so you can act with confidence.',
+        benefitsHeader: 'Benefits Fair Lawn families see after a consult',
+        ctaDescription:
+            'Tell us what decisions are ahead in Fair Lawn and we’ll deliver a prioritized action plan you can put into motion right away.'
     })
 }
