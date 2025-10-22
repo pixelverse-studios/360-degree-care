@@ -10,6 +10,25 @@ const config: Config = {
     ],
     theme: {
         extend: {
+            transitionDuration: {
+                0: '0ms',
+                250: '250ms',
+                350: '350ms',
+                400: '400ms',
+                450: '450ms',
+                600: '600ms',
+                800: '800ms',
+                900: '900ms'
+            },
+            transitionDelay: {
+                250: '250ms',
+                350: '350ms',
+                400: '400ms',
+                450: '450ms',
+                600: '600ms',
+                800: '800ms',
+                900: '900ms'
+            },
             maxWidth: {
                 custom: 'var(--max-width)'
             },
