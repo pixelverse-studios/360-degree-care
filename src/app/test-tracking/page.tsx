@@ -16,7 +16,7 @@ export default function TestTrackingPage() {
         const baseUrl =
             typeof window !== 'undefined'
                 ? `${window.location.protocol}//${window.location.host}`
-                : 'https://360degreecare.net'
+                : 'https://www.360degreecare.net'
         setExamples(generateURLExamples(baseUrl))
     }, [])
 
@@ -197,7 +197,7 @@ export default function TestTrackingPage() {
                 <p>
                     Remember to update the base URL in your campaign URL
                     generation when deploying to production. Use your actual
-                    domain (https://360degreecare.net) instead of localhost.
+                    domain (https://www.360degreecare.net) instead of localhost.
                 </p>
             </div>
         </div>

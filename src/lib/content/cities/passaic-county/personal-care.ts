@@ -79,7 +79,7 @@ function buildCityContent(
         ctaDescription: string
     }
 ): CityServicePageContent {
-    const canonical = `https://360degreecare.net/services/${SERVICE_SLUG}/passaic-county/${citySlug}`
+    const canonical = `https://www.360degreecare.net/services/${SERVICE_SLUG}/passaic-county/${citySlug}`
 
     return {
         slug: `/services/${SERVICE_SLUG}/passaic-county/${citySlug}`,

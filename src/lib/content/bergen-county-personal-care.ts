@@ -17,10 +17,10 @@ export const bergenCountyPersonalCareContent: ServiceCountyPageContent = {
             type: 'website',
             locale: 'en_US',
             siteName: '360 Degree Care',
-            url: 'https://360degreecare.net/services/personal-care/bergen-county',
+            url: 'https://www.360degreecare.net/services/personal-care/bergen-county',
             images: [
                 {
-                    url: 'https://360degreecare.net/og-images/bergen-county-personal-care.jpg',
+                    url: 'https://www.360degreecare.net/og-images/bergen-county-personal-care.jpg',
                     width: 1200,
                     height: 630,
                     alt: 'Personal Care Services in Bergen County NJ'
@@ -33,12 +33,12 @@ export const bergenCountyPersonalCareContent: ServiceCountyPageContent = {
             description:
                 'Professional caregivers serving all 70 municipalities of Bergen County. CHAP certified.',
             images: [
-                'https://360degreecare.net/og-images/bergen-county-personal-care.jpg'
+                'https://www.360degreecare.net/og-images/bergen-county-personal-care.jpg'
             ]
         },
         alternates: {
             canonical:
-                'https://360degreecare.net/services/personal-care/bergen-county'
+                'https://www.360degreecare.net/services/personal-care/bergen-county'
         },
         robots: {
             index: true,
@@ -60,8 +60,8 @@ export const bergenCountyPersonalCareContent: ServiceCountyPageContent = {
         provider: {
             '@type': 'HomeHealthCareService',
             name: '360 Degree Care',
-            url: 'https://360degreecare.net',
-            logo: 'https://360degreecare.net/logo.png',
+            url: 'https://www.360degreecare.net',
+            logo: 'https://www.360degreecare.net/logo.png',
             telephone: '(800) 338-7786',
             address: {
                 '@type': 'PostalAddress',

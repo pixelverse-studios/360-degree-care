@@ -181,11 +181,13 @@ export default function Footer() {
                             </Fragment>
                         ))}
                     </div>
-                    <span className="text-[0.5rem]">
-                        Powered by{' '}
+                    <span className="mt-2 block text-xs text-white/80">
+                        Website crafted by{' '}
                         <a
-                            className="text-[0.5rem] hover:underline"
+                            className="font-medium hover:text-green-muted hover:underline text-xs"
                             href="https://www.pixelversestudios.io"
+                            target="_blank"
+                            rel="noopener noreferrer"
                         >
                             PixelVerse Studios
                         </a>

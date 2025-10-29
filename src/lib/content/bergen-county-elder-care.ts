@@ -46,7 +46,7 @@ export const bergenCountyElderCareContent: CountyPageContent = {
         availableChannel: {
             '@type': 'ServiceChannel',
             serviceUrl:
-                'https://360degreecare.net/services/elder-care/bergen-county',
+                'https://www.360degreecare.net/services/elder-care/bergen-county',
             servicePhone: '+1-856-874-0067',
             availableLanguage: 'en'
         }

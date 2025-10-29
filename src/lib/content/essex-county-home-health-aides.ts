@@ -42,7 +42,7 @@ export const essexCountyHomeHealthAidesContent: CountyPageContent = {
         availableChannel: {
             '@type': 'ServiceChannel',
             serviceUrl:
-                'https://360degreecare.net/services/home-health-aides/essex-county',
+                'https://www.360degreecare.net/services/home-health-aides/essex-county',
             servicePhone: '+1-800-338-7786',
             availableLanguage: 'en'
         }

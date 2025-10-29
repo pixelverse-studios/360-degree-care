@@ -43,7 +43,7 @@ export const monmouthCountyHomeHealthAidesContent: CountyPageContent = {
         availableChannel: {
             '@type': 'ServiceChannel',
             serviceUrl:
-                'https://360degreecare.net/services/home-health-aides/monmouth-county',
+                'https://www.360degreecare.net/services/home-health-aides/monmouth-county',
             servicePhone: '+1-800-338-7786',
             availableLanguage: 'en'
         }

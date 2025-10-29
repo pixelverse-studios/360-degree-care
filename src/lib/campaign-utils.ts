@@ -162,7 +162,7 @@ export function getCampaignMetrics(campaignData: CampaignData) {
 }
 
 export function generateURLExamples(
-    baseURL: string = 'https://360degreecare.net'
+    baseURL: string = 'https://www.360degreecare.net'
 ) {
     return {
         facebook: generateFacebookAdURL(

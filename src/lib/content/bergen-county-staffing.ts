@@ -17,10 +17,10 @@ export const bergenCountyStaffingContent: ServiceCountyPageContent = {
             type: 'website',
             locale: 'en_US',
             siteName: '360 Degree Care',
-            url: 'https://360degreecare.net/services/staffing/bergen-county',
+            url: 'https://www.360degreecare.net/services/staffing/bergen-county',
             images: [
                 {
-                    url: 'https://360degreecare.net/og-images/bergen-county-staffing.jpg',
+                    url: 'https://www.360degreecare.net/og-images/bergen-county-staffing.jpg',
                     width: 1200,
                     height: 630,
                     alt: 'Healthcare Staffing Solutions in Bergen County NJ'
@@ -33,12 +33,12 @@ export const bergenCountyStaffingContent: ServiceCountyPageContent = {
             description:
                 'Professional healthcare staffing solutions serving facilities across all 70 municipalities of Bergen County.',
             images: [
-                'https://360degreecare.net/og-images/bergen-county-staffing.jpg'
+                'https://www.360degreecare.net/og-images/bergen-county-staffing.jpg'
             ]
         },
         alternates: {
             canonical:
-                'https://360degreecare.net/services/staffing/bergen-county'
+                'https://www.360degreecare.net/services/staffing/bergen-county'
         },
         robots: {
             index: true,
@@ -60,8 +60,8 @@ export const bergenCountyStaffingContent: ServiceCountyPageContent = {
         provider: {
             '@type': 'HomeHealthCareService',
             name: '360 Degree Care',
-            url: 'https://360degreecare.net',
-            logo: 'https://360degreecare.net/logo.png',
+            url: 'https://www.360degreecare.net',
+            logo: 'https://www.360degreecare.net/logo.png',
             telephone: '(800) 338-7786',
             address: {
                 '@type': 'PostalAddress',

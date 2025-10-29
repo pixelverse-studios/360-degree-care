@@ -17,10 +17,10 @@ export const bergenCountyNursingContent: ServiceCountyPageContent = {
             type: 'website',
             locale: 'en_US',
             siteName: '360 Degree Care',
-            url: 'https://360degreecare.net/services/nursing/bergen-county',
+            url: 'https://www.360degreecare.net/services/nursing/bergen-county',
             images: [
                 {
-                    url: 'https://360degreecare.net/og-images/bergen-county-nursing.jpg',
+                    url: 'https://www.360degreecare.net/og-images/bergen-county-nursing.jpg',
                     width: 1200,
                     height: 630,
                     alt: 'Professional Nursing Services in Bergen County NJ'
@@ -33,12 +33,12 @@ export const bergenCountyNursingContent: ServiceCountyPageContent = {
             description:
                 'Professional RN & LPN nursing services serving all 70 municipalities of Bergen County. CHAP certified clinical expertise.',
             images: [
-                'https://360degreecare.net/og-images/bergen-county-nursing.jpg'
+                'https://www.360degreecare.net/og-images/bergen-county-nursing.jpg'
             ]
         },
         alternates: {
             canonical:
-                'https://360degreecare.net/services/nursing/bergen-county'
+                'https://www.360degreecare.net/services/nursing/bergen-county'
         },
         robots: {
             index: true,
@@ -60,8 +60,8 @@ export const bergenCountyNursingContent: ServiceCountyPageContent = {
         provider: {
             '@type': 'HomeHealthCareService',
             name: '360 Degree Care',
-            url: 'https://360degreecare.net',
-            logo: 'https://360degreecare.net/logo.png',
+            url: 'https://www.360degreecare.net',
+            logo: 'https://www.360degreecare.net/logo.png',
             telephone: '(800) 338-7786',
             address: {
                 '@type': 'PostalAddress',

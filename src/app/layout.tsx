@@ -2,14 +2,17 @@ import Script from 'next/script'
 import { Suspense } from 'react'
 import { Merriweather, Rubik } from 'next/font/google'
 
+import dynamic from 'next/dynamic'
+
 import { Header } from '@/components/nav/Header'
 import Breadcrumbs from '@/components/nav/Breadcrumbs'
 import Footer from '@/components/Footer'
 import { Toaster } from '@/components/ui/sonner'
 import { RouteStateProvider } from '@/lib/providers'
 import { getImgSrc } from '@/lib/images'
-import dynamic from 'next/dynamic'
 import { FACEBOOK, INSTA, PHONE, EMAIL } from '@/utils/constants'
+
+const CANONICAL_ORIGIN = 'https://www.360degreecare.net'
 
 const CampaignTracker = dynamic(
     () =>
@@ -39,7 +42,7 @@ const AccessibilityMenu = dynamic(
 import '../styles/globals.css'
 
 export const metadata = {
-    metadataBase: new URL('https://360degreecare.net'),
+    metadataBase: new URL(CANONICAL_ORIGIN),
     icons: {
         icon: [
             {
@@ -72,7 +75,7 @@ export const metadata = {
         title: 'Concierge Home Care Services in NJ | 360 Degree Care',
         description:
             '360 Degree Care delivers concierge home care, nursing, companion, and staffing support across New Jersey, empowering families with compassionate caregivers.',
-        url: 'https://360degreecare.net',
+        url: CANONICAL_ORIGIN,
         siteName: '360 Degree Care',
         type: 'website',
         manifest: '/manifest.json'
@@ -85,11 +88,11 @@ export const metadata = {
 const localBusinessSchema = {
     '@context': 'https://schema.org',
     '@type': 'HomeHealthCareService',
-    '@id': 'https://360degreecare.net/#localbusiness',
+    '@id': `${CANONICAL_ORIGIN}/#localbusiness`,
     name: '360 Degree Care',
-    url: 'https://360degreecare.net',
-    image: 'https://360degreecare.net/assets/logo.png',
-    logo: 'https://360degreecare.net/assets/logo.png',
+    url: CANONICAL_ORIGIN,
+    image: `${CANONICAL_ORIGIN}/assets/logo.png`,
+    logo: `${CANONICAL_ORIGIN}/assets/logo.png`,
     telephone: PHONE,
     email: EMAIL,
     priceRange: '$$',
@@ -144,10 +147,10 @@ const localBusinessSchema = {
 const organizationSchema = {
     '@context': 'https://schema.org',
     '@type': 'Organization',
-    '@id': 'https://360degreecare.net/#organization',
+    '@id': `${CANONICAL_ORIGIN}/#organization`,
     name: '360 Degree Care',
-    url: 'https://360degreecare.net',
-    logo: 'https://360degreecare.net/assets/logo.png',
+    url: CANONICAL_ORIGIN,
+    logo: `${CANONICAL_ORIGIN}/assets/logo.png`,
     legalName: '360 Degree Care',
     email: EMAIL,
     telephone: PHONE,

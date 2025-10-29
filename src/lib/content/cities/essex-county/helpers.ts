@@ -8,7 +8,7 @@ export type DescriptiveItem = ServiceListProps['items'][number] & {
 export const providerSchema = {
     '@type': 'Organization',
     name: '360 Degree Care',
-    url: 'https://360degreecare.net/',
+    url: 'https://www.360degreecare.net/',
     telephone: '(800) 338-7786'
 }
 

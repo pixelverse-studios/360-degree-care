@@ -46,7 +46,7 @@ export const monmouthCountyElderCareContent: CountyPageContent = {
         availableChannel: {
             '@type': 'ServiceChannel',
             serviceUrl:
-                'https://360degreecare.net/services/elder-care/monmouth-county',
+                'https://www.360degreecare.net/services/elder-care/monmouth-county',
             servicePhone: '+1-800-338-7786',
             availableLanguage: 'en'
         }

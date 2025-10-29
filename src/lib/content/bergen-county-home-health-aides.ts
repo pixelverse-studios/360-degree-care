@@ -17,10 +17,10 @@ export const bergenCountyHomeHealthAidesContent: ServiceCountyPageContent = {
             type: 'website',
             locale: 'en_US',
             siteName: '360 Degree Care',
-            url: 'https://360degreecare.net/services/home-health-aides/bergen-county',
+            url: 'https://www.360degreecare.net/services/home-health-aides/bergen-county',
             images: [
                 {
-                    url: 'https://360degreecare.net/og-images/bergen-county-home-health-aides.jpg',
+                    url: 'https://www.360degreecare.net/og-images/bergen-county-home-health-aides.jpg',
                     width: 1200,
                     height: 630,
                     alt: 'Home Health Aides Services in Bergen County NJ'
@@ -33,12 +33,12 @@ export const bergenCountyHomeHealthAidesContent: ServiceCountyPageContent = {
             description:
                 'Certified home health aides serving all 70 municipalities of Bergen County. CHAP certified medical support.',
             images: [
-                'https://360degreecare.net/og-images/bergen-county-home-health-aides.jpg'
+                'https://www.360degreecare.net/og-images/bergen-county-home-health-aides.jpg'
             ]
         },
         alternates: {
             canonical:
-                'https://360degreecare.net/services/home-health-aides/bergen-county'
+                'https://www.360degreecare.net/services/home-health-aides/bergen-county'
         },
         robots: {
             index: true,
@@ -60,8 +60,8 @@ export const bergenCountyHomeHealthAidesContent: ServiceCountyPageContent = {
         provider: {
             '@type': 'HomeHealthCareService',
             name: '360 Degree Care',
-            url: 'https://360degreecare.net',
-            logo: 'https://360degreecare.net/logo.png',
+            url: 'https://www.360degreecare.net',
+            logo: 'https://www.360degreecare.net/logo.png',
             telephone: '(800) 338-7786',
             address: {
                 '@type': 'PostalAddress',
