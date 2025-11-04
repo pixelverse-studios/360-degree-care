@@ -1,5 +1,15 @@
+import type { Metadata } from 'next'
+
 import ContentReviewDashboard from '@/components/seo/ContentReviewDashboard'
 import { bergenCountyPersonalCareContent } from '@/lib/content/bergen-county-personal-care'
+
+export const metadata: Metadata = {
+    title: 'SEO Review Dashboard | 360° Care (Internal)',
+    robots: {
+        index: false,
+        follow: false
+    }
+}
 
 export default function SEOReviewPage() {
     // Combine all content from the Bergen County Personal Care page

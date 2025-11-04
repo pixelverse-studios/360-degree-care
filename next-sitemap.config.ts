@@ -1,116 +1,153 @@
+import { existsSync, readdirSync } from 'node:fs'
+import path from 'node:path'
 import type { IConfig } from 'next-sitemap'
 
-const serviceSlugs = [
-    'personal-care',
-    'companion-care',
-    'elder-care',
-    'home-health-aides',
-    'nursing',
-    'staffing'
-]
+type ChangeFrequency = 'weekly' | 'monthly'
 
-const weeklyServicePages = serviceSlugs.map(
-    slug => `/services/${slug}`
-)
-
-const countyServicePages = [
-    'bergen-county',
-    'monmouth-county',
-    'passaic-county',
-    'essex-county',
-    'ocean-county'
-].flatMap(county =>
-    serviceSlugs.map(slug => `/services/${slug}/${county}`)
-)
-
-const citySlugsByCounty: Record<string, string[]> = {
-    'bergen-county': [
-        'fort-lee',
-        'ridgewood',
-        'river-vale',
-        'hackensack',
-        'teaneck',
-        'fair-lawn'
-    ],
-    'monmouth-county': ['middletown', 'howell', 'marlboro'],
-    'passaic-county': ['paterson', 'clifton', 'passaic'],
-    'essex-county': ['newark', 'east-orange', 'montclair']
+interface SiteEntry {
+    loc: string
+    priority: number
+    changefreq: ChangeFrequency
 }
 
-const cityServicePages = Object.entries(citySlugsByCounty).flatMap(
-    ([county, cities]) =>
-        serviceSlugs.flatMap(slug =>
-            cities.map(city => `/services/${slug}/${county}/${city}`)
-        )
-)
+interface ServiceRoute {
+    slug: string
+    counties: CountyRoute[]
+}
 
-const monthlyStaticPages = [
-    { loc: '/about', priority: 0.8 },
-    { loc: '/services', priority: 0.8 },
-    { loc: '/contact', priority: 0.9 },
-    { loc: '/faq', priority: 0.6 },
-    { loc: '/how-to-pay', priority: 0.7 },
-    { loc: '/legal-disclaimer', priority: 0.3 },
-    { loc: '/nondiscrimination', priority: 0.3 },
-    { loc: '/privacy-policy', priority: 0.3 },
-    { loc: '/not-found', priority: 0.1 }
+interface CountyRoute {
+    slug: string
+    cities: string[]
+}
+
+const SITE_URL = 'https://www.360degreecare.net'
+const APP_DIR = path.join(process.cwd(), 'src', 'app')
+const SERVICES_DIR = path.join(APP_DIR, 'services')
+
+const staticPages: SiteEntry[] = [
+    { loc: '/', priority: 1, changefreq: 'weekly' },
+    { loc: '/about', priority: 0.8, changefreq: 'monthly' },
+    { loc: '/services', priority: 0.8, changefreq: 'monthly' },
+    { loc: '/contact', priority: 0.9, changefreq: 'monthly' },
+    { loc: '/contact/services', priority: 0.8, changefreq: 'monthly' },
+    { loc: '/contact/employment', priority: 0.8, changefreq: 'monthly' },
+    { loc: '/contact/general', priority: 0.8, changefreq: 'monthly' },
+    { loc: '/faq', priority: 0.6, changefreq: 'monthly' },
+    { loc: '/how-to-pay', priority: 0.7, changefreq: 'monthly' },
+    { loc: '/legal-disclaimer', priority: 0.3, changefreq: 'monthly' },
+    { loc: '/nondiscrimination', priority: 0.3, changefreq: 'monthly' },
+    { loc: '/privacy-policy', priority: 0.3, changefreq: 'monthly' },
+    { loc: '/blog', priority: 0.6, changefreq: 'weekly' }
 ]
 
-const config: IConfig = {
-    siteUrl: 'https://www.360degreecare.net',
-    generateRobotsTxt: true,
-    additionalPaths: async () => {
-        const lastmod = new Date().toISOString()
+const serviceRoutes = buildServiceRouteTree()
 
-        const entries: Array<{
-            loc: string
-            changefreq: 'weekly' | 'monthly'
-            priority: number
-            lastmod: string
-        }> = []
+function listDirectories(basePath: string): string[] {
+    return readdirSync(basePath, { withFileTypes: true })
+        .filter(entry => entry.isDirectory() && !entry.name.startsWith('('))
+        .map(entry => entry.name)
+}
 
-        weeklyServicePages.forEach(loc => {
-            entries.push({
-                loc,
-                changefreq: 'weekly',
-                priority: 0.8,
-                lastmod
-            })
+function hasPageFile(dirPath: string): boolean {
+    return existsSync(path.join(dirPath, 'page.tsx'))
+}
+
+function buildServiceRouteTree(): ServiceRoute[] {
+    if (!existsSync(SERVICES_DIR)) {
+        return []
+    }
+
+    return listDirectories(SERVICES_DIR)
+        .filter(service => hasPageFile(path.join(SERVICES_DIR, service)))
+        .map(service => {
+            const serviceDir = path.join(SERVICES_DIR, service)
+            const counties = listDirectories(serviceDir)
+                .filter(county =>
+                    hasPageFile(path.join(serviceDir, county))
+                )
+                .map(county => {
+                    const countyDir = path.join(serviceDir, county)
+                    const cities = listDirectories(countyDir).filter(city =>
+                        hasPageFile(path.join(countyDir, city))
+                    )
+                    return { slug: county, cities }
+                })
+
+            return { slug: service, counties }
+        })
+}
+
+function buildServiceEntries(
+    routes: ServiceRoute[],
+    lastmod: string
+) {
+    const entries: Array<{
+        loc: string
+        changefreq: ChangeFrequency
+        priority: number
+        lastmod: string
+    }> = []
+
+    routes.forEach(service => {
+        entries.push({
+            loc: `/services/${service.slug}`,
+            changefreq: 'weekly',
+            priority: 0.8,
+            lastmod
         })
 
-        countyServicePages.forEach(loc => {
+        service.counties.forEach(county => {
             entries.push({
-                loc,
+                loc: `/services/${service.slug}/${county.slug}`,
                 changefreq: 'weekly',
                 priority: 0.9,
                 lastmod
             })
-        })
 
-        cityServicePages.forEach(loc => {
-            entries.push({
-                loc,
-                changefreq: 'weekly',
-                priority: 0.85,
-                lastmod
+            county.cities.forEach(city => {
+                entries.push({
+                    loc: `/services/${service.slug}/${county.slug}/${city}`,
+                    changefreq: 'weekly',
+                    priority: 0.85,
+                    lastmod
+                })
             })
         })
+    })
 
-        monthlyStaticPages.forEach(page => {
-            entries.push({
-                loc: page.loc,
-                changefreq: 'monthly',
-                priority: page.priority,
+    return entries
+}
+
+const config: IConfig = {
+    siteUrl: SITE_URL,
+    generateRobotsTxt: true,
+    additionalPaths: async () => {
+        const lastmod = new Date().toISOString()
+
+        const entries = [
+            ...buildServiceEntries(serviceRoutes, lastmod),
+            ...staticPages.map(page => ({
+                ...page,
                 lastmod
-            })
-        })
+            }))
+        ]
 
         return entries
     },
     robotsTxtOptions: {
         policies: [
             { userAgent: '*', allow: '/' },
-            { userAgent: '*', disallow: ['/api/', '/_next/'] }
+            {
+                userAgent: '*',
+                disallow: [
+                    '/api/',
+                    '/_next/',
+                    '/docs',
+                    '/docs/*',
+                    '/seo-review',
+                    '/not-found'
+                ]
+            }
         ],
         additionalSitemaps: ['https://www.360degreecare.net/sitemap.xml']
     },

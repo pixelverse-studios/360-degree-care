@@ -67,6 +67,7 @@ const AboutSeoHead = () => {
             }
         }
     }
+    const canonicalUrl = 'https://www.360degreecare.net/about'
 
     return (
         <>
@@ -135,6 +136,7 @@ const AboutSeoHead = () => {
                 <meta name="language" content="English" />
                 <meta name="geo.region" content="US-NJ" />
                 <meta name="geo.placename" content="Ridgewood" />
+                <link rel="canonical" href={canonicalUrl} />
             </Head>
 
             <Script

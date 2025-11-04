@@ -59,6 +59,8 @@ const StaticCompanionCareData = {
                 }
             }
         }
+        const canonicalUrl =
+            'https://www.360degreecare.net/services/companion-care'
 
         return (
             <>
@@ -124,6 +126,7 @@ const StaticCompanionCareData = {
                     <meta name="robots" content="index, follow" />
                     <meta name="geo.region" content="US-NJ" />
                     <meta name="geo.placename" content="Ridgewood" />
+                    <link rel="canonical" href={canonicalUrl} />
                 </Head>
 
                 <Script

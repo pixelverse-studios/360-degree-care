@@ -57,6 +57,7 @@ const SkilledNursingSeoHead = () => {
             }
         }
     }
+    const canonicalUrl = 'https://www.360degreecare.net/services/nursing'
 
     return (
         <>
@@ -122,6 +123,7 @@ const SkilledNursingSeoHead = () => {
                 <meta name="robots" content="index, follow" />
                 <meta name="geo.region" content="US-NJ" />
                 <meta name="geo.placename" content="Ridgewood" />
+                <link rel="canonical" href={canonicalUrl} />
             </Head>
 
             <Script

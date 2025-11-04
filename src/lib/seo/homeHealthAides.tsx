@@ -59,6 +59,8 @@ const StaticHomeHealthAidesData = {
                 }
             }
         }
+        const canonicalUrl =
+            'https://www.360degreecare.net/services/home-health-aides'
 
         return (
             <>
@@ -123,6 +125,7 @@ const StaticHomeHealthAidesData = {
                     <meta name="robots" content="index, follow" />
                     <meta name="geo.region" content="US-NJ" />
                     <meta name="geo.placename" content="Ridgewood" />
+                    <link rel="canonical" href={canonicalUrl} />
                 </Head>
 
                 <Script

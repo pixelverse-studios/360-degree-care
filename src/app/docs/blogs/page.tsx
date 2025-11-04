@@ -8,7 +8,11 @@ import { BookOpen, Zap, Shield, Settings } from 'lucide-react'
 export const metadata: Metadata = {
     title: 'Blog System Documentation | 360° Care',
     description:
-        'Complete documentation for the 360° Care blog system. Learn how to create, manage, and publish blog posts.'
+        'Complete documentation for the 360° Care blog system. Learn how to create, manage, and publish blog posts.',
+    robots: {
+        index: false,
+        follow: false
+    }
 }
 
 // Generate TOC items from the content

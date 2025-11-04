@@ -1,30 +1,43 @@
-/** @type {import('next').NextConfig} */
-const redirectMap = [
-    ['personal-care', 'bergen-county'],
-    ['personal-care', 'monmouth-county'],
-    ['personal-care', 'ocean-county'],
-    ['personal-care', 'passaic-county'],
-    ['companion-care', 'bergen-county'],
-    ['companion-care', 'monmouth-county'],
-    ['companion-care', 'ocean-county'],
-    ['companion-care', 'passaic-county'],
-    ['elder-care', 'bergen-county'],
-    ['elder-care', 'monmouth-county'],
-    ['elder-care', 'ocean-county'],
-    ['elder-care', 'passaic-county'],
-    ['home-health-aides', 'bergen-county'],
-    ['home-health-aides', 'monmouth-county'],
-    ['home-health-aides', 'ocean-county'],
-    ['home-health-aides', 'passaic-county'],
-    ['nursing', 'bergen-county'],
-    ['nursing', 'monmouth-county'],
-    ['nursing', 'ocean-county'],
-    ['nursing', 'passaic-county'],
-    ['staffing', 'bergen-county'],
-    ['staffing', 'monmouth-county'],
-    ['staffing', 'ocean-county'],
-    ['staffing', 'passaic-county']
-]
+import { existsSync, readdirSync } from 'node:fs'
+import path from 'node:path'
+
+const SERVICES_DIR = path.join(process.cwd(), 'src', 'app', 'services')
+
+function listDirectories(basePath) {
+    if (!existsSync(basePath)) {
+        return []
+    }
+
+    return readdirSync(basePath, { withFileTypes: true })
+        .filter(entry => entry.isDirectory() && !entry.name.startsWith('('))
+        .map(entry => entry.name)
+}
+
+function hasPage(dirPath) {
+    return existsSync(path.join(dirPath, 'page.tsx'))
+}
+
+function buildServiceCountyPairs() {
+    const pairs = []
+
+    listDirectories(SERVICES_DIR).forEach(service => {
+        const serviceDir = path.join(SERVICES_DIR, service)
+        if (!hasPage(serviceDir)) {
+            return
+        }
+
+        listDirectories(serviceDir).forEach(county => {
+            const countyDir = path.join(serviceDir, county)
+            if (hasPage(countyDir)) {
+                pairs.push([service, county])
+            }
+        })
+    })
+
+    return pairs
+}
+
+const redirectPairs = buildServiceCountyPairs()
 
 const nextConfig = {
     images: {
@@ -42,7 +55,7 @@ const nextConfig = {
         ]
     },
     async redirects() {
-        return redirectMap.map(([service, county]) => ({
+        return redirectPairs.map(([service, county]) => ({
             source: `/${service}-${county}`,
             destination: `/services/${service}/${county}`,
             permanent: true

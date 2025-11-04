@@ -61,6 +61,8 @@ const StaticPersonalCareData = {
                 }
             }
         }
+        const canonicalUrl =
+            'https://www.360degreecare.net/services/personal-care'
 
         return (
             <>
@@ -129,6 +131,7 @@ const StaticPersonalCareData = {
                     <meta name="robots" content="index, follow" />
                     <meta name="geo.region" content="US-NJ" />
                     <meta name="geo.placename" content="Ridgewood" />
+                    <link rel="canonical" href={canonicalUrl} />
                 </Head>
 
                 <Script

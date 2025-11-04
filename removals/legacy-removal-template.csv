@@ -1,0 +1,4 @@
+type,prefix_or_url,status,next_action,notes
+prefix,https://www.360degreecare.net/services/legacy-example/,pending,"Submit temporary removal in SC → Removals",Target should return 404/410 before submitting
+prefix,https://www.360degreecare.net/docs/,pending,"Submit temporary removal",Internal documentation directory (noindex but still crawlable historically)
+url,https://www.360degreecare.net/old-blog-post,backlog,"Use Outdated Content tool",Single URL still indexed after deletion
