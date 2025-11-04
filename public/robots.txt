@@ -6,6 +6,10 @@ Allow: /
 User-agent: *
 Disallow: /api/
 Disallow: /_next/
+Disallow: /docs
+Disallow: /docs/*
+Disallow: /seo-review
+Disallow: /not-found
 
 # Host
 Host: https://www.360degreecare.net

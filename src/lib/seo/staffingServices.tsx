@@ -49,8 +49,7 @@ const StaticStaffingServicesData = {
                 }
             }
         }
-        const canonicalUrl =
-            'https://www.360degreecare.net/services/staffing'
+        const canonicalUrl = 'https://www.360degreecare.net/services/staffing'
 
         return (
             <>

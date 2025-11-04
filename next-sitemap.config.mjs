@@ -1,30 +1,11 @@
 import { existsSync, readdirSync } from 'node:fs'
 import path from 'node:path'
-import type { IConfig } from 'next-sitemap'
-
-type ChangeFrequency = 'weekly' | 'monthly'
-
-interface SiteEntry {
-    loc: string
-    priority: number
-    changefreq: ChangeFrequency
-}
-
-interface ServiceRoute {
-    slug: string
-    counties: CountyRoute[]
-}
-
-interface CountyRoute {
-    slug: string
-    cities: string[]
-}
 
 const SITE_URL = 'https://www.360degreecare.net'
 const APP_DIR = path.join(process.cwd(), 'src', 'app')
 const SERVICES_DIR = path.join(APP_DIR, 'services')
 
-const staticPages: SiteEntry[] = [
+const staticPages = [
     { loc: '/', priority: 1, changefreq: 'weekly' },
     { loc: '/about', priority: 0.8, changefreq: 'monthly' },
     { loc: '/services', priority: 0.8, changefreq: 'monthly' },
@@ -42,17 +23,17 @@ const staticPages: SiteEntry[] = [
 
 const serviceRoutes = buildServiceRouteTree()
 
-function listDirectories(basePath: string): string[] {
+function listDirectories(basePath) {
     return readdirSync(basePath, { withFileTypes: true })
         .filter(entry => entry.isDirectory() && !entry.name.startsWith('('))
         .map(entry => entry.name)
 }
 
-function hasPageFile(dirPath: string): boolean {
+function hasPageFile(dirPath) {
     return existsSync(path.join(dirPath, 'page.tsx'))
 }
 
-function buildServiceRouteTree(): ServiceRoute[] {
+function buildServiceRouteTree() {
     if (!existsSync(SERVICES_DIR)) {
         return []
     }
@@ -78,15 +59,10 @@ function buildServiceRouteTree(): ServiceRoute[] {
 }
 
 function buildServiceEntries(
-    routes: ServiceRoute[],
-    lastmod: string
+    routes,
+    lastmod
 ) {
-    const entries: Array<{
-        loc: string
-        changefreq: ChangeFrequency
-        priority: number
-        lastmod: string
-    }> = []
+    const entries = []
 
     routes.forEach(service => {
         entries.push({
@@ -118,7 +94,7 @@ function buildServiceEntries(
     return entries
 }
 
-const config: IConfig = {
+const config = {
     siteUrl: SITE_URL,
     generateRobotsTxt: true,
     additionalPaths: async () => {
