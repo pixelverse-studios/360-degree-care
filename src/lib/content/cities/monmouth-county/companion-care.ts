@@ -150,5 +150,32 @@ export const monmouthCountyCompanionCareCities: Record<
         benefitsHeader: 'Benefits Marlboro families notice quickly',
         ctaDescription:
             'Let’s curate a Marlboro companion plan that keeps your loved one engaged, mobile, and connected.'
+    }),
+    freehold: buildCityContent('Freehold', 'freehold', {
+        heroDescription:
+            'Companions bring conversation, rides, and encouragement to Freehold residents whether they prefer downtown cafes or Raceway Mall outings.',
+        overviewDescription:
+            'We organize visits around Veterans Park events, library lectures, and synagogue or church gatherings, keeping everyone connected when relatives commute to New York or the Shore.',
+        benefitsHeader: 'How Freehold companions enrich each day',
+        ctaDescription:
+            'Share your Freehold wish list and we will match a companion who keeps pace.'
+    }),
+    manalapan: buildCityContent('Manalapan', 'manalapan', {
+        heroDescription:
+            'Companions keep Manalapan seniors active with clubhouse events, Thompson Park strolls, and errands along Route 9.',
+        overviewDescription:
+            'We arrange rides to Covered Bridge activities, synagogue services, and doctor visits, offering companionship that matches each client’s energy.',
+        benefitsHeader: 'Companionship benefits across Manalapan',
+        ctaDescription:
+            'Share your loved one’s favorite Manalapan routines and we will pair them with the right companion.'
+    }),
+    'long-branch': buildCityContent('Long Branch', 'long-branch', {
+        heroDescription:
+            'Companions make it easy for Long Branch residents to enjoy beach walks, Monmouth University events, and coffee on Brighton Avenue.',
+        overviewDescription:
+            'We coordinate rides to Pier Village, church services, and senior centers, ensuring year-round social connection even in off-season months.',
+        benefitsHeader: 'Benefits Long Branch clients notice',
+        ctaDescription:
+            'Share your Long Branch must-do list and we will match a companion who makes it happen.'
     })
 }

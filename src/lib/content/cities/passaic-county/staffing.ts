@@ -150,5 +150,32 @@ export const passaicCountyStaffingCities: Record<
         benefitsHeader: 'Benefits Passaic partners experience with us',
         ctaDescription:
             'Let’s discuss your Passaic staffing plan so we can fill shifts with committed, community-rooted clinicians.'
+    }),
+    wayne: buildCityContent('Wayne', 'wayne', {
+        heroDescription:
+            'Wayne medical offices, rehab centers, and concierge families fill shifts fast through our staffing network.',
+        overviewDescription:
+            'We send clinicians familiar with St. Joseph’s Wayne, Willowbrook Mall traffic, and gated lake communities so onboarding is minimal.',
+        benefitsHeader: 'Staffing outcomes for Wayne partners',
+        ctaDescription:
+            'Share your Wayne staffing needs and we will supply credentialed professionals.'
+    }),
+    totowa: buildCityContent('Totowa', 'totowa', {
+        heroDescription:
+            'Totowa long-term care centers, surgery practices, and concierge clients tap our staffing bench for reliable clinicians.',
+        overviewDescription:
+            'We recruit professionals accustomed to Route 46 and 80 commutes and the unique needs of Passaic County’s hillside communities.',
+        benefitsHeader: 'Staffing value delivered in Totowa',
+        ctaDescription:
+            'Share your Totowa staffing plan and we will fill the gaps.'
+    }),
+    'west-milford': buildCityContent('West Milford', 'west-milford', {
+        heroDescription:
+            'West Milford rehab centers, camps, and concierge households partner with us for seasonal and year-round staffing.',
+        overviewDescription:
+            'We recruit clinicians comfortable driving long distances, navigating snow, and working independently in rural settings.',
+        benefitsHeader: 'Staffing support built for West Milford',
+        ctaDescription:
+            'Share your West Milford staffing needs and we will deploy adaptable professionals.'
     })
 }

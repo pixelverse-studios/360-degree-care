@@ -83,30 +83,56 @@ export default function AboutDetails() {
                     className="max-w-custom mx-auto p-10"
                 >
                     <div className="my-auto">
-                        <h2 className="text-2xl md:text-3xl font-bold mb-4 text-primary text-center">
-                            Same Dedicated Care, Now Independent
+                        <h2 className="text-2xl md:text-3xl font-bold mb-4 text-primary text-center pb-8">
+                            Formerly Interim Healthcare of Ridgewood — The Team
+                            You Know and Trust.
                         </h2>
-                        <div className="flex flex-col gap-4 max-w-3xl mx-auto">
-                            <p className="text-black basis-1/2">
-                                We formerly worked under the Interim Healthcare
-                                banner but realized that the added bureaucracy
-                                and overhead of a franchise system did not
-                                provide enough added value to warrant its
-                                continuing. All of our personnel and all of our
-                                services remain exactly as before.
-                            </p>
-                            <p className="text-black basis-1/2">
-                                Over the years we have always had a unique
-                                perspective and position in this industry. It is
-                                best reflected in some of these ads we did under
-                                the old banner. We DO NOT see our clients as
-                                being 'the frail lady in the wheelchair' as the
-                                competition focuses on. Rather, we see our
-                                clients as having lived full lives which they
-                                still can and want to enjoy fully. We celebrate
-                                our clients and our caregivers do everything
-                                possible to get the most out of life.
-                            </p>
+                        <div className="flex flex-col lg:flex-row gap-12 max-w-6xl mx-auto">
+                            <div className="flex-1 space-y-4">
+                                <p className="text-black">
+                                    We formerly worked under the Interim
+                                    Healthcare banner but realized that the
+                                    added bureaucracy and overhead of a
+                                    franchise system did not provide enough
+                                    added value to warrant its continuing. All
+                                    of our personnel and all of our services
+                                    remain exactly as before.
+                                </p>
+                                <p className="text-black">
+                                    Over the years we have always had a unique
+                                    perspective and position in this industry.
+                                    It is best reflected in some of these ads we
+                                    did under the old banner. We DO NOT see our
+                                    clients as being 'the frail lady in the
+                                    wheelchair' as the competition focuses on.
+                                    Rather, we see our clients as having lived
+                                    full lives which they still can and want to
+                                    enjoy fully. We celebrate our clients and
+                                    our caregivers do everything possible to get
+                                    the most out of life.
+                                </p>
+                            </div>
+                            <aside className="flex-1 bg-gray-50 border border-gray-200 rounded-2xl p-6 space-y-3 h-fit self-start">
+                                <p className="text-sm uppercase tracking-wide text-gray-500">
+                                    Legacy Reputation
+                                </p>
+                                <p className="text-xl font-semibold text-gray-900">
+                                    See our historical Google reviews from the
+                                    Interim Healthcare of Ridgewood era.
+                                </p>
+                                <p className="text-gray-600 text-sm">
+                                    Same leadership, care team, and service
+                                    standards—just a refreshed name.
+                                </p>
+                                <a
+                                    href="https://share.google/dim0rhWoky7SLedkk"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="inline-flex items-center justify-center px-4 py-2 rounded-full bg-primary text-white text-sm font-semibold hover:bg-primary/90 transition"
+                                >
+                                    View Legacy Google Reviews
+                                </a>
+                            </aside>
                         </div>
                     </div>
                     <div className="relative w-[90%] max-w-6xl mx-auto mt-8 overflow-hidden">

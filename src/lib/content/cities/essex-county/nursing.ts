@@ -149,5 +149,33 @@ export const essexCountyNursingCities: Record<string, CityServicePageContent> =
                 'Benefits Montclair families notice with our nurses',
             ctaDescription:
                 'Let’s align your Montclair clinical needs with a nursing schedule that keeps progress steady.'
+        }),
+        bloomfield: buildCityContent('Bloomfield', 'bloomfield', {
+            heroDescription:
+                'Skilled nurses manage IV therapies, wound care, and respiratory plans for Bloomfield patients recovering from hospital stays.',
+            overviewDescription:
+                'We collaborate with Clara Maass and Saint Barnabas teams, manage documentation, and monitor vitals so families avoid late-night ER runs.',
+            benefitsHeader:
+                'Bloomfield nursing advantages with 360 Degree Care',
+            ctaDescription:
+                'Tell us about your Bloomfield care plan and we will schedule nurses accordingly.'
+        }),
+        irvington: buildCityContent('Irvington', 'irvington', {
+            heroDescription:
+                'Private duty nurses support Irvington patients managing cardiac, respiratory, or wound-care needs after Beth Israel stays.',
+            overviewDescription:
+                'We make home visits across Springfield Avenue corridors, coordinate with local clinics, and keep families updated through text or WhatsApp as needed.',
+            benefitsHeader: 'Clinical reassurance for Irvington households',
+            ctaDescription:
+                'Let us plan skilled nursing in Irvington so you are never alone with complex care.'
+        }),
+        'west-orange': buildCityContent('West Orange', 'west-orange', {
+            heroDescription:
+                'Advanced nurses support West Orange patients recovering from cardiology, oncology, or neuro care at Saint Barnabas.',
+            overviewDescription:
+                'We manage infusions, wound vacs, and ventilator checks while updating physicians and adult children who may live across the reservation.',
+            benefitsHeader: 'Clinical assurance for West Orange families',
+            ctaDescription:
+                'Tell us about your West Orange nursing needs and we will build the right coverage.'
         })
     }

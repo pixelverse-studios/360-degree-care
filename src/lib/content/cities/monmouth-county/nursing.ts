@@ -150,5 +150,32 @@ export const monmouthCountyNursingCities: Record<
         benefitsHeader: 'Benefits Marlboro families see with our nurses',
         ctaDescription:
             'Let’s discuss your Marlboro nursing requirements so we can deploy the right clinical team without delay.'
+    }),
+    freehold: buildCityContent('Freehold', 'freehold', {
+        heroDescription:
+            'Private duty nurses help Freehold patients manage IV therapies, wound care, and cardiac monitoring without leaving home.',
+        overviewDescription:
+            'We coordinate with CentraState specialists, track vitals, and share updates with adult children even when they travel between Monmouth and Manhattan.',
+        benefitsHeader: 'Clinical confidence for Freehold households',
+        ctaDescription:
+            'Tell us about your Freehold nursing needs and we will assign the right team.'
+    }),
+    manalapan: buildCityContent('Manalapan', 'manalapan', {
+        heroDescription:
+            'Skilled nurses bring hospital-level oversight to Manalapan residents recovering from surgery, cardiac events, or complex diagnoses.',
+        overviewDescription:
+            'We connect with RWJ and CentraState physicians, manage infusion therapy, and share telehealth-ready documentation with families spread across New Jersey.',
+        benefitsHeader: 'Nursing confidence for Manalapan families',
+        ctaDescription:
+            'Let us schedule private duty nursing in Manalapan that meets your goals.'
+    }),
+    'long-branch': buildCityContent('Long Branch', 'long-branch', {
+        heroDescription:
+            'Private duty nurses support Long Branch patients discharged from Monmouth Medical Center or Jersey Shore facilities.',
+        overviewDescription:
+            'We manage ports, vents, and complex meds across oceanfront condos and inland neighborhoods, working closely with cardiology and oncology teams.',
+        benefitsHeader: 'Clinical assurance for Long Branch households',
+        ctaDescription:
+            'Let us plan skilled nursing in Long Branch that adapts to shore traffic and storm season.'
     })
 }

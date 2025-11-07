@@ -14,3 +14,14 @@ Running list of action items for cleaning up Google’s index so only the ~80 ca
   Fix redirect chains, add canonicals to SEO modules, and revalidate the “Not found”/“Duplicate” reports once the above steps ship. (Canonicals added across all service/about/home SEO heads on 2025-11-04; redirect coverage is now auto-generated from `src/app/services/**` via `next.config.mjs`.)
 
 Last updated: 2025-11-04.
+
+## Additional SEO Enhancements
+
+- [ ] Replace the placeholder Open Graph image reference in `src/app/layout.tsx` with a real asset so shared links render properly.
+- [ ] Review and shorten metadata descriptions inside `src/lib/content/<county>-<service>.ts` so each stays within ~155 characters and highlights unique local value props.
+- [ ] Add breadcrumb JSON-LD to service/county pages using the existing navigation structure for richer search snippets.
+- [ ] Update `next-sitemap.config.mjs` to exclude internal-only paths (e.g., `/docs/**`, `/test-tracking`) from the sitemap output.
+- [ ] Ensure every blog article provides explicit `openGraph`/`twitter` metadata with the correct hero imagery instead of relying on defaults.
+- [ ] Double-check canonical URL exports across dynamic routes so no page falls back to the global `/` canonical unintentionally.
+- [ ] Optimize remote images defined in `src/lib/images.ts` and confirm `next.config.mjs` includes the necessary `remotePatterns`.
+- [ ] Emit FAQPage schema wherever the FAQ components render (city/service detail pages) to improve eligibility for rich results.

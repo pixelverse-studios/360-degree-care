@@ -179,5 +179,32 @@ export const bergenCountyHomeHealthAideCities: Record<
         benefitsHeader: 'Why Fair Lawn chooses our aide coverage',
         ctaDescription:
             'Let us know your Fair Lawn schedule—we’ll arrange aide shifts that work around commuter hours, therapy sessions, and family commitments.'
+    }),
+    paramus: buildCityContent('Paramus', 'paramus', {
+        heroDescription:
+            'Certified home health aides support Paramus residents through post-operative recoveries, chronic conditions, and busy shopping-corridor schedules.',
+        overviewDescription:
+            'We coordinate with surgeons at Valley Hospital and Bergen New Bridge, manage medication reminders between outpatient visits, and keep Paramus homes safe even when driveways fill with snow and deliveries.',
+        benefitsHeader: 'Paramus advantages with our CHHA team',
+        ctaDescription:
+            'Describe your Paramus routines and we will line up the right aides for mornings, evenings, or 24/7 coverage.'
+    }),
+    englewood: buildCityContent('Englewood', 'englewood', {
+        heroDescription:
+            'Englewood households appreciate aides who coordinate with Englewood Health, bergenPAC schedules, and high-end building staff.',
+        overviewDescription:
+            'We provide respectful bathing, mobility, and medication oversight while navigating doormen, private elevators, and steep driveways from East Hill to downtown.',
+        benefitsHeader: 'How Englewood benefits from our CHHAs',
+        ctaDescription:
+            'Outline your Englewood schedule and we will align the right aides for days, nights, or live-in support.'
+    }),
+    westwood: buildCityContent('Westwood', 'westwood', {
+        heroDescription:
+            'Certified aides keep Westwood residents steady before and after visits to Hackensack Meridian Pascack Valley Medical Center.',
+        overviewDescription:
+            'We handle bathing, transfers, and medication reminders for clients along Kinderkamack Road, Emerson borders, and quiet cul-de-sacs, coordinating with local therapists and pharmacies.',
+        benefitsHeader: 'Why Westwood families depend on our aides',
+        ctaDescription:
+            'Describe your Westwood care needs and we will schedule reliable CHHA coverage.'
     })
 }

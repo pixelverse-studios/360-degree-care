@@ -150,5 +150,32 @@ export const monmouthCountyElderCareCities: Record<
         benefitsHeader: 'Benefits Marlboro families see after consulting',
         ctaDescription:
             'Let’s review your Marlboro situation and craft a step-by-step approach that protects safety and independence.'
+    }),
+    freehold: buildCityContent('Freehold', 'freehold', {
+        heroDescription:
+            'Freehold decision-makers navigating CentraState discharges or adult community transitions rely on our consultants.',
+        overviewDescription:
+            'We evaluate ranch homes and 55-plus condos, align budgets with Monmouth County resources, and coordinate with local attorneys or financial planners.',
+        benefitsHeader: 'Clarity Freehold families count on',
+        ctaDescription:
+            'Bring us your Freehold plan and we will map the next steps.'
+    }),
+    manalapan: buildCityContent('Manalapan', 'manalapan', {
+        heroDescription:
+            'Manalapan families balancing large properties, aging parents, and career demands lean on our consultants for a clear plan.',
+        overviewDescription:
+            'We evaluate home safety from Yorktowne to Monmouth Heights, outline respite options, and coordinate with Monmouth County support programs.',
+        benefitsHeader: 'Guidance tailored to Manalapan households',
+        ctaDescription:
+            'Bring us your Manalapan questions and we will map the path forward.'
+    }),
+    'long-branch': buildCityContent('Long Branch', 'long-branch', {
+        heroDescription:
+            'Long Branch families juggling oceanfront condos, hurricane prep, and Monmouth Medical Center follow-ups rely on our consultants.',
+        overviewDescription:
+            'We review evacuation plans, coastal insurance considerations, and community resources from West End to Elberon so decisions stay proactive.',
+        benefitsHeader: 'Guidance tuned to Long Branch realities',
+        ctaDescription:
+            'Bring us your Long Branch concerns and we will deliver actionable steps.'
     })
 }

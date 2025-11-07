@@ -150,5 +150,32 @@ export const essexCountyCompanionCareCities: Record<
         benefitsHeader: 'Companion care designed for Montclair lifestyles',
         ctaDescription:
             'Let’s match your Montclair loved one with a companion who shares their interests and energy.'
+    }),
+    bloomfield: buildCityContent('Bloomfield', 'bloomfield', {
+        heroDescription:
+            'Companions keep Bloomfield seniors engaged at Brookdale Park concerts, Bloomfield Public Library events, and downtown cafes.',
+        overviewDescription:
+            'We manage NJ Transit escorting, errands along Bloomfield Avenue, and bilingual conversation so families know someone is checking in daily.',
+        benefitsHeader: 'How Bloomfield companions make life brighter',
+        ctaDescription:
+            'Share what sparks joy in Bloomfield and we will pair your loved one with the right companion.'
+    }),
+    irvington: buildCityContent('Irvington', 'irvington', {
+        heroDescription:
+            'Companions bring calm conversation, errands, and escorted walks for Irvington seniors along Chancellor Avenue, Union Avenue, and Civic Square.',
+        overviewDescription:
+            'We integrate with township programs, provide culturally aware visits, and ensure elders are not isolated even when relatives work double shifts.',
+        benefitsHeader: 'Benefits Irvington households notice',
+        ctaDescription:
+            'Share your Irvington priorities and we will match a companion who feels like family.'
+    }),
+    'west-orange': buildCityContent('West Orange', 'west-orange', {
+        heroDescription:
+            'Companions accompany West Orange residents to Turtle Back Zoo outings, Bloomfield Avenue cafes, and South Mountain trails.',
+        overviewDescription:
+            'We design calendars with JCC programs, community events, and safe driving routes on steep hills so seniors remain social.',
+        benefitsHeader: 'Benefits West Orange families see',
+        ctaDescription:
+            'Share your West Orange wish list and we will match the ideal companion.'
     })
 }

@@ -150,5 +150,32 @@ export const passaicCountyNursingCities: Record<
         benefitsHeader: 'Benefits Passaic households see with our nurses',
         ctaDescription:
             'Let us know your Passaic care goals—we’ll deploy nurses who align with family expectations and physician directives.'
+    }),
+    wayne: buildCityContent('Wayne', 'wayne', {
+        heroDescription:
+            'Skilled nurses deliver hospital-level care for Wayne patients between St. Joseph’s, Chilton, and New York metro specialists.',
+        overviewDescription:
+            'We handle IVs, wound vacs, and respiratory monitoring while sharing updates with physicians and adult children even during storm-related outages.',
+        benefitsHeader: 'Clinical assurance for Wayne households',
+        ctaDescription:
+            'Let us schedule private duty nursing in Wayne that keeps your loved one stable.'
+    }),
+    totowa: buildCityContent('Totowa', 'totowa', {
+        heroDescription:
+            'Private duty nurses help Totowa patients manage IVs, drains, and respiratory plans at home even when winter roads get slick.',
+        overviewDescription:
+            'We collaborate with St. Joseph’s Health, oversee medication changes, and ensure documentation reaches physicians across Passaic County.',
+        benefitsHeader: 'Nursing reassurance for Totowa families',
+        ctaDescription:
+            'Let us organize skilled nursing in Totowa so you stay ahead of complications.'
+    }),
+    'west-milford': buildCityContent('West Milford', 'west-milford', {
+        heroDescription:
+            'Skilled nurses manage complex care for West Milford residents who would rather stay lakeside than transfer to a facility.',
+        overviewDescription:
+            'We handle infusion pumps, wound vacs, and chronic disease monitoring while coordinating with cardiology and pulmonary teams in Wayne or Morristown.',
+        benefitsHeader: 'Clinical assurance for Highlands families',
+        ctaDescription:
+            'Let us schedule nursing visits that reach even the most remote West Milford roads.'
     })
 }

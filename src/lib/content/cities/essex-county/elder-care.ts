@@ -150,5 +150,32 @@ export const essexCountyElderCareCities: Record<
         benefitsHeader: 'Benefits Montclair households see after a consult',
         ctaDescription:
             'Let’s discuss your Montclair care scenario and create an action plan that protects independence and wellbeing.'
+    }),
+    bloomfield: buildCityContent('Bloomfield', 'bloomfield', {
+        heroDescription:
+            'Bloomfield families balancing hospital discharges, aging rowhomes, and complex benefits rely on our consultants.',
+        overviewDescription:
+            'We assess safety hazards in brownstones, connect clients with Essex County programs, and align plans with Clara Maass, Mountainside, or Saint Barnabas providers.',
+        benefitsHeader: 'Guidance Bloomfield families can use immediately',
+        ctaDescription:
+            'Bring us your Bloomfield decisions and we will deliver a prioritized roadmap.'
+    }),
+    irvington: buildCityContent('Irvington', 'irvington', {
+        heroDescription:
+            'Irvington decision-makers need fast, realistic plans when hospital teams discharge a loved one.',
+        overviewDescription:
+            'We evaluate rowhomes, coordinate with Beth Israel case managers, and tap Essex County relief programs so families know exactly what to do next.',
+        benefitsHeader: 'How Irvington families gain clarity',
+        ctaDescription:
+            'Bring us your Irvington situation and we will outline the right moves.'
+    }),
+    'west-orange': buildCityContent('West Orange', 'west-orange', {
+        heroDescription:
+            'West Orange families making decisions after Saint Barnabas or Kessler visits rely on our objective guidance.',
+        overviewDescription:
+            'We assess elevator accessibility, coordinate with township resources, and map options from Llewellyn Park estates to garden apartments.',
+        benefitsHeader: 'How West Orange gains clarity',
+        ctaDescription:
+            'Bring your West Orange questions and we will outline the smartest next steps.'
     })
 }

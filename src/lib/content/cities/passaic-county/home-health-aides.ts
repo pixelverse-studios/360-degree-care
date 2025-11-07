@@ -151,5 +151,32 @@ export const passaicCountyHomeHealthAideCities: Record<
         benefitsHeader: 'Benefits Passaic households see with our aides',
         ctaDescription:
             'Let’s plan aide coverage in Passaic that keeps your loved one safe, comfortable, and on schedule.'
+    }),
+    wayne: buildCityContent('Wayne', 'wayne', {
+        heroDescription:
+            'Home health aides support Wayne residents recovering from orthopedic surgeries, cardiac events, or chronic conditions.',
+        overviewDescription:
+            'We manage medication boxes, therapy routines, and snow-day logistics across Packanack, Pines Lake, and high-traffic corridors so families maintain peace of mind.',
+        benefitsHeader: 'Why Wayne counts on our aides',
+        ctaDescription:
+            'Tell us about your Wayne care plan and we will staff it.'
+    }),
+    totowa: buildCityContent('Totowa', 'totowa', {
+        heroDescription:
+            'Totowa residents receive dependable aides who can handle steep steps, tight driveways, and short-notice schedule changes.',
+        overviewDescription:
+            'We coordinate with St. Joseph’s Home for the Elderly, outpatient clinics, and township EMTs to keep plans proactive.',
+        benefitsHeader: 'Why Totowa trusts our CHHAs',
+        ctaDescription:
+            'Describe your Totowa coverage needs and we will arrange aides quickly.'
+    }),
+    'west-milford': buildCityContent('West Milford', 'west-milford', {
+        heroDescription:
+            'Reliable aides brave Route 23 hills, private dirt roads, and winter weather to keep West Milford clients safe at home.',
+        overviewDescription:
+            'We build schedules with backup coverage, stock emergency supplies, and coordinate with paramedics or Atlantic Health partners so care never pauses.',
+        benefitsHeader: 'Why West Milford trusts our CHHAs',
+        ctaDescription:
+            'Describe your West Milford environment and we will assign aides equipped for it.'
     })
 }

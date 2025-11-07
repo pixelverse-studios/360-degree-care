@@ -154,5 +154,35 @@ export const monmouthCountyPersonalCareCities: Record<
         benefitsHeader: 'Benefits Marlboro families see with our support',
         ctaDescription:
             'Let’s customize a Marlboro personal care plan that fits your home layout, commute, and wellness goals.'
+    }),
+    freehold: buildCityContent('Freehold', 'freehold', {
+        heroDescription:
+            'Personal care aides keep Freehold seniors steady between CentraState appointments, downtown concerts, and Freehold Raceway Mall errands.',
+        overviewDescription:
+            'We coordinate with parish calendars, outpatient rehab, and sprawling developments off Route 9 so daily hygiene, meals, and medication routines never slip.',
+        serviceHeader: 'Personal care coverage across Freehold',
+        benefitsHeader: 'Why Freehold families rely on our caregivers',
+        ctaDescription:
+            'Tell us about your Freehold household and we will tailor dignified support.'
+    }),
+    manalapan: buildCityContent('Manalapan', 'manalapan', {
+        heroDescription:
+            'Personal care teams support Manalapan’s 55-plus communities and multigenerational homes scattered along Route 9 and Tennent Road.',
+        overviewDescription:
+            'We plan around HOA rules, clubhouse calendars, and medical visits in Freehold or Old Bridge, ensuring daily care stays consistent across expansive neighborhoods.',
+        serviceHeader: 'Personal care throughout Manalapan',
+        benefitsHeader: 'Why Manalapan families trust our caregivers',
+        ctaDescription:
+            'Tell us about your Manalapan schedule and we will keep routines steady.'
+    }),
+    'long-branch': buildCityContent('Long Branch', 'long-branch', {
+        heroDescription:
+            'Personal care services keep Long Branch seniors comfortable near Pier Village, Broadway, and Monmouth Medical Center appointments.',
+        overviewDescription:
+            'We adjust schedules for boardwalk crowds, apartment elevators, and beachfront humidity while coordinating with physicians along Ocean Avenue.',
+        serviceHeader: 'Personal care coverage throughout Long Branch',
+        benefitsHeader: 'Why Long Branch families trust our caregivers',
+        ctaDescription:
+            'Tell us about your Long Branch lifestyle and we will tailor support.'
     })
 }

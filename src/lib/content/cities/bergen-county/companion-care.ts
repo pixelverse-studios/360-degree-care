@@ -179,5 +179,32 @@ export const bergenCountyCompanionCareCities: Record<
         benefitsHeader: 'Why Fair Lawn families rely on our companions',
         ctaDescription:
             'Let’s plan Fair Lawn companionship that keeps your loved one active, social, and confident in the routines they love.'
+    }),
+    paramus: buildCityContent('Paramus', 'paramus', {
+        heroDescription:
+            'Friendly companions help Paramus seniors enjoy Van Saun Park, neighborhood farmers markets, and errands along Route 17 without feeling rushed.',
+        overviewDescription:
+            "We build visits around Trader Joe's runs, library programs, and church schedules, providing transportation and conversation so Paramus loved ones stay social even when family members commute.",
+        benefitsHeader: 'How companions brighten days in Paramus',
+        ctaDescription:
+            'Tell us what your Paramus loved one enjoys and we will match a companion who can navigate local traffic and favorite hangouts.'
+    }),
+    englewood: buildCityContent('Englewood', 'englewood', {
+        heroDescription:
+            'Companions keep Englewood residents engaged with bergenPAC shows, Flat Rock Brook strolls, and Palisade Avenue cafes.',
+        overviewDescription:
+            'We plan escorted outings, bilingual conversation, and transportation to Englewood senior programs so no one feels isolated even if relatives commute into the city.',
+        benefitsHeader: 'How Englewood companions make life brighter',
+        ctaDescription:
+            'Share your Englewood wish list and we will introduce a companion who can keep up.'
+    }),
+    westwood: buildCityContent('Westwood', 'westwood', {
+        heroDescription:
+            'Companions help Westwood seniors enjoy boutique shopping, library lectures, and coffee near Veterans Park.',
+        overviewDescription:
+            'We organize NJ Transit escorting, drives along Kinderkamack Road, and visits with nearby family so Westwood residents stay social and confident.',
+        benefitsHeader: 'Benefits Westwood residents see with our companions',
+        ctaDescription:
+            'Let us know what makes Westwood feel like home and we will match a companion who keeps pace.'
     })
 }

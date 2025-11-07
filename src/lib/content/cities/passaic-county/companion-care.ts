@@ -150,5 +150,32 @@ export const passaicCountyCompanionCareCities: Record<
         benefitsHeader: 'How Passaic households benefit from companionship',
         ctaDescription:
             'Let’s design a Passaic companion plan that keeps your loved one connected, social, and supported.'
+    }),
+    wayne: buildCityContent('Wayne', 'wayne', {
+        heroDescription:
+            'Companions help Wayne residents enjoy Packanack clubs, library lectures, and Willowbrook shopping without worrying about transportation.',
+        overviewDescription:
+            'We plan visits around William Paterson events, faith communities, and township recreation so loved ones stay social even if relatives commute long distances.',
+        benefitsHeader: 'Benefits Wayne families notice',
+        ctaDescription:
+            'Share your Wayne wish list and we will match a companion who fits.'
+    }),
+    totowa: buildCityContent('Totowa', 'totowa', {
+        heroDescription:
+            'Companions bring social connection to Totowa residents, from Minnisink Road neighborhoods to community centers on Totowa Road.',
+        overviewDescription:
+            'We plan escorted outings, coffee runs, and faith-based visits despite highway congestion, ensuring loved ones are never isolated.',
+        benefitsHeader: 'How companionship supports Totowa families',
+        ctaDescription:
+            'Share your Totowa loved one’s interests and we will match a companion accordingly.'
+    }),
+    'west-milford': buildCityContent('West Milford', 'west-milford', {
+        heroDescription:
+            'Companions bring conversation, scenic drives, and errand support to West Milford residents who live miles apart from neighbors.',
+        overviewDescription:
+            'We plan visits around Greenwood Lake shops, Echo Lake Stables, and township senior programs, providing social connection even during winter storms.',
+        benefitsHeader: 'How companionship supports West Milford lifestyles',
+        ctaDescription:
+            'Share how your loved one spends time in West Milford and we will match the right companion.'
     })
 }

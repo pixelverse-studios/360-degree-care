@@ -151,5 +151,32 @@ export const monmouthCountyHomeHealthAideCities: Record<
         benefitsHeader: 'How Marlboro households benefit from our aides',
         ctaDescription:
             'Share your Marlboro care plan—we’ll assemble aide coverage that adapts to travel schedules and evolving health needs.'
+    }),
+    freehold: buildCityContent('Freehold', 'freehold', {
+        heroDescription:
+            'Freehold residents receive dependable aides who manage ADLs, therapy homework, and medication reminders between Route 9 appointments.',
+        overviewDescription:
+            'We collaborate with CentraState surgeons, outpatient PT, and cardiology groups to keep recoveries on schedule while families juggle work and commuting.',
+        benefitsHeader: 'Why Freehold chooses our aides',
+        ctaDescription:
+            'Let us build your Freehold aide schedule with the coverage you need most.'
+    }),
+    manalapan: buildCityContent('Manalapan', 'manalapan', {
+        heroDescription:
+            'CHHAs serve Manalapan seniors who want consistent help in sprawling ranches, farms, and adult communities.',
+        overviewDescription:
+            'We coordinate with cardiology and oncology groups in Freehold or Marlboro, manage medication boxes, and ensure aides can access gated neighborhoods reliably.',
+        benefitsHeader: 'Why Manalapan relies on our aides',
+        ctaDescription:
+            'Describe your Manalapan coverage needs and we will staff them.'
+    }),
+    'long-branch': buildCityContent('Long Branch', 'long-branch', {
+        heroDescription:
+            'Long Branch residents receive consistent aides who handle humidity, sand, and high-rise logistics while keeping care on track.',
+        overviewDescription:
+            'We escort clients to Monmouth Medical Center, manage hydration during boardwalk seasons, and stay vigilant about storm prep for beachfront homes.',
+        benefitsHeader: 'Why Long Branch depends on our aides',
+        ctaDescription:
+            'Describe your Long Branch coverage needs and we will assign the right aides.'
     })
 }

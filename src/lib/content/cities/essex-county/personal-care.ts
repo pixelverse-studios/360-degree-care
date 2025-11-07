@@ -154,5 +154,35 @@ export const essexCountyPersonalCareCities: Record<
         benefitsHeader: 'Why Montclair families choose 360 Degree Care',
         ctaDescription:
             'Let’s design a Montclair personal care plan that keeps your loved one connected to the community they love.'
+    }),
+    bloomfield: buildCityContent('Bloomfield', 'bloomfield', {
+        heroDescription:
+            'Personal care teams help Bloomfield seniors stay comfortable between Brookdale Park walks, Bloomfield Station errands, and Clara Maass appointments.',
+        overviewDescription:
+            'We navigate brownstone apartments and classic colonials, schedule around NJ Transit departures and church calendars, and keep hydration, meals, and mobility on track even during busy commuter hours.',
+        serviceHeader: 'Personal care support across Bloomfield',
+        benefitsHeader: 'Why Bloomfield households trust our caregivers',
+        ctaDescription:
+            'Tell us about your Bloomfield routine and we will build respectful coverage that keeps loved ones at home.'
+    }),
+    irvington: buildCityContent('Irvington', 'irvington', {
+        heroDescription:
+            'Personal care aides help Irvington seniors stay steady amid bustling Springfield Avenue blocks and Newark Beth Israel follow-ups.',
+        overviewDescription:
+            'We coordinate with church groups, senior centers, and bus routes, delivering respectful bathing, meals, and mobility support in walk-ups or single-family homes.',
+        serviceHeader: 'Personal care coverage throughout Irvington',
+        benefitsHeader: 'Why Irvington families lean on our caregivers',
+        ctaDescription:
+            'Tell us about your Irvington household and we will keep daily routines on track.'
+    }),
+    'west-orange': buildCityContent('West Orange', 'west-orange', {
+        heroDescription:
+            'Personal care services keep West Orange seniors confident on hilly streets near South Mountain, Llewellyn Park, and Saint Barnabas Medical Center.',
+        overviewDescription:
+            'We plan around synagogue and church calendars, coordinate transportation to Saint Barnabas, and adjust for multi-level homes common across the reservation ridge.',
+        serviceHeader: 'Personal care coverage across West Orange',
+        benefitsHeader: 'Why West Orange families partner with us',
+        ctaDescription:
+            'Tell us about your West Orange routine and we will tailor in-home support that works year-round.'
     })
 }

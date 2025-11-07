@@ -41,6 +41,10 @@ export default function HomeHero() {
                     </span>
                     .
                 </p>
+                <p className="text-base text-gray-600 max-w-2xl">
+                    Trusted by New Jersey families for over a decade — formerly
+                    known as Interim Healthcare of Ridgewood.
+                </p>
                 <div className="my-5 grid grid-cols-1 md:grid-cols-2 gap-4">
                     <CallToAction
                         buttonLabel="Get In Touch"

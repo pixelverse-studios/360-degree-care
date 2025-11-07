@@ -1,17 +1,3 @@
-interface UTMParams {
-    utm_source?: string
-    utm_medium?: string
-    utm_campaign?: string
-    utm_term?: string
-    utm_content?: string
-}
-
-interface CampaignData extends UTMParams {
-    landing_page?: string
-    timestamp?: string
-    session_id?: string
-}
-
 type EventPayload = Record<string, unknown>
 
 const isDev = process.env.NODE_ENV !== 'production'
@@ -27,7 +13,6 @@ declare global {
         // eslint-disable-next-line no-unused-vars
         sbVisitorCustomEvent?: (eventName: string) => void
         siteBehaviourEventMeta?: EventPayload
-        siteBehaviourUTM?: CampaignData
     }
 }
 
@@ -40,7 +25,6 @@ type AdSourceInfo = {
     eventName: string
 }
 
-const AD_SOURCE_PARAM = 'src'
 const AD_SOURCE_SESSION_KEY = 'ad_source_last'
 
 const AD_SOURCE_MAP: Record<AdSourceCode, AdSourceInfo> = {
@@ -153,88 +137,11 @@ const trackPageView = (url?: string) => {
     }
 }
 
-const getCampaignDataFromCookie = (): CampaignData | null => {
-    if (typeof window === 'undefined') return null
-
-    const cookies = document.cookie.split(';')
-    const campaignCookie = cookies.find(cookie =>
-        cookie.trim().startsWith('campaign_data=')
-    )
-
-    if (!campaignCookie) return null
-
-    try {
-        const value = campaignCookie.split('=')[1]
-        return JSON.parse(decodeURIComponent(value))
-    } catch {
-        return null
-    }
-}
-
-const getCampaignDataFromURL = (): UTMParams => {
-    if (typeof window === 'undefined') return {}
-
-    const params = new URLSearchParams(window.location.search)
-    const utmParams: UTMParams = {}
-
-    const utmKeys: (keyof UTMParams)[] = [
-        'utm_source',
-        'utm_medium',
-        'utm_campaign',
-        'utm_term',
-        'utm_content'
-    ]
-
-    utmKeys.forEach(key => {
-        const value = params.get(key)
-        if (value) {
-            utmParams[key] = value.toLowerCase()
-        }
-    })
-
-    return utmParams
-}
-
 const trackEvent = (eventName: string, payload: EventPayload = {}) => {
     if (typeof window === 'undefined') return
 
     debugLog('Tracking SiteBehaviour event:', eventName, payload)
     enqueueSiteBehaviourEvent(eventName, payload)
-}
-
-const trackCampaign = (data?: CampaignData) => {
-    if (typeof window === 'undefined') return
-
-    const campaignData =
-        data || getCampaignDataFromURL() || getCampaignDataFromCookie()
-
-    if (!campaignData || !Object.keys(campaignData).length) return
-
-    if (Object.keys(campaignData).length > 0) {
-        const landingPage =
-            (campaignData as CampaignData).landing_page ||
-            window.location.pathname
-
-        ;(window as any).siteBehaviourUTM = campaignData
-
-        const eventName = campaignData.utm_campaign
-            ? `Campaign: ${campaignData.utm_campaign}`
-            : campaignData.utm_source
-              ? `Source: ${campaignData.utm_source}`
-              : 'Campaign Visit'
-
-        const payload = {
-            utm_source: campaignData.utm_source,
-            utm_medium: campaignData.utm_medium,
-            utm_campaign: campaignData.utm_campaign,
-            utm_term: campaignData.utm_term,
-            utm_content: campaignData.utm_content,
-            landing_page: landingPage
-        }
-
-        debugLog('SiteBehaviour UTM tracking:', payload)
-        enqueueSiteBehaviourEvent(eventName, payload)
-    }
 }
 
 const trackAdSource = (
@@ -266,71 +173,11 @@ const trackAdSource = (
     return sourceInfo
 }
 
-const getAdSourceFromURL = (): AdSourceInfo | null => {
-    if (typeof window === 'undefined') return null
-
-    const params = new URLSearchParams(window.location.search)
-    return normalizeAdSource(params.get(AD_SOURCE_PARAM))
-}
-
-const storeCampaignData = (data: CampaignData) => {
-    if (typeof window === 'undefined') return
-
-    const existingData = localStorage.getItem('campaign_history')
-    const history = existingData ? JSON.parse(existingData) : []
-
-    history.push({
-        ...data,
-        timestamp: new Date().toISOString()
-    })
-
-    if (history.length > 10) {
-        history.shift()
-    }
-
-    localStorage.setItem('campaign_history', JSON.stringify(history))
-}
-
-const getFirstTouchAttribution = (): CampaignData | null => {
-    if (typeof window === 'undefined') return null
-
-    const history = localStorage.getItem('campaign_history')
-    if (!history) return null
-
-    try {
-        const data = JSON.parse(history)
-        return data[0] || null
-    } catch {
-        return null
-    }
-}
-
-const getLastTouchAttribution = (): CampaignData | null => {
-    if (typeof window === 'undefined') return null
-
-    const history = localStorage.getItem('campaign_history')
-    if (!history) return null
-
-    try {
-        const data = JSON.parse(history)
-        return data[data.length - 1] || null
-    } catch {
-        return null
-    }
-}
-
 const analytics = {
     trackPageView,
     trackEvent,
-    trackCampaign,
-    trackAdSource,
-    getCampaignDataFromCookie,
-    getCampaignDataFromURL,
-    getAdSourceFromURL,
-    storeCampaignData,
-    getFirstTouchAttribution,
-    getLastTouchAttribution
+    trackAdSource
 }
 
 export default analytics
-export type { UTMParams, CampaignData, EventPayload, AdSourceInfo }
+export type { EventPayload, AdSourceInfo }

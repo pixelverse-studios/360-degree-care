@@ -34,9 +34,10 @@ export default function HomeAboutSection() {
                         About 360° Care
                     </h2>
                     <p>
-                        For over 10 years, 360 Degree Care has proudly served
+                        For over a decade, 360 Degree Care, formerly operating
+                        as Interim Healthcare of Ridgewood, has proudly served
                         families across New Jersey with compassionate,
-                        dependable home care services — all from our base in
+                        dependable home care services, all from our base in
                         Ridgewood, NJ. We provide comprehensive{' '}
                         <a
                             href="/services/personal-care/bergen-county"

@@ -175,5 +175,32 @@ export const bergenCountyNursingCities: Record<string, CityServicePageContent> =
             benefitsHeader: 'Why Fair Lawn trusts our nursing coverage',
             ctaDescription:
                 'Let’s map out skilled nursing in Fair Lawn that keeps your loved one stable at home and out of the ER.'
+        }),
+        paramus: buildCityContent('Paramus', 'paramus', {
+            heroDescription:
+                'Skilled nurses bridge Valley Hospital, HUMC, and rehab discharges so Paramus patients heal at home without repeat admissions.',
+            overviewDescription:
+                'We manage IV antibiotics, complex wound care, and cardiac monitoring while coordinating with specialists along Route 17 and keeping families updated even when they commute into Manhattan.',
+            benefitsHeader: 'Why Paramus households trust our nurses',
+            ctaDescription:
+                'Let us plan private duty nursing in Paramus that keeps your loved one safe between appointments.'
+        }),
+        englewood: buildCityContent('Englewood', 'englewood', {
+            heroDescription:
+                'Englewood residents recovering from cardiac, oncology, or orthopedic procedures trust our nurses for hospital-level oversight at home.',
+            overviewDescription:
+                'We collaborate with Englewood Health and Columbia specialists, manage infusion pumps, and relay vitals to physicians so families avoid unnecessary returns to the city.',
+            benefitsHeader: 'Why Englewood patients rely on our nurses',
+            ctaDescription:
+                'Let us coordinate Englewood nursing coverage that keeps complex care on track.'
+        }),
+        westwood: buildCityContent('Westwood', 'westwood', {
+            heroDescription:
+                'Private duty nurses support Westwood patients managing cardiac, respiratory, or neurologic conditions at home.',
+            overviewDescription:
+                'We integrate with Pascack Valley specialists, oversee IV therapies, and track vitals while updating adult children who commute via NJ Transit.',
+            benefitsHeader: 'Clinical peace of mind for Westwood families',
+            ctaDescription:
+                'Let us plan skilled nursing in Westwood that keeps your loved one out of the hospital.'
         })
     }

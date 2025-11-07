@@ -150,5 +150,32 @@ export const essexCountyHomeHealthAideCities: Record<
         benefitsHeader: 'Benefits Montclair households see with our aides',
         ctaDescription:
             'Let’s develop a Montclair aide plan that protects independence and complements your family’s lifestyle.'
+    }),
+    bloomfield: buildCityContent('Bloomfield', 'bloomfield', {
+        heroDescription:
+            'Bloomfield residents receive CHHA support that respects narrow driveways, shared entrances, and busy commuter schedules.',
+        overviewDescription:
+            'We coordinate with Clara Maass and Mountainside surgeons, provide fall prevention inside multi-level homes, and keep families updated when they take NJ Transit into the city.',
+        benefitsHeader: 'Why Bloomfield counts on our aides',
+        ctaDescription:
+            'Let us tailor Bloomfield aide coverage that fits your household.'
+    }),
+    irvington: buildCityContent('Irvington', 'irvington', {
+        heroDescription:
+            'Experienced aides keep Irvington seniors safe inside walk-ups and multifamily homes, following Beth Israel care plans to the letter.',
+        overviewDescription:
+            'We deliver consistent bathing, medication reminders, and overnight coverage while navigating parking restrictions and high-density living.',
+        benefitsHeader: 'Why Irvington trusts our CHHAs',
+        ctaDescription:
+            'Describe your Irvington schedule and we will assemble dependable aide coverage.'
+    }),
+    'west-orange': buildCityContent('West Orange', 'west-orange', {
+        heroDescription:
+            'Home health aides help West Orange residents manage personal care and mobility despite steep driveways and multi-level layouts.',
+        overviewDescription:
+            'We coordinate with Saint Barnabas, RWJ, and Kessler teams, ensuring equipment, medication, and safety plans stay solid.',
+        benefitsHeader: 'Why West Orange trusts our aides',
+        ctaDescription:
+            'Let us align your West Orange aide schedule with therapy sessions, weather patterns, and family travel.'
     })
 }

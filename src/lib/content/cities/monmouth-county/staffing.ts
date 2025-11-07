@@ -150,5 +150,32 @@ export const monmouthCountyStaffingCities: Record<
         benefitsHeader: 'What Marlboro gains with 360 Degree Care Staffing',
         ctaDescription:
             'Let’s discuss your Marlboro staffing goals so we can pair you with the right caregivers, nurses, and coordinators.'
+    }),
+    freehold: buildCityContent('Freehold', 'freehold', {
+        heroDescription:
+            'Freehold medical practices, senior communities, and concierge families tap our staffing team for reliable clinicians.',
+        overviewDescription:
+            'We recruit professionals already commuting along Route 9, CentraState, and downtown offices so coverage arrives promptly even during summer traffic.',
+        benefitsHeader: 'Staffing results Freehold partners see',
+        ctaDescription:
+            'Share the shifts you need to fill in Freehold and we will deliver credentialed talent.'
+    }),
+    manalapan: buildCityContent('Manalapan', 'manalapan', {
+        heroDescription:
+            'Manalapan practices, wellness centers, and concierge households fill shifts quickly through our Monmouth staffing team.',
+        overviewDescription:
+            'We source clinicians experienced with Route 9 traffic, Covered Bridge HOAs, and in-home expectations across Monmouth farmland and cul-de-sacs.',
+        benefitsHeader: 'Staffing wins in Manalapan',
+        ctaDescription:
+            'Share your Manalapan staffing plan and we will handle the roster.'
+    }),
+    'long-branch': buildCityContent('Long Branch', 'long-branch', {
+        heroDescription:
+            'Long Branch healthcare facilities, rehab centers, and beachfront concierge clients rely on our staffing team for seasonal and year-round coverage.',
+        overviewDescription:
+            'We recruit clinicians comfortable with Monmouth Medical Center standards, boardwalk crowds, and hospitality-driven households so shifts stay filled even during summer surges.',
+        benefitsHeader: 'Staffing advantages for Long Branch partners',
+        ctaDescription:
+            'Share the roles you need covered in Long Branch and we will deploy credentialed talent.'
     })
 }

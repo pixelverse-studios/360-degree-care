@@ -149,5 +149,32 @@ export const essexCountyStaffingCities: Record<string, CityServicePageContent> =
             benefitsHeader: 'Benefits Montclair partners see with our staffing',
             ctaDescription:
                 'Let’s discuss your Montclair staffing requirements so we can assemble the right mix of caregivers and nurses.'
+        }),
+        bloomfield: buildCityContent('Bloomfield', 'bloomfield', {
+            heroDescription:
+                'Bloomfield practices, assisted living communities, and concierge households source clinicians from our Essex talent pool.',
+            overviewDescription:
+                'We send bilingual aides and nurses who understand Bloomfield Avenue traffic, Brookdale healthcare campuses, and NJ Transit commuting patterns.',
+            benefitsHeader: 'Staffing benefits for Bloomfield partners',
+            ctaDescription:
+                'Share your Bloomfield staffing needs and we will mobilize credentialed professionals.'
+        }),
+        irvington: buildCityContent('Irvington', 'irvington', {
+            heroDescription:
+                'Irvington-based adult day programs, clinics, and private families call on us when they need vetted clinicians fast.',
+            overviewDescription:
+                'We maintain a roster of aides and nurses who already serve Newark and Irvington, understand rowhome logistics, and show up prepared for high-volume caseloads.',
+            benefitsHeader: 'Staffing value for Irvington partners',
+            ctaDescription:
+                'Share your Irvington staffing gaps and we will deliver credentialed help quickly.'
+        }),
+        'west-orange': buildCityContent('West Orange', 'west-orange', {
+            heroDescription:
+                'West Orange medical offices, rehab centers, and concierge homes source staff through our Essex roster.',
+            overviewDescription:
+                'We recruit clinicians comfortable with Saint Barnabas protocols, South Mountain traffic, and private residences across Llewellyn Park and suburban cul-de-sacs.',
+            benefitsHeader: 'Staffing impact in West Orange',
+            ctaDescription:
+                'Share your West Orange staffing requests and we will respond with vetted professionals.'
         })
     }

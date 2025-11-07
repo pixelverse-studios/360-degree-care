@@ -178,5 +178,32 @@ export const bergenCountyStaffingCities: Record<
         benefitsHeader: 'Staffing outcomes Fair Lawn clients experience',
         ctaDescription:
             'Let us know what shifts you need to fill in Fair Lawn—we’ll assemble ready-to-work clinicians and caregivers.'
+    }),
+    paramus: buildCityContent('Paramus', 'paramus', {
+        heroDescription:
+            'Paramus medical practices, retail clinics, and concierge households rely on our staffing bench to keep schedules filled during peak shopping seasons.',
+        overviewDescription:
+            'We recruit clinicians who already navigate Garden State Plaza traffic, Paramus Park schedules, and Valley Hospital requirements, ensuring coverage shows up ready on day one.',
+        benefitsHeader: 'Staffing outcomes Paramus partners see',
+        ctaDescription:
+            'Share your Paramus staffing needs and we will mobilize credentialed professionals on your timeline.'
+    }),
+    englewood: buildCityContent('Englewood', 'englewood', {
+        heroDescription:
+            'Private households, medical offices, and cultural venues in Englewood secure dependable staff through our Bergen talent network.',
+        overviewDescription:
+            'We source bilingual aides, companions, and nurses who understand Palisade Avenue traffic, bergenPAC call times, and Englewood Health clinical standards.',
+        benefitsHeader: 'Staffing value for Englewood organizations',
+        ctaDescription:
+            'Tell us what roles you need to fill in Englewood and we will present vetted professionals fast.'
+    }),
+    westwood: buildCityContent('Westwood', 'westwood', {
+        heroDescription:
+            'Westwood medical practices, pharmacies, and concierge households fill shifts quickly through our staffing team.',
+        overviewDescription:
+            'We recruit clinicians who already serve the Pascack Valley, understand NJ Transit timetables, and appreciate the expectations of downtown businesses and local families.',
+        benefitsHeader: 'Staffing advantages for Westwood partners',
+        ctaDescription:
+            'Share the staffing roles you need covered in Westwood and we will deliver credentialed talent.'
     })
 }

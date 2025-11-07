@@ -154,5 +154,36 @@ export const passaicCountyPersonalCareCities: Record<
         benefitsHeader: 'Why Passaic households choose 360 Degree Care',
         ctaDescription:
             'Let us match your Passaic household with caregivers who understand language preferences, building logistics, and family expectations.'
+    }),
+    wayne: buildCityContent('Wayne', 'wayne', {
+        heroDescription:
+            'Personal care teams keep Wayne seniors steady between Packanack Lake walks, Willowbrook errands, and St. Joseph’s Wayne follow-ups.',
+        overviewDescription:
+            'We coordinate around Route 23, 46, and 80 traffic, gated lake communities, and multi-level homes so families get consistent bathing, meals, and mobility support.',
+        serviceHeader: 'Personal care coverage across Wayne',
+        benefitsHeader: 'Why Wayne households rely on our caregivers',
+        ctaDescription:
+            'Describe your Wayne schedule and we will tailor a personal care plan that works.'
+    }),
+    totowa: buildCityContent('Totowa', 'totowa', {
+        heroDescription:
+            'Personal care aides keep Totowa seniors comfortable in hillside homes between Route 46 errands and St. Joseph’s Totowa visits.',
+        overviewDescription:
+            'We navigate steep driveways, limited parking, and busy commuter arteries while managing daily hygiene, meals, and mobility for Totowa households.',
+        serviceHeader: 'Personal care throughout Totowa',
+        benefitsHeader: 'Why Totowa families lean on our caregivers',
+        ctaDescription:
+            'Tell us about your Totowa routines and we will keep daily life steady.'
+    }),
+    'west-milford': buildCityContent('West Milford', 'west-milford', {
+        heroDescription:
+            'Personal care services keep West Milford seniors safe across sprawling lake communities, mountain roads, and snow-prone driveways.',
+        overviewDescription:
+            'We schedule around weather, oil deliveries, and long travel times, ensuring aides arrive prepared to manage bathing, meals, and fall prevention even in remote homes.',
+        serviceHeader:
+            'Personal care throughout West Milford and the Highlands',
+        benefitsHeader: 'Why West Milford families depend on our caregivers',
+        ctaDescription:
+            'Tell us about your West Milford home and we will design a resilient care plan.'
     })
 }

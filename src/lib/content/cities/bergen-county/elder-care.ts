@@ -177,5 +177,32 @@ export const bergenCountyElderCareCities: Record<
         benefitsHeader: 'Benefits Fair Lawn families see after a consult',
         ctaDescription:
             'Tell us what decisions are ahead in Fair Lawn and we’ll deliver a prioritized action plan you can put into motion right away.'
+    }),
+    paramus: buildCityContent('Paramus', 'paramus', {
+        heroDescription:
+            'Paramus families balancing Valley Hospital discharges, retail careers, and multigenerational households count on our consultants for objective next steps.',
+        overviewDescription:
+            'We evaluate split-level homes near Bergen Community College, review insurance and long-term care benefits, and map in-home or community resources so Paramus decision-makers can move quickly with confidence.',
+        benefitsHeader: 'Guidance Paramus families depend on',
+        ctaDescription:
+            'Bring us your Paramus care questions and we will deliver a clear, prioritized roadmap.'
+    }),
+    englewood: buildCityContent('Englewood', 'englewood', {
+        heroDescription:
+            'Englewood families juggling Englewood Health physicians, Manhattan specialists, and tight timelines lean on our consultants for clarity.',
+        overviewDescription:
+            'We assess multi-story homes, review private-duty budgets, and recommend trusted partners in Englewood, Englewood Cliffs, and Tenafly to keep plans realistic.',
+        benefitsHeader: 'Guidance tailored to Englewood households',
+        ctaDescription:
+            'Bring us your Englewood care puzzle and we will map the decisive steps forward.'
+    }),
+    westwood: buildCityContent('Westwood', 'westwood', {
+        heroDescription:
+            'Westwood caregivers navigating Pascack Valley discharges and multigenerational decisions rely on our consulting team.',
+        overviewDescription:
+            'We evaluate two-story homes, recommend respite, and connect families with municipal or parish resources across the Pascack Valley so plans feel doable.',
+        benefitsHeader: 'How Westwood households gain clarity',
+        ctaDescription:
+            'Bring us your Westwood goals and we will outline actionable next steps.'
     })
 }

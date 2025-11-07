@@ -150,5 +150,32 @@ export const passaicCountyElderCareCities: Record<
         benefitsHeader: 'How Passaic families benefit from our consultants',
         ctaDescription:
             'Let’s discuss your Passaic caregiving decisions—we’ll provide the roadmap and resources you need.'
+    }),
+    wayne: buildCityContent('Wayne', 'wayne', {
+        heroDescription:
+            'Wayne families facing hospital discharges or memory changes lean on our consultants for step-by-step plans.',
+        overviewDescription:
+            'We evaluate split-level homes near Pines Lake, review benefits, and coordinate with St. Joseph’s Wayne or Chilton providers to keep transitions smooth.',
+        benefitsHeader: 'How Wayne families gain clarity',
+        ctaDescription:
+            'Bring us your Wayne questions and we will outline the next moves.'
+    }),
+    totowa: buildCityContent('Totowa', 'totowa', {
+        heroDescription:
+            'Totowa families making fast decisions after rehab or hospital stays rely on our consulting team.',
+        overviewDescription:
+            'We assess narrow staircases, coordinate with Passaic County resources, and map respite or home care options that work for small-borough budgets.',
+        benefitsHeader: 'Clarity Totowa households appreciate',
+        ctaDescription:
+            'Bring your Totowa care puzzle and we will solve it together.'
+    }),
+    'west-milford': buildCityContent('West Milford', 'west-milford', {
+        heroDescription:
+            'West Milford caregivers facing long drives to specialists and limited local services lean on our consultants for strategy.',
+        overviewDescription:
+            'We evaluate generator readiness, coordinate telehealth, and connect families with Passaic County resources so remote households still get timely support.',
+        benefitsHeader: 'Guidance tuned to rural Passaic realities',
+        ctaDescription:
+            'Bring us your West Milford challenges and we will map practical solutions.'
     })
 }
