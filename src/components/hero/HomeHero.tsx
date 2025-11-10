@@ -12,8 +12,6 @@ const CallToActionButton = dynamic(
     { ssr: false }
 )
 
-const [serviceLink] = navLinks
-
 export default function HomeHero() {
     const heroImageSrc = getImgSrc('home-hero')
 
@@ -53,7 +51,7 @@ export default function HomeHero() {
                         variant="pillPrimary"
                     />
                     <CallToActionButton
-                        href={serviceLink.route}
+                        href={navLinks[0].route}
                         variant="pillBlue"
                     >
                         More About Us

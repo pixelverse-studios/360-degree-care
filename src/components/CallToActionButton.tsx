@@ -24,10 +24,10 @@ export function CallToActionButton({
     children
 }: CallToActionButtonProps) {
     const serviceLink = navLinks.find(link => link.route === href)
-
+    const isOnServices = href.includes('services')
     const buttonClass = cn('flex gap-2', className)
 
-    if (serviceLink) {
+    if (isOnServices && serviceLink) {
         return (
             <CallToAction
                 buttonLabel={children}
