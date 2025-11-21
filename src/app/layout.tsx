@@ -13,6 +13,15 @@ import { getImgSrc } from '@/lib/images'
 import { FACEBOOK, INSTA, PHONE, EMAIL } from '@/utils/constants'
 
 const CANONICAL_ORIGIN = 'https://www.360degreecare.net'
+const SITE_TITLE = 'Concierge Home Care Services in NJ | 360 Degree Care'
+const SITE_DESCRIPTION =
+    '360 Degree Care delivers concierge home care, nursing, companion, and staffing support across New Jersey, empowering families with compassionate caregivers.'
+const DEFAULT_OG_IMAGE =
+    'https://res.cloudinary.com/pixelverse-studios/image/upload/c_fill,w_1200,h_630,q_auto,f_auto/v1750022033/clients/360dc/assets/happy_couple_1_xgwhwr.jpg'
+const FAVICON_16 = getImgSrc('Favicon_16x16') ?? `${CANONICAL_ORIGIN}/logo.png`
+const FAVICON_32 = getImgSrc('Favicon_32x32') ?? `${CANONICAL_ORIGIN}/logo.png`
+const FAVICON_64 = getImgSrc('Favicon_64x64') ?? `${CANONICAL_ORIGIN}/logo.png`
+const SITE_LOGO = FAVICON_64
 
 const CampaignTracker = dynamic(
     () =>
@@ -46,39 +55,52 @@ export const metadata = {
     icons: {
         icon: [
             {
-                url: getImgSrc('Favicon_16x16'),
+                url: FAVICON_16,
                 type: 'image/png',
                 sizes: '16x16'
             },
             {
-                url: getImgSrc('Favicon_32x32'),
+                url: FAVICON_32,
                 type: 'image/png',
                 sizes: '32x32'
             },
             {
-                url: getImgSrc('Favicon_64x64'),
+                url: FAVICON_64,
                 type: 'image/png',
                 sizes: '64x64'
             }
         ],
-        apple: [{ url: getImgSrc('Favicon_16x16'), sizes: '180x180' }]
+        apple: [
+            {
+                url: FAVICON_64,
+                sizes: '180x180'
+            }
+        ],
+        shortcut: [{ url: FAVICON_32 }]
     },
-    title: 'Concierge Home Care Services in NJ | 360 Degree Care',
-    description:
-        '360 Degree Care delivers concierge home care, nursing, companion, and staffing support across New Jersey, empowering families with compassionate caregivers.',
+    title: SITE_TITLE,
+    description: SITE_DESCRIPTION,
     openGraph: {
         images: [
             {
-                url: '/path-to-your-new-image.png' // TODO: UPDATE
+                url: DEFAULT_OG_IMAGE,
+                width: 1200,
+                height: 630,
+                alt: 'Family with a 360 Degree Care caregiver at home'
             }
         ],
-        title: 'Concierge Home Care Services in NJ | 360 Degree Care',
-        description:
-            '360 Degree Care delivers concierge home care, nursing, companion, and staffing support across New Jersey, empowering families with compassionate caregivers.',
+        title: SITE_TITLE,
+        description: SITE_DESCRIPTION,
         url: CANONICAL_ORIGIN,
         siteName: '360 Degree Care',
         type: 'website',
         manifest: '/manifest.json'
+    },
+    twitter: {
+        card: 'summary_large_image',
+        title: SITE_TITLE,
+        description: SITE_DESCRIPTION,
+        images: [DEFAULT_OG_IMAGE]
     },
     alternates: {
         canonical: '/'
@@ -91,8 +113,8 @@ const localBusinessSchema = {
     '@id': `${CANONICAL_ORIGIN}/#localbusiness`,
     name: '360 Degree Care',
     url: CANONICAL_ORIGIN,
-    image: `${CANONICAL_ORIGIN}/assets/logo.png`,
-    logo: `${CANONICAL_ORIGIN}/assets/logo.png`,
+    image: SITE_LOGO,
+    logo: SITE_LOGO,
     telephone: PHONE,
     email: EMAIL,
     priceRange: '$$',
@@ -150,7 +172,7 @@ const organizationSchema = {
     '@id': `${CANONICAL_ORIGIN}/#organization`,
     name: '360 Degree Care',
     url: CANONICAL_ORIGIN,
-    logo: `${CANONICAL_ORIGIN}/assets/logo.png`,
+    logo: SITE_LOGO,
     legalName: '360 Degree Care',
     email: EMAIL,
     telephone: PHONE,

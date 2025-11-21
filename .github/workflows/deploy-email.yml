@@ -1,0 +1,75 @@
+name: Deploy change email
+
+on:
+  repository_dispatch:
+    types: [netlify_deploy_success]
+  workflow_dispatch:
+
+jobs:
+  email-deploy-summary:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Build change summary
+        id: summary
+        shell: bash
+        run: |
+          SUMMARY_FILE="docs/deploy-summary.md"
+          if [ -f "$SUMMARY_FILE" ]; then
+            SUMMARY=$(awk '
+              BEGIN { capture=0 }
+              /^## Latest deploy summary/ { capture=1; next }
+              /^## / { if (capture) exit }
+              capture { print }
+            ' "$SUMMARY_FILE" | sed '/^[[:space:]]*$/d')
+          fi
+
+          if [ -z "$SUMMARY" ]; then
+            SUMMARY=$(git log -n 15 --format='- %s (by %an)')
+          fi
+
+          if [ -z "$SUMMARY" ]; then
+            SUMMARY="- No summary found for this run."
+          fi
+
+          {
+            echo "summary<<'EOF'"
+            echo "$SUMMARY"
+            echo "EOF"
+          } >> "$GITHUB_OUTPUT"
+
+      - name: Send email via Nylas
+        env:
+          NYLAS_API_KEY: ${{ secrets.NYLAS_API_KEY }}
+          NYLAS_GRANT_ID: ${{ secrets.NYLAS_GRANT_ID }}
+          MAIL_FROM: ${{ secrets.MAIL_FROM }}
+          MAIL_TO: ${{ secrets.MAIL_TO }}
+          REPO: ${{ github.repository }}
+          BRANCH: ${{ github.event.client_payload.branch || github.ref_name || 'unknown' }}
+          RUN_URL: https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}
+          SHORT_SHA: ${{ github.event.client_payload.commit || github.sha }}
+        run: |
+          if [ -z "$NYLAS_API_KEY" ] || [ -z "$NYLAS_GRANT_ID" ] || [ -z "$MAIL_FROM" ] || [ -z "$MAIL_TO" ]; then
+            echo "Missing NYLAS_API_KEY, NYLAS_GRANT_ID, MAIL_FROM, or MAIL_TO secrets." >&2
+            exit 1
+          fi
+
+          cat > email.json <<EOF
+{
+  "message": {
+    "to": [{ "email": "$MAIL_TO" }],
+    "cc": [{ "email": "sami@pixelversestudios.io" }],
+    "from": [{ "email": "$MAIL_FROM" }],
+    "subject": "[Deploy] $REPO @$BRANCH",
+    "body": "${{ steps.summary.outputs.summary }}\n"
+  }
+}
+EOF
+
+          curl -X POST \
+            -H "Authorization: Bearer $NYLAS_API_KEY" \
+            -H "Content-Type: application/json" \
+            -d @email.json \
+            "https://api.us.nylas.com/v3/grants/$NYLAS_GRANT_ID/messages/send"

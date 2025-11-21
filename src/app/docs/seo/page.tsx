@@ -1,6 +1,9 @@
+import { readFile } from 'node:fs/promises'
+import path from 'node:path'
+
 import type { Metadata } from 'next'
-import { CheckCircle2, Flag, RefreshCcw } from 'lucide-react'
-import { AbsoluteUrlQueue } from '@/components/docs/AbsoluteUrlQueue'
+import { CheckCircle2, Flag, Globe2, RefreshCcw } from 'lucide-react'
+import { DownloadSitemapButton } from '@/components/ui/download-sitemap-button'
 import { SeoTocNav } from '@/components/docs/SeoTocNav'
 import { Badge } from '@/components/ui/badge'
 
@@ -17,9 +20,15 @@ type SeoChange = {
     title: string
     status: 'Needs follow-up' | 'Monitoring'
     summary: string
-    urlsToCheck: string[]
+    notes: string[]
+    trackingUrls: string[]
     sourceFiles: string[]
     actionItems: string[]
+}
+
+type SitemapStats = {
+    urls: string[]
+    lastGenerated: string | null
 }
 
 export const metadata: Metadata = {
@@ -30,6 +39,106 @@ export const metadata: Metadata = {
         index: false,
         follow: false
     }
+}
+
+export const dynamic = 'force-dynamic'
+
+const DEFAULT_ORIGIN = 'https://www.360degreecare.net'
+const sitemapPath = path.join(process.cwd(), 'public', 'sitemap.xml')
+
+async function loadSitemapUrls(): Promise<SitemapStats> {
+    const visited = new Set<string>()
+    const collectedUrls = new Set<string>()
+    let newestLastmod: string | null = null
+
+    async function readSitemap(filePath: string) {
+        if (visited.has(filePath)) return
+        visited.add(filePath)
+
+        try {
+            const xml = await readFile(filePath, 'utf-8')
+
+            xml.match(
+                /<url>[\s\S]*?<loc>([^<]+)<\/loc>[\s\S]*?<\/url>/g
+            )?.forEach(urlBlock => {
+                const locMatch = /<loc>([^<]+)<\/loc>/.exec(urlBlock)
+                if (locMatch?.[1]) {
+                    collectedUrls.add(locMatch[1])
+                }
+            })
+
+            const nestedSitemaps =
+                xml.match(
+                    /<sitemap>[\s\S]*?<loc>([^<]+)<\/loc>[\s\S]*?<\/sitemap>/g
+                ) ?? []
+
+            for (const sitemapBlock of nestedSitemaps) {
+                const locMatch = /<loc>([^<]+)<\/loc>/.exec(sitemapBlock)
+                const loc = locMatch?.[1]
+                if (!loc) continue
+
+                try {
+                    const locUrl = new URL(loc, DEFAULT_ORIGIN)
+                    const nestedPath = path.join(
+                        process.cwd(),
+                        'public',
+                        locUrl.pathname.replace(/^\//, '')
+                    )
+
+                    if (nestedPath && nestedPath !== filePath) {
+                        await readSitemap(nestedPath)
+                    }
+                } catch (error) {
+                    console.error('Failed to parse nested sitemap loc', error)
+                }
+            }
+
+            const lastmodMatch = xml.match(/<lastmod>([^<]+)<\/lastmod>/)
+            if (lastmodMatch?.[1]) {
+                const current = new Date(lastmodMatch[1])
+                const existing = newestLastmod ? new Date(newestLastmod) : null
+                if (!existing || current > existing) {
+                    newestLastmod = current.toISOString()
+                }
+            }
+        } catch (error) {
+            console.error('Failed to read sitemap.xml for SEO docs', error)
+        }
+    }
+
+    await readSitemap(sitemapPath)
+
+    return {
+        urls: Array.from(collectedUrls),
+        lastGenerated: newestLastmod
+    }
+}
+
+function formatLastGenerated(value: string | null) {
+    if (!value) return null
+    const parsed = new Date(value)
+    if (Number.isNaN(parsed.getTime())) return value
+
+    return parsed.toLocaleString('en-US', {
+        month: 'short',
+        day: '2-digit',
+        year: 'numeric',
+        hour: '2-digit',
+        minute: '2-digit',
+        hour12: false,
+        timeZone: 'UTC',
+        timeZoneName: 'short'
+    })
+}
+
+function formatChangeDate(value: string) {
+    const parsed = new Date(value)
+    if (Number.isNaN(parsed.getTime())) return value
+    return parsed.toLocaleDateString('en-US', {
+        month: '2-digit',
+        day: '2-digit',
+        year: 'numeric'
+    })
 }
 
 const targetSeoUrls: TargetSeoUrl[] = [
@@ -91,13 +200,42 @@ const targetSeoUrls: TargetSeoUrl[] = [
 
 const seoChanges: SeoChange[] = [
     {
+        id: 'og-favicon-refresh',
+        date: '2025-11-21',
+        title: 'OG image + favicon refreshed',
+        status: 'Monitoring',
+        summary:
+            'Global metadata now uses a 1200x630 Cloudinary image and the live logo for favicons/touch icons. Legacy /assets/logo.png references in service schemas were replaced to avoid broken brand marks in snippets.',
+        notes: [
+            'Root layout icons now reference Cloudinary-hosted favicons with fallbacks.',
+            'All service SEO schemas now point to the live logo asset.',
+            'OG/Twitter previews use a 1200x630 Cloudinary hero.'
+        ],
+        trackingUrls: ['/', '/logo.png', '/sitemap.xml'],
+        sourceFiles: [
+            'src/app/layout.tsx',
+            'src/lib/images.ts',
+            'src/lib/seo/*'
+        ],
+        actionItems: [
+            'Run the homepage through Facebook/Twitter debuggers to confirm the new OG image is rendering.',
+            'Inspect Search Console favicon status after deployment to verify Google picked up the refreshed icon.',
+            'Submit /sitemap.xml and the homepage for re-crawl to speed up SERP preview updates.'
+        ]
+    },
+    {
         id: 'bergen-personal-care-canonical',
         date: '2025-02-18',
         title: 'Bergen County Personal Care Canonicalization',
         status: 'Needs follow-up',
         summary:
             'City-level URLs (Englewood, Paramus, Westwood) were sunset in favor of the `/services/personal-care/bergen-county` hub. Redirect strategy and sitemap exclusions were updated so Google only sees the canonical county experience.',
-        urlsToCheck: [
+        notes: [
+            'Redirected Englewood, Paramus, and Westwood city URLs to the Bergen hub.',
+            'Excluded legacy city URLs from the sitemap while keeping county canonical.',
+            'Updated structured content modules to match the new county-first approach.'
+        ],
+        trackingUrls: [
             '/services/personal-care/bergen-county',
             '/services/personal-care/bergen-county/englewood',
             '/services/personal-care/bergen-county/paramus',
@@ -125,7 +263,12 @@ const seoChanges: SeoChange[] = [
         status: 'Needs follow-up',
         summary:
             'Companion Care, Elder Care, Home Health Aide, Nursing, Personal Care, and Staffing pages across Bergen, Essex, Monmouth, Passaic, and Ocean counties received rewritten hero copy, survey data, seasonal/weather callouts, and CTA updates. Structured content modules mirror the new copy blocks.',
-        urlsToCheck: [
+        notes: [
+            'Refreshed hero copy and seasonal callouts across six county service pages.',
+            'Synced structured content modules with new county-specific messaging.',
+            'Adjusted service area grid to surface updated experiences.'
+        ],
+        trackingUrls: [
             '/services/companion-care/bergen-county',
             '/services/personal-care/essex-county',
             '/services/home-health-aides/passaic-county',
@@ -152,7 +295,12 @@ const seoChanges: SeoChange[] = [
         status: 'Monitoring',
         summary:
             'Published a long-form county-data report that targets “caregiver burnout NJ” terms with internal links into Essex, Monmouth, and Passaic service pages.',
-        urlsToCheck: ['/blog', '/blog/nj-caregiver-burnout-report-2025'],
+        notes: [
+            'New long-form blog targeting “caregiver burnout NJ” with county data.',
+            'Internal links injected into Essex, Monmouth, and Passaic service hubs.',
+            'Blog rail and CTA placements updated to promote the report.'
+        ],
+        trackingUrls: ['/blog', '/blog/nj-caregiver-burnout-report-2025'],
         sourceFiles: [
             'src/lib/blogs/articles/2025/njCaregiverBurnoutReport.ts',
             'src/lib/blogs/index.ts (import order)',
@@ -171,7 +319,13 @@ const tocItems = [
     { id: 'target-urls', label: 'Priority Targets' }
 ]
 
-export default function SeoDocsPage() {
+export default async function SeoDocsPage() {
+    const sitemapStats = await loadSitemapUrls()
+    const lastGeneratedDisplay = formatLastGenerated(sitemapStats.lastGenerated)
+    const trackingUrls = Array.from(
+        new Set(seoChanges.flatMap(change => change.trackingUrls))
+    )
+
     return (
         <main className="bg-slate-50">
             <div className="mx-auto max-w-screen-2xl px-6 py-14 lg:grid lg:grid-cols-[15rem,1fr] lg:gap-8 lg:px-10">
@@ -187,12 +341,12 @@ export default function SeoDocsPage() {
                                     SEO updates log
                                 </p>
                                 <h1 className="text-4xl font-bold text-slate-900">
-                                    Recent changes + indexing queue
+                                    Sitemap coverage & monitoring
                                 </h1>
                                 <p className="text-base text-slate-600">
-                                    Quick reference for what changed, which URLs
-                                    to request indexing for, and the follow-up
-                                    owners to ping in Search Console.
+                                    Track sitemap health, recent SEO-impacting
+                                    changes, and what to monitor in Search
+                                    Console.
                                 </p>
                             </div>
                             <Badge className="bg-blue-50 text-blue-700 hover:bg-blue-100">
@@ -201,94 +355,144 @@ export default function SeoDocsPage() {
                         </div>
                     </header>
 
-                    <div className="space-y-6 scroll-mt-32" id="recent-changes">
-                        {seoChanges.map(change => {
-                            const changeHighlights = [
-                                change.summary,
-                                ...change.actionItems
-                            ]
-
-                            return (
-                                <section
-                                    key={change.id}
-                                    className="rounded-3xl border border-gray-200 bg-white/80 p-6 shadow-md/50"
-                                >
-                                    <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
-                                        <div className="space-y-1">
-                                            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-slate-500">
-                                                Update
-                                            </p>
-                                            <p className="text-3xl font-semibold text-slate-900">
-                                                {change.date}
-                                            </p>
-                                            <p className="text-base text-slate-700">
-                                                {change.title}
-                                            </p>
-                                        </div>
-                                        <Badge
-                                            variant="secondary"
-                                            className="self-start text-blue-50"
-                                        >
-                                            SEO log
+                    <section className="rounded-3xl border border-emerald-100 bg-white/80 p-6 shadow-sm">
+                        <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+                            <div className="flex items-center gap-4">
+                                <div className="rounded-2xl bg-emerald-50 p-3 text-emerald-600">
+                                    <Globe2 className="h-7 w-7" />
+                                </div>
+                                <div className="space-y-1">
+                                    <p className="text-xs font-semibold uppercase tracking-[0.2em] text-emerald-700">
+                                        Sitemap coverage
+                                    </p>
+                                    <div className="flex flex-wrap items-center gap-3">
+                                        <Badge className="bg-emerald-100 text-emerald-800 hover:bg-emerald-200">
+                                            {sitemapStats.urls.length} URLs
+                                            listed
                                         </Badge>
+                                        {lastGeneratedDisplay ? (
+                                            <span className="text-sm text-slate-600">
+                                                Last generated{' '}
+                                                {lastGeneratedDisplay}
+                                            </span>
+                                        ) : (
+                                            <span className="text-sm text-amber-600">
+                                                Unable to read sitemap
+                                                timestamp. Verify build output.
+                                            </span>
+                                        )}
+                                    </div>
+                                    <p className="text-sm text-slate-600">
+                                        Pulled directly from public/sitemap.xml
+                                        (and any referenced sitemap files) to
+                                        mirror expected indexable pages.
+                                    </p>
+                                </div>
+                            </div>
+                            <div className="flex flex-col items-end gap-2 text-right">
+                                <DownloadSitemapButton
+                                    urls={trackingUrls}
+                                    filename="360-degree-care-updated-urls.csv"
+                                />
+                                <p className="text-xs text-slate-500">
+                                    Exports only recently updated URLs for GSC
+                                    requests.
+                                </p>
+                            </div>
+                        </div>
+                    </section>
+
+                    <div className="space-y-6 scroll-mt-32" id="recent-changes">
+                        {seoChanges.map(change => (
+                            <section
+                                key={change.id}
+                                className="rounded-3xl border border-gray-200 bg-white/80 p-6 shadow-md/40"
+                            >
+                                <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
+                                    <div className="space-y-1">
+                                        <p className="text-xs font-semibold uppercase tracking-[0.2em] text-slate-500">
+                                            {formatChangeDate(change.date)}
+                                        </p>
+                                        <p className="text-2xl font-semibold text-slate-900">
+                                            {change.title}
+                                        </p>
+                                    </div>
+                                    <Badge
+                                        variant="secondary"
+                                        className="self-start text-blue-50"
+                                    >
+                                        {change.status === 'Needs follow-up' ? (
+                                            <span className="inline-flex items-center gap-1">
+                                                <RefreshCcw className="h-4 w-4" />
+                                                Needs follow-up
+                                            </span>
+                                        ) : (
+                                            <span className="inline-flex items-center gap-1">
+                                                <CheckCircle2 className="h-4 w-4" />
+                                                Monitoring
+                                            </span>
+                                        )}
+                                    </Badge>
+                                </div>
+
+                                <div className="mt-5 space-y-5 divide-y divide-slate-200">
+                                    <div className="space-y-2">
+                                        <p className="text-xs font-semibold uppercase tracking-wide text-slate-600">
+                                            Overview
+                                        </p>
+                                        <p className="text-sm text-slate-700">
+                                            {change.summary}
+                                        </p>
                                     </div>
 
-                                    <div className="mt-6 grid gap-6 lg:grid-cols-2">
-                                        <div className="rounded-2xl border border-slate-200 bg-slate-50/80 p-5">
-                                            <div className="flex items-center justify-between gap-3">
-                                                <p className="text-sm font-semibold uppercase tracking-wide text-slate-700">
-                                                    What changed
-                                                </p>
-                                                {change.status ===
-                                                'Needs follow-up' ? (
-                                                    <span className="inline-flex items-center gap-1 rounded-full bg-amber-50 px-3 py-1 text-xs font-semibold text-amber-700">
-                                                        <RefreshCcw className="h-4 w-4" />
-                                                        Needs follow-up
-                                                    </span>
-                                                ) : (
-                                                    <span className="inline-flex items-center gap-1 rounded-full bg-emerald-50 px-3 py-1 text-xs font-semibold text-emerald-700">
-                                                        <CheckCircle2 className="h-4 w-4" />
-                                                        Monitoring
-                                                    </span>
-                                                )}
-                                            </div>
+                                    <div className="pt-4">
+                                        <p className="text-xs font-semibold uppercase tracking-wide text-slate-600">
+                                            What changed
+                                        </p>
+                                        <ul className="mt-3 list-disc space-y-2 pl-4 text-sm text-slate-800 marker:text-blue-500">
+                                            {change.notes.map(note => (
+                                                <li
+                                                    key={`${change.id}-${note}`}
+                                                >
+                                                    {note}
+                                                </li>
+                                            ))}
+                                        </ul>
+                                    </div>
 
-                                            <ul className="mt-4 list-disc space-y-3 pl-4 text-sm text-slate-800 marker:text-blue-500">
-                                                {changeHighlights.map(item => (
-                                                    <li
-                                                        key={`${change.id}-${item}`}
-                                                    >
-                                                        {item}
-                                                    </li>
-                                                ))}
-                                            </ul>
+                                    <div className="pt-4">
+                                        <p className="text-xs font-semibold uppercase tracking-wide text-slate-600">
+                                            Action checklist
+                                        </p>
+                                        <ul className="mt-3 list-disc space-y-2 pl-4 text-sm text-slate-800 marker:text-blue-500">
+                                            {change.actionItems.map(item => (
+                                                <li
+                                                    key={`${change.id}-${item}`}
+                                                >
+                                                    {item}
+                                                </li>
+                                            ))}
+                                        </ul>
+                                    </div>
 
-                                            <div className="mt-5 rounded-xl border border-slate-200 bg-white px-3 py-2">
-                                                <p className="text-[11px] font-semibold uppercase tracking-wide text-slate-500">
-                                                    Key files / references
-                                                </p>
-                                                <div className="mt-2 flex flex-wrap gap-2">
-                                                    {change.sourceFiles.map(
-                                                        file => (
-                                                            <span
-                                                                key={`${change.id}-${file}`}
-                                                                className="rounded-lg bg-slate-100 px-2 py-1 font-mono text-[11px] text-slate-800"
-                                                            >
-                                                                {file}
-                                                            </span>
-                                                        )
-                                                    )}
-                                                </div>
-                                            </div>
+                                    <div className="pt-4">
+                                        <p className="text-[11px] font-semibold uppercase tracking-wide text-slate-500">
+                                            Key files / references
+                                        </p>
+                                        <div className="mt-2 flex flex-wrap gap-2">
+                                            {change.sourceFiles.map(file => (
+                                                <span
+                                                    key={`${change.id}-${file}`}
+                                                    className="rounded-lg bg-slate-100 px-2 py-1 font-mono text-[11px] text-slate-800"
+                                                >
+                                                    {file}
+                                                </span>
+                                            ))}
                                         </div>
-
-                                        <AbsoluteUrlQueue
-                                            urls={change.urlsToCheck}
-                                        />
                                     </div>
-                                </section>
-                            )
-                        })}
+                                </div>
+                            </section>
+                        ))}
                     </div>
 
                     <section

@@ -14,7 +14,7 @@ const HomeHealthAidesSeoHead = () => {
             '@type': 'HomeHealthCareService',
             name: '360 Degree Care',
             url: 'https://www.360degreecare.net/',
-            logo: 'https://www.360degreecare.net/assets/logo.png',
+            logo: 'https://www.360degreecare.net/logo.png',
             description:
                 "For over 10 years, we've been providing compassionate and reliable care solutions to families across New Jersey.",
             address: {

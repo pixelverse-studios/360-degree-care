@@ -16,7 +16,7 @@ const StaticCompanionCareData = {
                 '@type': 'HomeHealthCareService',
                 name: '360 Degree Care',
                 url: 'https://www.360degreecare.net/',
-                logo: 'https://www.360degreecare.net/assets/logo.png',
+                logo: 'https://www.360degreecare.net/logo.png',
                 description:
                     "For over 10 years, we've been providing compassionate companion care services to families across New Jersey.",
                 address: {

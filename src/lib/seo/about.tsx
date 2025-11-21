@@ -12,7 +12,7 @@ const AboutSeoHead = () => {
             '@type': 'Organization',
             name: '360 Degree Care',
             url: 'https://www.360degreecare.net/',
-            logo: 'https://www.360degreecare.net/assets/logo.png',
+            logo: 'https://www.360degreecare.net/logo.png',
             description:
                 "For over 10 years, we've been proudly based in Ridgewood, NJ, offering compassionate and reliable care solutions to families across New Jersey. As a certified CHAP organization licensed by the State Attorney General, we provide 24/7 home health care services with highly trained caregivers.",
             foundingDate: '2013',
