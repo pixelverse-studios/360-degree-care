@@ -1,4 +1,5 @@
 export const handler = async event => {
+    console.log('notify-github invoked')
     try {
         const {
             GITHUB_PAT,
@@ -14,6 +15,7 @@ export const handler = async event => {
 
         // Netlify sends the deploy payload as JSON
         const payload = JSON.parse(event.body || '{}')
+        console.log('payload', payload)
         const branch = payload?.branches?.[0] || payload?.branch || 'unknown'
         const commit = payload?.commit_ref || payload?.commit || 'unknown'
         const deployUrl =
