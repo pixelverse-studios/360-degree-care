@@ -38,7 +38,9 @@ export const monmouthCountyNursingContent: CountyPageContent = {
         content: [
             'When a loved one is discharged from Jersey Shore University Medical Center, Riverview Medical Center, or Bayshore Medical Center, families need skilled clinicians who can implement physician orders without delay. Our private duty nurses arrive equipped to handle wound care, IV therapy, ventilator support, and medication reconciliation from day one.',
             'Nurses remain in close contact with attending physicians and specialists, updating care plans as labs, mobility, and vital signs evolve. We collaborate with physical therapists, infusion pharmacies, and DME providers to ensure supplies and treatments stay on schedule.',
-            'Whether care happens in a coastal condo or a countryside estate, we manage infection control, documentation, and family training so the home environment feels safe and sustainable.'
+            'Whether care happens in a coastal condo or a countryside estate, we manage infection control, documentation, and family training so the home environment feels safe and sustainable.',
+            'Monmouth County’s 2024 Senior Needs Assessment emphasized that nearly half of older adults fear storm-related outages will disrupt medical care. Our nursing protocols reflect that reality with generator readiness checklists, redundant medication storage, and evacuation planning for Bayshore and barrier-island households.',
+            'Families validate the approach: Steve D. highlighted that our aide “did exactly what the agency said she would do” during a Long Branch recovery, while JoAnn C. praised our ability to staff a live-in aide in under 36 hours. Those same Concierge-Level™ standards apply to every private duty nursing assignment.'
         ]
     },
 

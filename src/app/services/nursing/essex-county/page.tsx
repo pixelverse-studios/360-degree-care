@@ -7,11 +7,16 @@ import ServiceAreaGrid from '@/components/county/ServiceAreaGrid'
 import CountyCTASection from '@/components/county/CountyCTASection'
 import CountyBenefitsSection from '@/components/county/CountyBenefitsSection'
 import { essexCountyNursingContent } from '@/lib/content/essex-county-nursing'
+import { getCitySlugs } from '@/lib/content/city-slug-map'
 
 export const metadata = essexCountyNursingContent.metadata
 
 export default function NursingEssexCountyPage() {
     const content = essexCountyNursingContent
+    const citySlugs = getCitySlugs('nursing', 'essex-county')
+    const serviceLinkBase = citySlugs.length
+        ? '/services/nursing/essex-county'
+        : undefined
     const heroImageSrc = content.hero.imageSrc
         ? getImgSrc(content.hero.imageSrc) || '/images/nursing-hero.jpg'
         : undefined
@@ -60,6 +65,8 @@ export default function NursingEssexCountyPage() {
                     title={content.serviceAreas.title}
                     subtitle={content.serviceAreas.subtitle}
                     regions={content.serviceAreas.regions}
+                    linkBase={serviceLinkBase}
+                    citySlugs={citySlugs}
                 />
 
                 <ServiceList {...content.services} />

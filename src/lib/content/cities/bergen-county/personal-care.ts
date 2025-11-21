@@ -184,36 +184,5 @@ export const bergenCountyPersonalCareCities: Record<
         benefitsHeader: 'Why Fair Lawn trusts our concierge-level care',
         ctaDescription:
             'Tell us about your Fair Lawn routine and we’ll match you with caregivers who know local traffic, apartment layouts, and community resources.'
-    }),
-    paramus: buildCityContent('Paramus', 'paramus', {
-        heroDescription:
-            'Personal care teams keep Paramus seniors steady between Garden State Plaza appointments, Van Saun Park walks, and follow-ups at the new Valley Hospital campus.',
-        overviewDescription:
-            'We schedule aides around Route 4 and Route 17 traffic, outpatient surgical centers, and parish calendars so Paramus households receive unhurried bathing, meals, and mobility support without juggling mall congestion.',
-        serviceHeader: 'Personal care coverage across Paramus neighborhoods',
-        benefitsHeader: 'Why Paramus families rely on our caregivers',
-        ctaDescription:
-            'Share how your Paramus home runs during the week and we will design a dignified care plan that keeps routines intact.'
-    }),
-    englewood: buildCityContent('Englewood', 'englewood', {
-        heroDescription:
-            'Personal care specialists help Englewood seniors stay confident near Englewood Health, Palisade Avenue boutiques, and bergenPAC events.',
-        overviewDescription:
-            'We coordinate discreet support inside stately homes and condo buildings, manage appointment escorting to Englewood Health or Columbia specialists, and respect synagogue calendars along with multilingual households.',
-        serviceHeader: 'Personal care coverage across Englewood',
-        benefitsHeader: 'Why Englewood trusts our caregivers',
-        ctaDescription:
-            'Tell us about your Englewood routines and we will match aides who fit your building, family, and cultural needs.'
-    }),
-    westwood: buildCityContent('Westwood', 'westwood', {
-        heroDescription:
-            "Personal care blends seamlessly into Westwood's walkable downtown, Veterans Park events, and Pascack Valley hospital routines.",
-        overviewDescription:
-            'We coordinate schedules around NJ Transit departures, Pascack Valley Medical Center appointments, and the needs of residents in both historic colonials and luxury apartments.',
-        serviceHeader:
-            'Personal care support across Westwood and the Pascack Valley',
-        benefitsHeader: 'Why Westwood families call 360 Degree Care',
-        ctaDescription:
-            'Share your Westwood schedule and we will craft a care plan that respects commutes and community calendars.'
     })
 }

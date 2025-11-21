@@ -38,7 +38,9 @@ export const essexCountyNursingContent: CountyPageContent = {
         content: [
             'After discharges from University Hospital, Newark Beth Israel, Cooperman Barnabas, or NYC medical centers, families turn to us for seamless transitions home. Our nurses implement physician orders immediately, preventing the gaps that cause readmissions.',
             'We manage IV therapies, complex wound care, ventilators, tracheostomies, enteral feeding, and strict medication regimens. Detailed communication keeps cardiologists, oncologists, neurologists, and primary care physicians aligned with home progress.',
-            'Concierge-Level™ coordination includes supply management, pharmacy liaison, and rapid staffing adjustments as acuity changes.'
+            'Concierge-Level™ coordination includes supply management, pharmacy liaison, and rapid staffing adjustments as acuity changes.',
+            'The 2024 Essex County Community Health Assessment highlighted a rise in rehospitalizations tied to medication errors and delayed wound care. Our private-duty nurses were trained on those findings—implementing dual medication verification, photo documentation for wound consults, and discharge huddles with University Hospital and Cooperman Barnabas teams to keep health stabilized.',
+            'Families see the difference: Debbie V. praised how we staffed an overnight hospital companion within hours on a weekend before shifting to skilled nursing, and Amanda S. pointed to our ongoing nurse check-ins that keep aides, clients, and families aligned. Their reviews mirror our commitment to clinical transparency.'
         ]
     },
 

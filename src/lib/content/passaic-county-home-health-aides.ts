@@ -66,7 +66,9 @@ export const passaicCountyHomeHealthAidesContent: CountyPageContent = {
         content: [
             'Every home health aide assignment begins with an RN assessment that evaluates mobility, medication schedules, nutrition, and home safety. We adapt care plans to match city apartments, suburban single-family homes, and rural properties throughout Passaic County.',
             'Our aides are bonded, insured, and trained in infection control, dementia support, and Concierge-Level™ hospitality. Coordinators monitor attendance, provide backup coverage, and ensure continuity during holidays or caregiver vacations.',
-            'Families receive transparent communication, skillful care, and 24/7 access to our clinical leadership for urgent questions or plan changes.'
+            'Families receive transparent communication, skillful care, and 24/7 access to our clinical leadership for urgent questions or plan changes.',
+            'Passaic County’s 2024 Healthy Aging survey underscored that 64% of seniors rely on relatives for bathing or mobility assistance and 38% cite winter weather as their biggest barrier to consistent care. We respond with snow-route planning, Access Link coordination, and backup aides staged across Paterson, Wayne, and Wanaque so coverage never lapses.',
+            'Testimonials reflect that reliability: Alejandra M. shared that our Clifton team kept her father comfortable through years of escalating needs, while JoAnn C. praised how we staffed a live-in aide within 36 hours after a hospitalization. Those same standards guide every CHHA case across Passaic County.'
         ]
     },
 

@@ -38,7 +38,8 @@ export const oceanCountyStaffingContent: CountyPageContent = {
         content: [
             'Our staffing division partners with assisted living communities, sub-acute centers, medical offices, and concierge clients across the Jersey Shore. We screen for credentials, experience, and cultural fit before presenting candidates.',
             'Coastal communities experience unique ebb-and-flow: seasonal tourism, snowbird schedules, and continuing care expansion. We offer per diem, contract, and direct hire options so organizations can scale confidently.',
-            'Concierge-Level™ account management handles scheduling, payroll, compliance, and 24/7 coverage so your team can prioritize resident experience and outcomes.'
+            'Concierge-Level™ account management handles scheduling, payroll, compliance, and 24/7 coverage so your team can prioritize resident experience and outcomes.',
+            'Ocean County Workforce Development reports that shore communities see the steepest staffing shortages during summer, yet also face winter storm callouts. Because our workforce already lives in Toms River, Brick, Jackson, and along LBI, we redeploy professionals quickly when weather or bridge closures threaten coverage.'
         ]
     },
 

@@ -68,7 +68,8 @@ export const oceanCountyCompanionCareContent: CountyPageContent = {
         content: [
             'Ocean County offers an unbeatable mix of shore living, resort towns, and 55+ active-adult communities. We pair each client with a companion who understands local traditions—from summer concerts in Seaside Heights to morning walks along Barnegat Bay.',
             'Our Concierge-Level™ team builds customized calendars around favorite routines, religious services, club meetings, and community amenities. Whether loved ones live in Holiday City, Greenbriar, or a beachfront home, we adapt visit frequency and activities to match energy level and health goals.',
-            'Families receive after-visit summaries highlighting wins, concerns, and ideas for future outings so everyone stays aligned.'
+            'Families receive after-visit summaries highlighting wins, concerns, and ideas for future outings so everyone stays aligned.',
+            'Because Ocean County hosts the largest population of older adults in New Jersey, the Office of Senior Services sponsors year-round cultural, wellness, and caregiver-relief programs. Companions weave those county resources—Ocean Ride, senior center clubs, library events—into weekly routines so loved ones keep thriving locally.'
         ]
     },
 

@@ -67,7 +67,9 @@ export const essexCountyPersonalCareContent: CountyPageContent = {
         content: [
             'Families from Newark’s Ironbound to Montclair’s boutique downtown rely on us when daily tasks become overwhelming. We design respectful care plans supervised by registered nurses who understand the unique pace, transit patterns, and building logistics of Essex County living.',
             'Whether your loved one resides in a Weequahic apartment, a historic Glen Ridge colonial, or a Maplewood split-level, our caregivers arrive prepared with customized safety protocols and equipment. We coordinate schedules around medical appointments at University Hospital, Cooperman Barnabas, CareWell Health, and local private practices.',
-            'Concierge-Level™ coordination means families receive real-time visit recaps, health updates, and quick adjustments when physicians recommend changes. You can focus on quality time while we handle the day-to-day care details.'
+            'Concierge-Level™ coordination means families receive real-time visit recaps, health updates, and quick adjustments when physicians recommend changes. You can focus on quality time while we handle the day-to-day care details.',
+            'Essex County’s 2024 Age-Friendly Action Plan found that 41% of residents over 65 rely on public or paratransit to reach medical appointments and 36% live alone. We use that data to build travel buffers for Access Link, GoBus, and rideshare pickups so caregivers arrive early, secure equipment, and keep physicians updated when traffic or train delays pop up.',
+            'Families continue to validate the system—Amanda S. shared in her February 2025 review that our nurse manager “calls every Tuesday” to confirm aides and clients in Newark are thriving, while Debbie V. praised our ability to staff an overnight hospital companion on a weekend’s notice. Their words fuel the on-call coverage Essex County households depend on.'
         ]
     },
 
@@ -76,14 +78,15 @@ export const essexCountyPersonalCareContent: CountyPageContent = {
             title: 'City & Transit-Centered Care',
             content: [
                 'In Newark, East Orange, and Irvington, we support seniors living in high-rises, multi-family homes, and senior towers. Caregivers manage elevator logistics, limited parking, and multilingual households with professionalism.',
-                'We coordinate personal care around NJ Transit schedules, Penn Station trips, and worship services while keeping communication open with out-of-state family members.'
+                'We coordinate personal care around NJ Transit schedules, Penn Station trips, and worship services while keeping communication open with out-of-state family members.',
+                "When Newark's 2025 Healthy Homes grant program launched additional elevator and safety upgrades for senior buildings, we partnered with resident managers to schedule aides during inspection windows so clients never missed medication reminders or mealtimes."
             ]
         },
         {
             title: 'Suburban Daily Living Support',
             content: [
                 'Montclair, Bloomfield, and West Orange families receive consistent aides who respect historic home layouts, condo associations, and active community calendars.',
-                'Care routines align with outpatient therapy at Mountainside Medical Center, Cooperman Barnabas, and Atlantic Health partners throughout the county.'
+                'Care routines align with outpatient therapy at Mountainside Medical Center, Cooperman Barnabas, and Atlantic Health partners throughout the county. Cooperman Barnabas Medical Center’s 2024 Cancer Center expansion created new infusion schedules for many of our clients; we added specialized transfer training so aides can accompany loved ones through the larger facility with confidence.'
             ]
         },
         {

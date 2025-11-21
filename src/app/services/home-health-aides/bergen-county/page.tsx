@@ -7,12 +7,17 @@ import RegionalSection from '@/components/county/RegionalSection'
 import ServiceAreaGrid from '@/components/county/ServiceAreaGrid'
 import CountyCTASection from '@/components/county/CountyCTASection'
 import { bergenCountyHomeHealthAidesContent } from '@/lib/content/bergen-county-home-health-aides'
+import { getCitySlugs } from '@/lib/content/city-slug-map'
 
 // Export metadata directly from content
 export const metadata = bergenCountyHomeHealthAidesContent.metadata
 
 export default function HomeHealthAidesBergenCountyPage() {
     const content = bergenCountyHomeHealthAidesContent
+    const citySlugs = getCitySlugs('home-health-aides', 'bergen-county')
+    const serviceLinkBase = citySlugs.length
+        ? '/services/home-health-aides/bergen-county'
+        : undefined
     const heroImageSrc = content.hero.imageSrc
         ? getImgSrc(content.hero.imageSrc) ||
           '/images/home-health-aide-hero.jpg'
@@ -67,6 +72,8 @@ export default function HomeHealthAidesBergenCountyPage() {
                     title={content.serviceAreas.title}
                     subtitle={content.serviceAreas.subtitle}
                     regions={content.serviceAreas.regions}
+                    linkBase={serviceLinkBase}
+                    citySlugs={citySlugs}
                 />
 
                 {/* Services Section */}

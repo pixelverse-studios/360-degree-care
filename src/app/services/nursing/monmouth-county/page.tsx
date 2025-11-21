@@ -7,12 +7,17 @@ import CountyCTASection from '@/components/county/CountyCTASection'
 import CountyBenefitsSection from '@/components/county/CountyBenefitsSection'
 import ServiceList from '@/components/services/ServiceList'
 import { monmouthCountyNursingContent } from '@/lib/content/monmouth-county-nursing'
+import { getCitySlugs } from '@/lib/content/city-slug-map'
 
 // Export metadata directly from content
 export const metadata = monmouthCountyNursingContent.metadata
 
 export default function NursingMonmouthCountyPage() {
     const content = monmouthCountyNursingContent
+    const citySlugs = getCitySlugs('nursing', 'monmouth-county')
+    const serviceLinkBase = citySlugs.length
+        ? '/services/nursing/monmouth-county'
+        : undefined
     const heroImageSrc = content.hero.imageSrc
         ? getImgSrc(content.hero.imageSrc) || '/images/nursing-hero.jpg'
         : undefined
@@ -66,6 +71,8 @@ export default function NursingMonmouthCountyPage() {
                     title={content.serviceAreas.title}
                     subtitle={content.serviceAreas.subtitle}
                     regions={content.serviceAreas.regions}
+                    linkBase={serviceLinkBase}
+                    citySlugs={citySlugs}
                 />
 
                 {/* Services Section */}

@@ -36,7 +36,8 @@ export const oceanCountyNursingContent: CountyPageContent = {
         content: [
             'Following discharges from Community Medical Center, Ocean University Medical Center, or Hackensack Meridian facilities, families rely on our nurses to implement physician orders without delay.',
             'We handle wound care, IV therapies, tracheostomy management, ventilator oversight, and comprehensive medication administration. Nurses communicate with cardiologists, pulmonologists, and primary care teams to keep everyone aligned.',
-            'Concierge-Level™ operations include 24/7 clinical availability, supply coordination, and meticulous documentation so families can focus on healing.'
+            'Concierge-Level™ operations include 24/7 clinical availability, supply coordination, and meticulous documentation so families can focus on healing.',
+            'Ocean County emergency planners emphasize coastal evacuation readiness and chronic-disease monitoring during extreme weather. Our private duty nurses build that guidance into every plan—staging backup power sources, pre-positioning medications, and coordinating with local EMS so high-acuity clients remain safe even when the Parkway or barrier-island bridges close.'
         ]
     },
 

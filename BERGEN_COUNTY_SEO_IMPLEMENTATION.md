@@ -162,20 +162,20 @@ Create a comprehensive 2,000+ word page at `/services/personal-care/bergen-count
 
 ### Phase 6: Optimization & Expansion ⏱️ Week 4+
 
-- [ ] **6.1 Redirect Strategy**
-  - [ ] Identify underperforming city pages
-  - [ ] Set up 301 redirects to county hub
-  - [ ] Update internal links
+- [x] **6.1 Redirect Strategy**
+  - [x] Identify underperforming city pages (Englewood, Paramus, Westwood — zero clicks/impressions per 2025-11-04 GSC export)
+  - [x] Set up 301 redirects to county hub (Next.js redirect map consolidates URLs)
+  - [x] Update internal links (ServiceAreaGrid no longer links to redirected slugs)
 
-- [ ] **6.2 Content Updates**
-  - [ ] Add local news/events
-  - [ ] Update testimonials
-  - [ ] Refresh statistics
+- [x] **6.2 Content Updates**
+  - [x] Add local news/events (Valley Hospital Paramus opening + Holy Name Cultural Health Fair now threaded into Bergen hub; mirrored playbook applied to Essex, Monmouth, and Passaic hubs)
+  - [x] Update testimonials (wove 2024–2025 Google review quotes from Dina R., Carmine L., Steve D., JoAnn C., Amanda S., Alejandra M., and Debbie V. into county copy)
+  - [x] Refresh statistics (referenced latest senior needs data from each county to anchor messaging and CTA language)
 
-- [ ] **6.3 Expand to Other Services**
-  - [ ] `/services/companion-care/bergen-county`
-  - [ ] `/services/nursing/bergen-county`
-  - [ ] `/services/home-health-aides/bergen-county`
+- [x] **6.3 Expand to Other Services**
+  - [x] `/services/companion-care/bergen-county` (refreshed with loneliness stats, new testimonials, Fort Lee art studio + Senior Resource Center programming)
+  - [x] `/services/nursing/bergen-county` (added Community Health Improvement Plan data, Valley Paramus campus logistics, HUMC Heart & Vascular expansion references)
+  - [x] `/services/home-health-aides/bergen-county` (anchored copy in 2024 senior support stats, highlighted Carmine/Alejandra testimonials, Valley + Holy Name event coverage)
 
 ---
 

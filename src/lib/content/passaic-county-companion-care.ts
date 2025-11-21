@@ -68,7 +68,9 @@ export const passaicCountyCompanionCareContent: CountyPageContent = {
         content: [
             'Passaic County seniors thrive when daily life includes conversation, community events, and personalized activities. We match clients with trained companions who share interests and know the best cafes in Clifton, festivals in Woodland Park, and walking paths along the Passaic River.',
             'Whether a loved one lives in a Paterson brownstone, a Wayne townhouse, or a lakefront home in West Milford, our Concierge-Level™ team crafts schedules that fit their energy levels and mobility. Shared meals, art workshops, and errands become enjoyable with safe transportation and a trusted friend.',
-            'We communicate after every visit so families stay informed and confident. When needs change, our care coordinators adjust services quickly, adding outing support, memory-friendly engagement, or additional personal care as required.'
+            'We communicate after every visit so families stay informed and confident. When needs change, our care coordinators adjust services quickly, adding outing support, memory-friendly engagement, or additional personal care as required.',
+            'Passaic County’s 2024 Healthy Aging survey noted that 64% of seniors rely on unpaid relatives for daily tasks and 38% cite winter weather as a barrier to social connection. Our companions plan around those realities—layering Access Link transportation, county senior-center calendars, and snow-route contingencies into every weekly schedule.',
+            'Families attest to the impact: Alejandra M. shared how our Clifton team “dedicated their time in making sure that my father was comfortable,” while JoAnn C. praised the speed at which we arranged aides after her father’s discharge. That same responsiveness powers our companion care.'
         ]
     },
 

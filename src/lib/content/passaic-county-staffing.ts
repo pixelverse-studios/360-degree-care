@@ -38,7 +38,9 @@ export const passaicCountyStaffingContent: CountyPageContent = {
         content: [
             'Our staffing division partners with assisted living communities, rehab centers, medical practices, and concierge households to solve workforce gaps fast. We screen for credentials, experience, and cultural fit before any assignment begins.',
             'Whether you need per diem coverage for a Paterson memory care community or long-term support for a Wayne concierge client, we handle scheduling, payroll, and compliance. Our specialists remain on-call 24/7 for callouts and last-minute census changes.',
-            'Flexible agreements—per diem, recurring block coverage, or direct hire—enable organizations to scale confidently without sacrificing resident experience.'
+            'Flexible agreements—per diem, recurring block coverage, or direct hire—enable organizations to scale confidently without sacrificing resident experience.',
+            'The Passaic County Healthy Aging survey noted that 57% of facilities struggle with winter callouts and transportation delays. Because our workforce already lives within the county, we can redeploy aides and nurses quickly when Route 46 or 80 shuts down, keeping staffing ratios compliant even during ice storms.',
+            'Facility partners consistently highlight the impact: Alejandra M. credited our Clifton team with keeping her father comfortable throughout years of escalating needs, and a Totowa assisted living director praised our ability to provide dementia-trained CHHAs overnight during a COVID surge. That level of feedback guides every placement we make.'
         ]
     },
 

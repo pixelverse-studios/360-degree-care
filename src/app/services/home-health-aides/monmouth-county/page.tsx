@@ -5,11 +5,16 @@ import RegionalSection from '@/components/county/RegionalSection'
 import ServiceAreaGrid from '@/components/county/ServiceAreaGrid'
 import CountyCTASection from '@/components/county/CountyCTASection'
 import { monmouthCountyHomeHealthAidesContent } from '@/lib/content/monmouth-county-home-health-aides'
+import { getCitySlugs } from '@/lib/content/city-slug-map'
 
 export const metadata = monmouthCountyHomeHealthAidesContent.metadata
 
 export default function HomeHealthAidesMonmouthCountyPage() {
     const content = monmouthCountyHomeHealthAidesContent
+    const citySlugs = getCitySlugs('home-health-aides', 'monmouth-county')
+    const serviceLinkBase = citySlugs.length
+        ? '/services/home-health-aides/monmouth-county'
+        : undefined
     const heroImageSrc = content.hero.imageSrc
         ? getImgSrc(content.hero.imageSrc) ||
           '/images/home-health-aides-hero.jpg'
@@ -60,6 +65,8 @@ export default function HomeHealthAidesMonmouthCountyPage() {
                     title={content.serviceAreas.title}
                     subtitle={content.serviceAreas.subtitle}
                     regions={content.serviceAreas.regions}
+                    linkBase={serviceLinkBase}
+                    citySlugs={citySlugs}
                 />
 
                 <section className="py-16 px-4">

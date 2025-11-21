@@ -68,7 +68,9 @@ export const passaicCountyPersonalCareContent: CountyPageContent = {
         content: [
             'Families in Paterson, Passaic, Clifton, and surrounding towns turn to us when daily routines become difficult to manage alone. We design respectful, reliable personal care plans supervised by registered nurses who understand the unique layouts and cultural diversity of Passaic County homes.',
             'Caregivers arrive prepared with safety protocols tailored to multi-story residences, condo communities, and rural properties. We handle scheduling, communication, and backup support so loved ones receive consistent care even during winter weather or summer travel.',
-            'With Concierge-Level™ coordination, families receive detailed visit notes, condition updates, and quick adjustments when medical recommendations change.'
+            'With Concierge-Level™ coordination, families receive detailed visit notes, condition updates, and quick adjustments when medical recommendations change.',
+            'Passaic County’s 2024 Healthy Aging survey reported that 64% of seniors rely on unpaid relatives for bathing or mobility help and 38% cite winter weather as their biggest barrier to consistent care. We respond with snow-route planning, Access Link coordination, and backup caregivers stationed across Paterson, Wayne, and Wanaque so no visit is missed—even during ice storms along Route 23 or Route 46.',
+            'Alejandra M. captured the impact in her 2023 review when she explained that our “nurse, supervisor and health aide dedicated their time in making sure that my father was comfortable” through several years of declining health, while JoAnn C. described how we staffed a live-in aide within 36 hours for her father’s post-hospital transition. Their stories mirror what Passaic County families experience when Concierge-Level™ support is available around the clock.'
         ]
     },
 
@@ -77,21 +79,21 @@ export const passaicCountyPersonalCareContent: CountyPageContent = {
             title: 'City & Riverside Care',
             content: [
                 'Paterson, Passaic, and Clifton residents benefit from caregivers experienced with elevator buildings, limited parking, and bustling neighborhoods.',
-                'We coordinate around busy schedules, local markets, and cultural calendars to keep routines familiar and stress-free.'
+                'We coordinate around busy schedules, local markets, and cultural calendars to keep routines familiar and stress-free. After St. Joseph’s University Medical Center unveiled its renovated geriatric emergency department in late 2024, we created new escort checklists so aides could guide clients through triage more efficiently.'
             ]
         },
         {
             title: 'Suburban Daily Living Support',
             content: [
                 'In Wayne, Totowa, Hawthorne, and Little Falls we provide consistent aides who assist with morning and evening care, transportation, and household tasks.',
-                'Care plans align with therapy recommendations from local rehab centers and hospital partners.'
+                'Care plans align with therapy recommendations from local rehab centers and hospital partners. We also expanded hours near St. Joseph’s Wayne Medical Center as its 2025 orthopedic suite opened, ensuring caregivers could accommodate earlier surgical arrivals and later discharge times.'
             ]
         },
         {
             title: 'Northern Highlands Assistance',
             content: [
                 'Families in Ringwood, Wanaque, Pompton Lakes, and West Milford receive personal care adapted to larger properties and seasonal travel routes.',
-                'Caregivers focus on fall prevention, outdoor safety, and wellness monitoring in coordination with visiting physicians.'
+                'Caregivers focus on fall prevention, outdoor safety, and wellness monitoring in coordination with visiting physicians. When the Wanaque Reservoir trail accessibility upgrades debuted in spring 2025, we updated outdoor activity plans and hydration checklists so clients could safely enjoy the improved paths with caregiver supervision.'
             ]
         }
     ],

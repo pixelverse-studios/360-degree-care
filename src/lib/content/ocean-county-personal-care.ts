@@ -68,6 +68,7 @@ export const oceanCountyPersonalCareContent: CountyPageContent = {
         content: [
             'When bathing, grooming, and mobility tasks become challenging, families across Toms River, Brick, Lakewood, and Jackson rely on our certified caregivers. We tailor care plans to each home’s layout, safety considerations, and cultural preferences.',
             'Registered nurses oversee every case, adjusting care plans as medical recommendations change. Our team coordinates with local physicians, rehabilitation centers, and pharmacy partners to keep routines on track.',
+            'Ocean County’s Office of Senior Services reminds families that the county has one of New Jersey’s highest concentrations of residents over 60, so demand for personal care continues to climb each year. Our Concierge-Level™ team stays in sync with those county resources, weaving transportation, meal, and respite programs into every care plan.',
             'Families get reliable coverage—even during summer traffic or winter storms—thanks to local caregiver teams and Concierge-Level™ scheduling support.'
         ]
     },
@@ -77,14 +78,14 @@ export const oceanCountyPersonalCareContent: CountyPageContent = {
             title: 'Northern Shore & Barrier Island',
             content: [
                 'Point Pleasant, Sea Girt, and Bay Head residents receive caregivers experienced with coastal homes, limited parking, and multi-level properties.',
-                'We schedule around bridge openings, summer events, and barrier-island access to keep visits punctual.'
+                'We schedule around bridge openings, summer events, and barrier-island access to keep visits punctual, coordinating with municipal senior centers in Point Pleasant and Lavallette to keep clients plugged into trusted programs.'
             ]
         },
         {
             title: 'Central Mainland & 55+ Communities',
             content: [
                 'Personal care in Toms River, Lakewood, Jackson, and Manchester focuses on morning and evening routines, transfer support, and medication reminders.',
-                'Caregivers are familiar with community associations such as Holiday City, Leisure Village, and Westlake, respecting gate procedures and amenity schedules.'
+                'Caregivers are familiar with community associations such as Holiday City, Leisure Village, and Westlake, respecting gate procedures and amenity schedules while syncing with Ocean Ride transportation for medical appointments.'
             ]
         },
         {

@@ -37,7 +37,42 @@ function buildServiceCountyPairs() {
     return pairs
 }
 
+function buildServiceCountyCityTriples() {
+    const triples = []
+
+    listDirectories(SERVICES_DIR).forEach(service => {
+        const serviceDir = path.join(SERVICES_DIR, service)
+        if (!hasPage(serviceDir)) {
+            return
+        }
+
+        listDirectories(serviceDir).forEach(county => {
+            const countyDir = path.join(serviceDir, county)
+            if (!hasPage(countyDir)) {
+                return
+            }
+
+            listDirectories(countyDir).forEach(city => {
+                const cityDir = path.join(countyDir, city)
+                if (hasPage(cityDir)) {
+                    triples.push([service, county, city])
+                }
+            })
+        })
+    })
+
+    return triples
+}
+
 const redirectPairs = buildServiceCountyPairs()
+const legacyServiceCityPairs = buildServiceCountyCityTriples()
+
+// Zero-traffic city pages (per Nov 4 2025 GSC export) consolidate into Bergen hub
+const personalCareBergenZeroTrafficCities = [
+    'englewood',
+    'paramus',
+    'westwood'
+]
 
 const nextConfig = {
     images: {
@@ -55,11 +90,32 @@ const nextConfig = {
         ]
     },
     async redirects() {
-        return redirectPairs.map(([service, county]) => ({
+        const serviceCountyRedirects = redirectPairs.map(([service, county]) => ({
             source: `/${service}-${county}`,
             destination: `/services/${service}/${county}`,
             permanent: true
         }))
+
+        const legacyServiceCityRedirects = legacyServiceCityPairs.map(
+            ([service, county, city]) => ({
+                source: `/services/${service}/${city}`,
+                destination: `/services/${service}/${county}/${city}`,
+                permanent: true
+            })
+        )
+
+        const personalCareBergenRedirects =
+            personalCareBergenZeroTrafficCities.map(city => ({
+                source: `/services/personal-care/bergen-county/${city}`,
+                destination: '/services/personal-care/bergen-county',
+                permanent: true
+            }))
+
+        return [
+            ...serviceCountyRedirects,
+            ...legacyServiceCityRedirects,
+            ...personalCareBergenRedirects
+        ]
     },
     async headers() {
         return [

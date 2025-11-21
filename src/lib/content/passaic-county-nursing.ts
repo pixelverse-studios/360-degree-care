@@ -38,7 +38,9 @@ export const passaicCountyNursingContent: CountyPageContent = {
         content: [
             'Families rely on our private duty nurses after discharges from St. Joseph’s University Medical Center, Chilton Medical Center, and neighboring hospitals. We ensure physician orders are implemented immediately, preventing gaps that can lead to readmissions.',
             'Our nurses manage wound care, IV therapies, ventilators, complex medication schedules, and chronic disease monitoring. They coordinate closely with cardiologists, neurologists, oncologists, and primary care teams across Passaic County.',
-            'Concierge-Level™ support includes 24/7 clinical availability, supply coordination, and detailed charting so families and providers stay aligned.'
+            'Concierge-Level™ support includes 24/7 clinical availability, supply coordination, and detailed charting so families and providers stay aligned.',
+            'The 2024 Passaic County Healthy Aging survey cited winter weather and transportation delays as top reasons seniors miss follow-up care. Our nursing protocols include snow-route planning, generator readiness, and Access Link coordination so complex cases remain stable even during ice storms on Routes 23 and 46.',
+            'Families feel the support: Alejandra M. described how our nurse-supervisor-aide team “dedicated their time in making sure that my father was comfortable,” while JoAnn C. noted that we organized overnight coverage within 36 hours. Those same Concierge-Level™ standards guide every private duty nursing plan.'
         ]
     },
 

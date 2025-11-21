@@ -65,7 +65,9 @@ export const essexCountyHomeHealthAidesContent: CountyPageContent = {
         content: [
             'Complex health needs require attentive, well-trained aides. We recruit certified home health aides who understand the nuances of Essex County neighborhoods—from elevator buildings near Newark Penn Station to historic homes in Montclair and Maplewood.',
             'Every client receives a nurse-developed care plan covering personal hygiene, transfers, vitals monitoring, and meal preparation. Supervising RNs conduct routine visits, communicate with physicians, and provide coaching to caregivers and families.',
-            'Concierge-Level™ scheduling ensures seamless coverage, quick replacements, and detailed visit recaps delivered to family portals and preferred communication channels.'
+            'Concierge-Level™ scheduling ensures seamless coverage, quick replacements, and detailed visit recaps delivered to family portals and preferred communication channels.',
+            'Because the 2024 Essex County Age-Friendly Action Plan found that more than 40% of caregivers feel overwhelmed and 36% of older adults live alone, we build respite rotations, community services, and Access Link transportation straight into every CHHA plan.',
+            'Families echo the impact: Amanda S. highlighted our Tuesday nurse check-ins that keep aides and clients aligned, while Debbie V. praised the weekend support we arranged during a hospital stay. Their experiences reflect the stability Essex County households expect from our nurse-led CHHA program.'
         ]
     },
 

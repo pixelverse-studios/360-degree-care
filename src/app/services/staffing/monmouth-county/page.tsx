@@ -5,11 +5,16 @@ import RegionalSection from '@/components/county/RegionalSection'
 import ServiceAreaGrid from '@/components/county/ServiceAreaGrid'
 import CountyCTASection from '@/components/county/CountyCTASection'
 import { monmouthCountyStaffingContent } from '@/lib/content/monmouth-county-staffing'
+import { getCitySlugs } from '@/lib/content/city-slug-map'
 
 export const metadata = monmouthCountyStaffingContent.metadata
 
 export default function StaffingMonmouthCountyPage() {
     const content = monmouthCountyStaffingContent
+    const citySlugs = getCitySlugs('staffing', 'monmouth-county')
+    const serviceLinkBase = citySlugs.length
+        ? '/services/staffing/monmouth-county'
+        : undefined
     const heroImageSrc = content.hero.imageSrc
         ? getImgSrc(content.hero.imageSrc) ||
           '/images/staffing-services-hero.jpg'
@@ -60,6 +65,8 @@ export default function StaffingMonmouthCountyPage() {
                     title={content.serviceAreas.title}
                     subtitle={content.serviceAreas.subtitle}
                     regions={content.serviceAreas.regions}
+                    linkBase={serviceLinkBase}
+                    citySlugs={citySlugs}
                 />
 
                 <section className="py-16 px-4">

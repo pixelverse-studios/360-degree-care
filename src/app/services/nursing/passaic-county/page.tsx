@@ -7,12 +7,17 @@ import CountyCTASection from '@/components/county/CountyCTASection'
 import CountyBenefitsSection from '@/components/county/CountyBenefitsSection'
 import ServiceList from '@/components/services/ServiceList'
 import { passaicCountyNursingContent } from '@/lib/content/passaic-county-nursing'
+import { getCitySlugs } from '@/lib/content/city-slug-map'
 
 // Export metadata directly from content
 export const metadata = passaicCountyNursingContent.metadata
 
 export default function NursingPassaicCountyPage() {
     const content = passaicCountyNursingContent
+    const citySlugs = getCitySlugs('nursing', 'passaic-county')
+    const serviceLinkBase = citySlugs.length
+        ? '/services/nursing/passaic-county'
+        : undefined
     const heroImageSrc = content.hero.imageSrc
         ? getImgSrc(content.hero.imageSrc) || '/images/nursing-hero.jpg'
         : undefined
@@ -66,6 +71,8 @@ export default function NursingPassaicCountyPage() {
                     title={content.serviceAreas.title}
                     subtitle={content.serviceAreas.subtitle}
                     regions={content.serviceAreas.regions}
+                    linkBase={serviceLinkBase}
+                    citySlugs={citySlugs}
                 />
 
                 {/* Services Section */}

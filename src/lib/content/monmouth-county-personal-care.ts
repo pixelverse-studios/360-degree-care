@@ -69,7 +69,9 @@ export const monmouthCountyPersonalCareContent: CountyPageContent = {
         content: [
             'Families in Middletown, Freehold, Rumson, and communities throughout Monmouth County rely on us when personal care tasks become overwhelming. We design respectful routines around bathing, dressing, grooming, and mobility that keep residents safe without sacrificing dignity.',
             'Each personal care plan begins with an in-home assessment led by a registered nurse who understands the unique layout and safety considerations of Monmouth County homes—from multistory colonials to coastal condos. We adapt schedules to tides, traffic, and community events so care remains consistent even during busy summer seasons.',
-            'With ongoing communication, we ensure families feel confident about who is in their home, what services are provided, and how loved ones progress over time. Our team builds trust through punctuality, professionalism, and the Concierge-Level™ hospitality that defines 360 Degree Care.'
+            'With ongoing communication, we ensure families feel confident about who is in their home, what services are provided, and how loved ones progress over time. Our team builds trust through punctuality, professionalism, and the Concierge-Level™ hospitality that defines 360 Degree Care.',
+            'The Monmouth County Office on Aging’s 2024 Senior Needs Assessment reported that 69% of local older adults plan to age in place and nearly half worry about storm-related power outages interrupting care. We use those insights to stage generator-friendly equipment, backup medication reminders, and transportation contingencies for Bayshore flooding or Garden State Parkway closures.',
+            'Recent Google reviews echo the difference: Steve D. highlighted in June 2024 that our aide “did exactly what the agency said she would do” throughout a one-month engagement in Long Branch, while JoAnn C. praised our ability to organize a live-in aide in less than 36 hours for her father after a hospital stay. Their experiences mirror the reliability families expect throughout Monmouth County.'
         ]
     },
 
@@ -78,7 +80,7 @@ export const monmouthCountyPersonalCareContent: CountyPageContent = {
             title: 'Personal Care Along the Bayshore',
             content: [
                 'Residents in Middletown, Holmdel, Hazlet, and Atlantic Highlands receive caregivers skilled at navigating split-level homes, waterfront properties, and communities with limited parking.',
-                'We coordinate with local physicians and therapy partners to keep personal care plans aligned with rehab goals and wellness recommendations.'
+                'We coordinate with local physicians and therapy partners to keep personal care plans aligned with rehab goals and wellness recommendations. After Hackensack Meridian Bayshore Medical Center opened its outpatient pavilion in 2024, we added orientation sessions so aides could guide clients to the new entrances, valet stands, and therapy suites without disruptions.'
             ]
         },
         {
@@ -92,7 +94,7 @@ export const monmouthCountyPersonalCareContent: CountyPageContent = {
             title: 'Coastal & Southern Shore Coverage',
             content: [
                 'Seniors in Red Bank, Long Branch, Asbury Park, Sea Bright, and Spring Lake receive flexible schedules that account for seasonal traffic and visitors.',
-                'We maintain privacy in close-knit condo communities while ensuring bathing, grooming, and medication reminders remain on track every day.'
+                'We maintain privacy in close-knit condo communities while ensuring bathing, grooming, and medication reminders remain on track every day. Our team also supports clients attending Monmouth Medical Center’s Anne Vogel Family Care & Wellness Center classes in Eatontown, introduced in 2024 to expand integrative therapies for shore residents.'
             ]
         }
     ],

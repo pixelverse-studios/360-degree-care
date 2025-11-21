@@ -5,6 +5,17 @@ const SITE_URL = 'https://www.360degreecare.net'
 const APP_DIR = path.join(process.cwd(), 'src', 'app')
 const SERVICES_DIR = path.join(APP_DIR, 'services')
 
+// Keep sitemap in sync with redirect strategy so we don't advertise deprecated city URLs
+const REDIRECTED_CITY_SLUGS = {
+    'personal-care': {
+        'bergen-county': new Set(['englewood', 'paramus', 'westwood'])
+    }
+}
+
+const REDIRECTED_PATHS = Array.from(
+    REDIRECTED_CITY_SLUGS['personal-care']['bergen-county']
+).map(city => `/services/personal-care/bergen-county/${city}`)
+
 const staticPages = [
     { loc: '/', priority: 1, changefreq: 'weekly' },
     { loc: '/about', priority: 0.8, changefreq: 'monthly' },
@@ -48,9 +59,11 @@ function buildServiceRouteTree() {
                 )
                 .map(county => {
                     const countyDir = path.join(serviceDir, county)
-                    const cities = listDirectories(countyDir).filter(city =>
-                        hasPageFile(path.join(countyDir, city))
-                    )
+                    const excludedCities =
+                        REDIRECTED_CITY_SLUGS[service]?.[county]
+                    const cities = listDirectories(countyDir)
+                        .filter(city => hasPageFile(path.join(countyDir, city)))
+                        .filter(city => !excludedCities?.has(city))
                     return { slug: county, cities }
                 })
 
@@ -127,7 +140,13 @@ const config = {
         ],
         additionalSitemaps: ['https://www.360degreecare.net/sitemap.xml']
     },
-    exclude: ['/api/*', '/_next/*', '/404', '/500'],
+    exclude: [
+        '/api/*',
+        '/_next/*',
+        '/404',
+        '/500',
+        ...REDIRECTED_PATHS
+    ],
     changefreq: 'weekly',
     priority: 0.7,
     sitemapSize: 5000,

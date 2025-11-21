@@ -7,11 +7,16 @@ import CountyCTASection from '@/components/county/CountyCTASection'
 import CountyBenefitsSection from '@/components/county/CountyBenefitsSection'
 import ServiceList from '@/components/services/ServiceList'
 import { essexCountyStaffingContent } from '@/lib/content/essex-county-staffing'
+import { getCitySlugs } from '@/lib/content/city-slug-map'
 
 export const metadata = essexCountyStaffingContent.metadata
 
 export default function StaffingEssexCountyPage() {
     const content = essexCountyStaffingContent
+    const citySlugs = getCitySlugs('staffing', 'essex-county')
+    const serviceLinkBase = citySlugs.length
+        ? '/services/staffing/essex-county'
+        : undefined
     const heroImageSrc = content.hero.imageSrc
         ? getImgSrc(content.hero.imageSrc) ||
           '/images/staffing-services-hero.jpg'
@@ -62,6 +67,8 @@ export default function StaffingEssexCountyPage() {
                     title={content.serviceAreas.title}
                     subtitle={content.serviceAreas.subtitle}
                     regions={content.serviceAreas.regions}
+                    linkBase={serviceLinkBase}
+                    citySlugs={citySlugs}
                 />
 
                 <ServiceList {...content.services} />

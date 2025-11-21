@@ -69,7 +69,9 @@ export const monmouthCountyElderCareContent: CountyPageContent = {
         content: [
             'Hospital discharges, new diagnoses, and family relocations can feel overwhelming—especially when they happen quickly. Our Monmouth County elder care consultants evaluate the full picture, create practical care roadmaps, and stay by your side to implement each step.',
             'We understand local resources from Meridian Health and Hackensack Meridian’s Riverview Medical Center to boutique rehab facilities and trusted assisted living communities. Whether you need short-term advocacy or a long-term care manager, we coordinate with physicians, therapists, and legal advisors to align goals and budgets.',
-            'Families appreciate our transparent updates, thorough documentation, and warm communication style. We anticipate what comes next so you can make decisions before a crisis escalates.'
+            'Families appreciate our transparent updates, thorough documentation, and warm communication style. We anticipate what comes next so you can make decisions before a crisis escalates.',
+            'The Monmouth County Office on Aging’s 2024 Senior Needs Assessment reported that 69% of older adults plan to age in place and nearly half fear storm-related outages could interrupt care. We bake those realities into every plan—staging generator-friendly equipment, redundant medication reminders, and transportation contingencies for Parkway closures or Bayshore flooding.',
+            'Local families validate the approach: Steve D. shared in June 2024 that our aide “did exactly what the agency said she would do” throughout a Long Branch engagement, while JoAnn C. described how we secured a live-in aide in less than 36 hours after her father’s hospital stay. Their stories mirror what Monmouth households experience when Concierge-Level™ consulting leads the process.'
         ]
     },
 
@@ -78,7 +80,8 @@ export const monmouthCountyElderCareContent: CountyPageContent = {
             title: 'Bayshore & Riverfront Planning',
             content: [
                 'Clients in Middletown, Atlantic Highlands, Sea Bright, and Rumson receive support navigating waterfront property considerations, emergency preparedness, and municipal aging programs.',
-                'We coordinate respite care, in-home services, and environmental modifications to maintain safe living spaces despite seasonal weather changes.'
+                'We coordinate respite care, in-home services, and environmental modifications to maintain safe living spaces despite seasonal weather changes.',
+                'After Hackensack Meridian Bayshore Medical Center opened its outpatient pavilion in 2024, we added tour days and caregiver training sessions so families understood the new entrances, valet stands, and therapy classrooms before discharge.'
             ]
         },
         {

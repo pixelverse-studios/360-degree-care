@@ -5,11 +5,16 @@ import RegionalSection from '@/components/county/RegionalSection'
 import ServiceAreaGrid from '@/components/county/ServiceAreaGrid'
 import CountyCTASection from '@/components/county/CountyCTASection'
 import { passaicCountyHomeHealthAidesContent } from '@/lib/content/passaic-county-home-health-aides'
+import { getCitySlugs } from '@/lib/content/city-slug-map'
 
 export const metadata = passaicCountyHomeHealthAidesContent.metadata
 
 export default function HomeHealthAidesPassaicCountyPage() {
     const content = passaicCountyHomeHealthAidesContent
+    const citySlugs = getCitySlugs('home-health-aides', 'passaic-county')
+    const serviceLinkBase = citySlugs.length
+        ? '/services/home-health-aides/passaic-county'
+        : undefined
     const heroImageSrc = content.hero.imageSrc
         ? getImgSrc(content.hero.imageSrc) ||
           '/images/home-health-aides-hero.jpg'
@@ -60,6 +65,8 @@ export default function HomeHealthAidesPassaicCountyPage() {
                     title={content.serviceAreas.title}
                     subtitle={content.serviceAreas.subtitle}
                     regions={content.serviceAreas.regions}
+                    linkBase={serviceLinkBase}
+                    citySlugs={citySlugs}
                 />
 
                 <section className="py-16 px-4">

@@ -65,7 +65,8 @@ export const oceanCountyHomeHealthAidesContent: CountyPageContent = {
         content: [
             'Every CHHA plan starts with an RN assessment evaluating home safety, medical needs, and daily routines. We adapt the plan to shore homes, active adult communities, and rural properties alike.',
             'Our aides are licensed, insured, and trained in dementia care, fall prevention, and Concierge-Level™ hospitality. Schedulers provide reliable coverage—even when seasonal traffic or storms create delays.',
-            'Families receive real-time communication, on-call clinical support, and backup staffing to keep care uninterrupted.'
+            'Families receive real-time communication, on-call clinical support, and backup staffing to keep care uninterrupted.',
+            'Ocean County’s Office of Senior Services reminds residents that the county has New Jersey’s largest population of older adults, so in-home support is in higher demand than anywhere else in the state. We partner with county programs—Ocean Ride, senior nutrition, caregiver respite—to layer CHHA care with publicly available services and keep routines affordable.'
         ]
     },
 
@@ -81,14 +82,14 @@ export const oceanCountyHomeHealthAidesContent: CountyPageContent = {
             title: 'Central Mainland Communities',
             content: [
                 'Toms River, Lakewood, Jackson, and Manchester families receive morning and evening support, medication reminders, and mobility assistance.',
-                'CHHAs are familiar with community association protocols at Holiday City, Leisure Village, and similar developments.'
+                'CHHAs are familiar with community association protocols at Holiday City, Leisure Village, and similar developments, and we sync visits with Ocean Ride transportation and local senior-center calendars.'
             ]
         },
         {
             title: 'Southern Shore & Long Beach Island',
             content: [
                 'Barnegat, Stafford, and LBI households count on us to manage seasonal visitor schedules, hurricane preparedness, and evacuation plans.',
-                'We tailor coverage to shoreline routines, including fishing excursions, boardwalk outings, and beach safety.'
+                'We tailor coverage to shoreline routines, including fishing excursions, boardwalk outings, and beach safety, while coordinating with municipal emergency offices whenever coastal advisories surface.'
             ]
         }
     ],

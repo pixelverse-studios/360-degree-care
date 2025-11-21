@@ -7,6 +7,7 @@ import CountyCTASection from '@/components/county/CountyCTASection'
 import CountyBenefitsSection from '@/components/county/CountyBenefitsSection'
 import ServiceList from '@/components/services/ServiceList'
 import { passaicCountyPersonalCareContent } from '@/lib/content/passaic-county-personal-care'
+import { getCitySlugs } from '@/lib/content/city-slug-map'
 
 // TODO: Add cross-links to other Bergen County service hub pages when created:
 // - /services/companion-care/bergen-county
@@ -19,6 +20,10 @@ export const metadata = passaicCountyPersonalCareContent.metadata
 
 export default function PersonalCarePassaicCountyPage() {
     const content = passaicCountyPersonalCareContent
+    const citySlugs = getCitySlugs('personal-care', 'passaic-county')
+    const serviceLinkBase = citySlugs.length
+        ? '/services/personal-care/passaic-county'
+        : undefined
     const heroImageSrc = content.hero.imageSrc
         ? getImgSrc(content.hero.imageSrc) || '/images/personal-care-hero.jpg'
         : undefined
@@ -72,6 +77,8 @@ export default function PersonalCarePassaicCountyPage() {
                     title={content.serviceAreas.title}
                     subtitle={content.serviceAreas.subtitle}
                     regions={content.serviceAreas.regions}
+                    linkBase={serviceLinkBase}
+                    citySlugs={citySlugs}
                 />
 
                 {/* Services Section */}

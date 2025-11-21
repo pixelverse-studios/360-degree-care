@@ -5,6 +5,7 @@ import RegionalSection from '@/components/county/RegionalSection'
 import ServiceAreaGrid from '@/components/county/ServiceAreaGrid'
 import CountyCTASection from '@/components/county/CountyCTASection'
 import { passaicCountyCompanionCareContent } from '@/lib/content/passaic-county-companion-care'
+import { getCitySlugs } from '@/lib/content/city-slug-map'
 
 // TODO: Add cross-links to other Bergen County service hub pages when created:
 // - /services/personal-care/bergen-county (already created)
@@ -18,6 +19,10 @@ export const metadata = passaicCountyCompanionCareContent.metadata
 
 export default function CompanionCarePassaicCountyPage() {
     const content = passaicCountyCompanionCareContent
+    const citySlugs = getCitySlugs('companion-care', 'passaic-county')
+    const serviceLinkBase = citySlugs.length
+        ? '/services/companion-care/passaic-county'
+        : undefined
     const heroImageSrc = content.hero.imageSrc
         ? getImgSrc(content.hero.imageSrc) || '/images/companion-care-hero.jpg'
         : undefined
@@ -71,6 +76,8 @@ export default function CompanionCarePassaicCountyPage() {
                     title={content.serviceAreas.title}
                     subtitle={content.serviceAreas.subtitle}
                     regions={content.serviceAreas.regions}
+                    linkBase={serviceLinkBase}
+                    citySlugs={citySlugs}
                 />
 
                 {/* Services Section */}

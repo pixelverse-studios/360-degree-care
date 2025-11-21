@@ -68,7 +68,9 @@ export const passaicCountyElderCareContent: CountyPageContent = {
         content: [
             'New diagnoses, cognitive changes, and hospitalizations can overwhelm even the most prepared families. Our Passaic County elder care consultants listen, assess, and design practical strategies that align medical recommendations with family goals.',
             'We understand the local healthcare system—from St. Joseph’s University Medical Center and Clara Maass Medical Center to outpatient therapy programs and adult day services across the county. Our team coordinates appointments, transportation, and communication so nothing falls through the cracks.',
-            'Whether you need a single assessment or ongoing care management, we provide responsive support, detailed documentation, and compassionate advocacy.'
+            'Whether you need a single assessment or ongoing care management, we provide responsive support, detailed documentation, and compassionate advocacy.',
+            'Passaic County’s 2024 Healthy Aging survey revealed that 64% of seniors rely on unpaid relatives for bathing or mobility help and 38% cite winter weather as their biggest barrier to consistent care. We factor those realities into every plan—mapping snow routes for Route 23/46 storms, layering Access Link buffers, and lining up respite aides before burnout sets in.',
+            "Families feel the difference. Alejandra M. shared that our nurse, supervisor, and aide team “dedicated their time in making sure that my father was comfortable” for years in Clifton, while JoAnn C. praised how we arranged a live-in aide within 36 hours after her father's discharge. Their stories mirror what Passaic County households experience when Concierge-Level™ consulting takes the lead."
         ]
     },
 
@@ -77,7 +79,8 @@ export const passaicCountyElderCareContent: CountyPageContent = {
             title: 'Urban Care Navigation',
             content: [
                 'Families in Paterson, Passaic, and Clifton receive assistance managing complex medication regimens, specialist appointments, and home safety updates.',
-                'Consultants coordinate language services, cultural preferences, and community-based supports to ensure plans are realistic and sustainable.'
+                'Consultants coordinate language services, cultural preferences, and community-based supports to ensure plans are realistic and sustainable.',
+                'When St. Joseph’s University Medical Center unveiled its renovated geriatric emergency department in late 2024, we updated discharge playbooks, escorted families through the new intake flow, and ensured home services were ready before clients returned to their apartments.'
             ]
         },
         {

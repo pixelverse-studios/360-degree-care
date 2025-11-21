@@ -100,4 +100,5 @@ Store secrets in `.env.local` (ignored by Git). Only `NEXT_PUBLIC_*` values are 
 2. Wire new routes under `src/app/`, preferring server components and static generation for SEO where possible, and register the paths in `src/utils/routes.ts` plus `next-sitemap.config.ts`.
 3. Extend forms through `ContactMap` and React Hook Form schemas to maintain consistent validation/toast handling.
 4. Document new environment or operational requirements in this file and any relevant Markdown under `docs/`.
-5. Run `npm run lint` and `npm run build` (verifying sitemap output) before handoff or deployment.
+5. Log every SEO change (metadata updates, sitemap adjustments, new SEO modules) in `docs/seo` so the `/docs/seo` page always reflects the latest guidance.
+6. Run `npm run lint` and `npm run build` (verifying sitemap output) before handoff or deployment.

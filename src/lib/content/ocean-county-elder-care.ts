@@ -67,7 +67,8 @@ export const oceanCountyElderCareContent: CountyPageContent = {
         content: [
             'Hospital discharges, new diagnoses, and memory changes can create urgent decisions. Our Ocean County elder care consultants coordinate across providers, facilities, and family members so no detail is missed.',
             'We know the local healthcare landscape—from Community Medical Center and Ocean University Medical Center to regional rehab programs, VA clinics, and adult day services. Consultants manage communication, documentation, and follow-through.',
-            'Whether you need a one-time assessment or ongoing care management, we provide proactive planning, transparent updates, and compassionate advocacy.'
+            'Whether you need a one-time assessment or ongoing care management, we provide proactive planning, transparent updates, and compassionate advocacy.',
+            'Ocean County’s Office of Senior Services notes that the county leads New Jersey in the proportion of residents over 60, so aging resources can book up quickly. We help families tap those county programs early—Ocean Ride, caregiver respite, senior nutrition—while crafting backup plans for coastal evacuations and summer tourism surges.'
         ]
     },
 

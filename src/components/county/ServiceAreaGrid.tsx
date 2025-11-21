@@ -1,3 +1,5 @@
+import Link from 'next/link'
+
 interface ServiceAreaGridProps {
     title?: string
     subtitle?: string
@@ -5,14 +7,49 @@ interface ServiceAreaGridProps {
         name: string
         cities: string[]
     }>
+    linkBase?: string
+    citySlugs?: string[]
+}
+
+function slugifyCityName(city: string) {
+    return city
+        .toLowerCase()
+        .replace(/&/g, 'and')
+        .replace(/[^a-z0-9]+/g, '-')
+        .replace(/-+/g, '-')
+        .replace(/^-|-$/g, '')
 }
 
 export default function ServiceAreaGrid({
     title,
     subtitle,
-    regions
+    regions,
+    linkBase,
+    citySlugs
 }: ServiceAreaGridProps) {
     const heading = title ?? 'Service Areas We Serve'
+    const normalizedLinkBase = linkBase?.replace(/\/$/, '')
+    const citySlugSet = citySlugs ? new Set(citySlugs) : null
+
+    const renderCity = (city: string) => {
+        if (!normalizedLinkBase || !citySlugSet) {
+            return city
+        }
+
+        const slug = slugifyCityName(city)
+        if (!citySlugSet.has(slug)) {
+            return city
+        }
+
+        return (
+            <Link
+                href={`${normalizedLinkBase}/${slug}`}
+                className="text-primary hover:underline"
+            >
+                {city}
+            </Link>
+        )
+    }
 
     return (
         <section className="py-16 px-4 bg-white">
@@ -36,7 +73,7 @@ export default function ServiceAreaGrid({
                             </h3>
                             <ul className="space-y-2 text-gray-700 text-sm">
                                 {region.cities.map(city => (
-                                    <li key={city}>• {city}</li>
+                                    <li key={city}>• {renderCity(city)}</li>
                                 ))}
                             </ul>
                         </div>

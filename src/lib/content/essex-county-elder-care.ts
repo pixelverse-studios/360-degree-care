@@ -68,7 +68,9 @@ export const essexCountyElderCareContent: CountyPageContent = {
         content: [
             'Whether a loved one is recovering from a stay at University Hospital or experiencing new memory changes, Essex County families often need objective, clinically informed guidance. We evaluate the full picture—medical status, home environment, family dynamics, financial considerations, and personal goals.',
             'Our RN consultants translate doctor recommendations into practical action steps tailored to Newark walk-ups, West Orange split-level homes, or Montclair brownstones. We ensure you understand available services, eligibility requirements, and the true cost of each option.',
-            'Concierge-Level™ coordination continues after the consultation. We help prioritize tasks, introduce vetted partners, and stay on call to revise the plan when needs evolve.'
+            'Concierge-Level™ coordination continues after the consultation. We help prioritize tasks, introduce vetted partners, and stay on call to revise the plan when needs evolve.',
+            'Essex County’s 2024 Age-Friendly Action Plan found that 44% of caregivers feel “very stressed” and one in three rely on public transit to access medical appointments. We build those realities into every roadmap—layering Access Link reservations, paratransit buffers, and respite options so families have concrete next steps instead of crisis scrambling.',
+            'Families routinely share the difference. Amanda S. highlighted in February 2025 that our nurse manager “calls every Tuesday” to confirm aides and clients in Newark are thriving, and Debbie V. praised how we staffed an overnight hospital companion within hours on a weekend. Their experiences mirror what Essex County households receive from Concierge-Level™ consulting.'
         ]
     },
 
@@ -77,7 +79,8 @@ export const essexCountyElderCareContent: CountyPageContent = {
             title: 'City Transitions & Safety Planning',
             content: [
                 'Newark, East Orange, and Irvington families face unique challenges after hospital discharges, including elevator reliability, building access, and limited parking.',
-                'We coordinate with University Hospital, CareWell Health, and community health workers to ensure the right services arrive on time.'
+                'We coordinate with University Hospital, CareWell Health, and community health workers to ensure the right services arrive on time.',
+                "When Newark's Healthy Homes elevator and safety upgrades rolled out in 2024, we scheduled onsite visits, arranged alternative respite space, and reintroduced families once the improvements were complete—keeping plans on track despite construction."
             ]
         },
         {

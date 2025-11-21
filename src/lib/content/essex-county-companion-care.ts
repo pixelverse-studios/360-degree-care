@@ -68,7 +68,9 @@ export const essexCountyCompanionCareContent: CountyPageContent = {
         content: [
             'Companion care restores joy and routine for seniors living across Newark, East Orange, Bloomfield, and Montclair. Our Concierge-Level™ team pairs each client with a thoughtfully matched companion who shares their interests, language, and preferred pace.',
             'We design visit plans that may include morning coffee in the Ironbound, art exhibits at the Montclair Art Museum, or wellness walks through Branch Brook Park. Families commuting to Manhattan or the suburbs appreciate knowing someone they trust is on hand when they cannot be.',
-            'Every visit generates a detailed recap highlighting mood, appetite, activity participation, and any emerging needs. If something changes, our nurse supervisors coordinate quickly with family members and clinicians.'
+            'Every visit generates a detailed recap highlighting mood, appetite, activity participation, and any emerging needs. If something changes, our nurse supervisors coordinate quickly with family members and clinicians.',
+            'Essex County’s 2024 Age-Friendly Action Plan reported that 44% of long-term caregivers feel “very stressed” and one in three older adults rely on public transit to reach community programs. Our companions weave those findings into practice—layering Access Link reservations, NJ Transit schedules, and county-sponsored senior events into every weekly plan so isolation never sneaks back in.',
+            'Families notice the relief. Amanda S. mentioned in her February 2025 review that our nurse manager “calls every Tuesday” to ensure aides and clients in Newark stay on the same page, while Debbie V. praised how quickly we provided overnight support during a hospital stay. Their experiences mirror what Essex County households feel when dependable companionship fills the gaps.'
         ]
     },
 

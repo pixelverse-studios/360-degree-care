@@ -5,6 +5,7 @@ import RegionalSection from '@/components/county/RegionalSection'
 import ServiceAreaGrid from '@/components/county/ServiceAreaGrid'
 import CountyCTASection from '@/components/county/CountyCTASection'
 import { bergenCountyElderCareContent } from '@/lib/content/bergen-county-elder-care'
+import { getCitySlugs } from '@/lib/content/city-slug-map'
 
 // TODO: Add cross-links to other Bergen County service hub pages:
 // - /services/personal-care/bergen-county (already created)
@@ -18,6 +19,10 @@ export const metadata = bergenCountyElderCareContent.metadata
 
 export default function ElderCareBergenCountyPage() {
     const content = bergenCountyElderCareContent
+    const citySlugs = getCitySlugs('elder-care', 'bergen-county')
+    const serviceLinkBase = citySlugs.length
+        ? '/services/elder-care/bergen-county'
+        : undefined
     const heroImageSrc = content.hero.imageSrc
         ? getImgSrc(content.hero.imageSrc) || '/images/elder-care-hero.jpg'
         : undefined
@@ -71,6 +76,8 @@ export default function ElderCareBergenCountyPage() {
                     title={content.serviceAreas.title}
                     subtitle={content.serviceAreas.subtitle}
                     regions={content.serviceAreas.regions}
+                    linkBase={serviceLinkBase}
+                    citySlugs={citySlugs}
                 />
 
                 {/* Services Section */}

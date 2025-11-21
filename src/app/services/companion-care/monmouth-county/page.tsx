@@ -5,11 +5,16 @@ import RegionalSection from '@/components/county/RegionalSection'
 import ServiceAreaGrid from '@/components/county/ServiceAreaGrid'
 import CountyCTASection from '@/components/county/CountyCTASection'
 import { monmouthCountyCompanionCareContent } from '@/lib/content/monmouth-county-companion-care'
+import { getCitySlugs } from '@/lib/content/city-slug-map'
 
 export const metadata = monmouthCountyCompanionCareContent.metadata
 
 export default function CompanionCareMonmouthCountyPage() {
     const content = monmouthCountyCompanionCareContent
+    const citySlugs = getCitySlugs('companion-care', 'monmouth-county')
+    const serviceLinkBase = citySlugs.length
+        ? '/services/companion-care/monmouth-county'
+        : undefined
     const heroImageSrc = content.hero.imageSrc
         ? getImgSrc(content.hero.imageSrc) || '/images/companion-care-hero.jpg'
         : undefined
@@ -59,6 +64,8 @@ export default function CompanionCareMonmouthCountyPage() {
                     title={content.serviceAreas.title}
                     subtitle={content.serviceAreas.subtitle}
                     regions={content.serviceAreas.regions}
+                    linkBase={serviceLinkBase}
+                    citySlugs={citySlugs}
                 />
 
                 <section className="py-16 px-4">

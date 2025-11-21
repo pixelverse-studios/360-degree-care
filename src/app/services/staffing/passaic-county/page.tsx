@@ -5,11 +5,16 @@ import RegionalSection from '@/components/county/RegionalSection'
 import ServiceAreaGrid from '@/components/county/ServiceAreaGrid'
 import CountyCTASection from '@/components/county/CountyCTASection'
 import { passaicCountyStaffingContent } from '@/lib/content/passaic-county-staffing'
+import { getCitySlugs } from '@/lib/content/city-slug-map'
 
 export const metadata = passaicCountyStaffingContent.metadata
 
 export default function StaffingPassaicCountyPage() {
     const content = passaicCountyStaffingContent
+    const citySlugs = getCitySlugs('staffing', 'passaic-county')
+    const serviceLinkBase = citySlugs.length
+        ? '/services/staffing/passaic-county'
+        : undefined
     const heroImageSrc = content.hero.imageSrc
         ? getImgSrc(content.hero.imageSrc) ||
           '/images/staffing-services-hero.jpg'
@@ -60,6 +65,8 @@ export default function StaffingPassaicCountyPage() {
                     title={content.serviceAreas.title}
                     subtitle={content.serviceAreas.subtitle}
                     regions={content.serviceAreas.regions}
+                    linkBase={serviceLinkBase}
+                    citySlugs={citySlugs}
                 />
 
                 <section className="py-16 px-4">

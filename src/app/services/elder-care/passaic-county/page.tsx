@@ -5,11 +5,16 @@ import RegionalSection from '@/components/county/RegionalSection'
 import ServiceAreaGrid from '@/components/county/ServiceAreaGrid'
 import CountyCTASection from '@/components/county/CountyCTASection'
 import { passaicCountyElderCareContent } from '@/lib/content/passaic-county-elder-care'
+import { getCitySlugs } from '@/lib/content/city-slug-map'
 
 export const metadata = passaicCountyElderCareContent.metadata
 
 export default function ElderCarePassaicCountyPage() {
     const content = passaicCountyElderCareContent
+    const citySlugs = getCitySlugs('elder-care', 'passaic-county')
+    const serviceLinkBase = citySlugs.length
+        ? '/services/elder-care/passaic-county'
+        : undefined
     const heroImageSrc = content.hero.imageSrc
         ? getImgSrc(content.hero.imageSrc) ||
           '/images/elder-care-consulting-hero.jpg'
@@ -60,6 +65,8 @@ export default function ElderCarePassaicCountyPage() {
                     title={content.serviceAreas.title}
                     subtitle={content.serviceAreas.subtitle}
                     regions={content.serviceAreas.regions}
+                    linkBase={serviceLinkBase}
+                    citySlugs={citySlugs}
                 />
 
                 <section className="py-16 px-4">

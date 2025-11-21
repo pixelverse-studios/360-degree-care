@@ -7,12 +7,17 @@ import RegionalSection from '@/components/county/RegionalSection'
 import ServiceAreaGrid from '@/components/county/ServiceAreaGrid'
 import CountyCTASection from '@/components/county/CountyCTASection'
 import { bergenCountyStaffingContent } from '@/lib/content/bergen-county-staffing'
+import { getCitySlugs } from '@/lib/content/city-slug-map'
 
 // Export metadata directly from content
 export const metadata = bergenCountyStaffingContent.metadata
 
 export default function StaffingBergenCountyPage() {
     const content = bergenCountyStaffingContent
+    const citySlugs = getCitySlugs('staffing', 'bergen-county')
+    const serviceLinkBase = citySlugs.length
+        ? '/services/staffing/bergen-county'
+        : undefined
     const heroImageSrc = content.hero.imageSrc
         ? getImgSrc(content.hero.imageSrc) || '/images/staffing-hero.jpg'
         : undefined
@@ -67,6 +72,8 @@ export default function StaffingBergenCountyPage() {
                     title={content.serviceAreas.title}
                     subtitle={content.serviceAreas.subtitle}
                     regions={content.serviceAreas.regions}
+                    linkBase={serviceLinkBase}
+                    citySlugs={citySlugs}
                 />
 
                 {/* Services Section */}

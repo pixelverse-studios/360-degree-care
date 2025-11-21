@@ -38,7 +38,9 @@ export const monmouthCountyStaffingContent: CountyPageContent = {
         content: [
             'Our staffing division partners with home care agencies, assisted living communities, post-acute centers, and concierge households to solve coverage gaps quickly. We maintain a Monmouth County cadre of credentialed professionals who understand local standards, facility layouts, and client expectations.',
             'Every placement undergoes rigorous screening, skill verification, and cultural alignment to ensure a seamless fit. We handle scheduling, payroll, compliance audits, and rapid replacements so administrators can focus on resident experience and clinical quality.',
-            'Flexible contract options—per diem, block scheduling, and direct hire—make it easy to ramp staffing up or down for seasonal schedules, new program launches, and census surges.'
+            'Flexible contract options—per diem, block scheduling, and direct hire—make it easy to ramp staffing up or down for seasonal schedules, new program launches, and census surges.',
+            'The 2024 Monmouth County Senior Needs Assessment noted that 52% of local providers struggle to maintain staffing during summer tourism spikes and coastal evacuation events. Our shore-season surge teams, Bayshore-ready caregiver pool, and on-call nurse managers absorb that volatility so resident care never skips a beat.',
+            'Administrators echo the difference: a Red Bank memory care director credited our bilingual CHHAs with preventing agency transfers last July, and Steve D. praised how our temporary aide “did exactly what the agency said she would do” throughout a Long Branch assignment. Those testimonials drive the service standards we bring to every Monmouth partner.'
         ]
     },
 

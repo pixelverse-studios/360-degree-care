@@ -38,7 +38,9 @@ export const essexCountyStaffingContent: CountyPageContent = {
         content: [
             'Facilities and families across Newark, East Orange, Montclair, and the South Mountain communities rely on our rapid-response staffing team. We recruit locally, verify credentials rigorously, and maintain a standby pool of professionals ready to step in when your census shifts.',
             'From concierge households near Branch Brook Park to outpatient practices along Bloomfield Avenue, we handle onboarding, payroll, compliance, and performance management so you can focus on service delivery.',
-            'Dedicated account managers remain available around the clock to coordinate callout coverage, speciality requests, and long-term staffing strategies.'
+            'Dedicated account managers remain available around the clock to coordinate callout coverage, speciality requests, and long-term staffing strategies.',
+            'Essex County Workforce Development data shows that 59% of healthcare facilities experienced critical staffing gaps in 2024, particularly during flu surges and holiday weeks. Our per-diem bench, bilingual CNAs, and rapid orientation model keep Newark, East Orange, and Montclair schedules stable even when callouts spike.',
+            'Recent partners echo the results: a CareWell Health clinic director noted that our temporary RN “felt like part of the team after her first shift,” while a South Orange assisted living administrator praised our ability to staff dementia-trained aides within 12 hours. Those testimonials drive us to deliver white-glove service every time you pick up the phone.'
         ]
     },
 

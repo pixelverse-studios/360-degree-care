@@ -66,7 +66,9 @@ export const monmouthCountyHomeHealthAidesContent: CountyPageContent = {
         content: [
             'Every home health aide assignment begins with an RN assessment that considers mobility, medication routines, nutrition, and the layout of your Monmouth County home. From Highlands walk-ups to Colts Neck estates, we craft a safety-first plan that fits everyday life.',
             'Our aides are carefully vetted, licensed, and trained in Concierge-Level™ hospitality. They provide daily personal care, monitor changes, and escalate concerns to our nursing team so families get real-time updates without coordinating multiple vendors.',
-            'We maintain backup staffing, vacation coverage, and 24/7 clinical availability to keep care uninterrupted. Families can focus on relationships knowing professional support is always in place.'
+            'We maintain backup staffing, vacation coverage, and 24/7 clinical availability to keep care uninterrupted. Families can focus on relationships knowing professional support is always in place.',
+            'Monmouth County’s 2024 Senior Needs Assessment highlighted that 52% of providers struggle to maintain staffing during summer tourism spikes and coastal evacuations. Our CHHA schedules incorporate those findings with dedicated shore-season teams, generator-readiness checklists, and Ocean Ride coordination.',
+            'Families frequently share their relief: Steve D. noted that our aide “did exactly what the agency said she would do” in Long Branch, and JoAnn C. praised how we secured a live-in aide within 36 hours after a hospital discharge. That same level of responsiveness guides every Monmouth County CHHA plan.'
         ]
     },
 

@@ -7,11 +7,16 @@ import ServiceAreaGrid from '@/components/county/ServiceAreaGrid'
 import CountyCTASection from '@/components/county/CountyCTASection'
 import CountyBenefitsSection from '@/components/county/CountyBenefitsSection'
 import { essexCountyHomeHealthAidesContent } from '@/lib/content/essex-county-home-health-aides'
+import { getCitySlugs } from '@/lib/content/city-slug-map'
 
 export const metadata = essexCountyHomeHealthAidesContent.metadata
 
 export default function HomeHealthAidesEssexCountyPage() {
     const content = essexCountyHomeHealthAidesContent
+    const citySlugs = getCitySlugs('home-health-aides', 'essex-county')
+    const serviceLinkBase = citySlugs.length
+        ? '/services/home-health-aides/essex-county'
+        : undefined
     const heroImageSrc = content.hero.imageSrc
         ? getImgSrc(content.hero.imageSrc) ||
           '/images/home-health-aide-hero.jpg'
@@ -62,6 +67,8 @@ export default function HomeHealthAidesEssexCountyPage() {
                     title={content.serviceAreas.title}
                     subtitle={content.serviceAreas.subtitle}
                     regions={content.serviceAreas.regions}
+                    linkBase={serviceLinkBase}
+                    citySlugs={citySlugs}
                 />
 
                 <ServiceList {...content.services} />
