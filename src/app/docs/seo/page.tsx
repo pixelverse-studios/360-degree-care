@@ -1,7 +1,8 @@
 import type { Metadata } from 'next'
+import { CheckCircle2, Flag, RefreshCcw } from 'lucide-react'
+import { AbsoluteUrlQueue } from '@/components/docs/AbsoluteUrlQueue'
 import { SeoTocNav } from '@/components/docs/SeoTocNav'
 import { Badge } from '@/components/ui/badge'
-import { CheckCircle2, Flag, RefreshCcw } from 'lucide-react'
 
 type TargetSeoUrl = {
     url: string
@@ -166,168 +167,195 @@ const seoChanges: SeoChange[] = [
 ]
 
 const tocItems = [
-    { id: 'target-urls', label: 'Target URLs & Keywords' },
-    { id: 'recent-changes', label: 'Recent SEO Changes' }
+    { id: 'recent-changes', label: 'SEO Update Log' },
+    { id: 'target-urls', label: 'Priority Targets' }
 ]
 
 export default function SeoDocsPage() {
     return (
         <main className="bg-slate-50">
-            <div className="max-w-7xl mx-auto px-6 py-16 lg:grid lg:grid-cols-[16rem,1fr] lg:gap-8">
+            <div className="mx-auto max-w-screen-2xl px-6 py-14 lg:grid lg:grid-cols-[15rem,1fr] lg:gap-8 lg:px-10">
                 <aside className="hidden lg:block">
                     <SeoTocNav items={tocItems} />
                 </aside>
 
-                <div className="space-y-10">
-                    <header className="space-y-4">
-                        <p className="text-sm font-semibold uppercase tracking-widest text-blue-600">
-                            SEO Change Log
-                        </p>
-                        <h1 className="text-4xl font-bold text-gray-900">
-                            Visibility + Indexation Tracker
-                        </h1>
-                        <p className="text-lg text-gray-600">
-                            Use this page as a running checklist before pinging
-                            Search Console. Section one lists every active
-                            target URL with the keywords we’re chasing; section
-                            two logs the SEO changes that still need manual
-                            indexing or QA.
-                        </p>
+                <div className="space-y-12">
+                    <header className="rounded-3xl border border-blue-100 bg-white/80 p-6 shadow-sm backdrop-blur lg:p-8">
+                        <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
+                            <div className="space-y-2">
+                                <p className="text-xs font-semibold uppercase tracking-[0.2em] text-blue-600">
+                                    SEO updates log
+                                </p>
+                                <h1 className="text-4xl font-bold text-slate-900">
+                                    Recent changes + indexing queue
+                                </h1>
+                                <p className="text-base text-slate-600">
+                                    Quick reference for what changed, which URLs
+                                    to request indexing for, and the follow-up
+                                    owners to ping in Search Console.
+                                </p>
+                            </div>
+                            <Badge className="bg-blue-50 text-blue-700 hover:bg-blue-100">
+                                Internal tracking
+                            </Badge>
+                        </div>
                     </header>
+
+                    <div className="space-y-6 scroll-mt-32" id="recent-changes">
+                        {seoChanges.map(change => {
+                            const changeHighlights = [
+                                change.summary,
+                                ...change.actionItems
+                            ]
+
+                            return (
+                                <section
+                                    key={change.id}
+                                    className="rounded-3xl border border-gray-200 bg-white/80 p-6 shadow-md/50"
+                                >
+                                    <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
+                                        <div className="space-y-1">
+                                            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-slate-500">
+                                                Update
+                                            </p>
+                                            <p className="text-3xl font-semibold text-slate-900">
+                                                {change.date}
+                                            </p>
+                                            <p className="text-base text-slate-700">
+                                                {change.title}
+                                            </p>
+                                        </div>
+                                        <Badge
+                                            variant="secondary"
+                                            className="self-start text-blue-50"
+                                        >
+                                            SEO log
+                                        </Badge>
+                                    </div>
+
+                                    <div className="mt-6 grid gap-6 lg:grid-cols-2">
+                                        <div className="rounded-2xl border border-slate-200 bg-slate-50/80 p-5">
+                                            <div className="flex items-center justify-between gap-3">
+                                                <p className="text-sm font-semibold uppercase tracking-wide text-slate-700">
+                                                    What changed
+                                                </p>
+                                                {change.status ===
+                                                'Needs follow-up' ? (
+                                                    <span className="inline-flex items-center gap-1 rounded-full bg-amber-50 px-3 py-1 text-xs font-semibold text-amber-700">
+                                                        <RefreshCcw className="h-4 w-4" />
+                                                        Needs follow-up
+                                                    </span>
+                                                ) : (
+                                                    <span className="inline-flex items-center gap-1 rounded-full bg-emerald-50 px-3 py-1 text-xs font-semibold text-emerald-700">
+                                                        <CheckCircle2 className="h-4 w-4" />
+                                                        Monitoring
+                                                    </span>
+                                                )}
+                                            </div>
+
+                                            <ul className="mt-4 list-disc space-y-3 pl-4 text-sm text-slate-800 marker:text-blue-500">
+                                                {changeHighlights.map(item => (
+                                                    <li
+                                                        key={`${change.id}-${item}`}
+                                                    >
+                                                        {item}
+                                                    </li>
+                                                ))}
+                                            </ul>
+
+                                            <div className="mt-5 rounded-xl border border-slate-200 bg-white px-3 py-2">
+                                                <p className="text-[11px] font-semibold uppercase tracking-wide text-slate-500">
+                                                    Key files / references
+                                                </p>
+                                                <div className="mt-2 flex flex-wrap gap-2">
+                                                    {change.sourceFiles.map(
+                                                        file => (
+                                                            <span
+                                                                key={`${change.id}-${file}`}
+                                                                className="rounded-lg bg-slate-100 px-2 py-1 font-mono text-[11px] text-slate-800"
+                                                            >
+                                                                {file}
+                                                            </span>
+                                                        )
+                                                    )}
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <AbsoluteUrlQueue
+                                            urls={change.urlsToCheck}
+                                        />
+                                    </div>
+                                </section>
+                            )
+                        })}
+                    </div>
 
                     <section
                         id="target-urls"
-                        className="rounded-3xl border border-blue-100 bg-white p-6 shadow-sm scroll-mt-32"
+                        className="scroll-mt-32 rounded-3xl border border-blue-100 bg-white/80 p-6 shadow-sm"
                     >
-                        <div className="flex items-center gap-3">
-                            <div className="rounded-2xl bg-blue-50 p-3 text-blue-600">
-                                <Flag className="h-6 w-6" />
+                        <div className="flex flex-wrap items-center justify-between gap-3">
+                            <div className="flex items-center gap-3">
+                                <div className="rounded-2xl bg-blue-50 p-3 text-blue-600">
+                                    <Flag className="h-6 w-6" />
+                                </div>
+                                <div>
+                                    <h2 className="text-2xl font-semibold text-gray-900">
+                                        Priority targets & keyword themes
+                                    </h2>
+                                    <p className="text-sm text-gray-600">
+                                        Move top-to-bottom when filing indexing
+                                        requests; notes call out ownership and
+                                        caveats.
+                                    </p>
+                                </div>
                             </div>
-                            <div>
-                                <h2 className="text-2xl font-semibold text-gray-900">
-                                    Target URLs & Keyword Themes
-                                </h2>
-                                <p className="text-sm text-gray-600">
-                                    Submit these URLs whenever rankings drop or
-                                    new content lands. Notes call out ownership
-                                    and blocking issues.
-                                </p>
-                            </div>
+                            <Badge
+                                variant="secondary"
+                                className="text-xs text-blue-50"
+                            >
+                                {targetSeoUrls.length} active targets
+                            </Badge>
                         </div>
 
                         <div className="mt-6 grid gap-4 md:grid-cols-2">
                             {targetSeoUrls.map(target => (
                                 <div
                                     key={target.url}
-                                    className="rounded-2xl border border-gray-200 bg-white p-4 shadow-sm"
+                                    className="rounded-2xl border border-gray-200 bg-gradient-to-br from-white to-slate-50/60 p-5 shadow-sm"
                                 >
-                                    <p className="text-xs font-semibold uppercase tracking-wide text-gray-700">
-                                        {target.owner}
-                                    </p>
-                                    <h3 className="text-lg font-semibold text-gray-900">
-                                        {target.url}
-                                    </h3>
-                                    <div className="mt-2 flex flex-wrap gap-2">
+                                    <div className="flex items-center justify-between gap-3">
+                                        <div>
+                                            <p className="text-xs font-semibold uppercase tracking-wide text-gray-700">
+                                                Owner: {target.owner}
+                                            </p>
+                                            <h3 className="text-lg font-semibold text-gray-900">
+                                                {target.url}
+                                            </h3>
+                                        </div>
+                                        <Badge className="bg-blue-600 text-white">
+                                            SEO target
+                                        </Badge>
+                                    </div>
+                                    <div className="mt-3 flex flex-wrap gap-2">
                                         {target.targetKeywords.map(keyword => (
                                             <Badge
                                                 key={`${target.url}-${keyword}`}
                                                 variant="outline"
-                                                className="border-transparent bg-slate-200 text-xs font-medium text-slate-900"
+                                                className="border-blue-100 bg-blue-50 text-xs font-medium text-blue-800"
                                             >
                                                 {keyword}
                                             </Badge>
                                         ))}
                                     </div>
-                                    <p className="mt-3 text-sm text-gray-700">
+                                    <p className="mt-4 text-sm text-gray-700">
                                         {target.notes}
                                     </p>
                                 </div>
                             ))}
                         </div>
                     </section>
-
-                    <div className="space-y-6 scroll-mt-32" id="recent-changes">
-                        {seoChanges.map(change => (
-                            <section
-                                key={change.id}
-                                className="rounded-3xl border border-gray-200 bg-white p-6 shadow-sm"
-                            >
-                                <div className="flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
-                                    <div className="space-y-4">
-                                        <div className="flex items-center gap-2 text-sm text-gray-500">
-                                            <Badge variant="secondary">
-                                                {change.date}
-                                            </Badge>
-                                            {change.status ===
-                                            'Needs follow-up' ? (
-                                                <span className="inline-flex items-center gap-1 text-amber-600 text-xs font-semibold uppercase tracking-wide">
-                                                    <RefreshCcw className="h-4 w-4" />
-                                                    Needs follow-up
-                                                </span>
-                                            ) : (
-                                                <span className="inline-flex items-center gap-1 text-green-600 text-xs font-semibold uppercase tracking-wide">
-                                                    <CheckCircle2 className="h-4 w-4" />
-                                                    Monitoring
-                                                </span>
-                                            )}
-                                        </div>
-                                        <h2 className="text-2xl font-semibold text-gray-900">
-                                            {change.title}
-                                        </h2>
-                                        <p className="text-sm text-gray-600">
-                                            {change.summary}
-                                        </p>
-                                    </div>
-                                </div>
-
-                                <div className="mt-4 grid gap-6 md:grid-cols-2">
-                                    <div>
-                                        <p className="text-xs font-semibold uppercase tracking-wide text-gray-500">
-                                            URLs to inspect / submit
-                                        </p>
-                                        <ul className="mt-2 space-y-2 text-sm text-blue-900">
-                                            {change.urlsToCheck.map(url => (
-                                                <li
-                                                    key={`${change.id}-${url}`}
-                                                    className="rounded-lg bg-blue-100/70 px-3 py-2 font-mono text-xs text-blue-900"
-                                                >
-                                                    {url}
-                                                </li>
-                                            ))}
-                                        </ul>
-                                    </div>
-                                    <div>
-                                        <p className="text-xs font-semibold uppercase tracking-wide text-gray-500">
-                                            Source files / locations
-                                        </p>
-                                        <ul className="mt-2 space-y-2 text-sm text-gray-800">
-                                            {change.sourceFiles.map(file => (
-                                                <li
-                                                    key={`${change.id}-${file}`}
-                                                    className="rounded-lg bg-slate-100 px-3 py-2 font-mono text-xs text-gray-800"
-                                                >
-                                                    {file}
-                                                </li>
-                                            ))}
-                                        </ul>
-                                    </div>
-                                </div>
-
-                                <div className="mt-4">
-                                    <p className="text-xs font-semibold uppercase tracking-wide text-gray-500">
-                                        Next actions
-                                    </p>
-                                    <ul className="mt-2 list-disc space-y-2 pl-5 text-sm text-gray-700">
-                                        {change.actionItems.map(item => (
-                                            <li key={`${change.id}-${item}`}>
-                                                {item}
-                                            </li>
-                                        ))}
-                                    </ul>
-                                </div>
-                            </section>
-                        ))}
-                    </div>
                 </div>
             </div>
         </main>
