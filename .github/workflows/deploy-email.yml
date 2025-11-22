@@ -55,19 +55,22 @@ jobs:
             echo "Missing NYLAS_API_KEY, NYLAS_GRANT_ID, MAIL_FROM, or MAIL_TO secrets." >&2
             exit 1
           fi
+
           ESCAPED_BODY=$(echo "$SUMMARY_BODY" | jq -Rs .)
-          PAYLOAD=$(cat <<-END
-          {
-            "message": {
-              "to": [{"email": "$MAIL_TO"}],
-              "cc": [{"email": "sami@pixelversestudios.io"}],
-              "from": [{"email": "$MAIL_FROM"}],
-              "subject": "[Deploy] $REPO @$BRANCH",
-              "body": $ESCAPED_BODY
-            }
-          }
-          END
-          )
+
+          PAYLOAD=$(cat <<END
+{
+  "message": {
+    "to": [{"email": "${MAIL_TO}"}],
+    "cc": [{"email": "sami@pixelversestudios.io"}],
+    "from": [{"email": "${MAIL_FROM}"}],
+    "subject": "[Deploy] ${REPO} @${BRANCH}",
+    "body": ${ESCAPED_BODY}
+  }
+}
+END
+)
+
           curl -X POST \
             -H "Authorization: Bearer $NYLAS_API_KEY" \
             -H "Content-Type: application/json" \
