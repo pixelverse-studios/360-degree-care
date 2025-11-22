@@ -34,7 +34,7 @@ jobs:
           fi
 
           {
-            echo "summary<<'EOF'"
+            echo "summary<<EOF"
             echo "$SUMMARY"
             echo "EOF"
           } >> "$GITHUB_OUTPUT"
