@@ -57,8 +57,8 @@ jobs:
             exit 1
           fi
 
-          node <<'NODE'
-const fs = require('fs')
+          cat > email-builder.js << 'EOF'
+const fs = require('fs');
 
 const {
   MAIL_TO,
@@ -66,7 +66,7 @@ const {
   REPO,
   BRANCH,
   SUMMARY_BODY
-} = process.env
+} = process.env;
 
 const message = {
   to: [{ email: MAIL_TO }],
@@ -74,10 +74,12 @@ const message = {
   from: [{ email: MAIL_FROM }],
   subject: `[Deploy] ${REPO} @${BRANCH}`,
   body: SUMMARY_BODY || ''
-}
+};
 
-fs.writeFileSync('email.json', JSON.stringify({ message }))
-NODE
+fs.writeFileSync('email.json', JSON.stringify({ message }));
+EOF
+
+          node email-builder.js
 
           curl -X POST \
             -H "Authorization: Bearer $NYLAS_API_KEY" \
