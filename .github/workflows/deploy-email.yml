@@ -59,29 +59,14 @@ jobs:
           SUBJECT_DATE=$(date +"%m/%d/%Y")
           SUBJECT="New website change log - $SUBJECT_DATE"
 
-          # Convert summary to HTML list
+          # Convert markdown bullets to HTML list items
           SUMMARY_HTML=$(echo "$SUMMARY_BODY" | sed 's/^- /<li>/; s/$/<\/li>/')
           if [ -n "$SUMMARY_HTML" ]; then
             SUMMARY_HTML="<ul>${SUMMARY_HTML}</ul>"
           fi
 
-          # Write HTML email body to temp file
-          cat > /tmp/email_body.html <<'HTMLEOF'
-<p>Hi,</p>
-<p>We just pushed a new set of changes live to the website. See below for an itemized list:</p>
-HTMLEOF
-          echo "${SUMMARY_HTML}" >> /tmp/email_body.html
-          cat >> /tmp/email_body.html <<'HTMLEOF'
-<p>Thanks!</p>
-<p>
-<strong>Phil Arfuso</strong><br>
-Co-Founder &amp; Software Engineer | PixelVerse Studios<br>
-<a href="mailto:phil@pixelversestudios.io">phil@pixelversestudios.io</a><br>
-<a href="https://www.pixelversestudios.io">www.pixelversestudios.io</a><br>
-(201) 638-1769
-</p>
-HTMLEOF
-          HTML_BODY=$(cat /tmp/email_body.html)
+          # Build HTML body inline
+          HTML_BODY="<p>Hi,</p><p>We just pushed a new set of changes live to the website. See below for an itemized list:</p>${SUMMARY_HTML}<p>Thanks!</p><p><strong>Phil Arfuso</strong><br>Co-Founder &amp; Software Engineer | PixelVerse Studios<br><a href=\"mailto:phil@pixelversestudios.io\">phil@pixelversestudios.io</a><br><a href=\"https://www.pixelversestudios.io\">www.pixelversestudios.io</a><br>(201) 638-1769</p>"
 
           PAYLOAD=$(jq -n \
             --arg to "$MAIL_TO" \
