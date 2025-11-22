@@ -10,6 +10,7 @@ type DownloadSitemapButtonProps = {
     urls: string[]
     filename?: string
     className?: string
+    baseUrl?: string
 }
 
 function formatToday() {
@@ -23,7 +24,8 @@ function formatToday() {
 export function DownloadSitemapButton({
     urls,
     filename = '360-degree-care-sitemap-urls.csv',
-    className
+    className,
+    baseUrl = 'https://www.360degreecare.net'
 }: DownloadSitemapButtonProps) {
     const [isDownloading, setIsDownloading] = useState(false)
 
@@ -39,7 +41,12 @@ export function DownloadSitemapButton({
 
         try {
             const header = ['url', 'date_edited', 'date_requested'].join(',')
-            const rows = uniqueUrls.map(url => [url, today, ''].join(','))
+            const rows = uniqueUrls.map(url => {
+                const fullUrl = url.startsWith('http')
+                    ? url
+                    : `${baseUrl}${url}`
+                return [fullUrl, today, ''].join(',')
+            })
             const csvContent = [header, ...rows].join('\n')
             const blob = new Blob([csvContent], {
                 type: 'text/csv;charset=utf-8;'
