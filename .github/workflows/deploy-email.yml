@@ -4,6 +4,9 @@ on:
   repository_dispatch:
     types: [netlify_deploy_success]
   workflow_dispatch:
+  push:
+    branches:
+      - seo-refactor
 
 jobs:
   email-deploy-summary:
