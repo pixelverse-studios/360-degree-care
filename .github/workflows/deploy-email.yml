@@ -56,10 +56,13 @@ jobs:
             exit 1
           fi
 
+          SUBJECT_DATE=$(date +"%m/%d/%Y")
+          SUBJECT="New Website Updates are live: $SUBJECT_DATE"
+
           PAYLOAD=$(jq -n \
             --arg to "$MAIL_TO" \
             --arg from "$MAIL_FROM" \
-            --arg subject "[Deploy] $REPO @$BRANCH" \
+            --arg subject "$SUBJECT" \
             --arg body "$SUMMARY_BODY" \
             '{
               to: [{ email: $to }],
