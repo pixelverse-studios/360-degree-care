@@ -56,20 +56,20 @@ jobs:
             exit 1
           fi
 
-          ESCAPED_BODY=$(echo "$SUMMARY_BODY" | jq -Rs .)
-
-          PAYLOAD=$(cat <<END
-{
-  "message": {
-    "to": [{"email": "${MAIL_TO}"}],
-    "cc": [{"email": "sami@pixelversestudios.io"}],
-    "from": [{"email": "${MAIL_FROM}"}],
-    "subject": "[Deploy] ${REPO} @${BRANCH}",
-    "body": ${ESCAPED_BODY}
-  }
-}
-END
-)
+          PAYLOAD=$(jq -n \
+            --arg to "$MAIL_TO" \
+            --arg from "$MAIL_FROM" \
+            --arg subject "[Deploy] $REPO @$BRANCH" \
+            --arg body "$SUMMARY_BODY" \
+            '{
+              message: {
+                to: [{ email: $to }],
+                cc: [{ email: "sami@pixelversestudios.io" }],
+                from: [{ email: $from }],
+                subject: $subject,
+                body: $body
+              }
+            }')
 
           curl -X POST \
             -H "Authorization: Bearer $NYLAS_API_KEY" \
