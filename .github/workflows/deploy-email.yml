@@ -65,16 +65,17 @@ jobs:
             --arg subject "[Deploy] $REPO @$BRANCH" \
             --arg body "$SUMMARY_BODY" \
             '{
-              message: {
-                to: [{ email: $to }],
-                cc: [{ email: "sami@pixelversestudios.io" }],
-                from: [{ email: $from }],
-                subject: $subject,
-                body: $body
-              }
+              to: [{ email: $to }],
+              cc: [{ email: "sami@pixelversestudios.io" }],
+              from: [{ email: $from }],
+              subject: $subject,
+              body: $body
             }')
 
-          curl -X POST \
+          echo "Sending payload:"
+          echo "$PAYLOAD" | jq .
+
+          curl -f -X POST \
             -H "Authorization: Bearer $NYLAS_API_KEY" \
             -H "Content-Type: application/json" \
             -d "$PAYLOAD" \
