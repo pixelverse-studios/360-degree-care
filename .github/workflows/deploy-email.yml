@@ -57,19 +57,27 @@ jobs:
             exit 1
           fi
 
-          SUMMARY_JSON=$(node -e "console.log(JSON.stringify(process.env.SUMMARY_BODY || ''))")
+          node <<'NODE'
+const fs = require('fs')
 
-          cat > email.json <<EOF
-{
-  "message": {
-    "to": [{ "email": "$MAIL_TO" }],
-    "cc": [{ "email": "sami@pixelversestudios.io" }],
-    "from": [{ "email": "$MAIL_FROM" }],
-    "subject": "[Deploy] $REPO @$BRANCH",
-    "body": $SUMMARY_JSON
-  }
+const {
+  MAIL_TO,
+  MAIL_FROM,
+  REPO,
+  BRANCH,
+  SUMMARY_BODY
+} = process.env
+
+const message = {
+  to: [{ email: MAIL_TO }],
+  cc: [{ email: 'sami@pixelversestudios.io' }],
+  from: [{ email: MAIL_FROM }],
+  subject: `[Deploy] ${REPO} @${BRANCH}`,
+  body: SUMMARY_BODY || ''
 }
-EOF
+
+fs.writeFileSync('email.json', JSON.stringify({ message }))
+NODE
 
           curl -X POST \
             -H "Authorization: Bearer $NYLAS_API_KEY" \
