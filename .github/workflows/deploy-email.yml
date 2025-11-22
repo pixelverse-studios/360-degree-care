@@ -57,7 +57,7 @@ jobs:
           fi
 
           SUBJECT_DATE=$(date +"%m/%d/%Y")
-          SUBJECT="New Website Updates are live: $SUBJECT_DATE"
+          SUBJECT="New website change log - $SUBJECT_DATE"
 
           PAYLOAD=$(jq -n \
             --arg to "$MAIL_TO" \
