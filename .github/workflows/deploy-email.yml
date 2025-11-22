@@ -50,39 +50,26 @@ jobs:
           RUN_URL: "https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}"
           SHORT_SHA: ${{ github.event.client_payload.commit || github.sha }}
           SUMMARY_BODY: ${{ steps.summary.outputs.summary }}
-        shell: bash
         run: |
           if [ -z "$NYLAS_API_KEY" ] || [ -z "$NYLAS_GRANT_ID" ] || [ -z "$MAIL_FROM" ] || [ -z "$MAIL_TO" ]; then
             echo "Missing NYLAS_API_KEY, NYLAS_GRANT_ID, MAIL_FROM, or MAIL_TO secrets." >&2
             exit 1
           fi
-
-          cat > email-builder.js << 'EOF'
-const fs = require('fs');
-
-const {
-  MAIL_TO,
-  MAIL_FROM,
-  REPO,
-  BRANCH,
-  SUMMARY_BODY
-} = process.env;
-
-const message = {
-  to: [{ email: MAIL_TO }],
-  cc: [{ email: 'sami@pixelversestudios.io' }],
-  from: [{ email: MAIL_FROM }],
-  subject: `[Deploy] ${REPO} @${BRANCH}`,
-  body: SUMMARY_BODY || ''
-};
-
-fs.writeFileSync('email.json', JSON.stringify({ message }));
-EOF
-
-          node email-builder.js
-
+          ESCAPED_BODY=$(echo "$SUMMARY_BODY" | jq -Rs .)
+          PAYLOAD=$(cat <<-END
+          {
+            "message": {
+              "to": [{"email": "$MAIL_TO"}],
+              "cc": [{"email": "sami@pixelversestudios.io"}],
+              "from": [{"email": "$MAIL_FROM"}],
+              "subject": "[Deploy] $REPO @$BRANCH",
+              "body": $ESCAPED_BODY
+            }
+          }
+          END
+          )
           curl -X POST \
             -H "Authorization: Bearer $NYLAS_API_KEY" \
             -H "Content-Type: application/json" \
-            -d @email.json \
+            -d "$PAYLOAD" \
             "https://api.us.nylas.com/v3/grants/$NYLAS_GRANT_ID/messages/send"
