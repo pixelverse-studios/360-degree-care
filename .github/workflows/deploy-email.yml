@@ -48,13 +48,15 @@ jobs:
           MAIL_TO: ${{ secrets.MAIL_TO }}
           REPO: ${{ github.repository }}
           BRANCH: ${{ github.event.client_payload.branch || github.ref_name || 'unknown' }}
-          RUN_URL: https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}
+          RUN_URL: 'https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}'
           SHORT_SHA: ${{ github.event.client_payload.commit || github.sha }}
         run: |
           if [ -z "$NYLAS_API_KEY" ] || [ -z "$NYLAS_GRANT_ID" ] || [ -z "$MAIL_FROM" ] || [ -z "$MAIL_TO" ]; then
             echo "Missing NYLAS_API_KEY, NYLAS_GRANT_ID, MAIL_FROM, or MAIL_TO secrets." >&2
             exit 1
           fi
+
+          SUMMARY_BODY="${{ steps.summary.outputs.summary }}"
 
           cat > email.json <<EOF
 {
@@ -63,10 +65,13 @@ jobs:
     "cc": [{ "email": "sami@pixelversestudios.io" }],
     "from": [{ "email": "$MAIL_FROM" }],
     "subject": "[Deploy] $REPO @$BRANCH",
-    "body": "${{ steps.summary.outputs.summary }}\n"
+    "body": "SUMMARY_PLACEHOLDER"
   }
 }
 EOF
+
+          # Inject summary safely
+          node -e "const fs=require('fs');const body=${JSON.stringify("${SUMMARY_BODY}")};const data=JSON.parse(fs.readFileSync('email.json','utf8'));data.message.body=body;fs.writeFileSync('email.json',JSON.stringify(data));"
 
           curl -X POST \
             -H "Authorization: Bearer $NYLAS_API_KEY" \
