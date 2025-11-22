@@ -4,9 +4,6 @@ on:
   repository_dispatch:
     types: [netlify_deploy_success]
   workflow_dispatch:
-  push:
-    branches:
-      - seo-refactor
 
 jobs:
   email-deploy-summary:
@@ -71,9 +68,6 @@ jobs:
               subject: $subject,
               body: $body
             }')
-
-          echo "Sending payload:"
-          echo "$PAYLOAD" | jq .
 
           curl -f -X POST \
             -H "Authorization: Bearer $NYLAS_API_KEY" \
