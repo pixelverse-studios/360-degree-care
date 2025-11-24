@@ -26,11 +26,17 @@ npm run lint            # Run ESLint checks
 
 ### Environment Variables
 ```bash
+# Required for contact forms
 NEXT_PUBLIC_API_HOST    # CRM API base URL (e.g., https://api.yourdomain.com)
 NEXT_PUBLIC_SLUG        # Client ID for contact-form endpoint
+
+# Required for deployment tracking (local Git hooks only)
+PVS_WEBSITE_ID          # Website UUID from PVS database
+PVS_API_URL             # PVS API URL (https://pvs-server-62hx7.ondigitalocean.app)
+PVS_BASE_URL            # Website base URL (https://www.360degreecare.net)
 ```
 
-Store in `.env.local` (git-ignored). Only `NEXT_PUBLIC_*` variables are exposed to browser.
+Store in `.env.local` (git-ignored). Only `NEXT_PUBLIC_*` variables are exposed to browser. `PVS_*` variables are only used by local Git hooks.
 
 ---
 
@@ -308,6 +314,67 @@ const buttonVariants = cva(
 
 ---
 
+## Deployment Summary Workflow
+
+**CRITICAL: After completing each task or feature, update `docs/deployment_summary.md` with a high-level summary**
+
+This file is automatically processed by a Git pre-push hook that sends deployment data to the PVS API and triggers an email notification. Keep summaries concise and non-technical.
+
+### When to Update
+- After completing any feature, fix, or enhancement
+- Before waiting for user to commit/push changes
+- Each time you finish a discrete unit of work
+- **MUST include all affected URLs** in the "Changed URLs" section
+
+### File Format
+The file has **three required sections**:
+
+1. **Latest deploy summary** - Client-facing changes (sent in email)
+   - Use markdown formatting (bullet points, **bold**, *italic*)
+   - Write in plain language (non-technical summaries)
+   - Focus on WHAT changed, not HOW it was implemented
+
+2. **Notes for internal team** - Technical details (NOT sent in email)
+   - Use markdown formatting
+   - Include environment variables, technical notes, internal tasks
+   - This section is stored but NOT sent to clients
+
+3. **Changed URLs** - List all affected page URLs
+   - Use bullet points (- https://www.360degreecare.net/page)
+   - Include full URLs with protocol
+   - These URLs are tracked for Google Search Console re-indexing
+
+### Example Good Entries
+- "Added contact form with email notifications"
+- "Fixed mobile navigation menu bug"
+- "Updated homepage hero section with new imagery"
+
+### Example Bad Entries
+- "Implemented React Hook Form with Zod validation schema"
+- "Refactored Button component to use Tailwind variants"
+
+### How It Works
+1. Complete your work on a feature/task
+2. Update `docs/deployment_summary.md`:
+   - Add user-friendly bullet points to "Latest deploy summary"
+   - Add technical details to "Notes for internal team" (optional)
+   - Add all affected URLs to "Changed URLs"
+3. Commit your code
+4. Run `git push` - the pre-push hook will:
+   - Read deployment_summary.md
+   - Send data to PVS API
+   - Trigger email notification
+   - Automatically reset the file to template
+
+### Setup (One-Time)
+```bash
+node scripts/install-hooks.js
+```
+
+This installs the Git pre-push hook that handles deployment tracking automatically.
+
+---
+
 ## Critical Guidelines
 
 ### DO:
@@ -319,6 +386,7 @@ const buttonVariants = cva(
 - ✅ Document SEO changes in `docs/seo/`
 - ✅ Test with `npm run lint` and `npm run build`
 - ✅ Preserve campaign tracking chain
+- ✅ **Update `docs/deployment_summary.md` after completing features**
 
 ### DON'T:
 - ❌ Add `'use client'` unnecessarily
@@ -328,6 +396,7 @@ const buttonVariants = cva(
 - ❌ Break analytics/tracking integration
 - ❌ Modify route state providers without understanding impact
 - ❌ Commit `.env.local` or secrets
+- ❌ **Skip deployment summary updates when work is complete**
 
 ---
 
@@ -496,14 +565,15 @@ cat public/sitemap-0.xml
 
 | When You Change... | Also Update... |
 |-------------------|---------------|
-| Service content | `src/lib/content/services/**` + component + routes.ts + sitemap |
-| County content | `src/lib/content/counties/**` + component + route + sitemap |
-| Blog post | `src/lib/blogs/articles/**` + export from index |
-| Contact form | `ContactMap` in `src/utils/contact.ts` + route |
-| Navigation | `src/utils/routes.ts` + sitemap config |
-| SEO metadata | Page metadata + `docs/seo/` documentation |
+| Service content | `src/lib/content/services/**` + component + routes.ts + sitemap + deployment_summary |
+| County content | `src/lib/content/counties/**` + component + route + sitemap + deployment_summary |
+| Blog post | `src/lib/blogs/articles/**` + export from index + deployment_summary |
+| Contact form | `ContactMap` in `src/utils/contact.ts` + route + deployment_summary |
+| Navigation | `src/utils/routes.ts` + sitemap config + deployment_summary |
+| SEO metadata | Page metadata + `docs/seo/` documentation + deployment_summary |
 | Analytics | `analytics.ts` + `CampaignTracker` + `RouteStateProvider` |
 | Environment vars | `.env.local` + deployment config + documentation |
+| **Any visible change** | **`docs/deployment_summary.md` with affected URLs** |
 
 ---
 
@@ -521,6 +591,7 @@ cat public/sitemap-0.xml
 3. Test forms end-to-end (validation + submission + toasts)
 4. Run `npm run lint` before committing
 5. Verify sitemap includes new routes after build
+6. **Update `docs/deployment_summary.md` with client-facing summary and affected URLs**
 
 ### When Debugging
 1. Check browser DevTools Console for errors
@@ -542,9 +613,10 @@ cat public/sitemap-0.xml
 - [ ] TypeScript types are correct
 - [ ] Tailwind classes follow existing patterns
 - [ ] Documentation updated in docs/
+- [ ] **`docs/deployment_summary.md` updated with changes and affected URLs**
 
 ---
 
-**Last Updated:** 2025-11-22
+**Last Updated:** 2025-11-24
 **Next.js Version:** 14 (App Router)
 **Node Version:** 18+ recommended
