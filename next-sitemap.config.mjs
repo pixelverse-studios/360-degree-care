@@ -12,6 +12,10 @@ const REDIRECTED_CITY_SLUGS = {
     }
 }
 
+// Only include city pages for Bergen County (focus strategy per Nov 29 2025 SEO plan)
+// Other county city pages exist but are excluded from sitemap until indexing improves
+const COUNTIES_WITH_CITY_PAGES = new Set(['bergen-county'])
+
 const REDIRECTED_PATHS = Array.from(
     REDIRECTED_CITY_SLUGS['personal-care']['bergen-county']
 ).map(city => `/services/personal-care/bergen-county/${city}`)
@@ -61,9 +65,15 @@ function buildServiceRouteTree() {
                     const countyDir = path.join(serviceDir, county)
                     const excludedCities =
                         REDIRECTED_CITY_SLUGS[service]?.[county]
-                    const cities = listDirectories(countyDir)
-                        .filter(city => hasPageFile(path.join(countyDir, city)))
-                        .filter(city => !excludedCities?.has(city))
+
+                    // Only include city pages for counties in COUNTIES_WITH_CITY_PAGES
+                    // Other counties get county hub only (no city pages in sitemap)
+                    const cities = COUNTIES_WITH_CITY_PAGES.has(county)
+                        ? listDirectories(countyDir)
+                            .filter(city => hasPageFile(path.join(countyDir, city)))
+                            .filter(city => !excludedCities?.has(city))
+                        : []
+
                     return { slug: county, cities }
                 })
 
@@ -145,6 +155,16 @@ const config = {
         '/_next/*',
         '/404',
         '/500',
+        '/docs',
+        '/docs/*',
+        '/seo-review',
+        '/not-found',
+        '/test-tracking',
+        // Exclude all non-Bergen county city pages (focus strategy per Nov 29 2025 SEO plan)
+        '/services/*/essex-county/*',
+        '/services/*/monmouth-county/*',
+        '/services/*/passaic-county/*',
+        '/services/*/ocean-county/*',
         ...REDIRECTED_PATHS
     ],
     changefreq: 'weekly',

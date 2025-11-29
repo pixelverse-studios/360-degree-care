@@ -74,6 +74,11 @@ const personalCareBergenZeroTrafficCities = [
     'westwood'
 ]
 
+// Legacy standalone URLs that had traffic (per Nov 29 2025 GSC export)
+const legacyStandaloneRedirects = [
+    { source: '/bergen-county', destination: '/services', permanent: true }
+]
+
 const nextConfig = {
     images: {
         remotePatterns: [
@@ -114,7 +119,8 @@ const nextConfig = {
         return [
             ...serviceCountyRedirects,
             ...legacyServiceCityRedirects,
-            ...personalCareBergenRedirects
+            ...personalCareBergenRedirects,
+            ...legacyStandaloneRedirects
         ]
     },
     async headers() {
