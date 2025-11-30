@@ -21,7 +21,7 @@ export const bergenCountyElderCareContent: CountyPageContent = {
             logo: 'https://www.360degreecare.com/logo.png',
             contactPoint: {
                 '@type': 'ContactPoint',
-                telephone: '+1-856-874-0067',
+                telephone: '+1-201-299-4243',
                 contactType: 'customer service',
                 availableLanguage: 'en'
             }
@@ -47,7 +47,7 @@ export const bergenCountyElderCareContent: CountyPageContent = {
             '@type': 'ServiceChannel',
             serviceUrl:
                 'https://www.360degreecare.net/services/elder-care/bergen-county',
-            servicePhone: '+1-856-874-0067',
+            servicePhone: '+1-201-299-4243',
             availableLanguage: 'en'
         }
     },
@@ -59,7 +59,7 @@ export const bergenCountyElderCareContent: CountyPageContent = {
         description:
             'Professional elder care consulting from Fort Lee to Franklin Lakes, Teaneck to Tenafly. Our expert consultants help Bergen County families make informed care decisions, coordinate services, and ensure the best quality of life for aging loved ones.',
         ctaButtonLabel: 'Schedule Consultation',
-        ctaValue: '856-874-0067',
+        ctaValue: '201-299-4243',
         imageSrc: 'elder-care-hero',
         imageAlt: 'Elder care consulting services in Bergen County NJ'
     },
@@ -265,6 +265,6 @@ export const bergenCountyElderCareContent: CountyPageContent = {
             "Schedule your free consultation today. We'll discuss your situation, answer your questions, and explain how our elder care consulting services can provide the guidance and support your family needs. There's no obligation—just an opportunity to explore how professional consulting can transform your elder care journey from overwhelming to manageable."
         ],
         buttonLabel: 'Schedule Free Consultation',
-        value: '856-874-0067'
+        value: '201-299-4243'
     }
 }

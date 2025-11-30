@@ -12,44 +12,89 @@ export const bergenCountyCompanionCareContent: CountyPageContent = {
 
     schemaData: {
         '@context': 'https://schema.org',
-        '@type': 'Service',
-        name: 'Companion Care Services in Bergen County',
-        provider: {
-            '@type': 'Organization',
-            name: '360 Degree Care',
-            url: 'https://www.360degreecare.com',
-            logo: 'https://www.360degreecare.com/logo.png',
-            contactPoint: {
-                '@type': 'ContactPoint',
-                telephone: '+1-856-874-0067',
-                contactType: 'customer service',
-                availableLanguage: 'en'
+        '@graph': [
+            {
+                '@type': 'Service',
+                name: 'Companion Care Services in Bergen County',
+                serviceType: 'Companion Care Services',
+                provider: {
+                    '@type': 'HomeHealthCareService',
+                    name: '360 Degree Care',
+                    url: 'https://www.360degreecare.net',
+                    logo: 'https://res.cloudinary.com/pixelverse-studios/image/upload/v1750117116/clients/360dc/360DC-2C-horz_io6tok.svg',
+                    telephone: '(201) 299-4243',
+                    address: {
+                        '@type': 'PostalAddress',
+                        streetAddress: '27 Chestnut Street',
+                        addressLocality: 'Ridgewood',
+                        addressRegion: 'NJ',
+                        postalCode: '07450',
+                        addressCountry: 'US'
+                    }
+                },
+                areaServed: [
+                    { '@type': 'City', name: 'Fort Lee, NJ' },
+                    { '@type': 'City', name: 'Hackensack, NJ' },
+                    { '@type': 'City', name: 'Ridgewood, NJ' },
+                    { '@type': 'City', name: 'Paramus, NJ' },
+                    { '@type': 'City', name: 'Teaneck, NJ' },
+                    { '@type': 'City', name: 'Fair Lawn, NJ' },
+                    { '@type': 'City', name: 'Englewood, NJ' },
+                    { '@type': 'City', name: 'Westwood, NJ' },
+                    { '@type': 'City', name: 'River Vale, NJ' }
+                ],
+                description:
+                    'Professional companion care services throughout Bergen County, NJ. Our compassionate companions provide social interaction, emotional support, and assistance with daily activities to enhance quality of life and reduce isolation.',
+                availableChannel: {
+                    '@type': 'ServiceChannel',
+                    serviceUrl:
+                        'https://www.360degreecare.net/services/companion-care/bergen-county',
+                    servicePhone: '+1-201-299-4243',
+                    availableLanguage: 'en'
+                }
+            },
+            {
+                '@type': 'LocalBusiness',
+                '@id': 'https://www.360degreecare.net/#localbusiness',
+                name: '360 Degree Care',
+                image: 'https://res.cloudinary.com/pixelverse-studios/image/upload/v1750117116/clients/360dc/360DC-2C-horz_io6tok.svg',
+                url: 'https://www.360degreecare.net',
+                telephone: '(201) 299-4243',
+                email: 'info@360degreecare.net',
+                address: {
+                    '@type': 'PostalAddress',
+                    streetAddress: '27 Chestnut Street',
+                    addressLocality: 'Ridgewood',
+                    addressRegion: 'NJ',
+                    postalCode: '07450',
+                    addressCountry: 'US'
+                },
+                geo: {
+                    '@type': 'GeoCoordinates',
+                    latitude: 40.9793,
+                    longitude: -74.1169
+                },
+                openingHoursSpecification: {
+                    '@type': 'OpeningHoursSpecification',
+                    dayOfWeek: [
+                        'Monday',
+                        'Tuesday',
+                        'Wednesday',
+                        'Thursday',
+                        'Friday',
+                        'Saturday',
+                        'Sunday'
+                    ],
+                    opens: '00:00',
+                    closes: '23:59'
+                },
+                priceRange: '$$',
+                sameAs: [
+                    'https://www.facebook.com/profile.php?id=61574893462190',
+                    'https://www.instagram.com/360degreecarenj/'
+                ]
             }
-        },
-        areaServed: [
-            'Bergen County, NJ',
-            'Fort Lee, NJ',
-            'Hackensack, NJ',
-            'Ridgewood, NJ',
-            'Westwood, NJ',
-            'Paramus, NJ',
-            'Teaneck, NJ',
-            'Fair Lawn, NJ',
-            'Englewood, NJ',
-            'Bergenfield, NJ',
-            'Cliffside Park, NJ',
-            'Palisades Park, NJ'
-        ],
-        description:
-            'Professional companion care services throughout Bergen County, NJ. Our compassionate companions provide social interaction, emotional support, and assistance with daily activities to enhance quality of life and reduce isolation.',
-        serviceType: 'Companion Care Services',
-        availableChannel: {
-            '@type': 'ServiceChannel',
-            serviceUrl:
-                'https://www.360degreecare.net/services/companion-care/bergen-county',
-            servicePhone: '+1-856-874-0067',
-            availableLanguage: 'en'
-        }
+        ]
     },
 
     hero: {
@@ -59,7 +104,7 @@ export const bergenCountyCompanionCareContent: CountyPageContent = {
         description:
             'Professional companion care services from Fort Lee to Franklin Lakes, Hackensack to Ho-Ho-Kus. Our compassionate companions help seniors stay engaged, active, and connected in their beloved Bergen County communities.',
         ctaButtonLabel: 'Find Your Companion',
-        ctaValue: '856-874-0067',
+        ctaValue: '201-299-4243',
         imageSrc: 'companion-care-hero',
         imageAlt: 'Companion care services in Bergen County NJ'
     },
@@ -265,6 +310,6 @@ export const bergenCountyCompanionCareContent: CountyPageContent = {
             "Every companionship journey begins with a free consultation where we listen to your story, assess your needs, and introduce you to potential companions. There's no obligation, just an opportunity to discover how the right companion can transform daily life from lonely to lively, from isolated to engaged."
         ],
         buttonLabel: 'Start Your Companion Match',
-        value: '856-874-0067'
+        value: '201-299-4243'
     }
 }

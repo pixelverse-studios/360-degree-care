@@ -9,7 +9,7 @@ export const providerSchema = {
     '@type': 'Organization',
     name: '360 Degree Care',
     url: 'https://www.360degreecare.net/',
-    telephone: '(800) 338-7786'
+    telephone: '(201) 299-4243'
 }
 
 export function buildSchema(serviceName: string, cityName: string) {

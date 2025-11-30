@@ -62,7 +62,7 @@ export const bergenCountyStaffingContent: ServiceCountyPageContent = {
             name: '360 Degree Care',
             url: 'https://www.360degreecare.net',
             logo: 'https://www.360degreecare.net/logo.png',
-            telephone: '(800) 338-7786',
+            telephone: '(201) 299-4243',
             address: {
                 '@type': 'PostalAddress',
                 streetAddress: '27 Chestnut Street, Floor 1',

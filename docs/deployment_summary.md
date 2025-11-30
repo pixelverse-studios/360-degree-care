@@ -3,20 +3,23 @@
 <!-- This file is automatically sent via email on successful deployment, then reset for the next cycle -->
 
 ## Latest deploy summary
-- **SEO cleanup**: Streamlined sitemap from 235 pages to 120 focused, high-quality pages
-- **Redirect fix**: Old URL `/bergen-county` now properly redirects to services page
-- **Focus on Bergen County**: City-level pages now prioritized for Bergen County to improve local search rankings
+- **FAQ page SEO enhancement**: Added structured FAQ schema for better search visibility and potential rich snippets
+- **Local business signals improved**: Added LocalBusiness schema to Bergen County companion care page
+- **Contact information standardized**: Updated all Bergen County pages to display consistent local phone number (201) 299-4243
 
 ## Notes for internal team
-- Added redirect for `/bergen-county` → `/services` in `next.config.mjs`
-- Updated `next-sitemap.config.mjs` to exclude non-Bergen county city pages from sitemap:
-  - Essex, Monmouth, Passaic, Ocean county city pages excluded (pages still exist, just not in sitemap)
-  - Added `COUNTIES_WITH_CITY_PAGES` constant to control which counties get city pages in sitemap
-- Also excluded `/docs`, `/seo-review`, `/not-found`, `/test-tracking` from sitemap
-- Created SEO remediation plan at `docs/seo-remediation-plan.md`
-- GSC data analyzed and stored in `docs/gsc/` folder
-- Next steps: GSC URL removals for old pages, add FAQ/LocalBusiness schemas
+- Created `src/app/faq/layout.tsx` with FAQPage schema (14 Q&As from all categories)
+- Created `src/lib/seo/local-business-schema.ts` utility for consistent schema generation
+- Updated `bergen-county-companion-care.ts` with @graph schema (Service + LocalBusiness)
+- Fixed NAP in all 6 Bergen County content files: companion-care, elder-care, nursing, staffing, personal-care, home-health-aides
+- Fixed `cities/bergen-county/helpers.ts` provider schema phone
+- Changed from (800) 338-7786 and (856) 874-0067 to (201) 299-4243
 
 ## Changed URLs
-- https://www.360degreecare.net/services
-- https://www.360degreecare.net/sitemap.xml
+- https://www.360degreecare.net/faq
+- https://www.360degreecare.net/services/companion-care/bergen-county
+- https://www.360degreecare.net/services/elder-care/bergen-county
+- https://www.360degreecare.net/services/nursing/bergen-county
+- https://www.360degreecare.net/services/staffing/bergen-county
+- https://www.360degreecare.net/services/personal-care/bergen-county
+- https://www.360degreecare.net/services/home-health-aides/bergen-county
