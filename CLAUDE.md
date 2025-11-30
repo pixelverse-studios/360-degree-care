@@ -510,6 +510,48 @@ open "http://localhost:3000?utm_source=test&utm_medium=email&utm_campaign=test20
 
 ---
 
+## SEO Remediation Plan
+
+**IMPORTANT: Review `docs/seo-remediation-plan.md` before doing any SEO-related work.**
+
+This site is undergoing active SEO remediation to recover from historical indexing issues. The plan documents:
+- Current strategy: Dominate Bergen County before expanding
+- Phase-by-phase implementation checklist
+- What's been completed vs what's pending
+- Technical decisions made (redirects, sitemap exclusions, schema markup)
+
+### Current SEO Status (as of 2025-11-30)
+
+**Completed (Phases 1-2):**
+- ✅ Legacy URL redirects in `next.config.mjs`
+- ✅ Sitemap reduced to ~118 quality pages (Bergen County focus)
+- ✅ GSC URL prefix removals requested for old/dead URLs
+- ✅ FAQ schema added to `/faq` page
+- ✅ LocalBusiness schema added to Bergen County pages
+- ✅ NAP consistency fixed: `(201) 299-4243` everywhere
+- ✅ Manual indexing requested for priority Bergen County URLs
+
+**Pending (Phase 3+):**
+- Content optimization for Bergen County city pages
+- Internal linking improvements
+- Review/testimonial schema markup
+- Expansion to other counties (after Bergen dominance)
+
+### Key SEO Files
+| File | Purpose |
+|------|---------|
+| `docs/seo-remediation-plan.md` | Master SEO strategy and progress tracking |
+| `src/lib/seo/local-business-schema.ts` | Centralized business info for consistent NAP |
+| `src/app/faq/layout.tsx` | FAQ page with FAQPage schema |
+| `next-sitemap.config.mjs` | Controls which pages appear in sitemap |
+
+### NAP (Name, Address, Phone) - Use Consistently
+- **Phone:** (201) 299-4243
+- **Address:** 27 Chestnut Street, Ridgewood, NJ 07450
+- **Email:** info@360degreecare.net
+
+---
+
 ## Quick Commands Reference
 
 ```bash
@@ -617,6 +659,6 @@ cat public/sitemap-0.xml
 
 ---
 
-**Last Updated:** 2025-11-24
+**Last Updated:** 2025-11-30
 **Next.js Version:** 14 (App Router)
 **Node Version:** 18+ recommended
