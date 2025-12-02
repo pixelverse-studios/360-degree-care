@@ -88,7 +88,10 @@ function buildCityContent(
             keywords: `companion care ${cityName}, senior companionship ${cityName}, social support ${cityName}`,
             alternates: { canonical }
         },
-        schemaData: buildSchema(SERVICE_NAME, cityName),
+        schemaData: buildSchema(SERVICE_NAME, cityName, COMPANION_CARE_FAQS, {
+            serviceSlug: SERVICE_SLUG,
+            description: options.heroDescription
+        }),
         hero: {
             header: `Companion Care That Keeps ${cityName} Residents Connected`,
             description: options.heroDescription,

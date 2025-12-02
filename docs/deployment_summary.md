@@ -3,12 +3,227 @@
 <!-- This file is automatically sent via email on successful deployment, then reset for the next cycle -->
 
 ## Latest deploy summary
-- Updated documentation with SEO remediation progress tracking
+- **Improved SEO for FAQ sections** - FAQ answers are now visible to Google in the initial page load, ensuring search engines can index all FAQ content for better search rankings
+- **Added FAQ structured data (schema.org)** - FAQPage JSON-LD schema now appears on all pages with FAQs, helping Google display rich FAQ snippets in search results
+- **Enhanced organization schema for better search visibility** - Upgraded to MedicalOrganization type with company description, alternate name ("360 Care"), and county-level service areas (Bergen, Monmouth, Passaic, Essex, Ocean counties)
+- **Updated Personal Care FAQs** - Replaced all 5 FAQ questions and answers with more detailed, helpful content explaining who benefits, costs, how to find services, referral requirements, and caregiver qualifications
+- **Updated Home Health Aides FAQs** - Replaced all 4 FAQ questions and answers with more detailed content about scheduling flexibility, aide training and certification, customizable care plans, and Concierge-Level service
+- **Updated Companion Care FAQs** - Replaced all 4 FAQ questions and answers with more detailed content about non-medical support, caregiver continuity, flexible scheduling, and how companion care differs from personal care
+- **Updated Elder Care Consulting FAQs** - Replaced all 4 FAQ questions and answers with more detailed content explaining who benefits from consulting, how it differs from care management, what happens during a consult, and expected timeframes
+- **Updated Nursing Services FAQs** - Replaced all 4 FAQ questions and answers with more detailed content about conditions supported, physician coordination, insurance coverage, and equipment provided
+- **Updated Staffing Services FAQs** - Replaced all 4 FAQ questions and answers with more detailed content about roles staffed, emergency coverage, temp-to-perm options, and facility types served
+- **Updated main FAQ page content** - Refreshed all 4 FAQ sections on the /faq page: Home Healthcare Questions (7 Q&As), Personal Care Questions (5 Q&As), Nurse Staffing Questions (4 Q&As), and In Home Care Payment Options (10 Q&As) with clearer, more helpful answers
+- **Added LocalBusiness schema to city pages** - Personal care city pages now include HomeHealthCareService structured data with full business info, helping Google understand 360 Degree Care as a local business serving each specific city
+- **Enhanced Service schema for city pages** - City service pages now have comprehensive Service structured data including page URL, description, full provider details, and service channel information for better search visibility
+- **Added LocalBusiness and Service schemas to Home Health Aides city pages** - All home health aides city pages now include full structured data for better local search visibility
+- **Added LocalBusiness and Service schemas to Companion Care city pages** - All companion care city pages now include full structured data for better local search visibility
+- **Added LocalBusiness and Service schemas to Nursing city pages** - All private duty nursing city pages now include full structured data for better local search visibility
+- **Added LocalBusiness and Service schemas to Elder Care city pages** - All elder care consulting city pages now include full structured data for better local search visibility
+- **Added LocalBusiness and Service schemas to Staffing city pages** - All healthcare staffing city pages now include full structured data for better local search visibility
 
 ## Notes for internal team
-- Added SEO Remediation Plan section to CLAUDE.md with current status and key files
-- Updated docs/seo-remediation-plan.md to mark Phases 1-2 as complete
-- Next steps: Phase 2.3 (BreadcrumbList schema), Phase 2.4 (Review schema), Phase 3 (Paramus optimization), Phase 5 (internal linking)
+- Updated `organizationSchema` in `src/app/layout.tsx`: changed @type from Organization to MedicalOrganization
+- Added `alternateName`, `description`, `address`, and `areaServed` (5 counties) to organization schema
+- Fixed NAP consistency: removed ", Floor 1" from localBusinessSchema streetAddress to match documented address
+- Added `forceMount` to Radix AccordionContent in `src/components/ui/accordion.tsx` and `src/components/services/ServiceFaqs.tsx`
+- Content is now rendered in DOM on page load (crawlable) but visually hidden when collapsed using CSS `data-[state=closed]:h-0 data-[state=closed]:opacity-0`
+- Created centralized FAQ schema utility at `src/lib/seo/faq-schema.ts`
+- Added `schemaAnswer` field to FAQ interface for plain-text versions of JSX answers
+- FAQ schema added to all 6 service hub SeoHead components
+- FAQ schema added to all 24 city content files via buildSchema helper update
+- Created layout.tsx for /how-to-pay with FAQ schema
+- Updated /faq layout.tsx to use the new generateFAQSchema utility
+- Replaced `PERSONAL_CARE_FAQS` in `src/utils/faqs.tsx` with 5 new detailed Q&A pairs (affects main service page + all city pages across 4 counties)
+- Added `generateCityLocalBusinessSchema()` function in `src/lib/seo/local-business-schema.ts`
+- Updated all 4 county `helpers.ts` files to include LocalBusiness schema in `@graph`
+- Fixed NAP consistency: all county helpers now use centralized `BUSINESS_INFO.telephone` (was using old 800 number in Essex, Monmouth, Passaic)
+- Updated personal-care.ts files in all 4 counties to pass serviceSlug and description to buildSchema
+- Enhanced Service schema in all 4 county helpers: added @id, description, url, availableChannel, and upgraded provider to full HomeHealthCareService with logo, address, and contactPoint
+- Replaced `HOME_HEALTH_AIDES_FAQS` in `src/utils/faqs.tsx` with 4 new detailed Q&A pairs (affects main service page + all city pages across 4 counties)
+- Updated home-health-aides.ts files in all 4 counties to pass serviceSlug and description to buildSchema for LocalBusiness/Service schemas
+- Replaced `COMPANION_CARE_FAQS` in `src/utils/faqs.tsx` with 4 new detailed Q&A pairs
+- Updated companion-care.ts files in all 4 counties to pass serviceSlug and description to buildSchema for LocalBusiness/Service schemas
+- Updated nursing.ts files in all 4 counties to pass serviceSlug and description to buildSchema for LocalBusiness/Service schemas
+- Updated elder-care.ts files in all 4 counties to pass serviceSlug and description to buildSchema for LocalBusiness/Service schemas
+- Updated staffing.ts files in all 4 counties to pass serviceSlug and description to buildSchema for LocalBusiness/Service schemas
+- Replaced `ELDER_CARE_CONSULTING_FAQS` in `src/utils/faqs.tsx` with 4 new detailed Q&A pairs (affects main service page + all city pages across 4 counties)
+- Replaced `NURSING_SERVICES_FAQS` in `src/utils/faqs.tsx` with 4 new detailed Q&A pairs (affects main service page + all city pages across 4 counties)
+- Replaced `STAFFING_SERVICES_FAQS` in `src/utils/faqs.tsx` with 4 new detailed Q&A pairs (affects main service page + all city pages across 4 counties)
+- Replaced `HOME_FAQS` in `src/utils/faqs.tsx` with 7 new plain-text Q&A pairs (removed JSX components)
+- Replaced `STAFFING_FAQS` in `src/utils/faqs.tsx` with 4 new detailed Q&A pairs (used on main /faq page)
+- Replaced `PAYMENT_FAQS` in `src/utils/faqs.tsx` with 10 new detailed Q&A pairs
+- Removed unused imports (CompanyName, Illnesses) from faqs.tsx
+- FAQ schema on /faq page automatically updated via generateFAQSchema utility
 
 ## Changed URLs
-- https://www.360degreecare.net
+- https://www.360degreecare.net/services/companion-care/bergen-county/fort-lee
+- https://www.360degreecare.net/services/personal-care/bergen-county/fort-lee
+- https://www.360degreecare.net/services/elder-care/bergen-county/fort-lee
+- https://www.360degreecare.net/services/home-health-aides/bergen-county/fort-lee
+- https://www.360degreecare.net/services/nursing/bergen-county/fort-lee
+- https://www.360degreecare.net/services/staffing/bergen-county/fort-lee
+- https://www.360degreecare.net/services/companion-care/bergen-county/ridgewood
+- https://www.360degreecare.net/services/personal-care/bergen-county/ridgewood
+- https://www.360degreecare.net/services/elder-care/bergen-county/ridgewood
+- https://www.360degreecare.net/services/home-health-aides/bergen-county/ridgewood
+- https://www.360degreecare.net/services/nursing/bergen-county/ridgewood
+- https://www.360degreecare.net/services/staffing/bergen-county/ridgewood
+- https://www.360degreecare.net/services/companion-care/bergen-county/paramus
+- https://www.360degreecare.net/services/personal-care/bergen-county/paramus
+- https://www.360degreecare.net/services/elder-care/bergen-county/paramus
+- https://www.360degreecare.net/services/home-health-aides/bergen-county/paramus
+- https://www.360degreecare.net/services/nursing/bergen-county/paramus
+- https://www.360degreecare.net/services/staffing/bergen-county/paramus
+- https://www.360degreecare.net/services/companion-care/bergen-county/hackensack
+- https://www.360degreecare.net/services/personal-care/bergen-county/hackensack
+- https://www.360degreecare.net/services/elder-care/bergen-county/hackensack
+- https://www.360degreecare.net/services/home-health-aides/bergen-county/hackensack
+- https://www.360degreecare.net/services/nursing/bergen-county/hackensack
+- https://www.360degreecare.net/services/staffing/bergen-county/hackensack
+- https://www.360degreecare.net/services/companion-care/bergen-county/teaneck
+- https://www.360degreecare.net/services/personal-care/bergen-county/teaneck
+- https://www.360degreecare.net/services/elder-care/bergen-county/teaneck
+- https://www.360degreecare.net/services/home-health-aides/bergen-county/teaneck
+- https://www.360degreecare.net/services/nursing/bergen-county/teaneck
+- https://www.360degreecare.net/services/staffing/bergen-county/teaneck
+- https://www.360degreecare.net/services/companion-care/bergen-county/fair-lawn
+- https://www.360degreecare.net/services/personal-care/bergen-county/fair-lawn
+- https://www.360degreecare.net/services/elder-care/bergen-county/fair-lawn
+- https://www.360degreecare.net/services/home-health-aides/bergen-county/fair-lawn
+- https://www.360degreecare.net/services/nursing/bergen-county/fair-lawn
+- https://www.360degreecare.net/services/staffing/bergen-county/fair-lawn
+- https://www.360degreecare.net/services/companion-care/bergen-county/englewood
+- https://www.360degreecare.net/services/personal-care/bergen-county/englewood
+- https://www.360degreecare.net/services/elder-care/bergen-county/englewood
+- https://www.360degreecare.net/services/home-health-aides/bergen-county/englewood
+- https://www.360degreecare.net/services/nursing/bergen-county/englewood
+- https://www.360degreecare.net/services/staffing/bergen-county/englewood
+- https://www.360degreecare.net/services/companion-care/bergen-county/westwood
+- https://www.360degreecare.net/services/personal-care/bergen-county/westwood
+- https://www.360degreecare.net/services/elder-care/bergen-county/westwood
+- https://www.360degreecare.net/services/home-health-aides/bergen-county/westwood
+- https://www.360degreecare.net/services/nursing/bergen-county/westwood
+- https://www.360degreecare.net/services/staffing/bergen-county/westwood
+- https://www.360degreecare.net/services/companion-care/bergen-county/river-vale
+- https://www.360degreecare.net/services/personal-care/bergen-county/river-vale
+- https://www.360degreecare.net/services/elder-care/bergen-county/river-vale
+- https://www.360degreecare.net/services/home-health-aides/bergen-county/river-vale
+- https://www.360degreecare.net/services/nursing/bergen-county/river-vale
+- https://www.360degreecare.net/services/staffing/bergen-county/river-vale
+- https://www.360degreecare.net/
+- https://www.360degreecare.net/faq
+- https://www.360degreecare.net/how-to-pay
+- https://www.360degreecare.net/services/companion-care
+- https://www.360degreecare.net/services/personal-care
+- https://www.360degreecare.net/services/elder-care
+- https://www.360degreecare.net/services/home-health-aides
+- https://www.360degreecare.net/services/nursing
+- https://www.360degreecare.net/services/staffing
+- https://www.360degreecare.net/services/companion-care/essex-county/newark
+- https://www.360degreecare.net/services/personal-care/essex-county/newark
+- https://www.360degreecare.net/services/elder-care/essex-county/newark
+- https://www.360degreecare.net/services/home-health-aides/essex-county/newark
+- https://www.360degreecare.net/services/nursing/essex-county/newark
+- https://www.360degreecare.net/services/staffing/essex-county/newark
+- https://www.360degreecare.net/services/companion-care/essex-county/east-orange
+- https://www.360degreecare.net/services/personal-care/essex-county/east-orange
+- https://www.360degreecare.net/services/elder-care/essex-county/east-orange
+- https://www.360degreecare.net/services/home-health-aides/essex-county/east-orange
+- https://www.360degreecare.net/services/nursing/essex-county/east-orange
+- https://www.360degreecare.net/services/staffing/essex-county/east-orange
+- https://www.360degreecare.net/services/companion-care/essex-county/montclair
+- https://www.360degreecare.net/services/personal-care/essex-county/montclair
+- https://www.360degreecare.net/services/elder-care/essex-county/montclair
+- https://www.360degreecare.net/services/home-health-aides/essex-county/montclair
+- https://www.360degreecare.net/services/nursing/essex-county/montclair
+- https://www.360degreecare.net/services/staffing/essex-county/montclair
+- https://www.360degreecare.net/services/companion-care/essex-county/bloomfield
+- https://www.360degreecare.net/services/personal-care/essex-county/bloomfield
+- https://www.360degreecare.net/services/elder-care/essex-county/bloomfield
+- https://www.360degreecare.net/services/home-health-aides/essex-county/bloomfield
+- https://www.360degreecare.net/services/nursing/essex-county/bloomfield
+- https://www.360degreecare.net/services/staffing/essex-county/bloomfield
+- https://www.360degreecare.net/services/companion-care/essex-county/irvington
+- https://www.360degreecare.net/services/personal-care/essex-county/irvington
+- https://www.360degreecare.net/services/elder-care/essex-county/irvington
+- https://www.360degreecare.net/services/home-health-aides/essex-county/irvington
+- https://www.360degreecare.net/services/nursing/essex-county/irvington
+- https://www.360degreecare.net/services/staffing/essex-county/irvington
+- https://www.360degreecare.net/services/companion-care/essex-county/west-orange
+- https://www.360degreecare.net/services/personal-care/essex-county/west-orange
+- https://www.360degreecare.net/services/elder-care/essex-county/west-orange
+- https://www.360degreecare.net/services/home-health-aides/essex-county/west-orange
+- https://www.360degreecare.net/services/nursing/essex-county/west-orange
+- https://www.360degreecare.net/services/staffing/essex-county/west-orange
+- https://www.360degreecare.net/services/companion-care/monmouth-county/middletown
+- https://www.360degreecare.net/services/personal-care/monmouth-county/middletown
+- https://www.360degreecare.net/services/elder-care/monmouth-county/middletown
+- https://www.360degreecare.net/services/home-health-aides/monmouth-county/middletown
+- https://www.360degreecare.net/services/nursing/monmouth-county/middletown
+- https://www.360degreecare.net/services/staffing/monmouth-county/middletown
+- https://www.360degreecare.net/services/companion-care/monmouth-county/howell
+- https://www.360degreecare.net/services/personal-care/monmouth-county/howell
+- https://www.360degreecare.net/services/elder-care/monmouth-county/howell
+- https://www.360degreecare.net/services/home-health-aides/monmouth-county/howell
+- https://www.360degreecare.net/services/nursing/monmouth-county/howell
+- https://www.360degreecare.net/services/staffing/monmouth-county/howell
+- https://www.360degreecare.net/services/companion-care/monmouth-county/marlboro
+- https://www.360degreecare.net/services/personal-care/monmouth-county/marlboro
+- https://www.360degreecare.net/services/elder-care/monmouth-county/marlboro
+- https://www.360degreecare.net/services/home-health-aides/monmouth-county/marlboro
+- https://www.360degreecare.net/services/nursing/monmouth-county/marlboro
+- https://www.360degreecare.net/services/staffing/monmouth-county/marlboro
+- https://www.360degreecare.net/services/companion-care/monmouth-county/freehold
+- https://www.360degreecare.net/services/personal-care/monmouth-county/freehold
+- https://www.360degreecare.net/services/elder-care/monmouth-county/freehold
+- https://www.360degreecare.net/services/home-health-aides/monmouth-county/freehold
+- https://www.360degreecare.net/services/nursing/monmouth-county/freehold
+- https://www.360degreecare.net/services/staffing/monmouth-county/freehold
+- https://www.360degreecare.net/services/companion-care/monmouth-county/manalapan
+- https://www.360degreecare.net/services/personal-care/monmouth-county/manalapan
+- https://www.360degreecare.net/services/elder-care/monmouth-county/manalapan
+- https://www.360degreecare.net/services/home-health-aides/monmouth-county/manalapan
+- https://www.360degreecare.net/services/nursing/monmouth-county/manalapan
+- https://www.360degreecare.net/services/staffing/monmouth-county/manalapan
+- https://www.360degreecare.net/services/companion-care/monmouth-county/long-branch
+- https://www.360degreecare.net/services/personal-care/monmouth-county/long-branch
+- https://www.360degreecare.net/services/elder-care/monmouth-county/long-branch
+- https://www.360degreecare.net/services/home-health-aides/monmouth-county/long-branch
+- https://www.360degreecare.net/services/nursing/monmouth-county/long-branch
+- https://www.360degreecare.net/services/staffing/monmouth-county/long-branch
+- https://www.360degreecare.net/services/companion-care/passaic-county/paterson
+- https://www.360degreecare.net/services/personal-care/passaic-county/paterson
+- https://www.360degreecare.net/services/elder-care/passaic-county/paterson
+- https://www.360degreecare.net/services/home-health-aides/passaic-county/paterson
+- https://www.360degreecare.net/services/nursing/passaic-county/paterson
+- https://www.360degreecare.net/services/staffing/passaic-county/paterson
+- https://www.360degreecare.net/services/companion-care/passaic-county/clifton
+- https://www.360degreecare.net/services/personal-care/passaic-county/clifton
+- https://www.360degreecare.net/services/elder-care/passaic-county/clifton
+- https://www.360degreecare.net/services/home-health-aides/passaic-county/clifton
+- https://www.360degreecare.net/services/nursing/passaic-county/clifton
+- https://www.360degreecare.net/services/staffing/passaic-county/clifton
+- https://www.360degreecare.net/services/companion-care/passaic-county/passaic
+- https://www.360degreecare.net/services/personal-care/passaic-county/passaic
+- https://www.360degreecare.net/services/elder-care/passaic-county/passaic
+- https://www.360degreecare.net/services/home-health-aides/passaic-county/passaic
+- https://www.360degreecare.net/services/nursing/passaic-county/passaic
+- https://www.360degreecare.net/services/staffing/passaic-county/passaic
+- https://www.360degreecare.net/services/companion-care/passaic-county/wayne
+- https://www.360degreecare.net/services/personal-care/passaic-county/wayne
+- https://www.360degreecare.net/services/elder-care/passaic-county/wayne
+- https://www.360degreecare.net/services/home-health-aides/passaic-county/wayne
+- https://www.360degreecare.net/services/nursing/passaic-county/wayne
+- https://www.360degreecare.net/services/staffing/passaic-county/wayne
+- https://www.360degreecare.net/services/companion-care/passaic-county/totowa
+- https://www.360degreecare.net/services/personal-care/passaic-county/totowa
+- https://www.360degreecare.net/services/elder-care/passaic-county/totowa
+- https://www.360degreecare.net/services/home-health-aides/passaic-county/totowa
+- https://www.360degreecare.net/services/nursing/passaic-county/totowa
+- https://www.360degreecare.net/services/staffing/passaic-county/totowa
+- https://www.360degreecare.net/services/companion-care/passaic-county/west-milford
+- https://www.360degreecare.net/services/personal-care/passaic-county/west-milford
+- https://www.360degreecare.net/services/elder-care/passaic-county/west-milford
+- https://www.360degreecare.net/services/home-health-aides/passaic-county/west-milford
+- https://www.360degreecare.net/services/nursing/passaic-county/west-milford
+- https://www.360degreecare.net/services/staffing/passaic-county/west-milford

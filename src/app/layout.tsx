@@ -120,7 +120,7 @@ const localBusinessSchema = {
     priceRange: '$$',
     address: {
         '@type': 'PostalAddress',
-        streetAddress: '27 Chestnut Street, Floor 1',
+        streetAddress: '27 Chestnut Street',
         addressLocality: 'Ridgewood',
         addressRegion: 'NJ',
         postalCode: '07450',
@@ -168,14 +168,32 @@ const localBusinessSchema = {
 
 const organizationSchema = {
     '@context': 'https://schema.org',
-    '@type': 'Organization',
+    '@type': 'MedicalOrganization',
     '@id': `${CANONICAL_ORIGIN}/#organization`,
     name: '360 Degree Care',
+    alternateName: '360 Care',
     url: CANONICAL_ORIGIN,
     logo: SITE_LOGO,
     legalName: '360 Degree Care',
+    description:
+        'Independent and family-owned agency providing Concierge Level home care and in-home support for seniors across New Jersey.',
     email: EMAIL,
     telephone: PHONE,
+    address: {
+        '@type': 'PostalAddress',
+        streetAddress: '27 Chestnut Street',
+        addressLocality: 'Ridgewood',
+        addressRegion: 'NJ',
+        postalCode: '07450',
+        addressCountry: 'US'
+    },
+    areaServed: [
+        { '@type': 'AdministrativeArea', name: 'Bergen County, New Jersey' },
+        { '@type': 'AdministrativeArea', name: 'Monmouth County, New Jersey' },
+        { '@type': 'AdministrativeArea', name: 'Passaic County, New Jersey' },
+        { '@type': 'AdministrativeArea', name: 'Essex County, New Jersey' },
+        { '@type': 'AdministrativeArea', name: 'Ocean County, New Jersey' }
+    ],
     sameAs: [FACEBOOK, INSTA],
     contactPoint: [
         {

@@ -88,7 +88,15 @@ function buildCityContent(
             keywords: `home health aides ${cityName}, CHHA ${cityName}, in-home care ${cityName}`,
             alternates: { canonical }
         },
-        schemaData: buildSchema(SERVICE_NAME, cityName),
+        schemaData: buildSchema(
+            SERVICE_NAME,
+            cityName,
+            HOME_HEALTH_AIDES_FAQS,
+            {
+                serviceSlug: SERVICE_SLUG,
+                description: options.heroDescription
+            }
+        ),
         hero: {
             header: `Experienced Home Health Aides in ${cityName}`,
             description: options.heroDescription,

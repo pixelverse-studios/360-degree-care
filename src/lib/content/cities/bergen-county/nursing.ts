@@ -88,7 +88,10 @@ function buildCityContent(
             keywords: `private duty nursing ${cityName}, in-home nurse ${cityName}, skilled nursing ${cityName}`,
             alternates: { canonical }
         },
-        schemaData: buildSchema(SERVICE_NAME, cityName),
+        schemaData: buildSchema(SERVICE_NAME, cityName, NURSING_SERVICES_FAQS, {
+            serviceSlug: SERVICE_SLUG,
+            description: options.heroDescription
+        }),
         hero: {
             header: `Skilled Nursing Support in ${cityName}`,
             description: options.heroDescription,

@@ -29,7 +29,10 @@ export default function ServiceFaqs({ header, faqs }: FaqSectionProps) {
                                 <span className="pr-4">{faq.question}</span>
                                 <ChevronDown className="h-5 w-5 text-gray-500 transition-transform duration-300 ease-in-out group-data-[state=open]:rotate-180 flex-shrink-0" />
                             </AccordionTrigger>
-                            <AccordionContent className="overflow-hidden text-lg text-gray-700 data-[state=closed]:animate-accordion-up data-[state=open]:animate-accordion-down">
+                            <AccordionContent
+                                forceMount
+                                className="overflow-hidden text-lg text-gray-700 data-[state=closed]:h-0 data-[state=closed]:opacity-0 data-[state=open]:animate-accordion-down"
+                            >
                                 <div className="p-4 pt-2">{faq.answer}</div>
                             </AccordionContent>
                         </AccordionItem>

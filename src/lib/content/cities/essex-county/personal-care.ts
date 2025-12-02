@@ -89,7 +89,10 @@ function buildCityContent(
             keywords: `${SERVICE_NAME.toLowerCase()} ${cityName}, essex county personal care, in-home care ${cityName}`,
             alternates: { canonical }
         },
-        schemaData: buildSchema(SERVICE_NAME, cityName),
+        schemaData: buildSchema(SERVICE_NAME, cityName, PERSONAL_CARE_FAQS, {
+            serviceSlug: SERVICE_SLUG,
+            description: options.heroDescription
+        }),
         hero: {
             header: `Personal Care Support in ${cityName}`,
             description: options.heroDescription,

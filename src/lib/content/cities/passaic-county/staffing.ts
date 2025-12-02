@@ -88,7 +88,15 @@ function buildCityContent(
             keywords: `healthcare staffing ${cityName}, medical staffing ${cityName}, clinical staffing ${cityName}`,
             alternates: { canonical }
         },
-        schemaData: buildSchema(SERVICE_NAME, cityName),
+        schemaData: buildSchema(
+            SERVICE_NAME,
+            cityName,
+            STAFFING_SERVICES_FAQS,
+            {
+                serviceSlug: SERVICE_SLUG,
+                description: options.heroDescription
+            }
+        ),
         hero: {
             header: `Reliable Healthcare Staffing in ${cityName}`,
             description: options.heroDescription,

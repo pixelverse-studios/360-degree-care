@@ -139,6 +139,73 @@ export function generateServiceSchema(options: {
     }
 }
 
+// Generate LocalBusiness schema for city-specific pages (used in @graph)
+export function generateCityLocalBusinessSchema(options: {
+    serviceName: string
+    serviceType: string
+    cityName: string
+    countyName: string
+    serviceSlug: string
+    description: string
+}) {
+    const citySlug = options.cityName.toLowerCase().replace(/\s+/g, '-')
+    const countySlug = options.countyName.toLowerCase().replace(/\s+/g, '-')
+    const serviceUrl = `${BUSINESS_INFO.url}/services/${options.serviceSlug}/${countySlug}/${citySlug}`
+
+    return {
+        '@type': 'HomeHealthCareService',
+        '@id': `${serviceUrl}/#localbusiness`,
+        name: BUSINESS_INFO.name,
+        image: BUSINESS_INFO.logo,
+        url: BUSINESS_INFO.url,
+        telephone: BUSINESS_INFO.telephone,
+        email: BUSINESS_INFO.email,
+        address: {
+            '@type': 'PostalAddress',
+            ...BUSINESS_INFO.address
+        },
+        geo: {
+            '@type': 'GeoCoordinates',
+            latitude: BUSINESS_INFO.geo.latitude,
+            longitude: BUSINESS_INFO.geo.longitude
+        },
+        areaServed: {
+            '@type': 'City',
+            name: options.cityName,
+            containedInPlace: {
+                '@type': 'AdministrativeArea',
+                name: `${options.countyName}, New Jersey`
+            }
+        },
+        sameAs: BUSINESS_INFO.sameAs,
+        openingHoursSpecification: {
+            '@type': 'OpeningHoursSpecification',
+            dayOfWeek: [
+                'Monday',
+                'Tuesday',
+                'Wednesday',
+                'Thursday',
+                'Friday',
+                'Saturday',
+                'Sunday'
+            ],
+            opens: '00:00',
+            closes: '23:59'
+        },
+        priceRange: '$$',
+        description: options.description,
+        makesOffer: {
+            '@type': 'Offer',
+            itemOffered: {
+                '@type': 'Service',
+                name: `${options.serviceName} in ${options.cityName}`,
+                serviceType: options.serviceType,
+                url: serviceUrl
+            }
+        }
+    }
+}
+
 // Bergen County cities for area served
 export const BERGEN_COUNTY_CITIES = [
     'Ridgewood',

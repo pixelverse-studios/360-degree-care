@@ -7,6 +7,7 @@
 ## Quick Reference
 
 ### Tech Stack
+
 - **Framework:** Next.js 14 (App Router)
 - **Language:** TypeScript
 - **Styling:** Tailwind CSS + class-variance-authority
@@ -16,6 +17,7 @@
 - **Analytics:** Google Tag Manager, SiteBehaviour, Umami
 
 ### Key Commands
+
 ```bash
 npm install              # Install dependencies
 npm run dev             # Start dev server (localhost:3000)
@@ -25,6 +27,7 @@ npm run lint            # Run ESLint checks
 ```
 
 ### Environment Variables
+
 ```bash
 # Required for contact forms
 NEXT_PUBLIC_API_HOST    # CRM API base URL (e.g., https://api.yourdomain.com)
@@ -43,14 +46,16 @@ Store in `.env.local` (git-ignored). Only `NEXT_PUBLIC_*` variables are exposed 
 ## Architecture Overview
 
 ### Core Layout Structure
+
 `src/app/layout.tsx` provides global infrastructure:
+
 - Injects fonts and global styles
 - Mounts Google Tag Manager and SiteBehaviour scripts
 - Wraps all pages with:
-  - `RouteStateProvider` (route change tracking)
-  - `CampaignTracker` (UTM attribution)
-  - Shared navigation, breadcrumbs, footer
-  - Toast notification system
+    - `RouteStateProvider` (route change tracking)
+    - `CampaignTracker` (UTM attribution)
+    - Shared navigation, breadcrumbs, footer
+    - Toast notification system
 
 ### Project Structure
 
@@ -96,14 +101,16 @@ docs/                           # Markdown documentation
 ### 1. Server vs Client Components
 
 **Default to Server Components:**
+
 ```tsx
 // ✅ Server component (default)
 export default function ServicePage({ params }) {
-  return <ServiceHub service={params.service} />
+    return <ServiceHub service={params.service} />
 }
 ```
 
 **Only use `'use client'` when necessary:**
+
 ```tsx
 // ✅ Client component (requires interactivity)
 'use client'
@@ -112,6 +119,7 @@ export default function ContactForm() { ... }
 ```
 
 **When to use client components:**
+
 - Forms with React Hook Form
 - Browser APIs (localStorage, window)
 - Interactive libraries (toasts, animations)
@@ -121,6 +129,7 @@ export default function ContactForm() { ... }
 ### 2. Content Architecture
 
 **Centralized structured content:**
+
 ```
 src/lib/content/
 ├── counties/           # County-specific data
@@ -131,6 +140,7 @@ src/lib/blogs/articles/ # Blog posts as TypeScript modules
 ```
 
 **When updating content:**
+
 1. Update the TypeScript module in `src/lib/content/**`
 2. Update corresponding component in `src/components/county/**` or `src/components/[feature]/**`
 3. Keep data and UI in sync
@@ -138,11 +148,13 @@ src/lib/blogs/articles/ # Blog posts as TypeScript modules
 ### 3. Contact Form System
 
 All contact forms use `ContactMap` in `src/utils/contact.ts`:
+
 - Centralizes schemas, defaults, and copy
 - Provides React Hook Form + Zod validation
 - Maintains consistent form behavior
 
 **When adding a new contact form:**
+
 1. Add entry to `ContactMap` in `src/utils/contact.ts`
 2. Create route under `src/app/contact/`
 3. Use `ContactForm` component with appropriate props
@@ -151,15 +163,17 @@ All contact forms use `ContactMap` in `src/utils/contact.ts`:
 ### 4. Analytics & Campaign Tracking
 
 **UTM parameter flow:**
+
 1. User visits with UTM params (e.g., `?utm_source=google&utm_campaign=spring2024`)
 2. `src/middleware.ts` captures params → sets `campaign_data` cookie
 3. `CampaignTracker` reads cookie → stores in `localStorage.campaign_history`
 4. `analytics.ts` pushes events to:
-   - `window.dataLayer` (Google Tag Manager)
-   - `window.umami` (Umami Analytics)
-   - SiteBehaviour custom events
+    - `window.dataLayer` (Google Tag Manager)
+    - `window.umami` (Umami Analytics)
+    - SiteBehaviour custom events
 
 **When touching analytics:**
+
 - Thread changes through `RouteStateProvider`, `CampaignTracker`, and `analytics.ts`
 - Preserve attribution reporting chain
 - Test with UTM parameters and inspect cookies/localStorage
@@ -171,143 +185,148 @@ All contact forms use `ContactMap` in `src/utils/contact.ts`:
 ### Adding a New Service Page
 
 1. **Create structured content:**
-   ```typescript
-   // src/lib/content/services/new-service.ts
-   export const newServiceContent = {
-     name: "New Service",
-     description: "Service description...",
-     benefits: [...],
-     faqs: [...]
-   }
-   ```
+
+    ```typescript
+    // src/lib/content/services/new-service.ts
+    export const newServiceContent = {
+      name: "New Service",
+      description: "Service description...",
+      benefits: [...],
+      faqs: [...]
+    }
+    ```
 
 2. **Create the route:**
-   ```tsx
-   // src/app/services/new-service/page.tsx
-   export default function NewServicePage() {
-     return <ServiceHub service="new-service" />
-   }
-   ```
+
+    ```tsx
+    // src/app/services/new-service/page.tsx
+    export default function NewServicePage() {
+        return <ServiceHub service="new-service" />
+    }
+    ```
 
 3. **Update navigation:**
-   - Add to `src/utils/routes.ts`
-   - Update `next-sitemap.config.ts`
+    - Add to `src/utils/routes.ts`
+    - Update `next-sitemap.config.ts`
 
 4. **Build and verify:**
-   ```bash
-   npm run build  # Check sitemap generation
-   npm run dev    # Manual verification
-   ```
+    ```bash
+    npm run build  # Check sitemap generation
+    npm run dev    # Manual verification
+    ```
 
 ### Adding a County-Specific Service Page
 
 1. **Create county content:**
-   ```typescript
-   // src/lib/content/counties/new-county.ts
-   export const newCountyContent = {
-     name: "New County",
-     description: "...",
-     services: [...],
-     demographics: {...}
-   }
-   ```
+
+    ```typescript
+    // src/lib/content/counties/new-county.ts
+    export const newCountyContent = {
+      name: "New County",
+      description: "...",
+      services: [...],
+      demographics: {...}
+    }
+    ```
 
 2. **Create county component:**
-   ```tsx
-   // src/components/county/NewCountySection.tsx
-   export function NewCountySection({ service }) {
-     // County-specific UI
-   }
-   ```
+
+    ```tsx
+    // src/components/county/NewCountySection.tsx
+    export function NewCountySection({ service }) {
+        // County-specific UI
+    }
+    ```
 
 3. **Create the route:**
-   ```tsx
-   // src/app/services/[service]/new-county/page.tsx
-   export default function ServiceInNewCounty({ params }) {
-     return <CountyServiceHub
-       service={params.service}
-       county="new-county"
-     />
-   }
-   ```
+
+    ```tsx
+    // src/app/services/[service]/new-county/page.tsx
+    export default function ServiceInNewCounty({ params }) {
+        return <CountyServiceHub service={params.service} county="new-county" />
+    }
+    ```
 
 4. **Update sitemap:**
-   - Add route to `next-sitemap.config.ts`
+    - Add route to `next-sitemap.config.ts`
 
 ### Adding a Blog Post
 
 1. **Create article module:**
-   ```typescript
-   // src/lib/blogs/articles/new-post.ts
-   export const newPost = {
-     slug: "new-post",
-     title: "Post Title",
-     excerpt: "Brief description...",
-     content: "Full content...",
-     publishedAt: "2025-11-22",
-     author: "Author Name"
-   }
-   ```
+
+    ```typescript
+    // src/lib/blogs/articles/new-post.ts
+    export const newPost = {
+        slug: 'new-post',
+        title: 'Post Title',
+        excerpt: 'Brief description...',
+        content: 'Full content...',
+        publishedAt: '2025-11-22',
+        author: 'Author Name'
+    }
+    ```
 
 2. **Export from index:**
-   ```typescript
-   // src/lib/blogs/articles/index.ts
-   export * from './new-post'
-   ```
+
+    ```typescript
+    // src/lib/blogs/articles/index.ts
+    export * from './new-post'
+    ```
 
 3. **Route is automatic:**
-   - Dynamic route exists: `src/app/blog/[slug]/page.tsx`
-   - Sitemap auto-includes all blog posts
+    - Dynamic route exists: `src/app/blog/[slug]/page.tsx`
+    - Sitemap auto-includes all blog posts
 
 ### Updating SEO Metadata
 
 1. **Update page metadata:**
-   ```tsx
-   // src/app/services/[service]/page.tsx
-   export async function generateMetadata({ params }) {
-     return {
-       title: "Service Title - 360 Degree Care",
-       description: "Service description for SEO...",
-       openGraph: {
-         title: "...",
-         description: "...",
-         images: ["/og-image.jpg"]
-       }
-     }
-   }
-   ```
+
+    ```tsx
+    // src/app/services/[service]/page.tsx
+    export async function generateMetadata({ params }) {
+        return {
+            title: 'Service Title - 360 Degree Care',
+            description: 'Service description for SEO...',
+            openGraph: {
+                title: '...',
+                description: '...',
+                images: ['/og-image.jpg']
+            }
+        }
+    }
+    ```
 
 2. **Document changes:**
-   - Log SEO updates in `docs/seo/`
-   - Keep `/docs/seo` page current
+    - Log SEO updates in `docs/seo/`
+    - Keep `/docs/seo` page current
 
 ### Styling Components
 
 **Use Tailwind utility classes:**
+
 ```tsx
 <div className="flex items-center gap-4 p-6 bg-white rounded-lg shadow-md">
-  <h2 className="text-2xl font-bold text-gray-900">Title</h2>
+    <h2 className="text-2xl font-bold text-gray-900">Title</h2>
 </div>
 ```
 
 **For variants, use class-variance-authority:**
+
 ```tsx
 import { cva } from 'class-variance-authority'
 
-const buttonVariants = cva(
-  "px-4 py-2 rounded-md font-medium",
-  {
+const buttonVariants = cva('px-4 py-2 rounded-md font-medium', {
     variants: {
-      variant: {
-        primary: "bg-blue-600 text-white",
-        secondary: "bg-gray-200 text-gray-900"
-      }
+        variant: {
+            primary: 'bg-blue-600 text-white',
+            secondary: 'bg-gray-200 text-gray-900'
+        }
     }
-  }
-)
+})
 ```
 
 **Reuse existing patterns:**
+
 - Check `src/components/ui/` for existing components
 - Follow established Radix wrapper patterns
 - Maintain consistency with current design system
@@ -321,52 +340,58 @@ const buttonVariants = cva(
 This file is automatically processed by a Git pre-push hook that sends deployment data to the PVS API and triggers an email notification. Keep summaries concise and non-technical.
 
 ### When to Update
+
 - After completing any feature, fix, or enhancement
 - Before waiting for user to commit/push changes
 - Each time you finish a discrete unit of work
 - **MUST include all affected URLs** in the "Changed URLs" section
 
 ### File Format
+
 The file has **three required sections**:
 
 1. **Latest deploy summary** - Client-facing changes (sent in email)
-   - Use markdown formatting (bullet points, **bold**, *italic*)
-   - Write in plain language (non-technical summaries)
-   - Focus on WHAT changed, not HOW it was implemented
+    - Use markdown formatting (bullet points, **bold**, _italic_)
+    - Write in plain language (non-technical summaries)
+    - Focus on WHAT changed, not HOW it was implemented
 
 2. **Notes for internal team** - Technical details (NOT sent in email)
-   - Use markdown formatting
-   - Include environment variables, technical notes, internal tasks
-   - This section is stored but NOT sent to clients
+    - Use markdown formatting
+    - Include environment variables, technical notes, internal tasks
+    - This section is stored but NOT sent to clients
 
 3. **Changed URLs** - List all affected page URLs
-   - Use bullet points (- https://www.360degreecare.net/page)
-   - Include full URLs with protocol
-   - These URLs are tracked for Google Search Console re-indexing
+    - Use bullet points (- https://www.360degreecare.net/page)
+    - Include full URLs with protocol
+    - These URLs are tracked for Google Search Console re-indexing
 
 ### Example Good Entries
+
 - "Added contact form with email notifications"
 - "Fixed mobile navigation menu bug"
 - "Updated homepage hero section with new imagery"
 
 ### Example Bad Entries
+
 - "Implemented React Hook Form with Zod validation schema"
 - "Refactored Button component to use Tailwind variants"
 
 ### How It Works
+
 1. Complete your work on a feature/task
 2. Update `docs/deployment_summary.md`:
-   - Add user-friendly bullet points to "Latest deploy summary"
-   - Add technical details to "Notes for internal team" (optional)
-   - Add all affected URLs to "Changed URLs"
+    - Add user-friendly bullet points to "Latest deploy summary"
+    - Add technical details to "Notes for internal team" (optional)
+    - Add all affected URLs to "Changed URLs"
 3. Commit your code
 4. Run `git push` - the pre-push hook will:
-   - Read deployment_summary.md
-   - Send data to PVS API
-   - Trigger email notification
-   - Automatically reset the file to template
+    - Read deployment_summary.md
+    - Send data to PVS API
+    - Trigger email notification
+    - Automatically reset the file to template
 
 ### Setup (One-Time)
+
 ```bash
 node scripts/install-hooks.js
 ```
@@ -378,6 +403,7 @@ This installs the Git pre-push hook that handles deployment tracking automatical
 ## Critical Guidelines
 
 ### DO:
+
 - ✅ Default to server components
 - ✅ Centralize content in `src/lib/content/**`
 - ✅ Use `ContactMap` for all forms
@@ -389,6 +415,7 @@ This installs the Git pre-push hook that handles deployment tracking automatical
 - ✅ **Update `docs/deployment_summary.md` after completing features**
 
 ### DON'T:
+
 - ❌ Add `'use client'` unnecessarily
 - ❌ Hardcode content in components (use content modules)
 - ❌ Create forms without using `ContactMap`
@@ -403,7 +430,7 @@ This installs the Git pre-push hook that handles deployment tracking automatical
 ## Route Reference
 
 | Route | Type | Purpose | Component |
-|-------|------|---------|-----------|
+| --- | --- | --- | --- |
 | `/` | Static | Homepage with hero, services, testimonials | `src/app/page.tsx` |
 | `/services/[service]` | Client | Service hub with benefits, FAQs | `src/app/services/[service]/page.tsx` |
 | `/services/[service]/[county]` | Static | County-specific service landing pages | `src/app/services/[service]/[county]/page.tsx` |
@@ -419,6 +446,7 @@ This installs the Git pre-push hook that handles deployment tracking automatical
 ## Data Flow
 
 ### Contact Form Submission
+
 ```
 User fills form
   ↓
@@ -431,6 +459,7 @@ Failure: Error toast + field validation
 ```
 
 ### Campaign Attribution
+
 ```
 User visits with UTM params
   ↓
@@ -444,6 +473,7 @@ Events pushed to dataLayer, umami, SiteBehaviour
 ```
 
 ### Static Generation
+
 ```
 Build time (npm run build)
   ↓
@@ -464,6 +494,7 @@ Static files ready for deployment
 ## Testing & Validation
 
 ### Manual Testing Checklist
+
 - [ ] `npm run dev` - Verify all pages render
 - [ ] Service hubs and county pages load without 404s
 - [ ] Contact forms submit successfully
@@ -474,6 +505,7 @@ Static files ready for deployment
 - [ ] Breadcrumbs update per route
 
 ### Build Validation
+
 ```bash
 npm run lint           # Check TypeScript/ESLint
 npm run build         # Verify build succeeds
@@ -482,6 +514,7 @@ ls -la public/*.xml   # Verify sitemap generation
 ```
 
 ### Campaign Tracking Test
+
 ```bash
 # Visit with UTM params
 open "http://localhost:3000?utm_source=test&utm_medium=email&utm_campaign=test2024"
@@ -497,12 +530,14 @@ open "http://localhost:3000?utm_source=test&utm_medium=email&utm_campaign=test20
 ## Known Issues & TODOs
 
 ### Current Gaps
+
 1. **Metadata placeholders** - `src/app/layout.tsx` has placeholder description and OG image marked `// TODO: UPDATE`
 2. **SiteBehaviour/Umami guards** - Assumes global tracking functions exist; no fallbacks if scripts fail to load
 3. **Temp credentials** - `src/utils/constants.ts` contains operational notes that should be scrubbed
 4. **Environment validation** - No build-time checks for `NEXT_PUBLIC_API_HOST` and `NEXT_PUBLIC_SLUG`
 
 ### When Addressing TODOs
+
 - Update root `layout.tsx` with final marketing copy
 - Add guards for analytics globals (check `typeof window.dataLayer !== 'undefined'`)
 - Remove sensitive comments from constants file
@@ -515,40 +550,155 @@ open "http://localhost:3000?utm_source=test&utm_medium=email&utm_campaign=test20
 **IMPORTANT: Review `docs/seo-remediation-plan.md` before doing any SEO-related work.**
 
 This site is undergoing active SEO remediation to recover from historical indexing issues. The plan documents:
-- Current strategy: Dominate Bergen County before expanding
+
+- Current strategy: **Hyper-Local Town-First** (City → County → State)
 - Phase-by-phase implementation checklist
 - What's been completed vs what's pending
 - Technical decisions made (redirects, sitemap exclusions, schema markup)
 
-### Current SEO Status (as of 2025-11-30)
+### Strategy: Win Town-by-Town
 
-**Completed (Phases 1-2):**
+```
+WIN FIRST:   City Pages     → "companion care fort lee nj"
+THEN WIN:    County Hubs    → "companion care bergen county nj"
+FUTURE:      Service Hubs   → "companion care nj" (keep broad)
+```
+
+**City Priority Order:** Fort Lee → Ridgewood → Paramus → Hackensack → remaining cities
+
+### Current SEO Status (as of 2025-12-01)
+
+**Completed (Phase 0 - Foundation):**
+
 - ✅ Legacy URL redirects in `next.config.mjs`
 - ✅ Sitemap reduced to ~118 quality pages (Bergen County focus)
 - ✅ GSC URL prefix removals requested for old/dead URLs
 - ✅ FAQ schema added to `/faq` page
-- ✅ LocalBusiness schema added to Bergen County pages
+- ✅ LocalBusiness schema framework added
 - ✅ NAP consistency fixed: `(201) 299-4243` everywhere
 - ✅ Manual indexing requested for priority Bergen County URLs
 
-**Pending (Phase 3+):**
-- Content optimization for Bergen County city pages
-- Internal linking improvements
-- Review/testimonial schema markup
-- Expansion to other counties (after Bergen dominance)
+**In Progress (Week 1 Sprint - Dec 1-7):**
+
+- City page optimization (Fort Lee first, then Ridgewood, Paramus)
+- Internal linking from service hubs to city pages
+- City-specific LocalBusiness schema verification
+
+**Pending (Week 2+):**
+
+- BreadcrumbList schema
+- Cross-linking between city pages
+- Content differentiation for city pages
+- Expansion to other counties (only after Bergen is winning)
 
 ### Key SEO Files
+
 | File | Purpose |
-|------|---------|
+| --- | --- |
 | `docs/seo-remediation-plan.md` | Master SEO strategy and progress tracking |
 | `src/lib/seo/local-business-schema.ts` | Centralized business info for consistent NAP |
 | `src/app/faq/layout.tsx` | FAQ page with FAQPage schema |
 | `next-sitemap.config.mjs` | Controls which pages appear in sitemap |
 
 ### NAP (Name, Address, Phone) - Use Consistently
+
 - **Phone:** (201) 299-4243
 - **Address:** 27 Chestnut Street, Ridgewood, NJ 07450
 - **Email:** info@360degreecare.net
+
+### Service Area Schema Strategy
+
+**CRITICAL: Follow this hierarchical approach for all service page structured data**
+
+When implementing `areaServed` schema markup, use different specificity levels based on page type. This maximizes local SEO impact and helps search engines understand service coverage breadth and depth.
+
+#### Schema Hierarchy Rules
+
+| Page Type | Schema Type | Purpose |
+| --- | --- | --- |
+| **Main Service Pages**<br>`/services/[service]` | `AdministrativeArea` array | Signals broad geographic coverage across all regions |
+| **County Pages**<br>`/services/[service]/[county]` | Single `AdministrativeArea` | Targets county-specific searches |
+| **City Pages**<br>`/services/[service]/[county]/[city]` | `City` with `PostalAddress` | Hyper-local targeting with maximum detail |
+
+#### Implementation Examples
+
+**1. Main Service Page Schema:**
+
+```json
+{
+    "@type": "Service",
+    "areaServed": [
+        { "@type": "AdministrativeArea", "name": "Bergen County, New Jersey" },
+        {
+            "@type": "AdministrativeArea",
+            "name": "Monmouth County, New Jersey"
+        },
+        { "@type": "AdministrativeArea", "name": "Passaic County, New Jersey" },
+        { "@type": "AdministrativeArea", "name": "Ocean County, New Jersey" }
+    ]
+}
+```
+
+**2. County Page Schema:**
+
+```json
+{
+    "@type": "Service",
+    "areaServed": {
+        "@type": "AdministrativeArea",
+        "name": "Bergen County, New Jersey"
+    }
+}
+```
+
+**3. City Page Schema (CURRENT IMPLEMENTATION):**
+
+```json
+{
+    "@type": "Service",
+    "areaServed": {
+        "@type": "City",
+        "name": "Fort Lee",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Fort Lee",
+            "addressRegion": "NJ",
+            "addressCountry": "US"
+        }
+    }
+}
+```
+
+#### When to Audit/Update
+
+- [ ] **Main service pages** (`/services/personal-care`, etc.) should use `AdministrativeArea` array
+- [ ] **County pages** (`/services/personal-care/bergen-county`, etc.) should use single `AdministrativeArea`
+- [ ] **City pages** already correctly use `City` with full `PostalAddress` ✅
+- [ ] Validate all schemas using Google Rich Results Test
+- [ ] Update `docs/deployment_summary.md` with affected URLs when changing schemas
+
+#### Why This Matters
+
+1. **Geographic Targeting** - Search engines understand full service scope vs. specific coverage
+2. **Local Search Rankings** - Appropriate schema granularity for each geographic level
+3. **Breadth Signals** - Demonstrates established presence across regions
+4. **Rich Results** - Better chance of location-based search features
+5. **User Intent Matching** - Different schema matches different search intents
+
+#### Schema Validation Checklist
+
+Before marking schema work complete:
+
+- [ ] All three page types use correct `areaServed` format
+- [ ] No duplicate/conflicting `areaServed` declarations on same page
+- [ ] `@id` links properly reference organization schema
+- [ ] Provider organization referenced via `@id` link
+- [ ] Validated in Google Rich Results Test
+- [ ] Documented in `docs/deployment_summary.md`
+
+---
+
+### NAP (Name, Address, Phone) - Use Consistently
 
 ---
 
@@ -581,6 +731,7 @@ cat public/sitemap-0.xml
 ## External Integrations
 
 ### CRM/Contact API
+
 - **Endpoint:** `${NEXT_PUBLIC_API_HOST}/v1/contact-forms/${NEXT_PUBLIC_SLUG}`
 - **Method:** POST
 - **Headers:** Content-Type: application/json
@@ -589,12 +740,14 @@ cat public/sitemap-0.xml
 - **Response:** Expected 200 on success with optional redirect URL
 
 ### Analytics Services
+
 - **Google Tag Manager** - Injected in `layout.tsx`, pushes to `window.dataLayer`
 - **SiteBehaviour** - Custom event tracking for behavior analytics
 - **Umami** - Privacy-focused analytics via `window.umami`
 - **Configuration:** All tracking IDs managed in respective script tags in `layout.tsx`
 
 ### Sitemap & SEO
+
 - **Generator:** `next-sitemap` package
 - **Config:** `next-sitemap.config.ts`
 - **Output:** `public/sitemap.xml` and `public/sitemap-*.xml`
@@ -606,7 +759,7 @@ cat public/sitemap-0.xml
 ## File Change Impact Matrix
 
 | When You Change... | Also Update... |
-|-------------------|---------------|
+| --- | --- |
 | Service content | `src/lib/content/services/**` + component + routes.ts + sitemap + deployment_summary |
 | County content | `src/lib/content/counties/**` + component + route + sitemap + deployment_summary |
 | Blog post | `src/lib/blogs/articles/**` + export from index + deployment_summary |
@@ -622,12 +775,14 @@ cat public/sitemap-0.xml
 ## AI Agent Best Practices
 
 ### When Starting a Task
+
 1. Read relevant content modules first (don't guess structure)
 2. Check existing patterns in similar components
 3. Verify route configuration before creating new pages
 4. Review current analytics integration if touching tracking
 
 ### When Making Changes
+
 1. Maintain server/client component boundaries
 2. Keep content centralized (never hardcode in components)
 3. Test forms end-to-end (validation + submission + toasts)
@@ -636,6 +791,7 @@ cat public/sitemap-0.xml
 6. **Update `docs/deployment_summary.md` with client-facing summary and affected URLs**
 
 ### When Debugging
+
 1. Check browser DevTools Console for errors
 2. Verify environment variables are set
 3. Inspect Network tab for failed API calls
@@ -644,6 +800,7 @@ cat public/sitemap-0.xml
 6. Validate ContactMap configuration for forms
 
 ### Code Review Checklist
+
 - [ ] Server components used where possible
 - [ ] No hardcoded content (uses content modules)
 - [ ] Forms use ContactMap schemas
@@ -659,6 +816,4 @@ cat public/sitemap-0.xml
 
 ---
 
-**Last Updated:** 2025-11-30
-**Next.js Version:** 14 (App Router)
-**Node Version:** 18+ recommended
+**Last Updated:** 2025-11-30 **Next.js Version:** 14 (App Router) **Node Version:** 18+ recommended

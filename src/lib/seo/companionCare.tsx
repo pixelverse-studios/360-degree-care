@@ -4,9 +4,12 @@ import Head from 'next/head'
 import Script from 'next/script'
 import { FaArrowRight } from 'react-icons/fa6'
 import { getImgSrc } from '../images'
+import { generateFAQSchema } from './faq-schema'
+import { COMPANION_CARE_FAQS } from '@/utils/faqs'
 
 const StaticCompanionCareData = {
     SeoHead: () => {
+        const faqSchema = generateFAQSchema(COMPANION_CARE_FAQS)
         const schema = {
             '@context': 'https://schema.org',
             '@type': 'Service',
@@ -133,6 +136,13 @@ const StaticCompanionCareData = {
                     id="ld-json-companion-care"
                     type="application/ld+json"
                     dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+                />
+                <Script
+                    id="ld-json-companion-care-faq"
+                    type="application/ld+json"
+                    dangerouslySetInnerHTML={{
+                        __html: JSON.stringify(faqSchema)
+                    }}
                 />
             </>
         )

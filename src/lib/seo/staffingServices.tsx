@@ -4,9 +4,12 @@ import Head from 'next/head'
 import Script from 'next/script'
 import { FaArrowRight } from 'react-icons/fa6'
 import { getImgSrc } from '../images'
+import { generateFAQSchema } from './faq-schema'
+import { STAFFING_SERVICES_FAQS } from '@/utils/faqs'
 
 const StaticStaffingServicesData = {
     SeoHead: () => {
+        const faqSchema = generateFAQSchema(STAFFING_SERVICES_FAQS)
         const schema = {
             '@context': 'https://schema.org',
             '@type': 'Service',
@@ -121,6 +124,13 @@ const StaticStaffingServicesData = {
                     id="ld-json-staffing-services"
                     type="application/ld+json"
                     dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+                />
+                <Script
+                    id="ld-json-staffing-services-faq"
+                    type="application/ld+json"
+                    dangerouslySetInnerHTML={{
+                        __html: JSON.stringify(faqSchema)
+                    }}
                 />
             </>
         )

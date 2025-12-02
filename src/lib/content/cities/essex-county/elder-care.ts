@@ -88,7 +88,15 @@ function buildCityContent(
             keywords: `elder care consulting ${cityName}, care planning ${cityName}, senior guidance ${cityName}`,
             alternates: { canonical }
         },
-        schemaData: buildSchema(SERVICE_NAME, cityName),
+        schemaData: buildSchema(
+            SERVICE_NAME,
+            cityName,
+            ELDER_CARE_CONSULTING_FAQS,
+            {
+                serviceSlug: SERVICE_SLUG,
+                description: options.heroDescription
+            }
+        ),
         hero: {
             header: `Navigate Senior Care Decisions in ${cityName}`,
             description: options.heroDescription,

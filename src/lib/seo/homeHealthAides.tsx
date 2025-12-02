@@ -4,9 +4,12 @@ import Head from 'next/head'
 import Script from 'next/script'
 import { FaArrowRight } from 'react-icons/fa6'
 import { getImgSrc } from '../images'
+import { generateFAQSchema } from './faq-schema'
+import { HOME_HEALTH_AIDES_FAQS } from '@/utils/faqs'
 
 const StaticHomeHealthAidesData = {
     SeoHead: () => {
+        const faqSchema = generateFAQSchema(HOME_HEALTH_AIDES_FAQS)
         const schema = {
             '@context': 'https://schema.org',
             '@type': 'Service',
@@ -132,6 +135,13 @@ const StaticHomeHealthAidesData = {
                     id="ld-json-home-health-aides"
                     type="application/ld+json"
                     dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+                />
+                <Script
+                    id="ld-json-home-health-aides-faq"
+                    type="application/ld+json"
+                    dangerouslySetInnerHTML={{
+                        __html: JSON.stringify(faqSchema)
+                    }}
                 />
             </>
         )
