@@ -15,7 +15,7 @@ export const passaicCountyNursingContent: CountyPageContent = {
         '@type': 'MedicalBusiness',
         name: 'Private Duty Nursing in Passaic County',
         url: 'https://www.360degreecare.net',
-        telephone: '+1-800-338-7786',
+        telephone: '+1-201-299-4243',
         areaServed: 'Passaic County, NJ',
         description:
             'Registered nurses and LPNs providing complex medical care, chronic disease management, and family education across Passaic County.'
@@ -28,7 +28,7 @@ export const passaicCountyNursingContent: CountyPageContent = {
         description:
             'We transform Passaic County homes into safe recovery environments with skilled nursing oversight, advanced monitoring, and family coaching.',
         ctaButtonLabel: 'Request RN Support',
-        ctaValue: '800-338-7786',
+        ctaValue: '201-299-4243',
         imageSrc: 'nursing-services-hero',
         imageAlt: 'Private duty nurse visiting a patient in Passaic County NJ'
     },
@@ -141,6 +141,6 @@ export const passaicCountyNursingContent: CountyPageContent = {
             'We align with hospital discharge teams, coordinate equipment, and design a plan that keeps loved ones safe and comfortable at home.'
         ],
         buttonLabel: 'Arrange Private Duty Nursing',
-        value: '800-338-7786'
+        value: '201-299-4243'
     }
 }

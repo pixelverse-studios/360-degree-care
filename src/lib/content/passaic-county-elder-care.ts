@@ -21,7 +21,7 @@ export const passaicCountyElderCareContent: CountyPageContent = {
             logo: 'https://www.360degreecare.net/logo.png',
             contactPoint: {
                 '@type': 'ContactPoint',
-                telephone: '+1-800-338-7786',
+                telephone: '+1-201-299-4243',
                 contactType: 'customer service',
                 availableLanguage: 'en'
             }
@@ -46,7 +46,7 @@ export const passaicCountyElderCareContent: CountyPageContent = {
             '@type': 'ServiceChannel',
             serviceUrl:
                 'https://www.360degreecare.net/services/elder-care/passaic-county',
-            servicePhone: '+1-800-338-7786',
+            servicePhone: '+1-201-299-4243',
             availableLanguage: 'en'
         }
     },
@@ -58,7 +58,7 @@ export const passaicCountyElderCareContent: CountyPageContent = {
         description:
             'Our Concierge-Level™ consulting team evaluates needs, coordinates providers, and implements plans so aging adults receive the right care at the right time.',
         ctaButtonLabel: 'Talk to a Care Consultant',
-        ctaValue: '800-338-7786',
+        ctaValue: '201-299-4243',
         imageSrc: 'elder-care-consulting-hero',
         imageAlt: 'Elder care consultant meeting with family in Passaic County'
     },
@@ -172,6 +172,6 @@ export const passaicCountyElderCareContent: CountyPageContent = {
             'We remain by your side to coordinate providers, monitor progress, and adjust plans whenever circumstances change.'
         ],
         buttonLabel: 'Book a Consulting Session',
-        value: '800-338-7786'
+        value: '201-299-4243'
     }
 }

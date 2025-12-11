@@ -19,7 +19,7 @@ export const oceanCountyHomeHealthAidesContent: CountyPageContent = {
             name: '360 Degree Care',
             url: 'https://www.360degreecare.net',
             logo: 'https://www.360degreecare.net/logo.png',
-            telephone: '+1-800-338-7786',
+            telephone: '+1-201-299-4243',
             areaServed: 'Ocean County, NJ',
             availableLanguage: 'en'
         },
@@ -43,7 +43,7 @@ export const oceanCountyHomeHealthAidesContent: CountyPageContent = {
             '@type': 'ServiceChannel',
             serviceUrl:
                 'https://www.360degreecare.net/services/home-health-aides/ocean-county',
-            servicePhone: '+1-800-338-7786',
+            servicePhone: '+1-201-299-4243',
             availableLanguage: 'en'
         }
     },
@@ -55,7 +55,7 @@ export const oceanCountyHomeHealthAidesContent: CountyPageContent = {
         description:
             'Our Concierge-Level™ CHHAs support bathing, mobility, medication reminders, and chronic condition management so seniors can safely remain at home.',
         ctaButtonLabel: 'Schedule a CHHA Assessment',
-        ctaValue: '800-338-7786',
+        ctaValue: '201-299-4243',
         imageSrc: 'home-health-aides-hero',
         imageAlt: 'Home health aide assisting senior in Ocean County NJ'
     },
@@ -177,6 +177,6 @@ export const oceanCountyHomeHealthAidesContent: CountyPageContent = {
             'We manage introductions, onboarding, and ongoing supervision so your family experiences effortless, professional care.'
         ],
         buttonLabel: 'Get CHHA Support',
-        value: '800-338-7786'
+        value: '201-299-4243'
     }
 }

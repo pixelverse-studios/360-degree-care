@@ -15,7 +15,7 @@ export const essexCountyStaffingContent: CountyPageContent = {
         '@type': 'Organization',
         name: '360 Degree Care Staffing — Essex County',
         url: 'https://www.360degreecare.net',
-        telephone: '+1-800-338-7786',
+        telephone: '+1-201-299-4243',
         areaServed: 'Essex County, NJ',
         description:
             'Healthcare staffing agency providing caregivers, certified home health aides, nurses, and concierge support teams to Essex County providers and private clients.'
@@ -28,7 +28,7 @@ export const essexCountyStaffingContent: CountyPageContent = {
         description:
             'Our Essex County staffing bench includes bilingual clinicians, dementia specialists, and white-glove concierge personnel ready for assignments from Newark to Livingston.',
         ctaButtonLabel: 'Request Staffing Support',
-        ctaValue: '800-338-7786',
+        ctaValue: '201-299-4243',
         imageSrc: 'staffing-services-hero',
         imageAlt: 'Healthcare staffing professionals supporting Essex County NJ'
     },
@@ -144,6 +144,6 @@ export const essexCountyStaffingContent: CountyPageContent = {
             'Our team will curate a staffing plan that protects patient satisfaction, compliance, and operational continuity.'
         ],
         buttonLabel: 'Talk With Staffing Specialists',
-        value: '800-338-7786'
+        value: '201-299-4243'
     }
 }

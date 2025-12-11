@@ -15,7 +15,7 @@ export const oceanCountyNursingContent: CountyPageContent = {
         '@type': 'MedicalBusiness',
         name: 'Private Duty Nursing in Ocean County',
         url: 'https://www.360degreecare.net',
-        telephone: '+1-800-338-7786',
+        telephone: '+1-201-299-4243',
         areaServed: 'Ocean County, NJ',
         description:
             'Registered nurses and LPNs providing complex medical care, medication management, and family training throughout Ocean County.'
@@ -26,7 +26,7 @@ export const oceanCountyNursingContent: CountyPageContent = {
         description:
             'Our nursing team manages complex conditions, medication regimens, and transitions so Ocean County residents recover safely at home.',
         ctaButtonLabel: 'Request RN Support',
-        ctaValue: '800-338-7786',
+        ctaValue: '201-299-4243',
         imageSrc: 'nursing-services-hero',
         imageAlt: 'Private duty nurse visiting patient in Ocean County NJ'
     },
@@ -148,6 +148,6 @@ export const oceanCountyNursingContent: CountyPageContent = {
             'We coordinate equipment, align with discharge teams, and deliver a plan that keeps loved ones safe at home.'
         ],
         buttonLabel: 'Arrange Private Duty Nursing',
-        value: '800-338-7786'
+        value: '201-299-4243'
     }
 }

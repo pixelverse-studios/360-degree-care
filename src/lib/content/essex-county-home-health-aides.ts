@@ -19,7 +19,7 @@ export const essexCountyHomeHealthAidesContent: CountyPageContent = {
             name: '360 Degree Care',
             url: 'https://www.360degreecare.net',
             logo: 'https://www.360degreecare.net/logo.png',
-            telephone: '+1-800-338-7786',
+            telephone: '+1-201-299-4243',
             areaServed: 'Essex County, NJ',
             availableLanguage: 'en'
         },
@@ -43,7 +43,7 @@ export const essexCountyHomeHealthAidesContent: CountyPageContent = {
             '@type': 'ServiceChannel',
             serviceUrl:
                 'https://www.360degreecare.net/services/home-health-aides/essex-county',
-            servicePhone: '+1-800-338-7786',
+            servicePhone: '+1-201-299-4243',
             availableLanguage: 'en'
         }
     },
@@ -55,7 +55,7 @@ export const essexCountyHomeHealthAidesContent: CountyPageContent = {
         description:
             'Our Concierge-Level™ CHHA program provides hands-on personal care, mobility support, and clinical oversight so seniors can remain safe and independent at home.',
         ctaButtonLabel: 'Request Aide Coverage',
-        ctaValue: '800-338-7786',
+        ctaValue: '201-299-4243',
         imageSrc: 'home-health-aides-hero',
         imageAlt: 'Home health aide assisting senior in Essex County NJ'
     },
@@ -171,6 +171,6 @@ export const essexCountyHomeHealthAidesContent: CountyPageContent = {
             'Our team will match you with compassionate, credentialed professionals who keep your loved one safe at home.'
         ],
         buttonLabel: 'Start Home Health Aide Services',
-        value: '800-338-7786'
+        value: '201-299-4243'
     }
 }

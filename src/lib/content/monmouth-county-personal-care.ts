@@ -21,7 +21,7 @@ export const monmouthCountyPersonalCareContent: CountyPageContent = {
             logo: 'https://www.360degreecare.net/logo.png',
             contactPoint: {
                 '@type': 'ContactPoint',
-                telephone: '+1-800-338-7786',
+                telephone: '+1-201-299-4243',
                 contactType: 'customer service',
                 availableLanguage: 'en'
             }
@@ -47,7 +47,7 @@ export const monmouthCountyPersonalCareContent: CountyPageContent = {
             '@type': 'ServiceChannel',
             serviceUrl:
                 'https://www.360degreecare.net/services/personal-care/monmouth-county',
-            servicePhone: '+1-800-338-7786',
+            servicePhone: '+1-201-299-4243',
             availableLanguage: 'en'
         }
     },
@@ -59,7 +59,7 @@ export const monmouthCountyPersonalCareContent: CountyPageContent = {
         description:
             'Our Concierge-Level™ personal care team provides bathing assistance, mobility help, and hygiene support so Monmouth County seniors can live safely at home.',
         ctaButtonLabel: 'Book a Personal Care Assessment',
-        ctaValue: '800-338-7786',
+        ctaValue: '201-299-4243',
         imageSrc: 'personal-care-hero',
         imageAlt: 'Personal care services in Monmouth County NJ'
     },
@@ -193,6 +193,6 @@ export const monmouthCountyPersonalCareContent: CountyPageContent = {
             'Our Concierge-Level™ team coordinates schedules, introduces carefully matched aides, and keeps families updated every step of the way.'
         ],
         buttonLabel: 'Start Personal Care Planning',
-        value: '800-338-7786'
+        value: '201-299-4243'
     }
 }

@@ -15,7 +15,7 @@ export const oceanCountyStaffingContent: CountyPageContent = {
         '@type': 'Organization',
         name: '360 Degree Care Staffing',
         url: 'https://www.360degreecare.net',
-        telephone: '+1-800-338-7786',
+        telephone: '+1-201-299-4243',
         areaServed: 'Ocean County, NJ',
         description:
             'Healthcare staffing agency providing caregivers, certified aides, nurses, and concierge support teams for Ocean County facilities and private-duty clients.'
@@ -28,7 +28,7 @@ export const oceanCountyStaffingContent: CountyPageContent = {
         description:
             'From Toms River to Long Beach Island, we maintain a vetted workforce ready to cover census spikes, seasonal needs, and specialty requests.',
         ctaButtonLabel: 'Request Staffing Support',
-        ctaValue: '800-338-7786',
+        ctaValue: '201-299-4243',
         imageSrc: 'staffing-services-hero',
         imageAlt: 'Healthcare staffing professionals serving Ocean County NJ'
     },
@@ -150,6 +150,6 @@ export const oceanCountyStaffingContent: CountyPageContent = {
             'Our staffing specialists can launch support within 24 hours for urgent needs or develop a long-term pipeline for growth.'
         ],
         buttonLabel: 'Connect With Staffing Specialist',
-        value: '800-338-7786'
+        value: '201-299-4243'
     }
 }

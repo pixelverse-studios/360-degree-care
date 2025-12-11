@@ -21,7 +21,7 @@ export const monmouthCountyElderCareContent: CountyPageContent = {
             logo: 'https://www.360degreecare.net/logo.png',
             contactPoint: {
                 '@type': 'ContactPoint',
-                telephone: '+1-800-338-7786',
+                telephone: '+1-201-299-4243',
                 contactType: 'customer service',
                 availableLanguage: 'en'
             }
@@ -47,7 +47,7 @@ export const monmouthCountyElderCareContent: CountyPageContent = {
             '@type': 'ServiceChannel',
             serviceUrl:
                 'https://www.360degreecare.net/services/elder-care/monmouth-county',
-            servicePhone: '+1-800-338-7786',
+            servicePhone: '+1-201-299-4243',
             availableLanguage: 'en'
         }
     },
@@ -59,7 +59,7 @@ export const monmouthCountyElderCareContent: CountyPageContent = {
         description:
             'Navigate Monmouth County’s healthcare network with a dedicated advisor who oversees assessments, providers, and private-duty care through every stage of aging.',
         ctaButtonLabel: 'Talk to a Care Consultant',
-        ctaValue: '800-338-7786',
+        ctaValue: '201-299-4243',
         imageSrc: 'elder-care-consulting-hero',
         imageAlt: 'Elder care consulting meeting in Monmouth County NJ'
     },
@@ -194,6 +194,6 @@ export const monmouthCountyElderCareContent: CountyPageContent = {
             'Within days you will receive a customized roadmap, resource introductions, and a dedicated consultant ready to guide implementation.'
         ],
         buttonLabel: 'Book a Consulting Session',
-        value: '800-338-7786'
+        value: '201-299-4243'
     }
 }

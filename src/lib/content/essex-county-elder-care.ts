@@ -21,7 +21,7 @@ export const essexCountyElderCareContent: CountyPageContent = {
             logo: 'https://www.360degreecare.net/logo.png',
             contactPoint: {
                 '@type': 'ContactPoint',
-                telephone: '+1-800-338-7786',
+                telephone: '+1-201-299-4243',
                 contactType: 'customer service',
                 availableLanguage: 'en'
             }
@@ -46,7 +46,7 @@ export const essexCountyElderCareContent: CountyPageContent = {
             '@type': 'ServiceChannel',
             serviceUrl:
                 'https://www.360degreecare.net/services/elder-care/essex-county',
-            servicePhone: '+1-800-338-7786',
+            servicePhone: '+1-201-299-4243',
             availableLanguage: 'en'
         }
     },
@@ -58,7 +58,7 @@ export const essexCountyElderCareContent: CountyPageContent = {
         description:
             'Our Concierge-Level™ consultants help you navigate hospital discharges, home safety concerns, dementia planning, and long-term support options with clarity and confidence.',
         ctaButtonLabel: 'Book an Elder Care Consultation',
-        ctaValue: '800-338-7786',
+        ctaValue: '201-299-4243',
         imageSrc: 'elder-care-hero',
         imageAlt: 'Elder care consultant meeting with Essex County family'
     },
@@ -175,6 +175,6 @@ export const essexCountyElderCareContent: CountyPageContent = {
             'Our RN consultants will answer every question, outline practical next steps, and stay by your side as the plan unfolds.'
         ],
         buttonLabel: 'Schedule Consultation',
-        value: '800-338-7786'
+        value: '201-299-4243'
     }
 }

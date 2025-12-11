@@ -28,13 +28,13 @@ const AboutSeoHead = () => {
             hasCredential: 'Licensed by the State Attorney General',
             address: {
                 '@type': 'PostalAddress',
-                streetAddress: '27 Chestnut Street, Floor 1',
+                streetAddress: '27 Chestnut Street',
                 addressLocality: 'Ridgewood',
                 addressRegion: 'NJ',
                 postalCode: '07450',
                 addressCountry: 'US'
             },
-            telephone: '(800) 338-7786',
+            telephone: '(201) 299-4243',
             sameAs: [
                 'https://www.facebook.com/profile.php?id=61574893462190',
                 'https://www.instagram.com/360degreecarenj/'

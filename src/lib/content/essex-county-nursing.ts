@@ -15,7 +15,7 @@ export const essexCountyNursingContent: CountyPageContent = {
         '@type': 'MedicalBusiness',
         name: 'Private Duty Nursing in Essex County',
         url: 'https://www.360degreecare.net',
-        telephone: '+1-800-338-7786',
+        telephone: '+1-201-299-4243',
         areaServed: 'Essex County, NJ',
         description:
             'Registered nurses and LPNs providing complex medical oversight, infusion therapy, wound care, and chronic disease management across Essex County.'
@@ -28,7 +28,7 @@ export const essexCountyNursingContent: CountyPageContent = {
         description:
             'We transform Essex County homes into safe clinical environments, managing ventilators, infusions, and complex medications while keeping families fully informed.',
         ctaButtonLabel: 'Request RN Support',
-        ctaValue: '800-338-7786',
+        ctaValue: '201-299-4243',
         imageSrc: 'nursing-services-hero',
         imageAlt: 'Private duty nurse providing care in Essex County NJ'
     },
@@ -144,6 +144,6 @@ export const essexCountyNursingContent: CountyPageContent = {
             'Our team will assemble the right mix of RNs and LPNs to stabilize health, prevent complications, and support your entire family.'
         ],
         buttonLabel: 'Plan Nursing Coverage',
-        value: '800-338-7786'
+        value: '201-299-4243'
     }
 }

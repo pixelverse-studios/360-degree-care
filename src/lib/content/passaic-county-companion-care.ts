@@ -21,7 +21,7 @@ export const passaicCountyCompanionCareContent: CountyPageContent = {
             logo: 'https://www.360degreecare.net/logo.png',
             contactPoint: {
                 '@type': 'ContactPoint',
-                telephone: '+1-800-338-7786',
+                telephone: '+1-201-299-4243',
                 contactType: 'customer service',
                 availableLanguage: 'en'
             }
@@ -46,7 +46,7 @@ export const passaicCountyCompanionCareContent: CountyPageContent = {
             '@type': 'ServiceChannel',
             serviceUrl:
                 'https://www.360degreecare.net/services/companion-care/passaic-county',
-            servicePhone: '+1-800-338-7786',
+            servicePhone: '+1-201-299-4243',
             availableLanguage: 'en'
         }
     },
@@ -58,7 +58,7 @@ export const passaicCountyCompanionCareContent: CountyPageContent = {
         description:
             'From the Paterson Great Falls to the trails of Ringwood State Park, our companions help seniors stay active, social, and supported in the Passaic County places they love.',
         ctaButtonLabel: 'Schedule a Companion Visit',
-        ctaValue: '800-338-7786',
+        ctaValue: '201-299-4243',
         imageSrc: 'companion-care-hero',
         imageAlt: 'Companion care services in Passaic County NJ'
     },
@@ -171,6 +171,6 @@ export const passaicCountyCompanionCareContent: CountyPageContent = {
             'We arrange introductions, confirm schedules, and provide detailed updates so you feel confident every step of the way.'
         ],
         buttonLabel: 'Plan Companion Support',
-        value: '800-338-7786'
+        value: '201-299-4243'
     }
 }

@@ -65,7 +65,7 @@ export const bergenCountyNursingContent: ServiceCountyPageContent = {
             telephone: '(201) 299-4243',
             address: {
                 '@type': 'PostalAddress',
-                streetAddress: '27 Chestnut Street, Floor 1',
+                streetAddress: '27 Chestnut Street',
                 addressLocality: 'Ridgewood',
                 addressRegion: 'NJ',
                 postalCode: '07450',

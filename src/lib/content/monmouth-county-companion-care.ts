@@ -21,7 +21,7 @@ export const monmouthCountyCompanionCareContent: CountyPageContent = {
             logo: 'https://www.360degreecare.net/logo.png',
             contactPoint: {
                 '@type': 'ContactPoint',
-                telephone: '+1-800-338-7786',
+                telephone: '+1-201-299-4243',
                 contactType: 'customer service',
                 availableLanguage: 'en'
             }
@@ -47,7 +47,7 @@ export const monmouthCountyCompanionCareContent: CountyPageContent = {
             '@type': 'ServiceChannel',
             serviceUrl:
                 'https://www.360degreecare.net/services/companion-care/monmouth-county',
-            servicePhone: '+1-800-338-7786',
+            servicePhone: '+1-201-299-4243',
             availableLanguage: 'en'
         }
     },
@@ -59,7 +59,7 @@ export const monmouthCountyCompanionCareContent: CountyPageContent = {
         description:
             'From coffee in Red Bank to sunset strolls on the Asbury Park boardwalk, our companions help seniors stay engaged with the Monmouth County communities they love.',
         ctaButtonLabel: 'Schedule a Companion Visit',
-        ctaValue: '800-338-7786',
+        ctaValue: '201-299-4243',
         imageSrc: 'companion-care-hero',
         imageAlt: 'Companion care services for seniors in Monmouth County NJ'
     },
@@ -193,6 +193,6 @@ export const monmouthCountyCompanionCareContent: CountyPageContent = {
             'We can arrange introductions, same-week starts, and specialized companionship tailored to memory care, mobility challenges, or simply a need for meaningful friendship.'
         ],
         buttonLabel: 'Plan Companion Support',
-        value: '800-338-7786'
+        value: '201-299-4243'
     }
 }

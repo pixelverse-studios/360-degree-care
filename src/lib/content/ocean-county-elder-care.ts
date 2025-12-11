@@ -21,7 +21,7 @@ export const oceanCountyElderCareContent: CountyPageContent = {
             logo: 'https://www.360degreecare.net/logo.png',
             contactPoint: {
                 '@type': 'ContactPoint',
-                telephone: '+1-800-338-7786',
+                telephone: '+1-201-299-4243',
                 contactType: 'customer service',
                 availableLanguage: 'en'
             }
@@ -46,7 +46,7 @@ export const oceanCountyElderCareContent: CountyPageContent = {
             '@type': 'ServiceChannel',
             serviceUrl:
                 'https://www.360degreecare.net/services/elder-care/ocean-county',
-            servicePhone: '+1-800-338-7786',
+            servicePhone: '+1-201-299-4243',
             availableLanguage: 'en'
         }
     },
@@ -57,7 +57,7 @@ export const oceanCountyElderCareContent: CountyPageContent = {
         description:
             'Our Concierge-Level™ consultants evaluate needs, design actionable plans, and stay by your side to implement every step.',
         ctaButtonLabel: 'Talk to a Care Consultant',
-        ctaValue: '800-338-7786',
+        ctaValue: '201-299-4243',
         imageSrc: 'elder-care-consulting-hero',
         imageAlt: 'Elder care consultant meeting with family in Ocean County'
     },
@@ -174,6 +174,6 @@ export const oceanCountyElderCareContent: CountyPageContent = {
             'We remain involved to coordinate providers, monitor progress, and adjust plans whenever circumstances shift.'
         ],
         buttonLabel: 'Book a Consulting Session',
-        value: '800-338-7786'
+        value: '201-299-4243'
     }
 }

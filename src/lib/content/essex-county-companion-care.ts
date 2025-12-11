@@ -21,7 +21,7 @@ export const essexCountyCompanionCareContent: CountyPageContent = {
             logo: 'https://www.360degreecare.net/logo.png',
             contactPoint: {
                 '@type': 'ContactPoint',
-                telephone: '+1-800-338-7786',
+                telephone: '+1-201-299-4243',
                 contactType: 'customer service',
                 availableLanguage: 'en'
             }
@@ -45,7 +45,7 @@ export const essexCountyCompanionCareContent: CountyPageContent = {
             '@type': 'ServiceChannel',
             serviceUrl:
                 'https://www.360degreecare.net/services/companion-care/essex-county',
-            servicePhone: '+1-800-338-7786',
+            servicePhone: '+1-201-299-4243',
             availableLanguage: 'en'
         }
     },
@@ -57,7 +57,7 @@ export const essexCountyCompanionCareContent: CountyPageContent = {
         description:
             'From NJPAC performances to quiet afternoons in South Mountain Reservation, we tailor companion visits that match each person’s interests, energy level, and mobility.',
         ctaButtonLabel: 'Schedule a Companion Introduction',
-        ctaValue: '800-338-7786',
+        ctaValue: '201-299-4243',
         imageSrc: 'companion-care-hero',
         imageAlt:
             'Companion enjoying conversation with senior in Essex County NJ'
@@ -174,6 +174,6 @@ export const essexCountyCompanionCareContent: CountyPageContent = {
             'We will match your family with a companion who brings warmth, reliability, and meaningful engagement to every visit.'
         ],
         buttonLabel: 'Plan Companion Visits',
-        value: '800-338-7786'
+        value: '201-299-4243'
     }
 }

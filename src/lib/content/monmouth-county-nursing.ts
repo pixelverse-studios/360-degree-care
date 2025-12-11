@@ -15,7 +15,7 @@ export const monmouthCountyNursingContent: CountyPageContent = {
         '@type': 'MedicalBusiness',
         name: 'Private Duty Nursing Services in Monmouth County',
         url: 'https://www.360degreecare.net',
-        telephone: '+1-800-338-7786',
+        telephone: '+1-201-299-4243',
         areaServed: 'Monmouth County, NJ',
         description:
             'Registered nurses providing complex medical care, medication management, and care coordination throughout Monmouth County, New Jersey.'
@@ -28,7 +28,7 @@ export const monmouthCountyNursingContent: CountyPageContent = {
         description:
             'Our nursing team delivers bedside support, advanced monitoring, and family education so clinical care continues seamlessly at home.',
         ctaButtonLabel: 'Request RN Support',
-        ctaValue: '800-338-7786',
+        ctaValue: '201-299-4243',
         imageSrc: 'nursing-services-hero',
         imageAlt: 'Private duty nurse visiting patient in Monmouth County NJ'
     },
@@ -162,6 +162,6 @@ export const monmouthCountyNursingContent: CountyPageContent = {
             'We will build a customized schedule, coordinate with physicians, and launch services as early as the next day.'
         ],
         buttonLabel: 'Arrange Private Duty Nursing',
-        value: '800-338-7786'
+        value: '201-299-4243'
     }
 }

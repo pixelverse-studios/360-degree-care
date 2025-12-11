@@ -24,13 +24,13 @@ const StaticHomeHealthAidesData = {
                     "For over 10 years, we've been providing Concierge-Level™ home health aide services to families across New Jersey.",
                 address: {
                     '@type': 'PostalAddress',
-                    streetAddress: '27 Chestnut Street, Floor 1',
+                    streetAddress: '27 Chestnut Street',
                     addressLocality: 'Ridgewood',
                     addressRegion: 'NJ',
                     postalCode: '07450',
                     addressCountry: 'US'
                 },
-                telephone: '(800) 338-7786',
+                telephone: '(201) 299-4243',
                 award: 'CHAP Certified Organization',
                 hasCredential: 'Licensed by the State Attorney General'
             },

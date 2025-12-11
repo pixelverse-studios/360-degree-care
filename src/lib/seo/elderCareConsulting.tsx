@@ -24,13 +24,13 @@ const StaticElderCareConsultingData = {
                     "For over 10 years, we've been providing expert guidance and care solutions to families across New Jersey.",
                 address: {
                     '@type': 'PostalAddress',
-                    streetAddress: '27 Chestnut Street, Floor 1',
+                    streetAddress: '27 Chestnut Street',
                     addressLocality: 'Ridgewood',
                     addressRegion: 'NJ',
                     postalCode: '07450',
                     addressCountry: 'US'
                 },
-                telephone: '(800) 338-7786'
+                telephone: '(201) 299-4243'
             },
             areaServed: {
                 '@type': 'State',

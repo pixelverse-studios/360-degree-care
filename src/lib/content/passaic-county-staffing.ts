@@ -15,7 +15,7 @@ export const passaicCountyStaffingContent: CountyPageContent = {
         '@type': 'Organization',
         name: '360 Degree Care Staffing',
         url: 'https://www.360degreecare.net',
-        telephone: '+1-800-338-7786',
+        telephone: '+1-201-299-4243',
         areaServed: 'Passaic County, NJ',
         description:
             'Healthcare staffing agency providing caregivers, certified aides, nurses, and concierge support teams to Passaic County facilities and private clients.'
@@ -28,7 +28,7 @@ export const passaicCountyStaffingContent: CountyPageContent = {
         description:
             'We maintain a vetted local workforce ready to cover census spikes, new programs, and VIP care across Passaic County.',
         ctaButtonLabel: 'Request Staffing Support',
-        ctaValue: '800-338-7786',
+        ctaValue: '201-299-4243',
         imageSrc: 'staffing-services-hero',
         imageAlt: 'Healthcare staffing professionals serving Passaic County NJ'
     },
@@ -141,6 +141,6 @@ export const passaicCountyStaffingContent: CountyPageContent = {
             'We can launch support within 24 hours for urgent needs or build a customized pipeline for long-term growth.'
         ],
         buttonLabel: 'Connect With Staffing Specialist',
-        value: '800-338-7786'
+        value: '201-299-4243'
     }
 }

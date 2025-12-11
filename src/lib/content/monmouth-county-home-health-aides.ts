@@ -19,7 +19,7 @@ export const monmouthCountyHomeHealthAidesContent: CountyPageContent = {
             name: '360 Degree Care',
             url: 'https://www.360degreecare.net',
             logo: 'https://www.360degreecare.net/logo.png',
-            telephone: '+1-800-338-7786',
+            telephone: '+1-201-299-4243',
             areaServed: 'Monmouth County, NJ',
             availableLanguage: 'en'
         },
@@ -44,7 +44,7 @@ export const monmouthCountyHomeHealthAidesContent: CountyPageContent = {
             '@type': 'ServiceChannel',
             serviceUrl:
                 'https://www.360degreecare.net/services/home-health-aides/monmouth-county',
-            servicePhone: '+1-800-338-7786',
+            servicePhone: '+1-201-299-4243',
             availableLanguage: 'en'
         }
     },
@@ -56,7 +56,7 @@ export const monmouthCountyHomeHealthAidesContent: CountyPageContent = {
         description:
             'Our CHHA team delivers Concierge-Level™ care, helping Monmouth County adults age comfortably at home with clinical oversight and compassionate service.',
         ctaButtonLabel: 'Request a CHHA Match',
-        ctaValue: '800-338-7786',
+        ctaValue: '201-299-4243',
         imageSrc: 'home-health-aides-hero',
         imageAlt: 'Home health aide assisting senior in Monmouth County NJ'
     },
@@ -190,6 +190,6 @@ export const monmouthCountyHomeHealthAidesContent: CountyPageContent = {
             'We handle the introductions, onboarding, and ongoing supervision so families experience effortless, professional care at home.'
         ],
         buttonLabel: 'Schedule CHHA Assessment',
-        value: '800-338-7786'
+        value: '201-299-4243'
     }
 }

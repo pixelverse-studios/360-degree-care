@@ -15,7 +15,7 @@ export const monmouthCountyStaffingContent: CountyPageContent = {
         '@type': 'Organization',
         name: '360 Degree Care Staffing',
         url: 'https://www.360degreecare.net',
-        telephone: '+1-800-338-7786',
+        telephone: '+1-201-299-4243',
         areaServed: 'Monmouth County, NJ',
         description:
             'Healthcare staffing agency providing companions, certified aides, private duty nurses, and concierge support personnel for Monmouth County clients.'
@@ -28,7 +28,7 @@ export const monmouthCountyStaffingContent: CountyPageContent = {
         description:
             'From Red Bank to Sea Girt, we supply vetted caregivers, companions, CHHAs, LPNs, and RNs ready to support fluctuating census and specialized care requests.',
         ctaButtonLabel: 'Request Staffing Support',
-        ctaValue: '800-338-7786',
+        ctaValue: '201-299-4243',
         imageSrc: 'staffing-services-hero',
         imageAlt: 'Healthcare staffing professionals in Monmouth County NJ'
     },
@@ -162,6 +162,6 @@ export const monmouthCountyStaffingContent: CountyPageContent = {
             'Our staffing specialists can launch support within 24 hours for urgent needs or build a strategic pipeline for long-term growth.'
         ],
         buttonLabel: 'Connect With Staffing Specialist',
-        value: '800-338-7786'
+        value: '201-299-4243'
     }
 }

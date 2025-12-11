@@ -21,7 +21,7 @@ export const passaicCountyPersonalCareContent: CountyPageContent = {
             logo: 'https://www.360degreecare.net/logo.png',
             contactPoint: {
                 '@type': 'ContactPoint',
-                telephone: '+1-800-338-7786',
+                telephone: '+1-201-299-4243',
                 contactType: 'customer service',
                 availableLanguage: 'en'
             }
@@ -46,7 +46,7 @@ export const passaicCountyPersonalCareContent: CountyPageContent = {
             '@type': 'ServiceChannel',
             serviceUrl:
                 'https://www.360degreecare.net/services/personal-care/passaic-county',
-            servicePhone: '+1-800-338-7786',
+            servicePhone: '+1-201-299-4243',
             availableLanguage: 'en'
         }
     },
@@ -58,7 +58,7 @@ export const passaicCountyPersonalCareContent: CountyPageContent = {
         description:
             'Our Concierge-Level™ personal care team helps seniors remain safe and independent with bathing support, mobility assistance, and daily routine management.',
         ctaButtonLabel: 'Request a Personal Care Assessment',
-        ctaValue: '800-338-7786',
+        ctaValue: '201-299-4243',
         imageSrc: 'personal-care-hero',
         imageAlt: 'Personal care aide supporting senior in Passaic County NJ'
     },
@@ -171,6 +171,6 @@ export const passaicCountyPersonalCareContent: CountyPageContent = {
             'We coordinate introductions, shadow shifts, and ongoing communication so your family always knows who is arriving and what is provided.'
         ],
         buttonLabel: 'Start Personal Care Planning',
-        value: '800-338-7786'
+        value: '201-299-4243'
     }
 }
