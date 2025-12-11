@@ -135,20 +135,12 @@ const config = {
     },
     robotsTxtOptions: {
         policies: [
-            { userAgent: '*', allow: '/' },
             {
                 userAgent: '*',
-                disallow: [
-                    '/api/',
-                    '/_next/',
-                    '/docs',
-                    '/docs/*',
-                    '/seo-review',
-                    '/not-found'
-                ]
+                allow: '/',
+                disallow: ['/api/', '/docs/', '/seo-review', '/not-found']
             }
-        ],
-        additionalSitemaps: ['https://www.360degreecare.net/sitemap.xml']
+        ]
     },
     exclude: [
         '/api/*',
