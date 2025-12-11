@@ -3,15 +3,13 @@
 <!-- This file is automatically sent via email on successful deployment, then reset for the next cycle -->
 
 ## Latest deploy summary
-- **Optimized robots.txt for better SEO** - Fixed a critical issue that was preventing search engines from properly rendering pages
+- **Optimized robots.txt for better search and AI visibility** - Updated crawler permissions to allow AI chatbots (ChatGPT, Claude, etc.) and improve how search engines access the site
 
 ## Notes for internal team
-- Removed `/_next/` from Disallow rules - this was blocking essential JS/CSS needed for page rendering
-- Consolidated duplicate User-agent blocks
-- Removed deprecated `Host:` directive (only used by Yandex)
-- Simplified `/docs/` rule with trailing slash
-- AI bots (GPTBot, ChatGPT, Claude, etc.) are allowed to crawl the site for visibility in AI search
-- llms.txt file NOT recommended at this time (no major LLM provider officially supports it yet)
+- Removed `/_next/` from robots.txt Disallow rules via `next-sitemap.config.mjs`
+- The static `public/robots.txt` is overwritten during build by next-sitemap - config file is the source of truth
+- Also removed duplicate User-agent blocks and simplified `/docs/` rule
+- AI bots are allowed (no blocking rules added)
 
 ## Changed URLs
 - https://www.360degreecare.net/robots.txt
