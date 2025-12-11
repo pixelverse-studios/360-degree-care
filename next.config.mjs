@@ -76,7 +76,17 @@ const personalCareBergenZeroTrafficCities = [
 
 // Legacy standalone URLs that had traffic (per Nov 29 2025 GSC export)
 const legacyStandaloneRedirects = [
-    { source: '/bergen-county', destination: '/services', permanent: true }
+    { source: '/bergen-county', destination: '/services', permanent: true },
+    // Legacy staffing URLs missing county (per Dec 11 2025 GSC 404 export)
+    { source: '/services/staffing/fort-lee', destination: '/services/staffing/bergen-county/fort-lee', permanent: true },
+    { source: '/services/staffing/hackensack', destination: '/services/staffing/bergen-county/hackensack', permanent: true },
+    { source: '/services/staffing/paramus', destination: '/services/staffing/bergen-county/paramus', permanent: true },
+    { source: '/services/staffing/ridgewood', destination: '/services/staffing/bergen-county/ridgewood', permanent: true },
+    { source: '/services/staffing/teaneck', destination: '/services/staffing/bergen-county/teaneck', permanent: true },
+    { source: '/services/staffing/fair-lawn', destination: '/services/staffing/bergen-county/fair-lawn', permanent: true },
+    { source: '/services/staffing/englewood', destination: '/services/staffing/bergen-county/englewood', permanent: true },
+    { source: '/services/staffing/westwood', destination: '/services/staffing/bergen-county/westwood', permanent: true },
+    { source: '/services/staffing/river-vale', destination: '/services/staffing/bergen-county/river-vale', permanent: true }
 ]
 
 const nextConfig = {
