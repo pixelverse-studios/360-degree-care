@@ -2,6 +2,7 @@ import ServiceHero from '@/components/services/ServiceHero'
 import ServiceDescription from '@/components/services/ServiceDescription'
 import ServiceList from '@/components/services/ServiceList'
 import ServiceBenefits from '@/components/services/ServiceBenefits'
+import LocalResourcesSection from '@/components/city/LocalResourcesSection'
 import ServiceFaqs from '@/components/services/ServiceFaqs'
 import ServiceCta from '@/components/services/ServiceCta'
 import { getImgSrc } from '@/lib/images'
@@ -39,6 +40,12 @@ export function CityServicePage({ content }: CityServicePageProps) {
                 <ServiceDescription {...content.overview} />
                 <ServiceList {...content.services} />
                 <ServiceBenefits {...content.benefits} />
+                {content.localResources && (
+                    <LocalResourcesSection
+                        header={content.localResources.header}
+                        items={content.localResources.items}
+                    />
+                )}
                 <ServiceFaqs
                     header={content.faqs.header}
                     faqs={content.faqs.items}

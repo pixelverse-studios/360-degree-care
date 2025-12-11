@@ -491,6 +491,23 @@ Static files ready for deployment
 
 ---
 
+## Linear Ticket Creation
+
+When creating Linear tickets for this project:
+
+| Field    | Value                   |
+| -------- | ----------------------- |
+| Team     | Jeff DeJoseph           |
+| Assignee | `me`                    |
+| Project  | 360 Degree Care Website |
+| Priority | Medium (3)              |
+
+**Labels:** Always apply one from each sub-label group:
+
+- **Environment:** `Front End`, `Fullstack`, `Server`
+- **Scope:** `Ticket`, `Epic`
+- **Task:** `Feature`, `Bug`, `Improvement`, `Refactor`, `Maintenance`, `Research`
+
 ## Testing & Validation
 
 ### Manual Testing Checklist
