@@ -33,6 +33,7 @@ export interface CityServicePageContent {
     faqs: {
         header: string
         items: FAQ[]
+        cityItems?: FAQ[]
     }
     localResources?: {
         header: string

@@ -45,6 +45,7 @@ export function buildSchema(
     options?: {
         serviceSlug: string
         description: string
+        cityFaqs?: FAQ[]
     }
 ) {
     const citySlug = cityName.toLowerCase().replace(/\s+/g, '-')
@@ -94,9 +95,10 @@ export function buildSchema(
         graphItems.push(localBusinessSchema)
     }
 
-    // Add FAQ schema if FAQs provided
-    if (faqs && faqs.length > 0) {
-        graphItems.push(generateFAQSchemaForGraph(faqs))
+    // Add FAQ schema if FAQs provided (city FAQs first, then service FAQs)
+    const allFaqs = [...(options?.cityFaqs || []), ...(faqs || [])]
+    if (allFaqs.length > 0) {
+        graphItems.push(generateFAQSchemaForGraph(allFaqs))
     }
 
     return {
