@@ -1,18 +1,12 @@
-# *
+# 360 Degree Care - robots.txt
+# https://www.360degreecare.net
+
 User-agent: *
 Allow: /
-
-# *
-User-agent: *
 Disallow: /api/
-Disallow: /_next/
-Disallow: /docs
-Disallow: /docs/*
+Disallow: /docs/
 Disallow: /seo-review
 Disallow: /not-found
 
-# Host
-Host: https://www.360degreecare.net
-
-# Sitemaps
+# Sitemap
 Sitemap: https://www.360degreecare.net/sitemap.xml
