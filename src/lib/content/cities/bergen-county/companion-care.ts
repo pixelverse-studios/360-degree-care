@@ -1,6 +1,53 @@
-import { CityServicePageContent } from '../../city-service-types'
-import { COMPANION_CARE_FAQS } from '@/utils/faqs'
+import { CityServicePageContent, LocalResource } from '../../city-service-types'
+import { FAQ, COMPANION_CARE_FAQS } from '@/utils/faqs'
 import { DescriptiveItem, buildSchema, mapItems } from './helpers'
+
+// Fort Lee local resources - shared across all Fort Lee service pages
+const FORT_LEE_LOCAL_RESOURCES: LocalResource[] = [
+    {
+        name: 'Holy Name Medical Center',
+        type: 'hospital',
+        address: '718 Teaneck Rd, Teaneck, NJ 07666',
+        phone: '(201) 833-3000'
+    },
+    {
+        name: 'Fort Lee Health Department',
+        type: 'community-center',
+        address: '309 Main St, Fort Lee, NJ 07024',
+        phone: '(201) 592-3500'
+    },
+    {
+        name: 'Fort Lee Senior Center',
+        type: 'senior-center',
+        address: '1355 Inwood Terrace, Fort Lee, NJ 07024',
+        phone: '(201) 592-3670'
+    },
+    {
+        name: 'CVS Pharmacy',
+        type: 'pharmacy',
+        address: '2165 Lemoine Ave, Fort Lee, NJ 07024',
+        phone: '(201) 944-6060'
+    },
+    {
+        name: 'Rite Aid',
+        type: 'pharmacy',
+        address: '1600 Lemoine Ave, Fort Lee, NJ 07024',
+        phone: '(201) 592-8700'
+    }
+]
+
+// Fort Lee city-specific FAQs for Companion Care
+const FORT_LEE_COMPANION_CARE_FAQS: FAQ[] = [
+    {
+        question:
+            'Can companions take clients to the Fort Lee Community Center?',
+        answer: 'Yes, our companions regularly escort residents to the Fort Lee Community Center for activities, classes, and social events.'
+    },
+    {
+        question: 'Do you offer companions who speak Korean or Spanish?',
+        answer: "Yes, Fort Lee's diverse community means we maintain multilingual caregivers including Korean and Spanish speakers."
+    }
+]
 
 const SERVICE_NAME = 'Companion Care'
 const SERVICE_SLUG = 'companion-care'
@@ -76,6 +123,8 @@ function buildCityContent(
         overviewDescription: string
         benefitsHeader: string
         ctaDescription: string
+        cityFaqs?: FAQ[]
+        localResources?: LocalResource[]
     }
 ): CityServicePageContent {
     const canonical = `https://www.360degreecare.net/services/${SERVICE_SLUG}/bergen-county/${citySlug}`
@@ -90,7 +139,8 @@ function buildCityContent(
         },
         schemaData: buildSchema(SERVICE_NAME, cityName, COMPANION_CARE_FAQS, {
             serviceSlug: SERVICE_SLUG,
-            description: options.heroDescription
+            description: options.heroDescription,
+            cityFaqs: options.cityFaqs
         }),
         hero: {
             header: `Companion Care That Keeps ${cityName} Residents Connected`,
@@ -112,10 +162,17 @@ function buildCityContent(
         benefits: mapItems(cityName, options.benefitsHeader, baseBenefits),
         faqs: {
             header: `${cityName} Companion Care FAQs`,
-            items: COMPANION_CARE_FAQS
+            items: COMPANION_CARE_FAQS,
+            cityItems: options.cityFaqs
         },
+        ...(options.localResources && {
+            localResources: {
+                header: `${cityName} Healthcare Resources`,
+                items: options.localResources
+            }
+        }),
         cta: {
-            header: `Let’s Plan Companionship in ${cityName}`,
+            header: `Let's Plan Companionship in ${cityName}`,
             description: options.ctaDescription,
             cta: 'Schedule a conversation',
             origin: CTA_ORIGIN
@@ -134,7 +191,9 @@ export const bergenCountyCompanionCareCities: Record<
             'We coordinate visits around elevator schedules, parking garages, and preferred physicians. Whether it’s sharing lunch on Lemoine Avenue or escorting clients to the Fort Lee Community Center, companionship is tailored to each resident.',
         benefitsHeader: 'Why Fort Lee families choose our companions',
         ctaDescription:
-            'Tell us what your Fort Lee loved one enjoys and we will match them with a companion who can keep pace with city views and calmer afternoons alike.'
+            'Tell us what your Fort Lee loved one enjoys and we will match them with a companion who can keep pace with city views and calmer afternoons alike.',
+        cityFaqs: FORT_LEE_COMPANION_CARE_FAQS,
+        localResources: FORT_LEE_LOCAL_RESOURCES
     }),
     ridgewood: buildCityContent('Ridgewood', 'ridgewood', {
         heroDescription:

@@ -1,6 +1,48 @@
-import { CityServicePageContent } from '../../city-service-types'
-import { NURSING_SERVICES_FAQS } from '@/utils/faqs'
+import { CityServicePageContent, LocalResource } from '../../city-service-types'
+import { FAQ, NURSING_SERVICES_FAQS } from '@/utils/faqs'
 import { DescriptiveItem, buildSchema, mapItems } from './helpers'
+
+// Fort Lee local resources - shared across all Fort Lee service pages
+const FORT_LEE_LOCAL_RESOURCES: LocalResource[] = [
+    {
+        name: 'Holy Name Medical Center',
+        type: 'hospital',
+        address: '718 Teaneck Rd, Teaneck, NJ 07666',
+        phone: '(201) 833-3000'
+    },
+    {
+        name: 'Fort Lee Health Department',
+        type: 'community-center',
+        address: '309 Main St, Fort Lee, NJ 07024',
+        phone: '(201) 592-3500'
+    },
+    {
+        name: 'Fort Lee Senior Center',
+        type: 'senior-center',
+        address: '1355 Inwood Terrace, Fort Lee, NJ 07024',
+        phone: '(201) 592-3670'
+    },
+    {
+        name: 'CVS Pharmacy',
+        type: 'pharmacy',
+        address: '2165 Lemoine Ave, Fort Lee, NJ 07024',
+        phone: '(201) 944-6060'
+    },
+    {
+        name: 'Rite Aid',
+        type: 'pharmacy',
+        address: '1600 Lemoine Ave, Fort Lee, NJ 07024',
+        phone: '(201) 592-8700'
+    }
+]
+
+// Fort Lee city-specific FAQs for Nursing
+const FORT_LEE_NURSING_FAQS: FAQ[] = [
+    {
+        question: 'Can nurses coordinate with Hackensack Meridian physicians?',
+        answer: 'Yes, our nurses frequently coordinate with Hackensack Meridian Health network physicians and specialists for Fort Lee clients.'
+    }
+]
 
 const SERVICE_NAME = 'Private Duty Nursing'
 const SERVICE_SLUG = 'nursing'
@@ -76,6 +118,8 @@ function buildCityContent(
         overviewDescription: string
         benefitsHeader: string
         ctaDescription: string
+        cityFaqs?: FAQ[]
+        localResources?: LocalResource[]
     }
 ): CityServicePageContent {
     const canonical = `https://www.360degreecare.net/services/${SERVICE_SLUG}/bergen-county/${citySlug}`
@@ -90,7 +134,8 @@ function buildCityContent(
         },
         schemaData: buildSchema(SERVICE_NAME, cityName, NURSING_SERVICES_FAQS, {
             serviceSlug: SERVICE_SLUG,
-            description: options.heroDescription
+            description: options.heroDescription,
+            cityFaqs: options.cityFaqs
         }),
         hero: {
             header: `Skilled Nursing Support in ${cityName}`,
@@ -112,8 +157,15 @@ function buildCityContent(
         benefits: mapItems(cityName, options.benefitsHeader, baseBenefits),
         faqs: {
             header: `${cityName} Nursing Services FAQs`,
-            items: NURSING_SERVICES_FAQS
+            items: NURSING_SERVICES_FAQS,
+            cityItems: options.cityFaqs
         },
+        ...(options.localResources && {
+            localResources: {
+                header: `${cityName} Healthcare Resources`,
+                items: options.localResources
+            }
+        }),
         cta: {
             header: `Need advanced clinical care in ${cityName}?`,
             description: options.ctaDescription,
@@ -132,7 +184,9 @@ export const bergenCountyNursingCities: Record<string, CityServicePageContent> =
                 'We support recoveries after Hackensack Meridian discharges, coordinate with Manhattan specialists, and handle equipment in Fort Lee apartments without disrupting routines.',
             benefitsHeader: 'Why Fort Lee patients trust our nursing team',
             ctaDescription:
-                'Tell us about your Fort Lee care needs and we will assemble a nursing schedule that fits physician orders and family expectations.'
+                'Tell us about your Fort Lee care needs and we will assemble a nursing schedule that fits physician orders and family expectations.',
+            cityFaqs: FORT_LEE_NURSING_FAQS,
+            localResources: FORT_LEE_LOCAL_RESOURCES
         }),
         ridgewood: buildCityContent('Ridgewood', 'ridgewood', {
             heroDescription:

@@ -3,26 +3,27 @@
 <!-- This file is automatically sent via email on successful deployment, then reset for the next cycle -->
 
 ## Latest deploy summary
-- **Added Local Resources section to city service pages** - New component that displays nearby hospitals, senior centers, pharmacies, and community centers for each city
-- **Tracking county hub pages for future indexing** - These pages exist but need re-indexing after content improvements are complete
+- Added **Fort Lee-specific FAQs** to all 6 service pages (2-3 unique questions per service)
+- Added **Local Healthcare Resources section** to all Fort Lee pages featuring:
+  - Holy Name Medical Center
+  - Fort Lee Health Department
+  - Fort Lee Senior Center
+  - CVS Pharmacy
+  - Rite Aid Pharmacy
+- Content differentiation helps Fort Lee pages stand out in local search results
 
 ## Notes for internal team
-- Foundation work for SEO content differentiation (360C-144)
-- LocalResources component renders as 3-column responsive card grid
-- Each card shows: name, type badge, address, and clickable phone number
-- Section appears between Benefits and FAQs on city pages
-- No content added yet - this is the infrastructure for city-specific content
-- County hub pages below were showing as 404 in GSC from old crawls (June 2025)
-- Pages now exist but Google hasn't re-crawled them
-- DO NOT request indexing yet - wait until content differentiation improvements are deployed
+- This is the first city to receive content differentiation (test city per SEO remediation plan)
+- City-specific FAQs appear above the standard service FAQs in the FAQ section
+- FAQs are included in the schema markup for rich results
+- Pattern established for rolling out to other cities (Ridgewood, Paramus, etc.) once Google indexes these pages
+- Files modified: 6 city content files in `src/lib/content/cities/bergen-county/`
+- Also added FAQ type re-export to enable cleaner imports
 
 ## Changed URLs
-- https://www.360degreecare.net/services/personal-care/bergen-county
-- https://www.360degreecare.net/services/companion-care/bergen-county
-- https://www.360degreecare.net/services/elder-care/bergen-county
-- https://www.360degreecare.net/services/nursing/bergen-county
-- https://www.360degreecare.net/services/home-health-aides/passaic-county
-- https://www.360degreecare.net/services/companion-care/passaic-county
-- https://www.360degreecare.net/services/personal-care/passaic-county
-- https://www.360degreecare.net/services/elder-care/passaic-county
-- https://www.360degreecare.net/services/nursing/passaic-county
+- https://www.360degreecare.net/services/personal-care/bergen-county/fort-lee
+- https://www.360degreecare.net/services/companion-care/bergen-county/fort-lee
+- https://www.360degreecare.net/services/elder-care/bergen-county/fort-lee
+- https://www.360degreecare.net/services/nursing/bergen-county/fort-lee
+- https://www.360degreecare.net/services/home-health-aides/bergen-county/fort-lee
+- https://www.360degreecare.net/services/staffing/bergen-county/fort-lee

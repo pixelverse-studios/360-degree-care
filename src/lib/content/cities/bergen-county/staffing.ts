@@ -1,6 +1,48 @@
-import { CityServicePageContent } from '../../city-service-types'
-import { STAFFING_SERVICES_FAQS } from '@/utils/faqs'
+import { CityServicePageContent, LocalResource } from '../../city-service-types'
+import { FAQ, STAFFING_SERVICES_FAQS } from '@/utils/faqs'
 import { DescriptiveItem, buildSchema, mapItems } from './helpers'
+
+// Fort Lee local resources - shared across all Fort Lee service pages
+const FORT_LEE_LOCAL_RESOURCES: LocalResource[] = [
+    {
+        name: 'Holy Name Medical Center',
+        type: 'hospital',
+        address: '718 Teaneck Rd, Teaneck, NJ 07666',
+        phone: '(201) 833-3000'
+    },
+    {
+        name: 'Fort Lee Health Department',
+        type: 'community-center',
+        address: '309 Main St, Fort Lee, NJ 07024',
+        phone: '(201) 592-3500'
+    },
+    {
+        name: 'Fort Lee Senior Center',
+        type: 'senior-center',
+        address: '1355 Inwood Terrace, Fort Lee, NJ 07024',
+        phone: '(201) 592-3670'
+    },
+    {
+        name: 'CVS Pharmacy',
+        type: 'pharmacy',
+        address: '2165 Lemoine Ave, Fort Lee, NJ 07024',
+        phone: '(201) 944-6060'
+    },
+    {
+        name: 'Rite Aid',
+        type: 'pharmacy',
+        address: '1600 Lemoine Ave, Fort Lee, NJ 07024',
+        phone: '(201) 592-8700'
+    }
+]
+
+// Fort Lee city-specific FAQs for Staffing
+const FORT_LEE_STAFFING_FAQS: FAQ[] = [
+    {
+        question: 'Do you staff facilities in the Fort Lee area?',
+        answer: 'Yes, we provide qualified healthcare staff to facilities throughout Fort Lee and neighboring Bergen County communities.'
+    }
+]
 
 const SERVICE_NAME = 'Healthcare Staffing'
 const SERVICE_SLUG = 'staffing'
@@ -76,6 +118,8 @@ function buildCityContent(
         overviewDescription: string
         benefitsHeader: string
         ctaDescription: string
+        cityFaqs?: FAQ[]
+        localResources?: LocalResource[]
     }
 ): CityServicePageContent {
     const canonical = `https://www.360degreecare.net/services/${SERVICE_SLUG}/bergen-county/${citySlug}`
@@ -94,7 +138,8 @@ function buildCityContent(
             STAFFING_SERVICES_FAQS,
             {
                 serviceSlug: SERVICE_SLUG,
-                description: options.heroDescription
+                description: options.heroDescription,
+                cityFaqs: options.cityFaqs
             }
         ),
         hero: {
@@ -117,8 +162,15 @@ function buildCityContent(
         benefits: mapItems(cityName, options.benefitsHeader, baseBenefits),
         faqs: {
             header: `${cityName} Staffing FAQs`,
-            items: STAFFING_SERVICES_FAQS
+            items: STAFFING_SERVICES_FAQS,
+            cityItems: options.cityFaqs
         },
+        ...(options.localResources && {
+            localResources: {
+                header: `${cityName} Healthcare Resources`,
+                items: options.localResources
+            }
+        }),
         cta: {
             header: `Need dependable staffing in ${cityName}?`,
             description: options.ctaDescription,
@@ -139,7 +191,9 @@ export const bergenCountyStaffingCities: Record<
             'We understand the pace of the Palisades. From high-rise concierge clients to outpatient offices, our team delivers staffing that respects security protocols and building logistics.',
         benefitsHeader: 'Why Fort Lee partners with 360 Degree Care Staffing',
         ctaDescription:
-            'Tell us about your Fort Lee staffing gaps. We will mobilize credentialed professionals who are ready to contribute immediately.'
+            'Tell us about your Fort Lee staffing gaps. We will mobilize credentialed professionals who are ready to contribute immediately.',
+        cityFaqs: FORT_LEE_STAFFING_FAQS,
+        localResources: FORT_LEE_LOCAL_RESOURCES
     }),
     ridgewood: buildCityContent('Ridgewood', 'ridgewood', {
         heroDescription:

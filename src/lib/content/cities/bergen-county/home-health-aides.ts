@@ -1,6 +1,48 @@
-import { CityServicePageContent } from '../../city-service-types'
-import { HOME_HEALTH_AIDES_FAQS } from '@/utils/faqs'
+import { CityServicePageContent, LocalResource } from '../../city-service-types'
+import { FAQ, HOME_HEALTH_AIDES_FAQS } from '@/utils/faqs'
 import { DescriptiveItem, buildSchema, mapItems } from './helpers'
+
+// Fort Lee local resources - shared across all Fort Lee service pages
+const FORT_LEE_LOCAL_RESOURCES: LocalResource[] = [
+    {
+        name: 'Holy Name Medical Center',
+        type: 'hospital',
+        address: '718 Teaneck Rd, Teaneck, NJ 07666',
+        phone: '(201) 833-3000'
+    },
+    {
+        name: 'Fort Lee Health Department',
+        type: 'community-center',
+        address: '309 Main St, Fort Lee, NJ 07024',
+        phone: '(201) 592-3500'
+    },
+    {
+        name: 'Fort Lee Senior Center',
+        type: 'senior-center',
+        address: '1355 Inwood Terrace, Fort Lee, NJ 07024',
+        phone: '(201) 592-3670'
+    },
+    {
+        name: 'CVS Pharmacy',
+        type: 'pharmacy',
+        address: '2165 Lemoine Ave, Fort Lee, NJ 07024',
+        phone: '(201) 944-6060'
+    },
+    {
+        name: 'Rite Aid',
+        type: 'pharmacy',
+        address: '1600 Lemoine Ave, Fort Lee, NJ 07024',
+        phone: '(201) 592-8700'
+    }
+]
+
+// Fort Lee city-specific FAQs for Home Health Aides
+const FORT_LEE_HOME_HEALTH_AIDES_FAQS: FAQ[] = [
+    {
+        question: 'Do aides help with grocery runs to Fort Lee stores?',
+        answer: "Yes, our aides assist with errands to local stores including Trader Joe's, H Mart, and Main Street shops."
+    }
+]
 
 const SERVICE_NAME = 'Home Health Aides'
 const SERVICE_SLUG = 'home-health-aides'
@@ -76,6 +118,8 @@ function buildCityContent(
         overviewDescription: string
         benefitsHeader: string
         ctaDescription: string
+        cityFaqs?: FAQ[]
+        localResources?: LocalResource[]
     }
 ): CityServicePageContent {
     const canonical = `https://www.360degreecare.net/services/${SERVICE_SLUG}/bergen-county/${citySlug}`
@@ -94,7 +138,8 @@ function buildCityContent(
             HOME_HEALTH_AIDES_FAQS,
             {
                 serviceSlug: SERVICE_SLUG,
-                description: options.heroDescription
+                description: options.heroDescription,
+                cityFaqs: options.cityFaqs
             }
         ),
         hero: {
@@ -117,8 +162,15 @@ function buildCityContent(
         benefits: mapItems(cityName, options.benefitsHeader, baseBenefits),
         faqs: {
             header: `${cityName} Home Health Aide FAQs`,
-            items: HOME_HEALTH_AIDES_FAQS
+            items: HOME_HEALTH_AIDES_FAQS,
+            cityItems: options.cityFaqs
         },
+        ...(options.localResources && {
+            localResources: {
+                header: `${cityName} Healthcare Resources`,
+                items: options.localResources
+            }
+        }),
         cta: {
             header: `Need dependable aide coverage in ${cityName}?`,
             description: options.ctaDescription,
@@ -139,7 +191,9 @@ export const bergenCountyHomeHealthAideCities: Record<
             'From The Modern to Horizon House, our aides navigate garages, concierge desks, and high-rise logistics with ease while communicating with Hackensack Meridian and NYC specialists as needed.',
         benefitsHeader: 'Why Fort Lee families choose our CHHAs',
         ctaDescription:
-            'Share your Fort Lee care schedule and we will build rotating or live-in aide coverage that fits your routines.'
+            'Share your Fort Lee care schedule and we will build rotating or live-in aide coverage that fits your routines.',
+        cityFaqs: FORT_LEE_HOME_HEALTH_AIDES_FAQS,
+        localResources: FORT_LEE_LOCAL_RESOURCES
     }),
     ridgewood: buildCityContent('Ridgewood', 'ridgewood', {
         heroDescription:
