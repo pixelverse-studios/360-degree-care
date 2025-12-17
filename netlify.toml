@@ -1,0 +1,20 @@
+# Netlify configuration for 360 Degree Care
+# https://docs.netlify.com/configure-builds/file-based-configuration/
+
+[build]
+  command = "npm run build"
+  publish = ".next"
+
+# Next.js plugin for Netlify (handles SSR, ISR, etc.)
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
+
+# IndexNow plugin - automatically submits sitemap to Bing and IndexNow on deploy
+# This helps get pages indexed faster than waiting for Google
+[[plugins]]
+  package = "netlify-plugin-submit-sitemap"
+
+  [plugins.inputs]
+    baseUrl = "https://www.360degreecare.net"
+    sitemapPath = "/sitemap.xml"
+    providers = ["bing", "indexnow"]
