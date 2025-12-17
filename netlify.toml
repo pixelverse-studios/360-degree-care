@@ -9,12 +9,13 @@
 [[plugins]]
   package = "@netlify/plugin-nextjs"
 
-# IndexNow plugin - automatically submits sitemap to Bing and IndexNow on deploy
-# This helps get pages indexed faster than waiting for Google
+# Sitemap submission plugin - notifies search engines on deploy
+# Note: Bing deprecated anonymous sitemap pings in 2022 - use Bing Webmaster Tools instead
+# IndexNow requires separate implementation with API key
 [[plugins]]
   package = "netlify-plugin-submit-sitemap"
 
   [plugins.inputs]
     baseUrl = "https://www.360degreecare.net"
     sitemapPath = "/sitemap.xml"
-    providers = ["bing", "indexnow"]
+    providers = ["google", "yandex"]
