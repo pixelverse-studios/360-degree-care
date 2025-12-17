@@ -75,21 +75,37 @@ function installPrePushHook() {
   }
 
   // Create the pre-push hook that calls our Node.js script
+  // Only fires when pushing to main branch (not feature branches)
   const hookContent = `#!/bin/sh
 #
 # Pre-push hook for deployment tracking
 # Automatically installed by scripts/install-hooks.js
+# Only fires when pushing to main branch
 #
 
 # Get the directory where this script is located
 SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
 PROJECT_ROOT="$(cd "$SCRIPT_DIR/../.." && pwd)"
 
-# Run the Node.js pre-push script
-node "$PROJECT_ROOT/scripts/pre-push.js"
+# Read push info from stdin to check if we're pushing to main
+# Format: <local ref> <local sha> <remote ref> <remote sha>
+PUSHING_TO_MAIN=false
+while read local_ref local_sha remote_ref remote_sha; do
+  if [ "$remote_ref" = "refs/heads/main" ]; then
+    PUSHING_TO_MAIN=true
+    break
+  fi
+done
 
-# Exit with the same code as the Node.js script
-exit $?
+# Only run deployment tracking when pushing to main
+if [ "$PUSHING_TO_MAIN" = "true" ]; then
+  echo "🚀 Pushing to main - running deployment tracking..."
+  node "$PROJECT_ROOT/scripts/pre-push.js"
+  exit $?
+else
+  echo "ℹ️  Not pushing to main - skipping deployment tracking"
+  exit 0
+fi
 `;
 
   fs.writeFileSync(prePushHookPath, hookContent, 'utf-8');
