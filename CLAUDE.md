@@ -13,6 +13,15 @@
 - **NEVER push to main remote** unless user explicitly says "push main" or "push to main remote"
 - Merging PRs into local main is fine, but pushing main to origin triggers deployment
 
+### Exception: Slash Command Workflows
+When the user explicitly invokes a slash command (e.g., `/ticket`), follow the workflow defined in that command. This includes:
+- Creating feature branches
+- Committing changes with proper ticket references
+- Pushing to origin (non-main branches only)
+- Creating pull requests
+
+The slash command invocation itself serves as explicit approval for its defined workflow.
+
 ---
 
 ## ⚠️ CRITICAL: Development Server Management
