@@ -5,6 +5,7 @@ import dynamic from 'next/dynamic'
 import { CompanyName } from '@/components/Logo'
 import AnimatedSection from '@/components/animated-section'
 import { getImgSrc } from '@/lib/images'
+import BergenCountyServiceAreas from './BergenCountyServiceAreas'
 
 const CallToAction = dynamic(() => import('@/components/CallToAction'), {
     ssr: false
@@ -341,6 +342,12 @@ export default function ElderCareView({ header }: headerProps) {
                     </div>
                 </AnimatedSection>
             </div>
+
+            {/* BERGEN COUNTY SERVICE AREAS */}
+            <BergenCountyServiceAreas
+                serviceSlug="elder-care"
+                serviceName="Elder Care"
+            />
 
             {/* Concierge Section */}
             <div className="container px-4 py-16 max-w-6xl">

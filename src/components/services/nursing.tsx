@@ -4,6 +4,7 @@ import dynamic from 'next/dynamic'
 import { CircleCheck, ListChecks, PillBottle, Bandage } from 'lucide-react'
 import { CompanyName } from '@/components/Logo'
 import AnimatedSection from '@/components/animated-section'
+import BergenCountyServiceAreas from './BergenCountyServiceAreas'
 
 const CallToAction = dynamic(() => import('@/components/CallToAction'), {
     ssr: false
@@ -332,6 +333,12 @@ export default function NursingView({ header }: { header: string }) {
                     </div>
                 </AnimatedSection>
             </section>
+
+            {/* BERGEN COUNTY SERVICE AREAS */}
+            <BergenCountyServiceAreas
+                serviceSlug="nursing"
+                serviceName="Nursing Services"
+            />
 
             {/* CTA Section */}
             <div className="container mx-auto px-4 py-16 max-w-custom">

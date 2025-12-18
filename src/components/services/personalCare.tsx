@@ -5,6 +5,7 @@ import { CompanyName } from '@/components/Logo'
 import FaqSection from '@/components/faqs/FaqSection'
 import { PERSONAL_CARE_FAQS } from '@/utils/faqs'
 import AnimatedSection from '@/components/animated-section'
+import BergenCountyServiceAreas from './BergenCountyServiceAreas'
 
 export default function PersonalCareView({ header }: { header: string }) {
     return (
@@ -147,6 +148,18 @@ export default function PersonalCareView({ header }: { header: string }) {
                         bodyClass="mx-0"
                     />
                 </AnimatedSection>
+            </AnimatedSection>
+
+            {/* BERGEN COUNTY SERVICE AREAS */}
+            <BergenCountyServiceAreas
+                serviceSlug="personal-care"
+                serviceName="Personal Care"
+            />
+
+            <AnimatedSection
+                animation="zoom"
+                className="container mx-auto px-4 max-w-custom py-10"
+            >
                 <h2 className="mt-6 mb-2">
                     Finding the Right Personal Care Solution
                 </h2>

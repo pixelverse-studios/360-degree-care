@@ -9,6 +9,7 @@ import ServiceList from '@/components/services/ServiceList'
 import ServiceBenefits from '@/components/services/ServiceBenefits'
 import ServiceFaqs from '@/components/services/ServiceFaqs'
 import ServiceCta from '@/components/services/ServiceCta'
+import BergenCountyServiceAreas from '@/components/services/BergenCountyServiceAreas'
 
 const { SeoHead, hero, description, listItems, benefits } =
     StaticStaffingServicesData
@@ -25,6 +26,10 @@ export default function StaffingSolutionsPage() {
                 <ServiceFaqs
                     header="Questions About Medical Staffing Services"
                     faqs={STAFFING_SERVICES_FAQS}
+                />
+                <BergenCountyServiceAreas
+                    serviceSlug="staffing"
+                    serviceName="Staffing Services"
                 />
                 <ServiceCta
                     header="Your Trusted Medical Staffing Partner"

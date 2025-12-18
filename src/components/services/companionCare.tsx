@@ -5,6 +5,7 @@ import dynamic from 'next/dynamic'
 import { CompanyName } from '@/components/Logo'
 import AnimatedSection from '@/components/animated-section'
 import { getImgSrc } from '@/lib/images'
+import BergenCountyServiceAreas from './BergenCountyServiceAreas'
 
 const rollerCoaster = getImgSrc('roller_coaster')
 
@@ -136,6 +137,13 @@ export default function CompanionCareView({ header }: CompanionCareViewProps) {
                         </div>
                     </AnimatedSection>
                 </section>
+
+                {/* BERGEN COUNTY SERVICE AREAS */}
+                <BergenCountyServiceAreas
+                    serviceSlug="companion-care"
+                    serviceName="Companion Care"
+                />
+
                 {/* CTA SECTION */}
                 <section className="py-12 bg-white">
                     <AnimatedSection
