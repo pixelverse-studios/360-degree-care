@@ -1,5 +1,105 @@
 # 360 Degree Care - Claude Code Reference
 
+## ⚠️ CRITICAL: Git Workflow Rules
+
+**NEVER commit or push changes without explicit user approval.**
+
+- Always ask before running `git commit`
+- Always ask before running `git push`
+- User must explicitly say "commit these changes" or "push to remote"
+- After making code changes, STOP and wait for user review
+- Only create commits when user explicitly requests it
+- Do not batch commits - wait for approval after each set of changes
+- **NEVER push to main remote** unless user explicitly says "push main" or "push to main remote"
+- Merging PRs into local main is fine, but pushing main to origin triggers deployment
+
+### Exception: Slash Command Workflows
+When the user explicitly invokes a slash command (e.g., `/ticket`), follow the workflow defined in that command. This includes:
+- Creating feature branches
+- Committing changes with proper ticket references
+- Pushing to origin (non-main branches only)
+- Creating pull requests
+
+The slash command invocation itself serves as explicit approval for its defined workflow.
+
+---
+
+## ⚠️ CRITICAL: Development Server Management
+
+**The user has a local server running at all times. NEVER leave dev servers running in the background.**
+
+- **DO NOT** start `npm run dev` unless absolutely necessary for validation
+- **ALWAYS** kill any dev servers you start immediately after validation
+- Use `run_in_background: true` when starting servers for testing
+- Store the shell ID and kill it with `KillShell` when done
+- If you need to verify compilation, use a quick check and immediately close
+- Prefer static analysis over running servers when possible
+
+**Example Pattern:**
+```bash
+# Start server for validation
+npm run dev (run_in_background: true, store shell_id)
+# Wait for compilation (sleep 5-10s)
+# Check BashOutput for success/errors
+# IMMEDIATELY kill the shell: KillShell(shell_id)
+```
+
+---
+
+## ⚠️ CRITICAL: Deployment Summary Updates (CLIENT COMMUNICATION)
+
+**This is NON-NEGOTIABLE. The deployment summary powers automated client email notifications.**
+
+### THE RULE:
+**IMMEDIATELY after completing ANY work, APPEND to `docs/deployment_summary.md` BEFORE doing anything else.**
+
+This is not optional. This is not an afterthought. This is the FIRST action after finishing work.
+
+### Accumulation Workflow:
+- **ADD** new bullet points below existing ones (don't replace previous entries)
+- The summary accumulates across multiple PRs until `main` is pushed
+- Think of it as a changelog for "everything since last deployment"
+- The hook **only fires on pushes to `main`** (feature branches don't trigger it)
+- After pushing to `main`: hook sends accumulated summary → file auto-resets
+
+### Why This Matters:
+- A Git pre-push hook reads this file and sends email notifications to Phil and Sami
+- If the summary is empty, the notification is skipped silently
+- The user trusts this automation to keep stakeholders informed
+- **Skipping this step breaks that trust and leaves clients uninformed**
+
+### Required Actions After EVERY Task:
+1. **STOP** - Do not proceed to audit files or wait for commit approval
+2. **APPEND** to `docs/deployment_summary.md` (add below existing entries):
+   - `## Latest deploy summary` - Plain-language bullet points (what changed, not how)
+   - `## Notes for internal team` - Technical details, ticket IDs (optional)
+   - `## Changed URLs` - Full URLs affected (for Google re-indexing)
+3. **THEN** create the audit file in `docs/audits/landing/`
+4. **THEN** wait for user commit approval
+
+### Quick Reference (Accumulated Example):
+```markdown
+## Latest deploy summary
+- Shortened Englewood meta description for better search visibility
+- Optimized H1 tags on Fort Lee, Hackensack, Paramus, Ridgewood pages
+- Added business phone number to website footer and schema
+
+## Notes for internal team
+- PVS-126, PVS-127, PVS-128 completed
+- Files: data/services-city-pages.ts, lib/structured-data.ts
+
+## Changed URLs
+- https://www.pixelversestudios.io/services/englewood
+- https://www.pixelversestudios.io/services/fort-lee
+- https://www.pixelversestudios.io/services/hackensack
+- https://www.pixelversestudios.io/services/paramus
+- https://www.pixelversestudios.io/services/ridgewood
+```
+
+**See "Documentation Requirements" section below for full formatting details.**
+
+---
+
 **Next.js 14 App Router marketing site for a New Jersey home-health agency**
 
 ---
@@ -330,73 +430,6 @@ const buttonVariants = cva('px-4 py-2 rounded-md font-medium', {
 - Check `src/components/ui/` for existing components
 - Follow established Radix wrapper patterns
 - Maintain consistency with current design system
-
----
-
-## Deployment Summary Workflow
-
-**CRITICAL: After completing each task or feature, update `docs/deployment_summary.md` with a high-level summary**
-
-This file is automatically processed by a Git pre-push hook that sends deployment data to the PVS API and triggers an email notification. Keep summaries concise and non-technical.
-
-### When to Update
-
-- After completing any feature, fix, or enhancement
-- Before waiting for user to commit/push changes
-- Each time you finish a discrete unit of work
-- **MUST include all affected URLs** in the "Changed URLs" section
-
-### File Format
-
-The file has **three required sections**:
-
-1. **Latest deploy summary** - Client-facing changes (sent in email)
-    - Use markdown formatting (bullet points, **bold**, _italic_)
-    - Write in plain language (non-technical summaries)
-    - Focus on WHAT changed, not HOW it was implemented
-
-2. **Notes for internal team** - Technical details (NOT sent in email)
-    - Use markdown formatting
-    - Include environment variables, technical notes, internal tasks
-    - This section is stored but NOT sent to clients
-
-3. **Changed URLs** - List all affected page URLs
-    - Use bullet points (- https://www.360degreecare.net/page)
-    - Include full URLs with protocol
-    - These URLs are tracked for Google Search Console re-indexing
-
-### Example Good Entries
-
-- "Added contact form with email notifications"
-- "Fixed mobile navigation menu bug"
-- "Updated homepage hero section with new imagery"
-
-### Example Bad Entries
-
-- "Implemented React Hook Form with Zod validation schema"
-- "Refactored Button component to use Tailwind variants"
-
-### How It Works
-
-1. Complete your work on a feature/task
-2. Update `docs/deployment_summary.md`:
-    - Add user-friendly bullet points to "Latest deploy summary"
-    - Add technical details to "Notes for internal team" (optional)
-    - Add all affected URLs to "Changed URLs"
-3. Commit your code
-4. Run `git push` - the pre-push hook will:
-    - Read deployment_summary.md
-    - Send data to PVS API
-    - Trigger email notification
-    - Automatically reset the file to template
-
-### Setup (One-Time)
-
-```bash
-node scripts/install-hooks.js
-```
-
-This installs the Git pre-push hook that handles deployment tracking automatically.
 
 ---
 

@@ -4,6 +4,7 @@ import dynamic from 'next/dynamic'
 import AnimatedSection from '@/components/animated-section'
 import HomeHealthCareHero from '@/components/hero/HomeHealthcareHero'
 import HomeHealthAideServices from '@/components/services/HomeHealthAideServices'
+import BergenCountyServiceAreas from './BergenCountyServiceAreas'
 
 const CallToAction = dynamic(() => import('@/components/CallToAction'), {
     ssr: false
@@ -18,6 +19,13 @@ export default function HomeAidesView({ header }: headerProps) {
         <main>
             <HomeHealthCareHero header={header} />
             <HomeHealthAideServices />
+
+            {/* BERGEN COUNTY SERVICE AREAS */}
+            <BergenCountyServiceAreas
+                serviceSlug="home-health-aides"
+                serviceName="Home Health Aides"
+            />
+
             <section className="bg-white py-12">
                 <AnimatedSection
                     animation="zoom"
