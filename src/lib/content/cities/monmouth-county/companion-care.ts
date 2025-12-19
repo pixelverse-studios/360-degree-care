@@ -86,7 +86,8 @@ function buildCityContent(
             title: `${SERVICE_NAME} in ${cityName}, NJ | 360 Degree Care`,
             description: options.heroDescription,
             keywords: `companion care ${cityName}, senior companionship ${cityName}, social support ${cityName}`,
-            alternates: { canonical }
+            alternates: { canonical },
+            robots: { index: false, follow: true }
         },
         schemaData: buildSchema(SERVICE_NAME, cityName, COMPANION_CARE_FAQS, {
             serviceSlug: SERVICE_SLUG,

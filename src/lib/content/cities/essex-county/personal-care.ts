@@ -87,7 +87,8 @@ function buildCityContent(
             title: `${SERVICE_NAME} in ${cityName}, NJ | 360 Degree Care`,
             description: options.heroDescription,
             keywords: `${SERVICE_NAME.toLowerCase()} ${cityName}, essex county personal care, in-home care ${cityName}`,
-            alternates: { canonical }
+            alternates: { canonical },
+            robots: { index: false, follow: true }
         },
         schemaData: buildSchema(SERVICE_NAME, cityName, PERSONAL_CARE_FAQS, {
             serviceSlug: SERVICE_SLUG,

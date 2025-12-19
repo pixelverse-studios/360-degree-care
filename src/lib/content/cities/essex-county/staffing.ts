@@ -86,7 +86,8 @@ function buildCityContent(
             title: `${SERVICE_NAME} in ${cityName}, NJ | 360 Degree Care`,
             description: options.heroDescription,
             keywords: `healthcare staffing ${cityName}, medical staffing ${cityName}, clinical staffing ${cityName}`,
-            alternates: { canonical }
+            alternates: { canonical },
+            robots: { index: false, follow: true }
         },
         schemaData: buildSchema(
             SERVICE_NAME,

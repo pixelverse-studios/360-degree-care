@@ -86,7 +86,8 @@ function buildCityContent(
             title: `${SERVICE_NAME} in ${cityName}, NJ | 360 Degree Care`,
             description: options.heroDescription,
             keywords: `private duty nursing ${cityName}, in-home nurse ${cityName}, skilled nursing ${cityName}`,
-            alternates: { canonical }
+            alternates: { canonical },
+            robots: { index: false, follow: true }
         },
         schemaData: buildSchema(SERVICE_NAME, cityName, NURSING_SERVICES_FAQS, {
             serviceSlug: SERVICE_SLUG,

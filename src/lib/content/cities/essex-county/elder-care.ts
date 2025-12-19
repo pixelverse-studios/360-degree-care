@@ -86,7 +86,8 @@ function buildCityContent(
             title: `${SERVICE_NAME} in ${cityName}, NJ | 360 Degree Care`,
             description: options.heroDescription,
             keywords: `elder care consulting ${cityName}, care planning ${cityName}, senior guidance ${cityName}`,
-            alternates: { canonical }
+            alternates: { canonical },
+            robots: { index: false, follow: true }
         },
         schemaData: buildSchema(
             SERVICE_NAME,
