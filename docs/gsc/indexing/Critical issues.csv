@@ -1,0 +1,8 @@
+Reason,Source,Validation,Pages
+Not found (404),Website,Failed,116
+Page with redirect,Website,Failed,3
+Redirect error,Website,Started,1
+Crawled - currently not indexed,Google systems,Started,449
+Discovered - currently not indexed,Google systems,Started,198
+Soft 404,Website,N/A,0
+Duplicate without user-selected canonical,Website,Passed,0
