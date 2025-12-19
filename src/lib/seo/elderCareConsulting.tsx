@@ -32,10 +32,28 @@ const StaticElderCareConsultingData = {
                 },
                 telephone: '(201) 299-4243'
             },
-            areaServed: {
-                '@type': 'State',
-                name: 'New Jersey'
-            },
+            areaServed: [
+                {
+                    '@type': 'AdministrativeArea',
+                    name: 'Bergen County, New Jersey'
+                },
+                {
+                    '@type': 'AdministrativeArea',
+                    name: 'Monmouth County, New Jersey'
+                },
+                {
+                    '@type': 'AdministrativeArea',
+                    name: 'Passaic County, New Jersey'
+                },
+                {
+                    '@type': 'AdministrativeArea',
+                    name: 'Essex County, New Jersey'
+                },
+                {
+                    '@type': 'AdministrativeArea',
+                    name: 'Ocean County, New Jersey'
+                }
+            ],
             description:
                 '360 Degree Care provides professional elder care consulting services including comprehensive assessments, personalized care planning, and expert guidance for families navigating senior care decisions.',
             offers: {

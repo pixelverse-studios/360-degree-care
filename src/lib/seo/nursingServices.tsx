@@ -34,10 +34,28 @@ const StaticNursingServicesData = {
                 award: 'CHAP Certified Organization',
                 hasCredential: 'Licensed by the State Attorney General'
             },
-            areaServed: {
-                '@type': 'State',
-                name: 'New Jersey'
-            },
+            areaServed: [
+                {
+                    '@type': 'AdministrativeArea',
+                    name: 'Bergen County, New Jersey'
+                },
+                {
+                    '@type': 'AdministrativeArea',
+                    name: 'Monmouth County, New Jersey'
+                },
+                {
+                    '@type': 'AdministrativeArea',
+                    name: 'Passaic County, New Jersey'
+                },
+                {
+                    '@type': 'AdministrativeArea',
+                    name: 'Essex County, New Jersey'
+                },
+                {
+                    '@type': 'AdministrativeArea',
+                    name: 'Ocean County, New Jersey'
+                }
+            ],
             description:
                 '360 Degree Care provides professional in-home nursing services including licensed nurses for wound care, assessments, injections, and medication management. All care is coordinated with physicians and available 24/7.',
             offers: {
