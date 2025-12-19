@@ -12,6 +12,7 @@
 - Added noindex meta tags to 126 non-Bergen County city pages (Essex, Monmouth, Passaic counties) to focus Google's crawl budget on priority Bergen County pages
 - Fixed 43 legacy URL 404 errors with permanent redirects (51 reported, 8 were stale GSC data for pages that now exist)
 - Added BreadcrumbList JSON-LD schema to all pages with breadcrumb navigation for rich snippet eligibility
+- Added 11 more redirects for legacy /{county}/{city} URL patterns found in GSC crawled-not-indexed report
 
 ## Notes for internal team
 - 360C-158 completed
@@ -37,6 +38,13 @@
   - Added to all 6 Bergen County hub pages (companion-care, personal-care, elder-care, home-health-aides, nursing, staffing)
   - Each link uses keyword-rich anchor text: "[Service Name] in [City], NJ"
   - Files: src/components/county/BergenCountyCityLinks.tsx (new), 6 county hub page files
+- 360C-163 completed: Added 11 redirects for legacy /{county}/{city} URLs from GSC crawled-not-indexed
+  - Bergen County: /bergen-county/east-rutherford, /oakland, /teaneck, /englewood-cliffs, /river-edge
+  - Passaic County: /passaic-county/totowa
+  - Monmouth County: /monmouth-county/atlantic-highlands-borough, /matawan-borough, /long-branch-city, /red-bank-borough
+  - Ocean County: /ocean-county/stafford-township
+  - All redirect to /services (preserves any link equity from old site)
+  - GSC removal submitted for 3 truly dead URLs: /blog/bergen-county, /blog/passaic-county, /services/live-in-care
 
 ## Changed URLs
 - https://www.360degreecare.net/services/companion-care
