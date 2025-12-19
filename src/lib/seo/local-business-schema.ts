@@ -206,6 +206,63 @@ export function generateCityLocalBusinessSchema(options: {
     }
 }
 
+// Generate Article/BlogPosting schema for blog posts
+export function generateArticleSchema(options: {
+    title: string
+    description: string
+    slug: string
+    publishDate: string
+    author: {
+        name: string
+        title: string
+    }
+    featuredImage: string
+    category: string
+    tags: string[]
+}) {
+    const articleUrl = `${BUSINESS_INFO.url}/blog/${options.slug}`
+    // Ensure image URL is absolute
+    const imageUrl = options.featuredImage.startsWith('http')
+        ? options.featuredImage
+        : `${BUSINESS_INFO.url}${options.featuredImage}`
+
+    return {
+        '@context': 'https://schema.org',
+        '@type': 'BlogPosting',
+        headline: options.title,
+        description: options.description,
+        image: imageUrl,
+        datePublished: options.publishDate,
+        dateModified: options.publishDate, // Using publishDate since we don't track modifications
+        author: {
+            '@type': 'Person',
+            name: options.author.name,
+            jobTitle: options.author.title,
+            worksFor: {
+                '@type': 'Organization',
+                name: BUSINESS_INFO.name,
+                url: BUSINESS_INFO.url
+            }
+        },
+        publisher: {
+            '@type': 'Organization',
+            name: BUSINESS_INFO.name,
+            url: BUSINESS_INFO.url,
+            logo: {
+                '@type': 'ImageObject',
+                url: BUSINESS_INFO.logo
+            }
+        },
+        mainEntityOfPage: {
+            '@type': 'WebPage',
+            '@id': articleUrl
+        },
+        url: articleUrl,
+        articleSection: options.category,
+        keywords: options.tags.join(', ')
+    }
+}
+
 // Bergen County cities for area served
 export const BERGEN_COUNTY_CITIES = [
     'Ridgewood',
