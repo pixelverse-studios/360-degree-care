@@ -3,6 +3,7 @@
 <!-- This file is automatically sent via email on successful deployment, then reset for the next cycle -->
 
 ## Latest deploy summary
+- Added Article/BlogPosting JSON-LD schema to all blog post pages for rich snippet eligibility
 - Added internal links from all 6 service hub pages to Bergen County city pages
 - New "Service Areas in Bergen County" section now appears on Companion Care, Personal Care, Elder Care, Home Health Aides, Nursing, and Staffing service pages
 - Each section links to all 9 Bergen County cities with keyword-rich anchor text (e.g., "Companion Care in Fort Lee, NJ")
@@ -45,6 +46,11 @@
   - Ocean County: /ocean-county/stafford-township
   - All redirect to /services (preserves any link equity from old site)
   - GSC removal submitted for 3 truly dead URLs: /blog/bergen-county, /blog/passaic-county, /services/live-in-care
+- 360C-155 completed: Added BlogPosting JSON-LD schema to all blog posts
+  - Schema includes: headline, description, image, datePublished, dateModified, author, publisher
+  - Author typed as Person with worksFor organization reference
+  - Publisher includes Organization with logo ImageObject
+  - Files: src/lib/seo/local-business-schema.ts (generateArticleSchema), src/components/blog/BlogClientPage.tsx
 
 ## Changed URLs
 - https://www.360degreecare.net/services/companion-care
@@ -62,3 +68,4 @@
 - All 108 non-Bergen city pages now have noindex (Essex, Monmouth, Passaic counties)
 - Redirect rules affect 43 legacy URLs (no new page URLs, only redirects)
 - All pages with breadcrumbs now include BreadcrumbList schema (site-wide)
+- All 20 blog post pages now have BlogPosting schema (see /blog)
