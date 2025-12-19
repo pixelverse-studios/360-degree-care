@@ -7,6 +7,7 @@
 - New "Service Areas in Bergen County" section now appears on Companion Care, Personal Care, Elder Care, Home Health Aides, Nursing, and Staffing service pages
 - Each section links to all 9 Bergen County cities with keyword-rich anchor text (e.g., "Companion Care in Fort Lee, NJ")
 - Added noindex meta tags to 126 non-Bergen County city pages (Essex, Monmouth, Passaic counties) to focus Google's crawl budget on priority Bergen County pages
+- Fixed 43 legacy URL 404 errors with permanent redirects (51 reported, 8 were stale GSC data for pages that now exist)
 
 ## Notes for internal team
 - 360C-158 completed
@@ -15,6 +16,14 @@
 - SEO improvement: Noindexing non-priority pages reduces crawl budget waste and helps Google focus on Bergen County content
 - Created reusable `BergenCountyServiceAreas` component for consistency across all service pages
 - Files changed for 360C-160: 18 content files in src/lib/content/cities/{essex,monmouth,passaic}-county/
+- 360C-161 completed: Added 43 redirects to next.config.mjs for legacy URL patterns:
+  - `/home` → `/`
+  - `/careers` → `/contact/employment`
+  - `/{county}/{city}` patterns → `/services`
+  - `/services/{service}/{city}` (missing county) → correct county path or hub
+  - `/services/staffing-services/*` → `/services/staffing/*`
+  - `/services/elder-care-consulting/*` → `/services/elder-care/*`
+- 8 URLs from GSC 404 list are now valid pages (stale data) - will resolve on re-crawl
 
 ## Changed URLs
 - https://www.360degreecare.net/services/companion-care
@@ -24,3 +33,4 @@
 - https://www.360degreecare.net/services/nursing
 - https://www.360degreecare.net/services/staffing
 - All 108 non-Bergen city pages now have noindex (Essex, Monmouth, Passaic counties)
+- Redirect rules affect 43 legacy URLs (no new page URLs, only redirects)

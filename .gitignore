@@ -40,5 +40,5 @@ next-env.d.ts
 /.repomix
 .repomix-output.txt
 
-# documentation
-/docs
+# documentation - allow tracking (pages are noindex)
+!/docs

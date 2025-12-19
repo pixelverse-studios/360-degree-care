@@ -76,7 +76,28 @@ const personalCareBergenZeroTrafficCities = [
 
 // Legacy standalone URLs that had traffic (per Nov 29 2025 GSC export)
 const legacyStandaloneRedirects = [
+    // Standalone pages
+    { source: '/home', destination: '/', permanent: true },
+    { source: '/careers', destination: '/contact/employment', permanent: true },
+
+    // Legacy county-only URLs
     { source: '/bergen-county', destination: '/services', permanent: true },
+    { source: '/ocean-county', destination: '/services', permanent: true },
+    { source: '/passaic-county', destination: '/services', permanent: true },
+
+    // Legacy /{county}/{city} structure (per Dec 18 2025 GSC 404 export)
+    { source: '/monmouth-county/ocean-township', destination: '/services', permanent: true },
+    { source: '/ocean-county/ocean-gate-borough', destination: '/services', permanent: true },
+    { source: '/passaic-county/little-falls', destination: '/services', permanent: true },
+    { source: '/bergen-county/fairview', destination: '/services', permanent: true },
+
+    // Legacy /services/{county} structure
+    { source: '/services/bergen-county', destination: '/services', permanent: true },
+    { source: '/services/passaic-county', destination: '/services', permanent: true },
+
+    // Legacy /contact/{county} structure
+    { source: '/contact/bergen-county', destination: '/contact', permanent: true },
+
     // Legacy staffing URLs missing county (per Dec 11 2025 GSC 404 export)
     { source: '/services/staffing/fort-lee', destination: '/services/staffing/bergen-county/fort-lee', permanent: true },
     { source: '/services/staffing/hackensack', destination: '/services/staffing/bergen-county/hackensack', permanent: true },
@@ -87,6 +108,63 @@ const legacyStandaloneRedirects = [
     { source: '/services/staffing/englewood', destination: '/services/staffing/bergen-county/englewood', permanent: true },
     { source: '/services/staffing/westwood', destination: '/services/staffing/bergen-county/westwood', permanent: true },
     { source: '/services/staffing/river-vale', destination: '/services/staffing/bergen-county/river-vale', permanent: true }
+]
+
+// Legacy service-city URLs missing county segment (per Dec 18 2025 GSC 404 export)
+// Cities WITH existing pages → redirect to city page
+const legacyCityWithPageRedirects = [
+    // Passaic County cities with pages
+    { source: '/services/staffing/passaic', destination: '/services/staffing/passaic-county/passaic', permanent: true },
+    { source: '/services/staffing/clifton', destination: '/services/staffing/passaic-county/clifton', permanent: true },
+    { source: '/services/staffing/wayne', destination: '/services/staffing/passaic-county/wayne', permanent: true },
+    { source: '/services/nursing/west-milford', destination: '/services/nursing/passaic-county/west-milford', permanent: true },
+    { source: '/services/companion-care/clifton', destination: '/services/companion-care/passaic-county/clifton', permanent: true },
+    { source: '/services/elder-care/clifton', destination: '/services/elder-care/passaic-county/clifton', permanent: true }
+]
+
+// Legacy service-city URLs for cities WITHOUT pages → redirect to county hub
+const legacyCityNoPageRedirects = [
+    // Passaic County cities without pages
+    { source: '/services/nursing/ringwood', destination: '/services/nursing/passaic-county', permanent: true },
+    { source: '/services/staffing/woodland-park', destination: '/services/staffing/passaic-county', permanent: true },
+    { source: '/services/elder-care/little-falls', destination: '/services/elder-care/passaic-county', permanent: true },
+    { source: '/services/companion-care/prospect-park', destination: '/services/companion-care/passaic-county', permanent: true },
+    { source: '/services/personal-care/bloomingdale', destination: '/services/personal-care/passaic-county', permanent: true },
+    { source: '/services/staffing/ringwood', destination: '/services/staffing/passaic-county', permanent: true },
+    { source: '/services/staffing/haledon', destination: '/services/staffing/passaic-county', permanent: true },
+    { source: '/services/elder-care/north-haledon', destination: '/services/elder-care/passaic-county', permanent: true },
+    { source: '/services/nursing/hawthorne', destination: '/services/nursing/passaic-county', permanent: true },
+    { source: '/services/home-health-aides/haledon', destination: '/services/home-health-aides/passaic-county', permanent: true },
+    { source: '/services/home-health-aides/wanaque', destination: '/services/home-health-aides/passaic-county', permanent: true },
+    { source: '/services/companion-care/pompton-lakes', destination: '/services/companion-care/passaic-county', permanent: true },
+    { source: '/services/companion-care/little-falls', destination: '/services/companion-care/passaic-county', permanent: true },
+
+    // Bergen County cities without pages
+    { source: '/services/home-health-aides/oradell', destination: '/services/home-health-aides/bergen-county', permanent: true },
+    { source: '/services/staffing/elmwood-park', destination: '/services/staffing/bergen-county', permanent: true },
+    { source: '/services/companion-care/cliffside-park', destination: '/services/companion-care/bergen-county', permanent: true },
+
+    // Monmouth County cities without pages
+    { source: '/services/companion-care/union-beach-borough', destination: '/services/companion-care/monmouth-county', permanent: true },
+    { source: '/services/companion-care/neptune', destination: '/services/companion-care/monmouth-county', permanent: true },
+
+    // Ocean County cities without pages
+    { source: '/services/companion-care/bay-head', destination: '/services/companion-care/ocean-county', permanent: true }
+]
+
+// Legacy service name redirects (staffing-services → staffing, elder-care-consulting → elder-care)
+const legacyServiceNameRedirects = [
+    // staffing-services → staffing (city pages exist)
+    { source: '/services/staffing-services/totowa', destination: '/services/staffing/passaic-county/totowa', permanent: true },
+
+    // staffing-services → staffing (no city pages)
+    { source: '/services/staffing-services/hawthorne', destination: '/services/staffing/passaic-county', permanent: true },
+    { source: '/services/staffing-services/bloomingdale', destination: '/services/staffing/passaic-county', permanent: true },
+    { source: '/services/staffing-services/little-falls', destination: '/services/staffing/passaic-county', permanent: true },
+    { source: '/services/staffing-services/ringwood', destination: '/services/staffing/passaic-county', permanent: true },
+
+    // elder-care-consulting → elder-care
+    { source: '/services/elder-care-consulting/wanaque', destination: '/services/elder-care/passaic-county', permanent: true }
 ]
 
 const nextConfig = {
@@ -130,7 +208,10 @@ const nextConfig = {
             ...serviceCountyRedirects,
             ...legacyServiceCityRedirects,
             ...personalCareBergenRedirects,
-            ...legacyStandaloneRedirects
+            ...legacyStandaloneRedirects,
+            ...legacyCityWithPageRedirects,
+            ...legacyCityNoPageRedirects,
+            ...legacyServiceNameRedirects
         ]
     },
     async headers() {
