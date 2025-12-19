@@ -8,6 +8,7 @@
 - Each section links to all 9 Bergen County cities with keyword-rich anchor text (e.g., "Companion Care in Fort Lee, NJ")
 - Added noindex meta tags to 126 non-Bergen County city pages (Essex, Monmouth, Passaic counties) to focus Google's crawl budget on priority Bergen County pages
 - Fixed 43 legacy URL 404 errors with permanent redirects (51 reported, 8 were stale GSC data for pages that now exist)
+- Added BreadcrumbList JSON-LD schema to all pages with breadcrumb navigation for rich snippet eligibility
 
 ## Notes for internal team
 - 360C-158 completed
@@ -24,6 +25,10 @@
   - `/services/staffing-services/*` → `/services/staffing/*`
   - `/services/elder-care-consulting/*` → `/services/elder-care/*`
 - 8 URLs from GSC 404 list are now valid pages (stale data) - will resolve on re-crawl
+- 360C-150 completed: BreadcrumbList schema added to breadcrumb navigation component
+  - Schema auto-generated based on current page path
+  - Includes Home and all visible breadcrumb items with absolute URLs
+  - Files: src/lib/seo/breadcrumb-schema.ts (new), src/components/nav/Breadcrumbs.tsx
 
 ## Changed URLs
 - https://www.360degreecare.net/services/companion-care
@@ -34,3 +39,4 @@
 - https://www.360degreecare.net/services/staffing
 - All 108 non-Bergen city pages now have noindex (Essex, Monmouth, Passaic counties)
 - Redirect rules affect 43 legacy URLs (no new page URLs, only redirects)
+- All pages with breadcrumbs now include BreadcrumbList schema (site-wide)

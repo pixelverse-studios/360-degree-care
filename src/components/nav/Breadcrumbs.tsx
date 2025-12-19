@@ -5,6 +5,7 @@ import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { cn } from '@/lib/utils'
 import { availablePages } from '@/utils/routes'
+import { generateBreadcrumbSchema } from '@/lib/seo/breadcrumb-schema'
 import {
     Breadcrumb,
     BreadcrumbItem,
@@ -95,60 +96,80 @@ export default function Breadcrumbs() {
 
     const is404Page = breadcrumbs.length > 0 && !breadcrumbs[0].isValid
 
+    // Generate JSON-LD schema for valid breadcrumbs
+    const breadcrumbSchema =
+        !is404Page && breadcrumbs.length > 0
+            ? generateBreadcrumbSchema(
+                  breadcrumbs.map(b => ({ route: b.route, label: b.label }))
+              )
+            : null
+
     return (
-        <Breadcrumb className="absolute w-full z-10 top-[9rem] hidden lg:block">
-            <BreadcrumbList className="max-w-custom w-full mx-auto px-6 py-4 bg-transparent">
-                <BreadcrumbItem>
-                    <BreadcrumbLink
-                        asChild
-                        className="text-black-muted font-bold hover:text-primary"
-                    >
-                        <Link href="/">Home</Link>
-                    </BreadcrumbLink>
-                </BreadcrumbItem>
+        <>
+            {breadcrumbSchema && (
+                <script
+                    type="application/ld+json"
+                    dangerouslySetInnerHTML={{
+                        __html: JSON.stringify(breadcrumbSchema)
+                    }}
+                />
+            )}
+            <Breadcrumb className="absolute w-full z-10 top-[9rem] hidden lg:block">
+                <BreadcrumbList className="max-w-custom w-full mx-auto px-6 py-4 bg-transparent">
+                    <BreadcrumbItem>
+                        <BreadcrumbLink
+                            asChild
+                            className="text-black-muted font-bold hover:text-primary"
+                        >
+                            <Link href="/">Home</Link>
+                        </BreadcrumbLink>
+                    </BreadcrumbItem>
 
-                {is404Page ? (
-                    <>
-                        <BreadcrumbSeparator />
-                        <BreadcrumbItem>
-                            <span className="text-black font-bold">404</span>
-                        </BreadcrumbItem>
-                    </>
-                ) : (
-                    breadcrumbs.map((crumb, index) => {
-                        const isLast = index === breadcrumbs.length - 1
+                    {is404Page ? (
+                        <>
+                            <BreadcrumbSeparator />
+                            <BreadcrumbItem>
+                                <span className="text-black font-bold">
+                                    404
+                                </span>
+                            </BreadcrumbItem>
+                        </>
+                    ) : (
+                        breadcrumbs.map((crumb, index) => {
+                            const isLast = index === breadcrumbs.length - 1
 
-                        return (
-                            <Fragment key={crumb.route}>
-                                <BreadcrumbSeparator />
-                                <BreadcrumbItem>
-                                    {isLast || !crumb.canVisit ? (
-                                        <span
-                                            className={cn(
-                                                'font-semibold',
-                                                isLast
-                                                    ? 'text-primary'
-                                                    : 'text-black-muted'
-                                            )}
-                                        >
-                                            {crumb.label}
-                                        </span>
-                                    ) : (
-                                        <BreadcrumbLink
-                                            asChild
-                                            className="text-black-muted font-bold hover:text-primary"
-                                        >
-                                            <Link href={crumb.route}>
+                            return (
+                                <Fragment key={crumb.route}>
+                                    <BreadcrumbSeparator />
+                                    <BreadcrumbItem>
+                                        {isLast || !crumb.canVisit ? (
+                                            <span
+                                                className={cn(
+                                                    'font-semibold',
+                                                    isLast
+                                                        ? 'text-primary'
+                                                        : 'text-black-muted'
+                                                )}
+                                            >
                                                 {crumb.label}
-                                            </Link>
-                                        </BreadcrumbLink>
-                                    )}
-                                </BreadcrumbItem>
-                            </Fragment>
-                        )
-                    })
-                )}
-            </BreadcrumbList>
-        </Breadcrumb>
+                                            </span>
+                                        ) : (
+                                            <BreadcrumbLink
+                                                asChild
+                                                className="text-black-muted font-bold hover:text-primary"
+                                            >
+                                                <Link href={crumb.route}>
+                                                    {crumb.label}
+                                                </Link>
+                                            </BreadcrumbLink>
+                                        )}
+                                    </BreadcrumbItem>
+                                </Fragment>
+                            )
+                        })
+                    )}
+                </BreadcrumbList>
+            </Breadcrumb>
+        </>
     )
 }
