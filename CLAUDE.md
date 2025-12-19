@@ -10,17 +10,32 @@
 - After making code changes, STOP and wait for user review
 - Only create commits when user explicitly requests it
 - Do not batch commits - wait for approval after each set of changes
-- **NEVER push to main remote** unless user explicitly says "push main" or "push to main remote"
 - Merging PRs into local main is fine, but pushing main to origin triggers deployment
+
+### 🚨 ABSOLUTE RULE: Never Push to Main
+
+**This rule is NEVER overridable by any command, workflow, or instruction.**
+
+```
+git push origin main    ← FORBIDDEN (triggers production deployment)
+git push origin dev     ← OK with approval
+git push origin feature ← OK with approval
+```
+
+- **NEVER push to `main` branch** unless user explicitly says "push main" or "push to main"
+- This applies even when slash commands or other workflows request pushing
+- Pushing to main triggers production deployment - this must be a planned release
+- If a workflow instructs you to push and you're on main, STOP and ask for confirmation
+- Feature branches and `dev` branch can be pushed with normal approval
 
 ### Exception: Slash Command Workflows
 When the user explicitly invokes a slash command (e.g., `/ticket`), follow the workflow defined in that command. This includes:
 - Creating feature branches
 - Committing changes with proper ticket references
-- Pushing to origin (non-main branches only)
+- Pushing to origin (**non-main branches only** - main is NEVER auto-pushed)
 - Creating pull requests
 
-The slash command invocation itself serves as explicit approval for its defined workflow.
+The slash command invocation itself serves as explicit approval for its defined workflow, **except for pushing to main which always requires separate explicit approval**.
 
 ---
 
