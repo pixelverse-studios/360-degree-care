@@ -3,6 +3,7 @@ import CountyHeroSection from '@/components/county/CountyHeroSection'
 import CountyIntroSection from '@/components/county/CountyIntroSection'
 import RegionalSection from '@/components/county/RegionalSection'
 import ServiceAreaGrid from '@/components/county/ServiceAreaGrid'
+import BergenCountyCityLinks from '@/components/county/BergenCountyCityLinks'
 import CountyCTASection from '@/components/county/CountyCTASection'
 import { bergenCountyCompanionCareContent } from '@/lib/content/bergen-county-companion-care'
 import { getCitySlugs } from '@/lib/content/city-slug-map'
@@ -78,6 +79,12 @@ export default function CompanionCareBergenCountyPage() {
                     regions={content.serviceAreas.regions}
                     linkBase={serviceLinkBase}
                     citySlugs={citySlugs}
+                />
+
+                {/* City-Specific Service Pages */}
+                <BergenCountyCityLinks
+                    serviceSlug="companion-care"
+                    serviceName="Companion Care"
                 />
 
                 {/* Services Section */}

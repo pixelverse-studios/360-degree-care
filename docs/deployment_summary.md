@@ -6,6 +6,9 @@
 - Added internal links from all 6 service hub pages to Bergen County city pages
 - New "Service Areas in Bergen County" section now appears on Companion Care, Personal Care, Elder Care, Home Health Aides, Nursing, and Staffing service pages
 - Each section links to all 9 Bergen County cities with keyword-rich anchor text (e.g., "Companion Care in Fort Lee, NJ")
+- Added internal links from all 6 Bergen County hub pages to city-specific service pages
+- New "Services by City" section on county hub pages provides prominent links to Fort Lee, Ridgewood, Paramus, Hackensack, Teaneck, Fair Lawn, Englewood, Westwood, and River Vale pages
+- Links use keyword-rich anchor text (e.g., "Personal Care in Fort Lee, NJ") for SEO benefit
 - Added noindex meta tags to 126 non-Bergen County city pages (Essex, Monmouth, Passaic counties) to focus Google's crawl budget on priority Bergen County pages
 - Fixed 43 legacy URL 404 errors with permanent redirects (51 reported, 8 were stale GSC data for pages that now exist)
 - Added BreadcrumbList JSON-LD schema to all pages with breadcrumb navigation for rich snippet eligibility
@@ -29,6 +32,11 @@
   - Schema auto-generated based on current page path
   - Includes Home and all visible breadcrumb items with absolute URLs
   - Files: src/lib/seo/breadcrumb-schema.ts (new), src/components/nav/Breadcrumbs.tsx
+- 360C-159 completed: Added internal links from Bergen County hub pages to city pages
+  - New `BergenCountyCityLinks` component provides prominent city links section
+  - Added to all 6 Bergen County hub pages (companion-care, personal-care, elder-care, home-health-aides, nursing, staffing)
+  - Each link uses keyword-rich anchor text: "[Service Name] in [City], NJ"
+  - Files: src/components/county/BergenCountyCityLinks.tsx (new), 6 county hub page files
 
 ## Changed URLs
 - https://www.360degreecare.net/services/companion-care
@@ -37,6 +45,12 @@
 - https://www.360degreecare.net/services/home-health-aides
 - https://www.360degreecare.net/services/nursing
 - https://www.360degreecare.net/services/staffing
+- https://www.360degreecare.net/services/companion-care/bergen-county
+- https://www.360degreecare.net/services/personal-care/bergen-county
+- https://www.360degreecare.net/services/elder-care/bergen-county
+- https://www.360degreecare.net/services/home-health-aides/bergen-county
+- https://www.360degreecare.net/services/nursing/bergen-county
+- https://www.360degreecare.net/services/staffing/bergen-county
 - All 108 non-Bergen city pages now have noindex (Essex, Monmouth, Passaic counties)
 - Redirect rules affect 43 legacy URLs (no new page URLs, only redirects)
 - All pages with breadcrumbs now include BreadcrumbList schema (site-wide)
