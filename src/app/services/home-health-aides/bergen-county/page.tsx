@@ -5,6 +5,7 @@ import CountyHeroSection from '@/components/county/CountyHeroSection'
 import CountyIntroSection from '@/components/county/CountyIntroSection'
 import RegionalSection from '@/components/county/RegionalSection'
 import ServiceAreaGrid from '@/components/county/ServiceAreaGrid'
+import BergenCountyCityLinks from '@/components/county/BergenCountyCityLinks'
 import CountyCTASection from '@/components/county/CountyCTASection'
 import { bergenCountyHomeHealthAidesContent } from '@/lib/content/bergen-county-home-health-aides'
 import { getCitySlugs } from '@/lib/content/city-slug-map'
@@ -74,6 +75,12 @@ export default function HomeHealthAidesBergenCountyPage() {
                     regions={content.serviceAreas.regions}
                     linkBase={serviceLinkBase}
                     citySlugs={citySlugs}
+                />
+
+                {/* City-Specific Service Pages */}
+                <BergenCountyCityLinks
+                    serviceSlug="home-health-aides"
+                    serviceName="Home Health Aide"
                 />
 
                 {/* Services Section */}
