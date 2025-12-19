@@ -34,10 +34,28 @@ const StaticHomeHealthAidesData = {
                 award: 'CHAP Certified Organization',
                 hasCredential: 'Licensed by the State Attorney General'
             },
-            areaServed: {
-                '@type': 'State',
-                name: 'New Jersey'
-            },
+            areaServed: [
+                {
+                    '@type': 'AdministrativeArea',
+                    name: 'Bergen County, New Jersey'
+                },
+                {
+                    '@type': 'AdministrativeArea',
+                    name: 'Monmouth County, New Jersey'
+                },
+                {
+                    '@type': 'AdministrativeArea',
+                    name: 'Passaic County, New Jersey'
+                },
+                {
+                    '@type': 'AdministrativeArea',
+                    name: 'Essex County, New Jersey'
+                },
+                {
+                    '@type': 'AdministrativeArea',
+                    name: 'Ocean County, New Jersey'
+                }
+            ],
             description:
                 '360 Degree Care provides Concierge-Level™ home health aide services including certified aides for daily living support, hygiene assistance, and companionship. All services are supervised by nurses.',
             offers: {

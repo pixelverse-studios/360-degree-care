@@ -3,6 +3,7 @@
 <!-- This file is automatically sent via email on successful deployment, then reset for the next cycle -->
 
 ## Latest deploy summary
+- Fixed service page schemas: Changed areaServed from State to AdministrativeArea array (5 NJ counties) for improved local SEO
 - Added Article/BlogPosting JSON-LD schema to all blog post pages for rich snippet eligibility
 - Added internal links from all 6 service hub pages to Bergen County city pages
 - New "Service Areas in Bergen County" section now appears on Companion Care, Personal Care, Elder Care, Home Health Aides, Nursing, and Staffing service pages
@@ -51,6 +52,10 @@
   - Author typed as Person with worksFor organization reference
   - Publisher includes Organization with logo ImageObject
   - Files: src/lib/seo/local-business-schema.ts (generateArticleSchema), src/components/blog/BlogClientPage.tsx
+- 360C-148 completed: Fixed areaServed schema on all service pages and root layout
+  - Changed from `@type: State` to array of `@type: AdministrativeArea` for 5 counties
+  - Counties: Bergen, Monmouth, Passaic, Essex, Ocean
+  - Files: 6 service SEO files in src/lib/seo/, src/app/layout.tsx (LocalBusinessSchema)
 
 ## Changed URLs
 - https://www.360degreecare.net/services/companion-care

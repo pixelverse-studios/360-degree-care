@@ -32,10 +32,28 @@ const StaticStaffingServicesData = {
                 },
                 telephone: '(201) 299-4243'
             },
-            areaServed: {
-                '@type': 'State',
-                name: 'New Jersey'
-            },
+            areaServed: [
+                {
+                    '@type': 'AdministrativeArea',
+                    name: 'Bergen County, New Jersey'
+                },
+                {
+                    '@type': 'AdministrativeArea',
+                    name: 'Monmouth County, New Jersey'
+                },
+                {
+                    '@type': 'AdministrativeArea',
+                    name: 'Passaic County, New Jersey'
+                },
+                {
+                    '@type': 'AdministrativeArea',
+                    name: 'Essex County, New Jersey'
+                },
+                {
+                    '@type': 'AdministrativeArea',
+                    name: 'Ocean County, New Jersey'
+                }
+            ],
             description:
                 '360 Degree Care provides professional medical staffing solutions including qualified RNs, LPNs, CNAs, therapists, and support staff for healthcare facilities. Every placement is vetted and ready to provide excellent care.',
             offers: {

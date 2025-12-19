@@ -126,10 +126,13 @@ const localBusinessSchema = {
         postalCode: '07450',
         addressCountry: 'US'
     },
-    areaServed: {
-        '@type': 'State',
-        name: 'New Jersey'
-    },
+    areaServed: [
+        { '@type': 'AdministrativeArea', name: 'Bergen County, New Jersey' },
+        { '@type': 'AdministrativeArea', name: 'Monmouth County, New Jersey' },
+        { '@type': 'AdministrativeArea', name: 'Passaic County, New Jersey' },
+        { '@type': 'AdministrativeArea', name: 'Essex County, New Jersey' },
+        { '@type': 'AdministrativeArea', name: 'Ocean County, New Jersey' }
+    ],
     sameAs: [FACEBOOK, INSTA],
     serviceType: [
         'Personal Care',
