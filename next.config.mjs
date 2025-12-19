@@ -85,11 +85,22 @@ const legacyStandaloneRedirects = [
     { source: '/ocean-county', destination: '/services', permanent: true },
     { source: '/passaic-county', destination: '/services', permanent: true },
 
-    // Legacy /{county}/{city} structure (per Dec 18 2025 GSC 404 export)
+    // Legacy /{county}/{city} structure (per Dec 18-19 2025 GSC exports)
     { source: '/monmouth-county/ocean-township', destination: '/services', permanent: true },
     { source: '/ocean-county/ocean-gate-borough', destination: '/services', permanent: true },
     { source: '/passaic-county/little-falls', destination: '/services', permanent: true },
     { source: '/bergen-county/fairview', destination: '/services', permanent: true },
+    { source: '/bergen-county/east-rutherford', destination: '/services', permanent: true },
+    { source: '/bergen-county/oakland', destination: '/services', permanent: true },
+    { source: '/bergen-county/teaneck', destination: '/services', permanent: true },
+    { source: '/bergen-county/englewood-cliffs', destination: '/services', permanent: true },
+    { source: '/bergen-county/river-edge', destination: '/services', permanent: true },
+    { source: '/passaic-county/totowa', destination: '/services', permanent: true },
+    { source: '/monmouth-county/atlantic-highlands-borough', destination: '/services', permanent: true },
+    { source: '/monmouth-county/matawan-borough', destination: '/services', permanent: true },
+    { source: '/monmouth-county/long-branch-city', destination: '/services', permanent: true },
+    { source: '/monmouth-county/red-bank-borough', destination: '/services', permanent: true },
+    { source: '/ocean-county/stafford-township', destination: '/services', permanent: true },
 
     // Legacy /services/{county} structure
     { source: '/services/bergen-county', destination: '/services', permanent: true },
