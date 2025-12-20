@@ -70,7 +70,3 @@
 - https://www.360degreecare.net/services/home-health-aides/bergen-county
 - https://www.360degreecare.net/services/nursing/bergen-county
 - https://www.360degreecare.net/services/staffing/bergen-county
-- All 108 non-Bergen city pages now have noindex (Essex, Monmouth, Passaic counties)
-- Redirect rules affect 43 legacy URLs (no new page URLs, only redirects)
-- All pages with breadcrumbs now include BreadcrumbList schema (site-wide)
-- All 20 blog post pages now have BlogPosting schema (see /blog)
