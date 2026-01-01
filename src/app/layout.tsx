@@ -9,7 +9,6 @@ import Breadcrumbs from '@/components/nav/Breadcrumbs'
 import Footer from '@/components/Footer'
 import { Toaster } from '@/components/ui/sonner'
 import { RouteStateProvider } from '@/lib/providers'
-import { getImgSrc } from '@/lib/images'
 import { FACEBOOK, INSTA, PHONE, EMAIL } from '@/utils/constants'
 
 const CANONICAL_ORIGIN = 'https://www.360degreecare.net'
@@ -18,9 +17,12 @@ const SITE_DESCRIPTION =
     '360 Degree Care delivers concierge home care, nursing, companion, and staffing support across New Jersey, empowering families with compassionate caregivers.'
 const DEFAULT_OG_IMAGE =
     'https://res.cloudinary.com/pixelverse-studios/image/upload/c_fill,w_1200,h_630,q_auto,f_auto/v1750022033/clients/360dc/assets/happy_couple_1_xgwhwr.jpg'
-const FAVICON_16 = getImgSrc('Favicon_16x16') ?? `${CANONICAL_ORIGIN}/logo.png`
-const FAVICON_32 = getImgSrc('Favicon_32x32') ?? `${CANONICAL_ORIGIN}/logo.png`
-const FAVICON_64 = getImgSrc('Favicon_64x64') ?? `${CANONICAL_ORIGIN}/logo.png`
+// Local favicon paths for Google crawler compatibility (same-origin required)
+const FAVICON_ICO = '/favicon.ico'
+const FAVICON_16 = '/favicon-16x16.png'
+const FAVICON_32 = '/favicon-32x32.png'
+const FAVICON_64 = '/favicon-64x64.png'
+const APPLE_TOUCH_ICON = '/apple-touch-icon.png'
 const SITE_LOGO = FAVICON_64
 
 const CampaignTracker = dynamic(
@@ -54,29 +56,13 @@ export const metadata = {
     metadataBase: new URL(CANONICAL_ORIGIN),
     icons: {
         icon: [
-            {
-                url: FAVICON_16,
-                type: 'image/png',
-                sizes: '16x16'
-            },
-            {
-                url: FAVICON_32,
-                type: 'image/png',
-                sizes: '32x32'
-            },
-            {
-                url: FAVICON_64,
-                type: 'image/png',
-                sizes: '64x64'
-            }
+            { url: FAVICON_ICO, sizes: 'any' },
+            { url: FAVICON_16, type: 'image/png', sizes: '16x16' },
+            { url: FAVICON_32, type: 'image/png', sizes: '32x32' },
+            { url: FAVICON_64, type: 'image/png', sizes: '64x64' }
         ],
-        apple: [
-            {
-                url: FAVICON_64,
-                sizes: '180x180'
-            }
-        ],
-        shortcut: [{ url: FAVICON_32 }]
+        apple: [{ url: APPLE_TOUCH_ICON, sizes: '180x180' }],
+        shortcut: [{ url: FAVICON_ICO }]
     },
     title: SITE_TITLE,
     description: SITE_DESCRIPTION,

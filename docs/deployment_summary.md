@@ -15,6 +15,11 @@
 - Fixed 43 legacy URL 404 errors with permanent redirects (51 reported, 8 were stale GSC data for pages that now exist)
 - Added BreadcrumbList JSON-LD schema to all pages with breadcrumb navigation for rich snippet eligibility
 - Added 11 more redirects for legacy /{county}/{city} URL patterns found in GSC crawled-not-indexed report
+- Created 9 new SEO-optimized blog article modules (staged, not yet published)
+- Blog articles are staged for scheduled release: 2 per week starting Jan 6, 2026
+- Added publish schedule comments to blogs index.ts for tracking
+- No new blog URLs are live yet - articles will be published according to Linear tickets
+- Fixed favicon not appearing in Google search results - switched from Cloudinary CDN to same-origin local files
 
 ## Notes for internal team
 - 360C-158 completed
@@ -39,38 +44,32 @@
   - New `BergenCountyCityLinks` component provides prominent city links section
   - Added to all 6 Bergen County hub pages (companion-care, personal-care, elder-care, home-health-aides, nursing, staffing)
   - Each link uses keyword-rich anchor text: "[Service Name] in [City], NJ"
-  - Files: src/components/county/BergenCountyCityLinks.tsx (new), 6 county hub page files
-- 360C-163 completed: Added 11 redirects for legacy /{county}/{city} URLs from GSC crawled-not-indexed
-  - Bergen County: /bergen-county/east-rutherford, /oakland, /teaneck, /englewood-cliffs, /river-edge
-  - Passaic County: /passaic-county/totowa
-  - Monmouth County: /monmouth-county/atlantic-highlands-borough, /matawan-borough, /long-branch-city, /red-bank-borough
-  - Ocean County: /ocean-county/stafford-township
-  - All redirect to /services (preserves any link equity from old site)
-  - GSC removal submitted for 3 truly dead URLs: /blog/bergen-county, /blog/passaic-county, /services/live-in-care
-- 360C-155 completed: Added BlogPosting JSON-LD schema to all blog posts
-  - Schema includes: headline, description, image, datePublished, dateModified, author, publisher
-  - Author typed as Person with worksFor organization reference
-  - Publisher includes Organization with logo ImageObject
-  - Files: src/lib/seo/local-business-schema.ts (generateArticleSchema), src/components/blog/BlogClientPage.tsx
-- 360C-148 completed: Fixed areaServed schema on all service pages and root layout
-  - Changed from `@type: State` to array of `@type: AdministrativeArea` for 5 counties
-  - Counties: Bergen, Monmouth, Passaic, Essex, Ocean
-  - Files: 6 service SEO files in src/lib/seo/, src/app/layout.tsx (LocalBusinessSchema)
+- 9 new blog TypeScript modules created in `src/lib/blogs/articles/2025/`
+- Blogs are NOT exported in index.ts yet (staged for scheduled publishing)
+- Linear tickets 360C-167 through 360C-174 track the publish schedule
+- Each ticket due date = publish date (Tue/Thu alternating)
+
+**Staged blog files:**
+- `whatDoesHomeHealthAideDo.ts` → Jan 6, 2026 (360C-167)
+- `questionsToAskHomeCareAgency.ts` → Jan 8, 2026 (360C-168)
+- `homeCareVsHomeHealthCare.ts` → Jan 13, 2026 (360C-169)
+- `signsParentNeedsHomeCare.ts` → Jan 15, 2026 (360C-170)
+- `chooseHomeCareAgencyBergenCounty.ts` → Jan 20, 2026 (360C-171)
+- `whatIsRespiteCare.ts` → Jan 22, 2026 (360C-172)
+- `doesMedicareCoverHomeCareNJ.ts` → Jan 27, 2026 (360C-173)
+- `homeCareVsAssistedLivingNJ.ts` → Jan 29, 2026 (360C-174)
+- `howToPayForHomeCareNJ.ts` → No ticket yet (future)
+
+**Files modified:**
+- src/lib/blogs/index.ts (added schedule comments, no new exports)
+
+360C-166 completed: Fixed favicon for Google search results
+  - Added local favicon files: favicon.ico, favicon-16x16.png, favicon-32x32.png, favicon-64x64.png, apple-touch-icon.png
+  - Updated src/app/layout.tsx to use local paths instead of Cloudinary CDN
+  - Updated public/manifest.json to use local paths
+  - Google crawler requires same-origin favicons for reliable SERP display
 
 ## Changed URLs
-- https://www.360degreecare.net/services/companion-care
-- https://www.360degreecare.net/services/personal-care
-- https://www.360degreecare.net/services/elder-care
-- https://www.360degreecare.net/services/home-health-aides
-- https://www.360degreecare.net/services/nursing
-- https://www.360degreecare.net/services/staffing
-- https://www.360degreecare.net/services/companion-care/bergen-county
-- https://www.360degreecare.net/services/personal-care/bergen-county
-- https://www.360degreecare.net/services/elder-care/bergen-county
-- https://www.360degreecare.net/services/home-health-aides/bergen-county
-- https://www.360degreecare.net/services/nursing/bergen-county
-- https://www.360degreecare.net/services/staffing/bergen-county
-- All 108 non-Bergen city pages now have noindex (Essex, Monmouth, Passaic counties)
-- Redirect rules affect 43 legacy URLs (no new page URLs, only redirects)
-- All pages with breadcrumbs now include BreadcrumbList schema (site-wide)
-- All 20 blog post pages now have BlogPosting schema (see /blog)
+No new URLs live yet - staged for scheduled release.
+
+(After deployment: Request favicon re-crawl in Google Search Console)
