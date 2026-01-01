@@ -24,6 +24,9 @@
 - Migrated About page from legacy client-side Head API to modern Next.js 14 metadata export
 
 ## Notes for internal team
+- Branching model changed: now using `dev/v1.0-seo-foundation` milestone branch instead of single `dev` branch
+- This allows parallel work on multiple milestones when needed
+- PRs now target milestone-specific dev branches, which merge to main when milestone is complete
 - 360C-158 completed
 - 360C-160 completed: Added `robots: { index: false, follow: true }` to all non-Bergen county city page metadata
 - SEO improvement: Internal linking from service hubs to city pages helps Google understand site structure and should improve indexing of city pages

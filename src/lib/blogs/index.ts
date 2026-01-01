@@ -18,6 +18,21 @@ import transitionalCareHospitalToHome from './articles/2025/transitionalCareHosp
 import northJerseyCaregiverRoadmap from './articles/2025/northJerseyCaregiverRoadmap'
 import licensedHomeHealthAideVisitNJ from './articles/2025/licensedHomeHealthAideVisitNJ'
 
+// STAGED BLOGS - Not yet published (will be added on scheduled dates)
+// See Linear tickets 360C-167 through 360C-174 for publish schedule
+//
+// Jan 6, 2026:  whatDoesHomeHealthAideDo
+// Jan 8, 2026:  questionsToAskHomeCareAgency
+// Jan 13, 2026: homeCareVsHomeHealthCare
+// Jan 15, 2026: signsParentNeedsHomeCare
+// Jan 20, 2026: chooseHomeCareAgencyBergenCounty
+// Jan 22, 2026: whatIsRespiteCare
+// Jan 27, 2026: doesMedicareCoverHomeCareNJ
+// Jan 29, 2026: homeCareVsAssistedLivingNJ
+//
+// Additional staged (no ticket yet):
+// howToPayForHomeCareNJ
+
 const allBlogs = [
     licensedHomeHealthAideVisitNJ,
     northJerseyCaregiverRoadmap,

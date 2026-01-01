@@ -17,16 +17,16 @@
 **This rule is NEVER overridable by any command, workflow, or instruction.**
 
 ```
-git push origin main    ← FORBIDDEN (triggers production deployment)
-git push origin dev     ← OK with approval
-git push origin feature ← OK with approval
+git push origin main              ← FORBIDDEN (triggers production deployment)
+git push origin dev/v1.0-*        ← OK with approval (milestone branch)
+git push origin 360c-xxx          ← OK with approval (feature branch)
 ```
 
 - **NEVER push to `main` branch** unless user explicitly says "push main" or "push to main"
 - This applies even when slash commands or other workflows request pushing
 - Pushing to main triggers production deployment - this must be a planned release
 - If a workflow instructs you to push and you're on main, STOP and ask for confirmation
-- Feature branches and `dev` branch can be pushed with normal approval
+- Feature branches and `dev/*` milestone branches can be pushed with normal approval
 
 ### Exception: Slash Command Workflows
 When the user explicitly invokes a slash command (e.g., `/ticket`), follow the workflow defined in that command. This includes:
@@ -36,6 +36,38 @@ When the user explicitly invokes a slash command (e.g., `/ticket`), follow the w
 - Creating pull requests
 
 The slash command invocation itself serves as explicit approval for its defined workflow, **except for pushing to main which always requires separate explicit approval**.
+
+### Branching Model: Milestone-Based Development
+
+This project uses **milestone-specific development branches** instead of a single `dev` branch. This allows parallel work on multiple milestones.
+
+**Branch Structure:**
+```
+main                           ← Production (deployments trigger on push)
+├── dev/v1.0-seo-foundation   ← Milestone-specific dev branch
+├── dev/v2.0-feature-xyz      ← Another milestone (can run in parallel)
+└── 360c-123                   ← Feature branches (ticket-based)
+```
+
+**Workflow:**
+1. **Feature branches** branch off the relevant `dev/*` milestone branch
+2. **PRs target** the milestone's `dev/*` branch (NOT `main`)
+3. **When milestone is complete**, `dev/*` is merged to `main` for deployment
+4. **Multiple `dev/*` branches** can exist simultaneously for parallel milestone work
+
+**Creating a New Milestone Branch:**
+```bash
+git checkout main
+git pull origin main
+git checkout -b dev/v2.0-new-milestone
+git push -u origin dev/v2.0-new-milestone
+```
+
+**PR Targets:**
+| Branch Type | PR Target |
+| --- | --- |
+| Feature branch (`360c-xxx`) | `dev/v*.0-milestone-name` |
+| Milestone branch (`dev/*`) | `main` (only when milestone complete) |
 
 ---
 
