@@ -1,3 +1,4 @@
+import type { Metadata } from 'next'
 import HomeHero from '@/components/hero/HomeHero'
 import InfoCards from '@/components/InfoCards'
 import dynamic from 'next/dynamic'
@@ -6,6 +7,18 @@ import SimpleCard from '@/components/card/SimpleCard'
 import { cn } from '@/lib/utils'
 
 import { HIGHLIGHT_CARDS, SERVICE_CARDS } from '@/utils/home'
+
+export const metadata: Metadata = {
+    title: 'In-Home Care & Home Health Services in New Jersey | 360 Degree Care',
+    description:
+        'In-home personal care, home health aides, nursing, companion care, and elder care consulting across New Jersey to help seniors live safely and independently at home.',
+    openGraph: {
+        title: 'In-Home Care & Home Health Services in New Jersey | 360 Degree Care',
+        description:
+            'In-home personal care, home health aides, nursing, companion care, and elder care consulting across New Jersey to help seniors live safely and independently at home.',
+        type: 'website'
+    }
+}
 
 const HomeTestimonials = dynamic(
     () => import('@/components/testimonials/HomeTestimonials'),
