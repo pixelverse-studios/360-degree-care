@@ -21,12 +21,12 @@ export default function HomeHero() {
             <div className="flex flex-col gap-6">
                 <div>
                     <h1 className="text-black">
-                        Concierge-Level Home Care in New Jersey
+                        In-Home Care & Home Health Services Across New Jersey
                     </h1>
-                    <h2 className="text-black">
-                        Personalized In-Home Care That Preserves Independence
-                        and Dignity
-                    </h2>
+                    <p className="text-2xl md:text-3xl font-medium text-black mt-2">
+                        Personalized, concierge-level care that preserves
+                        independence, dignity, and peace of mind.
+                    </p>
                 </div>
                 <p className="text-lg">
                     Experience exceptional,{' '}
@@ -40,7 +40,7 @@ export default function HomeHero() {
                     .
                 </p>
                 <p className="text-base text-gray-600 max-w-2xl">
-                    Trusted by New Jersey families for over a decade — formerly
+                    Trusted by New Jersey families for over a decade – formerly
                     known as Interim Healthcare of Ridgewood.
                 </p>
                 <div className="my-5 grid grid-cols-1 md:grid-cols-2 gap-4">
