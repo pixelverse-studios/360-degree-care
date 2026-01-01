@@ -1,5 +1,4 @@
 import dynamic from 'next/dynamic'
-import { CompanyName } from '../Logo'
 import AboutServiceOverview from '../about/AboutServiceOverview'
 import AnimatedSection from '../animated-section'
 
@@ -16,14 +15,23 @@ export default function AboutHero() {
                     className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center scroll-pt-0"
                 >
                     <div className="flex flex-col gap-6">
-                        <h1 className="text-4xl md:text-5xl font-bold text-black-muted leading-tight mb-0">
-                            About <CompanyName className="text-5xl mb-[10px]" />
-                        </h1>
+                        <div>
+                            <h1 className="text-4xl md:text-5xl font-bold text-black-muted leading-tight mb-2">
+                                About 360 Degree Care
+                            </h1>
+                            <p className="text-xl md:text-2xl font-medium text-gray-600">
+                                A trusted New Jersey in-home care team built on
+                                experience, compassion, and high standards.
+                            </p>
+                        </div>
                         <article className="text-lg text-gray-700 leading-relaxed">
-                            <CompanyName /> is the leading home care company in
-                            New Jersey. We have been providing highly skilled
-                            and compassionate caregivers to facilities and
-                            private clients for over ten years.
+                            360 Degree Care has been providing highly skilled
+                            and compassionate caregivers to private clients and
+                            care facilities across New Jersey for over ten
+                            years. Our team supports families with reliable,
+                            professional in-home care while maintaining a strong
+                            focus on quality, continuity, and individualized
+                            support.
                         </article>
                     </div>
 
