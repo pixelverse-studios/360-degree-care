@@ -23,6 +23,7 @@
 - Added unique SEO metadata to Homepage, About, and Contact pages with page-specific titles and descriptions
 - Migrated About page from legacy client-side Head API to modern Next.js 14 metadata export
 - Updated homepage hero copy: new H1, subheadline, and aligned meta title/description for SEO
+- Updated About page hero copy: new H1, added subheadline, refreshed body copy for SEO alignment
 
 ## Notes for internal team
 - Branching model changed: now using `dev/v1.0-seo-foundation` milestone branch instead of single `dev` branch
@@ -86,6 +87,12 @@
   - H1: "In-Home Care & Home Health Services Across New Jersey"
   - Subheadline: Changed from H2 to paragraph for proper heading hierarchy
   - Files: src/app/layout.tsx, src/components/hero/HomeHero.tsx
+
+360C-176 completed: About page hero copy optimization
+  - H1: "About 360 Degree Care" (replaced CompanyName component with plain text)
+  - Added subheadline: "A trusted New Jersey in-home care team..."
+  - Updated body copy for SEO alignment
+  - Files: src/components/hero/AboutHero.tsx
 
 ## Changed URLs
 No new URLs live yet - staged for scheduled release.
