@@ -20,6 +20,8 @@
 - Added publish schedule comments to blogs index.ts for tracking
 - No new blog URLs are live yet - articles will be published according to Linear tickets
 - Fixed favicon not appearing in Google search results - switched from Cloudinary CDN to same-origin local files
+- Added unique SEO metadata to Homepage, About, and Contact pages with page-specific titles and descriptions
+- Migrated About page from legacy client-side Head API to modern Next.js 14 metadata export
 
 ## Notes for internal team
 - 360C-158 completed
@@ -68,6 +70,12 @@
   - Updated src/app/layout.tsx to use local paths instead of Cloudinary CDN
   - Updated public/manifest.json to use local paths
   - Google crawler requires same-origin favicons for reliable SERP display
+
+360C-165 completed: Added unique SEO metadata to base pages
+  - Homepage: Added metadata export with designer-provided title/description
+  - Contact: Created layout.tsx with page-specific metadata including phone number
+  - About: Created layout.tsx with modern metadata export + preserved JSON-LD schema
+  - Deleted orphaned src/lib/seo/home.tsx and src/lib/seo/about.tsx
 
 ## Changed URLs
 No new URLs live yet - staged for scheduled release.
