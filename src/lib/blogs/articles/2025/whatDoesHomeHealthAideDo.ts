@@ -1,5 +1,3 @@
-import { getImgSrc } from '@/lib/images'
-
 const whatDoesHomeHealthAideDo = {
     id: 'what-does-home-health-aide-do',
     title: 'What Does a Home Health Aide Actually Do? Services, Duties & What to Expect',
@@ -10,7 +8,7 @@ const whatDoesHomeHealthAideDo = {
     author: {
         name: '360 Degree Care Team',
         title: 'Home Care Specialists',
-        avatar: getImgSrc('360Logo')
+        avatar: '/logo.png'
     },
     publishDate: '2025-01-15',
     readTime: '9 min read',

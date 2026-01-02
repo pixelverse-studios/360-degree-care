@@ -134,17 +134,25 @@ export default function BlogTemplate({ blogPost }: BlogTemplateProps) {
                 <div className="flex flex-wrap items-center gap-6 pb-8 mb-12 border-b border-gray-200">
                     {blogPost.author && (
                         <div className="flex items-center gap-4">
-                            <Image
-                                src={
-                                    blogPost.author.avatar ||
-                                    '/api/placeholder/64/64'
-                                }
-                                alt={blogPost.author.name}
-                                width={56}
-                                height={56}
-                                className="h-14 w-14 rounded-full ring-2 ring-primary object-cover"
-                                sizes="56px"
-                            />
+                            {blogPost.author.avatar?.endsWith('.svg') ? (
+                                <img
+                                    src={blogPost.author.avatar}
+                                    alt={blogPost.author.name}
+                                    className="h-14 w-14 rounded-full ring-2 ring-primary object-contain bg-white p-1"
+                                />
+                            ) : (
+                                <Image
+                                    src={
+                                        blogPost.author.avatar ||
+                                        '/api/placeholder/64/64'
+                                    }
+                                    alt={blogPost.author.name}
+                                    width={56}
+                                    height={56}
+                                    className="h-14 w-14 rounded-full ring-2 ring-primary object-cover"
+                                    sizes="56px"
+                                />
+                            )}
                             <div>
                                 <p className="font-semibold text-gray-900 text-lg">
                                     {blogPost.author.name}

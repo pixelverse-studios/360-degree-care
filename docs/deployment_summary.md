@@ -25,6 +25,7 @@
 - Updated homepage hero copy: new H1, subheadline, and aligned meta title/description for SEO
 - Updated About page hero copy: new H1, added subheadline, refreshed body copy for SEO alignment
 - Updated Contact page with SEO-optimized meta tags, hero copy, and contact card descriptions
+- Published new blog article: "What Does a Home Health Aide Do?" - SEO-optimized content for home health aide searches
 
 ## Notes for internal team
 - Branching model changed: now using `dev/v1.0-seo-foundation` milestone branch instead of single `dev` branch
@@ -58,7 +59,7 @@
 - Each ticket due date = publish date (Tue/Thu alternating)
 
 **Staged blog files:**
-- `whatDoesHomeHealthAideDo.ts` → Jan 6, 2026 (360C-167)
+- `whatDoesHomeHealthAideDo.ts` → PUBLISHED (360C-167)
 - `questionsToAskHomeCareAgency.ts` → Jan 8, 2026 (360C-168)
 - `homeCareVsHomeHealthCare.ts` → Jan 13, 2026 (360C-169)
 - `signsParentNeedsHomeCare.ts` → Jan 15, 2026 (360C-170)
@@ -103,7 +104,14 @@
   - Updated all three contact card descriptions (Services, Employment, General Inquiry)
   - Files: src/app/contact/layout.tsx, src/app/contact/page.tsx
 
+360C-167 completed: Published blog "What Does a Home Health Aide Do?"
+  - Added import and export to src/lib/blogs/index.ts
+  - Blog now live at /blog/what-does-home-health-aide-do
+  - Fixed SVG avatar rendering in BlogTemplate (uses native img for SVGs)
+  - Submit to Google Search Console for indexing
+
 ## Changed URLs
 - https://www.360degreecare.net/contact
+- https://www.360degreecare.net/blog/what-does-home-health-aide-do (NEW)
 
 (After deployment: Request favicon re-crawl in Google Search Console)
