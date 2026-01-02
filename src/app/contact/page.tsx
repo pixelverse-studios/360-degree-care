@@ -31,10 +31,15 @@ export default function ContactPage() {
         <main className="bg-white-bright text-black">
             <section className="max-w-custom mx-auto px-6 pb-8">
                 <AnimatedSection animation="zoom" className="mb-8">
-                    <h1>Get in Touch with Us</h1>
-                    <p>
-                        Please choose your reason for contacting us and complete
-                        our quick form. We look forward to hearing from you!
+                    <h1>Get in Touch with 360 Degree Care</h1>
+                    <p className="text-lg text-gray-700 mt-2">
+                        Whether you're exploring care, career opportunities, or
+                        have a general question, we're here to help.
+                    </p>
+                    <p className="mt-4">
+                        Please choose the reason for contacting us below and
+                        complete our quick form. A member of our team will
+                        follow up and guide you in the right direction.
                     </p>
                 </AnimatedSection>
                 <section className="grid grid-cols-1 xl:grid-cols-3 gap-8">
@@ -52,9 +57,9 @@ export default function ContactPage() {
                             ) : null}
                             <h2 className="text-center">Services</h2>
                             <p className="text-center">
-                                Whether you're exploring care for yourself or
-                                someone else, let's connect and figure out the
-                                best way we can support you.
+                                Whether you're exploring care for yourself or a
+                                loved one, connect with our team to discuss
+                                services and next steps.
                             </p>
                             <Button
                                 variant="pillPrimary"
@@ -78,9 +83,9 @@ export default function ContactPage() {
                             ) : null}
                             <h2 className="text-center">Employment</h2>
                             <p className="text-center">
-                                Passionate about making a difference? We're
-                                always looking for caring, dedicated individuals
-                                to join our growing team.
+                                Interested in joining a compassionate, growing
+                                care team? Reach out to learn more about current
+                                opportunities.
                             </p>
                             <Button variant="pillBlue" onClick={goToEmployment}>
                                 Join Our Team
@@ -101,9 +106,9 @@ export default function ContactPage() {
                             ) : null}
                             <h2 className="text-center">General Inquiry</h2>
                             <p className="text-center">
-                                Not sure where to start? Feeling overwhelmed?
-                                Send us a message, and we'll guide you in the
-                                right direction.
+                                Not sure where to start or have a general
+                                question? Send us a message and we'll point you
+                                in the right direction.
                             </p>
                             <Button variant="pillPrimary" onClick={goToGeneral}>
                                 Get In Touch

@@ -24,6 +24,7 @@
 - Migrated About page from legacy client-side Head API to modern Next.js 14 metadata export
 - Updated homepage hero copy: new H1, subheadline, and aligned meta title/description for SEO
 - Updated About page hero copy: new H1, added subheadline, refreshed body copy for SEO alignment
+- Updated Contact page with SEO-optimized meta tags, hero copy, and contact card descriptions
 
 ## Notes for internal team
 - Branching model changed: now using `dev/v1.0-seo-foundation` milestone branch instead of single `dev` branch
@@ -94,7 +95,15 @@
   - Updated body copy for SEO alignment
   - Files: src/components/hero/AboutHero.tsx
 
+360C-178 completed: Contact page SEO copy optimization
+  - Meta title: "Contact 360 Degree Care | New Jersey In-Home Care Services"
+  - Meta description updated for services, employment, and general inquiries
+  - H1: "Get in Touch with 360 Degree Care"
+  - Added subheadline and intro body copy
+  - Updated all three contact card descriptions (Services, Employment, General Inquiry)
+  - Files: src/app/contact/layout.tsx, src/app/contact/page.tsx
+
 ## Changed URLs
-No new URLs live yet - staged for scheduled release.
+- https://www.360degreecare.net/contact
 
 (After deployment: Request favicon re-crawl in Google Search Console)
