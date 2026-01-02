@@ -495,14 +495,14 @@ export default function MarkdownRenderer({ content }: MarkdownRendererProps) {
                     }
                     case 'ul':
                         return (
-                            <ul key={index} className="space-y-4 mb-8 ml-6">
+                            <ul key={index} className="space-y-3 mb-8 ml-6">
                                 {element.content.map(
                                     (item: string, itemIndex: number) => (
                                         <li
                                             key={itemIndex}
-                                            className="text-gray-700 text-lg flex items-start"
+                                            className="text-gray-700 text-lg flex items-baseline"
                                         >
-                                            <span className="text-orange-500 mr-3 mt-1 text-xl font-bold">
+                                            <span className="text-orange-500 mr-3 text-lg font-bold flex-shrink-0">
                                                 •
                                             </span>
                                             <span

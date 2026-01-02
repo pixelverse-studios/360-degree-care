@@ -17,11 +17,11 @@ import seniorHomeSafetyChecklistNJ from './articles/2025/seniorHomeSafetyCheckli
 import transitionalCareHospitalToHome from './articles/2025/transitionalCareHospitalToHome'
 import northJerseyCaregiverRoadmap from './articles/2025/northJerseyCaregiverRoadmap'
 import licensedHomeHealthAideVisitNJ from './articles/2025/licensedHomeHealthAideVisitNJ'
+import whatDoesHomeHealthAideDo from './articles/2025/whatDoesHomeHealthAideDo'
 
 // STAGED BLOGS - Not yet published (will be added on scheduled dates)
-// See Linear tickets 360C-167 through 360C-174 for publish schedule
+// See Linear tickets 360C-168 through 360C-174 for publish schedule
 //
-// Jan 6, 2026:  whatDoesHomeHealthAideDo
 // Jan 8, 2026:  questionsToAskHomeCareAgency
 // Jan 13, 2026: homeCareVsHomeHealthCare
 // Jan 15, 2026: signsParentNeedsHomeCare
@@ -34,6 +34,7 @@ import licensedHomeHealthAideVisitNJ from './articles/2025/licensedHomeHealthAid
 // howToPayForHomeCareNJ
 
 const allBlogs = [
+    whatDoesHomeHealthAideDo,
     licensedHomeHealthAideVisitNJ,
     northJerseyCaregiverRoadmap,
     transitionalCareHospitalToHome,
