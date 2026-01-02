@@ -113,5 +113,17 @@
 ## Changed URLs
 - https://www.360degreecare.net/contact
 - https://www.360degreecare.net/blog/what-does-home-health-aide-do (NEW)
+- https://www.360degreecare.net/services/companion-care
+- https://www.360degreecare.net/services/personal-care
+- https://www.360degreecare.net/services/elder-care
+- https://www.360degreecare.net/services/home-health-aides
+- https://www.360degreecare.net/services/nursing
+- https://www.360degreecare.net/services/staffing
+- https://www.360degreecare.net/services/companion-care/bergen-county
+- https://www.360degreecare.net/services/personal-care/bergen-county
+- https://www.360degreecare.net/services/elder-care/bergen-county
+- https://www.360degreecare.net/services/home-health-aides/bergen-county
+- https://www.360degreecare.net/services/nursing/bergen-county
+- https://www.360degreecare.net/services/staffing/bergen-county
 
 (After deployment: Request favicon re-crawl in Google Search Console)
