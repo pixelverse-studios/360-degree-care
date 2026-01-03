@@ -27,6 +27,7 @@
 - Updated Contact page with SEO-optimized meta tags, hero copy, and contact card descriptions
 - Published new blog article: "What Does a Home Health Aide Do?" - SEO-optimized content for home health aide searches
 - Updated Elder Care Consulting page with SEO-optimized meta tags, subheadline, and intro body copy
+- Updated Personal Care Services page with SEO-optimized meta tags, subheadline, and intro body copy
 
 ## Notes for internal team
 - Branching model changed: now using `dev/v1.0-seo-foundation` milestone branch instead of single `dev` branch
@@ -117,6 +118,14 @@
   - Subheadline: Added "with clarity and confidence"
   - Intro body: Updated to focus on 360 Degree Care's consulting approach
   - Files: src/lib/seo/elderCareConsulting.tsx
+
+360C-181 completed: Personal Care Services page SEO copy optimization
+  - Meta title: "Personal Care Services in New Jersey | 360 Degree Care"
+  - Meta description updated for dignity/independence focus
+  - Subheadline: Replaced CompanyName component with plain text, updated copy
+  - Intro body: Updated to focus on 360 Degree Care's support approach
+  - Removed unused CompanyName import
+  - Files: src/lib/seo/personalCare.tsx
 
 ## Changed URLs
 - https://www.360degreecare.net/contact

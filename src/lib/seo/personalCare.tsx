@@ -7,8 +7,6 @@ import { getImgSrc } from '../images'
 import { generateFAQSchema } from './faq-schema'
 import { PERSONAL_CARE_FAQS } from '@/utils/faqs'
 
-import { CompanyName } from '@/components/Logo'
-
 const StaticPersonalCareData = {
     SeoHead: () => {
         const faqSchema = generateFAQSchema(PERSONAL_CARE_FAQS)
@@ -90,15 +88,15 @@ const StaticPersonalCareData = {
                 <Head>
                     {/* Primary Meta Tags */}
                     <title>
-                        Compassionate Personal Care in NJ | 360 Degree Care
+                        Personal Care Services in New Jersey | 360 Degree Care
                     </title>
                     <meta
                         name="title"
-                        content="Compassionate Personal Care in NJ | 360 Degree Care"
+                        content="Personal Care Services in New Jersey | 360 Degree Care"
                     />
                     <meta
                         name="description"
-                        content="Arrange personal care in New Jersey with help for bathing, mobility, grooming, and meals delivered by 360 Degree Care caregivers to keep routines comfortable."
+                        content="Professional personal care services in New Jersey, helping seniors with daily living tasks while preserving dignity, independence, and comfort at home."
                     />
                     <meta
                         name="keywords"
@@ -113,11 +111,11 @@ const StaticPersonalCareData = {
                     />
                     <meta
                         property="og:title"
-                        content="Compassionate Personal Care in NJ | 360 Degree Care"
+                        content="Personal Care Services in New Jersey | 360 Degree Care"
                     />
                     <meta
                         property="og:description"
-                        content="Arrange personal care in New Jersey with help for bathing, mobility, grooming, and meals delivered by 360 Degree Care caregivers to keep routines comfortable."
+                        content="Professional personal care services in New Jersey, helping seniors with daily living tasks while preserving dignity, independence, and comfort at home."
                     />
                     <meta
                         property="og:image"
@@ -137,11 +135,11 @@ const StaticPersonalCareData = {
                     />
                     <meta
                         property="twitter:title"
-                        content="Compassionate Personal Care in NJ | 360 Degree Care"
+                        content="Personal Care Services in New Jersey | 360 Degree Care"
                     />
                     <meta
                         property="twitter:description"
-                        content="Arrange personal care in New Jersey with help for bathing, mobility, grooming, and meals delivered by 360 Degree Care caregivers to keep routines comfortable."
+                        content="Professional personal care services in New Jersey, helping seniors with daily living tasks while preserving dignity, independence, and comfort at home."
                     />
                     <meta
                         property="twitter:image"
@@ -179,9 +177,8 @@ const StaticPersonalCareData = {
         ),
         description: (
             <>
-                Personal care services at <CompanyName /> are designed to help
-                seniors and individuals with daily living tasks while preserving
-                dignity, independence, and comfort.
+                Hands-on, in-home support that helps seniors live safely,
+                comfortably, and with dignity.
             </>
         ),
         header: 'Personal Care Services in New Jersey',
@@ -193,7 +190,7 @@ const StaticPersonalCareData = {
     description: {
         header: 'What is Personal Care?',
         description:
-            'Personal care includes non-medical assistance with essential daily routines — such as bathing, dressing, and grooming — so individuals can safely age in place and enjoy a higher quality of life. It’s ideal for seniors, people with disabilities, or anyone recovering from illness or surgery.'
+            'Personal care services from 360 Degree Care support seniors and individuals who need help with daily living activities while remaining in the comfort of their own homes. Our caregivers provide respectful, reliable assistance designed to promote independence and overall well-being.'
     },
     listItems: {
         header: "What's Included",
