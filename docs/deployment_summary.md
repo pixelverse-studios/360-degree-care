@@ -28,6 +28,7 @@
 - Published new blog article: "What Does a Home Health Aide Do?" - SEO-optimized content for home health aide searches
 - Updated Elder Care Consulting page with SEO-optimized meta tags, subheadline, and intro body copy
 - Updated Personal Care Services page with SEO-optimized meta tags, subheadline, and intro body copy
+- Updated Medical Staffing page with SEO-optimized meta tags, H1, subheadline, and intro body copy
 
 ## Notes for internal team
 - Branching model changed: now using `dev/v1.0-seo-foundation` milestone branch instead of single `dev` branch

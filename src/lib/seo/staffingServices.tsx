@@ -76,15 +76,15 @@ const StaticStaffingServicesData = {
             <>
                 <Head>
                     <title>
-                        Medical Staffing Services in NJ | 360 Degree Care
+                        Medical Staffing Solutions in New Jersey | 360 Degree Care
                     </title>
                     <meta
                         name="title"
-                        content="Medical Staffing Services in NJ | 360 Degree Care"
+                        content="Medical Staffing Solutions in New Jersey | 360 Degree Care"
                     />
                     <meta
                         name="description"
-                        content="360 Degree Care fills New Jersey healthcare staffing needs with vetted RNs, LPNs, HHAs, and companions for hospitals, rehab centers, and private duty support."
+                        content="Medical staffing solutions in New Jersey, providing credentialed nurses and healthcare professionals for hospitals, rehab centers, and care facilities."
                     />
                     <meta
                         name="keywords"
@@ -94,15 +94,15 @@ const StaticStaffingServicesData = {
                     <meta property="og:type" content="website" />
                     <meta
                         property="og:url"
-                        content="https://www.360degreecare.net/services/staffing-services"
+                        content="https://www.360degreecare.net/services/staffing"
                     />
                     <meta
                         property="og:title"
-                        content="Medical Staffing Services in NJ | 360 Degree Care"
+                        content="Medical Staffing Solutions in New Jersey | 360 Degree Care"
                     />
                     <meta
                         property="og:description"
-                        content="360 Degree Care fills New Jersey healthcare staffing needs with vetted RNs, LPNs, HHAs, and companions for hospitals, rehab centers, and private duty support."
+                        content="Medical staffing solutions in New Jersey, providing credentialed nurses and healthcare professionals for hospitals, rehab centers, and care facilities."
                     />
                     <meta
                         property="og:image"
@@ -117,15 +117,15 @@ const StaticStaffingServicesData = {
                     />
                     <meta
                         property="twitter:url"
-                        content="https://www.360degreecare.net/services/staffing-services"
+                        content="https://www.360degreecare.net/services/staffing"
                     />
                     <meta
                         property="twitter:title"
-                        content="Medical Staffing Services in NJ | 360 Degree Care"
+                        content="Medical Staffing Solutions in New Jersey | 360 Degree Care"
                     />
                     <meta
                         property="twitter:description"
-                        content="360 Degree Care fills New Jersey healthcare staffing needs with vetted RNs, LPNs, HHAs, and companions for hospitals, rehab centers, and private duty support."
+                        content="Medical staffing solutions in New Jersey, providing credentialed nurses and healthcare professionals for hospitals, rehab centers, and care facilities."
                     />
                     <meta
                         property="twitter:image"
@@ -161,11 +161,11 @@ const StaticStaffingServicesData = {
         ),
         description: (
             <>
-                Credentialed professionals for hospitals, rehab centers, and
-                more.
+                Credentialed healthcare professionals to support facilities with
+                short- and long-term staffing needs.
             </>
         ),
-        header: 'Medical Staffing Solutions for Healthcare Facilities in New Jersey',
+        header: 'Medical Staffing Solutions in New Jersey',
         img: {
             src: getImgSrc('staffing_hero') ?? '',
             alt: 'medical staffing services example'
@@ -174,7 +174,7 @@ const StaticStaffingServicesData = {
     description: {
         header: 'What is Medical Staffing?',
         description:
-            'We match facilities with qualified RNs, LPNs, CNAs, therapists, and support staff. Every placement is vetted and ready to provide excellent care — without staffing disruptions.'
+            '360 Degree Care provides medical staffing solutions for healthcare facilities across New Jersey, including hospitals, rehabilitation centers, and long-term care environments. Our staffing services connect facilities with qualified, credentialed professionals to ensure consistent, reliable patient care.'
     },
     listItems: {
         header: "What's Included",
