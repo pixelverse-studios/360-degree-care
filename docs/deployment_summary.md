@@ -29,6 +29,7 @@
 - Updated Elder Care Consulting page with SEO-optimized meta tags, subheadline, and intro body copy
 - Updated Personal Care Services page with SEO-optimized meta tags, subheadline, and intro body copy
 - Updated Medical Staffing page with SEO-optimized meta tags, H1, subheadline, and intro body copy
+- Updated Home Health Aide Services page with SEO-optimized meta tags, H1, subheadline, and intro body copy
 
 ## Notes for internal team
 - Branching model changed: now using `dev/v1.0-seo-foundation` milestone branch instead of single `dev` branch
@@ -127,6 +128,22 @@
   - Intro body: Updated to focus on 360 Degree Care's support approach
   - Removed unused CompanyName import
   - Files: src/lib/seo/personalCare.tsx
+
+360C-182 completed: Medical Staffing page SEO copy optimization
+  - Meta title: "Medical Staffing Solutions in New Jersey | 360 Degree Care"
+  - Meta description updated for credentialed healthcare professionals
+  - Fixed OG/Twitter URLs from /services/staffing-services to /services/staffing
+  - H1: Shortened to "Medical Staffing Solutions in New Jersey"
+  - Subheadline and intro body updated
+  - Files: src/lib/seo/staffingServices.tsx
+
+360C-183 completed: Home Health Aide Services page SEO copy optimization
+  - Meta title: "Home Health Aide Services in New Jersey | 360 Degree Care"
+  - Meta description updated for certified aides and in-home assistance
+  - H1: Removed "Concierge-Level™" branding, simplified to "Home Health Aide Services in New Jersey"
+  - Subheadline: Updated for reliable, compassionate support
+  - Intro body: Updated to focus on 360 Degree Care's aide services
+  - Files: src/lib/seo/homeHealthAides.tsx
 
 ## Changed URLs
 - https://www.360degreecare.net/contact

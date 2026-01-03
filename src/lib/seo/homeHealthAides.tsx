@@ -87,15 +87,15 @@ const StaticHomeHealthAidesData = {
             <>
                 <Head>
                     <title>
-                        Certified Home Health Aides in NJ | 360 Degree Care
+                        Home Health Aide Services in New Jersey | 360 Degree Care
                     </title>
                     <meta
                         name="title"
-                        content="Certified Home Health Aides in NJ | 360 Degree Care"
+                        content="Home Health Aide Services in New Jersey | 360 Degree Care"
                     />
                     <meta
                         name="description"
-                        content="Hire certified home health aides across New Jersey for daily living help, medication reminders, and companionship delivered by 360 Degree Care's concierge team."
+                        content="Certified home health aides in New Jersey providing hands-on support with daily living, personal care, and in-home assistance for seniors."
                     />
                     <meta
                         name="keywords"
@@ -109,11 +109,11 @@ const StaticHomeHealthAidesData = {
                     />
                     <meta
                         property="og:title"
-                        content="Certified Home Health Aides in NJ | 360 Degree Care"
+                        content="Home Health Aide Services in New Jersey | 360 Degree Care"
                     />
                     <meta
                         property="og:description"
-                        content="Hire certified home health aides across New Jersey for daily living help, medication reminders, and companionship delivered by 360 Degree Care's concierge team."
+                        content="Certified home health aides in New Jersey providing hands-on support with daily living, personal care, and in-home assistance for seniors."
                     />
                     <meta
                         property="og:image"
@@ -132,11 +132,11 @@ const StaticHomeHealthAidesData = {
                     />
                     <meta
                         property="twitter:title"
-                        content="Certified Home Health Aides in NJ | 360 Degree Care"
+                        content="Home Health Aide Services in New Jersey | 360 Degree Care"
                     />
                     <meta
                         property="twitter:description"
-                        content="Hire certified home health aides across New Jersey for daily living help, medication reminders, and companionship delivered by 360 Degree Care's concierge team."
+                        content="Certified home health aides in New Jersey providing hands-on support with daily living, personal care, and in-home assistance for seniors."
                     />
                     <meta
                         property="twitter:image"
@@ -172,11 +172,11 @@ const StaticHomeHealthAidesData = {
         ),
         description: (
             <>
-                Certified aides supporting daily living with compassion and
-                skill.
+                Certified aides providing reliable, compassionate in-home
+                support for daily living.
             </>
         ),
-        header: 'Concierge-Level™ Home Health Aide Services in New Jersey',
+        header: 'Home Health Aide Services in New Jersey',
         img: {
             src: getImgSrc('home-aides-hero') ?? '',
             alt: 'home health aide services example'
@@ -185,7 +185,7 @@ const StaticHomeHealthAidesData = {
     description: {
         header: 'What is Home Health Aide Support?',
         description:
-            'Aides provide essential daily support including hygiene, mobility, meals, and companionship — all supervised by nurses and delivered with our signature Concierge-Level™ care.'
+            'Home health aide services from 360 Degree Care support seniors and individuals who need assistance with daily activities while remaining safely at home. Our certified aides help with personal care, mobility support, routine tasks, and companionship, always with respect, professionalism, and attention to individual needs.'
     },
     listItems: {
         header: "What's Included",
