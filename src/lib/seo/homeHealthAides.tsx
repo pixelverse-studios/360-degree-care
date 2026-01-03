@@ -87,7 +87,8 @@ const StaticHomeHealthAidesData = {
             <>
                 <Head>
                     <title>
-                        Home Health Aide Services in New Jersey | 360 Degree Care
+                        Home Health Aide Services in New Jersey | 360 Degree
+                        Care
                     </title>
                     <meta
                         name="title"

@@ -76,7 +76,8 @@ const StaticStaffingServicesData = {
             <>
                 <Head>
                     <title>
-                        Medical Staffing Solutions in New Jersey | 360 Degree Care
+                        Medical Staffing Solutions in New Jersey | 360 Degree
+                        Care
                     </title>
                     <meta
                         name="title"

@@ -77,7 +77,8 @@ const StaticElderCareConsultingData = {
             <>
                 <Head>
                     <title>
-                        Elder Care Consulting Services in New Jersey | 360 Degree Care
+                        Elder Care Consulting Services in New Jersey | 360
+                        Degree Care
                     </title>
                     <meta
                         name="title"
