@@ -77,15 +77,15 @@ const StaticElderCareConsultingData = {
             <>
                 <Head>
                     <title>
-                        Elder Care Consulting Experts in NJ | 360 Degree Care
+                        Elder Care Consulting Services in New Jersey | 360 Degree Care
                     </title>
                     <meta
                         name="title"
-                        content="Elder Care Consulting Experts in NJ | 360 Degree Care"
+                        content="Elder Care Consulting Services in New Jersey | 360 Degree Care"
                     />
                     <meta
                         name="description"
-                        content="Partner with 360 Degree Care's elder care consulting team in New Jersey for assessments, planning, and resource navigation tailored to your family's next step."
+                        content="Professional elder care consulting in New Jersey, helping families navigate care options, plan next steps, and make informed decisions with confidence."
                     />
                     <meta
                         name="keywords"
@@ -99,11 +99,11 @@ const StaticElderCareConsultingData = {
                     />
                     <meta
                         property="og:title"
-                        content="Elder Care Consulting Experts in NJ | 360 Degree Care"
+                        content="Elder Care Consulting Services in New Jersey | 360 Degree Care"
                     />
                     <meta
                         property="og:description"
-                        content="Partner with 360 Degree Care's elder care consulting team in New Jersey for assessments, planning, and resource navigation tailored to your family's next step."
+                        content="Professional elder care consulting in New Jersey, helping families navigate care options, plan next steps, and make informed decisions with confidence."
                     />
                     <meta
                         property="og:image"
@@ -122,11 +122,11 @@ const StaticElderCareConsultingData = {
                     />
                     <meta
                         property="twitter:title"
-                        content="Elder Care Consulting Experts in NJ | 360 Degree Care"
+                        content="Elder Care Consulting Services in New Jersey | 360 Degree Care"
                     />
                     <meta
                         property="twitter:description"
-                        content="Partner with 360 Degree Care's elder care consulting team in New Jersey for assessments, planning, and resource navigation tailored to your family's next step."
+                        content="Professional elder care consulting in New Jersey, helping families navigate care options, plan next steps, and make informed decisions with confidence."
                     />
                     <meta
                         property="twitter:image"
@@ -164,7 +164,7 @@ const StaticElderCareConsultingData = {
         description: (
             <>
                 Expert guidance to help families navigate elder care decisions
-                with confidence.
+                with clarity and confidence.
             </>
         ),
         header: 'Elder Care Consulting in New Jersey',
@@ -176,7 +176,7 @@ const StaticElderCareConsultingData = {
     description: {
         header: 'What is Elder Care Consulting?',
         description:
-            "Elder care consulting provides non-medical advising, planning, and coordination support for families navigating senior care decisions. Our consultants assess your loved one's needs, explore local care options, and develop tailored solutions. Perfect for families overwhelmed by care planning or living far away."
+            "Elder care consulting from 360 Degree Care supports families as they navigate complex decisions for aging loved ones. Our consultants help assess care needs, explore options, coordinate services, and create a clear plan aligned with each family's goals."
     },
     listItems: {
         header: "What's Included",

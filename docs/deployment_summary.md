@@ -26,6 +26,7 @@
 - Updated About page hero copy: new H1, added subheadline, refreshed body copy for SEO alignment
 - Updated Contact page with SEO-optimized meta tags, hero copy, and contact card descriptions
 - Published new blog article: "What Does a Home Health Aide Do?" - SEO-optimized content for home health aide searches
+- Updated Elder Care Consulting page with SEO-optimized meta tags, subheadline, and intro body copy
 
 ## Notes for internal team
 - Branching model changed: now using `dev/v1.0-seo-foundation` milestone branch instead of single `dev` branch
@@ -109,6 +110,13 @@
   - Blog now live at /blog/what-does-home-health-aide-do
   - Fixed SVG avatar rendering in BlogTemplate (uses native img for SVGs)
   - Submit to Google Search Console for indexing
+
+360C-180 completed: Elder Care Consulting page SEO copy optimization
+  - Meta title: "Elder Care Consulting Services in New Jersey | 360 Degree Care"
+  - Meta description updated for family guidance and care decisions
+  - Subheadline: Added "with clarity and confidence"
+  - Intro body: Updated to focus on 360 Degree Care's consulting approach
+  - Files: src/lib/seo/elderCareConsulting.tsx
 
 ## Changed URLs
 - https://www.360degreecare.net/contact
