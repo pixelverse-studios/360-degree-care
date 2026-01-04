@@ -31,6 +31,7 @@
 - Updated Medical Staffing page with SEO-optimized meta tags, H1, subheadline, and intro body copy
 - Updated Home Health Aide Services page with SEO-optimized meta tags, H1, subheadline, and intro body copy
 - Updated Companion Care Services page with SEO-optimized meta tags, subheadline, and intro body copy
+- Updated Nursing Services page with SEO-optimized meta tags, subheadline, and intro body copy
 
 ## Notes for internal team
 - Branching model changed: now using `dev/v1.0-seo-foundation` milestone branch instead of single `dev` branch
@@ -152,6 +153,14 @@
   - Subheadline: Updated for emotional well-being and quality of life
   - Intro body: Updated to focus on 360 Degree Care's companion care approach
   - Files: src/lib/seo/companionCare.tsx
+
+360C-185 completed: Nursing Services page SEO copy optimization
+  - Meta title: "In-Home Nursing Services in New Jersey | 360 Degree Care"
+  - Meta description updated for skilled clinical care and medical support
+  - Fixed canonical/OG/Twitter URLs from /services/nursing-services to /services/nursing
+  - Subheadline: Updated for professionalism, compassion, and continuity
+  - Intro body: Updated to focus on 360 Degree Care's nursing approach
+  - Files: src/lib/seo/nursingServices.tsx
 
 ## Changed URLs
 - https://www.360degreecare.net/contact

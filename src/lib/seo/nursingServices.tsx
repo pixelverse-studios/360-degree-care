@@ -80,22 +80,21 @@ const StaticNursingServicesData = {
                 }
             }
         }
-        const canonicalUrl =
-            'https://www.360degreecare.net/services/nursing-services'
+        const canonicalUrl = 'https://www.360degreecare.net/services/nursing'
 
         return (
             <>
                 <Head>
                     <title>
-                        Expert In-Home Nursing Care in NJ | 360 Degree Care
+                        In-Home Nursing Services in New Jersey | 360 Degree Care
                     </title>
                     <meta
                         name="title"
-                        content="Expert In-Home Nursing Care in NJ | 360 Degree Care"
+                        content="In-Home Nursing Services in New Jersey | 360 Degree Care"
                     />
                     <meta
                         name="description"
-                        content="Bring in-home nurses to your New Jersey residence for assessments, infusion support, and coordinated clinical care through 360 Degree Care's concierge model."
+                        content="In-home nursing services in New Jersey providing skilled clinical care, assessments, and medical support to help patients remain safely at home."
                     />
                     <meta
                         name="keywords"
@@ -105,15 +104,15 @@ const StaticNursingServicesData = {
                     <meta property="og:type" content="website" />
                     <meta
                         property="og:url"
-                        content="https://www.360degreecare.net/services/nursing-services"
+                        content="https://www.360degreecare.net/services/nursing"
                     />
                     <meta
                         property="og:title"
-                        content="Expert In-Home Nursing Care in NJ | 360 Degree Care"
+                        content="In-Home Nursing Services in New Jersey | 360 Degree Care"
                     />
                     <meta
                         property="og:description"
-                        content="Bring in-home nurses to your New Jersey residence for assessments, infusion support, and coordinated clinical care through 360 Degree Care's concierge model."
+                        content="In-home nursing services in New Jersey providing skilled clinical care, assessments, and medical support to help patients remain safely at home."
                     />
                     <meta
                         property="og:image"
@@ -128,15 +127,15 @@ const StaticNursingServicesData = {
                     />
                     <meta
                         property="twitter:url"
-                        content="https://www.360degreecare.net/services/nursing-services"
+                        content="https://www.360degreecare.net/services/nursing"
                     />
                     <meta
                         property="twitter:title"
-                        content="Expert In-Home Nursing Care in NJ | 360 Degree Care"
+                        content="In-Home Nursing Services in New Jersey | 360 Degree Care"
                     />
                     <meta
                         property="twitter:description"
-                        content="Bring in-home nurses to your New Jersey residence for assessments, infusion support, and coordinated clinical care through 360 Degree Care's concierge model."
+                        content="In-home nursing services in New Jersey providing skilled clinical care, assessments, and medical support to help patients remain safely at home."
                     />
                     <meta
                         property="twitter:image"
@@ -170,7 +169,12 @@ const StaticNursingServicesData = {
                 Contact Us Today <FaArrowRight size={24} className="ml-4" />
             </>
         ),
-        description: <>Skilled clinical care — at home and on your terms.</>,
+        description: (
+            <>
+                Skilled clinical care delivered at home with professionalism,
+                compassion, and continuity.
+            </>
+        ),
         header: 'In-Home Nursing Services in New Jersey',
         img: {
             src: getImgSrc('nursing-hero') ?? '',
@@ -180,7 +184,7 @@ const StaticNursingServicesData = {
     description: {
         header: 'What is In-Home Nursing?',
         description:
-            'Licensed nurses provide wound care, assessments, injections, and medication management — all coordinated with your doctor and available 24/7.'
+            'In-home nursing services from 360 Degree Care provide professional medical support for individuals who require skilled clinical care in the comfort of their own homes. Our licensed nurses deliver personalized care plans, ongoing assessments, and hands-on medical support to promote safety, stability, and quality of life.'
     },
     listItems: {
         header: "What's Included",
