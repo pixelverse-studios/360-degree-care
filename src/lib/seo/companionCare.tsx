@@ -87,16 +87,15 @@ const StaticCompanionCareData = {
             <>
                 <Head>
                     <title>
-                        Companion Care Services for Seniors in NJ | 360 Degree
-                        Care
+                        Companion Care Services in New Jersey | 360 Degree Care
                     </title>
                     <meta
                         name="title"
-                        content="Companion Care Services for Seniors in NJ | 360 Degree Care"
+                        content="Companion Care Services in New Jersey | 360 Degree Care"
                     />
                     <meta
                         name="description"
-                        content="Explore companion care in New Jersey with engagement, safety check-ins, and respite support from 360 Degree Care companions who deliver peace of mind."
+                        content="Companion care services in New Jersey providing social support, engagement, and companionship to help seniors stay connected and supported at home."
                     />
                     <meta
                         name="keywords"
@@ -110,11 +109,11 @@ const StaticCompanionCareData = {
                     />
                     <meta
                         property="og:title"
-                        content="Companion Care Services for Seniors in NJ | 360 Degree Care"
+                        content="Companion Care Services in New Jersey | 360 Degree Care"
                     />
                     <meta
                         property="og:description"
-                        content="Explore companion care in New Jersey with engagement, safety check-ins, and respite support from 360 Degree Care companions who deliver peace of mind."
+                        content="Companion care services in New Jersey providing social support, engagement, and companionship to help seniors stay connected and supported at home."
                     />
                     <meta
                         property="og:image"
@@ -133,11 +132,11 @@ const StaticCompanionCareData = {
                     />
                     <meta
                         property="twitter:title"
-                        content="Companion Care Services for Seniors in NJ | 360 Degree Care"
+                        content="Companion Care Services in New Jersey | 360 Degree Care"
                     />
                     <meta
                         property="twitter:description"
-                        content="Explore companion care in New Jersey with engagement, safety check-ins, and respite support from 360 Degree Care companions who deliver peace of mind."
+                        content="Companion care services in New Jersey providing social support, engagement, and companionship to help seniors stay connected and supported at home."
                     />
                     <meta
                         property="twitter:image"
@@ -172,7 +171,10 @@ const StaticCompanionCareData = {
             </>
         ),
         description: (
-            <>Social support and emotional connection for daily life.</>
+            <>
+                Social connection and everyday companionship to support
+                emotional well-being and quality of life.
+            </>
         ),
         header: 'Companion Care Services in New Jersey',
         img: {
@@ -183,7 +185,7 @@ const StaticCompanionCareData = {
     description: {
         header: 'What is Companion Care?',
         description:
-            "A companion caregiver is a compassionate, reliable professional who spends quality time with individuals, supporting them with daily tasks and—most importantly—meaningful social interaction. Whether it's sharing stories over tea, going for a walk, or playing a game, a trusted companion brings joy and emotional connection. 360°Care's Companion Care emphasizes trust, comfort, and presence. A companion becomes a friend you can count on."
+            'Companion care services from 360 Degree Care provide meaningful social support for seniors who benefit from regular interaction and engagement at home. Our caregivers offer companionship, conversation, and assistance with daily routines to help reduce isolation and promote emotional well-being.'
     },
     listItems: {
         header: "What's Included",
