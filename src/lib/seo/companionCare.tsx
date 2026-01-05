@@ -170,12 +170,10 @@ const StaticCompanionCareData = {
                 Contact Us <FaArrowRight size={24} className="ml-4" />
             </>
         ),
-        description: (
-            <>
-                Social connection and everyday companionship to support
-                emotional well-being and quality of life.
-            </>
-        ),
+        description:
+            'Social connection and everyday companionship to support emotional well-being and quality of life.',
+        introBody:
+            'Companion care services from 360 Degree Care provide meaningful social support for seniors who benefit from regular interaction and engagement at home. Our caregivers offer companionship, conversation, and assistance with daily routines to help reduce isolation and promote emotional well-being.',
         header: 'Companion Care Services in New Jersey',
         img: {
             src: getImgSrc('companion-care-hero') ?? '',
