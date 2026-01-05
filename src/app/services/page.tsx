@@ -42,9 +42,9 @@ const SERVICES = [
 ] as const
 
 export const metadata: Metadata = {
-    title: 'All Home Care Services Offered in NJ | 360 Degree Care',
+    title: 'Home Care & Home Health Services Offered in New Jersey | 360 Degree Care',
     description:
-        'Browse 360 Degree Care services, from personal care and companion visits to skilled nursing and staffing solutions for New Jersey families and healthcare teams.'
+        'Explore the full range of home care and home health services from 360 Degree Care, including personal care, home health aides, nursing, companion care, and staffing across New Jersey.'
 }
 
 export default function ServicesIndexPage() {
@@ -52,17 +52,20 @@ export default function ServicesIndexPage() {
         <main>
             <section className="gradient-left text-white">
                 <div className="max-w-custom mx-auto px-6 py-16 text-center space-y-4">
-                    <p className="text-sm uppercase tracking-wider text-blue-100">
-                        Concierge-Level Home Care
-                    </p>
                     <h1 className="text-4xl font-semibold text-white">
-                        Services Tailored to Your Loved One
+                        Home Care & Home Health Services
                     </h1>
+                    <p className="text-xl font-medium text-blue-50">
+                        Personalized, concierge-level care tailored to your
+                        loved one's needs.
+                    </p>
                     <p className="mx-auto max-w-2xl text-blue-50">
-                        Whether you need hourly assistance or comprehensive
-                        clinical support, 360 Degree Care matches every family
-                        with trusted professionals who deliver compassion,
-                        comfort, and confidence at home.
+                        Whether you need hourly assistance, ongoing personal
+                        care, or skilled clinical support, 360 Degree Care
+                        offers a full range of home care and home health
+                        services across New Jersey. Our team works closely with
+                        families to provide reliable, compassionate support at
+                        home.
                     </p>
                 </div>
             </section>
