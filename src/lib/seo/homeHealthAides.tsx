@@ -11,7 +11,7 @@ import { HOME_HEALTH_AIDES_FAQS } from '@/utils/faqs'
 export const homeHealthAidesMetadata: Metadata = {
     title: 'Home Health Aide Services in New Jersey | 360 Degree Care',
     description:
-        'Certified home health aides in New Jersey providing hands-on support with daily living, personal care, and in-home assistance for seniors.',
+        'Certified home health aides in New Jersey providing hands-on support with daily living, personal care, mobility, and in-home assistance.',
     keywords:
         'home health aide, certified home health aide, daily living support, hygiene assistance, companionship, New Jersey',
     openGraph: {
@@ -19,7 +19,7 @@ export const homeHealthAidesMetadata: Metadata = {
         url: 'https://www.360degreecare.net/services/home-health-aides',
         title: 'Home Health Aide Services in New Jersey | 360 Degree Care',
         description:
-            'Certified home health aides in New Jersey providing hands-on support with daily living, personal care, and in-home assistance for seniors.',
+            'Certified home health aides in New Jersey providing hands-on support with daily living, personal care, mobility, and in-home assistance.',
         images: [
             {
                 url: 'https://www.360degreecare.net/assets/home-health-aides-image.jpg'
@@ -32,7 +32,7 @@ export const homeHealthAidesMetadata: Metadata = {
         card: 'summary_large_image',
         title: 'Home Health Aide Services in New Jersey | 360 Degree Care',
         description:
-            'Certified home health aides in New Jersey providing hands-on support with daily living, personal care, and in-home assistance for seniors.',
+            'Certified home health aides in New Jersey providing hands-on support with daily living, personal care, mobility, and in-home assistance.',
         images: [
             'https://www.360degreecare.net/assets/home-health-aides-image.jpg'
         ]

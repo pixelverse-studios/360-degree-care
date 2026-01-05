@@ -11,7 +11,7 @@ import { ELDER_CARE_CONSULTING_FAQS } from '@/utils/faqs'
 export const elderCareConsultingMetadata: Metadata = {
     title: 'Elder Care Consulting in New Jersey | 360 Degree Care',
     description:
-        'Elder care consulting services in New Jersey providing expert guidance for families navigating senior care decisions with clarity and confidence.',
+        'Professional elder care consulting in New Jersey, helping families navigate care options, plan next steps, and make informed decisions with confidence.',
     keywords:
         'elder care consulting, senior care planning, aging life care, care navigation, elder care services, New Jersey',
     openGraph: {
@@ -19,7 +19,7 @@ export const elderCareConsultingMetadata: Metadata = {
         url: 'https://www.360degreecare.net/services/elder-care',
         title: 'Elder Care Consulting in New Jersey | 360 Degree Care',
         description:
-            'Elder care consulting services in New Jersey providing expert guidance for families navigating senior care decisions with clarity and confidence.',
+            'Professional elder care consulting in New Jersey, helping families navigate care options, plan next steps, and make informed decisions with confidence.',
         images: [
             {
                 url: 'https://www.360degreecare.net/assets/elder-care-consulting-image.jpg'
@@ -32,7 +32,7 @@ export const elderCareConsultingMetadata: Metadata = {
         card: 'summary_large_image',
         title: 'Elder Care Consulting in New Jersey | 360 Degree Care',
         description:
-            'Elder care consulting services in New Jersey providing expert guidance for families navigating senior care decisions with clarity and confidence.',
+            'Professional elder care consulting in New Jersey, helping families navigate care options, plan next steps, and make informed decisions with confidence.',
         images: [
             'https://www.360degreecare.net/assets/elder-care-consulting-image.jpg'
         ]
