@@ -171,12 +171,10 @@ const StaticHomeHealthAidesData = {
                 Get In Touch <FaArrowRight size={24} className="ml-4" />
             </>
         ),
-        description: (
-            <>
-                Certified aides providing reliable, compassionate in-home
-                support for daily living.
-            </>
-        ),
+        description:
+            'Certified aides providing reliable, compassionate in-home support for daily living.',
+        introBody:
+            'Home health aide services from 360 Degree Care support seniors and individuals who need assistance with daily activities while remaining safely at home. Our certified aides help with personal care, mobility support, routine tasks, and companionship, always with respect, professionalism, and attention to individual needs.',
         header: 'Home Health Aide Services in New Jersey',
         img: {
             src: getImgSrc('home-aides-hero') ?? '',
