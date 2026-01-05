@@ -9,13 +9,13 @@ import { cn } from '@/lib/utils'
 import { HIGHLIGHT_CARDS, SERVICE_CARDS } from '@/utils/home'
 
 export const metadata: Metadata = {
-    title: 'In-Home Care & Home Health Services in New Jersey | 360 Degree Care',
+    title: 'In-Home Care & Home Health in New Jersey | 360 Degree Care',
     description:
-        'In-home personal care, home health aides, nursing, companion care, and elder care consulting across New Jersey to help seniors live safely and independently at home.',
+        'In-home personal care, home health aides, nursing, companion care, and elder care consulting across New Jersey to help seniors live safely at home.',
     openGraph: {
-        title: 'In-Home Care & Home Health Services in New Jersey | 360 Degree Care',
+        title: 'In-Home Care & Home Health in New Jersey | 360 Degree Care',
         description:
-            'In-home personal care, home health aides, nursing, companion care, and elder care consulting across New Jersey to help seniors live safely and independently at home.',
+            'In-home personal care, home health aides, nursing, companion care, and elder care consulting across New Jersey to help seniors live safely at home.',
         type: 'website'
     }
 }
