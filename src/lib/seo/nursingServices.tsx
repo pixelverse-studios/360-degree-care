@@ -169,12 +169,10 @@ const StaticNursingServicesData = {
                 Contact Us Today <FaArrowRight size={24} className="ml-4" />
             </>
         ),
-        description: (
-            <>
-                Skilled clinical care delivered at home with professionalism,
-                compassion, and continuity.
-            </>
-        ),
+        description:
+            'Skilled clinical care delivered at home with professionalism, compassion, and continuity.',
+        introBody:
+            'In-home nursing services from 360 Degree Care provide professional medical support for individuals who require skilled clinical care in the comfort of their own homes. Our licensed nurses deliver personalized care plans, ongoing assessments, and hands-on medical support to promote safety, stability, and quality of life.',
         header: 'In-Home Nursing Services in New Jersey',
         img: {
             src: getImgSrc('nursing-hero') ?? '',
