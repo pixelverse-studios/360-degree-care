@@ -160,12 +160,10 @@ const StaticStaffingServicesData = {
                 Join the Team <FaArrowRight size={24} className="ml-4" />
             </>
         ),
-        description: (
-            <>
-                Credentialed healthcare professionals to support facilities with
-                short- and long-term staffing needs.
-            </>
-        ),
+        description:
+            'Credentialed healthcare professionals to support facilities with short- and long-term staffing needs.',
+        introBody:
+            '360 Degree Care provides medical staffing solutions for healthcare facilities across New Jersey, including hospitals, rehabilitation centers, and long-term care environments. Our staffing services connect facilities with qualified, credentialed professionals to ensure consistent, reliable patient care.',
         header: 'Medical Staffing Solutions in New Jersey',
         img: {
             src: getImgSrc('staffing_hero') ?? '',
