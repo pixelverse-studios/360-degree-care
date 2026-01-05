@@ -175,12 +175,10 @@ const StaticPersonalCareData = {
                 <FaArrowRight size={24} className="ml-4" />
             </>
         ),
-        description: (
-            <>
-                Hands-on, in-home support that helps seniors live safely,
-                comfortably, and with dignity.
-            </>
-        ),
+        description:
+            'Hands-on, in-home support that helps seniors live safely, comfortably, and with dignity.',
+        introBody:
+            'Personal care services from 360 Degree Care support seniors and individuals who need help with daily living activities while remaining in the comfort of their own homes. Our caregivers provide respectful, reliable assistance designed to promote independence and overall well-being.',
         header: 'Personal Care Services in New Jersey',
         img: {
             src: getImgSrc('personal-care-hero') ?? '',
