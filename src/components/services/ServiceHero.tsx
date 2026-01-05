@@ -14,6 +14,7 @@ const CallToAction = dynamic(() => import('../CallToAction'), {
 interface ServiceHeroProps {
     header: string
     description: string | ReactNode
+    introBody?: string
     cta: string | ReactNode
     img: ImageProps
 }
@@ -21,6 +22,7 @@ interface ServiceHeroProps {
 export default function ServiceHero({
     header,
     description,
+    introBody,
     cta,
     img
 }: ServiceHeroProps) {
@@ -28,7 +30,8 @@ export default function ServiceHero({
         <section className="page-section grid grid-cols-1 lg:grid-cols-2 gap-6">
             <SlideInSection className="flex flex-col gap-6 items-start">
                 <h1>{header}</h1>
-                <article className="mb-12">{description}</article>
+                <p className="text-xl font-medium text-black">{description}</p>
+                {introBody && <p className="text-lg">{introBody}</p>}
                 <CallToAction
                     buttonLabel={cta}
                     value=""

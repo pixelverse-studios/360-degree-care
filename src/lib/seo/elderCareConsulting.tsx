@@ -162,12 +162,10 @@ const StaticElderCareConsultingData = {
                 <FaArrowRight size={24} className="ml-4" />
             </>
         ),
-        description: (
-            <>
-                Expert guidance to help families navigate elder care decisions
-                with clarity and confidence.
-            </>
-        ),
+        description:
+            'Expert guidance to help families navigate elder care decisions with clarity and confidence.',
+        introBody:
+            "Elder care consulting from 360 Degree Care supports families as they navigate complex decisions for aging loved ones. Our consultants help assess care needs, explore options, coordinate services, and create a clear plan aligned with each family's goals.",
         header: 'Elder Care Consulting in New Jersey',
         img: {
             src: getImgSrc('elder-care-hero') ?? '',
