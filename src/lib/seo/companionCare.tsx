@@ -1,11 +1,51 @@
 'use client'
 
+import type { Metadata } from 'next'
 import Head from 'next/head'
 import Script from 'next/script'
 import { FaArrowRight } from 'react-icons/fa6'
 import { getImgSrc } from '../images'
 import { generateFAQSchema } from './faq-schema'
 import { COMPANION_CARE_FAQS } from '@/utils/faqs'
+
+export const companionCareMetadata: Metadata = {
+    title: 'Companion Care Services in New Jersey | 360 Degree Care',
+    description:
+        'Companion care services in New Jersey providing social support, engagement, and companionship to help seniors stay connected and supported at home.',
+    keywords:
+        'companion care, companionship services, social support, emotional connection, senior companionship, New Jersey',
+    openGraph: {
+        type: 'website',
+        url: 'https://www.360degreecare.net/services/companion-care',
+        title: 'Companion Care Services in New Jersey | 360 Degree Care',
+        description:
+            'Companion care services in New Jersey providing social support, engagement, and companionship to help seniors stay connected and supported at home.',
+        images: [
+            {
+                url: 'https://www.360degreecare.net/assets/companion-care-image.jpg'
+            }
+        ],
+        locale: 'en_US',
+        siteName: '360 Degree Care'
+    },
+    twitter: {
+        card: 'summary_large_image',
+        title: 'Companion Care Services in New Jersey | 360 Degree Care',
+        description:
+            'Companion care services in New Jersey providing social support, engagement, and companionship to help seniors stay connected and supported at home.',
+        images: [
+            'https://www.360degreecare.net/assets/companion-care-image.jpg'
+        ]
+    },
+    robots: { index: true, follow: true },
+    alternates: {
+        canonical: 'https://www.360degreecare.net/services/companion-care'
+    },
+    other: {
+        'geo.region': 'US-NJ',
+        'geo.placename': 'Ridgewood'
+    }
+}
 
 const StaticCompanionCareData = {
     SeoHead: () => {

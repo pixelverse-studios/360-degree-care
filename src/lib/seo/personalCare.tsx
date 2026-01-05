@@ -1,11 +1,49 @@
 'use client'
 
+import type { Metadata } from 'next'
 import Head from 'next/head'
 import Script from 'next/script'
 import { FaArrowRight } from 'react-icons/fa6'
 import { getImgSrc } from '../images'
 import { generateFAQSchema } from './faq-schema'
 import { PERSONAL_CARE_FAQS } from '@/utils/faqs'
+
+export const personalCareMetadata: Metadata = {
+    title: 'Personal Care Services in New Jersey | 360 Degree Care',
+    description:
+        'Professional personal care services in New Jersey, helping seniors with daily living tasks while preserving dignity, independence, and comfort at home.',
+    keywords:
+        'personal care services, senior care, home health aide, hygiene assistance, mobility support, New Jersey, Ridgewood NJ',
+    openGraph: {
+        type: 'website',
+        url: 'https://www.360degreecare.net/services/personal-care',
+        title: 'Personal Care Services in New Jersey | 360 Degree Care',
+        description:
+            'Professional personal care services in New Jersey, helping seniors with daily living tasks while preserving dignity, independence, and comfort at home.',
+        images: [
+            {
+                url: 'https://www.360degreecare.net/assets/personal-care-image.jpg'
+            }
+        ],
+        locale: 'en_US',
+        siteName: '360 Degree Care'
+    },
+    twitter: {
+        card: 'summary_large_image',
+        title: 'Personal Care Services in New Jersey | 360 Degree Care',
+        description:
+            'Professional personal care services in New Jersey, helping seniors with daily living tasks while preserving dignity, independence, and comfort at home.',
+        images: ['https://www.360degreecare.net/assets/personal-care-image.jpg']
+    },
+    robots: { index: true, follow: true },
+    alternates: {
+        canonical: 'https://www.360degreecare.net/services/personal-care'
+    },
+    other: {
+        'geo.region': 'US-NJ',
+        'geo.placename': 'Ridgewood'
+    }
+}
 
 const StaticPersonalCareData = {
     SeoHead: () => {
