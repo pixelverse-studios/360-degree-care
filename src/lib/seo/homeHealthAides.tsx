@@ -1,11 +1,51 @@
 'use client'
 
+import type { Metadata } from 'next'
 import Head from 'next/head'
 import Script from 'next/script'
 import { FaArrowRight } from 'react-icons/fa6'
 import { getImgSrc } from '../images'
 import { generateFAQSchema } from './faq-schema'
 import { HOME_HEALTH_AIDES_FAQS } from '@/utils/faqs'
+
+export const homeHealthAidesMetadata: Metadata = {
+    title: 'Home Health Aide Services in New Jersey | 360 Degree Care',
+    description:
+        'Certified home health aides in New Jersey providing hands-on support with daily living, personal care, and in-home assistance for seniors.',
+    keywords:
+        'home health aide, certified home health aide, daily living support, hygiene assistance, companionship, New Jersey',
+    openGraph: {
+        type: 'website',
+        url: 'https://www.360degreecare.net/services/home-health-aides',
+        title: 'Home Health Aide Services in New Jersey | 360 Degree Care',
+        description:
+            'Certified home health aides in New Jersey providing hands-on support with daily living, personal care, and in-home assistance for seniors.',
+        images: [
+            {
+                url: 'https://www.360degreecare.net/assets/home-health-aides-image.jpg'
+            }
+        ],
+        locale: 'en_US',
+        siteName: '360 Degree Care'
+    },
+    twitter: {
+        card: 'summary_large_image',
+        title: 'Home Health Aide Services in New Jersey | 360 Degree Care',
+        description:
+            'Certified home health aides in New Jersey providing hands-on support with daily living, personal care, and in-home assistance for seniors.',
+        images: [
+            'https://www.360degreecare.net/assets/home-health-aides-image.jpg'
+        ]
+    },
+    robots: { index: true, follow: true },
+    alternates: {
+        canonical: 'https://www.360degreecare.net/services/home-health-aides'
+    },
+    other: {
+        'geo.region': 'US-NJ',
+        'geo.placename': 'Ridgewood'
+    }
+}
 
 const StaticHomeHealthAidesData = {
     SeoHead: () => {

@@ -1,11 +1,51 @@
 'use client'
 
+import type { Metadata } from 'next'
 import Head from 'next/head'
 import Script from 'next/script'
 import { FaArrowRight } from 'react-icons/fa6'
 import { getImgSrc } from '../images'
 import { generateFAQSchema } from './faq-schema'
 import { ELDER_CARE_CONSULTING_FAQS } from '@/utils/faqs'
+
+export const elderCareConsultingMetadata: Metadata = {
+    title: 'Elder Care Consulting in New Jersey | 360 Degree Care',
+    description:
+        'Elder care consulting services in New Jersey providing expert guidance for families navigating senior care decisions with clarity and confidence.',
+    keywords:
+        'elder care consulting, senior care planning, aging life care, care navigation, elder care services, New Jersey',
+    openGraph: {
+        type: 'website',
+        url: 'https://www.360degreecare.net/services/elder-care',
+        title: 'Elder Care Consulting in New Jersey | 360 Degree Care',
+        description:
+            'Elder care consulting services in New Jersey providing expert guidance for families navigating senior care decisions with clarity and confidence.',
+        images: [
+            {
+                url: 'https://www.360degreecare.net/assets/elder-care-consulting-image.jpg'
+            }
+        ],
+        locale: 'en_US',
+        siteName: '360 Degree Care'
+    },
+    twitter: {
+        card: 'summary_large_image',
+        title: 'Elder Care Consulting in New Jersey | 360 Degree Care',
+        description:
+            'Elder care consulting services in New Jersey providing expert guidance for families navigating senior care decisions with clarity and confidence.',
+        images: [
+            'https://www.360degreecare.net/assets/elder-care-consulting-image.jpg'
+        ]
+    },
+    robots: { index: true, follow: true },
+    alternates: {
+        canonical: 'https://www.360degreecare.net/services/elder-care'
+    },
+    other: {
+        'geo.region': 'US-NJ',
+        'geo.placename': 'Ridgewood'
+    }
+}
 
 const StaticElderCareConsultingData = {
     SeoHead: () => {

@@ -1,11 +1,51 @@
 'use client'
 
+import type { Metadata } from 'next'
 import Head from 'next/head'
 import Script from 'next/script'
 import { FaArrowRight } from 'react-icons/fa6'
 import { getImgSrc } from '../images'
 import { generateFAQSchema } from './faq-schema'
 import { STAFFING_SERVICES_FAQS } from '@/utils/faqs'
+
+export const staffingServicesMetadata: Metadata = {
+    title: 'Medical Staffing Solutions in New Jersey | 360 Degree Care',
+    description:
+        'Medical staffing solutions in New Jersey, providing credentialed nurses and healthcare professionals for hospitals, rehab centers, and care facilities.',
+    keywords:
+        'medical staffing, healthcare staffing, nursing staff, RN staffing, LPN staffing, CNA staffing, New Jersey',
+    openGraph: {
+        type: 'website',
+        url: 'https://www.360degreecare.net/services/staffing',
+        title: 'Medical Staffing Solutions in New Jersey | 360 Degree Care',
+        description:
+            'Medical staffing solutions in New Jersey, providing credentialed nurses and healthcare professionals for hospitals, rehab centers, and care facilities.',
+        images: [
+            {
+                url: 'https://www.360degreecare.net/assets/staffing-services-image.jpg'
+            }
+        ],
+        locale: 'en_US',
+        siteName: '360 Degree Care'
+    },
+    twitter: {
+        card: 'summary_large_image',
+        title: 'Medical Staffing Solutions in New Jersey | 360 Degree Care',
+        description:
+            'Medical staffing solutions in New Jersey, providing credentialed nurses and healthcare professionals for hospitals, rehab centers, and care facilities.',
+        images: [
+            'https://www.360degreecare.net/assets/staffing-services-image.jpg'
+        ]
+    },
+    robots: { index: true, follow: true },
+    alternates: {
+        canonical: 'https://www.360degreecare.net/services/staffing'
+    },
+    other: {
+        'geo.region': 'US-NJ',
+        'geo.placename': 'Ridgewood'
+    }
+}
 
 const StaticStaffingServicesData = {
     SeoHead: () => {

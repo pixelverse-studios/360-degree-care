@@ -42,9 +42,9 @@ const SERVICES = [
 ] as const
 
 export const metadata: Metadata = {
-    title: 'Home Care & Home Health Services Offered in New Jersey | 360 Degree Care',
+    title: 'Home Care & Health Offerings in New Jersey | 360 Degree Care',
     description:
-        'Explore the full range of home care and home health services from 360 Degree Care, including personal care, home health aides, nursing, companion care, and staffing across New Jersey.'
+        'Explore home care and home health offerings from 360 Degree Care, including personal care, home health aides, nursing, companion care, and staffing.'
 }
 
 export default function ServicesIndexPage() {

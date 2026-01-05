@@ -1,11 +1,51 @@
 'use client'
 
+import type { Metadata } from 'next'
 import Head from 'next/head'
 import Script from 'next/script'
 import { FaArrowRight } from 'react-icons/fa6'
 import { getImgSrc } from '../images'
 import { generateFAQSchema } from './faq-schema'
 import { NURSING_SERVICES_FAQS } from '@/utils/faqs'
+
+export const nursingServicesMetadata: Metadata = {
+    title: 'In-Home Nursing Services in New Jersey | 360 Degree Care',
+    description:
+        'In-home nursing services in New Jersey providing skilled clinical care, assessments, and medical support to help patients remain safely at home.',
+    keywords:
+        'in-home nursing, skilled nursing, wound care, medication management, home nursing, New Jersey',
+    openGraph: {
+        type: 'website',
+        url: 'https://www.360degreecare.net/services/nursing',
+        title: 'In-Home Nursing Services in New Jersey | 360 Degree Care',
+        description:
+            'In-home nursing services in New Jersey providing skilled clinical care, assessments, and medical support to help patients remain safely at home.',
+        images: [
+            {
+                url: 'https://www.360degreecare.net/assets/nursing-services-image.jpg'
+            }
+        ],
+        locale: 'en_US',
+        siteName: '360 Degree Care'
+    },
+    twitter: {
+        card: 'summary_large_image',
+        title: 'In-Home Nursing Services in New Jersey | 360 Degree Care',
+        description:
+            'In-home nursing services in New Jersey providing skilled clinical care, assessments, and medical support to help patients remain safely at home.',
+        images: [
+            'https://www.360degreecare.net/assets/nursing-services-image.jpg'
+        ]
+    },
+    robots: { index: true, follow: true },
+    alternates: {
+        canonical: 'https://www.360degreecare.net/services/nursing'
+    },
+    other: {
+        'geo.region': 'US-NJ',
+        'geo.placename': 'Ridgewood'
+    }
+}
 
 const StaticNursingServicesData = {
     SeoHead: () => {
