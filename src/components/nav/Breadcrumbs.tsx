@@ -114,7 +114,7 @@ export default function Breadcrumbs() {
                     }}
                 />
             )}
-            <Breadcrumb className="absolute w-full z-10 top-[9rem] hidden lg:block">
+            <Breadcrumb className="absolute w-full z-10 top-[10rem] hidden lg:block">
                 <BreadcrumbList className="max-w-custom w-full mx-auto px-6 py-4 bg-transparent">
                     <BreadcrumbItem>
                         <BreadcrumbLink

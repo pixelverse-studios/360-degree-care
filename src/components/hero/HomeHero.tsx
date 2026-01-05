@@ -23,21 +23,16 @@ export default function HomeHero() {
                     <h1 className="text-black">
                         In-Home Care & Home Health Services Across New Jersey
                     </h1>
-                    <p className="text-2xl md:text-3xl font-medium text-black mt-2">
+                    <p className="text-lg md:text-xl font-medium text-gray-700 mt-2">
                         Personalized, concierge-level care that preserves
                         independence, dignity, and peace of mind.
                     </p>
                 </div>
                 <p className="text-lg">
-                    Experience exceptional,{' '}
-                    <span className="prio">Concierge Level™</span> home health
-                    care that helps seniors stay safe, supported, and
-                    independent in the comfort of their own homes. Our care is
-                    delivered by{' '}
-                    <span className="font-semibold">
-                        The Finest Nurses and Home Aides in New Jersey
-                    </span>
-                    .
+                    360 Degree Care provides in-home personal care, home health
+                    aides, nursing, companion care, and elder care consulting
+                    throughout New Jersey. Our experienced caregivers help
+                    seniors stay safe, supported, and independent at home.
                 </p>
                 <p className="text-base text-gray-600 max-w-2xl">
                     Trusted by New Jersey families for over a decade – formerly
