@@ -164,7 +164,7 @@
 
 ## Changed URLs
 - https://www.360degreecare.net/contact
-- https://www.360degreecare.net/blog/what-does-home-health-aide-do (NEW)
+- https://www.360degreecare.net/blog/what-does-home-health-aide-do
 - https://www.360degreecare.net/services/companion-care
 - https://www.360degreecare.net/services/personal-care
 - https://www.360degreecare.net/services/elder-care
