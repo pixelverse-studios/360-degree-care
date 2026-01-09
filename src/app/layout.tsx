@@ -12,10 +12,9 @@ import { RouteStateProvider } from '@/lib/providers'
 import { FACEBOOK, INSTA, PHONE, EMAIL } from '@/utils/constants'
 
 const CANONICAL_ORIGIN = 'https://www.360degreecare.net'
-const SITE_TITLE =
-    'In-Home Care & Home Health Services in New Jersey | 360 Degree Care'
+const SITE_TITLE = 'In-Home Care & Home Health in New Jersey | 360 Degree Care'
 const SITE_DESCRIPTION =
-    'In-home personal care, home health aides, nursing, companion care, and elder care consulting across New Jersey to help seniors live safely and independently at home.'
+    'In-home personal care, home health aides, nursing, companion care, and elder care consulting across New Jersey to help seniors live safely at home.'
 const DEFAULT_OG_IMAGE =
     'https://res.cloudinary.com/pixelverse-studios/image/upload/c_fill,w_1200,h_630,q_auto,f_auto/v1750022033/clients/360dc/assets/happy_couple_1_xgwhwr.jpg'
 // Local favicon paths for Google crawler compatibility (same-origin required)

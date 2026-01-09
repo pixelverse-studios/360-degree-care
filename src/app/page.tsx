@@ -1,4 +1,3 @@
-import type { Metadata } from 'next'
 import HomeHero from '@/components/hero/HomeHero'
 import InfoCards from '@/components/InfoCards'
 import dynamic from 'next/dynamic'
@@ -8,17 +7,8 @@ import { cn } from '@/lib/utils'
 
 import { HIGHLIGHT_CARDS, SERVICE_CARDS } from '@/utils/home'
 
-export const metadata: Metadata = {
-    title: 'In-Home Care & Home Health in New Jersey | 360 Degree Care',
-    description:
-        'In-home personal care, home health aides, nursing, companion care, and elder care consulting across New Jersey to help seniors live safely at home.',
-    openGraph: {
-        title: 'In-Home Care & Home Health in New Jersey | 360 Degree Care',
-        description:
-            'In-home personal care, home health aides, nursing, companion care, and elder care consulting across New Jersey to help seniors live safely at home.',
-        type: 'website'
-    }
-}
+// Homepage metadata is inherited from src/app/layout.tsx
+// Do not duplicate here to avoid inconsistent SERP results
 
 const HomeTestimonials = dynamic(
     () => import('@/components/testimonials/HomeTestimonials'),

@@ -18,6 +18,7 @@ import transitionalCareHospitalToHome from './articles/2025/transitionalCareHosp
 import northJerseyCaregiverRoadmap from './articles/2025/northJerseyCaregiverRoadmap'
 import licensedHomeHealthAideVisitNJ from './articles/2025/licensedHomeHealthAideVisitNJ'
 import whatDoesHomeHealthAideDo from './articles/2025/whatDoesHomeHealthAideDo'
+import questionsToAskHomeCareAgency from './articles/2026/questionsToAskHomeCareAgency'
 
 // STAGED BLOGS - Not yet published (will be added on scheduled dates)
 // See Linear tickets 360C-168 through 360C-174 for publish schedule
@@ -34,6 +35,7 @@ import whatDoesHomeHealthAideDo from './articles/2025/whatDoesHomeHealthAideDo'
 // howToPayForHomeCareNJ
 
 const allBlogs = [
+    questionsToAskHomeCareAgency,
     whatDoesHomeHealthAideDo,
     licensedHomeHealthAideVisitNJ,
     northJerseyCaregiverRoadmap,
