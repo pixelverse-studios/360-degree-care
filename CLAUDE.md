@@ -180,6 +180,9 @@ npm run lint            # Run ESLint checks
 NEXT_PUBLIC_API_HOST    # CRM API base URL (e.g., https://api.yourdomain.com)
 NEXT_PUBLIC_SLUG        # Client ID for contact-form endpoint
 
+# Analytics (optional - Mixpanel)
+NEXT_PUBLIC_MIXPANEL_TOKEN  # Mixpanel project token (mirrors events from SiteBehaviour)
+
 # Required for deployment tracking (local Git hooks only)
 PVS_WEBSITE_ID          # Website UUID from PVS database
 PVS_API_URL             # PVS API URL (https://pvs-server-62hx7.ondigitalocean.app)

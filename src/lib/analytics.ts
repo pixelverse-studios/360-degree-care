@@ -1,3 +1,9 @@
+import {
+    trackMixpanelEvent,
+    trackMixpanelPageView,
+    initMixpanel
+} from './mixpanel'
+
 type EventPayload = Record<string, unknown>
 
 const isDev = process.env.NODE_ENV !== 'production'
@@ -5,6 +11,11 @@ const debugLog = (...args: unknown[]) => {
     if (isDev) {
         console.log(...args)
     }
+}
+
+// Initialize Mixpanel on module load (client-side only)
+if (typeof window !== 'undefined') {
+    initMixpanel()
 }
 
 declare global {
@@ -125,6 +136,7 @@ const trackPageView = (url?: string) => {
     const landingPage = url || window.location.pathname
     debugLog('SiteBehaviour page view:', landingPage)
 
+    // Send to SiteBehaviour
     if (typeof (window as any).sbVisitorCustomEvent === 'function') {
         try {
             ;(window as any).siteBehaviourEventMeta = {
@@ -135,6 +147,9 @@ const trackPageView = (url?: string) => {
             debugLog('SiteBehaviour page view error:', error)
         }
     }
+
+    // Mirror to Mixpanel
+    trackMixpanelPageView(landingPage)
 }
 
 const trackEvent = (eventName: string, payload: EventPayload = {}) => {
@@ -142,6 +157,9 @@ const trackEvent = (eventName: string, payload: EventPayload = {}) => {
 
     debugLog('Tracking SiteBehaviour event:', eventName, payload)
     enqueueSiteBehaviourEvent(eventName, payload)
+
+    // Mirror to Mixpanel
+    trackMixpanelEvent(eventName, payload)
 }
 
 const trackAdSource = (
@@ -169,6 +187,9 @@ const trackAdSource = (
     debugLog('Tracking ad source via SiteBehaviour:', payload)
     enqueueSiteBehaviourEvent(sourceInfo.eventName, payload)
     storeTrackedAdSource(sourceInfo.id)
+
+    // Mirror to Mixpanel
+    trackMixpanelEvent(sourceInfo.eventName, payload)
 
     return sourceInfo
 }

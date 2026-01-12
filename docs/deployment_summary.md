@@ -3,17 +3,14 @@
 <!-- This file is automatically sent via email on successful deployment, then reset for the next cycle -->
 
 ## Latest deploy summary
-- Fixed duplicate homepage metadata that was causing inconsistent search results
-- Shortened site title and description for better SERP display
-- Published new blog: "15 Questions to Ask Before Hiring a Home Care Agency in Bergen County"
+- Added Mixpanel analytics integration to compare with SiteBehaviour side-by-side
+- All existing tracked events (page views, ad source attribution, bounce tracking) now mirror to Mixpanel
 
 ## Notes for internal team
-- Removed `export const metadata` from `src/app/page.tsx` (was duplicating `layout.tsx`)
-- Homepage now inherits complete metadata from root layout (includes twitter, canonical, icons)
-- Site title shortened from 68 to 58 chars; description from 147 to 136 chars
-- Blog moved from staged (2025/) to published (2026/) and exported in index.ts
-- 360C-168 completed
+- New environment variable required: `NEXT_PUBLIC_MIXPANEL_TOKEN`
+- Mixpanel mirrors existing events: Page View, Ad Source (Google/Meta), bounce
+- Debug logging visible in dev mode console with `[Mixpanel]` prefix
+- Files added/modified: `src/lib/mixpanel.ts`, `src/lib/analytics.ts`
 
 ## Changed URLs
-- https://www.360degreecare.net/
-- https://www.360degreecare.net/blog/questions-to-ask-home-care-agency
+-
