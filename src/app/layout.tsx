@@ -18,7 +18,7 @@ const SITE_DESCRIPTION =
 const DEFAULT_OG_IMAGE =
     'https://res.cloudinary.com/pixelverse-studios/image/upload/c_fill,w_1200,h_630,q_auto,f_auto/v1750022033/clients/360dc/assets/happy_couple_1_xgwhwr.jpg'
 // Local favicon paths for Google crawler compatibility (same-origin required)
-const FAVICON_ICO = '/favicon.ico'
+const FAVICON_ICO = '/favicon-32x32.png'
 const FAVICON_16 = '/favicon-16x16.png'
 const FAVICON_32 = '/favicon-32x32.png'
 const FAVICON_64 = '/favicon-64x64.png'
