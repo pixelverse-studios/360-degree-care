@@ -24,6 +24,9 @@ declare global {
         // eslint-disable-next-line no-unused-vars
         sbVisitorCustomEvent?: (eventName: string) => void
         siteBehaviourEventMeta?: EventPayload
+        dataLayer?: unknown[]
+        // eslint-disable-next-line no-unused-vars
+        gtag?: (...args: unknown[]) => void
     }
 }
 
@@ -162,6 +165,35 @@ const trackEvent = (eventName: string, payload: EventPayload = {}) => {
     trackMixpanelEvent(eventName, payload)
 }
 
+const GOOGLE_ADS_CONVERSION_ID = 'AW-17090471122/KWXmCPy67MsaENLJr9U_'
+
+const trackGoogleAdsConversion = (url?: string): boolean => {
+    if (typeof window === 'undefined') return false
+    if (typeof window.gtag !== 'function') {
+        debugLog('Google Ads gtag not available')
+        return false
+    }
+
+    try {
+        const callback = () => {
+            if (typeof url !== 'undefined') {
+                window.location.href = url
+            }
+        }
+
+        window.gtag('event', 'conversion', {
+            send_to: GOOGLE_ADS_CONVERSION_ID,
+            event_callback: callback
+        })
+
+        debugLog('Google Ads conversion tracked:', GOOGLE_ADS_CONVERSION_ID)
+        return true
+    } catch (error) {
+        debugLog('Google Ads conversion error:', error)
+        return false
+    }
+}
+
 const trackAdSource = (
     rawSource: string | null | undefined,
     landingPage?: string
@@ -197,7 +229,8 @@ const trackAdSource = (
 const analytics = {
     trackPageView,
     trackEvent,
-    trackAdSource
+    trackAdSource,
+    trackGoogleAdsConversion
 }
 
 export default analytics

@@ -18,6 +18,7 @@ import {
 } from '@/components/ui/form'
 import { ContactMap } from '@/utils/contact'
 import { useRouteState } from '@/lib/providers'
+import analytics from '@/lib/analytics'
 import {
     Select,
     SelectTrigger,
@@ -77,6 +78,7 @@ export default function ContactForm() {
             )
             setLoading(false)
             setSubmitted(true)
+            analytics.trackGoogleAdsConversion()
             return toast.success('Request submitted successfully')
         } catch {
             setLoading(false)
