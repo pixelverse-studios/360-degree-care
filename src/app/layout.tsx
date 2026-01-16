@@ -246,7 +246,7 @@ export default function RootLayout({
                             id="google-ads-config"
                             strategy="afterInteractive"
                             dangerouslySetInnerHTML={{
-                                __html: `window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'AW-17090471122');`
+                                __html: `window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'AW-17090471122');gtag('config', 'AW-17090471122/bfUXCJzCydMaENLJr9U_', {'phone_conversion_number': '(201) 299-4243'});`
                             }}
                         />
                         <Script

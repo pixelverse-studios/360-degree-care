@@ -7,6 +7,7 @@
 - All existing tracked events (page views, ad source attribution, bounce tracking) now mirror to Mixpanel
 - Added Google Ads conversion tracking (gtag.js) for ad campaign measurement
 - Contact form submissions now trigger Google Ads "Website lead" conversion events
+- Phone number clicks now tracked as Google Ads conversions for (201) 299-4243
 
 ## Notes for internal team
 - New environment variable required: `NEXT_PUBLIC_MIXPANEL_TOKEN`
@@ -14,7 +15,8 @@
 - Debug logging visible in dev mode console with `[Mixpanel]` prefix
 - Files added/modified: `src/lib/mixpanel.ts`, `src/lib/analytics.ts`
 - Google Ads tag ID: `AW-17090471122` (production only)
-- Google Ads conversion ID: `AW-17090471122/KWXmCPy67MsaENLJr9U_`
+- Google Ads form conversion ID: `AW-17090471122/KWXmCPy67MsaENLJr9U_`
+- Google Ads phone conversion ID: `AW-17090471122/bfUXCJzCydMaENLJr9U_`
 - Files modified: `src/app/layout.tsx`, `src/lib/analytics.ts`, `src/components/contact/ContactForm.tsx`
 
 ## Changed URLs
