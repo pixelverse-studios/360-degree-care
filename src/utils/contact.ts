@@ -78,11 +78,13 @@ ContactMap.set('employment', {
     type: 'employment'
 })
 
+const generalFormSchema = z.object(baseSchema)
+
 ContactMap.set('general', {
     description:
         "We're here to answer your questions and discuss how we can help you and your loved ones.",
     initialValues: baseForm,
-    schema: baseSchema,
+    schema: generalFormSchema,
     selectOptions: [],
     type: 'general'
 })

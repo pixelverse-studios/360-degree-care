@@ -19,7 +19,7 @@
 - Files modified: `src/app/layout.tsx`, `src/lib/analytics.ts`, `src/components/contact/ContactForm.tsx`
 
 ## Changed URLs
-- All pages (site-wide tracking script)
+- https://www.360degreecare.net
 - https://www.360degreecare.net/contact
 - https://www.360degreecare.net/contact/services
 - https://www.360degreecare.net/contact/employment
