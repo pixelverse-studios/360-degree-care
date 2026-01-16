@@ -5,9 +5,8 @@
 ## Latest deploy summary
 - Added Mixpanel analytics integration to compare with SiteBehaviour side-by-side
 - All existing tracked events (page views, ad source attribution, bounce tracking) now mirror to Mixpanel
-- Added Google Ads conversion tracking (gtag.js) for ad campaign measurement
-- Contact form submissions now trigger Google Ads "Website lead" conversion events
-- Phone number clicks now tracked as Google Ads conversions for (201) 299-4243
+- Reviewed Google Ads tracking setup and added cache-busting parameters to ensure conversion tags fire correctly
+- Verified form submission and phone click conversion events are properly configured
 
 ## Notes for internal team
 - New environment variable required: `NEXT_PUBLIC_MIXPANEL_TOKEN`
