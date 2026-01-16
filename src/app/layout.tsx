@@ -301,7 +301,10 @@ export default function RootLayout({
                                 src="https://www.googletagmanager.com/ns.html?id=GTM-PGDVF5CR"
                                 height="0"
                                 width="0"
-                                style={{ display: 'none', visibility: 'hidden' }}
+                                style={{
+                                    display: 'none',
+                                    visibility: 'hidden'
+                                }}
                             />
                         </noscript>
                         <noscript>
