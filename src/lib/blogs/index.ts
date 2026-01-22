@@ -20,11 +20,11 @@ import licensedHomeHealthAideVisitNJ from './articles/2025/licensedHomeHealthAid
 import whatDoesHomeHealthAideDo from './articles/2025/whatDoesHomeHealthAideDo'
 import questionsToAskHomeCareAgency from './articles/2026/questionsToAskHomeCareAgency'
 import chooseHomeCareAgencyBergenCounty from './articles/2025/chooseHomeCareAgencyBergenCounty'
+import whatIsRespiteCare from './articles/2025/whatIsRespiteCare'
 
 // STAGED BLOGS - Not yet published (will be added on scheduled dates)
 // See Linear tickets 360C-168 through 360C-174 for publish schedule
 //
-// Jan 22, 2026: whatIsRespiteCare
 // Jan 27, 2026: doesMedicareCoverHomeCareNJ
 // Jan 29, 2026: homeCareVsAssistedLivingNJ
 //
@@ -32,6 +32,7 @@ import chooseHomeCareAgencyBergenCounty from './articles/2025/chooseHomeCareAgen
 // howToPayForHomeCareNJ
 
 const allBlogs = [
+    whatIsRespiteCare,
     chooseHomeCareAgencyBergenCounty,
     questionsToAskHomeCareAgency,
     whatDoesHomeHealthAideDo,
