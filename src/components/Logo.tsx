@@ -1,5 +1,4 @@
-import Image from 'next/image'
-import { RotateCw } from 'lucide-react'
+import { Home } from 'lucide-react'
 
 import { cn } from '@/lib/utils'
 
@@ -22,15 +21,21 @@ const sizeTextClasses = {
 }
 
 const sizeIconClasses = {
-    sm: 'h-[0.5em] w-[0.5em]',
-    md: 'h-[0.6em] w-[0.6em]',
-    lg: 'h-[0.7em] w-[0.7em]'
+    sm: 'h-[0.8em] w-[0.8em]',
+    md: 'h-[0.9em] w-[0.9em]',
+    lg: 'h-[1em] w-[1em]'
 }
 
-const sizeWidthClasses = {
-    sm: 'w-28 md:w-32',
-    md: 'w-1/2 max-w-[20rem]',
-    lg: 'w-[22rem]'
+const sizeLogoTextClasses = {
+    sm: 'text-lg',
+    md: 'text-2xl',
+    lg: 'text-3xl'
+}
+
+const sizeLogoIconClasses = {
+    sm: 'h-6 w-6',
+    md: 'h-8 w-8',
+    lg: 'h-10 w-10'
 }
 
 export const CompanyName = ({
@@ -43,54 +48,50 @@ export const CompanyName = ({
     return (
         <span
             className={cn(
-                'inline-flex font-bold',
+                'inline-flex items-center gap-1 font-bold',
                 colorClass,
                 sizeTextClasses[size],
                 className
             )}
         >
-            360
-            <span>
-                <RotateCw
-                    className={cn(
-                        'flex items-start text-blue transition-all animate-spin-very-slow mt-[2px]',
-                        sizeIconClasses[size]
-                    )}
-                    strokeWidth={4}
-                />
-            </span>
-            Care
+            Haven Home
+            <Home
+                className={cn('text-blue', sizeIconClasses[size])}
+                strokeWidth={2.5}
+                aria-hidden="true"
+            />
+            Health
         </span>
     )
 }
 
 const Logo = ({ invert = false, size = 'md', className }: LogoProps) => {
-    const widthClass = invert
-        ? 'w-full md:w-fit md:max-w-[20rem]'
-        : sizeWidthClasses[size]
-
     return (
         <div
             className={cn(
                 invert ? 'bg-primary' : 'bg-transparent',
-                widthClass,
+                'flex items-center gap-2 py-2 px-4',
                 className
             )}
         >
-            <Image
-                src="/logo.png"
-                alt="360 Care Logo"
-                width={400}
-                height={160}
+            <Home
                 className={cn(
-                    'h-auto w-full',
-                    invert
-                        ? 'drop-shadow-[0_0_4px_rgba(255,255,255,0.6)]'
-                        : undefined
+                    'flex-shrink-0',
+                    sizeLogoIconClasses[size],
+                    invert ? 'text-white' : 'text-blue'
                 )}
-                priority
-                sizes="(min-width: 1024px) 20rem, (min-width: 768px) 18rem, 60vw"
+                strokeWidth={2}
+                aria-hidden="true"
             />
+            <span
+                className={cn(
+                    'font-bold leading-tight whitespace-nowrap',
+                    sizeLogoTextClasses[size],
+                    invert ? 'text-white' : 'text-primary'
+                )}
+            >
+                Haven Home Health
+            </span>
         </div>
     )
 }
