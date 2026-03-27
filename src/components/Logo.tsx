@@ -32,10 +32,10 @@ const sizeLogoTextClasses = {
     lg: 'text-3xl'
 }
 
-const sizeWidthClasses = {
-    sm: 'w-28 md:w-32',
-    md: 'w-1/2 max-w-[20rem]',
-    lg: 'w-[22rem]'
+const sizeLogoIconClasses = {
+    sm: 'h-6 w-6',
+    md: 'h-8 w-8',
+    lg: 'h-10 w-10'
 }
 
 export const CompanyName = ({
@@ -54,10 +54,11 @@ export const CompanyName = ({
                 className
             )}
         >
-            Haven
+            Haven Home
             <Home
                 className={cn('text-blue', sizeIconClasses[size])}
                 strokeWidth={2.5}
+                aria-hidden="true"
             />
             Health
         </span>
@@ -65,25 +66,22 @@ export const CompanyName = ({
 }
 
 const Logo = ({ invert = false, size = 'md', className }: LogoProps) => {
-    const widthClass = invert
-        ? 'w-full md:w-fit md:max-w-[20rem]'
-        : sizeWidthClasses[size]
-
     return (
         <div
             className={cn(
                 invert ? 'bg-primary' : 'bg-transparent',
-                'flex items-center justify-center gap-2 py-2 px-4',
-                widthClass,
+                'flex items-center gap-2 py-2 px-4',
                 className
             )}
         >
             <Home
                 className={cn(
-                    'h-8 w-8 flex-shrink-0',
+                    'flex-shrink-0',
+                    sizeLogoIconClasses[size],
                     invert ? 'text-white' : 'text-blue'
                 )}
                 strokeWidth={2}
+                aria-hidden="true"
             />
             <span
                 className={cn(
