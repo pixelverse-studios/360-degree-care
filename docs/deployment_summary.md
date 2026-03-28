@@ -14,14 +14,19 @@
 - Updated root layout metadata, canonical URL, and JSON-LD schemas for Haven Home Health
 - Removed client-specific OG image and social media sameAs references
 - Trimmed service area schemas to Bergen County only for demo
+- Updated footer: removed "360 Degree Care Inc." copyright, replaced with "Haven Home Health"
+- Removed franchise disclaimer from footer ("Each franchise is independently owned and operated.")
+- Replaced client-specific Google Review link with placeholder
+- Removed Google Review button from footer (still available on contact form)
 
 ## Notes for internal team
-- DEV-536, DEV-537, DEV-538 completed
+- DEV-536, DEV-537, DEV-538, DEV-539 completed
 - Files: src/utils/constants.ts, src/components/Logo.tsx, public/manifest.json
 - Assets: public/logo.png, public/favicon.ico, public/favicon-*.png, public/apple-touch-icon.png
 - Logo component no longer uses /logo.png image — now renders text with lucide Home icon
 - Stripped GTM (GTM-PGDVF5CR), Google Ads (AW-17090471122), and all conversion tracking from layout.tsx
 - analytics.ts gutted to no-op stubs; ContactForm.tsx no longer calls tracking
+- DEV-539: Footer.tsx, GoogleReviewLink.tsx updated; Header.tsx, Breadcrumbs.tsx, routes.ts already clean
 
 ## Changed URLs
 - All pages affected (brand identity is global via layout, footer, and constants)

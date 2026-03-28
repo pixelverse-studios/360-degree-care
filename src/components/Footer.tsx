@@ -7,7 +7,6 @@ import Logo, { CompanyName } from '@/components/Logo'
 import { cn } from '@/lib/utils'
 import { navLinks, footerResources } from '@/utils/routes'
 import { ADDRESS, FACEBOOK, INSTA, PHONE } from '@/utils/constants'
-import GoogleReviewLink from './GoogleReviewLink'
 import ContactMap from './contact/ContactMap'
 
 const servicedCounties = [
@@ -92,7 +91,6 @@ export default function Footer() {
                                 </a>
                             </div>
                         </div>
-                        <GoogleReviewLink className="h-fit" />
                     </div>
                     <div className="flex flex-col space-y-2 text-sm">
                         <p className="font-bold text-lg">Now Servicing</p>
@@ -154,11 +152,11 @@ export default function Footer() {
                 {/* Bottom Section */}
                 <div className="mt-10 border-t border-gray-200 pt-4 text-center text-white">
                     <article className="text-sm">
-                        <CompanyName invert /> is an Equal Opportunity Employer.
-                        Each franchise is independently owned and operated.
+                        <CompanyName invert /> is an Equal Opportunity
+                        Employer.
                     </article>
                     <p className="mt-1 text-sm">
-                        &copy; {currentYear} 360 Degree Care Inc. All rights
+                        &copy; {currentYear} Haven Home Health. All rights
                         reserved.
                     </p>
 
