@@ -11,9 +11,12 @@
 - Replaced all favicon and logo image assets with generic branded versions
 - Removed all analytics and tracking code (Google Tag Manager, Google Ads conversion tracking)
 - Contact form no longer fires conversion tracking on submission
+- Updated root layout metadata, canonical URL, and JSON-LD schemas for Haven Home Health
+- Removed client-specific OG image and social media sameAs references
+- Trimmed service area schemas to Bergen County only for demo
 
 ## Notes for internal team
-- DEV-536, DEV-537 completed
+- DEV-536, DEV-537, DEV-538 completed
 - Files: src/utils/constants.ts, src/components/Logo.tsx, public/manifest.json
 - Assets: public/logo.png, public/favicon.ico, public/favicon-*.png, public/apple-touch-icon.png
 - Logo component no longer uses /logo.png image — now renders text with lucide Home icon

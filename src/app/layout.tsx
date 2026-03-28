@@ -7,14 +7,13 @@ import Breadcrumbs from '@/components/nav/Breadcrumbs'
 import Footer from '@/components/Footer'
 import { Toaster } from '@/components/ui/sonner'
 import { RouteStateProvider } from '@/lib/providers'
-import { FACEBOOK, INSTA, PHONE, EMAIL } from '@/utils/constants'
+import { PHONE, EMAIL, ADDRESS } from '@/utils/constants'
 
-const CANONICAL_ORIGIN = 'https://www.360degreecare.net'
-const SITE_TITLE = 'In-Home Care & Home Health in New Jersey | 360 Degree Care'
+const CANONICAL_ORIGIN = 'https://haven-home-health.netlify.app'
+const SITE_TITLE =
+    'In-Home Care & Home Health in New Jersey | Haven Home Health'
 const SITE_DESCRIPTION =
     'In-home personal care, home health aides, nursing, companion care, and elder care consulting across New Jersey to help seniors live safely at home.'
-const DEFAULT_OG_IMAGE =
-    'https://res.cloudinary.com/pixelverse-studios/image/upload/c_fill,w_1200,h_630,q_auto,f_auto/v1750022033/clients/360dc/assets/happy_couple_1_xgwhwr.jpg'
 const FAVICON_ICO = '/favicon-32x32.png'
 const FAVICON_16 = '/favicon-16x16.png'
 const FAVICON_32 = '/favicon-32x32.png'
@@ -48,26 +47,17 @@ export const metadata = {
     title: SITE_TITLE,
     description: SITE_DESCRIPTION,
     openGraph: {
-        images: [
-            {
-                url: DEFAULT_OG_IMAGE,
-                width: 1200,
-                height: 630,
-                alt: 'Family with a 360 Degree Care caregiver at home'
-            }
-        ],
         title: SITE_TITLE,
         description: SITE_DESCRIPTION,
         url: CANONICAL_ORIGIN,
-        siteName: '360 Degree Care',
+        siteName: 'Haven Home Health',
         type: 'website',
         manifest: '/manifest.json'
     },
     twitter: {
         card: 'summary_large_image',
         title: SITE_TITLE,
-        description: SITE_DESCRIPTION,
-        images: [DEFAULT_OG_IMAGE]
+        description: SITE_DESCRIPTION
     },
     alternates: {
         canonical: '/'
@@ -78,7 +68,7 @@ const localBusinessSchema = {
     '@context': 'https://schema.org',
     '@type': 'HomeHealthCareService',
     '@id': `${CANONICAL_ORIGIN}/#localbusiness`,
-    name: '360 Degree Care',
+    name: 'Haven Home Health',
     url: CANONICAL_ORIGIN,
     image: SITE_LOGO,
     logo: SITE_LOGO,
@@ -87,20 +77,15 @@ const localBusinessSchema = {
     priceRange: '$$',
     address: {
         '@type': 'PostalAddress',
-        streetAddress: '27 Chestnut Street',
+        streetAddress: ADDRESS.STREET,
         addressLocality: 'Ridgewood',
         addressRegion: 'NJ',
         postalCode: '07450',
         addressCountry: 'US'
     },
     areaServed: [
-        { '@type': 'AdministrativeArea', name: 'Bergen County, New Jersey' },
-        { '@type': 'AdministrativeArea', name: 'Monmouth County, New Jersey' },
-        { '@type': 'AdministrativeArea', name: 'Passaic County, New Jersey' },
-        { '@type': 'AdministrativeArea', name: 'Essex County, New Jersey' },
-        { '@type': 'AdministrativeArea', name: 'Ocean County, New Jersey' }
+        { '@type': 'AdministrativeArea', name: 'Bergen County, New Jersey' }
     ],
-    sameAs: [FACEBOOK, INSTA],
     serviceType: [
         'Personal Care',
         'Companion Care',
@@ -140,31 +125,25 @@ const organizationSchema = {
     '@context': 'https://schema.org',
     '@type': 'MedicalOrganization',
     '@id': `${CANONICAL_ORIGIN}/#organization`,
-    name: '360 Degree Care',
-    alternateName: '360 Care',
+    name: 'Haven Home Health',
     url: CANONICAL_ORIGIN,
     logo: SITE_LOGO,
-    legalName: '360 Degree Care',
+    legalName: 'Haven Home Health',
     description:
-        'Independent and family-owned agency providing Concierge Level home care and in-home support for seniors across New Jersey.',
+        'Independent home care agency providing in-home support for seniors across New Jersey.',
     email: EMAIL,
     telephone: PHONE,
     address: {
         '@type': 'PostalAddress',
-        streetAddress: '27 Chestnut Street',
+        streetAddress: ADDRESS.STREET,
         addressLocality: 'Ridgewood',
         addressRegion: 'NJ',
         postalCode: '07450',
         addressCountry: 'US'
     },
     areaServed: [
-        { '@type': 'AdministrativeArea', name: 'Bergen County, New Jersey' },
-        { '@type': 'AdministrativeArea', name: 'Monmouth County, New Jersey' },
-        { '@type': 'AdministrativeArea', name: 'Passaic County, New Jersey' },
-        { '@type': 'AdministrativeArea', name: 'Essex County, New Jersey' },
-        { '@type': 'AdministrativeArea', name: 'Ocean County, New Jersey' }
+        { '@type': 'AdministrativeArea', name: 'Bergen County, New Jersey' }
     ],
-    sameAs: [FACEBOOK, INSTA],
     contactPoint: [
         {
             '@type': 'ContactPoint',
@@ -176,6 +155,7 @@ const organizationSchema = {
         }
     ]
 }
+
 const rubik = Rubik({
     subsets: ['latin'],
     weight: ['400', '500', '600', '700'],
