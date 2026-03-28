@@ -1,3 +1,5 @@
+> **HISTORICAL DOCUMENT** - This file was created during the original client engagement (360 Degree Care) and is retained as a reference for SEO patterns and strategy. Brand names, contact info, and client-specific details are from the original project.
+
 # SEO Implementation Checklist: 360 Degree Care
 
 > Progress: Phase 0 Complete | Phase 1 In Progress (On-page done, internal links missing)

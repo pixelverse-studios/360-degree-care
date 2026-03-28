@@ -1,3 +1,5 @@
+> **HISTORICAL DOCUMENT** - This blog content outline was created during the original client engagement. The corresponding TypeScript article in `src/lib/blogs/articles/` has been debranded to Haven Home Health. Brand references below are from the original draft.
+
 # How Much Does Home Care Cost in New Jersey? A Complete 2025 Guide
 
 **Meta Title:** How Much Does Home Care Cost in NJ? 2025 Pricing Guide
@@ -7,7 +9,7 @@
 
 ---
 
-When families first call us at 360 Degree Care, one of the most common questions we hear is: "How much is this going to cost?" It's a fair question—and one that deserves a straightforward answer.
+When families first call us at 360 Degree Care, one of the most common questions we hear is: "How much is this going to cost?" It's a fair question---and one that deserves a straightforward answer.
 
 The truth is, home care costs in New Jersey vary significantly based on several factors. In this guide, we'll break down what influences pricing, provide realistic cost expectations, and explore your options for affording quality care.
 
@@ -33,9 +35,9 @@ No two families' situations are identical, which is why home care isn't priced l
 
 ### 1. Level of Care Required
 
-The complexity of care directly impacts cost. A client who needs minimal assistance—companionship, medication reminders, light housekeeping—will pay less than someone requiring extensive hands-on personal care, two-person transfers, or specialized dementia support.
+The complexity of care directly impacts cost. A client who needs minimal assistance---companionship, medication reminders, light housekeeping---will pay less than someone requiring extensive hands-on personal care, two-person transfers, or specialized dementia support.
 
-During our initial assessment, we evaluate exactly what type of support your loved one needs. This allows us to match the right caregiver and provide accurate pricing based on actual requirements—not a generic estimate.
+During our initial assessment, we evaluate exactly what type of support your loved one needs. This allows us to match the right caregiver and provide accurate pricing based on actual requirements---not a generic estimate.
 
 ### 2. Hours Per Day and Days Per Week
 
@@ -59,7 +61,7 @@ Within New Jersey, costs vary by region. Bergen County, Passaic County, and othe
 
 ### 5. Agency vs. Independent Caregiver
 
-Hiring through an agency costs more than hiring an independent caregiver directly—but for important reasons.
+Hiring through an agency costs more than hiring an independent caregiver directly---but for important reasons.
 
 **What you get with an agency:**
 
@@ -67,7 +69,7 @@ When you work with a home care agency like 360 Degree Care, your fees cover far 
 
 **Risks of hiring independently:**
 
-Hiring a caregiver directly may seem cheaper, but you become the employer—responsible for payroll taxes, insurance, and liability. If the caregiver is injured in your home, you could be personally liable. If they don't show up, you have no backup. If there's a problem, you handle it alone.
+Hiring a caregiver directly may seem cheaper, but you become the employer---responsible for payroll taxes, insurance, and liability. If the caregiver is injured in your home, you could be personally liable. If they don't show up, you have no backup. If there's a problem, you handle it alone.
 
 For most families, the peace of mind and protection an agency provides is well worth the cost difference.
 
@@ -79,14 +81,13 @@ When evaluating home care costs, it's helpful to compare against alternatives:
 
 Assisted living facilities in New Jersey average roughly $5,000-$8,000+ per month, varying widely based on location and level of care. However, that cost is fixed regardless of how much care your loved one actually needs.
 
-Home care costs scale with need. If your loved one needs only a few hours of help daily, home care is significantly more affordable than facility care. If they need around-the-clock support, costs become comparable—but with the benefit of remaining in their own home.
+Home care costs scale with need. If your loved one needs only a few hours of help daily, home care is significantly more affordable than facility care. If they need around-the-clock support, costs become comparable---but with the benefit of remaining in their own home.
 
 Many families find that home care allows them to delay or avoid assisted living placement entirely, providing better quality of life at comparable or lower cost.
-<!-- TODO: Add cross-link to blog 09 (home-care-vs-assisted-living-nj) once published -->
 
 ### Home Care vs. Nursing Homes
 
-Nursing home care in New Jersey is considerably more expensive—often $10,000-$15,000+ monthly—and is typically appropriate only for those with complex medical needs. Most seniors prefer to remain at home, and home care makes that possible.
+Nursing home care in New Jersey is considerably more expensive---often $10,000-$15,000+ monthly---and is typically appropriate only for those with complex medical needs. Most seniors prefer to remain at home, and home care makes that possible.
 
 ## How to Pay for Home Care in New Jersey
 
@@ -106,26 +107,25 @@ Review the policy carefully or have us help you understand what's covered. Many 
 
 Veterans and surviving spouses of veterans may qualify for the Aid and Attendance benefit, which provides monthly payments to help cover care costs. This benefit is often underutilized because families don't know it exists.
 
-Qualifying requires meeting service requirements, medical need criteria, and financial thresholds. The application process can be complex, but the benefit—potentially over $2,000 monthly—is substantial.
+Qualifying requires meeting service requirements, medical need criteria, and financial thresholds. The application process can be complex, but the benefit---potentially over $2,000 monthly---is substantial.
 
 ### Medicaid
 
 New Jersey Medicaid offers home and community-based services (HCBS) programs that can cover home care for those who qualify financially and medically. Eligibility requirements are strict, and there may be waiting lists for some programs.
 
-Medicaid planning—ideally done well before care is needed—can help families structure assets to qualify while preserving some resources.
+Medicaid planning---ideally done well before care is needed---can help families structure assets to qualify while preserving some resources.
 
 ### Medicare Limitations
 
 Medicare does **not** cover non-medical home care services like personal care, companionship, or homemaking. This is one of the most common misconceptions families have.
 
-Medicare only covers "home health care"—skilled nursing and therapy services—when ordered by a doctor for a homebound patient with a specific medical need. This coverage is typically short-term (following hospitalization, for example) and doesn't include the ongoing personal care most families need.
-<!-- TODO: Add cross-link to blog 08 (does-medicare-cover-home-care-new-jersey) once published -->
+Medicare only covers "home health care"---skilled nursing and therapy services---when ordered by a doctor for a homebound patient with a specific medical need. This coverage is typically short-term (following hospitalization, for example) and doesn't include the ongoing personal care most families need.
 
 ## Getting an Accurate Cost Estimate
 
 Generic cost ranges can only tell you so much. Your actual cost depends on your loved one's specific situation.
 
-At 360 Degree Care, we provide personalized assessments and care plans that reflect what your family actually needs—not a one-size-fits-all package. We believe in transparency: we'll explain exactly what we're recommending, why, and what it costs.
+At 360 Degree Care, we provide personalized assessments and care plans that reflect what your family actually needs---not a one-size-fits-all package. We believe in transparency: we'll explain exactly what we're recommending, why, and what it costs.
 
 ### What to Expect in a Consultation
 
@@ -156,6 +156,6 @@ We work with families to create care plans that balance quality with affordabili
 
 Every family's situation is different, and you deserve a straight answer about what care will cost for your specific needs.
 
-At 360 Degree Care, we're a family-run agency based in Ridgewood, serving Bergen County and Passaic County. We take the time to understand your situation and provide honest, transparent pricing—no guesswork, no surprises.
+At 360 Degree Care, we're a family-run agency based in Ridgewood, serving Bergen County and Passaic County. We take the time to understand your situation and provide honest, transparent pricing---no guesswork, no surprises.
 
 [Contact us for a free consultation and personalized quote](/contact/services) or call [(201) 299-4243](tel:2012994243) to discuss your loved one's needs and learn what options are available for your family's budget.

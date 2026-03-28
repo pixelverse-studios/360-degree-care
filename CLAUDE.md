@@ -1,4 +1,4 @@
-# 360 Degree Care - Claude Code Reference
+# Haven Home Health - Claude Code Reference
 
 ## ⚠️ CRITICAL: Git Workflow Rules
 
@@ -19,7 +19,7 @@
 ```
 git push origin main              ← FORBIDDEN (triggers production deployment)
 git push origin dev/v1.0-*        ← OK with approval (milestone branch)
-git push origin 360c-xxx          ← OK with approval (feature branch)
+git push origin dev-xxx           ← OK with approval (feature branch)
 ```
 
 - **NEVER push to `main` branch** unless user explicitly says "push main" or "push to main"
@@ -46,7 +46,7 @@ This project uses **milestone-specific development branches** instead of a singl
 main                           ← Production (deployments trigger on push)
 ├── dev/v1.0-seo-foundation   ← Milestone-specific dev branch
 ├── dev/v2.0-feature-xyz      ← Another milestone (can run in parallel)
-└── 360c-123                   ← Feature branches (ticket-based)
+└── dev-123                    ← Feature branches (ticket-based)
 ```
 
 **Workflow:**
@@ -66,7 +66,7 @@ git push -u origin dev/v2.0-new-milestone
 **PR Targets:**
 | Branch Type | PR Target |
 | --- | --- |
-| Feature branch (`360c-xxx`) | `dev/v*.0-milestone-name` |
+| Feature branch (`dev-xxx`) | `dev/v*.0-milestone-name` or `epic/*` |
 | Milestone branch (`dev/*`) | `main` (only when milestone complete) |
 
 ---
@@ -93,9 +93,9 @@ npm run dev (run_in_background: true, store shell_id)
 
 ---
 
-## ⚠️ CRITICAL: Deployment Summary Updates (CLIENT COMMUNICATION)
+## ⚠️ CRITICAL: Deployment Summary Updates
 
-**This is NON-NEGOTIABLE. The deployment summary powers automated client email notifications.**
+**This is NON-NEGOTIABLE. The deployment summary powers automated notifications.**
 
 ### THE RULE:
 **IMMEDIATELY after completing ANY work, APPEND to `docs/deployment_summary.md` BEFORE doing anything else.**
@@ -107,13 +107,12 @@ This is not optional. This is not an afterthought. This is the FIRST action afte
 - The summary accumulates across multiple PRs until `main` is pushed
 - Think of it as a changelog for "everything since last deployment"
 - The hook **only fires on pushes to `main`** (feature branches don't trigger it)
-- After pushing to `main`: hook sends accumulated summary → file auto-resets
+- After pushing to `main`: hook sends accumulated summary -> file auto-resets
 
 ### Why This Matters:
-- A Git pre-push hook reads this file and sends email notifications to Phil and Sami
+- A Git pre-push hook reads this file and sends email notifications
 - If the summary is empty, the notification is skipped silently
-- The user trusts this automation to keep stakeholders informed
-- **Skipping this step breaks that trust and leaves clients uninformed**
+- **Skipping this step leaves stakeholders uninformed**
 
 ### Required Actions After EVERY Task:
 1. **STOP** - Do not proceed to audit files or wait for commit approval
@@ -132,15 +131,15 @@ This is not optional. This is not an afterthought. This is the FIRST action afte
 - Added business phone number to website footer and schema
 
 ## Notes for internal team
-- PVS-126, PVS-127, PVS-128 completed
+- DEV-126, DEV-127, DEV-128 completed
 - Files: data/services-city-pages.ts, lib/structured-data.ts
 
 ## Changed URLs
-- https://www.pixelversestudios.io/services/englewood
-- https://www.pixelversestudios.io/services/fort-lee
-- https://www.pixelversestudios.io/services/hackensack
-- https://www.pixelversestudios.io/services/paramus
-- https://www.pixelversestudios.io/services/ridgewood
+- https://haven-home-health.netlify.app/services/englewood
+- https://haven-home-health.netlify.app/services/fort-lee
+- https://haven-home-health.netlify.app/services/hackensack
+- https://haven-home-health.netlify.app/services/paramus
+- https://haven-home-health.netlify.app/services/ridgewood
 ```
 
 **See "Documentation Requirements" section below for full formatting details.**
@@ -161,7 +160,7 @@ This is not optional. This is not an afterthought. This is the FIRST action afte
 - **UI Components:** Radix UI primitives
 - **Forms:** React Hook Form + Zod validation
 - **Notifications:** Sonner toasts
-- **Analytics:** Google Tag Manager, SiteBehaviour, Umami
+- **Analytics:** Google Tag Manager, Umami
 
 ### Key Commands
 
@@ -181,12 +180,12 @@ NEXT_PUBLIC_API_HOST    # CRM API base URL (e.g., https://api.yourdomain.com)
 NEXT_PUBLIC_SLUG        # Client ID for contact-form endpoint
 
 # Analytics (optional - Mixpanel)
-NEXT_PUBLIC_MIXPANEL_TOKEN  # Mixpanel project token (mirrors events from SiteBehaviour)
+NEXT_PUBLIC_MIXPANEL_TOKEN  # Mixpanel project token
 
 # Required for deployment tracking (local Git hooks only)
 PVS_WEBSITE_ID          # Website UUID from PVS database
 PVS_API_URL             # PVS API URL (https://pvs-server-62hx7.ondigitalocean.app)
-PVS_BASE_URL            # Website base URL (https://www.360degreecare.net)
+PVS_BASE_URL            # Website base URL (https://haven-home-health.netlify.app)
 ```
 
 Store in `.env.local` (git-ignored). Only `NEXT_PUBLIC_*` variables are exposed to browser. `PVS_*` variables are only used by local Git hooks.
@@ -200,7 +199,7 @@ Store in `.env.local` (git-ignored). Only `NEXT_PUBLIC_*` variables are exposed 
 `src/app/layout.tsx` provides global infrastructure:
 
 - Injects fonts and global styles
-- Mounts Google Tag Manager and SiteBehaviour scripts
+- Mounts Google Tag Manager and analytics scripts
 - Wraps all pages with:
     - `RouteStateProvider` (route change tracking)
     - `CampaignTracker` (UTM attribution)
@@ -253,7 +252,7 @@ docs/                           # Markdown documentation
 **Default to Server Components:**
 
 ```tsx
-// ✅ Server component (default)
+// Server component (default)
 export default function ServicePage({ params }) {
     return <ServiceHub service={params.service} />
 }
@@ -262,7 +261,7 @@ export default function ServicePage({ params }) {
 **Only use `'use client'` when necessary:**
 
 ```tsx
-// ✅ Client component (requires interactivity)
+// Client component (requires interactivity)
 'use client'
 import { useForm } from 'react-hook-form'
 export default function ContactForm() { ... }
@@ -315,12 +314,11 @@ All contact forms use `ContactMap` in `src/utils/contact.ts`:
 **UTM parameter flow:**
 
 1. User visits with UTM params (e.g., `?utm_source=google&utm_campaign=spring2024`)
-2. `src/middleware.ts` captures params → sets `campaign_data` cookie
-3. `CampaignTracker` reads cookie → stores in `localStorage.campaign_history`
+2. `src/middleware.ts` captures params -> sets `campaign_data` cookie
+3. `CampaignTracker` reads cookie -> stores in `localStorage.campaign_history`
 4. `analytics.ts` pushes events to:
     - `window.dataLayer` (Google Tag Manager)
     - `window.umami` (Umami Analytics)
-    - SiteBehaviour custom events
 
 **When touching analytics:**
 
@@ -435,7 +433,7 @@ All contact forms use `ContactMap` in `src/utils/contact.ts`:
     // src/app/services/[service]/page.tsx
     export async function generateMetadata({ params }) {
         return {
-            title: 'Service Title - 360 Degree Care',
+            title: 'Service Title - Haven Home Health',
             description: 'Service description for SEO...',
             openGraph: {
                 title: '...',
@@ -487,26 +485,26 @@ const buttonVariants = cva('px-4 py-2 rounded-md font-medium', {
 
 ### DO:
 
-- ✅ Default to server components
-- ✅ Centralize content in `src/lib/content/**`
-- ✅ Use `ContactMap` for all forms
-- ✅ Update `next-sitemap.config.ts` when adding routes
-- ✅ Update `src/utils/routes.ts` for navigation changes
-- ✅ Document SEO changes in `docs/seo/`
-- ✅ Test with `npm run lint` and `npm run build`
-- ✅ Preserve campaign tracking chain
-- ✅ **Update `docs/deployment_summary.md` after completing features**
+- Default to server components
+- Centralize content in `src/lib/content/**`
+- Use `ContactMap` for all forms
+- Update `next-sitemap.config.ts` when adding routes
+- Update `src/utils/routes.ts` for navigation changes
+- Document SEO changes in `docs/seo/`
+- Test with `npm run lint` and `npm run build`
+- Preserve campaign tracking chain
+- **Update `docs/deployment_summary.md` after completing features**
 
 ### DON'T:
 
-- ❌ Add `'use client'` unnecessarily
-- ❌ Hardcode content in components (use content modules)
-- ❌ Create forms without using `ContactMap`
-- ❌ Skip sitemap updates
-- ❌ Break analytics/tracking integration
-- ❌ Modify route state providers without understanding impact
-- ❌ Commit `.env.local` or secrets
-- ❌ **Skip deployment summary updates when work is complete**
+- Add `'use client'` unnecessarily
+- Hardcode content in components (use content modules)
+- Create forms without using `ContactMap`
+- Skip sitemap updates
+- Break analytics/tracking integration
+- Modify route state providers without understanding impact
+- Commit `.env.local` or secrets
+- **Skip deployment summary updates when work is complete**
 
 ---
 
@@ -522,7 +520,6 @@ const buttonVariants = cva('px-4 py-2 rounded-md font-medium', {
 | `/contact` | Client | General contact form | `src/app/contact/page.tsx` |
 | `/contact/services` | Client | Service inquiry form | `src/app/contact/services/page.tsx` |
 | `/contact/employment` | Client | Employment inquiry form | `src/app/contact/employment/page.tsx` |
-| `/docs/**` | Static | Internal documentation viewer | `src/app/docs/**` |
 
 ---
 
@@ -552,7 +549,7 @@ CampaignTracker reads cookie
   ↓
 localStorage.campaign_history updated (first/last touch)
   ↓
-Events pushed to dataLayer, umami, SiteBehaviour
+Events pushed to dataLayer, umami
 ```
 
 ### Static Generation
@@ -565,7 +562,6 @@ Next.js generates static HTML for:
   - Service pages (generateStaticParams)
   - County service pages (generateStaticParams)
   - Blog posts (from articles modules)
-  - Docs pages
   ↓
 next-sitemap generates XML sitemap
   ↓
@@ -578,12 +574,12 @@ Static files ready for deployment
 
 When creating Linear tickets for this project:
 
-| Field    | Value                   |
-| -------- | ----------------------- |
-| Team     | Jeff DeJoseph           |
-| Assignee | `me`                    |
-| Project  | 360 Degree Care Website |
-| Priority | Medium (3)              |
+| Field     | Value                      |
+| --------- | -------------------------- |
+| Team      | PixelVerse Studios         |
+| Assignee  | `me`                       |
+| Project   | Haven Home Health          |
+| Priority  | Medium (3)                 |
 
 **Labels:** Always apply one from each sub-label group:
 
@@ -632,79 +628,32 @@ open "http://localhost:3000?utm_source=test&utm_medium=email&utm_campaign=test20
 ### Current Gaps
 
 1. **Metadata placeholders** - `src/app/layout.tsx` has placeholder description and OG image marked `// TODO: UPDATE`
-2. **SiteBehaviour/Umami guards** - Assumes global tracking functions exist; no fallbacks if scripts fail to load
-3. **Temp credentials** - `src/utils/constants.ts` contains operational notes that should be scrubbed
-4. **Environment validation** - No build-time checks for `NEXT_PUBLIC_API_HOST` and `NEXT_PUBLIC_SLUG`
+2. **Umami guards** - Assumes global tracking functions exist; no fallbacks if scripts fail to load
+3. **Environment validation** - No build-time checks for `NEXT_PUBLIC_API_HOST` and `NEXT_PUBLIC_SLUG`
 
 ### When Addressing TODOs
 
 - Update root `layout.tsx` with final marketing copy
 - Add guards for analytics globals (check `typeof window.dataLayer !== 'undefined'`)
-- Remove sensitive comments from constants file
 - Add environment variable validation in `next.config.mjs` or startup script
 
 ---
 
-## SEO Remediation Plan
-
-**IMPORTANT: Review `docs/seo-remediation-plan.md` before doing any SEO-related work.**
-
-This site is undergoing active SEO remediation to recover from historical indexing issues. The plan documents:
-
-- Current strategy: **Hyper-Local Town-First** (City → County → State)
-- Phase-by-phase implementation checklist
-- What's been completed vs what's pending
-- Technical decisions made (redirects, sitemap exclusions, schema markup)
-
-### Strategy: Win Town-by-Town
-
-```
-WIN FIRST:   City Pages     → "companion care fort lee nj"
-THEN WIN:    County Hubs    → "companion care bergen county nj"
-FUTURE:      Service Hubs   → "companion care nj" (keep broad)
-```
-
-**City Priority Order:** Fort Lee → Ridgewood → Paramus → Hackensack → remaining cities
-
-### Current SEO Status (as of 2025-12-01)
-
-**Completed (Phase 0 - Foundation):**
-
-- ✅ Legacy URL redirects in `next.config.mjs`
-- ✅ Sitemap reduced to ~118 quality pages (Bergen County focus)
-- ✅ GSC URL prefix removals requested for old/dead URLs
-- ✅ FAQ schema added to `/faq` page
-- ✅ LocalBusiness schema framework added
-- ✅ NAP consistency fixed: `(201) 299-4243` everywhere
-- ✅ Manual indexing requested for priority Bergen County URLs
-
-**In Progress (Week 1 Sprint - Dec 1-7):**
-
-- City page optimization (Fort Lee first, then Ridgewood, Paramus)
-- Internal linking from service hubs to city pages
-- City-specific LocalBusiness schema verification
-
-**Pending (Week 2+):**
-
-- BreadcrumbList schema
-- Cross-linking between city pages
-- Content differentiation for city pages
-- Expansion to other counties (only after Bergen is winning)
+## SEO Reference
 
 ### Key SEO Files
 
 | File | Purpose |
 | --- | --- |
-| `docs/seo-remediation-plan.md` | Master SEO strategy and progress tracking |
 | `src/lib/seo/local-business-schema.ts` | Centralized business info for consistent NAP |
 | `src/app/faq/layout.tsx` | FAQ page with FAQPage schema |
 | `next-sitemap.config.mjs` | Controls which pages appear in sitemap |
 
 ### NAP (Name, Address, Phone) - Use Consistently
 
-- **Phone:** (201) 299-4243
-- **Address:** 27 Chestnut Street, Ridgewood, NJ 07450
-- **Email:** info@360degreecare.net
+- **Phone:** (555) 123-4567
+- **Address:** 100 Maple Avenue, Ridgewood, NJ 07450
+- **Email:** info@havenhomehealth.com
 
 ### Service Area Schema Strategy
 
@@ -751,7 +700,7 @@ When implementing `areaServed` schema markup, use different specificity levels b
 }
 ```
 
-**3. City Page Schema (CURRENT IMPLEMENTATION):**
+**3. City Page Schema:**
 
 ```json
 {
@@ -768,14 +717,6 @@ When implementing `areaServed` schema markup, use different specificity levels b
     }
 }
 ```
-
-#### When to Audit/Update
-
-- [ ] **Main service pages** (`/services/personal-care`, etc.) should use `AdministrativeArea` array
-- [ ] **County pages** (`/services/personal-care/bergen-county`, etc.) should use single `AdministrativeArea`
-- [ ] **City pages** already correctly use `City` with full `PostalAddress` ✅
-- [ ] Validate all schemas using Google Rich Results Test
-- [ ] Update `docs/deployment_summary.md` with affected URLs when changing schemas
 
 #### Why This Matters
 
@@ -795,10 +736,6 @@ Before marking schema work complete:
 - [ ] Provider organization referenced via `@id` link
 - [ ] Validated in Google Rich Results Test
 - [ ] Documented in `docs/deployment_summary.md`
-
----
-
-### NAP (Name, Address, Phone) - Use Consistently
 
 ---
 
@@ -842,7 +779,6 @@ cat public/sitemap-0.xml
 ### Analytics Services
 
 - **Google Tag Manager** - Injected in `layout.tsx`, pushes to `window.dataLayer`
-- **SiteBehaviour** - Custom event tracking for behavior analytics
 - **Umami** - Privacy-focused analytics via `window.umami`
 - **Configuration:** All tracking IDs managed in respective script tags in `layout.tsx`
 
@@ -916,4 +852,4 @@ cat public/sitemap-0.xml
 
 ---
 
-**Last Updated:** 2025-11-30 **Next.js Version:** 14 (App Router) **Node Version:** 18+ recommended
+**Last Updated:** 2026-03-27 **Next.js Version:** 14 (App Router) **Node Version:** 18+ recommended

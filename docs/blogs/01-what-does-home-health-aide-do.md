@@ -1,3 +1,5 @@
+> **HISTORICAL DOCUMENT** - This blog content outline was created during the original client engagement. The corresponding TypeScript article in `src/lib/blogs/articles/` has been debranded to Haven Home Health. Brand references below are from the original draft.
+
 # What Does a Home Health Aide Actually Do? Services, Duties & What to Expect
 
 **Meta Title:** What Does a Home Health Aide Do? Duties & Services Explained
@@ -7,7 +9,7 @@
 
 ---
 
-When a loved one needs help at home, "home health aide" is often one of the first terms you'll encounter. But what exactly does a home health aide do? Understanding their role—and how it differs from other types of caregivers—is essential for making the right care decision for your family.
+When a loved one needs help at home, "home health aide" is often one of the first terms you'll encounter. But what exactly does a home health aide do? Understanding their role---and how it differs from other types of caregivers---is essential for making the right care decision for your family.
 
 At 360 Degree Care, we've helped hundreds of Bergen County and Passaic County families navigate these questions. Based in Ridgewood and serving communities throughout Northern New Jersey, we understand the unique needs of families in our area. In this guide, we'll walk you through everything a home health aide can (and can't) do, so you know exactly what to expect.
 
@@ -21,9 +23,9 @@ Home health aides work in private homes, assisted living facilities, and other r
 
 ### Personal Care Assistance
 
-The foundation of home health aide services is personal care—helping with the intimate daily tasks that become difficult as we age or recover from illness.
+The foundation of home health aide services is personal care---helping with the intimate daily tasks that become difficult as we age or recover from illness.
 
-**Bathing and hygiene support** is one of the most common services. This includes helping your loved one get in and out of the shower or tub safely, washing and drying, and ensuring proper hygiene is maintained. For many families, this is the service that first signals the need for professional help—when a parent can no longer safely bathe alone.
+**Bathing and hygiene support** is one of the most common services. This includes helping your loved one get in and out of the shower or tub safely, washing and drying, and ensuring proper hygiene is maintained. For many families, this is the service that first signals the need for professional help---when a parent can no longer safely bathe alone.
 
 **Dressing assistance** involves helping clients choose appropriate clothing, manage buttons and zippers, and get dressed and undressed. This might seem simple, but for someone with arthritis, limited mobility, or cognitive decline, getting dressed independently can become exhausting or even dangerous.
 
@@ -49,7 +51,7 @@ For clients with diabetes, heart disease, or other conditions requiring special 
 
 While home health aides aren't housekeepers, they do help maintain a clean, safe living environment. Light housekeeping duties typically include changing bed linens, doing laundry, washing dishes, tidying living spaces, and taking out trash.
 
-The goal is to keep the immediate living area safe and sanitary—not deep cleaning or heavy household chores.
+The goal is to keep the immediate living area safe and sanitary---not deep cleaning or heavy household chores.
 
 ### Medication Reminders
 
@@ -84,7 +86,7 @@ The terminology in home care can be confusing. Here's how home health aides comp
 
 ### Home Health Aide vs. Certified Nursing Assistant (CNA)
 
-Both require certification, and their scopes are similar. The main difference is the setting—CNAs typically work in facilities (nursing homes, hospitals), while HHAs work in private homes. Many caregivers hold both certifications.
+Both require certification, and their scopes are similar. The main difference is the setting---CNAs typically work in facilities (nursing homes, hospitals), while HHAs work in private homes. Many caregivers hold both certifications.
 
 ### Home Health Aide vs. Personal Care Aide
 
@@ -92,7 +94,7 @@ Personal care aides (PCAs) provide similar services but may have less formal tra
 
 ### Home Health Aide vs. Companion Caregiver
 
-Companion caregivers focus primarily on socialization, supervision, and light support—they typically don't provide hands-on personal care like bathing or toileting assistance. [Learn about companion care](/services/companion-care).
+Companion caregivers focus primarily on socialization, supervision, and light support---they typically don't provide hands-on personal care like bathing or toileting assistance. [Learn about companion care](/services/companion-care).
 
 ### Home Health Aide vs. Home Health Nurse
 
@@ -102,7 +104,7 @@ Registered nurses and licensed practical nurses can provide skilled medical care
 
 Home health aide services can be arranged in several ways depending on your family's needs:
 
-**Hourly care** is the most flexible option, ranging from a few hours per day to 12-hour shifts. This works well for families who need help during specific times—morning routines, evenings, or while family caregivers are at work.
+**Hourly care** is the most flexible option, ranging from a few hours per day to 12-hour shifts. This works well for families who need help during specific times---morning routines, evenings, or while family caregivers are at work.
 
 **24-hour care** provides around-the-clock support, typically with caregivers working in shifts. This ensures someone is always awake and alert to assist your loved one.
 
@@ -120,15 +122,15 @@ Recognizing when it's time to bring in professional help isn't always obvious. C
 - Recovering from surgery, illness, or hospitalization
 - Showing signs of cognitive decline
 
-The earlier you arrange support, the safer your loved one will be—and the more effectively you can prevent accidents and health declines.
+The earlier you arrange support, the safer your loved one will be---and the more effectively you can prevent accidents and health declines.
 
 ## Finding the Right Home Health Aide in Bergen County and Passaic County
 
-Choosing a home health aide is a significant decision. At 360 Degree Care, we understand that you're not just hiring a caregiver—you're inviting someone into your family's life during a vulnerable time.
+Choosing a home health aide is a significant decision. At 360 Degree Care, we understand that you're not just hiring a caregiver---you're inviting someone into your family's life during a vulnerable time.
 
 As a family-run agency based in Ridgewood, we take the time to understand each client's unique needs, preferences, and personality. We don't believe in one-size-fits-all care. Every care plan we create is tailored specifically to your loved one.
 
-Our [home health aides](/services/home-health-aides) are carefully screened, trained, and matched with clients based on compatibility—because the relationship between caregiver and client matters as much as the services provided.
+Our [home health aides](/services/home-health-aides) are carefully screened, trained, and matched with clients based on compatibility---because the relationship between caregiver and client matters as much as the services provided.
 
 ## Frequently Asked Questions
 
@@ -140,12 +142,11 @@ Medicare covers home health aide services only when they're part of a skilled ca
 
 **What's the difference between home care and home health care?**
 Home care (sometimes called non-medical home care) includes personal care, companionship, and household help. Home health care includes skilled medical services provided by nurses or therapists. Many families need both types of support.
-<!-- TODO: Add cross-link to blog 03 (home-care-vs-home-health-care) once published -->
 
 ---
 
 ## Ready to Learn More?
 
-If you're considering home health aide services for a loved one in Bergen County, Passaic County, or the surrounding Northern New Jersey area, we're here to help you understand your options. At 360 Degree Care, we treat every client like family—because that's how we'd want our own loved ones to be treated.
+If you're considering home health aide services for a loved one in Bergen County, Passaic County, or the surrounding Northern New Jersey area, we're here to help you understand your options. At 360 Degree Care, we treat every client like family---because that's how we'd want our own loved ones to be treated.
 
 [Schedule a free consultation](/contact/services) or call us at [(201) 299-4243](tel:2012994243) to discuss your family's needs and learn how a home health aide can help your loved one thrive at home.

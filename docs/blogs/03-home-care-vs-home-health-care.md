@@ -1,3 +1,5 @@
+> **HISTORICAL DOCUMENT** - This blog content outline was created during the original client engagement. The corresponding TypeScript article in `src/lib/blogs/articles/` has been debranded to Haven Home Health. Brand references below are from the original draft.
+
 # Home Care vs. Home Health Care: What's the Difference (And Which Do You Need)?
 
 **Meta Title:** Home Care vs Home Health Care: What's the Difference?
@@ -7,7 +9,7 @@
 
 ---
 
-If you're researching care options for an aging parent or loved one, you've probably noticed that "home care" and "home health care" are often used interchangeably. But they're not the same thing—and understanding the difference is essential for getting your loved one the right support.
+If you're researching care options for an aging parent or loved one, you've probably noticed that "home care" and "home health care" are often used interchangeably. But they're not the same thing---and understanding the difference is essential for getting your loved one the right support.
 
 At 360 Degree Care, we help Bergen County and Passaic County families navigate these distinctions every day. Let's clear up the confusion.
 
@@ -15,7 +17,7 @@ At 360 Degree Care, we help Bergen County and Passaic County families navigate t
 
 **Home care** (also called non-medical home care or personal care) helps with daily living activities and companionship. No medical license is required to provide these services.
 
-**Home health care** (also called skilled home health) provides medical services in the home. It requires licensed healthcare professionals—nurses, therapists, or other clinicians.
+**Home health care** (also called skilled home health) provides medical services in the home. It requires licensed healthcare professionals---nurses, therapists, or other clinicians.
 
 Think of it this way: home care helps your loved one *live comfortably*, while home health care helps them *heal or manage medical conditions*.
 
@@ -72,7 +74,7 @@ Home health care is typically needed when your loved one is recovering from surg
 
 ## Can You Have Both?
 
-Absolutely—and many families do. The services complement each other well.
+Absolutely---and many families do. The services complement each other well.
 
 Consider this common scenario: Your mother has surgery and comes home with orders for home health care. A nurse visits several times a week to monitor her recovery and manage wound care. A physical therapist comes to help her regain mobility.
 
@@ -86,8 +88,7 @@ Once your mother recovers and no longer needs skilled nursing, she might still b
 
 Home care is typically paid for through private pay (out-of-pocket), long-term care insurance, Medicaid (for those who qualify), and Veterans benefits (Aid & Attendance).
 
-Medicare does **not** cover non-medical home care services—a common point of confusion for families. [Learn more about paying for home care](/how-to-pay) and see our detailed guide on [home care costs in Northern New Jersey](/blog/cost-of-home-care-northern-new-jersey).
-<!-- TODO: Add cross-link to blog 10 (how-to-pay-for-home-care-nj) once published -->
+Medicare does **not** cover non-medical home care services---a common point of confusion for families. [Learn more about paying for home care](/how-to-pay) and see our detailed guide on [home care costs in Northern New Jersey](/blog/cost-of-home-care-northern-new-jersey).
 
 ### Home Health Care Payment
 
@@ -115,12 +116,12 @@ If your loved one needs medical services, we can work alongside home health prov
 
 Home care and home health care serve different purposes, but both help your loved one remain safely at home rather than moving to a facility. Many families use both types of service simultaneously or transition between them as needs change.
 
-The most important thing is matching the care to your loved one's actual needs—not over-serving or under-serving. That takes honest assessment and often professional guidance.
+The most important thing is matching the care to your loved one's actual needs---not over-serving or under-serving. That takes honest assessment and often professional guidance.
 
 ## Frequently Asked Questions
 
 **Does Medicare cover home care?**
-Medicare does not cover non-medical home care (personal care, companionship, housekeeping). It only covers home health care—skilled nursing and therapy—when medically necessary and ordered by a doctor. Many families are surprised by this distinction.
+Medicare does not cover non-medical home care (personal care, companionship, housekeeping). It only covers home health care---skilled nursing and therapy---when medically necessary and ordered by a doctor. Many families are surprised by this distinction.
 
 **How do I know if my parent qualifies for home health care?**
 Qualification for Medicare-covered home health care requires a doctor's order, a "homebound" status (leaving home is difficult), and a need for skilled nursing or therapy services. Your parent's physician or hospital discharge planner can help determine eligibility.
@@ -134,6 +135,4 @@ Some larger agencies offer both services, while others specialize in one or the 
 
 Navigating care options doesn't have to be overwhelming. At 360 Degree Care, we help Bergen County and Passaic County families understand their options and find the right fit.
 
-[Contact us for a free consultation](/contact/services) or call [(201) 299-4243](tel:2012994243). Whether your loved one needs personal care, companionship, or you're simply not sure where to start, we're here to help you figure it out—no pressure, no obligations.
-
-<!-- TODO: Add cross-link from blog 01 (what-does-home-health-aide-do) FAQ section -->
+[Contact us for a free consultation](/contact/services) or call [(201) 299-4243](tel:2012994243). Whether your loved one needs personal care, companionship, or you're simply not sure where to start, we're here to help you figure it out---no pressure, no obligations.

@@ -1,3 +1,5 @@
+> **HISTORICAL DOCUMENT** - This blog content outline was created during the original client engagement. The corresponding TypeScript article in `src/lib/blogs/articles/` has been debranded to Haven Home Health. Brand references below are from the original draft.
+
 # Home Care vs. Assisted Living in NJ: Which Is Right for Your Parent?
 
 **Meta Title:** Home Care vs Assisted Living in NJ: Costs & Comparison
@@ -11,7 +13,7 @@ When an aging parent needs more support than they can manage alone, families fac
 
 There's no universally right answer. The best choice depends on your parent's needs, preferences, finances, and family situation. At 360 Degree Care, we've helped hundreds of Bergen County and Passaic County families think through this decision.
 
-This guide compares home care and assisted living across the factors that matter most—so you can make an informed choice for your family.
+This guide compares home care and assisted living across the factors that matter most---so you can make an informed choice for your family.
 
 ## Understanding Your Options
 
@@ -35,7 +37,7 @@ Cost is often the first question families ask. The answer depends on how much ca
 
 New Jersey's assisted living costs are among the highest in the nation. According to the Genworth Cost of Care Survey, the median monthly cost for assisted living in New Jersey is approximately $6,500-$7,500 or more. Bergen County facilities often exceed this average.
 
-This typically includes rent for the apartment, meals, basic personal care assistance, activities, and housekeeping. However, many facilities charge additional fees for higher levels of care—sometimes called "care tiers" or "levels of service." As your parent's needs increase, so do the monthly charges.
+This typically includes rent for the apartment, meals, basic personal care assistance, activities, and housekeeping. However, many facilities charge additional fees for higher levels of care---sometimes called "care tiers" or "levels of service." As your parent's needs increase, so do the monthly charges.
 
 Other potential additional costs include medication management fees, incontinence care surcharges, memory care premiums for those with dementia, and move-in fees or community fees.
 
@@ -43,7 +45,7 @@ Other potential additional costs include medication management fees, incontinenc
 
 Home care is charged by the hour. The more hours needed, the higher the total cost. For a detailed breakdown, see our guide on [home care costs in Northern New Jersey](/blog/cost-of-home-care-northern-new-jersey). For families needing only part-time help, home care is often significantly less expensive than assisted living. If your parent needs 4-6 hours of help daily, the monthly cost will typically be lower than assisted living.
 
-However, as care needs increase toward full-time or around-the-clock, home care costs rise accordingly. At the point of needing 24-hour care, home care may cost as much as or more than assisted living—though this varies by situation.
+However, as care needs increase toward full-time or around-the-clock, home care costs rise accordingly. At the point of needing 24-hour care, home care may cost as much as or more than assisted living---though this varies by situation.
 
 The key difference is scalability. Home care costs match actual need; you pay for only the hours you use. Assisted living is a fixed monthly cost regardless of how much care your parent actually requires that month.
 
@@ -67,7 +69,7 @@ For seniors who value autonomy and have lived independently for decades, remaini
 
 ### Familiarity and Comfort
 
-**Home care advantage:** Aging in place means staying in familiar surroundings—the home where your parent may have lived for years or decades. They're surrounded by their possessions, memories, and neighborhood. For those with dementia, familiar environments can reduce confusion and anxiety.
+**Home care advantage:** Aging in place means staying in familiar surroundings---the home where your parent may have lived for years or decades. They're surrounded by their possessions, memories, and neighborhood. For those with dementia, familiar environments can reduce confusion and anxiety.
 
 **Assisted living consideration:** Moving is disruptive at any age, but especially in later life. Adjusting to a new environment, new people, and new routines takes energy. Some seniors thrive with the change; others never fully adjust.
 
@@ -77,11 +79,11 @@ For seniors who value autonomy and have lived independently for decades, remaini
 
 **Home care consideration:** Staying home can mean isolation, especially if your parent no longer drives or has lost friends to death or relocation. Home care provides caregiver companionship, but that's different from peer relationships.
 
-However, home care can include transportation and accompaniment to social activities, religious services, senior centers, and time with friends and family. The social opportunities exist—they just require more intentional effort. [Learn about our companion care services](/services/companion-care).
+However, home care can include transportation and accompaniment to social activities, religious services, senior centers, and time with friends and family. The social opportunities exist---they just require more intentional effort. [Learn about our companion care services](/services/companion-care).
 
 ### Safety and Supervision
 
-**Assisted living advantage:** 24-hour staffing means help is always nearby. Emergency response systems are built in. The environment is designed for safety—no stairs to navigate, no yard work that could lead to falls.
+**Assisted living advantage:** 24-hour staffing means help is always nearby. Emergency response systems are built in. The environment is designed for safety---no stairs to navigate, no yard work that could lead to falls.
 
 **Home care consideration:** Home safety depends on the home itself and the hours of care provided. A parent receiving part-time care is alone for portions of the day. Home modifications (grab bars, ramp, stair lifts) may be needed. Medical alert systems can provide emergency response capability.
 
@@ -89,7 +91,7 @@ For those with dementia or high fall risk, the supervision question becomes crit
 
 ### Medical Needs
 
-**Assisted living limitation:** Assisted living is not skilled nursing care. Facilities can help with medications and daily activities, but complex medical needs—wound care, IV therapy, chronic disease management—may require additional home health services or a higher level of care.
+**Assisted living limitation:** Assisted living is not skilled nursing care. Facilities can help with medications and daily activities, but complex medical needs---wound care, IV therapy, chronic disease management---may require additional home health services or a higher level of care.
 
 **Home care flexibility:** Home care can be combined with home health services (skilled nursing, physical therapy) to address both personal care and medical needs. This coordination often allows people with complex needs to remain at home longer.
 
@@ -133,11 +135,11 @@ Many families don't choose strictly one or the other. Common hybrid approaches i
 
 **Home care plus adult day program.** Combine part-time home care with daytime hours at an adult day program. Your parent gets social engagement and supervision during the day, caregiver assistance mornings and evenings, and cost savings compared to full-time home care.
 
-**Short-term assisted living stays.** Some facilities offer respite stays—temporary residence while a family caregiver takes a break or your parent recovers from illness. This provides a preview of assisted living without permanent commitment.
+**Short-term assisted living stays.** Some facilities offer respite stays---temporary residence while a family caregiver takes a break or your parent recovers from illness. This provides a preview of assisted living without permanent commitment.
 
 ## Making the Decision
 
-There's no formula that gives you the "right" answer. Both options can provide good care and quality of life—what matters is the fit with your specific situation.
+There's no formula that gives you the "right" answer. Both options can provide good care and quality of life---what matters is the fit with your specific situation.
 
 **Choose home care if:** Your parent strongly prefers staying home. Care needs are moderate and manageable with part-time help. Family can be involved in care and oversight. The home is safe or can be modified reasonably. Isolation isn't a major concern, or you can address it. Finances favor home care at current need levels.
 
@@ -151,15 +153,15 @@ There's no formula that gives you the "right" answer. Both options can provide g
 Absolutely. Home care doesn't require long-term contracts. You can arrange care for a trial period to see how well it meets your parent's needs. Many families start with home care and only consider assisted living if circumstances change.
 
 **What if my parent needs more help than home care can provide?**
-Home care can scale up to 24-hour support if needed. If care needs exceed what can reasonably be managed at home—or if costs become prohibitive—assisted living or nursing home care may become appropriate. We help families reassess as situations evolve.
+Home care can scale up to 24-hour support if needed. If care needs exceed what can reasonably be managed at home---or if costs become prohibitive---assisted living or nursing home care may become appropriate. We help families reassess as situations evolve.
 
 **My parent refuses to consider either option. What do I do?**
-Resistance is common. Involve their doctor in the conversation—sometimes seniors accept recommendations from physicians more readily than from family. Focus on specific concerns rather than general loss of independence. Consider what's driving the resistance and address those fears directly.
+Resistance is common. Involve their doctor in the conversation---sometimes seniors accept recommendations from physicians more readily than from family. Focus on specific concerns rather than general loss of independence. Consider what's driving the resistance and address those fears directly.
 
 ---
 
 ## Let's Talk About Your Options
 
-Every family's situation is different. At 360 Degree Care, we help Bergen County and Passaic County families think through their options honestly—including when home care might not be the best fit.
+Every family's situation is different. At 360 Degree Care, we help Bergen County and Passaic County families think through their options honestly---including when home care might not be the best fit.
 
-[Contact us for a consultation](/contact/services) or call [(201) 299-4243](tel:2012994243). We'll assess your parent's needs, discuss what home care can provide, and give you straightforward information to support your decision. No pressure, no sales pitch—just honest guidance from people who understand what you're facing.
+[Contact us for a consultation](/contact/services) or call [(201) 299-4243](tel:2012994243). We'll assess your parent's needs, discuss what home care can provide, and give you straightforward information to support your decision. No pressure, no sales pitch---just honest guidance from people who understand what you're facing.
