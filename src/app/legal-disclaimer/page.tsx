@@ -43,7 +43,7 @@ export default function LegalDisclaimerPage() {
                 <p className="text-gray-700 mb-4">
                     This website contains links to other websites. Visitors
                     should be aware that they are leaving the <CompanyName />
-                    Inc. website through the use of such links. All content
+                    {' '}website through the use of such links. All content
                     contained on any linked website is the sole responsibility
                     of the owner of that website. Policies regarding the sharing
                     of information entered on any linked website are determined
@@ -61,10 +61,10 @@ export default function LegalDisclaimerPage() {
                     If you have any questions about the above disclaimers or{' '}
                     <CompanyName /> , you can contact us at{' '}
                     <a
-                        href="mailto:info@360degreecare.net"
+                        href="mailto:info@havenhomehealth.com"
                         className="text-blue-600 hover:underline"
                     >
-                        info@360degreecare.net
+                        info@havenhomehealth.com
                     </a>
                     .
                 </p>
