@@ -1,39 +1,8 @@
 import Image from 'next/image'
-import Autoplay from 'embla-carousel-autoplay'
 
 import { CompanyName } from '@/components/Logo'
-import {
-    Carousel,
-    CarouselContent,
-    CarouselItem,
-    CarouselNext,
-    CarouselPrevious
-} from '../ui/carousel'
 import AnimatedSection from '../animated-section'
 import { getImgSrc } from '@/lib/images'
-
-const carouselItems = [
-    'ad-15',
-    'interim-billboard-hi-res',
-    'interim-bmv-2page-spread-boombox-hi-res',
-    'interim-bmv-2page-spread-hutton-hi-res',
-    'jeff-ads-version-C3-hi-res',
-    'man-with-bat-v01'
-]
-
-const renderCarouselImage = (key: string, alt: string) => {
-    const src = getImgSrc(key)
-    return src ? (
-        <Image
-            src={src}
-            alt={alt}
-            width={900}
-            height={600}
-            className="max-h-[50vh] h-full w-auto rounded-xl object-contain"
-            sizes="(min-width: 1280px) 33vw, (min-width: 768px) 50vw, 90vw"
-        />
-    ) : null
-}
 
 export default function AboutDetails() {
     return (
@@ -60,17 +29,15 @@ export default function AboutDetails() {
                             Difference
                         </h2>
                         <p>
-                            At 360 Degree Care, we believe home care should go
-                            far beyond task checklists and invoices. That’s why
-                            we’ve created our signature{' '}
-                            <span className="prio">Concierge-Level™</span>
-                            Homecare — a service model built around total
-                            support, trust, and everyday ease.
+                            At Haven Home Health, we believe home care should go
+                            far beyond task checklists and invoices. We have
+                            built a service model around total support, trust,
+                            and everyday ease.
                         </p>
                         <p>
                             From the moment our clients wake up to the moment
                             they go to sleep — and all the moments in between —
-                            we’re here to provide comfort, safety, and
+                            we're here to provide comfort, safety, and
                             solutions. We anticipate needs before they arise and
                             handle the details that others overlook.
                         </p>
@@ -84,105 +51,43 @@ export default function AboutDetails() {
                 >
                     <div className="my-auto">
                         <h2 className="text-2xl md:text-3xl font-bold mb-4 text-primary text-center pb-8">
-                            Formerly Interim Healthcare of Ridgewood — The Team
-                            You Know and Trust.
+                            A Legacy of Trusted Care in New Jersey
                         </h2>
                         <div className="flex flex-col lg:flex-row gap-12 max-w-6xl mx-auto">
                             <div className="flex-1 space-y-4">
                                 <p className="text-black">
-                                    We formerly worked under the Interim
-                                    Healthcare banner but realized that the
-                                    added bureaucracy and overhead of a
-                                    franchise system did not provide enough
-                                    added value to warrant its continuing. All
-                                    of our personnel and all of our services
-                                    remain exactly as before.
+                                    Haven Home Health was founded with a clear
+                                    mission: to deliver dependable, high-quality
+                                    in-home care that treats every client like
+                                    family. All of our personnel and all of our
+                                    services reflect that commitment every day.
                                 </p>
                                 <p className="text-black">
                                     Over the years we have always had a unique
                                     perspective and position in this industry.
-                                    It is best reflected in some of these ads we
-                                    did under the old banner. We DO NOT see our
-                                    clients as being 'the frail lady in the
-                                    wheelchair' as the competition focuses on.
-                                    Rather, we see our clients as having lived
-                                    full lives which they still can and want to
-                                    enjoy fully. We celebrate our clients and
-                                    our caregivers do everything possible to get
-                                    the most out of life.
+                                    We DO NOT see our clients as being
+                                    defined by their limitations. Rather, we see
+                                    our clients as having lived full lives which
+                                    they still can and want to enjoy fully. We
+                                    celebrate our clients and our caregivers do
+                                    everything possible to help them get the
+                                    most out of life.
                                 </p>
                             </div>
                             <aside className="flex-1 bg-gray-50 border border-gray-200 rounded-2xl p-6 space-y-3 h-fit self-start">
                                 <p className="text-sm uppercase tracking-wide text-gray-500">
-                                    Legacy Reputation
+                                    Our Reputation
                                 </p>
                                 <p className="text-xl font-semibold text-gray-900">
-                                    See our historical Google reviews from the
-                                    Interim Healthcare of Ridgewood era.
+                                    See what families are saying about Haven
+                                    Home Health on Google.
                                 </p>
                                 <p className="text-gray-600 text-sm">
-                                    Same leadership, care team, and service
-                                    standards—just a refreshed name.
+                                    Dedicated leadership, experienced care team,
+                                    and consistently high service standards.
                                 </p>
-                                <a
-                                    href="https://share.google/dim0rhWoky7SLedkk"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="inline-flex items-center justify-center px-4 py-2 rounded-full bg-primary text-white text-sm font-semibold hover:bg-primary/90 transition"
-                                >
-                                    View Legacy Google Reviews
-                                </a>
                             </aside>
                         </div>
-                    </div>
-                    <div className="relative w-[90%] max-w-6xl mx-auto mt-8 overflow-hidden">
-                        <Carousel
-                            opts={{
-                                align: 'start',
-                                loop: true,
-                                slidesToScroll: 1
-                            }}
-                            plugins={[
-                                Autoplay({
-                                    delay: 4000
-                                })
-                            ]}
-                            className="w-full"
-                        >
-                            <CarouselContent className="-ml-4 md:-ml-6">
-                                {carouselItems
-                                    .slice(0, 3)
-                                    .map((item, index) => (
-                                        <CarouselItem
-                                            key={index}
-                                            className="pl-4 md:pl-6 basis-full md:basis-1/2 xl:basis-1/3 flex items-center justify-center"
-                                        >
-                                            {renderCarouselImage(
-                                                item,
-                                                `carousel-item-${index}`
-                                            )}
-                                        </CarouselItem>
-                                    ))}
-                                <CarouselItem className="pl-4 md:pl-6 basis-full md:basis-1/2 xl:basis-1/3 flex flex-col gap-4 items-center justify-center">
-                                    {renderCarouselImage(
-                                        carouselItems[3],
-                                        'carousel-item-4'
-                                    )}
-                                    {renderCarouselImage(
-                                        carouselItems[4],
-                                        'carousel-item-5'
-                                    )}
-                                </CarouselItem>
-                                <CarouselItem className="pl-4 md:pl-6 basis-full md:basis-1/2 xl:basis-1/3 flex items-center justify-center">
-                                    {renderCarouselImage(
-                                        carouselItems[5],
-                                        'carousel-item-6'
-                                    )}
-                                </CarouselItem>
-                            </CarouselContent>
-                            <CarouselPrevious />
-                            <CarouselNext />
-                        </Carousel>
                     </div>
                 </AnimatedSection>
             </div>
@@ -256,7 +161,7 @@ export default function AboutDetails() {
                     {getImgSrc('staff') ? (
                         <Image
                             src={getImgSrc('staff') as string}
-                            alt="freedome img"
+                            alt="Haven Home Health staff"
                             className="h-auto w-full rounded-xl shadow-xl object-cover"
                             width={1200}
                             height={800}

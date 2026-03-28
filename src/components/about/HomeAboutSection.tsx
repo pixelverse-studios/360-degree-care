@@ -11,34 +11,20 @@ export default function HomeAboutSection() {
                 animation="zoom"
                 className="max-w-custom mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 justify-between items-start p-6"
             >
-                {/* <img
-                    className="rounded-2xl h-full w-fit object-cover"
-                    src={getImgSrc('swimmer')}
-                    alt="Content senior man"
-                /> */}
-                {/* 
-                <iframe
-                    src="https://youtu.be/940TQdvwoxs"
-                    title="Transition from Interim to 360 Degree Care"
-                    className="h-[90%] w-full rounded-lg"
-                /> */}
-
                 <LiteYouTube
                     className="h-full w-full"
                     videoId="940TQdvwoxs"
-                    title="Transition from Interim to 360 Degree Care"
+                    title="Haven Home Health - Our Story"
                     params="si=fqdzPoORSzGveCqZ"
                 />
                 <div className="flex flex-col gap-4">
                     <h2 className="text-primary font-bold text-3xl">
-                        About 360° Care
+                        About Haven Home Health
                     </h2>
                     <p>
-                        For over a decade, 360 Degree Care, formerly operating
-                        as Interim Healthcare of Ridgewood, has proudly served
+                        For over a decade, Haven Home Health has proudly served
                         families across New Jersey with compassionate,
-                        dependable home care services, all from our base in
-                        Ridgewood, NJ. We provide comprehensive{' '}
+                        dependable home care services. We provide comprehensive{' '}
                         <a
                             href="/services/personal-care/bergen-county"
                             className="text-primary hover:underline"
