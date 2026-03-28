@@ -16,11 +16,9 @@ const GoogleGLogo = () => (
 )
 
 const GoogleReviewLink = ({ className }: { className?: string }) => {
-    const reviewLink = 'https://g.page/r/CeD-1nF5pZ34EBI/review'
-
     return (
         <a
-            href={reviewLink}
+            href="#"
             target="_blank"
             rel="noopener noreferrer"
             className={cn(
