@@ -3,37 +3,37 @@ import { FaArrowRight } from 'react-icons/fa6'
 import { getImgSrc } from '../images'
 
 export const nursingServicesMetadata: Metadata = {
-    title: 'In-Home Nursing Services in New Jersey | 360 Degree Care',
+    title: 'In-Home Nursing Services in New Jersey | Haven Home Health',
     description:
         'In-home nursing services in New Jersey providing skilled clinical care, assessments, and medical support to help patients remain safely at home.',
     keywords:
         'in-home nursing, skilled nursing, wound care, medication management, home nursing, New Jersey',
     openGraph: {
         type: 'website',
-        url: 'https://www.360degreecare.net/services/nursing',
-        title: 'In-Home Nursing Services in New Jersey | 360 Degree Care',
+        url: 'https://haven-home-health.netlify.app/services/nursing',
+        title: 'In-Home Nursing Services in New Jersey | Haven Home Health',
         description:
             'In-home nursing services in New Jersey providing skilled clinical care, assessments, and medical support to help patients remain safely at home.',
         images: [
             {
-                url: 'https://www.360degreecare.net/assets/nursing-services-image.jpg'
+                url: 'https://haven-home-health.netlify.app/assets/nursing-services-image.jpg'
             }
         ],
         locale: 'en_US',
-        siteName: '360 Degree Care'
+        siteName: 'Haven Home Health'
     },
     twitter: {
         card: 'summary_large_image',
-        title: 'In-Home Nursing Services in New Jersey | 360 Degree Care',
+        title: 'In-Home Nursing Services in New Jersey | Haven Home Health',
         description:
             'In-home nursing services in New Jersey providing skilled clinical care, assessments, and medical support to help patients remain safely at home.',
         images: [
-            'https://www.360degreecare.net/assets/nursing-services-image.jpg'
+            'https://haven-home-health.netlify.app/assets/nursing-services-image.jpg'
         ]
     },
     robots: { index: true, follow: true },
     alternates: {
-        canonical: 'https://www.360degreecare.net/services/nursing'
+        canonical: 'https://haven-home-health.netlify.app/services/nursing'
     },
     other: {
         'geo.region': 'US-NJ',
@@ -51,7 +51,7 @@ const StaticNursingServicesData = {
         description:
             'Skilled clinical care delivered at home with professionalism, compassion, and continuity.',
         introBody:
-            'In-home nursing services from 360 Degree Care provide professional medical support for individuals who require skilled clinical care in the comfort of their own homes. Our licensed nurses deliver personalized care plans, ongoing assessments, and hands-on medical support to promote safety, stability, and quality of life.',
+            'In-home nursing services from Haven Home Health provide professional medical support for individuals who require skilled clinical care in the comfort of their own homes. Our licensed nurses deliver personalized care plans, ongoing assessments, and hands-on medical support to promote safety, stability, and quality of life.',
         header: 'In-Home Nursing Services in New Jersey',
         img: {
             src: getImgSrc('nursing-hero') ?? '',
@@ -61,7 +61,7 @@ const StaticNursingServicesData = {
     description: {
         header: 'What is In-Home Nursing?',
         description:
-            'In-home nursing services from 360 Degree Care provide professional medical support for individuals who require skilled clinical care in the comfort of their own homes. Our licensed nurses deliver personalized care plans, ongoing assessments, and hands-on medical support to promote safety, stability, and quality of life.'
+            'In-home nursing services from Haven Home Health provide professional medical support for individuals who require skilled clinical care in the comfort of their own homes. Our licensed nurses deliver personalized care plans, ongoing assessments, and hands-on medical support to promote safety, stability, and quality of life.'
     },
     listItems: {
         header: "What's Included",

@@ -3,37 +3,37 @@ import { FaArrowRight } from 'react-icons/fa6'
 import { getImgSrc } from '../images'
 
 export const elderCareConsultingMetadata: Metadata = {
-    title: 'Elder Care Consulting in New Jersey | 360 Degree Care',
+    title: 'Elder Care Consulting in New Jersey | Haven Home Health',
     description:
         'Professional elder care consulting in New Jersey, helping families navigate care options, plan next steps, and make informed decisions with confidence.',
     keywords:
         'elder care consulting, senior care planning, aging life care, care navigation, elder care services, New Jersey',
     openGraph: {
         type: 'website',
-        url: 'https://www.360degreecare.net/services/elder-care',
-        title: 'Elder Care Consulting in New Jersey | 360 Degree Care',
+        url: 'https://haven-home-health.netlify.app/services/elder-care',
+        title: 'Elder Care Consulting in New Jersey | Haven Home Health',
         description:
             'Professional elder care consulting in New Jersey, helping families navigate care options, plan next steps, and make informed decisions with confidence.',
         images: [
             {
-                url: 'https://www.360degreecare.net/assets/elder-care-consulting-image.jpg'
+                url: 'https://haven-home-health.netlify.app/assets/elder-care-consulting-image.jpg'
             }
         ],
         locale: 'en_US',
-        siteName: '360 Degree Care'
+        siteName: 'Haven Home Health'
     },
     twitter: {
         card: 'summary_large_image',
-        title: 'Elder Care Consulting in New Jersey | 360 Degree Care',
+        title: 'Elder Care Consulting in New Jersey | Haven Home Health',
         description:
             'Professional elder care consulting in New Jersey, helping families navigate care options, plan next steps, and make informed decisions with confidence.',
         images: [
-            'https://www.360degreecare.net/assets/elder-care-consulting-image.jpg'
+            'https://haven-home-health.netlify.app/assets/elder-care-consulting-image.jpg'
         ]
     },
     robots: { index: true, follow: true },
     alternates: {
-        canonical: 'https://www.360degreecare.net/services/elder-care'
+        canonical: 'https://haven-home-health.netlify.app/services/elder-care'
     },
     other: {
         'geo.region': 'US-NJ',
@@ -52,7 +52,7 @@ const StaticElderCareConsultingData = {
         description:
             'Expert guidance to help families navigate elder care decisions with clarity and confidence.',
         introBody:
-            "Elder care consulting from 360 Degree Care supports families as they navigate complex decisions for aging loved ones. Our consultants help assess care needs, explore options, coordinate services, and create a clear plan aligned with each family's goals.",
+            "Elder care consulting from Haven Home Health supports families as they navigate complex decisions for aging loved ones. Our consultants help assess care needs, explore options, coordinate services, and create a clear plan aligned with each family's goals.",
         header: 'Elder Care Consulting in New Jersey',
         img: {
             src: getImgSrc('elder-care-hero') ?? '',
@@ -62,7 +62,7 @@ const StaticElderCareConsultingData = {
     description: {
         header: 'What is Elder Care Consulting?',
         description:
-            "Elder care consulting from 360 Degree Care supports families as they navigate complex decisions for aging loved ones. Our consultants help assess care needs, explore options, coordinate services, and create a clear plan aligned with each family's goals."
+            "Elder care consulting from Haven Home Health supports families as they navigate complex decisions for aging loved ones. Our consultants help assess care needs, explore options, coordinate services, and create a clear plan aligned with each family's goals."
     },
     listItems: {
         header: "What's Included",

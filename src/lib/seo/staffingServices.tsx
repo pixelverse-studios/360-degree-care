@@ -3,37 +3,37 @@ import { FaArrowRight } from 'react-icons/fa6'
 import { getImgSrc } from '../images'
 
 export const staffingServicesMetadata: Metadata = {
-    title: 'Medical Staffing Solutions in New Jersey | 360 Degree Care',
+    title: 'Medical Staffing Solutions in New Jersey | Haven Home Health',
     description:
         'Medical staffing solutions in New Jersey, providing credentialed nurses and healthcare professionals for hospitals, rehab centers, and care facilities.',
     keywords:
         'medical staffing, healthcare staffing, nursing staff, RN staffing, LPN staffing, CNA staffing, New Jersey',
     openGraph: {
         type: 'website',
-        url: 'https://www.360degreecare.net/services/staffing',
-        title: 'Medical Staffing Solutions in New Jersey | 360 Degree Care',
+        url: 'https://haven-home-health.netlify.app/services/staffing',
+        title: 'Medical Staffing Solutions in New Jersey | Haven Home Health',
         description:
             'Medical staffing solutions in New Jersey, providing credentialed nurses and healthcare professionals for hospitals, rehab centers, and care facilities.',
         images: [
             {
-                url: 'https://www.360degreecare.net/assets/staffing-services-image.jpg'
+                url: 'https://haven-home-health.netlify.app/assets/staffing-services-image.jpg'
             }
         ],
         locale: 'en_US',
-        siteName: '360 Degree Care'
+        siteName: 'Haven Home Health'
     },
     twitter: {
         card: 'summary_large_image',
-        title: 'Medical Staffing Solutions in New Jersey | 360 Degree Care',
+        title: 'Medical Staffing Solutions in New Jersey | Haven Home Health',
         description:
             'Medical staffing solutions in New Jersey, providing credentialed nurses and healthcare professionals for hospitals, rehab centers, and care facilities.',
         images: [
-            'https://www.360degreecare.net/assets/staffing-services-image.jpg'
+            'https://haven-home-health.netlify.app/assets/staffing-services-image.jpg'
         ]
     },
     robots: { index: true, follow: true },
     alternates: {
-        canonical: 'https://www.360degreecare.net/services/staffing'
+        canonical: 'https://haven-home-health.netlify.app/services/staffing'
     },
     other: {
         'geo.region': 'US-NJ',
@@ -51,7 +51,7 @@ const StaticStaffingServicesData = {
         description:
             'Credentialed healthcare professionals to support facilities with short- and long-term staffing needs.',
         introBody:
-            '360 Degree Care provides medical staffing solutions for healthcare facilities across New Jersey, including hospitals, rehabilitation centers, and long-term care environments. Our staffing services connect facilities with qualified, credentialed professionals to ensure consistent, reliable patient care.',
+            'Haven Home Health provides medical staffing solutions for healthcare facilities across New Jersey, including hospitals, rehabilitation centers, and long-term care environments. Our staffing services connect facilities with qualified, credentialed professionals to ensure consistent, reliable patient care.',
         header: 'Medical Staffing Solutions in New Jersey',
         img: {
             src: getImgSrc('staffing_hero') ?? '',
@@ -61,7 +61,7 @@ const StaticStaffingServicesData = {
     description: {
         header: 'What is Medical Staffing?',
         description:
-            '360 Degree Care provides medical staffing solutions for healthcare facilities across New Jersey, including hospitals, rehabilitation centers, and long-term care environments. Our staffing services connect facilities with qualified, credentialed professionals to ensure consistent, reliable patient care.'
+            'Haven Home Health provides medical staffing solutions for healthcare facilities across New Jersey, including hospitals, rehabilitation centers, and long-term care environments. Our staffing services connect facilities with qualified, credentialed professionals to ensure consistent, reliable patient care.'
     },
     listItems: {
         header: "What's Included",
