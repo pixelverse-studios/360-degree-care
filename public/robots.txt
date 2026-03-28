@@ -1,13 +1,9 @@
-# *
+# Portfolio demo site - disallow all crawling
 User-agent: *
-Allow: /
-Disallow: /api/
-Disallow: /docs/
-Disallow: /seo-review
-Disallow: /not-found
+Disallow: /
 
 # Host
-Host: https://www.360degreecare.net
+Host: https://haven-home-health.netlify.app
 
 # Sitemaps
-Sitemap: https://www.360degreecare.net/sitemap.xml
+Sitemap: https://haven-home-health.netlify.app/sitemap.xml
