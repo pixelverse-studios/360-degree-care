@@ -1,5 +1,3 @@
-import Script from 'next/script'
-import { Suspense } from 'react'
 import { Merriweather, Rubik } from 'next/font/google'
 
 import dynamic from 'next/dynamic'
@@ -17,29 +15,12 @@ const SITE_DESCRIPTION =
     'In-home personal care, home health aides, nursing, companion care, and elder care consulting across New Jersey to help seniors live safely at home.'
 const DEFAULT_OG_IMAGE =
     'https://res.cloudinary.com/pixelverse-studios/image/upload/c_fill,w_1200,h_630,q_auto,f_auto/v1750022033/clients/360dc/assets/happy_couple_1_xgwhwr.jpg'
-// Local favicon paths for Google crawler compatibility (same-origin required)
 const FAVICON_ICO = '/favicon-32x32.png'
 const FAVICON_16 = '/favicon-16x16.png'
 const FAVICON_32 = '/favicon-32x32.png'
 const FAVICON_64 = '/favicon-64x64.png'
 const APPLE_TOUCH_ICON = '/apple-touch-icon.png'
 const SITE_LOGO = FAVICON_64
-
-const CampaignTracker = dynamic(
-    () =>
-        import('@/components/CampaignTracker').then(module => ({
-            default: module.CampaignTracker
-        })),
-    { ssr: false, loading: () => null }
-)
-
-const BounceTracker = dynamic(
-    () =>
-        import('@/components/BounceTracker').then(module => ({
-            default: module.BounceTracker
-        })),
-    { ssr: false, loading: () => null }
-)
 
 const AccessibilityMenu = dynamic(
     () =>
@@ -214,115 +195,32 @@ export default function RootLayout({
 }: Readonly<{
     children: React.ReactNode
 }>) {
-    const isProduction = process.env.NODE_ENV === 'production'
-
     return (
         <html lang="en-US">
             <head>
-                <Script
-                    id="local-business-schema"
+                <script
                     type="application/ld+json"
-                    strategy="afterInteractive"
                     dangerouslySetInnerHTML={{
                         __html: JSON.stringify(localBusinessSchema)
                     }}
                 />
-                <Script
-                    id="organization-schema"
+                <script
                     type="application/ld+json"
-                    strategy="afterInteractive"
                     dangerouslySetInnerHTML={{
                         __html: JSON.stringify(organizationSchema)
                     }}
                 />
-                {isProduction && (
-                    <>
-                        <Script
-                            id="google-tag-manager"
-                            strategy="afterInteractive"
-                            dangerouslySetInnerHTML={{
-                                __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-PGDVF5CR');`
-                            }}
-                        />
-                        <Script
-                            id="google-ads-gtag"
-                            strategy="afterInteractive"
-                            src="https://www.googletagmanager.com/gtag/js?id=AW-17090471122"
-                        />
-                        <Script
-                            id="google-ads-config"
-                            strategy="afterInteractive"
-                            dangerouslySetInnerHTML={{
-                                __html: `window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'AW-17090471122');gtag('config', 'AW-17090471122/bfUXCJzCydMaENLJr9U_', {'phone_conversion_number': '(201) 299-4243'});`
-                            }}
-                        />
-                        <Script
-                            id="facebook-pixel"
-                            strategy="afterInteractive"
-                            dangerouslySetInnerHTML={{
-                                __html: `!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window, document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init', '668364266032178');fbq('track', 'PageView');`
-                            }}
-                        />
-                    </>
-                )}
                 <link
                     rel="stylesheet"
                     media="screen"
                     href="https://fontlibrary.org//face/symbola"
                     type="text/css"
                 />
-                {isProduction && (
-                    <Script
-                        id="sitebehaviour-init"
-                        strategy="lazyOnload"
-                        dangerouslySetInnerHTML={{
-                            __html: `
-                                    (function() {
-                                        var sbSiteSecret = 'dd171ee6-2143-4a6d-b96a-1023e3c53f39';
-                                        window.sitebehaviourTrackingSecret = sbSiteSecret;
-                                        var scriptElement = document.createElement('script');
-                                        scriptElement.async = true;
-                                        scriptElement.id = 'site-behaviour-script-v2';
-                                        scriptElement.src = 'https://sitebehaviour-cdn.fra1.cdn.digitaloceanspaces.com/index.min.js?sitebehaviour-secret=' + sbSiteSecret;
-                                        document.head.appendChild(scriptElement); 
-                                    })();
-                                `
-                        }}
-                    />
-                )}
             </head>
             <body
                 className={`antialiased ${rubik.variable} ${merriweather.variable}`}
             >
-                {isProduction && (
-                    <>
-                        <noscript>
-                            <iframe
-                                src="https://www.googletagmanager.com/ns.html?id=GTM-PGDVF5CR"
-                                height="0"
-                                width="0"
-                                style={{
-                                    display: 'none',
-                                    visibility: 'hidden'
-                                }}
-                            />
-                        </noscript>
-                        <noscript>
-                            <img
-                                height="1"
-                                width="1"
-                                style={{ display: 'none' }}
-                                src="https://www.facebook.com/tr?id=668364266032178&ev=PageView&noscript=1"
-                                alt=""
-                            />
-                        </noscript>
-                    </>
-                )}
                 <RouteStateProvider>
-                    <Suspense fallback={null}>
-                        <CampaignTracker />
-                        <BounceTracker />
-                    </Suspense>
                     <Header />
                     <Breadcrumbs />
                     {children}
