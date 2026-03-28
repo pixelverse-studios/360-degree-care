@@ -1,3 +1,5 @@
+> **HISTORICAL DOCUMENT** - This blog content outline was created during the original client engagement. The corresponding TypeScript article in `src/lib/blogs/articles/` has been debranded to Haven Home Health. Brand references below are from the original draft.
+
 # 15 Questions to Ask Before Hiring a Home Care Agency in Bergen County
 
 **Meta Title:** 15 Questions to Ask a Home Care Agency | Bergen County Guide
@@ -11,7 +13,7 @@ Hiring a home care agency is one of the most important decisions you'll make for
 
 With dozens of home care agencies serving Bergen County, Passaic County, and surrounding Northern New Jersey communities, how do you separate the exceptional from the mediocre? You ask the right questions.
 
-At 360 Degree Care, we welcome tough questions from families—it shows you're serious about finding the best care. Below are the 15 questions every family should ask before signing with any home care agency.
+At 360 Degree Care, we welcome tough questions from families---it shows you're serious about finding the best care. Below are the 15 questions every family should ask before signing with any home care agency.
 
 ## Questions About the Agency Itself
 
@@ -25,7 +27,7 @@ Experience matters in home care. An established agency has refined its processes
 
 ### 2. Are you licensed by the State of New Jersey?
 
-All home care agencies in New Jersey must be licensed by the Department of Health. This isn't optional—it's a legal requirement that ensures basic standards of operation.
+All home care agencies in New Jersey must be licensed by the Department of Health. This isn't optional---it's a legal requirement that ensures basic standards of operation.
 
 **What to listen for:** A clear "yes" with the ability to provide license numbers if requested.
 
@@ -41,7 +43,7 @@ This question has significant implications for quality, reliability, and your fa
 
 ### 4. What insurance coverage do you carry?
 
-Proper insurance protects everyone involved—your loved one, the caregiver, and your family.
+Proper insurance protects everyone involved---your loved one, the caregiver, and your family.
 
 **What to listen for:** General liability insurance, professional liability insurance, workers' compensation coverage, and a fidelity bond (which protects against theft).
 
@@ -51,7 +53,7 @@ Proper insurance protects everyone involved—your loved one, the caregiver, and
 
 The caregivers entering your loved one's home need to be trustworthy, skilled, and properly trained.
 
-**What to listen for:** Comprehensive background checks (criminal history, reference verification, credential verification), drug screening, skills assessment, and ongoing training requirements. Ask specifically about their process—a quality agency will describe it in detail.
+**What to listen for:** Comprehensive background checks (criminal history, reference verification, credential verification), drug screening, skills assessment, and ongoing training requirements. Ask specifically about their process---a quality agency will describe it in detail.
 
 **Red flag:** "We just check references" or reluctance to discuss screening procedures.
 
@@ -59,11 +61,11 @@ The caregivers entering your loved one's home need to be trustworthy, skilled, a
 
 ### 6. How do you match caregivers with clients?
 
-A technically skilled caregiver isn't enough—personality fit matters enormously for day-to-day happiness and quality of care.
+A technically skilled caregiver isn't enough---personality fit matters enormously for day-to-day happiness and quality of care.
 
 **What to listen for:** A thoughtful process that considers personality, interests, language needs, cultural background, and specific care requirements. The best agencies take time to understand your loved one as a person, not just a list of medical needs.
 
-At 360 Degree Care, we believe this matching process is one of the most important things we do. We're a small, family-run agency specifically because we want to know every client personally—not treat them as a number in the system.
+At 360 Degree Care, we believe this matching process is one of the most important things we do. We're a small, family-run agency specifically because we want to know every client personally---not treat them as a number in the system.
 
 **Red flag:** "We send whoever is available" or no mention of compatibility considerations.
 
@@ -150,7 +152,7 @@ Life is unpredictable. Understand your commitments before you sign anything.
 Beyond questioning the agency, ask yourself:
 
 - **Did they listen more than they talked?** A good agency wants to understand your needs, not just sell their services.
-- **Did they seem genuinely interested in my loved one as a person?** Care is personal. The agency should ask about interests, preferences, and personality—not just medical conditions.
+- **Did they seem genuinely interested in my loved one as a person?** Care is personal. The agency should ask about interests, preferences, and personality---not just medical conditions.
 - **Did I feel rushed or pressured?** Quality agencies let families make decisions at their own pace.
 - **Can I reach someone when I need to?** Test their responsiveness before you sign. If they're hard to reach during the sales process, imagine how they'll be once they have your business.
 
@@ -158,25 +160,25 @@ Beyond questioning the agency, ask yourself:
 
 The home care industry includes both exceptional agencies and those cutting corners. These questions help you identify which is which before you commit.
 
-At 360 Degree Care, we're a family-run agency because we believe home care should feel personal. When you call us, you're not talking to a call center—you're talking to people who genuinely care about getting this decision right for your family.
+At 360 Degree Care, we're a family-run agency because we believe home care should feel personal. When you call us, you're not talking to a call center---you're talking to people who genuinely care about getting this decision right for your family.
 
 We serve families throughout Bergen County and Passaic County, from Ridgewood and Paramus to Hackensack, Teaneck, Fort Lee, and beyond. Every client receives individualized attention because that's the only way to provide excellent care.
 
 ## Frequently Asked Questions
 
 **How many agencies should I interview before making a decision?**
-We recommend speaking with at least three agencies to compare approaches, personalities, and pricing. Trust your instincts—you'll often know when you've found the right fit.
+We recommend speaking with at least three agencies to compare approaches, personalities, and pricing. Trust your instincts---you'll often know when you've found the right fit.
 
 **Should I involve my loved one in the agency selection process?**
 Whenever possible, yes. They'll be the one receiving care, and their comfort with the agency matters. If they can participate in conversations or meet potential caregivers before starting, that's ideal.
 
 **What if I've already hired an agency and I'm not happy?**
-You're not stuck. Most agency agreements allow you to end services with reasonable notice. If you're experiencing problems, first try to resolve them with the agency directly. If that doesn't work, don't hesitate to make a change—your loved one's wellbeing is too important.
+You're not stuck. Most agency agreements allow you to end services with reasonable notice. If you're experiencing problems, first try to resolve them with the agency directly. If that doesn't work, don't hesitate to make a change---your loved one's wellbeing is too important.
 
 ---
 
 ## Ready to Ask Us These Questions?
 
-We welcome the opportunity to answer every question on this list—and any others you might have. At 360 Degree Care, we believe the best client relationships start with honest conversations.
+We welcome the opportunity to answer every question on this list---and any others you might have. At 360 Degree Care, we believe the best client relationships start with honest conversations.
 
-[Contact us to schedule a consultation](/contact/services) or call us at [(201) 299-4243](tel:2012994243). Our team is ready to discuss your family's needs and explain exactly how we can help. No pressure, no obligations—just straightforward answers from people who care.
+[Contact us to schedule a consultation](/contact/services) or call us at [(201) 299-4243](tel:2012994243). Our team is ready to discuss your family's needs and explain exactly how we can help. No pressure, no obligations---just straightforward answers from people who care.

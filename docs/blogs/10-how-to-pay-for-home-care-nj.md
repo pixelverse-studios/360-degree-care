@@ -1,3 +1,5 @@
+> **HISTORICAL DOCUMENT** - This blog content outline was created during the original client engagement. The corresponding TypeScript article in `src/lib/blogs/articles/` has been debranded to Haven Home Health. Brand references below are from the original draft.
+
 # How to Pay for Home Care for Elderly Parents in NJ: 7 Options Explained
 
 **Meta Title:** How to Pay for Home Care in NJ: 7 Payment Options
@@ -9,7 +11,7 @@
 
 You've decided your aging parent needs home care. Now comes the question that keeps many families up at night: How are we going to pay for this?
 
-Home care is a significant expense. In New Jersey, families can spend thousands of dollars monthly depending on the level of care needed. But care is also necessary—your parent's safety and quality of life depend on it.
+Home care is a significant expense. In New Jersey, families can spend thousands of dollars monthly depending on the level of care needed. But care is also necessary---your parent's safety and quality of life depend on it.
 
 The good news: more options exist than most families realize. At 360 Degree Care, we've helped Bergen County and Passaic County families navigate these financial waters for years. For an overview of what care costs, see our guide on [home care costs in Northern New Jersey](/blog/cost-of-home-care-northern-new-jersey). Here are seven ways families pay for home care, and how to determine which might work for you.
 
@@ -63,11 +65,11 @@ Long-term care insurance can cover a substantial portion of care costs, sometime
 
 Policies vary dramatically. Some have generous benefits; others have low daily maximums that don't cover actual costs. Many have lifetime limits. Older policies may have restrictions on what types of care or providers qualify.
 
-If your parent doesn't have a policy, it's likely too late to purchase one affordably—premiums are high for older adults, and those already needing care can't qualify.
+If your parent doesn't have a policy, it's likely too late to purchase one affordably---premiums are high for older adults, and those already needing care can't qualify.
 
 ### Tips for Using LTC Insurance
 
-Start the claims process early—there's often paperwork and waiting periods. Keep detailed records of all care provided. Understand exactly what your policy covers and any restrictions. Ask your home care agency if they have experience working with insurance companies.
+Start the claims process early---there's often paperwork and waiting periods. Keep detailed records of all care provided. Understand exactly what your policy covers and any restrictions. Ask your home care agency if they have experience working with insurance companies.
 
 ## 3. Veterans Benefits (Aid and Attendance)
 
@@ -99,12 +101,11 @@ Aid and Attendance provides significant monthly income specifically for care nee
 
 ### Considerations
 
-The application process is complex and time-consuming. Many families benefit from professional help navigating it. Benefits aren't retroactive to when care began—only to when you applied—so don't delay.
+The application process is complex and time-consuming. Many families benefit from professional help navigating it. Benefits aren't retroactive to when care began---only to when you applied---so don't delay.
 
 ## 4. Medicaid (NJ FamilyCare)
 
 Medicaid is the joint federal-state program that provides health coverage for low-income individuals. Unlike Medicare, Medicaid does cover home care services. (If you're confused about the difference, see our guide on [what Medicare does and doesn't cover](/blog/does-medicare-cover-home-care-new-jersey).)
-<!-- TODO: Verify final slug for blog 08 once published -->
 
 ### How It Works
 
@@ -130,11 +131,11 @@ Medicaid can cover substantial home care costs for those who qualify. Once eligi
 
 ### Considerations
 
-The financial eligibility requirements are strict—most middle-class families don't qualify without spending down assets. There may be waiting lists for waiver programs. The application process is complex and documentation-heavy.
+The financial eligibility requirements are strict---most middle-class families don't qualify without spending down assets. There may be waiting lists for waiver programs. The application process is complex and documentation-heavy.
 
 ### Medicaid Planning
 
-Some families work with elder law attorneys on "Medicaid planning"—legally restructuring assets to qualify for benefits while preserving some resources. This is most effective when done well before care is needed, but strategies exist even when care needs are immediate.
+Some families work with elder law attorneys on "Medicaid planning"---legally restructuring assets to qualify for benefits while preserving some resources. This is most effective when done well before care is needed, but strategies exist even when care needs are immediate.
 
 ## 5. Home Equity Options
 
@@ -231,7 +232,7 @@ Most families use a combination of these options. Here's how to build your strat
 ## Frequently Asked Questions
 
 **What if we can't afford the care my parent needs?**
-Start with what you can afford and supplement with family help. Explore all benefit options—many families qualify for programs they didn't know existed. Consider starting with fewer hours and increasing as you secure additional funding. Talk honestly with your home care agency about your budget.
+Start with what you can afford and supplement with family help. Explore all benefit options---many families qualify for programs they didn't know existed. Consider starting with fewer hours and increasing as you secure additional funding. Talk honestly with your home care agency about your budget.
 
 **Should we spend down assets to qualify for Medicaid?**
 This depends on your situation. Medicaid planning can preserve some assets while qualifying for benefits, but strategies vary and timing matters. Consult an elder law attorney before making major financial decisions.
@@ -245,4 +246,4 @@ In some circumstances, yes. Medicaid programs may pay family caregivers. VA bene
 
 Paying for home care is challenging, but options exist. At 360 Degree Care, we work with Bergen County and Passaic County families to create care plans that fit both needs and budgets. For more information, visit our [How to Pay](/how-to-pay) page.
 
-[Contact us for a consultation](/contact/services) or call [(201) 299-4243](tel:2012994243). We're happy to discuss what care your parent needs and help you think through how to fund it sustainably. There's no obligation—just honest conversation about your options.
+[Contact us for a consultation](/contact/services) or call [(201) 299-4243](tel:2012994243). We're happy to discuss what care your parent needs and help you think through how to fund it sustainably. There's no obligation---just honest conversation about your options.

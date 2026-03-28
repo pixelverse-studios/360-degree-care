@@ -1,3 +1,5 @@
+> **HISTORICAL DOCUMENT** - This file was created during the original client engagement (360 Degree Care) and is retained as a reference for SEO patterns and strategy. Brand names, contact info, and client-specific details are from the original project.
+
 # SEO Changelog: 360 Degree Care
 
 > Track all SEO changes and their impact

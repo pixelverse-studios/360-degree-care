@@ -1,9 +1,10 @@
+> **HISTORICAL DOCUMENT** - This file was created during the original client engagement (360 Degree Care) and is retained as a reference for SEO patterns and strategy. Brand names, contact info, and client-specific details are from the original project.
+
 # Pending Linear Tickets - SEO Technical Audit
 
 > Created: 2025-12-18
-> Status: Pending creation (Linear API timeout)
-> Project: 360 Degree Care Website
-> Team: Jeff DeJoseph
+> Status: Historical (original client engagement)
+> Project: Haven Home Health (formerly 360 Degree Care)
 
 ---
 
@@ -100,7 +101,7 @@ Currently only Fort Lee has city-specific FAQs. Other cities use only generic se
 - Cities needing FAQs: Ridgewood, River Vale, Hackensack, Teaneck, Fair Lawn, Paramus, Englewood, Westwood
 - Services: companion-care, personal-care, elder-care, home-health-aides, nursing, staffing
 - Reference local resources already defined (hospitals, senior centers) for FAQ content
-- Total scope: ~8 cities × 6 services × 2-3 FAQs = 96-144 new FAQ items
+- Total scope: ~8 cities x 6 services x 2-3 FAQs = 96-144 new FAQ items
 - Consider breaking into sub-tasks by service type if too large
 
 ---
@@ -138,16 +139,13 @@ Five SEO strategy documents were created during scope initialization. Need to co
 - Files already created at `/docs/seo/`
 - This is a documentation/chore ticket, no code changes
 - Should be quick commit after review
-- Complements existing `docs/seo-remediation-plan.md`
 
 ---
 
 ## How to Create These Tickets
 
 When Linear is available, create tickets with:
-- **Team:** Jeff DeJoseph
-- **Project:** 360 Degree Care Website
+- **Team:** PixelVerse Studios
+- **Project:** Haven Home Health
 - **Assignee:** me
 - **Labels:** As specified per ticket (Front End + Ticket + [Type])
-
-Or run `/make-ticket` again to retry automatic creation.
