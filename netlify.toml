@@ -1,4 +1,4 @@
-# Netlify configuration for 360 Degree Care
+# Netlify configuration for Haven Home Health (portfolio demo)
 # https://docs.netlify.com/configure-builds/file-based-configuration/
 
 [build]
@@ -8,14 +8,3 @@
 # Next.js plugin for Netlify (handles SSR, ISR, etc.)
 [[plugins]]
   package = "@netlify/plugin-nextjs"
-
-# Sitemap submission plugin - notifies search engines on deploy
-# Note: Bing deprecated anonymous sitemap pings in 2022 - use Bing Webmaster Tools instead
-# IndexNow requires separate implementation with API key
-[[plugins]]
-  package = "netlify-plugin-submit-sitemap"
-
-  [plugins.inputs]
-    baseUrl = "https://www.360degreecare.net"
-    sitemapPath = "/sitemap.xml"
-    providers = ["google", "yandex"]

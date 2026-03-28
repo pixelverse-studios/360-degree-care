@@ -1,7 +1,7 @@
 import { existsSync, readdirSync } from 'node:fs'
 import path from 'node:path'
 
-const SITE_URL = 'https://www.360degreecare.net'
+const SITE_URL = 'https://haven-home-health.netlify.app'
 const APP_DIR = path.join(process.cwd(), 'src', 'app')
 const SERVICES_DIR = path.join(APP_DIR, 'services')
 
