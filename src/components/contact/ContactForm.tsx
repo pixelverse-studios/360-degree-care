@@ -49,32 +49,9 @@ export default function ContactForm() {
     const onSubmit = async (values: z.infer<typeof config.schema>) => {
         setLoading(true)
         try {
-            const payload = {
-                fullname: values.fullname,
-                email: values.email,
-                phone: values.phone,
-                data: {
-                    description: values.description
-                }
-            }
+            // Simulate network delay for demo purposes
+            await new Promise(resolve => setTimeout(resolve, 1000))
 
-            if (config.type !== 'general') {
-                payload.data = {
-                    ...payload.data,
-                    [config.type]: values[config.type]
-                }
-            }
-
-            await fetch(
-                `${process.env.NEXT_PUBLIC_API_HOST}/v1/contact-forms/${process.env.NEXT_PUBLIC_SLUG}`,
-                {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify(payload)
-                }
-            )
             setLoading(false)
             setSubmitted(true)
             return toast.success('Request submitted successfully')
