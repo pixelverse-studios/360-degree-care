@@ -49,7 +49,7 @@ export const PERSONAL_CARE_FAQS: FAQ[] = [
     },
     {
         question: 'How do I find personal care services near me?',
-        answer: 'You can contact us directly and we will walk you through options. 360 Degree Care provides personal care services across New Jersey, including Bergen, Monmouth, Passaic and Ocean counties, and we can help you understand what support is available in your area.'
+        answer: 'You can contact us directly and we will walk you through options. Haven Home Health provides personal care services across New Jersey, including Bergen, Monmouth, Passaic and Ocean counties, and we can help you understand what support is available in your area.'
     },
     {
         question: "Do I need a doctor's referral?",
