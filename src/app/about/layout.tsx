@@ -2,13 +2,13 @@ import type { Metadata } from 'next'
 import Script from 'next/script'
 
 export const metadata: Metadata = {
-    title: 'About 360 Degree Care | New Jersey In-Home Care Team',
+    title: 'About Haven Home Health | New Jersey In-Home Care Team',
     description:
-        'Meet 360 Degree Care, a trusted New Jersey in-home care provider with experienced caregivers, strong retention, and over a decade of compassionate service.',
+        'Meet Haven Home Health, a trusted New Jersey in-home care provider with experienced caregivers, strong retention, and over a decade of compassionate service.',
     openGraph: {
-        title: 'About 360 Degree Care | New Jersey In-Home Care Team',
+        title: 'About Haven Home Health | New Jersey In-Home Care Team',
         description:
-            'Meet 360 Degree Care, a trusted New Jersey in-home care provider with experienced caregivers, strong retention, and over a decade of compassionate service.',
+            'Meet Haven Home Health, a trusted New Jersey in-home care provider with experienced caregivers, strong retention, and over a decade of compassionate service.',
         type: 'website'
     }
 }
@@ -18,11 +18,11 @@ const aboutSchema = {
     '@type': 'AboutPage',
     mainEntity: {
         '@type': 'Organization',
-        name: '360 Degree Care',
-        url: 'https://www.360degreecare.net/',
-        logo: 'https://www.360degreecare.net/logo.png',
+        name: 'Haven Home Health',
+        url: 'https://haven-home-health.netlify.app/',
+        logo: 'https://haven-home-health.netlify.app/logo.png',
         description:
-            'Meet 360 Degree Care, a trusted New Jersey in-home care provider with experienced caregivers, strong retention, and over a decade of compassionate service.',
+            'Meet Haven Home Health, a trusted New Jersey in-home care provider with experienced caregivers, strong retention, and over a decade of compassionate service.',
         foundingDate: '2013',
         foundingLocation: {
             '@type': 'Place',
@@ -36,17 +36,13 @@ const aboutSchema = {
         hasCredential: 'Licensed by the State Attorney General',
         address: {
             '@type': 'PostalAddress',
-            streetAddress: '27 Chestnut Street',
+            streetAddress: '123 Main Street',
             addressLocality: 'Ridgewood',
             addressRegion: 'NJ',
             postalCode: '07450',
             addressCountry: 'US'
         },
-        telephone: '(201) 299-4243',
-        sameAs: [
-            'https://www.facebook.com/profile.php?id=61574893462190',
-            'https://www.instagram.com/360degreecarenj/'
-        ],
+        telephone: '(555) 123-4567',
         knowsAbout: [
             'Home Health Care',
             'Skilled Nursing',
@@ -55,7 +51,7 @@ const aboutSchema = {
             'Medical Staffing',
             'Elder Care'
         ],
-        slogan: 'Providing Concierge Level home care with compassion',
+        slogan: 'Compassionate home care you can trust',
         serviceArea: {
             '@type': 'State',
             name: 'New Jersey'

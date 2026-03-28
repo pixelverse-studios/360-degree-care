@@ -17,7 +17,7 @@ export default function AboutHero() {
                     <div className="flex flex-col gap-6">
                         <div>
                             <h1 className="text-4xl md:text-5xl font-bold text-black-muted leading-tight mb-2">
-                                About 360 Degree Care
+                                About Haven Home Health
                             </h1>
                             <p className="text-xl md:text-2xl font-medium text-gray-600">
                                 A trusted New Jersey in-home care team built on
@@ -25,7 +25,7 @@ export default function AboutHero() {
                             </p>
                         </div>
                         <article className="text-lg text-gray-700 leading-relaxed">
-                            360 Degree Care has been providing highly skilled
+                            Haven Home Health has been providing highly skilled
                             and compassionate caregivers to private clients and
                             care facilities across New Jersey for over ten
                             years. Our team supports families with reliable,
