@@ -8,7 +8,7 @@ const njCaregiverBurnoutReport = {
         'County-level data from Essex, Monmouth, and Passaic shows the top stressors hitting New Jersey caregivers this year—and the actions families can take right now.',
     category: 'Caregiving Guides',
     author: {
-        name: 'Jeff DeJoseph',
+        name: 'Haven Health Editorial',
         title: 'Leader in Aging in Place Services',
         avatar: getImgSrc('Jeff')
     },
@@ -37,7 +37,7 @@ const njCaregiverBurnoutReport = {
     contentType: 'markdown',
     content: `# 2025 Caregiver Burnout Report: What Essex, Monmouth, and Passaic Families Are Facing
 
-New Jersey’s county agencies have been busy surveying family caregivers over the past year. The results highlight the same struggles we hear every day at 360 Degree Care—overwhelm, weather-related interruptions, and a scramble to use local programs before they fill up. Here’s a county-by-county look at the new data, plus practical steps you can start this week.
+New Jersey’s county agencies have been busy surveying family caregivers over the past year. The results highlight the same struggles we hear every day at Haven Home Health—overwhelm, weather-related interruptions, and a scramble to use local programs before they fill up. Here’s a county-by-county look at the new data, plus practical steps you can start this week.
 
 ![Caregiver reviewing a plan with a concierge care manager](reading)
 *A solid plan keeps caregivers informed instead of overwhelmed.*
@@ -88,7 +88,7 @@ Need a template? [Our Essex County companion care team](/services/companion-care
 | Align with county programs | Grants + vouchers refill fast | Call Essex ADRC, Monmouth Office on Aging, or Passaic Senior Services this week |
 | Audit emergency plans | Storms, outages, and evacuations are inevitable | Update go-bags, backup caregivers, and transportation contacts every season |
 
-## How 360 Degree Care Keeps You Ahead
+## How Haven Home Health Keeps You Ahead
 
 - **Concierge-Level™ coordination** threads county data into every assessment so you don’t have to memorize program deadlines.
 - **Nurse-led care plans** weave private duty nursing, CHHAs, and companions into one schedule—with storm buffers and respite hours in writing.
@@ -96,7 +96,7 @@ Need a template? [Our Essex County companion care team](/services/companion-care
 
 Ready to trade constant firefighting for a care plan that actually fits Essex, Monmouth, or Passaic realities? [Schedule a concierge consultation](/contact/services) and we’ll build a roadmap grounded in the same county data local agencies use.
 
-*Jeff DeJoseph is a leader in the evolving field of aging in place and the services that enable people to remain happy and healthy at home. His company, [360 Degree Care](https://www.360degreecare.net), provides concierge home care services for seniors and those transitioning from hospital or rehab to home.*
+*Haven Home Health is a leader in the evolving field of aging in place and the services that enable people to remain happy and healthy at home, providing concierge home care services for seniors and those transitioning from hospital or rehab to home.*
 `
 }
 

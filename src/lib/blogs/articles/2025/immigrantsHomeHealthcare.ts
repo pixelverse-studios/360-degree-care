@@ -8,7 +8,7 @@ const immigrantsHomeHealthcare = {
         'The home healthcare industry increasingly relies on immigrant workers to fill critical roles. From personal care aides to nurses, immigrants are the backbone of this sector, providing compassionate care and addressing labor shortages.',
     category: 'Healthcare Workforce',
     author: {
-        name: 'Jeff DeJoseph',
+        name: 'Haven Health Editorial',
         title: 'Leader in Aging in Place Services',
         avatar: getImgSrc('Jeff')
     },
@@ -249,7 +249,7 @@ We don't just strengthen the home healthcare industry—we honor the essential c
 
 ## Need Expert Guidance on Home Care?
 
-At 360° Care, we understand the complexities of finding and retaining quality home care workers. Our network includes skilled, compassionate caregivers from diverse backgrounds who are committed to providing exceptional care.
+At Haven Home Health, we understand the complexities of finding and retaining quality home care workers. Our network includes skilled, compassionate caregivers from diverse backgrounds who are committed to providing exceptional care.
 
 **We can help you:**
 - Find qualified, reliable home care workers
@@ -262,7 +262,7 @@ Don't navigate the complex world of home care alone. Contact us for a free consu
 
 Call us at [phone number] or [schedule your consultation online](/contact/services).
 
-*Jeff DeJoseph leads 360° Care, a comprehensive elder care consulting and home care service dedicated to helping families navigate the complexities of aging in place. With deep understanding of the home healthcare workforce, we connect families with the skilled, compassionate caregivers who make aging at home possible.*`
+*Haven Home Health is a comprehensive elder care consulting and home care service dedicated to helping families navigate the complexities of aging in place. With deep understanding of the home healthcare workforce, we connect families with the skilled, compassionate caregivers who make aging at home possible.*`
 }
 
 export default immigrantsHomeHealthcare

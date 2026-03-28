@@ -8,7 +8,7 @@ const nursingHomeDecision = {
         'Deciding to move an aging parent into a nursing home is emotionally complex. Explore the considerations, emotions, and steps involved in making this deeply personal decision.',
     category: 'Elder Care Planning',
     author: {
-        name: 'Jeff DeJoseph',
+        name: 'Haven Health Editorial',
         title: 'Leader in Aging in Place Services',
         avatar: getImgSrc('Jeff')
     },
@@ -242,7 +242,7 @@ By focusing on your parent's safety and well-being, involving them in the proces
 
 ## Need Help Navigating This Decision?
 
-At 360° Care, we understand the complexity of these decisions. Our elder care consulting services can help you:
+At Haven Home Health, we understand the complexity of these decisions. Our elder care consulting services can help you:
 
 - Assess your parent's care needs objectively
 - Explore all available options, including home care
@@ -254,7 +254,7 @@ At 360° Care, we understand the complexity of these decisions. Our elder care c
 
 Call us at [phone number] or [schedule your consultation online](/contact/services).
 
-*Jeff DeJoseph is a leader in the evolving field of aging in place and the services that enable people to remain happy and healthy at home. His company, [360 Degree Care](https://www.360degreecare.net), provides comprehensive elder care consulting and home care services throughout New Jersey, with a passionate commitment to helping families keep their loved ones safely at home whenever possible.*`
+*Haven Home Health is a leader in the evolving field of aging in place and the services that enable people to remain happy and healthy at home, providing comprehensive elder care consulting and home care services throughout New Jersey, with a passionate commitment to helping families keep their loved ones safely at home whenever possible.*`
 }
 
 export default nursingHomeDecision

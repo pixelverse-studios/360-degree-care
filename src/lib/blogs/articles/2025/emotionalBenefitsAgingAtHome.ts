@@ -8,7 +8,7 @@ const emotionalBenefitsAgingAtHome = {
         'Three Bergen and Passaic County families share how concierge home care protected dignity, connection, and peace of mind beyond the medical checklist.',
     category: 'Life at Home',
     author: {
-        name: 'Jeff DeJoseph',
+        name: 'Haven Health Editorial',
         title: 'Leader in Aging in Place Services',
         avatar: getImgSrc('Jeff')
     },
@@ -40,7 +40,7 @@ const emotionalBenefitsAgingAtHome = {
 
 Families researching the **benefits of home care in NJ** or debating whether a loved one can continue **aging in place in Bergen County** or **stay at home with senior care in Passaic County** often focus on logistics: schedules, medications, transportation. Yet the most powerful outcomes we witness are emotional—confidence restored, anxiety calmed, and family relationships renewed.
 
-Below are anonymized stories (shared with permission) from Northern New Jersey households who partnered with 360 Degree Care. Each highlights how personalized home care nurtures mental and emotional well-being, not just physical safety.
+Below are anonymized stories (shared with permission) from Northern New Jersey households who partnered with Haven Home Health. Each highlights how personalized home care nurtures mental and emotional well-being, not just physical safety.
 
 ![Daughter sharing a laugh with her mother at home](mother-daughter)
 *Small moments of connection become easier when daily care tasks feel under control*
@@ -49,7 +49,7 @@ Below are anonymized stories (shared with permission) from Northern New Jersey h
 
 **Situation:** Maria, 82, fractured her hip after a fall at home. Her adult children feared she would need to relocate to assisted living.
 
-**Home care plan:** A Certified Home Health Aide (CHHA) covered mornings and evenings, handling transfers, shower assistance, and medication reminders. A physical therapist visited twice a week, and the care plan was overseen by a 360 Degree Care RN.
+**Home care plan:** A Certified Home Health Aide (CHHA) covered mornings and evenings, handling transfers, shower assistance, and medication reminders. A physical therapist visited twice a week, and the care plan was overseen by a Haven Home Health RN.
 
 **Emotional impact:**
 
@@ -108,7 +108,7 @@ If you run a mental-health nonprofit, senior advocacy organization, or lifestyle
 
 ## Ready to Write Your Family’s Next Chapter?
 
-360 Degree Care designs concierge home care plans across Bergen and Passaic County that prioritize emotional well-being alongside clinical needs. Our team can:
+Haven Home Health designs concierge home care plans across Bergen and Passaic County that prioritize emotional well-being alongside clinical needs. Our team can:
 
 - Match caregivers based on personalities and language preferences
 - Coordinate music, art, or reminiscence therapy add-ons
@@ -116,7 +116,7 @@ If you run a mental-health nonprofit, senior advocacy organization, or lifestyle
 
 [Reach out](/contact/services) to see how home care can help your loved one stay safe, joyful, and connected in Northern New Jersey.
 
-*Jeff DeJoseph is a leader in the evolving field of aging in place and the services that enable people to remain happy and healthy at home. His company, [360 Degree Care](https://www.360degreecare.net), provides concierge home care services for seniors and those transitioning from hospital or rehab to home.*
+*Haven Home Health is a leader in the evolving field of aging in place and the services that enable people to remain happy and healthy at home, providing concierge home care services for seniors and those transitioning from hospital or rehab to home.*
 `
 }
 

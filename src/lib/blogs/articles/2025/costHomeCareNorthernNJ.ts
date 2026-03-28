@@ -8,7 +8,7 @@ const costHomeCareNorthernNJ = {
         'Break down hourly, daily, and monthly pricing for Bergen and Passaic County home care—including cost drivers, assisted living comparisons, and funding options.',
     category: 'Family Care Guides',
     author: {
-        name: 'Jeff DeJoseph',
+        name: 'Haven Health Editorial',
         title: 'Leader in Aging in Place Services',
         avatar: getImgSrc('Jeff')
     },
@@ -61,7 +61,7 @@ Budget discussions should start with the specific care plan—not statewide aver
 | Live-In (single aide) | **$360–$420/day** | 24-hour coverage with mandated sleep breaks and meals |
 | Nurse Visit (RN) | **$150–$225/visit** | Assessments, wound care check-ins, care plan updates |
 
-> *These numbers reflect 360 Degree Care’s market research from Q2 2025. Individual agencies may sit slightly above or below based on shift length, urgency, and bundled services.*
+> *These numbers reflect Haven Home Health’s market research from Q2 2025. Individual agencies may sit slightly above or below based on shift length, urgency, and bundled services.*
 
 ### Billing Variables to Ask About
 
@@ -128,7 +128,7 @@ Feel free to reference or link to this guide in budget planning articles, caregi
 
 ## Need Real Numbers for Your Situation?
 
-360 Degree Care delivers concierge-level companion, personal, and nurse-directed care across Bergen and Passaic Counties. We:
+Haven Home Health delivers concierge-level companion, personal, and nurse-directed care across Bergen and Passaic Counties. We:
 
 - Conduct **same-week RN assessments** to define accurate hour counts
 - Provide **transparent rate sheets** (no surprise surcharges)
@@ -136,7 +136,7 @@ Feel free to reference or link to this guide in budget planning articles, caregi
 
 [Contact us](/contact/services) for a customized cost breakdown and scheduling plan that keeps your loved one safe—and your budget predictable.
 
-*Jeff DeJoseph is a leader in the evolving field of aging in place and the services that enable people to remain happy and healthy at home. His company, [360 Degree Care](https://www.360degreecare.net), provides concierge home care services for seniors and those transitioning from hospital or rehab to home.*
+*Haven Home Health is a leader in the evolving field of aging in place and the services that enable people to remain happy and healthy at home, providing concierge home care services for seniors and those transitioning from hospital or rehab to home.*
 `
 }
 

@@ -8,7 +8,7 @@ const seniorResourcesBergenPassaic = {
         'A curated roundup of senior centers, adult day programs, veteran services, dementia networks, and transportation supports serving Bergen and Passaic County families.',
     category: 'Local Guides',
     author: {
-        name: 'Jeff DeJoseph',
+        name: 'Haven Health Editorial',
         title: 'Leader in Aging in Place Services',
         avatar: getImgSrc('Jeff')
     },
@@ -38,7 +38,7 @@ const seniorResourcesBergenPassaic = {
     contentType: 'markdown',
     content: `# 5 Local Resources Every Senior and Family Caregiver Should Know in Bergen and Passaic County
 
-If you’re searching for **senior resources Bergen County**, reliable **Passaic County caregiver support**, or other **local senior programs in NJ**, start with the organizations below. Each delivers practical help—transportation, respite, benefits counseling, or dementia guidance—and most collaborate closely with home care agencies like 360 Degree Care.
+If you’re searching for **senior resources Bergen County**, reliable **Passaic County caregiver support**, or other **local senior programs in NJ**, start with the organizations below. Each delivers practical help—transportation, respite, benefits counseling, or dementia guidance—and most collaborate closely with home care agencies like Haven Home Health.
 
 ## 1. Senior Center Networks (Socialization + Meals)
 
@@ -91,7 +91,7 @@ Share this guide with the organizations above and invite reciprocal links so car
 
 ## Need Help Navigating Referrals?
 
-360 Degree Care collaborates with every organization listed here. We:
+Haven Home Health collaborates with every organization listed here. We:
 
 - Coordinate RN assessments with adult day teams
 - Align home care schedules with paratransit pickup windows
@@ -99,7 +99,7 @@ Share this guide with the organizations above and invite reciprocal links so car
 
 [Reach out](/contact/services) for a concierge-style care plan that connects your loved one to the right Bergen or Passaic County programs without the paperwork headache.
 
-*Jeff DeJoseph is a leader in the evolving field of aging in place and the services that enable people to remain happy and healthy at home. His company, [360 Degree Care](https://www.360degreecare.net), provides concierge home care services for seniors and those transitioning from hospital or rehab to home.*
+*Haven Home Health is a leader in the evolving field of aging in place and the services that enable people to remain happy and healthy at home, providing concierge home care services for seniors and those transitioning from hospital or rehab to home.*
 `
 }
 

@@ -8,7 +8,7 @@ const politicalGame = {
         "Making decisions about aging parents often surfaces complex family dynamics, transforming straightforward choices into political minefields. Learn how to navigate family disagreements and prioritize your parent's well-being.",
     category: 'Family Dynamics',
     author: {
-        name: 'Jeff DeJoseph',
+        name: 'Haven Health Editorial',
         title: 'Leader in Aging in Place Services',
         avatar: getImgSrc('Jeff')
     },
@@ -93,9 +93,9 @@ By focusing on **open communication, professional guidance, and your parent's do
 
 > "The best family decisions about aging parents happen when everyone remembers they're on the same team, even when they disagree on the strategy."
 
-If your family is struggling with difficult decisions about aging parent care, [connect with our care experts](/contact/general) at 360 Degree Care. We can provide neutral, professional guidance to help navigate these complex family dynamics.
+If your family is struggling with difficult decisions about aging parent care, [connect with our care experts](/contact/general) at Haven Home Health. We can provide neutral, professional guidance to help navigate these complex family dynamics.
 
-*Jeff DeJoseph is a leader in the evolving field of aging in place and the services that enable people to remain happy and healthy at home. His company, [360 Degree Care](https://www.360degreecare.net), provides concierge home care services for seniors and those returning from the hospital or rehab.*
+*Haven Home Health is a leader in the evolving field of aging in place and the services that enable people to remain happy and healthy at home, providing concierge home care services for seniors and those returning from the hospital or rehab.*
 `
 }
 

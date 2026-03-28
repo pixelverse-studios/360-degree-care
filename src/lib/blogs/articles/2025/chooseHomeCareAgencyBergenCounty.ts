@@ -1,5 +1,3 @@
-import { getImgSrc } from '@/lib/images'
-
 const chooseHomeCareAgencyBergenCounty = {
     id: 'choose-home-care-agency-bergen-county',
     title: "How to Choose a Home Care Agency in Bergen County: A Family's Guide",
@@ -8,9 +6,9 @@ const chooseHomeCareAgencyBergenCounty = {
         'Finding the right home care agency in Bergen County? This guide walks you through what to look for, questions to ask, and red flags to avoid.',
     category: 'Family Care Guides',
     author: {
-        name: '360 Degree Care Team',
+        name: 'Haven Home Health Team',
         title: 'Home Care Specialists',
-        avatar: getImgSrc('360Logo')
+        avatar: '/logo.png'
     },
     publishDate: '2025-01-20',
     readTime: '10 min read',
@@ -40,7 +38,7 @@ const chooseHomeCareAgencyBergenCounty = {
 
 Bergen County has dozens of home care options—from national franchises to local independents, from large operations to family-run businesses. How do you find the right fit for your family?
 
-At 360 Degree Care, we've been serving Bergen County families for years, and we've seen what makes the difference between good care and great care. This guide shares what we've learned—not to sell you on any particular agency, but to help you make an informed choice.
+At Haven Home Health, we've been serving Bergen County families for years, and we've seen what makes the difference between good care and great care. This guide shares what we've learned—not to sell you on any particular agency, but to help you make an informed choice.
 
 ## Start by Understanding What You Need
 
@@ -74,7 +72,7 @@ However, franchise quality can vary significantly by location. The owner and sta
 
 ### Local Independent Agencies
 
-Local agencies like 360 Degree Care are owned and operated within the community. They typically offer more personalized service, direct access to leadership, and deeper community roots.
+Local agencies like Haven Home Health are owned and operated within the community. They typically offer more personalized service, direct access to leadership, and deeper community roots.
 
 The trade-off may be smaller scale, though many families find this is actually a benefit—you're not just another client number.
 
@@ -86,7 +84,7 @@ Some services simply connect families with independent caregivers. The caregiver
 
 Bergen County is large and diverse. An agency based in southern Bergen County may serve northern Bergen County but might not have the same presence or response time. Consider where the agency is headquartered and whether they have caregivers in your specific area.
 
-At 360 Degree Care, we're based in Ridgewood and serve communities throughout Bergen and Passaic Counties, including Paramus, Fort Lee, Hackensack, Teaneck, Englewood, and surrounding towns.
+At Haven Home Health, we're based in Ridgewood and serve communities throughout Bergen and Passaic Counties, including Paramus, Fort Lee, Hackensack, Teaneck, Englewood, and surrounding towns.
 
 ## What to Look for in a Quality Agency
 
@@ -112,7 +110,7 @@ Supervision is equally important. How does the agency ensure care quality over t
 
 Technical competence isn't enough—personality fit matters enormously for day-to-day satisfaction. The best agencies take time to understand your loved one as a person, considering personality and temperament, interests and background, language and cultural factors, specific care preferences, and schedule compatibility.
 
-At 360 Degree Care, we believe this matching process is one of the most important things we do. We're small enough to know every client personally, and we won't send just anyone—we'll send someone we believe is genuinely right for your family.
+At Haven Home Health, we believe this matching process is one of the most important things we do. We're small enough to know every client personally, and we won't send just anyone—we'll send someone we believe is genuinely right for your family.
 
 ### Clear Communication Systems
 
@@ -199,7 +197,7 @@ Practical factors matter too: pricing, scheduling flexibility, proximity. But do
 
 Trust your instincts. You've been through consultations, asked questions, and observed interactions. If something feels off about an agency, even if you can't articulate why, listen to that feeling.
 
-## Why Families Choose 360 Degree Care
+## Why Families Choose Haven Home Health
 
 We'll be honest: we'd love to be the agency you choose. Here's what makes us different.
 
@@ -216,7 +214,7 @@ We'll be honest: we'd love to be the agency you choose. Here's what makes us dif
 ## Frequently Asked Questions
 
 **How long does it take to start home care services?**
-This varies by agency and situation. Some agencies can begin within days; others may take longer. At 360 Degree Care, we move as quickly as possible while ensuring proper assessment and caregiver matching. Emergency situations receive priority.
+This varies by agency and situation. Some agencies can begin within days; others may take longer. At Haven Home Health, we move as quickly as possible while ensuring proper assessment and caregiver matching. Emergency situations receive priority.
 
 **Can we meet caregivers before they start?**
 We encourage this whenever possible. Meeting your caregiver beforehand helps ease the transition for your loved one and gives you confidence in the match. We're happy to arrange introductions.
@@ -228,9 +226,9 @@ You're never locked in. Most agencies require reasonable notice (often one to tw
 
 ## Ready to Find the Right Care for Your Family?
 
-Choosing a home care agency is a significant decision, and you deserve an agency that treats it that way. At 360 Degree Care, we're here to answer your questions, address your concerns, and help you determine if we're the right fit—no pressure, no obligation.
+Choosing a home care agency is a significant decision, and you deserve an agency that treats it that way. At Haven Home Health, we're here to answer your questions, address your concerns, and help you determine if we're the right fit—no pressure, no obligation.
 
-[Contact us to schedule a consultation](/contact/services) or call [(201) 299-4243](tel:2012994243). We serve families throughout Bergen County and Passaic County, providing personalized care that helps your loved one thrive at home. Let's talk about what your family needs.`
+[Contact us to schedule a consultation](/contact/services) or call [(555) 123-4567](tel:5551234567). We serve families throughout Bergen County and Passaic County, providing personalized care that helps your loved one thrive at home. Let's talk about what your family needs.`
 }
 
 export default chooseHomeCareAgencyBergenCounty

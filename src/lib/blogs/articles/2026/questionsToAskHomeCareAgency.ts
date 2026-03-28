@@ -1,5 +1,3 @@
-import { getImgSrc } from '@/lib/images'
-
 const questionsToAskHomeCareAgency = {
     id: 'questions-to-ask-home-care-agency',
     title: '15 Questions to Ask Before Hiring a Home Care Agency in Bergen County',
@@ -8,9 +6,9 @@ const questionsToAskHomeCareAgency = {
         'Essential questions to ask before hiring a home care agency in Bergen County, NJ. Use this checklist to find the right caregiver for your loved one.',
     category: 'Family Care Guides',
     author: {
-        name: '360 Degree Care Team',
+        name: 'Haven Home Health Team',
         title: 'Home Care Specialists',
-        avatar: getImgSrc('360Logo')
+        avatar: '/logo.png'
     },
     publishDate: '2025-01-15',
     readTime: '10 min read',
@@ -40,7 +38,7 @@ const questionsToAskHomeCareAgency = {
 
 With dozens of home care agencies serving Bergen County, Passaic County, and surrounding Northern New Jersey communities, how do you separate the exceptional from the mediocre? You ask the right questions.
 
-At 360 Degree Care, we welcome tough questions from families—it shows you're serious about finding the best care. Below are the 15 questions every family should ask before signing with any home care agency.
+At Haven Home Health, we welcome tough questions from families—it shows you're serious about finding the best care. Below are the 15 questions every family should ask before signing with any home care agency.
 
 ## Questions About the Agency Itself
 
@@ -92,7 +90,7 @@ A technically skilled caregiver isn't enough—personality fit matters enormousl
 
 **What to listen for:** A thoughtful process that considers personality, interests, language needs, cultural background, and specific care requirements. The best agencies take time to understand your loved one as a person, not just a list of medical needs.
 
-At 360 Degree Care, we believe this matching process is one of the most important things we do. We're a small, family-run agency specifically because we want to know every client personally—not treat them as a number in the system.
+At Haven Home Health, we believe this matching process is one of the most important things we do. We're a small, family-run agency specifically because we want to know every client personally—not treat them as a number in the system.
 
 **Red flag:** "We send whoever is available" or no mention of compatibility considerations.
 
@@ -154,7 +152,7 @@ Transparency about costs prevents surprises and builds trust.
 
 **What to listen for:** Clear hourly rates or package pricing, explanation of what's included, and honest discussion of additional costs (if any). Ask about minimum hour requirements, overtime rates, and holiday pricing.
 
-At 360 Degree Care, we provide detailed, personalized quotes after understanding your specific needs. Every family's situation is different, and we believe pricing should reflect the actual care required. For a general overview of what to expect, see our guide on [home care costs in Northern New Jersey](/blog/cost-of-home-care-northern-new-jersey).
+At Haven Home Health, we provide detailed, personalized quotes after understanding your specific needs. Every family's situation is different, and we believe pricing should reflect the actual care required. For a general overview of what to expect, see our guide on [home care costs in Northern New Jersey](/blog/cost-of-home-care-northern-new-jersey).
 
 **Red flag:** Reluctance to discuss pricing, hidden fees, or rates that seem too good to be true.
 
@@ -187,7 +185,7 @@ Beyond questioning the agency, ask yourself:
 
 The home care industry includes both exceptional agencies and those cutting corners. These questions help you identify which is which before you commit.
 
-At 360 Degree Care, we're a family-run agency because we believe home care should feel personal. When you call us, you're not talking to a call center—you're talking to people who genuinely care about getting this decision right for your family.
+At Haven Home Health, we're a family-run agency because we believe home care should feel personal. When you call us, you're not talking to a call center—you're talking to people who genuinely care about getting this decision right for your family.
 
 We serve families throughout Bergen County and Passaic County, from Ridgewood and Paramus to Hackensack, Teaneck, Fort Lee, and beyond. Every client receives individualized attention because that's the only way to provide excellent care.
 
@@ -206,9 +204,9 @@ You're not stuck. Most agency agreements allow you to end services with reasonab
 
 ## Ready to Ask Us These Questions?
 
-We welcome the opportunity to answer every question on this list—and any others you might have. At 360 Degree Care, we believe the best client relationships start with honest conversations.
+We welcome the opportunity to answer every question on this list—and any others you might have. At Haven Home Health, we believe the best client relationships start with honest conversations.
 
-[Contact us to schedule a consultation](/contact/services) or call us at [(201) 299-4243](tel:2012994243). Our team is ready to discuss your family's needs and explain exactly how we can help. No pressure, no obligations—just straightforward answers from people who care.`
+[Contact us to schedule a consultation](/contact/services) or call us at [(555) 123-4567](tel:5551234567). Our team is ready to discuss your family's needs and explain exactly how we can help. No pressure, no obligations—just straightforward answers from people who care.`
 }
 
 export default questionsToAskHomeCareAgency

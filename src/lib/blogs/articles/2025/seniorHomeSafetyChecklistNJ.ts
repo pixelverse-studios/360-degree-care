@@ -8,7 +8,7 @@ const seniorHomeSafetyChecklistNJ = {
         'Room-by-room improvements—from grab bars to winter-ready entryways—tailored to older Bergen and Passaic County homes so seniors can age in place safely.',
     category: 'Home Safety',
     author: {
-        name: 'Jeff DeJoseph',
+        name: 'Haven Health Editorial',
         title: 'Leader in Aging in Place Services',
         avatar: getImgSrc('Jeff')
     },
@@ -129,7 +129,7 @@ Reciprocal links help residents discover vetted providers while boosting local S
 
 ## Need Help Coordinating Upgrades?
 
-360 Degree Care’s concierge team works with NJ-certified OTs, contractors, and durable medical equipment vendors to turn this checklist into an actionable project plan. We:
+Haven Home Health’s concierge team works with NJ-certified OTs, contractors, and durable medical equipment vendors to turn this checklist into an actionable project plan. We:
 
 - Conduct on-site home safety assessments
 - Coordinate installer schedules around caregiver shifts
@@ -137,7 +137,7 @@ Reciprocal links help residents discover vetted providers while boosting local S
 
 [Contact us](/contact/services) to align home modifications with your loved one’s care needs—before the next storm or slip forces an emergency move.
 
-*Jeff DeJoseph is a leader in the evolving field of aging in place and the services that enable people to remain happy and healthy at home. His company, [360 Degree Care](https://www.360degreecare.net), provides concierge home care services for seniors and those transitioning from hospital or rehab to home.*
+*Haven Home Health is a leader in the evolving field of aging in place and the services that enable people to remain happy and healthy at home, providing concierge home care services for seniors and those transitioning from hospital or rehab to home.*
 `
 }
 

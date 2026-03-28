@@ -1,5 +1,3 @@
-import { getImgSrc } from '@/lib/images'
-
 const homeCareVsAssistedLivingNJ = {
     id: 'home-care-vs-assisted-living-nj',
     title: 'Home Care vs. Assisted Living in NJ: Which Is Right for Your Parent?',
@@ -8,9 +6,9 @@ const homeCareVsAssistedLivingNJ = {
         'Comparing home care and assisted living in New Jersey? Learn the costs, benefits, and drawbacks of each to make the best choice for your aging parent.',
     category: 'Family Care Guides',
     author: {
-        name: '360 Degree Care Team',
+        name: 'Haven Home Health Team',
         title: 'Home Care Specialists',
-        avatar: getImgSrc('360Logo')
+        avatar: '/logo.png'
     },
     publishDate: '2025-01-15',
     readTime: '10 min read',
@@ -38,7 +36,7 @@ const homeCareVsAssistedLivingNJ = {
     contentType: 'markdown',
     content: `When an aging parent needs more support than they can manage alone, families face a difficult question: Should they move to assisted living, or receive care at home?
 
-There's no universally right answer. The best choice depends on your parent's needs, preferences, finances, and family situation. At 360 Degree Care, we've helped hundreds of Bergen County and Passaic County families think through this decision.
+There's no universally right answer. The best choice depends on your parent's needs, preferences, finances, and family situation. At Haven Home Health, we've helped hundreds of Bergen County and Passaic County families think through this decision.
 
 This guide compares home care and assisted living across the factors that matter most—so you can make an informed choice for your family.
 
@@ -189,9 +187,9 @@ Resistance is common. Involve their doctor in the conversation—sometimes senio
 
 ## Let's Talk About Your Options
 
-Every family's situation is different. At 360 Degree Care, we help Bergen County and Passaic County families think through their options honestly—including when home care might not be the best fit.
+Every family's situation is different. At Haven Home Health, we help Bergen County and Passaic County families think through their options honestly—including when home care might not be the best fit.
 
-[Contact us for a consultation](/contact/services) or call [(201) 299-4243](tel:2012994243). We'll assess your parent's needs, discuss what home care can provide, and give you straightforward information to support your decision. No pressure, no sales pitch—just honest guidance from people who understand what you're facing.`
+[Contact us for a consultation](/contact/services) or call [(555) 123-4567](tel:5551234567). We'll assess your parent's needs, discuss what home care can provide, and give you straightforward information to support your decision. No pressure, no sales pitch—just honest guidance from people who understand what you're facing.`
 }
 
 export default homeCareVsAssistedLivingNJ

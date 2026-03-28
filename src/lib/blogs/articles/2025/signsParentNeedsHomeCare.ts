@@ -1,5 +1,3 @@
-import { getImgSrc } from '@/lib/images'
-
 const signsParentNeedsHomeCare = {
     id: 'signs-parent-needs-home-care',
     title: '10 Signs Your Aging Parent May Need Home Care',
@@ -8,9 +6,9 @@ const signsParentNeedsHomeCare = {
         'Not sure if your aging parent needs help at home? Learn the 10 warning signs that indicate it may be time to consider home care services.',
     category: 'Family Care Guides',
     author: {
-        name: '360 Degree Care Team',
+        name: 'Haven Home Health Team',
         title: 'Home Care Specialists',
-        avatar: getImgSrc('360Logo')
+        avatar: '/logo.png'
     },
     publishDate: '2025-01-15',
     readTime: '9 min read',
@@ -40,7 +38,7 @@ const signsParentNeedsHomeCare = {
 
 Recognizing when an aging parent needs help isn't easy. They may downplay struggles to avoid worrying you. You may rationalize what you're seeing because the alternative feels overwhelming. And the line between "normal aging" and "needs intervention" isn't always clear.
 
-At 360 Degree Care, we've walked alongside hundreds of Bergen County and Passaic County families through this exact process. Here are the signs we've learned to watch for—and what they might mean for your family.
+At Haven Home Health, we've walked alongside hundreds of Bergen County and Passaic County families through this exact process. Here are the signs we've learned to watch for—and what they might mean for your family.
 
 ## 1. Declining Personal Hygiene
 
@@ -152,7 +150,7 @@ If you've recognized several of these signs, it's time to take action. Here's a 
 
 **Assess the home environment.** Walk through your parent's home with fresh eyes. Look for safety hazards, signs of neglect, and areas where modifications could help.
 
-**Explore care options.** You don't have to figure this out alone. Home care agencies like 360 Degree Care can help you assess needs and understand options. An in-home evaluation gives you concrete information to work with.
+**Explore care options.** You don't have to figure this out alone. Home care agencies like Haven Home Health can help you assess needs and understand options. An in-home evaluation gives you concrete information to work with.
 
 **Don't wait for a crisis.** The time to arrange support is before a fall, before a missed medication causes hospitalization, before a safety incident changes everything. Proactive planning gives you and your parent more choices.
 
@@ -171,9 +169,9 @@ Absolutely. Many adult children feel they "should" be able to handle their paren
 
 ## Ready to Talk About Your Parent's Needs?
 
-If you're seeing these signs in your parent, we understand how difficult this moment is. At 360 Degree Care, we help Bergen County and Passaic County families navigate these transitions with compassion and practical support.
+If you're seeing these signs in your parent, we understand how difficult this moment is. At Haven Home Health, we help Bergen County and Passaic County families navigate these transitions with compassion and practical support.
 
-[Contact us for a free consultation](/contact/services) or call [(201) 299-4243](tel:2012994243). We'll listen to your concerns, answer your questions, and help you understand what options might be right for your family—with no pressure or obligation. Sometimes the first step is simply talking it through with someone who understands.`
+[Contact us for a free consultation](/contact/services) or call [(555) 123-4567](tel:5551234567). We'll listen to your concerns, answer your questions, and help you understand what options might be right for your family—with no pressure or obligation. Sometimes the first step is simply talking it through with someone who understands.`
 }
 
 export default signsParentNeedsHomeCare
