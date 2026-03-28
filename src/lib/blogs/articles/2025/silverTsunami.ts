@@ -8,7 +8,7 @@ const silverTsunamiAgingWorkforceCrisis = {
         "Every day, 10,000 baby boomers nationwide turn 65. While we've prepared for workforce gaps, we're failing to prepare for the care needs of our aging loved ones.",
     category: 'Industry News',
     author: {
-        name: 'Jeff DeJoseph',
+        name: 'Haven Health Editorial',
         title: 'Leader in Aging in Place Services',
         avatar: getImgSrc('Jeff')
     },
@@ -88,7 +88,7 @@ The question isn't whether this demographic shift will happen—it's already und
 
 **Ready to make a difference in your community?** [Learn about career opportunities](/contact/employment) in home healthcare and discover how you can be part of the solution to the Silver Tsunami.
 
-*Jeff DeJoseph is a leader in the evolving field of aging in place and the services that enable people to remain happy and healthy at home. His company, [360 Degree Care](https://www.360degreecare.net), provides concierge home care services for seniors and those returning from the hospital or rehab.*`
+*Haven Home Health is a leader in the evolving field of aging in place and the services that enable people to remain happy and healthy at home, providing concierge home care services for seniors and those returning from the hospital or rehab.*`
 }
 
 export default silverTsunamiAgingWorkforceCrisis

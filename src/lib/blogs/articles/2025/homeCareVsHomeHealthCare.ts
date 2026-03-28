@@ -1,5 +1,3 @@
-import { getImgSrc } from '@/lib/images'
-
 const homeCareVsHomeHealthCare = {
     id: 'home-care-vs-home-health-care',
     title: "Home Care vs. Home Health Care: What's the Difference (And Which Do You Need)?",
@@ -8,9 +6,9 @@ const homeCareVsHomeHealthCare = {
         'Confused about home care vs home health care? Learn the key differences, what each provides, and how to determine which services your loved one needs.',
     category: 'Family Care Guides',
     author: {
-        name: '360 Degree Care Team',
+        name: 'Haven Home Health Team',
         title: 'Home Care Specialists',
-        avatar: getImgSrc('360Logo')
+        avatar: '/logo.png'
     },
     publishDate: '2025-01-15',
     readTime: '7 min read',
@@ -38,7 +36,7 @@ const homeCareVsHomeHealthCare = {
     contentType: 'markdown',
     content: `If you're researching care options for an aging parent or loved one, you've probably noticed that "home care" and "home health care" are often used interchangeably. But they're not the same thing—and understanding the difference is essential for getting your loved one the right support.
 
-At 360 Degree Care, we help Bergen County and Passaic County families navigate these distinctions every day. Let's clear up the confusion.
+At Haven Home Health, we help Bergen County and Passaic County families navigate these distinctions every day. Let's clear up the confusion.
 
 ## The Simple Distinction
 
@@ -135,7 +133,7 @@ Determining which type of care your loved one needs starts with honest assessmen
 4. What does their doctor recommend?
 5. What can we afford, and what might be covered by insurance?
 
-**Consider a professional assessment.** Many families aren't sure where to start, and that's okay. At 360 Degree Care, we offer consultations to help you understand your options and determine the right level of care.
+**Consider a professional assessment.** Many families aren't sure where to start, and that's okay. At Haven Home Health, we offer consultations to help you understand your options and determine the right level of care.
 
 If your loved one needs medical services, we can work alongside home health providers to ensure comprehensive coverage. If non-medical support is what's needed, we'll create a personalized care plan that addresses their specific situation.
 
@@ -154,15 +152,15 @@ Medicare does not cover non-medical home care (personal care, companionship, hou
 Qualification for Medicare-covered home health care requires a doctor's order, a "homebound" status (leaving home is difficult), and a need for skilled nursing or therapy services. Your parent's physician or hospital discharge planner can help determine eligibility.
 
 **Can the same agency provide both home care and home health care?**
-Some larger agencies offer both services, while others specialize in one or the other. At 360 Degree Care, we focus on non-medical home care services and coordinate with home health providers when skilled services are also needed.
+Some larger agencies offer both services, while others specialize in one or the other. At Haven Home Health, we focus on non-medical home care services and coordinate with home health providers when skilled services are also needed.
 
 ---
 
 ## Still Not Sure What Your Loved One Needs?
 
-Navigating care options doesn't have to be overwhelming. At 360 Degree Care, we help Bergen County and Passaic County families understand their options and find the right fit.
+Navigating care options doesn't have to be overwhelming. At Haven Home Health, we help Bergen County and Passaic County families understand their options and find the right fit.
 
-[Contact us for a free consultation](/contact/services) or call [(201) 299-4243](tel:2012994243). Whether your loved one needs personal care, companionship, or you're simply not sure where to start, we're here to help you figure it out—no pressure, no obligations.`
+[Contact us for a free consultation](/contact/services) or call [(555) 123-4567](tel:5551234567). Whether your loved one needs personal care, companionship, or you're simply not sure where to start, we're here to help you figure it out—no pressure, no obligations.`
 }
 
 export default homeCareVsHomeHealthCare

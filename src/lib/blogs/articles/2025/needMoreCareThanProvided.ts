@@ -8,7 +8,7 @@ const needMoreCareBlog = {
         'Adult children are struggling to navigate care decisions for aging parents. Professional elder care consulting reduces family stress and improves outcomes through expert guidance.',
     category: 'Elder Care Planning',
     author: {
-        name: 'Jeff DeJoseph',
+        name: 'Haven Health Editorial',
         title: 'Leader in Aging in Place Services',
         avatar: getImgSrc('Jeff')
     },
@@ -217,7 +217,7 @@ Your parents spent decades taking care of you. Now it's your turn. But that does
 
 Call us at [phone number] or [schedule your consultation online](/contact/services). Your family deserves expert guidance during this important transition.
 
-*Jeff DeJoseph is a leader in the evolving field of aging in place and the services that enable people to remain happy and healthy at home. His company, [360 Degree Care](https://www.360degreecare.net), provides comprehensive elder care consulting and concierge home care services for families throughout New Jersey.*`
+*Haven Home Health is a leader in the evolving field of aging in place and the services that enable people to remain happy and healthy at home, providing comprehensive elder care consulting and concierge home care services for families throughout New Jersey.*`
 }
 
 export default needMoreCareBlog

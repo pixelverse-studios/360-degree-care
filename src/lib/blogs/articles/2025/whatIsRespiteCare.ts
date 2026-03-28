@@ -1,5 +1,3 @@
-import { getImgSrc } from '@/lib/images'
-
 const whatIsRespiteCare = {
     id: 'what-is-respite-care',
     title: 'What Is Respite Care and How Can It Help Family Caregivers?',
@@ -8,9 +6,9 @@ const whatIsRespiteCare = {
         'Learn what respite care is, how it helps family caregivers, and when to consider taking a break. Essential guide for anyone caring for an aging loved one.',
     category: 'Family Care Guides',
     author: {
-        name: '360 Degree Care Team',
+        name: 'Haven Home Health Team',
         title: 'Home Care Specialists',
-        avatar: getImgSrc('360Logo')
+        avatar: '/logo.png'
     },
     publishDate: '2025-01-15',
     readTime: '8 min read',
@@ -54,7 +52,7 @@ Respite care can take several forms. **In-home respite** is when a professional 
 
 **Short-term residential care** at assisted living facilities or nursing homes offers temporary stays, sometimes called "respite stays," for longer breaks like vacations.
 
-At 360 Degree Care, we focus on in-home respite care—sending trained caregivers to your loved one's home so you can take the break you need while knowing they're in good hands.
+At Haven Home Health, we focus on in-home respite care—sending trained caregivers to your loved one's home so you can take the break you need while knowing they're in good hands.
 
 ## Why Respite Care Matters
 
@@ -84,7 +82,7 @@ If you're nodding along to several of these, you need a break—not eventually, 
 
 ### In-Home Respite Care
 
-When you arrange in-home respite care through an agency like 360 Degree Care, here's what typically happens:
+When you arrange in-home respite care through an agency like Haven Home Health, here's what typically happens:
 
 **Assessment:** We learn about your loved one's needs, routines, and preferences. We also understand your situation—what kind of break do you need? A few hours weekly? A long weekend? Coverage while you travel?
 
@@ -169,9 +167,9 @@ There may be initial adjustment, especially for those with dementia. But most ol
 
 Family caregiving is an act of love. But love doesn't require sacrificing your own wellbeing. Respite care gives you space to breathe, recharge, and continue caring for the long haul.
 
-At 360 Degree Care, we provide respite care for families throughout Bergen County and Passaic County. We understand that trusting someone new with your loved one is a big step, and we take that responsibility seriously.
+At Haven Home Health, we provide respite care for families throughout Bergen County and Passaic County. We understand that trusting someone new with your loved one is a big step, and we take that responsibility seriously.
 
-[Contact us to discuss respite care options](/contact/services) or call [(201) 299-4243](tel:2012994243). Let's talk about what kind of break you need and how we can help make it happen. You've earned it.`
+[Contact us to discuss respite care options](/contact/services) or call [(555) 123-4567](tel:5551234567). Let's talk about what kind of break you need and how we can help make it happen. You've earned it.`
 }
 
 export default whatIsRespiteCare

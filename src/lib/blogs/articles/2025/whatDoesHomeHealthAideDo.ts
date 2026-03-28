@@ -6,7 +6,7 @@ const whatDoesHomeHealthAideDo = {
         'Learn what home health aides do, their daily duties, and how they help seniors stay safe at home. Discover if HHA services are right for your family.',
     category: 'Family Care Guides',
     author: {
-        name: '360 Degree Care Team',
+        name: 'Haven Home Health Team',
         title: 'Home Care Specialists',
         avatar: '/logo.png'
     },
@@ -36,7 +36,7 @@ const whatDoesHomeHealthAideDo = {
     contentType: 'markdown',
     content: `When a loved one needs help at home, "home health aide" is often one of the first terms you'll encounter. But what exactly does a home health aide do? Understanding their role—and how it differs from other types of caregivers—is essential for making the right care decision for your family.
 
-At 360 Degree Care, we've helped hundreds of Bergen County and Passaic County families navigate these questions. Based in Ridgewood and serving communities throughout Northern New Jersey, we understand the unique needs of families in our area. In this guide, we'll walk you through everything a home health aide can (and can't) do, so you know exactly what to expect.
+At Haven Home Health, we've helped hundreds of Bergen County and Passaic County families navigate these questions. Based in Ridgewood and serving communities throughout Northern New Jersey, we understand the unique needs of families in our area. In this guide, we'll walk you through everything a home health aide can (and can't) do, so you know exactly what to expect.
 
 ## What Is a Home Health Aide?
 
@@ -151,7 +151,7 @@ The earlier you arrange support, the safer your loved one will be—and the more
 
 ## Finding the Right Home Health Aide in Bergen County and Passaic County
 
-Choosing a home health aide is a significant decision. At 360 Degree Care, we understand that you're not just hiring a caregiver—you're inviting someone into your family's life during a vulnerable time.
+Choosing a home health aide is a significant decision. At Haven Home Health, we understand that you're not just hiring a caregiver—you're inviting someone into your family's life during a vulnerable time.
 
 As a family-run agency based in Ridgewood, we take the time to understand each client's unique needs, preferences, and personality. We don't believe in one-size-fits-all care. Every care plan we create is tailored specifically to your loved one.
 
@@ -172,9 +172,9 @@ Home care (sometimes called non-medical home care) includes personal care, compa
 
 ## Ready to Learn More?
 
-If you're considering home health aide services for a loved one in Bergen County, Passaic County, or the surrounding Northern New Jersey area, we're here to help you understand your options. At 360 Degree Care, we treat every client like family—because that's how we'd want our own loved ones to be treated.
+If you're considering home health aide services for a loved one in Bergen County, Passaic County, or the surrounding Northern New Jersey area, we're here to help you understand your options. At Haven Home Health, we treat every client like family—because that's how we'd want our own loved ones to be treated.
 
-[Schedule a free consultation](/contact/services) or call us at [(201) 299-4243](tel:2012994243) to discuss your family's needs and learn how a home health aide can help your loved one thrive at home.`
+[Schedule a free consultation](/contact/services) or call us at [(555) 123-4567](tel:5551234567) to discuss your family's needs and learn how a home health aide can help your loved one thrive at home.`
 }
 
 export default whatDoesHomeHealthAideDo

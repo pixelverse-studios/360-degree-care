@@ -8,7 +8,7 @@ const aiVsHomeHealthCare = {
         'Artificial intelligence is changing healthcare, but it will never replace the compassion, intuition, and human connection provided by dedicated home health aides.',
     category: 'Industry Insights',
     author: {
-        name: 'Jeff DeJoseph',
+        name: 'Haven Health Editorial',
         title: 'Leader in Aging in Place Services',
         avatar: getImgSrc('Jeff')
     },
@@ -40,7 +40,7 @@ const aiVsHomeHealthCare = {
 
 Artificial intelligence (AI) is revolutionizing many industries—including healthcare. From automating administrative tasks to remotely monitoring vital signs, AI is a powerful tool that’s improving how we deliver care. But no matter how advanced it becomes, AI will never replace the irreplaceable: **the compassionate, intuitive care of a home health aide**.
 
-At [360 Degree Care](https://www.360degreecare.net), we know that **quality elder care** depends on more than just data and technology—it depends on **human connection**.
+At [Haven Home Health](https://haven-home-health.netlify.app), we know that **quality elder care** depends on more than just data and technology—it depends on **human connection**.
 
 ## The Healing Power of Human Touch
 
@@ -63,7 +63,7 @@ Personal care tasks—like bathing, dressing, and feeding—are deeply personal 
 
 ## AI as a Tool—Not a Replacement
 
-At 360 Degree Care, we embrace technology where it helps. AI can **monitor vital signs**, offer **medication reminders**, and streamline documentation. But its role is to **support—not replace—our human caregivers**. The best outcomes in elder care come from **hybrid models**, where AI enhances efficiency and safety, while **home health aides provide the soul and heart of care**.
+At Haven Home Health, we embrace technology where it helps. AI can **monitor vital signs**, offer **medication reminders**, and streamline documentation. But its role is to **support—not replace—our human caregivers**. The best outcomes in elder care come from **hybrid models**, where AI enhances efficiency and safety, while **home health aides provide the soul and heart of care**.
 
 ## Why Human Caregivers Are the Future
 
@@ -73,9 +73,9 @@ The future of **home healthcare** depends on people—committed, compassionate c
 
 > "Care is more than a task. It’s a relationship built on presence, trust, and empathy—qualities that no machine can provide."
 
-If you or a loved one needs personalized in-home care, or you're inspired to make a difference as a caregiver, [learn more about our services and careers](/contact/employment) at 360 Degree Care.
+If you or a loved one needs personalized in-home care, or you're inspired to make a difference as a caregiver, [learn more about our services and careers](/contact/employment) at Haven Home Health.
 
-*Jeff DeJoseph is a leader in the evolving field of aging in place and the services that enable people to remain happy and healthy at home. His company, [360 Degree Care](https://www.360degreecare.net), provides concierge home care services for seniors and those returning from the hospital or rehab.*
+*Haven Home Health is a leader in the evolving field of aging in place and the services that enable people to remain happy and healthy at home, providing concierge home care services for seniors and those returning from the hospital or rehab.*
 `
 }
 

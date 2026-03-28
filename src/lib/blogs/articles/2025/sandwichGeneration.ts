@@ -8,7 +8,7 @@ const sandwichGeneration = {
         'GEN S—the Sandwich Generation—is feeling the pressure. Juggling care for aging parents and children is no joke. Discover the emotional and financial strain millions quietly carry.',
     category: 'Caregiving Insights',
     author: {
-        name: 'Jeff DeJoseph',
+        name: 'Haven Health Editorial',
         title: 'Leader in Aging in Place Services',
         avatar: getImgSrc('Jeff')
     },
@@ -113,9 +113,9 @@ Only then can we ensure that those **caught in the middle** aren’t left to sho
 
 > “GEN S is doing it all. Let’s make sure they’re not doing it alone.”
 
-If you're a Gen S-er trying to balance it all, you're not alone. At [360 Degree Care](https://www.360degreecare.net), we see you—and we're here to help. [Explore support resources and caregiving solutions](/contact/employment) that can ease your load.
+If you're a Gen S-er trying to balance it all, you're not alone. At [Haven Home Health](https://haven-home-health.netlify.app), we see you—and we're here to help. [Explore support resources and caregiving solutions](/contact/employment) that can ease your load.
 
-*Jeff DeJoseph is a leader in the evolving field of aging in place and the services that enable people to remain happy and healthy at home. His company, [360 Degree Care](https://www.360degreecare.net), provides concierge home care services for seniors and those returning from the hospital or rehab.*
+*Haven Home Health is a leader in the evolving field of aging in place and the services that enable people to remain happy and healthy at home, providing concierge home care services for seniors and those returning from the hospital or rehab.*
 `
 }
 

@@ -1,5 +1,3 @@
-import { getImgSrc } from '@/lib/images'
-
 const doesMedicareCoverHomeCareNJ = {
     id: 'does-medicare-cover-home-care-new-jersey',
     title: 'Does Medicare Cover Home Care in New Jersey? What Families Need to Know',
@@ -8,9 +6,9 @@ const doesMedicareCoverHomeCareNJ = {
         "Learn what Medicare does and doesn't cover for home care in New Jersey. Understand the difference between home health care and personal care coverage.",
     category: 'Family Care Guides',
     author: {
-        name: '360 Degree Care Team',
+        name: 'Haven Home Health Team',
         title: 'Home Care Specialists',
-        avatar: getImgSrc('360Logo')
+        avatar: '/logo.png'
     },
     publishDate: '2025-01-15',
     readTime: '7 min read',
@@ -36,7 +34,7 @@ const doesMedicareCoverHomeCareNJ = {
         ]
     },
     contentType: 'markdown',
-    content: `One of the most common questions we hear from families at 360 Degree Care is: "Will Medicare pay for this?" The answer is complicated—and often disappointing.
+    content: `One of the most common questions we hear from families at Haven Home Health is: "Will Medicare pay for this?" The answer is complicated—and often disappointing.
 
 The short version: Medicare has very limited coverage for home care services. Understanding what is and isn't covered can save you frustration and help you plan realistically for your loved one's care.
 
@@ -163,9 +161,9 @@ Most families pay privately (out-of-pocket), use long-term care insurance if the
 
 ## Need Help Understanding Your Options?
 
-Medicare coverage is confusing, and the gap between what families expect and what's actually covered catches many by surprise. At 360 Degree Care, we help Bergen County and Passaic County families understand their options and create care plans that work within their resources.
+Medicare coverage is confusing, and the gap between what families expect and what's actually covered catches many by surprise. At Haven Home Health, we help Bergen County and Passaic County families understand their options and create care plans that work within their resources.
 
-[Contact us to discuss care options and costs](/contact/services) or call [(201) 299-4243](tel:2012994243). We provide the [personal care](/services/personal-care), [companionship](/services/companion-care), and daily assistance that Medicare doesn't cover—the services that help your loved one live safely and comfortably at home. Let's talk about what your family needs and how to make it work.`
+[Contact us to discuss care options and costs](/contact/services) or call [(555) 123-4567](tel:5551234567). We provide the [personal care](/services/personal-care), [companionship](/services/companion-care), and daily assistance that Medicare doesn't cover—the services that help your loved one live safely and comfortably at home. Let's talk about what your family needs and how to make it work.`
 }
 
 export default doesMedicareCoverHomeCareNJ

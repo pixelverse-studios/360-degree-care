@@ -8,7 +8,7 @@ const northJerseyCaregiverRoadmap = {
         "A practical path for Bergen, Passaic, Essex, and Monmouth County families to organize COPD, CHF, diabetes, and Parkinson's care at home without burning out.",
     category: 'Caregiving Guides',
     author: {
-        name: 'Jeff DeJoseph',
+        name: 'Haven Health Editorial',
         title: 'Leader in Aging in Place Services',
         avatar: getImgSrc('Jeff')
     },
@@ -45,7 +45,7 @@ Nearly half of New Jersey adults 65+ manage two or more chronic conditions, acco
 
 ## Step 1: Capture the Whole Picture
 
-1. **Run a 360° intake** – Document diagnoses, medications, baseline vitals, preferred hospitals, and advanced directives in one shared file. Our [contact team](/contact/services) walks through this during onboarding so every nurse, CHHA, and therapist sees the same source of truth.
+1. **Run a comprehensive intake** – Document diagnoses, medications, baseline vitals, preferred hospitals, and advanced directives in one shared file. Our [contact team](/contact/services) walks through this during onboarding so every nurse, CHHA, and therapist sees the same source of truth.
 2. **Highlight escalation triggers** – For COPD that could be pulse-ox dropping below 92%; for heart failure it might be a sudden 3 lb weight gain. Post the trigger list on the fridge.
 3. **Map the care circle** – Include specialists, urgent care preferences, faith leaders, and siblings. Shared phone trees reduce midnight guesswork.
 
@@ -61,7 +61,7 @@ Need help? Our [Bergen County personal care team](/services/personal-care/bergen
 
 | Day | Core Tasks | Who Owns It |
 | --- | --- | --- |
-| Monday | RN med reconciliation + refill check | 360 Degree Care nurse |
+| Monday | RN med reconciliation + refill check | Haven Home Health nurse |
 | Tuesday | Physical therapy homework review | Client + CHHA |
 | Wednesday | Telehealth follow-ups + paperwork | Family caregiver |
 | Thursday | Grocery / meal prep for renal or cardiac diets | Companion aide |
@@ -116,11 +116,11 @@ Care quality tanks when you are running on fumes. Bake these safeguards into the
 
 ## Ready to Breathe Again?
 
-360 Degree Care coordinates nurses, therapists, and aides across Bergen, Passaic, Essex, Monmouth, and Ocean counties—so you do not have to play air-traffic controller alone. We share intake data across campaigns and routes, meaning you repeat your story once and every visitor honors it.
+Haven Home Health coordinates nurses, therapists, and aides across Bergen, Passaic, Essex, Monmouth, and Ocean counties—so you do not have to play air-traffic controller alone. We share intake data across campaigns and routes, meaning you repeat your story once and every visitor honors it.
 
 [Schedule a chronic condition care consult](/contact/services) and we will tailor this roadmap to your family.
 
-*Jeff DeJoseph is a leader in the evolving field of aging in place and the services that enable people to remain happy and healthy at home. His company, [360 Degree Care](https://www.360degreecare.net), provides concierge home care services for seniors and those returning from the hospital or rehab.*
+*Haven Home Health is a leader in the evolving field of aging in place and the services that enable people to remain happy and healthy at home, providing concierge home care services for seniors and those returning from the hospital or rehab.*
 `
 }
 

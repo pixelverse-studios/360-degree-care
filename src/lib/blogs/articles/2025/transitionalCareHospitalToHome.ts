@@ -8,7 +8,7 @@ const transitionalCareHospitalToHome = {
         'Understand the post-discharge playbook—from hospital orders to in-home nursing oversight—that keeps Bergen and Passaic County seniors from bouncing back to the ER.',
     category: 'Care Transitions',
     author: {
-        name: 'Jeff DeJoseph',
+        name: 'Haven Health Editorial',
         title: 'Leader in Aging in Place Services',
         avatar: getImgSrc('Jeff')
     },
@@ -55,7 +55,7 @@ Here’s what an effective hospital-to-home journey looks like when concierge ho
 
 ## Step 2: Transitional Care Team Handoff
 
-360 Degree Care assigns a dedicated **Transitional Care Coordinator** who:
+Haven Home Health assigns a dedicated **Transitional Care Coordinator** who:
 
 - Reviews the discharge packet with the family
 - Schedules an **RN start-of-care visit** (often within 24–48 hours)
@@ -132,7 +132,7 @@ Reciprocal links signal to patients that your organization collaborates with vet
 
 ## Ready to Coordinate Your Next Transition?
 
-360 Degree Care delivers **home recovery services for Bergen County and Passaic County seniors** with:
+Haven Home Health delivers **home recovery services for Bergen County and Passaic County seniors** with:
 
 - Same-week RN start-of-care visits
 - 24/7 on-call clinical leadership for urgent questions
@@ -140,7 +140,7 @@ Reciprocal links signal to patients that your organization collaborates with vet
 
 [Reach out](/contact/services) before discharge day to set up a seamless **transitional home care** experience—and keep your loved one on the road to recovery at home.
 
-*Jeff DeJoseph is a leader in the evolving field of aging in place and the services that enable people to remain happy and healthy at home. His company, [360 Degree Care](https://www.360degreecare.net), provides concierge home care services for seniors and those transitioning from hospital or rehab to home.*
+*Haven Home Health is a leader in the evolving field of aging in place and the services that enable people to remain happy and healthy at home, providing concierge home care services for seniors and those transitioning from hospital or rehab to home.*
 `
 }
 

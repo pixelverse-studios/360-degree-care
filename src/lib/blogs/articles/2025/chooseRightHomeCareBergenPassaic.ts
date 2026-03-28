@@ -8,7 +8,7 @@ const chooseRightHomeCareBergenPassaic = {
         'A practical NJ senior home care guide for families in Bergen and Passaic County—complete with licensing details, interview questions, and red flags to avoid.',
     category: 'Family Care Guides',
     author: {
-        name: 'Jeff DeJoseph',
+        name: 'Haven Health Editorial',
         title: 'Leader in Aging in Place Services',
         avatar: getImgSrc('Jeff')
     },
@@ -132,7 +132,7 @@ These partners often appreciate ready-made guides they can link to or print, cre
 
 ## Ready to Compare Agencies?
 
-Choosing between multiple agencies can still feel overwhelming. 360 Degree Care offers:
+Choosing between multiple agencies can still feel overwhelming. Haven Home Health offers:
 
 - **Concierge-level personal and companion care** throughout Bergen and Passaic County.
 - **Nurse-led care planning** that aligns with your physician team.
@@ -140,7 +140,7 @@ Choosing between multiple agencies can still feel overwhelming. 360 Degree Care 
 
 Need personalized help applying this checklist? [Contact our local team](/contact/services) and we’ll walk through your scenario, share references, and design a care plan that keeps your loved one safe at home in northern New Jersey.
 
-*Jeff DeJoseph is a leader in the evolving field of aging in place and the services that enable people to remain happy and healthy at home. His company, [360 Degree Care](https://www.360degreecare.net), provides concierge home care services for seniors and those transitioning from hospital or rehab to home.*
+*Haven Home Health is a leader in the evolving field of aging in place and the services that enable people to remain happy and healthy at home, providing concierge home care services for seniors and those transitioning from hospital or rehab to home.*
 `
 }
 

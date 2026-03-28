@@ -1,5 +1,3 @@
-import { getImgSrc } from '@/lib/images'
-
 const howToPayForHomeCareNJ = {
     id: 'how-to-pay-for-home-care-nj',
     title: 'How to Pay for Home Care for Elderly Parents in NJ: 7 Options Explained',
@@ -8,9 +6,9 @@ const howToPayForHomeCareNJ = {
         'Struggling to afford home care for aging parents? Learn 7 ways New Jersey families pay for senior care, from insurance to VA benefits to Medicaid.',
     category: 'Family Care Guides',
     author: {
-        name: '360 Degree Care Team',
+        name: 'Haven Home Health Team',
         title: 'Home Care Specialists',
-        avatar: getImgSrc('360Logo')
+        avatar: '/logo.png'
     },
     publishDate: '2025-01-15',
     readTime: '12 min read',
@@ -40,7 +38,7 @@ const howToPayForHomeCareNJ = {
 
 Home care is a significant expense. In New Jersey, families can spend thousands of dollars monthly depending on the level of care needed. But care is also necessary—your parent's safety and quality of life depend on it.
 
-The good news: more options exist than most families realize. At 360 Degree Care, we've helped Bergen County and Passaic County families navigate these financial waters for years. For an overview of what care costs, see our guide on [home care costs in Northern New Jersey](/blog/cost-of-home-care-northern-new-jersey). Here are seven ways families pay for home care, and how to determine which might work for you.
+The good news: more options exist than most families realize. At Haven Home Health, we've helped Bergen County and Passaic County families navigate these financial waters for years. For an overview of what care costs, see our guide on [home care costs in Northern New Jersey](/blog/cost-of-home-care-northern-new-jersey). Here are seven ways families pay for home care, and how to determine which might work for you.
 
 ## 1. Private Pay (Out-of-Pocket)
 
@@ -271,9 +269,9 @@ In some circumstances, yes. Medicaid programs may pay family caregivers. VA bene
 
 ## Let's Discuss Your Options
 
-Paying for home care is challenging, but options exist. At 360 Degree Care, we work with Bergen County and Passaic County families to create care plans that fit both needs and budgets. For more information, visit our [How to Pay](/how-to-pay) page.
+Paying for home care is challenging, but options exist. At Haven Home Health, we work with Bergen County and Passaic County families to create care plans that fit both needs and budgets. For more information, visit our [How to Pay](/how-to-pay) page.
 
-[Contact us for a consultation](/contact/services) or call [(201) 299-4243](tel:2012994243). We're happy to discuss what care your parent needs and help you think through how to fund it sustainably. There's no obligation—just honest conversation about your options.`
+[Contact us for a consultation](/contact/services) or call [(555) 123-4567](tel:5551234567). We're happy to discuss what care your parent needs and help you think through how to fund it sustainably. There's no obligation—just honest conversation about your options.`
 }
 
 export default howToPayForHomeCareNJ

@@ -8,7 +8,7 @@ const licensedHomeHealthAideVisitNJ = {
         'See how NJ-certified home health aides are trained, supervised, and supported so every visit feels safe, professional, and transparent for your family.',
     category: 'Care Quality',
     author: {
-        name: 'Jeff DeJoseph',
+        name: 'Haven Health Editorial',
         title: 'Leader in Aging in Place Services',
         avatar: getImgSrc('Jeff')
     },
@@ -46,7 +46,7 @@ Inviting someone into your home is personal—and the stakes feel even higher wh
 ## 1. Licensing and Training Come First
 
 - **State requirements:** New Jersey mandates 76+ hours of classroom and clinical training plus a competency exam under the NJ Board of Nursing. Fingerprinting, background checks, and continuing education are non-negotiable.
-- **360 Degree Care add-ons:** We layer skills labs for transfers, dementia care, and chronic-condition alerts that reflect Bergen, Passaic, Essex, and Monmouth County client needs.
+- **Haven Home Health add-ons:** We layer skills labs for transfers, dementia care, and chronic-condition alerts that reflect Bergen, Passaic, Essex, and Monmouth County client needs.
 - **Documentation:** Credentials, CE logs, and nurse supervision records stay on file and are reviewed before an aide is matched with your family.
 
 ## 2. Vetting and Matching the Right Aide
@@ -104,11 +104,11 @@ Yes, if driving is on the care plan and the aide carries the proper insurance. O
 
 ## Ready for a Visit That Inspires Confidence?
 
-Families across Bergen, Passaic, Essex, Monmouth, and Ocean counties rely on 360 Degree Care because every CHHA visit is backed by licensed supervision, transparent communication, and compassionate professionals.
+Families across Bergen, Passaic, Essex, Monmouth, and Ocean counties rely on Haven Home Health because every CHHA visit is backed by licensed supervision, transparent communication, and compassionate professionals.
 
 [Request a home health aide introduction](/contact/services) and we will design a visit plan tailored to your loved one's routines.
 
-*Jeff DeJoseph is a leader in the evolving field of aging in place and the services that enable people to remain happy and healthy at home. His company, [360 Degree Care](https://www.360degreecare.net), provides concierge home care services for seniors and those transitioning from hospital or rehab to home.*
+*Haven Home Health is a leader in the evolving field of aging in place and the services that enable people to remain happy and healthy at home, providing concierge home care services for seniors and those transitioning from hospital or rehab to home.*
 `
 }
 

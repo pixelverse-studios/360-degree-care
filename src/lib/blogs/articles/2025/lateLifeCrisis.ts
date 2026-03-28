@@ -8,7 +8,7 @@ const lateLifeCrisis = {
         'For adult children of aging parents, finding quality in-home care in New Jersey can be overwhelming. Discover how concierge-level services offer peace of mind and maintain dignity.',
     category: 'Senior Care',
     author: {
-        name: 'Jeff DeJoseph',
+        name: 'Haven Health Editorial',
         title: 'Leader in Aging in Place Services',
         avatar: getImgSrc('Jeff')
     },

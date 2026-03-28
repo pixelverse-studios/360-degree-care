@@ -8,7 +8,7 @@ const homecareDecisionShift = {
         "The homecare industry's explosive growth is moderating as Baby Boomers replace the Greatest Generation as primary clients, bringing new economic and cultural challenges.",
     category: 'Industry News',
     author: {
-        name: 'Jeff DeJoseph',
+        name: 'Haven Health Editorial',
         title: 'Leader in Aging in Place Services',
         avatar: getImgSrc('Jeff')
     },
@@ -184,7 +184,7 @@ Whether through affordable, tech-enhanced services or partnerships with ALFs, th
 
 **Ready to navigate the changing landscape of eldercare?** [Contact us](/contact) to explore innovative care solutions that balance independence, affordability, and quality of life for your loved ones.
 
-*This analysis was prepared by Jeff DeJoseph, a leader in the evolving field of aging in place and the services that enable people to remain happy and healthy at home. His company, [360 Degree Care](https://www.360degreecare.net), provides concierge home care services for seniors and those returning from the hospital or rehab.*
+*This analysis was prepared by the Haven Home Health team, leaders in the evolving field of aging in place and the services that enable people to remain happy and healthy at home, providing concierge home care services for seniors and those returning from the hospital or rehab.*
 `
 }
 
