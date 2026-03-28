@@ -3,37 +3,37 @@ import { FaArrowRight } from 'react-icons/fa6'
 import { getImgSrc } from '../images'
 
 export const homeHealthAidesMetadata: Metadata = {
-    title: 'Home Health Aide Services in New Jersey | 360 Degree Care',
+    title: 'Home Health Aide Services in New Jersey | Haven Home Health',
     description:
         'Certified home health aides in New Jersey providing hands-on support with daily living, personal care, mobility, and in-home assistance.',
     keywords:
         'home health aide, certified home health aide, daily living support, hygiene assistance, companionship, New Jersey',
     openGraph: {
         type: 'website',
-        url: 'https://www.360degreecare.net/services/home-health-aides',
-        title: 'Home Health Aide Services in New Jersey | 360 Degree Care',
+        url: 'https://haven-home-health.netlify.app/services/home-health-aides',
+        title: 'Home Health Aide Services in New Jersey | Haven Home Health',
         description:
             'Certified home health aides in New Jersey providing hands-on support with daily living, personal care, mobility, and in-home assistance.',
         images: [
             {
-                url: 'https://www.360degreecare.net/assets/home-health-aides-image.jpg'
+                url: 'https://haven-home-health.netlify.app/assets/home-health-aides-image.jpg'
             }
         ],
         locale: 'en_US',
-        siteName: '360 Degree Care'
+        siteName: 'Haven Home Health'
     },
     twitter: {
         card: 'summary_large_image',
-        title: 'Home Health Aide Services in New Jersey | 360 Degree Care',
+        title: 'Home Health Aide Services in New Jersey | Haven Home Health',
         description:
             'Certified home health aides in New Jersey providing hands-on support with daily living, personal care, mobility, and in-home assistance.',
         images: [
-            'https://www.360degreecare.net/assets/home-health-aides-image.jpg'
+            'https://haven-home-health.netlify.app/assets/home-health-aides-image.jpg'
         ]
     },
     robots: { index: true, follow: true },
     alternates: {
-        canonical: 'https://www.360degreecare.net/services/home-health-aides'
+        canonical: 'https://haven-home-health.netlify.app/services/home-health-aides'
     },
     other: {
         'geo.region': 'US-NJ',
@@ -51,7 +51,7 @@ const StaticHomeHealthAidesData = {
         description:
             'Certified aides providing reliable, compassionate in-home support for daily living.',
         introBody:
-            'Home health aide services from 360 Degree Care support seniors and individuals who need assistance with daily activities while remaining safely at home. Our certified aides help with personal care, mobility support, routine tasks, and companionship, always with respect, professionalism, and attention to individual needs.',
+            'Home health aide services from Haven Home Health support seniors and individuals who need assistance with daily activities while remaining safely at home. Our certified aides help with personal care, mobility support, routine tasks, and companionship, always with respect, professionalism, and attention to individual needs.',
         header: 'Home Health Aide Services in New Jersey',
         img: {
             src: getImgSrc('home-aides-hero') ?? '',
@@ -61,7 +61,7 @@ const StaticHomeHealthAidesData = {
     description: {
         header: 'What is Home Health Aide Support?',
         description:
-            'Home health aide services from 360 Degree Care support seniors and individuals who need assistance with daily activities while remaining safely at home. Our certified aides help with personal care, mobility support, routine tasks, and companionship, always with respect, professionalism, and attention to individual needs.'
+            'Home health aide services from Haven Home Health support seniors and individuals who need assistance with daily activities while remaining safely at home. Our certified aides help with personal care, mobility support, routine tasks, and companionship, always with respect, professionalism, and attention to individual needs.'
     },
     listItems: {
         header: "What's Included",

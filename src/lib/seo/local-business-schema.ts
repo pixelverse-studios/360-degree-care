@@ -1,13 +1,13 @@
 // Centralized business information for consistent NAP across all schemas
 export const BUSINESS_INFO = {
-    name: '360 Degree Care',
-    url: 'https://www.360degreecare.net',
-    telephone: '(201) 299-4243',
-    telephoneE164: '+1-201-299-4243',
-    email: 'info@360degreecare.net',
-    logo: 'https://res.cloudinary.com/pixelverse-studios/image/upload/v1750117116/clients/360dc/360DC-2C-horz_io6tok.svg',
+    name: 'Haven Home Health',
+    url: 'https://haven-home-health.netlify.app',
+    telephone: '(555) 123-4567',
+    telephoneE164: '+1-555-123-4567',
+    email: 'info@havenhomehealth.com',
+    logo: '/favicon-64x64.png',
     address: {
-        streetAddress: '27 Chestnut Street',
+        streetAddress: '100 Maple Avenue',
         addressLocality: 'Ridgewood',
         addressRegion: 'NJ',
         postalCode: '07450',
@@ -17,10 +17,7 @@ export const BUSINESS_INFO = {
         latitude: 40.9793,
         longitude: -74.1169
     },
-    sameAs: [
-        'https://www.facebook.com/profile.php?id=61574893462190',
-        'https://www.instagram.com/360degreecarenj/'
-    ]
+    sameAs: [] as string[]
 }
 
 // Generate LocalBusiness schema for a specific location/service area

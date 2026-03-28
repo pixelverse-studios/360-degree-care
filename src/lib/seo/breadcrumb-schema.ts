@@ -1,4 +1,4 @@
-const BASE_URL = 'https://www.360degreecare.net'
+const BASE_URL = 'https://haven-home-health.netlify.app'
 
 interface BreadcrumbItem {
     route: string

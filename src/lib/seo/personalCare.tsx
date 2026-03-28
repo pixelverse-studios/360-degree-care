@@ -3,35 +3,35 @@ import { FaArrowRight } from 'react-icons/fa6'
 import { getImgSrc } from '../images'
 
 export const personalCareMetadata: Metadata = {
-    title: 'Personal Care Services in New Jersey | 360 Degree Care',
+    title: 'Personal Care Services in New Jersey | Haven Home Health',
     description:
         'Professional personal care services in New Jersey, helping seniors with daily living tasks while preserving dignity, independence, and comfort at home.',
     keywords:
         'personal care services, senior care, home health aide, hygiene assistance, mobility support, New Jersey, Ridgewood NJ',
     openGraph: {
         type: 'website',
-        url: 'https://www.360degreecare.net/services/personal-care',
-        title: 'Personal Care Services in New Jersey | 360 Degree Care',
+        url: 'https://haven-home-health.netlify.app/services/personal-care',
+        title: 'Personal Care Services in New Jersey | Haven Home Health',
         description:
             'Professional personal care services in New Jersey, helping seniors with daily living tasks while preserving dignity, independence, and comfort at home.',
         images: [
             {
-                url: 'https://www.360degreecare.net/assets/personal-care-image.jpg'
+                url: 'https://haven-home-health.netlify.app/assets/personal-care-image.jpg'
             }
         ],
         locale: 'en_US',
-        siteName: '360 Degree Care'
+        siteName: 'Haven Home Health'
     },
     twitter: {
         card: 'summary_large_image',
-        title: 'Personal Care Services in New Jersey | 360 Degree Care',
+        title: 'Personal Care Services in New Jersey | Haven Home Health',
         description:
             'Professional personal care services in New Jersey, helping seniors with daily living tasks while preserving dignity, independence, and comfort at home.',
-        images: ['https://www.360degreecare.net/assets/personal-care-image.jpg']
+        images: ['https://haven-home-health.netlify.app/assets/personal-care-image.jpg']
     },
     robots: { index: true, follow: true },
     alternates: {
-        canonical: 'https://www.360degreecare.net/services/personal-care'
+        canonical: 'https://haven-home-health.netlify.app/services/personal-care'
     },
     other: {
         'geo.region': 'US-NJ',
@@ -50,7 +50,7 @@ const StaticPersonalCareData = {
         description:
             'Hands-on, in-home support that helps seniors live safely, comfortably, and with dignity.',
         introBody:
-            'Personal care services from 360 Degree Care support seniors and individuals who need help with daily living activities while remaining in the comfort of their own homes. Our caregivers provide respectful, reliable assistance designed to promote independence and overall well-being.',
+            'Personal care services from Haven Home Health support seniors and individuals who need help with daily living activities while remaining in the comfort of their own homes. Our caregivers provide respectful, reliable assistance designed to promote independence and overall well-being.',
         header: 'Personal Care Services in New Jersey',
         img: {
             src: getImgSrc('personal-care-hero') ?? '',
@@ -60,7 +60,7 @@ const StaticPersonalCareData = {
     description: {
         header: 'What is Personal Care?',
         description:
-            'Personal care services from 360 Degree Care support seniors and individuals who need help with daily living activities while remaining in the comfort of their own homes. Our caregivers provide respectful, reliable assistance designed to promote independence and overall well-being.'
+            'Personal care services from Haven Home Health support seniors and individuals who need help with daily living activities while remaining in the comfort of their own homes. Our caregivers provide respectful, reliable assistance designed to promote independence and overall well-being.'
     },
     listItems: {
         header: "What's Included",

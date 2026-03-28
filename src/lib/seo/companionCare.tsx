@@ -3,37 +3,37 @@ import { FaArrowRight } from 'react-icons/fa6'
 import { getImgSrc } from '../images'
 
 export const companionCareMetadata: Metadata = {
-    title: 'Companion Care Services in New Jersey | 360 Degree Care',
+    title: 'Companion Care Services in New Jersey | Haven Home Health',
     description:
         'Companion care services in New Jersey providing social support, engagement, and companionship to help seniors stay connected and supported at home.',
     keywords:
         'companion care, companionship services, social support, emotional connection, senior companionship, New Jersey',
     openGraph: {
         type: 'website',
-        url: 'https://www.360degreecare.net/services/companion-care',
-        title: 'Companion Care Services in New Jersey | 360 Degree Care',
+        url: 'https://haven-home-health.netlify.app/services/companion-care',
+        title: 'Companion Care Services in New Jersey | Haven Home Health',
         description:
             'Companion care services in New Jersey providing social support, engagement, and companionship to help seniors stay connected and supported at home.',
         images: [
             {
-                url: 'https://www.360degreecare.net/assets/companion-care-image.jpg'
+                url: 'https://haven-home-health.netlify.app/assets/companion-care-image.jpg'
             }
         ],
         locale: 'en_US',
-        siteName: '360 Degree Care'
+        siteName: 'Haven Home Health'
     },
     twitter: {
         card: 'summary_large_image',
-        title: 'Companion Care Services in New Jersey | 360 Degree Care',
+        title: 'Companion Care Services in New Jersey | Haven Home Health',
         description:
             'Companion care services in New Jersey providing social support, engagement, and companionship to help seniors stay connected and supported at home.',
         images: [
-            'https://www.360degreecare.net/assets/companion-care-image.jpg'
+            'https://haven-home-health.netlify.app/assets/companion-care-image.jpg'
         ]
     },
     robots: { index: true, follow: true },
     alternates: {
-        canonical: 'https://www.360degreecare.net/services/companion-care'
+        canonical: 'https://haven-home-health.netlify.app/services/companion-care'
     },
     other: {
         'geo.region': 'US-NJ',
@@ -51,7 +51,7 @@ const StaticCompanionCareData = {
         description:
             'Social connection and everyday companionship to support emotional well-being and quality of life.',
         introBody:
-            'Companion care services from 360 Degree Care provide meaningful social support for seniors who benefit from regular interaction and engagement at home. Our caregivers offer companionship, conversation, and assistance with daily routines to help reduce isolation and promote emotional well-being.',
+            'Companion care services from Haven Home Health provide meaningful social support for seniors who benefit from regular interaction and engagement at home. Our caregivers offer companionship, conversation, and assistance with daily routines to help reduce isolation and promote emotional well-being.',
         header: 'Companion Care Services in New Jersey',
         img: {
             src: getImgSrc('companion-care-hero') ?? '',
@@ -61,7 +61,7 @@ const StaticCompanionCareData = {
     description: {
         header: 'What is Companion Care?',
         description:
-            'Companion care services from 360 Degree Care provide meaningful social support for seniors who benefit from regular interaction and engagement at home. Our caregivers offer companionship, conversation, and assistance with daily routines to help reduce isolation and promote emotional well-being.'
+            'Companion care services from Haven Home Health provide meaningful social support for seniors who benefit from regular interaction and engagement at home. Our caregivers offer companionship, conversation, and assistance with daily routines to help reduce isolation and promote emotional well-being.'
     },
     listItems: {
         header: "What's Included",
