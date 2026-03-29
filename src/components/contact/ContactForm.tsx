@@ -46,6 +46,7 @@ export default function ContactForm() {
         defaultValues: config?.initialValues ?? {}
     })
 
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const onSubmit = async (values: z.infer<typeof config.schema>) => {
         setLoading(true)
         try {

@@ -60,6 +60,6 @@ export const testimonials = [
         rating: 5,
         date: '9/7/2025',
         description:
-            'We chose Haven Home Health for elder care services after interviewing several agencies, and it was the best decision we made. They took the time to understand my mother\'s specific needs and preferences before sending anyone to the house. The aide is wonderful -- always on time, always cheerful, and incredibly helpful with daily activities. The whole experience has exceeded our expectations.'
+            "We chose Haven Home Health for elder care services after interviewing several agencies, and it was the best decision we made. They took the time to understand my mother's specific needs and preferences before sending anyone to the house. The aide is wonderful -- always on time, always cheerful, and incredibly helpful with daily activities. The whole experience has exceeded our expectations."
     }
 ]

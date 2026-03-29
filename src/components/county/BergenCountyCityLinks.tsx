@@ -1,13 +1,7 @@
 import Link from 'next/link'
 import { getCitySlugs } from '@/lib/content/city-slug-map'
 
-type ServiceType =
-    | 'companion-care'
-    | 'personal-care'
-    | 'elder-care'
-    | 'home-health-aides'
-    | 'nursing'
-    | 'staffing'
+type ServiceType = 'companion-care' | 'personal-care' | 'home-health-aides'
 
 interface BergenCountyCityLinksProps {
     serviceSlug: ServiceType
@@ -17,13 +11,7 @@ interface BergenCountyCityLinksProps {
 const BERGEN_COUNTY_CITIES: Record<string, string> = {
     'fort-lee': 'Fort Lee',
     ridgewood: 'Ridgewood',
-    paramus: 'Paramus',
-    hackensack: 'Hackensack',
-    teaneck: 'Teaneck',
-    'fair-lawn': 'Fair Lawn',
-    englewood: 'Englewood',
-    westwood: 'Westwood',
-    'river-vale': 'River Vale'
+    hackensack: 'Hackensack'
 }
 
 export default function BergenCountyCityLinks({

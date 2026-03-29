@@ -13,18 +13,6 @@ const servicedCounties = [
     {
         name: 'Bergen County',
         href: '/services/personal-care/bergen-county'
-    },
-    {
-        name: 'Monmouth County',
-        href: '/services/personal-care/monmouth-county'
-    },
-    {
-        name: 'Passaic County',
-        href: '/services/personal-care/passaic-county'
-    },
-    {
-        name: 'Ocean County',
-        href: '/services/personal-care/ocean-county'
     }
 ]
 const [aboutLink, serviceLink, vaultLink] = navLinks
@@ -152,8 +140,7 @@ export default function Footer() {
                 {/* Bottom Section */}
                 <div className="mt-10 border-t border-gray-200 pt-4 text-center text-white">
                     <article className="text-sm">
-                        <CompanyName invert /> is an Equal Opportunity
-                        Employer.
+                        <CompanyName invert /> is an Equal Opportunity Employer.
                     </article>
                     <p className="mt-1 text-sm">
                         &copy; {currentYear} Haven Home Health. All rights

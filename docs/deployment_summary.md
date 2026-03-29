@@ -24,6 +24,11 @@
 - Updated local business schema helper with Haven Home Health branding (name, URL, phone, email, address, logo)
 - Updated breadcrumb schema BASE_URL to haven-home-health.netlify.app
 - Updated all service page SEO metadata files (companion care, elder care, home health aides, nursing, personal care, staffing) with Haven Home Health branding
+- Trimmed geographic pages from 196+ city pages to 9 demo pages (3 services × 3 cities in Bergen County)
+- Removed all non-Bergen county pages (Essex, Monmouth, Passaic, Ocean)
+- Removed elder-care, nursing, staffing service hubs entirely
+- Fixed pre-existing build errors (deleted orphaned BounceTracker, CampaignTracker, PageViewTracker)
+- Fixed prettier formatting across multiple files from batch agent work
 
 ## Notes for internal team
 - DEV-536, DEV-537, DEV-538, DEV-539, DEV-541, DEV-548 completed

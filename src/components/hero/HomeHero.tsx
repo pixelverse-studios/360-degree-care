@@ -29,10 +29,10 @@ export default function HomeHero() {
                     </p>
                 </div>
                 <p className="text-lg">
-                    Haven Home Health provides in-home personal care, home health
-                    aides, nursing, companion care, and elder care consulting
-                    throughout New Jersey. Our experienced caregivers help
-                    seniors stay safe, supported, and independent at home.
+                    Haven Home Health provides in-home personal care, home
+                    health aides, nursing, companion care, and elder care
+                    consulting throughout New Jersey. Our experienced caregivers
+                    help seniors stay safe, supported, and independent at home.
                 </p>
                 <div className="my-5 grid grid-cols-1 md:grid-cols-2 gap-4">
                     <CallToAction
