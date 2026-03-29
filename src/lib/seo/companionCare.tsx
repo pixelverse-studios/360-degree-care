@@ -33,7 +33,8 @@ export const companionCareMetadata: Metadata = {
     },
     robots: { index: true, follow: true },
     alternates: {
-        canonical: 'https://haven-home-health.netlify.app/services/companion-care'
+        canonical:
+            'https://haven-home-health.netlify.app/services/companion-care'
     },
     other: {
         'geo.region': 'US-NJ',

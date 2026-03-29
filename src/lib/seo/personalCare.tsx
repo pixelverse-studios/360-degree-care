@@ -27,11 +27,14 @@ export const personalCareMetadata: Metadata = {
         title: 'Personal Care Services in New Jersey | Haven Home Health',
         description:
             'Professional personal care services in New Jersey, helping seniors with daily living tasks while preserving dignity, independence, and comfort at home.',
-        images: ['https://haven-home-health.netlify.app/assets/personal-care-image.jpg']
+        images: [
+            'https://haven-home-health.netlify.app/assets/personal-care-image.jpg'
+        ]
     },
     robots: { index: true, follow: true },
     alternates: {
-        canonical: 'https://haven-home-health.netlify.app/services/personal-care'
+        canonical:
+            'https://haven-home-health.netlify.app/services/personal-care'
     },
     other: {
         'geo.region': 'US-NJ',

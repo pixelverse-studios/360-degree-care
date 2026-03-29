@@ -33,7 +33,8 @@ export const homeHealthAidesMetadata: Metadata = {
     },
     robots: { index: true, follow: true },
     alternates: {
-        canonical: 'https://haven-home-health.netlify.app/services/home-health-aides'
+        canonical:
+            'https://haven-home-health.netlify.app/services/home-health-aides'
     },
     other: {
         'geo.region': 'US-NJ',

@@ -42,12 +42,12 @@ export default function LegalDisclaimerPage() {
                 <h2 className="font-semibold mt-6 mb-2">Links</h2>
                 <p className="text-gray-700 mb-4">
                     This website contains links to other websites. Visitors
-                    should be aware that they are leaving the <CompanyName />
-                    {' '}website through the use of such links. All content
-                    contained on any linked website is the sole responsibility
-                    of the owner of that website. Policies regarding the sharing
-                    of information entered on any linked website are determined
-                    by the owner of that website.
+                    should be aware that they are leaving the <CompanyName />{' '}
+                    website through the use of such links. All content contained
+                    on any linked website is the sole responsibility of the
+                    owner of that website. Policies regarding the sharing of
+                    information entered on any linked website are determined by
+                    the owner of that website.
                 </p>
 
                 <h2 className="font-semibold mt-6 mb-2">Other Disclaimers</h2>

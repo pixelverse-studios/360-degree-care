@@ -65,9 +65,9 @@ export default function AboutDetails() {
                                 <p className="text-black">
                                     Over the years we have always had a unique
                                     perspective and position in this industry.
-                                    We DO NOT see our clients as being
-                                    defined by their limitations. Rather, we see
-                                    our clients as having lived full lives which
+                                    We DO NOT see our clients as being defined
+                                    by their limitations. Rather, we see our
+                                    clients as having lived full lives which
                                     they still can and want to enjoy fully. We
                                     celebrate our clients and our caregivers do
                                     everything possible to help them get the
