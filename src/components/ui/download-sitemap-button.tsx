@@ -25,7 +25,7 @@ export function DownloadSitemapButton({
     urls,
     filename = '360-degree-care-sitemap-urls.csv',
     className,
-    baseUrl = 'https://www.360degreecare.net'
+    baseUrl = 'https://haven-home-health.netlify.app'
 }: DownloadSitemapButtonProps) {
     const [isDownloading, setIsDownloading] = useState(false)
 

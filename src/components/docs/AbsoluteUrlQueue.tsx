@@ -7,7 +7,7 @@ import { Check, Copy } from 'lucide-react'
 import { Badge } from '@/components/ui/badge'
 
 const fallbackOrigin =
-    process.env.NEXT_PUBLIC_SITE_URL ?? 'https://www.360degreecare.net'
+    process.env.NEXT_PUBLIC_SITE_URL ?? 'https://haven-home-health.netlify.app'
 
 const makeAbsoluteUrl = (url: string, origin: string) =>
     url.startsWith('http') ? url : `${origin}${url}`

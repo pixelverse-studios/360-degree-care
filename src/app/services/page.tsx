@@ -42,9 +42,9 @@ const SERVICES = [
 ] as const
 
 export const metadata: Metadata = {
-    title: 'Home Care & Health Offerings in New Jersey | 360 Degree Care',
+    title: 'Home Care & Health Offerings in New Jersey | Haven Home Health',
     description:
-        'Explore home care and home health offerings from 360 Degree Care, including personal care, home health aides, nursing, companion care, and staffing.'
+        'Explore home care and home health offerings from Haven Home Health, including personal care, home health aides, nursing, companion care, and staffing.'
 }
 
 export default function ServicesIndexPage() {
@@ -61,7 +61,7 @@ export default function ServicesIndexPage() {
                     </p>
                     <p className="mx-auto max-w-2xl text-blue-50">
                         Whether you need hourly assistance, ongoing personal
-                        care, or skilled clinical support, 360 Degree Care
+                        care, or skilled clinical support, Haven Home Health
                         offers a full range of home care and home health
                         services across New Jersey. Our team works closely with
                         families to provide reliable, compassionate support at

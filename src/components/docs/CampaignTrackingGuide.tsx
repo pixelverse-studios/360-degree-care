@@ -48,8 +48,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     )
 }`
 
-const qaSnippet = `https://www.360degreecare.net/test-tracking?src=G
-https://www.360degreecare.net/test-tracking?src=M`
+const qaSnippet = `https://haven-home-health.netlify.app/test-tracking?src=G
+https://haven-home-health.netlify.app/test-tracking?src=M`
 
 export default function CampaignTrackingGuide() {
     return (

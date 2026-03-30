@@ -19,7 +19,7 @@ export default function CountyCTASection({
     description,
     ctaButtonLabel = 'Schedule Your Free Consultation',
     ctaValue = 'County CTA',
-    phoneNumber = '(201) 299-4243',
+    phoneNumber = '(555) 123-4567',
     bgGradient = 'bg-gradient-to-br from-primary to-orange'
 }: CountyCTASectionProps) {
     return (

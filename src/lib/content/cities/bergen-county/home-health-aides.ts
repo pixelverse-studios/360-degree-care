@@ -122,12 +122,12 @@ function buildCityContent(
         localResources?: LocalResource[]
     }
 ): CityServicePageContent {
-    const canonical = `https://www.360degreecare.net/services/${SERVICE_SLUG}/bergen-county/${citySlug}`
+    const canonical = `https://haven-home-health.netlify.app/services/${SERVICE_SLUG}/bergen-county/${citySlug}`
 
     return {
         slug: `/services/${SERVICE_SLUG}/bergen-county/${citySlug}`,
         metadata: {
-            title: `${SERVICE_NAME} in ${cityName}, NJ | 360 Degree Care`,
+            title: `${SERVICE_NAME} in ${cityName}, NJ | Haven Home Health`,
             description: options.heroDescription,
             keywords: `home health aides ${cityName}, Bergen County CHHA ${cityName}, in-home medical support ${cityName}`,
             alternates: { canonical }
@@ -201,7 +201,7 @@ export const bergenCountyHomeHealthAideCities: Record<
         overviewDescription:
             'We coordinate with Valley Hospital, local pharmacies, and in-home therapists so every Ridgewood visit keeps care on track at home.',
         benefitsHeader:
-            'How Ridgewood clients stay independent with 360 Degree Care',
+            'How Ridgewood clients stay independent with Haven Home Health',
         ctaDescription:
             'Tell us about your Ridgewood home and health goals. We’ll match you with a certified aide and nurse supervisor.'
     }),
@@ -210,7 +210,8 @@ export const bergenCountyHomeHealthAideCities: Record<
             'Our aides support River Vale residents with chronic conditions, providing the hands-on care that keeps everyone comfortable at home.',
         overviewDescription:
             'Whether near the Country Club or along Rivervale Road, we manage mobility, nutrition, and medication routines while coordinating with Bergen County specialists.',
-        benefitsHeader: 'Why River Vale families partner with 360 Degree Care',
+        benefitsHeader:
+            'Why River Vale families partner with Haven Home Health',
         ctaDescription:
             'Let’s design an aide schedule for your River Vale household—days, nights, or 24/7 coverage available.'
     }),

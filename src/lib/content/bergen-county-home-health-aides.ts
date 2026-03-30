@@ -5,22 +5,22 @@ export const bergenCountyHomeHealthAidesContent: ServiceCountyPageContent = {
     serviceSlug: 'home-health-aides',
 
     metadata: {
-        title: 'Home Health Aides Bergen County NJ | 360 Degree Care',
+        title: 'Home Health Aides Bergen County NJ | Haven Home Health',
         description:
             'Certified home health aides throughout Bergen County, NJ. Medical support & ADL assistance in Fort Lee, Hackensack, Ridgewood & all 70 communities. Free consultation.',
         keywords:
             'home health aides Bergen County, certified home health aide NJ, medical assistance Bergen County, CNA services NJ, home health care Bergen County, Fort Lee home health aide, Hackensack medical support, Ridgewood home health',
         openGraph: {
-            title: 'Home Health Aides Bergen County NJ | 360 Degree Care',
+            title: 'Home Health Aides Bergen County NJ | Haven Home Health',
             description:
                 'Certified home health aides throughout Bergen County, NJ. Medical support & ADL assistance in Fort Lee, Hackensack, Ridgewood & all 70 communities.',
             type: 'website',
             locale: 'en_US',
-            siteName: '360 Degree Care',
-            url: 'https://www.360degreecare.net/services/home-health-aides/bergen-county',
+            siteName: 'Haven Home Health',
+            url: 'https://haven-home-health.netlify.app/services/home-health-aides/bergen-county',
             images: [
                 {
-                    url: 'https://www.360degreecare.net/og-images/bergen-county-home-health-aides.jpg',
+                    url: 'https://haven-home-health.netlify.app/og-images/bergen-county-home-health-aides.jpg',
                     width: 1200,
                     height: 630,
                     alt: 'Home Health Aides Services in Bergen County NJ'
@@ -33,12 +33,12 @@ export const bergenCountyHomeHealthAidesContent: ServiceCountyPageContent = {
             description:
                 'Certified home health aides serving all 70 municipalities of Bergen County. CHAP certified medical support.',
             images: [
-                'https://www.360degreecare.net/og-images/bergen-county-home-health-aides.jpg'
+                'https://haven-home-health.netlify.app/og-images/bergen-county-home-health-aides.jpg'
             ]
         },
         alternates: {
             canonical:
-                'https://www.360degreecare.net/services/home-health-aides/bergen-county'
+                'https://haven-home-health.netlify.app/services/home-health-aides/bergen-county'
         },
         robots: {
             index: true,
@@ -59,10 +59,10 @@ export const bergenCountyHomeHealthAidesContent: ServiceCountyPageContent = {
         serviceType: 'Home Health Aide',
         provider: {
             '@type': 'HomeHealthCareService',
-            name: '360 Degree Care',
-            url: 'https://www.360degreecare.net',
-            logo: 'https://www.360degreecare.net/logo.png',
-            telephone: '(201) 299-4243',
+            name: 'Haven Home Health',
+            url: 'https://haven-home-health.netlify.app',
+            logo: '/logo.png',
+            telephone: '(555) 123-4567',
             address: {
                 '@type': 'PostalAddress',
                 streetAddress: '27 Chestnut Street',
@@ -128,7 +128,7 @@ export const bergenCountyHomeHealthAidesContent: ServiceCountyPageContent = {
     intro: {
         title: 'Skilled Medical Support in Every Bergen County Community',
         content: [
-            'When you need more than basic assistance but want to avoid institutional care, certified home health aides in Bergen County provide the perfect solution. At 360 Degree Care, our home health aides are trained medical professionals who combine clinical skills with compassionate care, serving families from the high-rise communities of Fort Lee to the suburban neighborhoods of Ridgewood.',
+            'When you need more than basic assistance but want to avoid institutional care, certified home health aides in Bergen County provide the perfect solution. At Haven Home Health, our home health aides are trained medical professionals who combine clinical skills with compassionate care, serving families from the high-rise communities of Fort Lee to the suburban neighborhoods of Ridgewood.',
             'Our home health aides work under physician orders to provide skilled medical support including wound care, medication management, vital sign monitoring, and assistance with complex medical equipment. This level of care allows clients to recover from hospitalizations, manage chronic conditions, and maintain independence while receiving professional medical oversight in the comfort of home.',
             "Throughout Bergen County's diverse communities—from the bustling medical district around Hackensack University Medical Center to the quiet tree-lined streets of Teaneck and Paramus—our certified aides understand that every client's medical needs are unique. We coordinate closely with physicians, physical therapists, and other healthcare providers to ensure comprehensive care that supports both medical goals and quality of life.",
             'The 2024 Bergen County Division of Senior Services report noted that 58% of older adults with mobility limitations rely on paid aides for bathing or transfers, yet half worry about turnover and gaps in communication. Our CHAP-certified program addresses those concerns with dedicated care teams, nurse ride-alongs, and digital shift summaries that give families visibility into every visit.',
@@ -178,7 +178,7 @@ export const bergenCountyHomeHealthAidesContent: ServiceCountyPageContent = {
     serviceAreas: {
         title: 'Complete Bergen County Home Health Aide Service Area',
         subtitle:
-            '360 Degree Care provides certified home health aide services throughout Bergen County, including:',
+            'Haven Home Health provides certified home health aide services throughout Bergen County, including:',
         regions: [
             {
                 name: 'Southeast Bergen County',

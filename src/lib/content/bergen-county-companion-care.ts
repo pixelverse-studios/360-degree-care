@@ -3,7 +3,7 @@ import { CountyPageContent } from './county-service-types'
 
 export const bergenCountyCompanionCareContent: CountyPageContent = {
     metadata: {
-        title: 'Companion Care Services Bergen County NJ | 360 Degree Care',
+        title: 'Companion Care Services Bergen County NJ | Haven Home Health',
         description:
             'Compassionate companion care throughout Bergen County. Reduce isolation, enhance quality of life with trusted companions in Fort Lee, Hackensack, Ridgewood & 70+ towns. Available 24/7.',
         keywords:
@@ -19,10 +19,10 @@ export const bergenCountyCompanionCareContent: CountyPageContent = {
                 serviceType: 'Companion Care Services',
                 provider: {
                     '@type': 'HomeHealthCareService',
-                    name: '360 Degree Care',
-                    url: 'https://www.360degreecare.net',
-                    logo: 'https://res.cloudinary.com/pixelverse-studios/image/upload/v1750117116/clients/360dc/360DC-2C-horz_io6tok.svg',
-                    telephone: '(201) 299-4243',
+                    name: 'Haven Home Health',
+                    url: 'https://haven-home-health.netlify.app',
+                    logo: '/favicon-64x64.png',
+                    telephone: '(555) 123-4567',
                     address: {
                         '@type': 'PostalAddress',
                         streetAddress: '27 Chestnut Street',
@@ -48,19 +48,19 @@ export const bergenCountyCompanionCareContent: CountyPageContent = {
                 availableChannel: {
                     '@type': 'ServiceChannel',
                     serviceUrl:
-                        'https://www.360degreecare.net/services/companion-care/bergen-county',
-                    servicePhone: '+1-201-299-4243',
+                        'https://haven-home-health.netlify.app/services/companion-care/bergen-county',
+                    servicePhone: '+1-555-123-4567',
                     availableLanguage: 'en'
                 }
             },
             {
                 '@type': 'LocalBusiness',
-                '@id': 'https://www.360degreecare.net/#localbusiness',
-                name: '360 Degree Care',
-                image: 'https://res.cloudinary.com/pixelverse-studios/image/upload/v1750117116/clients/360dc/360DC-2C-horz_io6tok.svg',
-                url: 'https://www.360degreecare.net',
-                telephone: '(201) 299-4243',
-                email: 'info@360degreecare.net',
+                '@id': 'https://haven-home-health.netlify.app/#localbusiness',
+                name: 'Haven Home Health',
+                image: '/favicon-64x64.png',
+                url: 'https://haven-home-health.netlify.app',
+                telephone: '(555) 123-4567',
+                email: 'info@havenhomehealth.com',
                 address: {
                     '@type': 'PostalAddress',
                     streetAddress: '27 Chestnut Street',
@@ -89,10 +89,7 @@ export const bergenCountyCompanionCareContent: CountyPageContent = {
                     closes: '23:59'
                 },
                 priceRange: '$$',
-                sameAs: [
-                    'https://www.facebook.com/profile.php?id=61574893462190',
-                    'https://www.instagram.com/360degreecarenj/'
-                ]
+                sameAs: ['#', '#']
             }
         ]
     },
@@ -104,7 +101,7 @@ export const bergenCountyCompanionCareContent: CountyPageContent = {
         description:
             'Professional companion care services from Fort Lee to Franklin Lakes, Hackensack to Ho-Ho-Kus. Our compassionate companions help seniors stay engaged, active, and connected in their beloved Bergen County communities.',
         ctaButtonLabel: 'Find Your Companion',
-        ctaValue: '201-299-4243',
+        ctaValue: '555-123-4567',
         imageSrc: 'companion-care-hero',
         imageAlt: 'Companion care services in Bergen County NJ'
     },
@@ -112,7 +109,7 @@ export const bergenCountyCompanionCareContent: CountyPageContent = {
     intro: {
         title: 'Trusted Companion Care Services Across Bergen County Communities',
         content: [
-            "Loneliness and social isolation can significantly impact the health and wellbeing of seniors living in Bergen County. Whether in the bustling high-rises of Fort Lee or the quiet neighborhoods of Allendale, many older adults find themselves spending too much time alone, missing the social connections that bring joy and meaning to life. That's where 360 Degree Care's companion care services make all the difference.",
+            "Loneliness and social isolation can significantly impact the health and wellbeing of seniors living in Bergen County. Whether in the bustling high-rises of Fort Lee or the quiet neighborhoods of Allendale, many older adults find themselves spending too much time alone, missing the social connections that bring joy and meaning to life. That's where Haven Home Health's companion care services make all the difference.",
             'Our compassionate companions serve families throughout Bergen County, from the urban centers of Hackensack and Englewood to the suburban communities of Ridgewood and Wyckoff. We understand that every senior has unique social needs—some may want a companion for weekly trips to Garden State Plaza, others might need someone to share morning coffee and conversation, and many benefit from having a trusted friend to accompany them to appointments at Valley Hospital or Holy Name Medical Center.',
             'What sets our Bergen County companion care apart is our deep understanding of local communities. Our companions know the best walking paths in Saddle River County Park, the quietest times to visit the Shops at Riverside, and which libraries host the most engaging senior programs. This local expertise, combined with genuine compassion, helps us match each client with the perfect companion who shares their interests and understands their neighborhood.',
             'According to the 2024 Bergen County Division of Senior Services survey, 42% of residents over 70 spend five or more hours alone each day and one in three cite transportation barriers that keep them from senior-center programming. Our Concierge-Level™ companion care responds directly to those concerns—arranging rides to the Bergen County Senior Festival, timing visits around NJ Transit schedules, and building social calendars that keep clients active even when parking or traffic would otherwise hold them back.',
@@ -162,7 +159,7 @@ export const bergenCountyCompanionCareContent: CountyPageContent = {
     serviceAreas: {
         title: 'Complete Bergen County Companion Care Coverage',
         subtitle:
-            '360 Degree Care provides companion care services throughout Bergen County, including:',
+            'Haven Home Health provides companion care services throughout Bergen County, including:',
         regions: [
             {
                 name: 'Northern Bergen County',
@@ -295,7 +292,7 @@ export const bergenCountyCompanionCareContent: CountyPageContent = {
     ],
 
     whyChoose: {
-        title: 'Why Choose 360 Degree Care for Companion Care in Bergen County?',
+        title: 'Why Choose Haven Home Health for Companion Care in Bergen County?',
         content: [
             "With over a decade of service in Bergen County, we've built a reputation for providing companions who become trusted friends. Our CHAP certification ensures the highest standards of care, while our local roots mean we understand the unique character of each Bergen County community. We carefully match companions based on shared interests, personality, and cultural background, creating relationships that enrich lives.",
             "Our companions are more than just friendly faces—they're carefully selected, thoroughly trained professionals who understand the importance of their role. Each undergoes comprehensive background checks, receives ongoing training in senior care best practices, and is matched based on compatibility with clients. Many of our companion-client relationships last for years, becoming cherished friendships.",
@@ -310,6 +307,6 @@ export const bergenCountyCompanionCareContent: CountyPageContent = {
             "Every companionship journey begins with a free consultation where we listen to your story, assess your needs, and introduce you to potential companions. There's no obligation, just an opportunity to discover how the right companion can transform daily life from lonely to lively, from isolated to engaged."
         ],
         buttonLabel: 'Start Your Companion Match',
-        value: '201-299-4243'
+        value: '555-123-4567'
     }
 }

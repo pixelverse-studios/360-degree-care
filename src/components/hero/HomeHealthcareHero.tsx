@@ -53,7 +53,7 @@ export default function HomeHealthCareHero({ header }: { header: string }) {
                         <br />
                         <br />
                         Whether you need a few hours of help or 24/7 assistance,
-                        360 Degree Care is here to ensure safety, comfort, and
+                        Haven Home Health is here to ensure safety, comfort, and
                         dignity every step of the way. Every care plan is
                         tailored to your loved one’s specific needs, ensuring
                         they receive high-quality, Concierge-Level™ support you

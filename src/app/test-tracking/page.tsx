@@ -10,7 +10,7 @@ export default function TestTrackingPage() {
     const baseUrl =
         typeof window !== 'undefined'
             ? `${window.location.protocol}//${window.location.host}`
-            : 'https://www.360degreecare.net'
+            : 'https://haven-home-health.netlify.app'
     const examples = useMemo(
         () => ({
             google: `${baseUrl}/test-tracking?src=G`,

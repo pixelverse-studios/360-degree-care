@@ -43,7 +43,7 @@ export const metadata: Metadata = {
 
 export const dynamic = 'force-dynamic'
 
-const DEFAULT_ORIGIN = 'https://www.360degreecare.net'
+const DEFAULT_ORIGIN = 'https://haven-home-health.netlify.app'
 const sitemapPath = path.join(process.cwd(), 'public', 'sitemap.xml')
 
 async function loadSitemapUrls(): Promise<SitemapStats> {
