@@ -90,7 +90,7 @@ Need a template? [Our Essex County companion care team](/services/companion-care
 
 ## How Haven Home Health Keeps You Ahead
 
-- **Concierge-Level™ coordination** threads county data into every assessment so you don’t have to memorize program deadlines.
+- **Professional coordination** threads county data into every assessment so you don’t have to memorize program deadlines.
 - **Nurse-led care plans** weave private duty nursing, CHHAs, and companions into one schedule—with storm buffers and respite hours in writing.
 - **Real-time communication** (texts, portal updates, and Sonner-style recaps) means you see appetite, mood, and med adherence after each visit.
 

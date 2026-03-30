@@ -1,6 +1,10 @@
-# Portfolio demo site - disallow all crawling
+# *
 User-agent: *
-Disallow: /
+Allow: /
+Disallow: /api/
+Disallow: /docs/
+Disallow: /seo-review
+Disallow: /not-found
 
 # Host
 Host: https://haven-home-health.netlify.app

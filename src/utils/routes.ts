@@ -1,17 +1,10 @@
 // src/utils/routes.ts
 
-const wisdomVaultLinks = [
-    {
-        route: '/wisdom-vault',
-        label: 'Videos',
-        canVisit: true,
-        subLinks: []
-    },
+const resourceLinks = [
     {
         route: '/blog',
         label: 'Blog',
         canVisit: true,
-        // --- FIX 1: Added this flag to tell the breadcrumbs that /blog has dynamic children (e.g., /blog/[slug]) ---
         hasDynamicChildren: true,
         subLinks: []
     },
@@ -34,7 +27,6 @@ export const navLinks = [
         route: '',
         label: 'Services',
         canVisit: false,
-        // --- FIX 2: Added this flag for consistency, to handle dynamic routes like /services/[county] ---
         hasDynamicChildren: true,
         subLinks: [
             {
@@ -48,23 +40,8 @@ export const navLinks = [
                 canVisit: true
             },
             {
-                route: '/services/elder-care',
-                label: 'Elder Care Consulting',
-                canVisit: true
-            },
-            {
-                route: '/services/staffing',
-                label: 'Staffing',
-                canVisit: true
-            },
-            {
                 route: '/services/home-health-aides',
                 label: 'Home Health Aides',
-                canVisit: true
-            },
-            {
-                route: '/services/nursing',
-                label: 'Nursing Services',
                 canVisit: true
             },
             {
@@ -76,9 +53,9 @@ export const navLinks = [
     },
     {
         route: '',
-        label: 'Wisdom Vault',
+        label: 'Resources',
         canVisit: false,
-        subLinks: wisdomVaultLinks
+        subLinks: resourceLinks
     }
 ]
 
@@ -133,25 +110,6 @@ export const additionalPages = [
         label: 'General',
         canVisit: true,
         subLinks: []
-    },
-    {
-        route: '/docs',
-        label: 'Documentation',
-        canVisit: true,
-        hasDynamicChildren: true,
-        subLinks: []
-    },
-    {
-        route: '/docs/blog',
-        label: 'Blog Documentation',
-        canVisit: true,
-        subLinks: []
-    },
-    {
-        route: '/docs/blogs',
-        label: 'Blog Documentation',
-        canVisit: true,
-        subLinks: []
     }
 ]
 
@@ -159,6 +117,4 @@ export const availablePages = [
     ...navLinks,
     ...footerResources,
     ...additionalPages
-    // --- FIX 3: Removed the redundant '...wisdomVaultLinks' spread. ---
-    // It's already included inside navLinks, and having it twice can cause unexpected behavior.
 ]

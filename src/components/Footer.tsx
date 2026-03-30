@@ -15,7 +15,7 @@ const servicedCounties = [
         href: '/services/personal-care/bergen-county'
     }
 ]
-const [aboutLink, serviceLink, vaultLink] = navLinks
+const [aboutLink, serviceLink, resourceLink] = navLinks
 
 const quickLinkStyles = 'text-sm'
 const linkHover = 'transition-all duration-200 hover:text-green-muted'
@@ -117,10 +117,8 @@ export default function Footer() {
                             ))}
                         </div>
                         <div className="flex flex-col gap-2">
-                            <h5 className="font-semibold text-sm">
-                                Wisdom Vault
-                            </h5>
-                            {vaultLink.subLinks.map(item => (
+                            <h5 className="font-semibold text-sm">Resources</h5>
+                            {resourceLink.subLinks.map(item => (
                                 <Link
                                     key={`${item.label}-footer`}
                                     href={item.route}

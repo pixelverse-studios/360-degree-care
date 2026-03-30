@@ -356,7 +356,7 @@ export default function ElderCareView({ header }: headerProps) {
                     className="text-white rounded-lg p-8 text-center bg-blue mx-auto"
                 >
                     <h2 className="font-semibold mb-6 text-white">
-                        Concierge-Level™ Care at Every Step
+                        Professional Care at Every Step
                     </h2>
                     <p className="text-lg mb-8 max-w-3xl mx-auto">
                         As with all our services, our Elder Care Consulting
