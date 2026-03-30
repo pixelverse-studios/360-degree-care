@@ -20,7 +20,7 @@ const aboutSchema = {
         '@type': 'Organization',
         name: 'Haven Home Health',
         url: 'https://haven-home-health.netlify.app/',
-        logo: 'https://haven-home-health.netlify.app/logo.png',
+        logo: '/logo.png',
         description:
             'Meet Haven Home Health, a trusted New Jersey in-home care provider with experienced caregivers, strong retention, and over a decade of compassionate service.',
         foundingDate: '2013',

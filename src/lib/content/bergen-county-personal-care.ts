@@ -5,22 +5,22 @@ export const bergenCountyPersonalCareContent: ServiceCountyPageContent = {
     serviceSlug: 'personal-care',
 
     metadata: {
-        title: 'Personal Care Services Bergen County NJ | 360 Degree Care',
+        title: 'Personal Care Services Bergen County NJ | Haven Home Health',
         description:
             'Trusted personal care services throughout Bergen County, NJ. Professional caregivers in Fort Lee, Hackensack, Westwood & 40+ communities. Free consultation.',
         keywords:
             'personal care Bergen County, personal care near me, in home personal care NJ, Bergen County caregivers, senior care Bergen County, Fort Lee personal care, Hackensack home care, Westwood elder care',
         openGraph: {
-            title: 'Personal Care Services Bergen County NJ | 360 Degree Care',
+            title: 'Personal Care Services Bergen County NJ | Haven Home Health',
             description:
                 'Trusted personal care services throughout Bergen County, NJ. Professional caregivers in Fort Lee, Hackensack, Westwood & 40+ communities.',
             type: 'website',
             locale: 'en_US',
-            siteName: '360 Degree Care',
-            url: 'https://www.360degreecare.net/services/personal-care/bergen-county',
+            siteName: 'Haven Home Health',
+            url: 'https://haven-home-health.netlify.app/services/personal-care/bergen-county',
             images: [
                 {
-                    url: 'https://www.360degreecare.net/og-images/bergen-county-personal-care.jpg',
+                    url: 'https://haven-home-health.netlify.app/og-images/bergen-county-personal-care.jpg',
                     width: 1200,
                     height: 630,
                     alt: 'Personal Care Services in Bergen County NJ'
@@ -33,12 +33,12 @@ export const bergenCountyPersonalCareContent: ServiceCountyPageContent = {
             description:
                 'Professional caregivers serving all 70 municipalities of Bergen County. CHAP certified.',
             images: [
-                'https://www.360degreecare.net/og-images/bergen-county-personal-care.jpg'
+                'https://haven-home-health.netlify.app/og-images/bergen-county-personal-care.jpg'
             ]
         },
         alternates: {
             canonical:
-                'https://www.360degreecare.net/services/personal-care/bergen-county'
+                'https://haven-home-health.netlify.app/services/personal-care/bergen-county'
         },
         robots: {
             index: true,
@@ -59,10 +59,10 @@ export const bergenCountyPersonalCareContent: ServiceCountyPageContent = {
         serviceType: 'Personal Care',
         provider: {
             '@type': 'HomeHealthCareService',
-            name: '360 Degree Care',
-            url: 'https://www.360degreecare.net',
-            logo: 'https://www.360degreecare.net/logo.png',
-            telephone: '(201) 299-4243',
+            name: 'Haven Home Health',
+            url: 'https://haven-home-health.netlify.app',
+            logo: '/logo.png',
+            telephone: '(555) 123-4567',
             address: {
                 '@type': 'PostalAddress',
                 streetAddress: '27 Chestnut Street',
@@ -128,7 +128,7 @@ export const bergenCountyPersonalCareContent: ServiceCountyPageContent = {
     intro: {
         title: 'Compassionate Personal Care Across All of Bergen County',
         content: [
-            "When you search for personal care near me in Bergen County, you're looking for more than just assistance—you're seeking a trusted partner who understands the unique needs of your loved one and your community. At 360 Degree Care, we've been that partner for thousands of Bergen County families for over a decade.",
+            "When you search for personal care near me in Bergen County, you're looking for more than just assistance—you're seeking a trusted partner who understands the unique needs of your loved one and your community. At Haven Home Health, we've been that partner for thousands of Bergen County families for over a decade.",
             'Our personal care team serves families throughout Bergen County, including bustling urban centers like Hackensack and Fort Lee, charming suburban communities like Ridgewood and Westwood, and every neighborhood in between. We understand that each community has its own character—from the high-rise senior communities along the Hudson River to the tree-lined streets of Teaneck and Bergenfield.',
             "Whether you're in Fort Lee, Westwood, or anywhere in Bergen County, our certified caregivers provide personalized support that goes beyond basic assistance. We help with daily activities like bathing, dressing, and meal preparation, while also offering the companionship and emotional support that makes a real difference in quality of life. Our goal is simple: to help your loved one maintain their independence, dignity, and connection to the community they love.",
             'According to the 2024 Bergen County Division of Senior Services report, 78% of residents over 65 intend to age in place and cite transportation help plus medication reminders as the biggest gaps in support. We built our Bergen County care model around those findings—coordinating rides to HUMC, Valley Hospital, and Holy Name, while using digital care plans to keep families informed in real time.',
@@ -178,7 +178,7 @@ export const bergenCountyPersonalCareContent: ServiceCountyPageContent = {
     serviceAreas: {
         title: 'Complete Bergen County Service Area',
         subtitle:
-            '360 Degree Care provides personal care services throughout Bergen County, including:',
+            'Haven Home Health provides personal care services throughout Bergen County, including:',
         regions: [
             {
                 name: 'Southeast Bergen County',
@@ -296,7 +296,7 @@ export const bergenCountyPersonalCareContent: ServiceCountyPageContent = {
     },
 
     benefits: {
-        header: 'Why Bergen County Families Choose 360 Degree Care',
+        header: 'Why Bergen County Families Choose Haven Home Health',
         items: [
             {
                 title: 'CHAP Certified Excellence',

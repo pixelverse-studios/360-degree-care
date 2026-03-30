@@ -12,7 +12,7 @@ interface CityServicePageProps {
     content: CityServicePageContent
 }
 
-const IMAGE_FALLBACK = 'https://www.360degreecare.net/logo.png'
+const IMAGE_FALLBACK = '/logo.png'
 
 export function CityServicePage({ content }: CityServicePageProps) {
     const resolvedImage =

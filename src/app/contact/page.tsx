@@ -31,7 +31,7 @@ export default function ContactPage() {
         <main className="bg-white-bright text-black">
             <section className="max-w-custom mx-auto px-6 pb-8">
                 <AnimatedSection animation="zoom" className="mb-8">
-                    <h1>Get in Touch with 360 Degree Care</h1>
+                    <h1>Get in Touch with Haven Home Health</h1>
                     <p className="text-lg text-gray-700 mt-2">
                         Whether you're exploring care, career opportunities, or
                         have a general question, we're here to help.

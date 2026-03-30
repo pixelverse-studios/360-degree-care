@@ -128,12 +128,12 @@ function buildCityContent(
         localResources?: LocalResource[]
     }
 ): CityServicePageContent {
-    const canonical = `https://www.360degreecare.net/services/${SERVICE_SLUG}/bergen-county/${citySlug}`
+    const canonical = `https://haven-home-health.netlify.app/services/${SERVICE_SLUG}/bergen-county/${citySlug}`
 
     return {
         slug: `/services/${SERVICE_SLUG}/bergen-county/${citySlug}`,
         metadata: {
-            title: `${SERVICE_NAME} in ${cityName}, NJ | 360 Degree Care`,
+            title: `${SERVICE_NAME} in ${cityName}, NJ | Haven Home Health`,
             description: options.heroDescription,
             keywords: `${SERVICE_NAME.toLowerCase()} ${cityName}, ${SERVICE_NAME.toLowerCase()} Bergen County, in-home care ${cityName}`,
             alternates: { canonical }
@@ -191,7 +191,7 @@ export const bergenCountyPersonalCareCities: Record<
         overviewDescription:
             'Our Fort Lee team understands the nuances of co-op boards, parking garages, and busy hospital corridors. We keep loved ones engaged, nourished, and safe whether they prefer afternoons at the community center or quiet evenings overlooking the George Washington Bridge.',
         serviceHeader: 'Hands-on support tailored to Fort Lee households',
-        benefitsHeader: 'Why Fort Lee Families Trust 360 Degree Care',
+        benefitsHeader: 'Why Fort Lee Families Trust Haven Home Health',
         ctaDescription:
             "Share what a typical day looks like in Fort Lee and we'll tailor a personal care schedule that respects apartment logistics, work commutes, and medical appointments.",
         cityFaqs: FORT_LEE_PERSONAL_CARE_FAQS,
@@ -213,7 +213,8 @@ export const bergenCountyPersonalCareCities: Record<
         overviewDescription:
             'Whether supporting retirees near the River Vale Country Club or multigenerational households by Holdrum School, our aides arrive on time, document progress, and collaborate with physicians across Bergen County.',
         serviceHeader: 'Personal care coverage throughout River Vale',
-        benefitsHeader: 'How River Vale families benefit from 360 Degree Care',
+        benefitsHeader:
+            'How River Vale families benefit from Haven Home Health',
         ctaDescription:
             "Tell us about your River Vale household and we'll craft a visit plan that coordinates with family schedules, therapy sessions, and favorite local activities."
     }),
@@ -223,7 +224,7 @@ export const bergenCountyPersonalCareCities: Record<
         overviewDescription:
             'As the Bergen County seat, Hackensack offers world-class care at Hackensack University Medical Center, vibrant churches, and high-density apartment living near the bus transit center. We coordinate schedules around clinic visits, courthouse appointments, and traffic on River Street so loved ones stay confident at home.',
         serviceHeader: 'Hands-on support tailored to Hackensack households',
-        benefitsHeader: 'Why Hackensack families call 360 Degree Care first',
+        benefitsHeader: 'Why Hackensack families call Haven Home Health first',
         ctaDescription:
             'Let’s align your Hackensack care plan with hospital follow-ups, Main Street errands, and family work schedules so daily routines stay on track.'
     }),

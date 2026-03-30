@@ -127,12 +127,12 @@ function buildCityContent(
         localResources?: LocalResource[]
     }
 ): CityServicePageContent {
-    const canonical = `https://www.360degreecare.net/services/${SERVICE_SLUG}/bergen-county/${citySlug}`
+    const canonical = `https://haven-home-health.netlify.app/services/${SERVICE_SLUG}/bergen-county/${citySlug}`
 
     return {
         slug: `/services/${SERVICE_SLUG}/bergen-county/${citySlug}`,
         metadata: {
-            title: `${SERVICE_NAME} in ${cityName}, NJ | 360 Degree Care`,
+            title: `${SERVICE_NAME} in ${cityName}, NJ | Haven Home Health`,
             description: options.heroDescription,
             keywords: `companion care ${cityName}, senior companionship ${cityName}, social support ${cityName}`,
             alternates: { canonical }
@@ -209,7 +209,7 @@ export const bergenCountyCompanionCareCities: Record<
             'Neighbors helping neighbors — our companions keep River Vale residents engaged with clubs, golf outings, and quiet neighborhood walks.',
         overviewDescription:
             'From morning visits near the Country Club to afternoon coffee runs on River Vale Road, we tailor companionship to preferred activities and energy levels while keeping families fully in the loop.',
-        benefitsHeader: 'The River Vale difference with 360 Degree Care',
+        benefitsHeader: 'The River Vale difference with Haven Home Health',
         ctaDescription:
             'Let’s build a River Vale companion schedule that fits golf tee times, grandkid visits, and cherished routines.'
     }),

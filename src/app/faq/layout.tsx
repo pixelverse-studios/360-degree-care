@@ -9,14 +9,14 @@ import {
 } from '@/utils/faqs'
 
 export const metadata: Metadata = {
-    title: 'Frequently Asked Questions | 360 Degree Care',
+    title: 'Frequently Asked Questions | Haven Home Health',
     description:
         'Find answers to common questions about home healthcare services, personal care, nurse staffing, and payment options in New Jersey.',
     alternates: {
         canonical: '/faq'
     },
     openGraph: {
-        title: 'Frequently Asked Questions | 360 Degree Care',
+        title: 'Frequently Asked Questions | Haven Home Health',
         description:
             'Find answers to common questions about home healthcare services, personal care, nurse staffing, and payment options in New Jersey.',
         url: '/faq'
