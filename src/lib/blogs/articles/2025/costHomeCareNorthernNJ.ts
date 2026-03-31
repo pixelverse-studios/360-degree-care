@@ -128,7 +128,7 @@ Feel free to reference or link to this guide in budget planning articles, caregi
 
 ## Need Real Numbers for Your Situation?
 
-Haven Home Health delivers concierge-level companion, personal, and nurse-directed care across Bergen and Passaic Counties. We:
+Haven Home Health delivers professional companion, personal, and nurse-directed care across Bergen and Passaic Counties. We:
 
 - Conduct **same-week RN assessments** to define accurate hour counts
 - Provide **transparent rate sheets** (no surprise surcharges)

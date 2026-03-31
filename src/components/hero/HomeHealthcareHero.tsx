@@ -39,7 +39,7 @@ export default function HomeHealthCareHero({ header }: { header: string }) {
                         ) : (
                             <>
                                 <span className="prio text-3xl">
-                                    Concierge-Level™
+                                    Professional
                                 </span>{' '}
                                 Home Health Aide Services in New Jersey
                             </>
@@ -56,8 +56,8 @@ export default function HomeHealthCareHero({ header }: { header: string }) {
                         Haven Home Health is here to ensure safety, comfort, and
                         dignity every step of the way. Every care plan is
                         tailored to your loved one’s specific needs, ensuring
-                        they receive high-quality, Concierge-Level™ support you
-                        can trust.
+                        they receive high-quality, Professional support you can
+                        trust.
                     </p>
                 </div>
                 {getImgSrc('mother-daughter') ? (

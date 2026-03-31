@@ -24,7 +24,7 @@ export default function HomeHealthAidesContent() {
             />
             <ServiceCta
                 header="Need a Home Health Aide?"
-                description="Experience the difference of Concierge-Level™ home health aide services. Contact us today to learn how our certified aides can support your loved one."
+                description="Experience the difference of Professional home health aide services. Contact us today to learn how our certified aides can support your loved one."
                 cta="Get In Touch"
                 origin="Home Health Aides"
             />

@@ -56,8 +56,8 @@ export default function ServicesIndexPage() {
                         Home Care & Home Health Services
                     </h1>
                     <p className="text-xl font-medium text-blue-50">
-                        Personalized, concierge-level care tailored to your
-                        loved one's needs.
+                        Personalized, professional care tailored to your loved
+                        one's needs.
                     </p>
                     <p className="mx-auto max-w-2xl text-blue-50">
                         Whether you need hourly assistance, ongoing personal

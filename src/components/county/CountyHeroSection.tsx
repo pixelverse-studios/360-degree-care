@@ -23,7 +23,7 @@ export interface CountyHeroSectionProps {
 const DEFAULT_CERTIFICATIONS = [
     { icon: FaCheckCircle, text: 'CHAP Certified' },
     { icon: FaUserMd, text: 'Licensed Caregivers' },
-    { icon: FaHeart, text: 'Concierge-Level™ Support' }
+    { icon: FaHeart, text: 'Professional Support' }
 ]
 
 export default function CountyHeroSection({

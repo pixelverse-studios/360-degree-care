@@ -144,7 +144,7 @@ function buildCityContent(
             cityFaqs: options.cityFaqs
         }),
         hero: {
-            header: `Concierge-Level ${SERVICE_NAME} in ${cityName}`,
+            header: `Professional ${SERVICE_NAME} in ${cityName}`,
             description: options.heroDescription,
             cta: 'Schedule a personal care consult',
             imageKey: 'personal-care-hero',
@@ -203,7 +203,7 @@ export const bergenCountyPersonalCareCities: Record<
         overviewDescription:
             'From Willard School neighborhoods to downtown apartments, we coordinate personal care around physical therapy sessions, local club meetings, and visits to The Valley Hospital. Families receive proactive updates so everyone stays aligned.',
         serviceHeader: 'Personal care services available in Ridgewood',
-        benefitsHeader: 'Why Ridgewood Chooses Concierge-Level Personal Care',
+        benefitsHeader: 'Why Ridgewood Chooses Professional Personal Care',
         ctaDescription:
             "Let's match your loved one with a Ridgewood caregiver who knows local roads, community calendars, and the importance of preserving independence at home."
     }),
@@ -244,7 +244,7 @@ export const bergenCountyPersonalCareCities: Record<
         overviewDescription:
             'Our aides help Fair Lawn residents stay connected to houses of worship, Trader Joe’s, and recreation at Memorial Park while managing mobility changes. Coordinated support around Valley Health facilities and the Broadway train station ensures families never miss important appointments.',
         serviceHeader: 'Personal care coverage for every corner of Fair Lawn',
-        benefitsHeader: 'Why Fair Lawn trusts our concierge-level care',
+        benefitsHeader: 'Why Fair Lawn trusts our professional care',
         ctaDescription:
             'Tell us about your Fair Lawn routine and we’ll match you with caregivers who know local traffic, apartment layouts, and community resources.'
     })

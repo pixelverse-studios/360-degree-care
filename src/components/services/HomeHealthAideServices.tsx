@@ -108,17 +108,15 @@ export default function HomeHealthAideServices() {
                 className={cn(wrapperClass, 'px-6, pb-6')}
             >
                 <div className="bg-white p-6 rounded-3xl mx-auto">
-                    <h3 className="mb-4">
-                        Concierge Level™ Home Health Aides
-                    </h3>
+                    <h3 className="mb-4">Professional Home Health Aides</h3>
                     <p>
                         Our Home Health Aides deliver exceptional care that
                         feels like family. With our{' '}
-                        <span className="prio">Concierge Level™</span>{' '}
-                        approach, we go beyond basic assistance to create a
-                        personalized care experience that enhances your loved
-                        one's quality of life, comfort, and safety, all in the
-                        familiar environment of home.
+                        <span className="prio">Professional</span> approach, we
+                        go beyond basic assistance to create a personalized care
+                        experience that enhances your loved one's quality of
+                        life, comfort, and safety, all in the familiar
+                        environment of home.
                     </p>
                 </div>
             </AnimatedSection>

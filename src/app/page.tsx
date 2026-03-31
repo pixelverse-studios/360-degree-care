@@ -35,7 +35,7 @@ export default function HomePage() {
                 <InfoCards
                     styles=""
                     cards={SERVICE_CARDS}
-                    header="Our Concierge Level™ Services"
+                    header="Our Professional Services"
                 />
                 <HomeTestimonials />
             </main>

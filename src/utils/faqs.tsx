@@ -132,8 +132,8 @@ export const HOME_HEALTH_AIDES_FAQS: FAQ[] = [
         answer: 'Yes. Every care plan is customized. We start with an assessment, talk through your goals and daily routines, and then create a plan that can be adjusted as needs change.'
     },
     {
-        question: 'What is Concierge-Level?',
-        answer: 'Concierge Level care means highly personalized attention, responsive communication and a higher standard of service. We focus on both day to day tasks and the overall experience, so families feel supported, informed and cared for.'
+        question: 'What makes your care different?',
+        answer: 'Our care means highly personalized attention, responsive communication and a higher standard of service. We focus on both day to day tasks and the overall experience, so families feel supported, informed and cared for.'
     }
 ]
 
